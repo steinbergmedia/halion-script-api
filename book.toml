@@ -1,0 +1,26 @@
+[book]
+authors = ["mklag"]
+language = "en"
+multilingual = false
+src = "src"
+title = "HALion 6.4.20"
+
+[build]
+build-dir = "book"
+create-missing = true
+use-default-preprocessors = true
+
+[preprocessor]
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+marker = "[[_TOC_]]"
+max-level = 3
+
+[output.html]
+no-section-label = true
+
+[output.html.fold]
+enable = true
+level = 0

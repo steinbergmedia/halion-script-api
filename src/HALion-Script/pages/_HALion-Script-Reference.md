@@ -1,0 +1,3 @@
+## HALion Script Reference
+
+The classes and functions of the HALion Script language are described in the [Class Reference](./Class-Reference.md) and on the [Reference](./Reference.md) pages. Many of the descriptions provide small code examples. For more details, see [Exploring the Code Examples](./Exploring-the-Code-Examples.md).

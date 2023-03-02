@@ -1,0 +1,1 @@
+This section provides information about the inner workings of HALion and its implementation of the Lua scripting language. How to protect your work is described in [Protecting Layers](./Protecting-Layers.md) and [Managing Script Modules](./Managing-Script-Modules.md).
