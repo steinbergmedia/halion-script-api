@@ -16,7 +16,7 @@ Function to add a layer in the specified destination layer using a separate, par
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**layer**|The Layer object of the layer that you want to append.|Layer|
+|**layer**|The Layer object of the layer that you want to append.|[Layer](./Layer.md)|
 |**callback**|Callback function that is called when the layer is added. The callback function gets the [LoadProgress](./LoadProgress.md) object as argument.|function, optional|
 
 ## Return Values
