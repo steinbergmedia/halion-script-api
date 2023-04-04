@@ -33,4 +33,4 @@ ne[NoteExpressionType.custom2] = { block = true }                     -- Hides t
 ne[NoteExpressionType.custom3] = { name = "Test", block = false }     -- Displays 'Test' and auto created names.
 ```
 
-**See also:** [Note Expression Types](./Note-Expression-Types.md)
+**See also:** [onNoteExpression](./onNoteExpression.md), [changeNoteExpression](./changeNoteExpression.md), [getNoteExpression](./getNoteExpression.md), [Note Expression Types](./Note-Expression-Types.md)
