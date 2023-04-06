@@ -1,5 +1,6 @@
 ```lua
 -- Start with an empty program, remove any existing layers.
+
 layers = this.parent:findLayers()
  
 if layers then
