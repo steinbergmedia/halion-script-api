@@ -26,4 +26,4 @@ Returns a new [Effect](./Effect.md) object of the specified type.
 
 {{#include ./_Constructor-Example.md}}
 
-**See also:** [Program Constructor](./Program-Constructor.md), [Bus Constructor](./Bus-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md), [Event](./Event-Constructor.md)
+**See also:** [Program Constructor](./Program-Constructor.md), [Bus Constructor](./Bus-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md)

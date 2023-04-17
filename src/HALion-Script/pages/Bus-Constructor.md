@@ -18,4 +18,4 @@ Returns a new [Bus](./Bus.md) object.
 
 {{#include ./_Constructor-Example.md}}
 
-**See also:** [Program Constructor](./Program-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md), [Effect Constructor](./Effect-Constructor.md), [Event Constructor](./Event-Constructor.md)
+**See also:** [Program Constructor](./Program-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md), [Effect Constructor](./Effect-Constructor.md)
