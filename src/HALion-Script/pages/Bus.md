@@ -12,6 +12,12 @@ The Bus class inherits all properties and methods of the [Element](./Element.md)
 
 ---
 
+**List of inherited members:**
+
+{{#include ./_Element-Inherited-Members.md}}
+
+---
+
 ## Classes
 
 ### Bus Class
