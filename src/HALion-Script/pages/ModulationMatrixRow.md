@@ -12,6 +12,12 @@ The ModulationMatrixRow class inherits all properties and methods of the [Elemen
 
 ---
 
+**List of inherited members:**
+
+{{#include ./_Element-Inherited-Members.md}}
+
+---
+
 ## Classes
 
 ### ModulationMatrixRow Class
