@@ -1,32 +1,32 @@
-/ [HALion Developer Resource](../..//HALion-Developer-Resource.md) / [HALion Script](./HALion-Script.md) / [Reference](./Reference.md) /
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Script](./HALion-Script.md) / [Reference](./Reference.md) /
 
 # Template
 
 >****
 
-## Description
+#### Description
 
 
 
 **Available in:** Controller, Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 
 
-## Fields
+#### Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
 
 
-## Return Values
+#### Return Values
 
 
 
-## Example
+#### Example
 
 ```lua
 -- Lua code.
