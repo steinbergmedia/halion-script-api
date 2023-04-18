@@ -2,20 +2,6 @@
 
 # Bus Constructor
 
->**Bus()**
-
-## Description
-
-Constructor to create a new [Bus](./Bus.md) object.
-
-**Available in:** Controller.
-
-## Return Values
-
-Returns a new [Bus](./Bus.md) object.
-
-## Example
-
-{{#include ./_Constructor-Example.md}}
+{{#include ./_Bus-Constructor-Description.md}}
 
 **See also:** [Program Constructor](./Program-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md), [Effect Constructor](./Effect-Constructor.md)
