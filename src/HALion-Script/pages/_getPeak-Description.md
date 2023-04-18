@@ -1,4 +1,3 @@
-
 >**getPeak(start, length, rms)**
 
 #### Description

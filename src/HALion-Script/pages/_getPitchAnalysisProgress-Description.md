@@ -1,4 +1,3 @@
-
 >**getPitchAnalysisProgress(channel)**
 
 #### Description

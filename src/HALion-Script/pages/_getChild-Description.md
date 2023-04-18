@@ -1,4 +1,3 @@
-
 >**getChild(nameOrPosition)**
 
 #### Description

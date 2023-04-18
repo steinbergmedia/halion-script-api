@@ -1,4 +1,3 @@
-
 >**getPitch(start, length, channel)**
 
 #### Description

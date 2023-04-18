@@ -1,4 +1,3 @@
-
 >**getOnsets(start, length, peakThreshold, sensThreshold, minLength)**
 
 #### Description

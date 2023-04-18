@@ -1,4 +1,3 @@
-
 >**setParameter(nameOrID, value)**
 
 #### Description

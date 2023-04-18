@@ -1,4 +1,3 @@
-
 >**getParameter(nameOrID)**
 
 #### Description

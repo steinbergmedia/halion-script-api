@@ -1,4 +1,3 @@
-
 >**setName(name)**
 
 #### Description

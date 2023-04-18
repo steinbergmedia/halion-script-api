@@ -1,4 +1,3 @@
-
 >**setParameterNormalized(nameOrID, value)**
 
 #### Description
