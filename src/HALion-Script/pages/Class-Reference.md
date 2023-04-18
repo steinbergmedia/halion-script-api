@@ -2,3 +2,19 @@
 
 # Class Reference
 
+## Class Hierarchy
+
+* [Audio File](./Audio-File.md)
+* [Element](./Element.md)
+    * [Bus](./Bus.md)
+    * [Effect](./Effect.md)
+    * [Instance](./Instance.md)
+    * [Layer](./Layer.md)
+        * [Program](./Program.md)
+    * [MidiModule](./MidiModule.md)
+    * [ModulationMatrixRow](./ModulationMatrixRow.md)
+    * [Slot](./Slot.md)
+    * [Zone](./Zone.md)
+* [Event](./Event.md)
+* [LoadProgress](./LoadProgress.md)
+* [ParameterDefinition](./ParameterDefinition.md)
