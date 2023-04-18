@@ -1,4 +1,4 @@
-/ [HALion Developer Resource](../..//HALion-Developer-Resource.md) / [HALion Script](./HALion-Script.md) / [Getting Started](./Getting-Started.md) /
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Script](./HALion-Script.md) / [Getting Started](./Getting-Started.md) /
 
 # Lua Syntax Highlighting
 

@@ -1,4 +1,4 @@
-/ [HALion Developer Resource](../..//HALion-Developer-Resource.md) /
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) /
 
 # HALion Script
 
