@@ -2,33 +2,6 @@
 
 # getNumQCAssignments
 
->**getNumQCAssignments(qc)**
-
-## Description
-
-Function to retrieve the number of assignments of a quick control on the specified layer. For example, ``this.parent`` defines the parent layer of the script module as the layer with the desired quick control. The ``qc`` argument is the index of the quick control with the requested assignments.
-
-**Available in:** Controller.
-
-## Arguments
-
-|Argument|Description|Value Type|
-|:-|:-|:-|
-|**qc**|The index of the quick control.|number|
-
-## Return Values
-
-Returns the number of assignments of the specified layer and quick control.
-
-## Example
-
-```lua
--- Print the number of assignments of the first quick control on the parent layer.
-
-layer = this.parent
-qc = 1
- 
-print("Number of assignments on '"..layer.name.."', QC "..qc..": "..layer:getNumQCAssignments(qc)..".")
-```
+{{#include ./_getNumQCAssignments-Description.md}}
 
 **See also:** [addQCAssignment](./addQCAssignment.md), [removeQCAssignment](./removeQCAssignment.md), [getQCAssignmentParamId](./getQCAssignmentParamId.md), [getQCAssignmentScope](./getQCAssignmentScope.md), [getQCAssignmentMin](./getQCAssignmentMin.md), [getQCAssignmentMax](./getQCAssignmentMax.md), [getQCAssignmentCurve](./getQCAssignmentCurve.md), [getQCAssignmentMode](./getQCAssignmentMode.md), [getQCAssignmentBypass](./getQCAssignmentBypass.md), [setQCAssignmentParamId](./setQCAssignmentParamId.md), [setQCAssignmentScope](./setQCAssignmentScope.md), [setQCAssignmentMin](./setQCAssignmentMin.md), [setQCAssignmentMax](./setQCAssignmentMax.md), [setQCAssignmentCurve](./setQCAssignmentCurve.md)
