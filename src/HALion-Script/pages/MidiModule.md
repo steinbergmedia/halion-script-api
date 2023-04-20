@@ -8,11 +8,13 @@ The MidiModule class inherits all properties and methods of the [Element](./Elem
 
 **On this page:**
 
-[[_TOC_]]
+[MidiModule Class](#midimodule-class), [MidiModule Constructor](#midimodule-constructor)
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

@@ -8,11 +8,13 @@ The ModulationMatrixRow class inherits all properties and methods of the [Elemen
 
 **On this page:**
 
-[[_TOC_]]
+[ModulationMatrixRow Class](#modulationmatrixrow-class), [getSource1](#getsource1), [getSource2](#getsource2), [setSource1](#setsource1),[setSource2](#setsource2)
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

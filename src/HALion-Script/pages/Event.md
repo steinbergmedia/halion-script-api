@@ -8,7 +8,7 @@ The Event class describes the properties of events.
 
 **On this page:**
 
-[[_TOC_]]
+[Event Class](#event-class), [Event Constructor](#event-constructor)
 
 ---
 

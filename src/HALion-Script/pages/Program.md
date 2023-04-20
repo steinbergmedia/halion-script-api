@@ -8,13 +8,17 @@ The Program class inherits all properties and methods of the [Layer](./Layer.md)
 
 **On this page:**
 
-[[_TOC_]]
+[Program Class](#program-class), [Program Constructor](#program-constructor)
 
 ---
 
 **List of inherited members:**
 
+#### Layer
+
 {{#include ./_Layer-Inherited-Members.md}}
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

@@ -1,3 +1,1 @@
-#### Element
-
 [Element Class](./Element.md#element-class), [findChildren](./Element.md#findchildren), [getChild](./Element.md#getchild), [getParameter](./Element.md#getparameter), [getParameterDefinition](./Element.md#getparameterdefinition), [getParameterNormalized](./Element.md#getparameternormalized), [hasParameter](./Element.md#hasparameter), [removeFromParent](./Element.md#removefromparent), [setName](./Element.md#setname), [setParameter](./Element.md#setparameter), [setParameterNormalized](./Element.md#setparameternormalized)

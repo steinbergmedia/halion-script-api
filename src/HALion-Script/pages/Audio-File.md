@@ -8,7 +8,7 @@ The AudioFile class describes the properties of audio files.
 
 **On this page:**
 
-[[_TOC_]]
+[AudioFile Class](#audiofile-class), [analyzePitch](#analyzepitch), [cancelPitchAnalysis](#cancelpitchanalysis), [getOnsets](#getonsets), [getPeak](#getpeak), [getPitch](#getpitch), [getPitchAnalysisProgress](#getpitchanalysisprogress)
 
 ---
 

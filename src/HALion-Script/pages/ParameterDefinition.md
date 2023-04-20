@@ -8,7 +8,7 @@ The ParameterDefinition class describes the properties of parameters.
 
 **On this page:**
 
-[[_TOC_]]
+[ParameterDefinition Class](#parameterdefinition-class), [getDisplayString](#getdisplaystring)
 
 ---
 

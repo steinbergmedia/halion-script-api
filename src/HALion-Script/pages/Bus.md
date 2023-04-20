@@ -8,11 +8,13 @@ The Bus class inherits all properties and methods of the [Element](./Element.md)
 
 **On this page:**
 
-[[_TOC_]]
+[Bus Class](#bus-class), [Bus Constructor](#bus-constructor), [findEffects](#findeffects), [getEffect](#geteffect), [appendEffect](#appendeffect), [removeEffect](#removeeffect), [getOutputBus](#getoutputbus), [setOutpuBus](#setoutputbus)
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

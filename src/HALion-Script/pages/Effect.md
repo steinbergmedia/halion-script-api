@@ -8,11 +8,13 @@ The Effect class inherits all properties and methods of the [Element](./Element.
 
 **On this page:**
 
-[[_TOC_]]
+[Effect Class](#effect-class), [Effect Constructor](#effect-constructor)
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

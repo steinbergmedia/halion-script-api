@@ -8,7 +8,7 @@ The properties of the LoadProgress class can be used to monitor the progress whe
 
 **On this page:**
 
-[[_TOC_]]
+[LoadProgress Class](#loadprogress-class)
 
 ---
 

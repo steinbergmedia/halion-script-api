@@ -8,11 +8,13 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 **On this page:**
 
-[[_TOC_]]
+{{#include ./_Layer-Inherited-Members.md}}
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

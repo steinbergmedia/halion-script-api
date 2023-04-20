@@ -8,11 +8,13 @@ The Slot class inherits all properties and methods of the [Element](./Element.md
 
 **On this page:**
 
-[[_TOC_]]
+[findBusses](#findbusses), [findEffects](#findeffects), [getBus](#getbus), [setProgram](#setprogram)
 
 ---
 
 **List of inherited members:**
+
+#### Element
 
 {{#include ./_Element-Inherited-Members.md}}
 

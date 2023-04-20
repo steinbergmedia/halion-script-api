@@ -8,7 +8,7 @@ The Element class is the base class for the classes [Bus](./Bus.md), [Instance](
 
 **On this page:**
 
-[[_TOC_]]
+{{#include ./_Element-Inherited-Members.md}}
 
 ---
 
