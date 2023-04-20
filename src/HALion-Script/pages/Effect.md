@@ -24,7 +24,7 @@ The Effect class inherits all properties and methods of the [Element](./Element.
 
 #### Description
 
-The [Element](./Element.md) object of an effect can be obtained with [findEffects](./findEffects.md) or [getEffect](./getEffect.md).
+The [Element](./Element.md) object of an effect can be obtained with [findEffects](./findEffects.md) or [getEffect](./getEffect.md). It has the following fields.
 
 **Available in:** Controller, Processor.
 

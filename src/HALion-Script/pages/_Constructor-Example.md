@@ -1,5 +1,5 @@
 ```lua
--- This function creates different types of objects in the Program Tree.
+-- The following function creates different types of objects in the Program Tree.
 -- The objects in the Program Tree do not have a name. You will see only their icons.
 
 function createProgram()
