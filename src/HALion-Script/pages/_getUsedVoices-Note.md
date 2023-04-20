@@ -1,0 +1,1 @@
+>&#10069; If the initiation of a zone and the call to this function happen in the same audio block, the voice count which is returned might not be up-to-date. To prevent this, wait for the next audio block before calling this function.

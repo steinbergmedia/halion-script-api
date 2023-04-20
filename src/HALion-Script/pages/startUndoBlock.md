@@ -4,24 +4,24 @@
 
 >**startUndoBlock(name, id)**
 
-## Description
+#### Description
 
 Function to combine multiple undo entries into one undo block. For example, if your script inserts several elements into the program, you might want to be able to remove all the elements in one single undo operation. The function returns an ID for identifying the undo block. This ID can be used as second argument in later calls to startUndoBlock for combining the undo blocks that refer to this ID.  The ``name`` argument will be used as entry in the undo history. If multiple undo blocks are combined, only the name of the last undo block will be used. This function must be terminated using [endUndoBlock](./endUndoBlock.md). If startUndoBlock is called within a callback function, [endUndoBlock](./endUndoBlock.md) is called automatically when the callback function ends.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**name**|This will be displayed as entry in the undo history.|string|
 |**id**|Set this to combine the undo blocks that refer to this ID.|number|
 
-## Return Values
+#### Return Values
 
 Returns an ID that can be used to identify the undo block.
 
-## Example 1
+#### Example 1
 
 ```lua
 -- Change param1, then param2.
@@ -36,7 +36,7 @@ end
 defineParameter{ name = "param1", onChanged = param1Changed }
 defineParameter{ name = "param2", onChanged = param2Changed }
 ```
-## Example 2
+#### Example 2
 
 To explore the following script:
 
@@ -50,22 +50,27 @@ To explore the following script:
 -- Insert elements from Program.vstpreset into the current program.
  
 -- Get the file path for user VST presets.
+
 path = getUserPresetPath()
  
 -- Load the VST preset.
+
 loadedProgram = loadPreset(path.."/Program/Program.vstpreset")
  
 -- Get elements from loadedProgram.
-midiModule = loadedProgram:findMidiModules()[1] -- first MIDI module in loadedProgram
-subLayer = loadedProgram:findLayers()[1] -- first layer in loadedProgram
-bus = loadedProgram:findBusses()[1] -- first bus in loadedProgram
+
+midiModule = loadedProgram:findMidiModules()[1] -- First MIDI module in loadedProgram.
+subLayer = loadedProgram:findLayers()[1]        -- First layer in loadedProgram.
+bus = loadedProgram:findBusses()[1]             -- First bus in loadedProgram.
   
 program = this.program
   
 -- Begin the undo block.
+
 startUndoBlock("Insert Modules") -- Only this entry will display in the undo history.
  
     -- Insert the elements.
+
     if midiModule then
         program:insertMidiModule(midiModule, 1)
     end

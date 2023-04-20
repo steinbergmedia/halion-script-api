@@ -11,6 +11,7 @@
 --]]
  
 -- Get the values of p1 and p2 from the first zone of the program.
+
 function getZoneData(p1, p2)
     local data = {}
     local zone = this.program:findZones(true)
@@ -22,6 +23,7 @@ function getZoneData(p1, p2)
 end
  
 -- Set the values of p1 and p2 in the first zone of the program.
+
 function setZoneData(p1, p2, data)
     local zone = this.program:findZones(true)
     if zone[1] then
@@ -31,6 +33,7 @@ function setZoneData(p1, p2, data)
 end
  
 -- Save data with the subpreset.
+
 function onSaveSubPreset(section)
     if section == "Pitch" then
         return getZoneData("Pitch.Coarse", "Pitch.Fine" ) -- This is called from the preset template Pitch.
@@ -40,6 +43,7 @@ function onSaveSubPreset(section)
 end
  
 -- Restore data from the subpreset.
+
 function onLoadSubPreset(section, data)
     if section == "Pitch" then
         setZoneData("Pitch.Coarse", "Pitch.Fine", data) -- This is called from the preset template Pitch.

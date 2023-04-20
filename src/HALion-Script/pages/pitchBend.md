@@ -4,19 +4,19 @@
 
 >**pitchBend(value)**
 
-## Description
+#### Description
 
 Function to generate pitch bend events.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**value**|The pitch bend value in the range of -1.0 to 1.0.|number|
 
-## Example
+#### Example
 
 ```lua
 -- Invert pitch bend values.

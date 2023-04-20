@@ -4,23 +4,23 @@
 
 >**getNoteDuration(note)**
 
-## Description
+#### Description
 
 Function to measure the time delta between the last note-on event of the specified note and the call of this function.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**note**|The note number in the range of 0 to 127.|number|
 
-## Return Values
+#### Return Values
 
 Returns the time delta in milliseconds.
 
-## Example
+#### Example
 
 ```lua
 -- Print the time delta between note-on and note-off.

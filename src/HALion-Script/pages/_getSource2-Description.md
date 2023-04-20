@@ -10,7 +10,7 @@ Function to retrieve the 2nd modulation source of a row in the modulation matrix
 
 Returns up to three values, i.e., source, sourceInfo1 and sourceInfo2. The number of return values depends on the modulation source. See [Modulation Source Types](./Modulation-Source-Types.md) for details.
 
->The 2nd modulation source has an additional sample & hold. See [Modulation Source Types](./Modulation-Source-Types.md) for details.
+>&#10069; The 2nd modulation source has an additional sample & hold. See [Modulation Source Types](./Modulation-Source-Types.md) for details.
 
 #### Example
 

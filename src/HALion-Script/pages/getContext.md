@@ -4,17 +4,17 @@
 
 >**getContext()**
 
-## Description
+#### Description
 
 Function to obtain the name of the context.
 
 **Available in:** Controller, Processor.
 
-## Return Values
+#### Return Values
 
 Returns a string with the name of the context in which the function is called.
 
-## Example
+#### Example
 
 ```lua
 -- Print the context.
@@ -30,7 +30,7 @@ function onInit()
 end
 ```
 
-### Output Messages
+**Output Messages**
 ```lua
 Global statement: Controller
 onLoadIntoSlot: Controller

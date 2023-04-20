@@ -4,19 +4,19 @@
 
 >**defineSlotLocal(name)**
 
-## Description
+#### Description
 
 Function to attain global variables that operate independently per slot. You can call defineSlotLocal before or after the initialization of the corresponding variable, but it is common practice to call the function in advance. For more details see [Using Slot Local Variables](./Using-Slot-Local-Variables.md).
 
 **Available in:** Controller, Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**name**|The name of the global variable.|string|
 
-## Example
+#### Example
 
 ```lua
 -- Store held notes in a note buffer and print them out.

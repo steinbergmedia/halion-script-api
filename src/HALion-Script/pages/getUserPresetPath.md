@@ -4,23 +4,23 @@
 
 >**getUserPresetPath(product)**
 
-## Description
+#### Description
 
 Function to obtain the file path for the user VST presets of a product. If no product is set, the function returns the file path of the current plug-in.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**product**|The name of the product.|string, optional|
 
-## Return Values
+#### Return Values
 
 Returns the file path for the user VST presets of the specified product.
 
-## Example
+#### Example
 
 ```lua
 -- Print the user VST preset path for the current plug-in and Halion Sonic.

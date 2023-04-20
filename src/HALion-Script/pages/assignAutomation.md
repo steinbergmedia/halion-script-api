@@ -4,13 +4,13 @@
 
 >**assignAutomation(element, nameOrID, index, scope)**
 
-## Description
+#### Description
 
 Function to assign a parameter to an automation parameter. The arguments ``element`` and ``nameOrID`` specify the parameter to be assigned. The ``index`` argument determines to which automation parameter the parameter will be assigned. If the index argument is ``nil`` or not set, the parameter will be assigned to the next free automation parameter. The scope determines the part of the program that will be affected by the automation parameter. You specify the scope by setting the ``scope`` argument to the [Element](./Element.md) object that corresponds to the desired part of the program. The function returns the index to which the automation parameter was assigned to. This is useful if the automation parameter was assigned to the next free automation parameter.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
@@ -19,11 +19,11 @@ Function to assign a parameter to an automation parameter. The arguments ``eleme
 |**index**|The index of the automation parameter, or ``nil``.|number or ``nil``, optional
 |**scope**|The [Element](./Element.md) object that will be affected by the automation parameter.|[Element](./Element.md)|
 
-## Return Values
+#### Return Values
 
 Returns the index to which the automation parameter was assigned to.
 
-## Example
+#### Example
 
 ```lua
 -- Assign filter cutoff, resonance and envelope amount to the next free automation.

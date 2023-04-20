@@ -4,19 +4,19 @@
 
 >**openURL(adress)**
 
-## Description
+#### Description
 
 Function to open a website in the web browser.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**adress**|The internet adress of the website.|string|
 
-## Example
+#### Example
 
 ```lua
 -- Open www.steinberg.net in the web browser.

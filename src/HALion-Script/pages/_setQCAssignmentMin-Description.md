@@ -14,12 +14,13 @@ Function to set the minimum value of the specified quick control assignment. The
 |**assignment**|The index of the quick control assignment.|number|
 |**min**|The minimum value to be set.|number|
 
->The value range of the minimum value is always 0 to 100 %, even if the mode of the quick control assignment is set to Relative or Switch Relative.
+{{#include _QCAssignmentMinMax-Note.md}}
 
 #### Example
 
 ```lua
 -- Set the minimum value of the quick control assignment depending on the mode.
+
 layer = this.parent
 qc = 1
 assignment = 1

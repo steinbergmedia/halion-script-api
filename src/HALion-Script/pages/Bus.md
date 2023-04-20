@@ -8,7 +8,7 @@ The Bus class inherits all properties and methods of the [Element](./Element.md)
 
 **On this page:**
 
-[Bus Class](#bus-class), [Bus Constructor](#bus-constructor), [findEffects](#findeffects), [getEffect](#geteffect), [appendEffect](#appendeffect), [removeEffect](#removeeffect), [getOutputBus](#getoutputbus), [setOutpuBus](#setoutputbus)
+[Bus Class](#bus-class), [Bus Constructor](#bus-constructor), [findEffects](#findeffects), [getEffect](#geteffect), [insertEffect](#inserteffect), [appendEffect](#appendeffect), [removeEffect](#removeeffect), [getOutputBus](#getoutputbus), [setOutpuBus](#setoutputbus)
 
 ---
 
@@ -75,6 +75,12 @@ end
 ### getEffect
 
 {{#include ./_getEffect-Description.md}}
+
+[Jump to Top ](#bus)
+
+### insertEffect
+
+{{#include ./_insertEffect-Description.md}}
 
 [Jump to Top ](#bus)
 

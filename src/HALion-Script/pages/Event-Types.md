@@ -2,13 +2,13 @@
 
 # Event Types
 
-## Description
+#### Description
 
 Enumerator to identify the different types of events. See [Event Constructor](./Event-Constructor.md) and [Event](./Event.md) for details.
 
 **Available in:** Processor.
 
-## Event Types
+#### Event Types
 
 |Index|Name|Description|
 |:-|:-|:-|
@@ -18,10 +18,11 @@ Enumerator to identify the different types of events. See [Event Constructor](./
 |4|EventType.noteExpression|Note expression events.|
 |5|EventType.programChange|Only used for Standard MIDI files.|
 
-## Example
+#### Example
 
 ```lua
 -- Print the event type.
+
 function printEventType(event)
     if event.type == EventType.noteOn then
         print("Note-on event received!")

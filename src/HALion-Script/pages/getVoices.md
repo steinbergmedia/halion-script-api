@@ -4,17 +4,17 @@
 
 >**getVoices()**
 
-## Description
+#### Description
 
 Function to retrieve the maximum number of voices of the plug-in instance as set in the **Options** editor.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the maximum number of voices of the plug-in instance.
 
-## Example
+#### Example
 
 ```lua
 -- Print the maximum number of voices.

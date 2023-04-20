@@ -4,20 +4,20 @@
 
 >**runAsync(func, arg1, arg2, ...)**
 
-## Description
+#### Description
 
 Executes a function in the controller thread. By calling runAsync in the processor thread, you can invoke a function that is executed in the controller thread. The execution of runAsync takes at least one audio block, or longer, depending on the function which was called. The callback which called runAsync is put on hold until the function has completed. Please be aware of this when using runAsync.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**func**|The name of the function to be called.|function|
 |**arg1, arg2, ...**|The arguments of the function.|optional|
 
-## Example
+#### Example
 
 ```lua
 -- Color held keys.

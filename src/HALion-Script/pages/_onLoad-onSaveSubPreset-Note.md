@@ -1,0 +1,1 @@
+>&#10069; Scope and section are template parameters. You can set them in the MacroPage Designer on the properties pane of the [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) and [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) templates.

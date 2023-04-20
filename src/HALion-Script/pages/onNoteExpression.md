@@ -4,21 +4,21 @@
 
 >**onNoteExpression(event)**
 
-## Description
+#### Description
 
 This callback function is called when the script module receives a note expression event.
 
->Note expression events are always processed by the engine, regardless of whether the event is posted or not. Therefore, the use of [postEvent](./postEvent.md) is not necessary.
+>&#10069; Note expression events are always processed by the engine, regardless of whether the event is posted or not. Therefore, the use of [postEvent](./postEvent.md) is not necessary.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|[Event](./Event.md) object of the type noteExpression.|[Event](./Event.md)|
 
-## Fields
+#### Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -27,10 +27,11 @@ This callback function is called when the script module receives a note expressi
 |**.noteExpressionType**|The type of note expression event. See [Note Expression Types](./Note-Expression-Types.md) for details.|number|
 |**.value**|The note expression value in the range of 0 to 1.0.|number|
 
-## Example
+#### Example
 
 ```lua
--- Change note expression for root note and generated note.
+-- Change note expression for the root note and a generated note.
+
 local ids = {}
  
 function onNote(event)

@@ -4,23 +4,23 @@
 
 >**samples2ms(samples)**
 
-## Description
+#### Description
 
 Function to convert a number of samples to the equivalent duration in milliseconds. The sample rate at which the plug-in runs is taken into account.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**samples**|The number of samples.|number|
 
-## Return Values
+#### Return Values
 
 Returns the specified number of samples as duration in milliseconds.
 
-## Example
+#### Example
 
 ```lua
 -- Print the project sample rate in ms.

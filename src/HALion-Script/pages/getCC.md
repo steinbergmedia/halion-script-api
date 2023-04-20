@@ -4,22 +4,22 @@
 
 >**getCC(controller)**
 
-## Description
+#### Description
 
 Function to read the current value of a continuous controller.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**controller**|The controller number. See [Controller Numbers](./Controller-Numbers.md) for a description of the different controllers.|number|
 
-## Return Values
+#### Return Values
 Returns the current value of the continuous controller specified by the argument.
 
-## Example
+#### Example
 
 ```lua
 -- Replace the note-on velocity with the value of the modulation wheel.

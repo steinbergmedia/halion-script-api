@@ -4,19 +4,19 @@
 
 >**getTime()**
 
-## Description
+#### Description
 
 Function to obtain the time in milliseconds since the initialization of the script.
 
->The function starts to count from 0 ms each time that you reload or reset the script.
+>&#10069; The function starts to count from 0 ms each time that you reload or reset the script.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the time in milliseconds since the initialization of the script.
 
-## Example
+#### Example
 
 ```lua
 -- Measure the time between subsequent notes.

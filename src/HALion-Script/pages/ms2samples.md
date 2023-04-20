@@ -4,23 +4,23 @@
 
 >**ms2samples(ms)**
 
-## Description
+#### Description
 
 Function to convert a duration in milliseconds to the equivalent number of samples. The conversion takes into account the sample rate at which the plug-in runs.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**ms**|The duration in milliseconds.|number|
 
-## Return Values
+#### Return Values
 
 Returns the number of samples that is the equivalent of the specified duration in milliseconds.
 
-## Example
+#### Example
 
 ```lua
 -- Print the duration 1000 ms in number of samples.

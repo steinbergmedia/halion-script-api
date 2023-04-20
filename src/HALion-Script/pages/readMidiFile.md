@@ -4,23 +4,23 @@
 
 >**readMidiFile(path)**
 
-## Description
+#### Description
 
 Function to read a MIDI file (.mid). The function creates a MIDI sequence table that contains the data of the MIDI file. See [MIDI Sequence Table](./MIDI-Sequence-Table.md) for details on the fields of the MIDI sequence table.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**path**|The path and file name of the MIDI file.|string|
 
-## Return Values
+#### Return Values
 
 Returns a MIDI sequence table. See [MIDI Sequence Table](./MIDI-Sequence-Table.md) for details.
 
-## Example
+#### Example
 
 To explore the following script:
 
@@ -41,11 +41,15 @@ i = 1
 print(midiSequence.songname..".mid loaded!")
  
 function onNote(event)
+    
     -- Start from the beginning if the last event has been reached.
+    
     if i >= numberOfEvents then
         i = 1
     end
+    
     -- Find the next note-on event.
+    
     repeat
         event = midiSequence.tracks[1].events[i]
         i = i + 1
@@ -53,11 +57,14 @@ function onNote(event)
             return
         end
     until event.type == EventType.noteOn
+    
     -- Print and play the note-on events.
+    
     print(event)
     local id = playNote(event.note, event.velocity, 0)
     wait(getBeatDuration()*0.5)
     releaseVoice(id)
+    
 end
 ```
 

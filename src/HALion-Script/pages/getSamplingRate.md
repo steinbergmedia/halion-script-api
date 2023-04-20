@@ -4,17 +4,17 @@
 
 >**getSamplingRate()**
 
-## Description
+#### Description
 
 Function to retrieve the sample rate from the host software.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the sample rate of the host software in Hertz (i.e., samples per seconds).
 
-## Example
+#### Example
 
 ```lua
 -- Print the sample rate of the host software.

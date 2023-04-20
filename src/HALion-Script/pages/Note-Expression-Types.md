@@ -2,15 +2,15 @@
 
 # Note Expression Types
 
-## Description
+#### Description
 
 Enumerator to identify the different note expression types.
 
->The note expression types volume, pan and tuning are pre-assigned internally and respond immediately. The custom note expression types must be assigned manually in the modulation matrix before they can be used.
+>&#10069; The note expression types volume, pan and tuning are pre-assigned internally and respond immediately. The custom note expression types must be assigned manually in the modulation matrix before they can be used.
 
 **Available in:** Processor.
 
-## Note Expression Types
+#### Note Expression Types
 
 |Index|Name|
 |:-|:-|
@@ -26,7 +26,7 @@ Enumerator to identify the different note expression types.
 |10|NoteExpressionType.custom7|
 |11|NoteExpressionType.custom8|
 
-## Example
+#### Example
 
 ```lua
 -- Detect the type of note expression.

@@ -20,7 +20,7 @@ The AudioFile class describes the properties of audio files.
 
 The [AudioFile.open](./AudioFileopen.md) function creates an AudioFile object of the specified audio file. The AudioFile object can be used to retrieve information from the audio file, for example, the sample rate, bit depth, length in samples, etc. The AudioFile object has the following fields.
 
->All fields of the AudioFile object are read-only.
+>&#10069; All fields of the AudioFile object are read-only.
 
 **Available in:** Controller, Processor.
 

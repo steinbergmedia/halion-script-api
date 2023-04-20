@@ -4,18 +4,18 @@
 
 >**getBeatTime()**
 
-## Description
+#### Description
 
 Function to obtain the current song position in number of beats (quarter notes).
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 When the host is in playback, the function returns a decimal with the number of beats (quarter notes) since the start of the song. The start of the song equals 0 beats. The function returns -1 if the host is not in playback.
 
 
-## Example
+#### Example
 
 ```lua
 -- Print the song position in number of beats.

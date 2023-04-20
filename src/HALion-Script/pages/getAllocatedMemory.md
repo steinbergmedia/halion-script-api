@@ -4,17 +4,17 @@
 
 >**getAllocatedMemory()**
 
-## Description
+#### Description
 
 Function to obtain the number of bytes which have been allocated to the script in the memory.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the number of bytes which have been allocated to the script in the memory.
 
-## Example
+#### Example
 
 ```lua
 -- Print the number of bytes which have been allocated to the script in the memory.

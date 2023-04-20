@@ -4,19 +4,19 @@
 
 >**getUsedVoicesOfSlot()**
 
-## Description
+#### Description
 
 Function to obtain the number of used voices of the slot in which a program is loaded.
 
->If the initiation of a zone and the call of getUsedVoicesOfSlot happen in the same audio block, the voice count which is returned might not be up-to-date. To prevent this, wait for the next audio block before calling this function.
+{{#include _getUsedVoices-note.md}}
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the number of used voices of the corresponding slot.
 
-## Example
+#### Example
 
 ```lua
 -- Print the number of used voices of the slot.

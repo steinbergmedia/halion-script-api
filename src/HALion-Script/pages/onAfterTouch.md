@@ -4,28 +4,28 @@
 
 >**onAfterTouch(event)**
 
-## Description
+#### Description
 
 This callback function is called when the script module receives a channel aftertouch event.
 
->If the script doesn't implement onAfterTouch, all aftertouch events will be passed on to [onController](./onController.md).
+>&#10069; If the script doesn't implement onAfterTouch, all aftertouch events will be passed on to [onController](./onController.md).
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|[Event](./Event.md) object of the type controller.|[Event](./Event.md)|
 
-## Fields
+#### Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.type**|The type of event (3 = controller). See [Event Types](./Event-Types.md) for details.|number|
 |**.value**|The aftertouch value in the range of 0 to 127.|number|
 
-## Example
+#### Example
 
 ```lua
 -- Print the aftertouch value.

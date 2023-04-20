@@ -4,15 +4,15 @@
 
 >**fade(noteID, startValue, targetValue, duration, killVoice)**
 
-## Description
+#### Description
 
 Function to fade the volume of a specific note. The fade is performed from the start to the target value with the specified duration in milliseconds and affects all voices that are triggered by the note. You can start a fade from the current value of a running fade by setting the start value to ``nil``. You can kill the triggered voices if the target value is reached by setting ``killVoice`` to ``true``. The fade is applied in addition to any changes from [changeVolume](./changeVolume.md), [changeVolumedB](./changeVolumedB.md) and [changeNoteExpression](./changeNoteExpression.md).
 
->If you start a fade from the current value of a running fade that has not reached its target value yet, the duration of this fade will be shorter. See the second example below for details.
+>&#10069; If you start a fade from the current value of a running fade that has not reached its target value yet, the duration of this fade will be shorter. See [Example 2](#example-2) for details.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
@@ -22,10 +22,11 @@ Function to fade the volume of a specific note. The fade is performed from the s
 |**duration**|The length of the fade in milliseconds. The target value is set instantaneously if this is set to <= 0.|number|
 |**killVoice**|Set this to ``true`` to kill the note when the target value is reached. The default is ``false``.|boolean|
 
-## Examples
+#### Example 1
 
 ```lua
 -- Simple fade out with kill voice.
+
 function onNote(event)
     id = playNote(event.note, 100, 0) -- The fades affect all voices that are triggered by this note.
     fade(id, nil, 0.0, 1000, true)    -- Start to fade out.
@@ -34,9 +35,11 @@ function onRelease(event)
     -- postEvent(event), not used.
 end
 ```
+#### Example 2
 
 ```lua
 -- Play note, then fade out and in and kill the triggered voices.
+
 function onNote(event)
   id = playNote(event.note, 100, 0) -- The fades affect all voices that are triggered by this note.
   fade(id, 1.0, 0.0, 1000)          -- Start to fade out.

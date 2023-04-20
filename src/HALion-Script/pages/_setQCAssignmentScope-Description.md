@@ -10,12 +10,6 @@ Function to set the scope for the specified quick control assignment. The quick 
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-
-
-#### Fields
-
-|Field|Description|Value Type|
-|:-|:-|:-|
 |**qc**|The index of the quick control.|number|
 |**assignments**|The index of the quick control assignment.|number|
 |**scope**|The [Element](./Element.md) object to be used as scope.|[Element](./Element.md)|

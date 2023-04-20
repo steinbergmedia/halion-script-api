@@ -4,20 +4,19 @@
 
 >**getUsedVoices()**
 
-## Description
+#### Description
 
 Function to obtain the number of used voices of the plug-in instance.
 
->
-If the initiation of a zone and the call of getUsedVoices happen in the same audio block, the voice count which is returned might not be up-to-date. To prevent this, wait for the next audio block before calling this function.
+{{#include _getUsedVoices-note.md}}
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns the number of used voices of the plug-in instance.
 
-## Example
+#### Example
 
 ```lua
 -- Print the number of used voices of the plug-in.

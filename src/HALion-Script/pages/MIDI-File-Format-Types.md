@@ -2,7 +2,7 @@
 
 # MIDI File Format Types
 
-## Description
+#### Description
 
 Enumerator to identify the different MIDI file formats.
 
@@ -11,18 +11,18 @@ Enumerator to identify the different MIDI file formats.
 
 MidiFileFormat.singleMultiChannelTrack refers to format 0 and MidiFileFormat.simultaneousTracks to format 1.
 
->Format 2 is seldomly used and therefore not supported.
+>&#10069; Format 2 is seldomly used and therefore not supported.
 
 **Available in:** Controller.
 
-## MIDI File Format Types
+#### MIDI File Format Types
 
 |Index|Name|
 |:-|:-|
 |0|MidiFileFormat.singleMultiChannelTrack|
 |1|MidiFileFormat.simultaneousTracks|
 
-## Example
+#### Example
 
 To explore the following script:
 
@@ -33,7 +33,9 @@ To explore the following script:
 
 ```lua
 -- Detect the format of the MIDI files.
+
 midiseq = {}
+
 midiseq[1] = readMidiFile("c:/temp/Format 0.mid")
 midiseq[2] = readMidiFile("c:/temp/Format 1.mid") --[[ please set the file path to the location
                                                        of the files on your system before you run

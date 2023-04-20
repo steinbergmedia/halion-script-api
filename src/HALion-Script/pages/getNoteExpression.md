@@ -4,24 +4,24 @@
 
 >**getNoteExpression(noteID, type)**
 
-## Description
+#### Description
 
 Function to read the current value of a note expression of a specific note.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**noteID**|The note ID of the associated note.|number|
 |**type**|The note expression type. It can be determined via names or indices. See [Note Expression Types](./Note-Expression-Types.md) for a description of the types, names and indices.|enum or number|
 
-## Return Values
+#### Return Values
 
 Returns the current value of the note expression determined by the arguments. The function returns -1 if the value of the note expression has not been set yet.
 
-## Example
+#### Example
 
 ```lua
 -- Print the current value of the volume and pan note expressions.

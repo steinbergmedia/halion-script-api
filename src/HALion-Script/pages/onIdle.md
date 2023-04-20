@@ -4,12 +4,12 @@
 
 >**onIdle()**
 
-## Description
+#### Description
 
 This callback function is called periodically if the script is idle. Use this to monitor the progress of load operations, for example.
 
 **Available in:** Controller.
 
-## Example
+#### Example
 
 {{#include ./_loadPresetAsync-Example.md}}

@@ -4,13 +4,13 @@
 
 >**changeNoteExpression(noteID, type, value, relative, immediateOrDuration)**
 
-## Description
+#### Description
 
 Function to change the note expression of a specific note.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
@@ -20,10 +20,11 @@ Function to change the note expression of a specific note.
 |**relative**|The value is added to the current amount if this is set to ``true``. The default setting is false.|boolean, optional|
 |**immediateOrDuration**|Change the value immediately or in the specified duration. Set this to ``true`` to change the value immediately without controller smoothing``.`` Set a duration in milliseconds to change the value with controller smoothing in the specified time. If not set, this setting defaults to ``false`` and the controller smoothing setting in the **Options** editor is used.|boolean or number, optional|
 
-## Example
+#### Example
 
 ```lua
 -- Transform continuous controllers into note expression.
+
 local ids = {}
  
 function onNote(event)
@@ -37,24 +38,25 @@ function onNote(event)
 end
  
 function onController(event)
-  -- volume controller
-  if event.controller == 7 then
+  
+  if event.controller == 7 then -- volume controller
     for i,v in ipairs(ids) do
         changeNoteExpression(v, NoteExpressionType.volume, event.value/127)
     end
   end
-  -- pan controller
-  if event.controller == 10 then
+  
+  if event.controller == 10 then -- pan controller
     for i,v in ipairs(ids) do
         changeNoteExpression(v, NoteExpressionType.pan, event.value/127)
     end
   end
-  -- pitch bend
-  if event.controller == 129 then
+  
+  if event.controller == 129 then -- pitch bend
     for i,v in ipairs(ids) do
         changeNoteExpression(v, NoteExpressionType.tuning, (event.value/8191) * 0.5 + 0.5)
     end
   end
+
 end
 ```
 

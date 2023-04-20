@@ -1,0 +1,1 @@
+>&#10069; The value range is always 0 to 100 %, even if the mode of the quick control assignment is set to Relative or Switch Relative.

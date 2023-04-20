@@ -2,13 +2,13 @@
 
 # Quick Control Assignment Modes
 
-## Description
+#### Description
 
 Enumerator to identify the different quick control assignment modes.
 
 **Available in:** Controller.
 
-## Quick Control Assignment Modes
+#### Quick Control Assignment Modes
 
 |Index|Name|
 |:-|:-|
@@ -17,7 +17,7 @@ Enumerator to identify the different quick control assignment modes.
 |3|QCAssignmentMode.switch|
 |4|QCAssignmentMode.switchRelative|
 
-## Example
+#### Example
 
 ```lua
 -- Print the mode of the qc assignment.

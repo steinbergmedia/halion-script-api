@@ -19,7 +19,9 @@ Returns the [ParameterDefinition](./ParameterDefinition.md) object for the speci
 #### Example
 
 ```lua
--- Print the parameter definition with corresponding data type of the parent layer's level parameter.
+-- Print the parameter definition with corresponding
+-- data type of the parent layer's level parameter.
+
 function onLoadIntoSlot()
   
     local def = this.parent:getParameterDefinition("Level")

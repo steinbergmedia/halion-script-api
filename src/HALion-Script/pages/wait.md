@@ -4,21 +4,21 @@
 
 >**wait(ms)**
 
-## Description
+#### Description
 
 Function to suspend the execution of a callback for a specific time in milliseconds.
 
->If the wait function is used in the Controller thread, it operates at a lower rate and is therefore less accurate.
+>&#10069; If the wait function is used in the Controller thread, it operates at a lower rate and is therefore less accurate.
 
 **Available in:** Controller, Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**ms**|Time in ms.|number|
 
-## Example
+#### Example
 
 ```lua
 -- Delay notes which have not been released for 1000 ms.

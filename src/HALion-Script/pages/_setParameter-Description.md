@@ -17,6 +17,7 @@ Function to set the value of a parameter. The parameter can be determined by nam
 
 ```lua
 -- Set the value of the Level parameter of the parent layer.
+
 function onLoadIntoSlot()
     this.parent:setParameter("Level", 0) -- Set via name.
     this.parent:setParameter(38, 0) -- Set via ID.

@@ -10,11 +10,14 @@ Function to remove an element in the **Program Tree** from the parent element. T
 
 ```lua
 -- Remove the second child element.
+
 childs = this.program:findChildren(true)
 if childs[2] then
     childs[2]:removeFromParent()
 end
+
 -- Remove the program bus.
+
 bus = this.program:getBus("Program-Bus")
 if bus then
     bus:removeFromParent()

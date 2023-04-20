@@ -4,17 +4,17 @@
 
 >**getMsTime()**
 
-## Description
+#### Description
 
 Function to obtain the current song position in milliseconds.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 When the host is in playback, the function returns a decimal with the milliseconds since the start of the song. The start of the song equals 0 ms. The function returns -1 if the host is not in playback.
 
 
-## Example
+#### Example
 
 ```lua
 -- Print the song position in milliseconds.

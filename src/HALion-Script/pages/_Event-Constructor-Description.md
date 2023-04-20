@@ -16,7 +16,7 @@ Constructor to create a new [Event](./Event.md) object of the specified type.
 
 Returns a new [Event](./Event.md) object of the specified type.
 
->The fields of the [Event](./Event.md) object must be set after its creation.
+>&#10069; The fields of the [Event](./Event.md) object must be set after its creation.
 
 #### Example
 

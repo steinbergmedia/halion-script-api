@@ -2,15 +2,15 @@
 
 # Controller Numbers
 
-## Description
+#### Description
 
 Continuous controller events are determined by their controller number. Controller numbers from 0 to 127 follow the MIDI specification. Controller numbers above 127 are additional controllers that are specific to HALion.
 
->To limit a function to the continuous controllers of the MIDI specification, use an if statement. See example below.
+>&#10069; To limit a function to the continuous controllers of the MIDI specification, use an if statement. See example below.
 
 **Available in:** Processor.
 
-## Additional Controllers
+#### Additional Controllers
 
 Controllers like aftertouch, pitch bend and other special controllers are determined by controller numbers above 127.
 
@@ -42,18 +42,10 @@ Controllers like aftertouch, pitch bend and other special controllers are determ
 |151|RPN Tuning Bank Select|
 |152|RPN Modulation Depth Range|
 
->The function [onController](./onController.md) will not be called by controllers 138 to 146. They are reserved for the polyphonic sources note-on velocity and note expression custom 1-8. You can use the callback functions [onNote](./onNote.md) and [onNoteExpression](./onNoteExpression.md) instead.
+>&#10069; The function [onController](./onController.md) will not be called by controllers 138 to 146. They are reserved for the polyphonic sources note-on velocity and note expression custom 1-8. You can use the callback functions [onNote](./onNote.md) and [onNoteExpression](./onNoteExpression.md) instead.
 
-## Example
+#### Example
 
-```lua
--- Exclude MIDI mode messages and other special controllers.
-function onController(event)
-    if event.controller < 120 then
-        print("Controller #: "..event.controller..", Value: "..event.value)
-        postEvent(event)
-    end
-end
-```
+{{#include _onController-Example.md}}
 
 **See also:**  [onController](./onController.md), [controlChange](./controlChange.md), [getCC](./getCC.md)

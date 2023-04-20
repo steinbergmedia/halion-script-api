@@ -2,13 +2,13 @@
 
 # MIDI Sequence Table
 
-## Description
+#### Description
 
 MIDI Files are managed through a special predefined table: the MIDI sequence table. This table allows you to change values and add or remove notes like with normal Lua tables, but the structure of that table must remain as defined below.
 
 **Available in:** Controller.
 
-## MIDI Sequence Fields
+#### MIDI Sequence Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -20,14 +20,14 @@ MIDI Files are managed through a special predefined table: the MIDI sequence tab
 |**.songname**|The name of the song.|string|
 |**.tracks**|The tracks of the MIDI file as an array with the index starting at 1. Name, channel and event are separate fields of that table (see Tracks Table below).|table|
 
-## Signature Table
+#### Signature Table
 
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.numerator**|The numerator of the time signature. The default is 4.|number|
 |**.denominator**|The denominator of the time signature. The default is 4.|number|
 
-## Tracks Table
+#### Tracks Table
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -35,7 +35,7 @@ MIDI Files are managed through a special predefined table: the MIDI sequence tab
 |**.channel**|The MIDI channel of the track. The default is 1.|number|
 |**.events**|The events of the track as an array with the index starting at 1. The events are stored as Event objects.|table|
 
-## Example
+#### Example
 
 To explore the following script:
 
@@ -46,15 +46,18 @@ To explore the following script:
 
 ```lua
 -- Read information from a MIDI file.
+
 midiseq = readMidiFile("c:/temp/C Major Scale.mid") --[[ please set the file path to the location
                                                          of the file on your system before you run
                                                          the script ]]
 -- Information from the header chunk.
+
 print("Standard MIDI File Format:", midiseq.format)
 print("SMPTE:", midiseq.smpteformat)
 print("Division:", midiseq.division)
  
 -- Information from the track chunk.
+
 print("Tempo:", midiseq.tempo)
 print("Signature:", midiseq.signature.numerator, "/", midiseq.signature.denominator)
 print("Song Name:", midiseq.songname)

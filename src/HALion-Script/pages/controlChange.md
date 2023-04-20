@@ -4,25 +4,26 @@
 
 >**controlChange(controller, value)**
 
-## Description
+#### Description
 
 Function to generate controller events.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**controller**|The controller number. See [Controller Numbers](./Controller-Numbers.md) for a description of the different controllers.|number|
 |**value**|The controller value in the range of 0 to 127.|number|
 
-## Example
+#### Example
 
 ```lua
--- Invert values of all MIDI controllers.
+-- Invert the values of all MIDI controllers.
+
 function onController(event)
-    if event.controller < 128 then
+    if event.controller < 120 then
         controlChange(event.controller, 127 - event.value)
     else
         postEvent(event) -- Other controllers are just passed through.

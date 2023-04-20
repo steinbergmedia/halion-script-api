@@ -2,13 +2,13 @@
 
 # Modulation Source Types
 
-## Description
+#### Description
 
 Enumerator to identify the different modulation sources.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Index|source|sourceInfo1|sourceInfo2|Comment|
 |:-|:-|:-|:-|:-|
@@ -55,7 +55,7 @@ Enumerator to identify the different modulation sources.
 |40|-|-|-||
 |41|ModulationSource.sampleAndHold|Index of the S&H (0 - 5).|-|Source 2 only.|
 
-## Example
+#### Example
 
 {{#include ./_ModulationSourceTypes-Example.md}}
 

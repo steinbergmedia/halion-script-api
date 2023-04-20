@@ -4,7 +4,7 @@
 
 Function to assign the output of a zone or bus to the specified output bus. The sending zone or bus is determined by its [Element](./Element.md) object. The receiving output bus is specified by its [Bus](./Bus.md) object. Setting the output bus to ``nil`` enables the default signal routing for the zone or bus.
 
->Output busses that are higher up in the hierarchy of the **Program Tree** can be assigned freely. If the sending bus and the receiving output bus have the same parent layer, the output bus must come later in the signal flow.
+>&#10069; Output busses that are higher up in the hierarchy of the **Program Tree** can be assigned freely. If the sending bus and the receiving output bus have the same parent layer, the output bus must come later in the signal flow.
 
 **Available in:** Controller.
 
@@ -18,6 +18,7 @@ Function to assign the output of a zone or bus to the specified output bus. The 
 
 ```lua
 -- Assign the output of the zone to the Master output bus of the plug-in.
+
 zone = this.parent:getZone()
 masterbus = this.program.instance:getBus(1)
  

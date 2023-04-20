@@ -4,20 +4,21 @@
 
 >**calcModulation()**
 
-## Description
+#### Description
 
 Function to generate the modulation signals that have been defined with [defineModulation](./defineModulation.md). The function is executed every 32 samples.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns one or more modulation signals. Multiple modulation signals can be returned as a tuple or as a table. If the modulation is defined as unipolar, the signal must be in the range from 0.0 to 1.0. If the modulation is defined as bipolar, the signal must be in the range from -1.0 to 1.0.
 
-## Examples
+#### Examples
 
 ```lua
 -- Modulation signals returned as tuple.
+
 freq = 1
 phase = 0
 pi = math.pi
@@ -38,6 +39,7 @@ end
 
 ```lua
 -- Modulation signals returned as table.
+
 freq = 1
 phase = 0
 pi = math.pi

@@ -4,24 +4,24 @@
 
 >**waitBeat(beats)**
 
-## Description
+#### Description
 
 Function to suspend the execution of a callback for a specific time. This time is specified in number of beats. One beat equals the length of a quarter note based on the current tempo.
 
->If the waitBeat function is used in the Controller thread, it operates at a lower rate and is therefore less accurate.
+>&#10069; If the waitBeat function is used in the Controller thread, it operates at a lower rate and is therefore less accurate.
 
 **Available in:** Controller, Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**beats**|Time in number of quarter notes and fractions of it.|number|
 
-## Example
+#### Example
 
 ```lua
--- Change tuning cyclically after one beat.
+-- Change tuning periodically after one beat.
 
 function onNote(event)
   local id = postEvent(event)

@@ -4,7 +4,7 @@
 
 >**onLoadSubPreset(section, data)**
 
-## Description
+#### Description
 
 This callback function is called when loading a subpreset with a corresponding [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template. The callback will only be called if the scope of the [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template is set correctly.
 
@@ -13,18 +13,18 @@ This callback function is called when loading a subpreset with a corresponding [
 
 In addition, the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template allows you to define a section for the subpreset. When you load a subpreset, the defined section and the data stored in the subpreset will be passed on to the callback. The data is the same data that was returned by [onSaveSubPreset](./onSaveSubPreset.md) when the subpreset was saved. You can manage different subsets of parameters by using the section as condition for an ``if`` statement that restores only the parameters of interest.
 
->Scope and section are template parameters. You can set them in the MacroPage Designer on the properties pane of the [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) and [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) templates.
+{{#include _onLoad-onSaveSubPreset-Note.md}}
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**section**|The section as defined in the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.|string|
 |**data**|The data that was returned by [onSaveSubPreset](./onSaveSubPreset.md).||
 
-## Example
+#### Example
 
 {{#include ./_onLoadSaveSubPreset-Example.md}}
 

@@ -4,16 +4,17 @@
 
 >**onLoadIntoSlot()**
 
-## Description
+#### Description
 
 This callback function is called when the program is loaded into the Slot Rack. Any global statements are executed in advance. [onInit](./onInit.md) is called after onLoadIntoSlot.
 
 **Available in:** Controller.
 
-## Example
+#### Example
 
 ```lua
 -- Print a message when loading the program into the slot rack.
+
 function onLoadIntoSlot()
    print('"Hello" from the Slot Rack.')
 end

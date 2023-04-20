@@ -4,19 +4,19 @@
 
 >**afterTouch(value)**
 
-## Description
+#### Description
 
 Function to generate channel aftertouch events.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**value**|The aftertouch value in the range of 0 to 127.|number|
 
-## Example
+#### Example
 
 ```lua
 -- Invert aftertouch values.

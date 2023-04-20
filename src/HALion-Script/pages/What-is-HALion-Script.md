@@ -41,7 +41,7 @@ HALion Script uses [Lua 5.2.3](https://www.lua.org/manual/5.2/) with the followi
 * [bitwise operations](https://www.lua.org/manual/5.2/manual.html#6.7)
 * [debug facilities](https://www.lua.org/manual/5.2/manual.html#6.10)
 
-> The standard libraries [coroutine](https://www.lua.org/manual/5.2/manual.html#6.2), [io](https://www.lua.org/manual/5.2/manual.html#6.8) and [os](https://www.lua.org/manual/5.2/manual.html#6.9) are not supported.
+>&#10069; The standard libraries [coroutine](https://www.lua.org/manual/5.2/manual.html#6.2), [io](https://www.lua.org/manual/5.2/manual.html#6.8) and [os](https://www.lua.org/manual/5.2/manual.html#6.9) are not supported.
 
 {{#include ./_HALion-Script-Reference.md}}
 

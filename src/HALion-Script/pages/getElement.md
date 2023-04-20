@@ -4,19 +4,19 @@
 
 >**getElement()**
 
-## Description
+#### Description
 
 Function to obtain the [Element](./Element.md) object of an element that has a macro page. If you call this function in the [UI script](./Working-with-UI-Scripts.md) of a macro page, the [Element](./Element.md) object of the element to which the macro page is attached will be returned. Depending on the element, the returned object can be of the type program, layer, or MIDI module, for example.
 
->This function can only be called in an [UI script](./Working-with-UI-Scripts.md).
+>&#10069; This function can only be called in an [UI script](./Working-with-UI-Scripts.md).
 
 **Available in:** UI.
 
-## Return Values
+#### Return Values
 
 Returns the [Element](./Element.md) object of the element to which the macro page is attached.
 
-## Example
+#### Example
 
 ```lua
 -- Must be executed as UI script!

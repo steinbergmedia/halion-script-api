@@ -4,19 +4,19 @@
 
 >**onRelease(event)**
 
-## Description
+#### Description
 
 This callback function is called when the script module receives a note-off event.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |event|[Event](./Event.md) object of the type noteOff.|[Event](./Event.md)|
 
-## Fields
+#### Fields
 
 Note-off events use the following fields of the [Event](./Event.md) object.
 
@@ -27,7 +27,7 @@ Note-off events use the following fields of the [Event](./Event.md) object.
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-off velocity in the range of 0 to 127.|number|
 
-## Example
+#### Example
 
 ```lua
 -- Print all held notes.

@@ -4,19 +4,19 @@
 
 >**onUnhandledEvent(event)**
 
-## Description
+#### Description
 
 This callback function is called when the script module receives an event that is not handled by the specific event callback functions, e.g., [onNote](./onNote.md), [onRelease](./onRelease.md), [onController](./onController.md) and [onNoteExpression](./onNoteExpression.md). If none of the specific callback functions are defined, onUnhandledEvent will receive all incoming events.
 
 **Available in:** Processor.
 
-## Arguments
+#### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|The [Event](./Event.md) object.|[Event](./Event.md)|
 
-## Example
+#### Example
 
 ```lua
 -- Print unhandled events.

@@ -17,17 +17,18 @@ function printLastNotes(callbackName)
 end
   
 -- Play some notes to fill the table.
+
 function onNote(event)
     postEvent(event)
     table.insert(lastNotes, 1, {noteNumber = event.note, velocity = event.velocity})
-    -- store maximum three notes
-    if #lastNotes > 3 then
+    if #lastNotes > 3 then -- Store maximum three notes.
         table.remove(lastNotes)
     end
     printLastNotes("onNote")
 end
   
 -- This will be called when the program is saved.
+
 function onSave()
     local data = {}
     data.lastNotes = lastNotes
@@ -36,6 +37,7 @@ function onSave()
 end
   
 -- This will be called when the program is restored.
+
 function onLoad(data)
     lastNotes = data.lastNotes -- Read the values from the data table.
     printLastNotes("onLoad")

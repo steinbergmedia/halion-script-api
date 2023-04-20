@@ -4,17 +4,17 @@
 
 >**getProductVersion()**
 
-## Description
+#### Description
 
 Function to retrieve the version of the plug-in.
 
 **Available in:** Controller, Processor.
 
-## Return Values
+#### Return Values
 
 Returns a string with the version of the plug-in.
 
-## Example
+#### Example
 
 ```lua
 -- Print the version of the plug-in.

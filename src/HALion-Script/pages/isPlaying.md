@@ -4,20 +4,21 @@
 
 >**isPlaying()**
 
-## Description
+#### Description
 
 Function to detect whether the host is in playback.
 
 **Available in:** Processor.
 
-## Return Values
+#### Return Values
 
 Returns ``true`` if the host is in playback and ``false`` if not.
 
-## Example
+#### Example
 
 ```lua
 -- Detect if the host is in playback.
+
 function onNote(event)
     if isPlaying() then
         print("Playback is running.")

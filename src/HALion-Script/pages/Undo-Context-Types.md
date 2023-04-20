@@ -2,13 +2,13 @@
 
 # Undo Context Types
 
-## Description
+#### Description
 
 Enumerator to identify the undo context.
 
 **Available in:** Controller.
 
-## Arguments
+#### Arguments
 
 |Index|Undo Context|
 |:-|:-|

@@ -2,7 +2,7 @@
 
 # Modulation Destination Types
 
-## Description
+#### Description
 
 Enumerator to identify the modulation destinations.
 
@@ -138,10 +138,11 @@ Enumerator to identify the modulation destinations.
 |125|ModulationDestination.wavetable1FormantShift|
 |126|ModulationDestination.wavetable2FormantShift|
 
-## Example
+#### Example
 
 ```lua
 -- Define modulation destinations.
+
 defineSlotLocal("modDestinations")
 modDestinations = {
             { name = "-",           index = ModulationDestination.unassigned },
@@ -152,6 +153,7 @@ modDestinations = {
             }
  
 -- Create a table with the names of the modulation destinations.
+
 function getModDestNames()
     modDestNames = {}
     for i=1, #modDestinations do
@@ -161,6 +163,7 @@ end
 getModDestNames()
  
 -- Parameter change callback to set the modulation destination.
+
 function onModDestChanged(row, modDestinationParam)
     local modRow = this.parent:getZone():getModulationMatrixRow(row)
     local modDestination = modDestinations[modDestinationParam]
@@ -168,6 +171,7 @@ function onModDestChanged(row, modDestinationParam)
 end
  
 -- Define parameters for modulation matrix destinations 1-4.
+
 defineParameter("ModDestination1", "Modulation Destination 1",  1, modDestNames, function() onModDestChanged(1,  ModDestination1)  end)
 defineParameter("ModDestination2", "Modulation Destination 2",  1, modDestNames, function() onModDestChanged(2,  ModDestination2)  end)
 defineParameter("ModDestination3", "Modulation Destination 3",  1, modDestNames, function() onModDestChanged(3,  ModDestination3)  end)

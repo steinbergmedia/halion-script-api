@@ -15,7 +15,7 @@ Function to retrieve the curve value of the specified quick control assignment. 
 
 #### Return Values
 
-Returns the curve value of the specified quick control assignment. The value range is -100 % to +100 %.
+Returns the curve value of the specified quick control assignment. The value range is -100% to +100%.
 
 #### Example
 

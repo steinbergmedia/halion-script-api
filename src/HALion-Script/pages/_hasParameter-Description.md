@@ -20,6 +20,7 @@ Returns ``true`` if the parameter exists or ``false`` if not.
 
 ```lua
 -- Check if the elements in the Program Tree have filter cutoff.
+
 function onLoadIntoSlot()
     childs = this.program:findChildren(true)
     for i, child in ipairs(childs) do

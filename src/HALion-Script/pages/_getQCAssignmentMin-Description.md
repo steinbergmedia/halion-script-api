@@ -15,7 +15,9 @@ Function to retrieve the minimum value of the specified quick control assignment
 
 #### Return Values
 
-Returns the minimum value of the specified quick control assignment. The value range is always 0 to 100 %, even if the mode of the quick control assignment is set to Relative or Switch Relative.
+Returns the minimum value of the specified quick control assignment.
+
+{{#include _QCAssignmentMinMax-Note.md}}
 
 #### Example
 
