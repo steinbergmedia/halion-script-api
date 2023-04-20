@@ -20,7 +20,9 @@ Function to add a quick control assignment to the specified layer and quick cont
 #### Example
 
 ```lua
--- Assign the octave parameter of the zone to the first quick control of the script module's parent layer.
+-- Assign the octave parameter of the zone to the
+-- first quick control of the script module's parent layer.
+
 layer = this.parent
 zones = layer:findZones(true)
  

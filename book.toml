@@ -20,6 +20,7 @@ max-level = 3
 
 [output.html]
 no-section-label = true
+additional-css = ["./theme/css/custom.css"]
 
 [output.html.fold]
 enable = true

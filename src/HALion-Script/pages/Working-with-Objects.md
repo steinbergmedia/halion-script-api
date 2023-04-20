@@ -31,9 +31,9 @@ The Lua Script MIDI module itself can be addressed with ``this``. Further object
 
 |Syntax|Object|Class|
 |:-|:-|:-|
-|this|Returns the object of the script module itself.|[MidiModule](./MidiModule.md|
-|this.parent|Returns the object of the parent element, which can be a Layer or the Program.|[Layer](./Layer.md) or [Program](./Program.md|
-|this.program|Returns the object of the Program.|[Program](./Program.md|
+|this|Returns the object of the script module itself.|[MidiModule](./MidiModule.md)|
+|this.parent|Returns the object of the parent element, which can be a Layer or the Program.|[Layer](./Layer.md) or [Program](./Program.md)|
+|this.program|Returns the object of the Program.|[Program](./Program.md)|
 
 After addressing an object, you can read its fields through dot-notation. In the following example, the name and the type of different objects are printed with ``.name`` and ``.type``.
 
