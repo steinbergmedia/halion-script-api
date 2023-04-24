@@ -15,6 +15,7 @@ Many of the classes and functions that are are described in the [Class Reference
 
 ```lua
 -- "Hello world!" Lua script
+
 print("Hello world!")
 ```
 The easiest way to explore the code examples is to copy the code to the clipboard and to paste it to the internal script editor of the Lua Script MIDI module. Please read below how to do this.

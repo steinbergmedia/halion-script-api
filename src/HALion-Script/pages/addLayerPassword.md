@@ -20,9 +20,6 @@ Function that gives access to protected layers. By default, protected layers can
 
 #### Example
 
-```lua
--- access the protected layer(s) which have the password "abc123"
-addLayerPassword("abc123")
-```
+{{#include ./_addLayerpassword-Example.md}}
 
 **See also:** [Protecting Layers](./Protecting-Layers.md)
