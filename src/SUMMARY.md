@@ -20,6 +20,8 @@
     - [Protecting Layers](./HALion-Script/pages/Protecting-Layers.md)
     - [Managing Script Modules](./HALion-Script/pages/Managing-Script-Modules.md)
     - [Debugging with LDT](./HALion-Script/pages/Debugging-with-LDT.md)
+- [Updates](./HALion-Script/pages/Updates.md)
+- [Functions by Subject](./HALion-Script/pages/Functions-by-Subject.md)
 - [Class Reference](./HALion-Script/pages/Class-Reference.md)
     - [Audio File](./HALion-Script/pages/Audio-File.md)
     - [Element](./HALion-Script/pages/Element.md)
