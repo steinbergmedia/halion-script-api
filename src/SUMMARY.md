@@ -241,7 +241,6 @@
 - [Controls](./HALion-Macro-Page/pages/Controls.md)
     - [Decor (Control)](./HALion-Macro-Page/pages/Decor-Control.md)
     - [Disable](./HALion-Macro-Page/pages/Disable.md)
-    - [Drag Group](./HALion-Macro-Page/pages/Drag-Group.md)
     - [Drop](./HALion-Macro-Page/pages/Drop.md)
     - [Group](./HALion-Macro-Page/pages/Group.md)
     - [Image](./HALion-Macro-Page/pages/Image.md)
