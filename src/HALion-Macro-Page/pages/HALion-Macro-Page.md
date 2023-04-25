@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) /
+
 # HALion Macro Page
 
 In this section of the documentation, you find additional information about macro page editing and a reference to all objects like [Resources](./Resources.md), [Controls](./Controls.md), and [Templates](./Templates.md) used on HALion macro pages.

@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Macro Page](./HALion-Macro-Page.md) / [Controls](./Controls.md) /
+
 # Label
 
 ### Description
@@ -13,4 +15,4 @@ Labels are intended to display text that names controls like knobs, text fields,
 |**Attach**|<ul><li>**Left:** If the parent is resized, the control remains attached to left edge, with the specified ratio.</li><li>**Right:** If the parent is resized, the control moves relatively to the right edge, with the specified ratio.</li><li>**Top:** If the parent is resized, the control remains attached to top edge, with the specified ratio.</li><li>**Bottom:** If the parent is resized, the control moves relatively to the bottom edge, with the specified ratio.</li><li>**Left + Right:** If the parent is resized, the control is resized horizontally relatively to the left and right edges, with the specified ratio.</li>|<li>**Top + Bottom:** If the parent is resized, the control is resized vertically relatively to the top and bottom edges, with the specified ratio.</li></ul>|
 |**Tooltip**|Text that appears as a tooltip when the mouse hovers over the element.|
 |**Font**|Allows you to select which font resource to be used to display the text.|
-|**Alignment**|</ul><li>**Left:** Aligns the text to the left side.</li><li>**Right:** Aligns the text to the right side.</li><li>**Center H:** Aligns the text to the horizontal center.</li><li>**Top:** Aligns the text to the top.</li><li>**Bottom:** Aligns the text to the bottom.</li><li>**Center V:** Aligns the text to the vertical center.</li></ul>|
+|**Alignment**|<ul><li>**Left:** Aligns the text to the left side.</li><li>**Right:** Aligns the text to the right side.</li><li>**Center H:** Aligns the text to the horizontal center.</li><li>**Top:** Aligns the text to the top.</li><li>**Bottom:** Aligns the text to the bottom.</li><li>**Center V:** Aligns the text to the vertical center.</li></ul>|

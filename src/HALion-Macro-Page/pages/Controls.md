@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Macro Page](./HALion-Macro-Page.md) /
+
 # Controls
 
 A control is a basic element, like a text field, menu, switch, knob, etc., that can be added to a macro page. Controls have properties for their behavior and their appearance. Depending on the type of control, they can be directly connected to engine and script parameters or have a display functionality. Most controls use resources like bitmaps, sections and fonts to define their graphical appearance.
