@@ -14,7 +14,7 @@ The Drop control allows you to create an area where you can drop objects, like f
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}
-|**Value**|Allows you to connect a parameter. Value expects either a string or a path.|
+|**Value**|Allows you to connect a parameter that receives the string or the path.|
 |**Style**|<ul><li>**Path:** Set this option if you want to accept path objects.</li><li>**String:** Set this option if you want to accept string objects.</li><li>**Scalable:** Activate this option if you want to be able to resize the drop control. In that case, the assigned bitmap resources are resized according to the scale mode that is defined for the bitmap resource.</li></ul>|
 |**Bitmap**|Allows you to assign a bitmap resource that is displayed permanently.|
 |**Reject Bitmap**|Allows you to assign a bitmap resource that is displayed if an object cannot be dropped.|

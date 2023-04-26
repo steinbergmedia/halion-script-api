@@ -14,7 +14,7 @@ The Disable control allows you to put all child controls out of function. To ref
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}
-|**Value**|Drag and drop a parameter from the **Parameter List** to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
+{{#include ./_Value.md}}
 |**Enable**|Activate this option if you want to enable the control for the specified values.|
 |**Hide**|Activate this option if you want to hide the control for the specified values.|
 |**0-31**|Activate the values for which the you want to disable (or enable, depending on the mode) the control.|

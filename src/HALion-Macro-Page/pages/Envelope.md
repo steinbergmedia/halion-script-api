@@ -61,5 +61,49 @@ In addition to standard properties like size, position, etc., the envelope view 
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}
+|**Style**|<ul><li>**Bipolar:** Activate this style for bipolar envelopes like pitch or pan.</li><li>**Scrollbar:** If this is active, the view can be scrolled and zoomed.</li><li>**Cross:** Shows a cross line when editing nodes.</li><li>**Grid:** Shows a time grid.</li><li>**Play Pos:** Shows the current playback position on the curve.</li><li>**Nodes:** Shows nodes.</li><li>**Add/Rem:** Allows adding and removing of nodes. Deactivate this option to provide an ADSR envelope with a fixed number of nodes, for example.</li><li>**Sel Nod:** Allows you to select a node.</li><li>**Sustain:** Shows a sustain line. For this, a mode with sustain must be active.</li><li>**Loop:** Shows a graphical frame overlay for the loop region. For this, the Envelope mode must be switched to Loop.</li><li>**Free End:** Allows you to move the last node of a unipolar envelope away from the 0-line.</li></ul>|
+|**Env Value**|Exported to the template (see template parameters above).|
+|**Mode**|Exported to the template (see template parameters above).|
+|**Sync**|Exported to the template (see template parameters above).|
+|**Triplet**|Exported to the template (see template parameters above).|
+|**SyncNote**|Connected using @syncnote variable.|
+|**Fixed**|Connected using @fixed variable.|
+|**Index**|Connected using @index variable.|
+|**Level**|Connected using @level variable.|
+|**Time**|Connected using @time variable.|
+|**Beat**|Connected using @beat variable.|
+|**Curve**|Connected using @curve variable.|
+|**Loop Start**|Exported to the template (see template parameters above).|
+|**Loop End**|Exported to the template (see template parameters above).|
+|**Sustain**|Exported to the template (see template parameters above).|
+**Play Pos**|Exported to the template (see template parameters above).|
+|**Min X**|The minimal horizontal zoom value.|
+|**Max X**|The maximum horizontal zoom value.|
+|**Min Y**|The minimal vertical zoom value.|
+|**Max Y**|The maximum vertical zoom value.|
 
+#### Colors
 
+|Poperty|Description|
+|:-|:-|
+|**Line**|Curve line.|
+|**Fill**|Fill color of the nodes.|
+|**FillSelected**|Fill color of selected nodes (only used if "Sel Node" style is active).|
+|**FrameFocus**|Focused node frame.|
+|**Frame**|Node frame.|
+|**Hover**|Hover frame.|
+|**Sustain**|Sustain line (only used if "Sustain" style is active).|
+|**Synced**|Dot color of nodes that are snapped to a sync grid position (only used if Sync is active).|
+|**Crosshair**|Node edit crosshair (only used if "Crosshair" style is active).|
+|**Playback**|Playback position indicator.|
+|**Border**|Overall border.|
+|**Grid V**|Main vertical grid (only used if "Grid" style is active).|
+|**Grid V2**|Additional vertical fine grid (only used if "Grid" style is active).|
+|**Grid H**|Main horizontal grid (only used if "Grid" style is active).|
+|**Grid H2**|Additional horizontal fine grid (only used if "Grid" style is active).|
+|**Font**|Scale font.|
+|**SelFrame**|Selection area frame.|
+|**Loop**|Loop area.|
+|**LoopFrame**|Loop area frame.|
+|**Zoom**|Zoom area.|
+|**ZoomFrame**|Zoom area frame.|

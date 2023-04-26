@@ -7,7 +7,6 @@ A template is a group of control elements that is created to be used multiple ti
 All templates  described in this section can be found in the Basic Controls library. Additional templates for knobs, sliders, switches etc. can be found in the Additional Controls library. See [Exploring Templates](./Exploring-Templates.md) how to access templates.
 
 * [About Box](./HALion-Macro-Page/pages/About-Box.md)
-* [Animation Script](./HALion-Macro-Page/pages/Animation-Script.md)
 * [Curve Editor](./HALion-Macro-Page/pages/Curve-Editor.md)
 * [Envelope](./HALion-Macro-Page/pages/Envelope.md)
 * [FlexPhraser](./HALion-Macro-Page/pages/FlexPhraser.md)

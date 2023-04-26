@@ -260,7 +260,6 @@
     - [XY](./HALion-Macro-Page/pages/XY.md)
 - [Templates](./HALion-Macro-Page/pages/Templates.md)
     - [About Box](./HALion-Macro-Page/pages/About-Box.md)
-    - [Animation Script](./HALion-Macro-Page/pages/Animation-Script.md)
     - [Curve Editor](./HALion-Macro-Page/pages/Curve-Editor.md)
     - [Envelope](./HALion-Macro-Page/pages/Envelope.md)
     - [FlexPhraser](./HALion-Macro-Page/pages/FlexPhraser.md)
