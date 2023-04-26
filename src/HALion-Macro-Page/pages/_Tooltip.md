@@ -1,0 +1,1 @@
+|**Tooltip**|Text that appears as a tooltip when the mouse hovers over the element.|

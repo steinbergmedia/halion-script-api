@@ -1,0 +1,1 @@
+|**Alignment**|<ul><li>**Left:** Aligns the text to the left side.</li><li>**Right:** Aligns the text to the right side.</li><li>**Center H:** Aligns the text to the horizontal center.</li><li>**Top:** Aligns the text to the top.</li><li>**Bottom:** Aligns the text to the bottom.</li><li>**Center V:** Aligns the text to the vertical center.</li></ul>|

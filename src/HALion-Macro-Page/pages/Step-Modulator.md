@@ -10,18 +10,18 @@
 
 ---
 
-### Description
+## Description
 
 The Step Modulator is intended to control HALion's step modulator. It provides all necessary properties to be connected to the engine. Furthermore, there are properties for index, level, and level12 of the selected node and a snap option, which only affect the GUI and not the engine. These properties can be connected using UI parameters.
 
-### Properties
+## Properties
 
 |Poperty|Description|
 |:-|:-|
 |**Name**|The name of the Step Modulator.|
-|**Position/Size**|Position and size of the element in pixels. Pos x/y = Position of upper left corner.<p>**Pos x, Pos y, Width, Height.**</p>|
-|**Attach**|<ul><li>**Left:** If the parent is resized, the control remains attached to left edge, with the specified ratio.</li><li>**Right:** If the parent is resized, the control moves relatively to the right edge, with the specified ratio.</li><li>**Top:** If the parent is resized, the control remains attached to top edge, with the specified ratio.</li><li>**Bottom:** If the parent is resized, the control moves relatively to the bottom edge, with the specified ratio.</li><li>**Left + Right:** If the parent is resized, the control is resized horizontally relatively to the left and right edges, with the specified ratio.</li>|<li>**Top + Bottom:** If the parent is resized, the control is resized vertically relatively to the top and bottom edges, with the specified ratio.</li></ul>|
-|**Tooltip**|Text that appears as a tooltip when the mouse hovers over the element.|
+{{#include ./_Position-Size.md}}
+{{#include ./_Attach.md}}
+{{#include ./_Tooltip.md}}
 |**Steps**|The number of steps. This property must be connected to the engine parameter Steps and further display controls.|
 |**Slope**|The Slope Mode. This property must be connected to the engine parameter Slope to show the slope. Connect additional controls, e.g., a menu, to set the slope mode.|
 |**Slope Amnt**|This property must be connected to the engine parameter SlopeAmount to show the slope. Connect additional controls, e.g., a knob, to set the slope.|
@@ -34,7 +34,7 @@ The Step Modulator is intended to control HALion's step modulator. It provides a
 
 [Jump to Top ](#step-modulator)
 
-### UI Variables
+## UI Variables
 
 Create variables to connect the Step Modulator properties with the engine and further controls.
 
@@ -47,7 +47,7 @@ Create variables to connect the Step Modulator properties with the engine and fu
 
 [Jump to Top ](#step-modulator)
 
-### Colors
+## Colors
 
 |Poperty|Description|
 |:-|:-|

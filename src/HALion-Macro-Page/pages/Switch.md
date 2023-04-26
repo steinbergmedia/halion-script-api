@@ -10,19 +10,19 @@
 
 ---
 
-### Description
+## Description
 
 The Switch control allows you to create different types of switches. It can be configured as an on/off switch with two states or as a multi-state switch with an arbitrary number of states. Furthermore, it can be set to Increment or Decrement, to edit values stepwise. To realize exclusive switches that can act as a radio group, Exclusive mode can be selected. In this mode, each switch can be configured to send a dedicated value and all related switches are connected to the same parameter. The Switch control requires several bitmaps, depending on the specified mode and it can be set to scalable, which allows for resizing of the switch. The used bitmaps are resized according to the scale modes that are defined for the respective bitmap resources.
 
-### Properties
+## Properties
 
 |Poperty|Description|
 |:-|:-|
 |**Name**|The name of the Switch.|
-|**Position/Size**|Position and size of the element in pixels. Pos x/y = Position of upper left corner.<p>**Pos x, Pos y, Width, Height.**</p>|
-|**Attach**|<ul><li>**Left:** If the parent is resized, the control remains attached to left edge, with the specified ratio.</li><li>**Right:** If the parent is resized, the control moves relatively to the right edge, with the specified ratio.</li><li>**Top:** If the parent is resized, the control remains attached to top edge, with the specified ratio.</li><li>**Bottom:** If the parent is resized, the control moves relatively to the bottom edge, with the specified ratio.</li><li>**Left + Right:** If the parent is resized, the control is resized horizontally relatively to the left and right edges, with the specified ratio.</li>|<li>**Top + Bottom:** If the parent is resized, the control is resized vertically relatively to the top and bottom edges, with the specified ratio.</li></ul>|
-|**Tooltip**|Text that appears as a tooltip when the mouse hovers over the element.|
-|**Value**|Drag and drop a parameter from the **Parameter List** to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
+{{#include ./_Position-Size.md}}
+{{#include ./_Attach.md}}
+{{#include ./_Tooltip.md}}
+{{#include ./_Value.md}}
 |**Mode**|<ul><li>**Push:** Sends a value of 1 and returns to 0. This mode requires bitmaps for **Bmp Off** and **Bmp On**. If **Hover** is active, an additional bitmap **Bmp Off Hv** is required.</li><li>**OnOff:** Sets a value of 1 when pressed, 0 when pressed again. This mode requires bitmaps for **Bmp Off**, **Bmp Off Dn**, **Bmp On** and **Bmp On Dn**. If **Hover** is active, the additional bitmaps **Bmp Off Hv** and **Bmp On Hov** are required.</li><li>**On:** In this mode, the switch can only be turned on. This mode is used in combination with other switches in radio groups. In this case, only one switch within the radio group can turn off another switch.</li><li>**Multiple:** In this mode, the switch can step through multiple states each time that it is clicked. For each state, the bitmaps must refer to bitmap resources or sections that contain a vertically aligned subframe per state, comparable to an animation sequence, such as the one that is used in knob controls, for example.</li><li>**Increment:** This mode allows you to increment the connected parameter value each time that the switch is clicked.</li><li>**Decrement:** This mode allows you to decrement the connected parameter value each time that the switch is clicked.</li><li>**Exclusive:** This mode allows you to use multiple switches as a radio group where only one switch is active at a time. An additional property allows you to define the value that is sent when the switch is on. To configure a radio group, connect all participating switches to the same parameter and define the **Onvalue** for each switch.</li><li>**Hover:** This mode allows you to switch directly from 0 to max (depending on the connected parameter) when hovering the switch without needing to click it.</li><li>**Hover Exclusive:** This mode allows you to use multiple hover switches as a radio group where only one switch is active at a time. An additional property allows you to define the value that is sent when the switch is on. To configure a radio group, connect all participating switches to the same parameter and define the **Onvalue** for each switch.</li></ul>|
 |**Style**|<ul><li>**Hover:** Shows a dedicated bitmap when hovering the switch. A hover bitmap resource must be assigned.</li><li>**Shaped:** The switch only reacts when you click the visible pixels, i.e., the pixels with an alpha value > 0.</li><li>**Invert:** Inverts the displayed bitmaps.</li><li>**Scalable:** Activate this option if you want to be able to resize the switch. In that case, the assigned bitmap resources are resized according to their set Scale Mode. This also works if the switch is set to **Multiple**. In this case, the margin splitters are defined as for simple bitmaps, but the lower splitter must be set in the lowest subframe.</li><li>**Popup:** This mode allows you to use a switch to open a template as a popup.</li><li>**Clickthrough:** Activate this option if you want the mouse click to be used by the switch but also to be forwarded to an underlying control.</li></ul>|
 |**Template**|Here, you can specify the template that is shown when the switch is clicked (only available for the **Popup** style).|
@@ -42,9 +42,9 @@ The Switch control allows you to create different types of switches. It can be c
 
 [Jump to Top ](#switch)
 
-### Examples
+## Examples
 
-#### Radio buttons
+### Radio buttons
 A radio switch group can be realized by connecting several switches, all set to **Exclusive** mode, to the same parameter. For each switch, the **Onvalue** must be specified.
 
 **Switching pages**
@@ -55,7 +55,7 @@ A radio switch group can be realized by connecting several switches, all set to 
 1. Add a Stack with three child views and set the stack Value to the variable "Pages", too.
 1. The switches now allow to switch between the three views.
 
-#### Hover mode Switch
+### Hover mode Switch
 The Hover mode can be used to switch between stack views when hovering over a switch control. Since the switch can also be used invisible, i.e., without any bitmap assigned, it can be layered under a knob control and control a stack view switching between the parameter label and a text view displaying the current parameter value. To see how this can be set up, load one of the knobs from the Additional Controls library.
 
 [Jump to Top ](#switch)

@@ -2,7 +2,7 @@
 
 # Font
 
-### Description
+## Description
 
 Font resources are used to define different text styles which are referenced by labels, text fields, and other controls that display text.
 
@@ -12,7 +12,7 @@ Each resource specifies which of the system fonts (available for both Mac and PC
 
 >&#10069; Truetype fonts need to be based on Unicode tables to work correctly.
 
-### Properties
+## Properties
 
 |Poperty|Description|
 |:-|:-|
