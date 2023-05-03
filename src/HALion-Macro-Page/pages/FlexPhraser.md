@@ -1,3 +1,41 @@
 / [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Macro Page](./HALion-Macro-Page.md) / [Templates](./Templates.md) /
 
 # FlexPhraser
+
+## Description
+
+The FlexPhaser template is a special template that allows to control HALion's FlexPhraser. It combines several controls which are preconfigured within the template and partially use dedicated internal parameters which are not supposed to change. This also guarantees that the template supports the usage of HALion's FlexPhraser variations. If engine parameters like Swing, Gate Scale, Vel Scale, etc. are connected directly to controls outside the template, they only control the first variation. To understand the functionality and options, add the template to your macro page and enter edit mode on it. This way, you can see the structure of the template.
+
+>&#10069; To see an example how to use the template, load the Basic Controls macro page and check the FlexPhraser example page. Here, you can see how the various parameters are connected and how the template is combined with the FlexPhraserStepSeq template, which allows to edit user phrases.
+
+## Properties
+
+|Poperty|Description|
+|:-|:-|
+|**Name**|The name of the FlexPhraser.|
+{{#include ./_Position-Size.md}}
+{{#include ./_Attach.md}}
+{{#include ./_Tooltip.md}}
+|**Template**|The referenced template.|
+|**Scope**|Defines the path to the FlexPhraser that is controlled.|
+|**Product**|Set this to "HALion" if you want to load HALion factory and user StepSEQ phrases from the standard HALion path. **Load From** must be set to "StepSEQ Phrases". When saving user phrases, these will be written to /User/documents/Steinberg/HALion/Subpresets/StepSEQ Phrases/.<p>You can also specify the name for your own product. When preparing factory StepSEQ Phrases as part of a VST Sound container, StepSEQ Phrases must be located in the corresponding folder /"Product"/Sub Presets/StepSEQ Phrases/. In that case only StepSEQ Phrases located in the "Product" subfolder are shown in the phrase selector. When saving user phrases, these will be written into /User/documents/Steinberg/"Product"/Sub Presets/StepSEQ Phrases/</p><p>You can also include both the "HALion" folder and the folder of your product, by setting Product to "Product|HALion". The selector will then show the content of both locations. Saving a phrase will use the first "Product" folder.</p>|
+|**Load From**|Here you can specify a sub path to define a folder (or path) inside your product folder. When delivering VST Sound containers that contain StepSEQ Phrases, these must be located in the corresponding path to be found. To see HALion factory phrases, you must select "StepSEQ Phrases".<p>**Example:** Load From = "StepSEQ Phrases" in combination with product = "MyProduct", will load presets from /MyProduct/Sub Presets/StepSEQ Phrases</p>|
+|**Save To**|Allows you to specify a sub path relative to the Load From path, to define in which folder presets are saved by default.<p>**Example:** Save To = "MySEQ" in combination with Load From = "StepSEQ Phrases" and with product = "MyProduct", will save presets to /MyProduct/Sub Presets/StepSEQ Phrases/MySEQ</p>|
+
+## Template Components
+
+### Controls and Sub Templates
+
+|Item|Description|
+|:-|:-|
+|**DragMIDI**|This group view contains several controls which allow you to drag recorded MIDI data to your host sequencer, for example. <ul><li>**DragIcon:** An image that delivers the background bitmap.</li><li>**DragAvailable:** An animation that uses an animation to indicate if MIDI data is available.It must be connected using "@EnableDragMIDI" in the "Value" property.</li><li>**Drag MIDI recording:** An internal view providing the drag functionality. It must be connected using "dragzone_midifile" in the "View" property.</li></ul>|
+|**User**|A switch that allows you to set a variation to user mode. Its Value must be set to "@UserMode".|
+|**Variation**|A group view containing three subgroups providing the necessary elements to switch between variations, drag variations to trigger pads, and to open a context menu on the variation switches. These functionalities are partially realized using internal view controls that must follow certain naming conventions.The z-order is not supposed to change. (Drag Zones topmost, then Variation Popup, and Variation Selector as bottommost group.)<ul><li>**Drag Zones:** A group containing eight internal views providing drag functionality. Their "View" parameters must be set to "DragZone1" to "DragZone8".</li><li>**Variation Popup:** A group containing eight internal views providing the context menu. Their "View" parameters must be set to "ASB1" to "ASB8".</li><li>**Variation Selector:** A group containing eight exclusive switches to select the active variation. All "Value" parameters must be set to "@ActiveState" and the names of the switches must be "ASB1" to "ASB8".</li></ul>|
+|**Factory/Custom**|A stack containing two pages with controls to manage either the FlexPhraser factory phrases or the user phrases.<ul><li>**Factory:** A group containing the controls required to load and display phrases.</li><ul><li>**Select:** A switch with a "Value" set to "@PhraseSelectPopup" to select phrases.</li><li>**Name:** A text control with a "Value" set to "@phrase" to display the name of the current phrase.</li><li>**Arp KeySwitchFilter:** A switch with a "Value" set to "@FilterNoises", to activate the Key Switch and Noises Filter.</li></ul><li>**Custom:** A group containing controls to select, save, delete, and display user phrases. Furthermore, there are controls for Arp Mode, Key Replace, Arp Wrap and Arp Quantize.</li><ul><li>**Select:** A switch with a "Value" set to "@PhraseSelectPopup", to select phrases. If you deliver a VST Sound container with phrases, they must be located in a folder /Steinberg/HALion/Subpresets/StepSEQPhrases or a subfolder if "Product" is set.</li><li>**Name:** A text control with a "Value" set to "@UsrArp", to display the name of the current user phrase.</li><li>**Save:** A switch with a "Value" set to "@SubPresetSave", to save phrases. Saving phrases will save them to the standard user folder /Steinberg/HALion/Subpresets/StepSEQPhrases or in a subfolder if "Product" is set.</li><li>**Delete:** A switch with a "Value" set to "@SubPresetDelete", to delete phrases.</li><li>**Arp Mode:** A menu template to change the Arp Mode.  Its "Value" must be set to "@UserArpMode".</li><li>**Key Replace:** A menu template, to specify the Key Replace. Its "Value must be set to "@KeyReplace".</li><li>**Arp Wrap:** A menu template, to specify the Wrap. Its "Value must to be set to "@Wrap".</li><li>**Arp Quantize:** A value box template, to set the intensity of the groove quantization. Its "Value must be set to "@GrooveQuantizeDepth".</li><li>**DropMIDI:** A group containing the controls that allow you to drop a MIDI file as a Groove Quantize reference.</li><ul><li>**DropIcon:** Delivers the background bitmap.</li><li>**FileDropped:** This animation indicates whether a file is present. Its "Value" must be set to "@EnableGrooveQuantize".</li><li>**Internal:** this is required to provide the drop functionality and a context menu to clear the the quantize data buffer. Its "View" parameter must be set to "@dropzone_midifile".</li></ul></ul>|
+|**Arp Mute**|A switch that allows you to mute a variation. Its "Value" needs to be set to "@Mute".|
+|**Arp Octaves**|A knob that controls the octave range of the variation. Its "Value" must be set to "@OctaveRange".|
+|**Arp Vel Scale**|A knob that controls the velocity scale of the variation. Its "Value" must be set to "@VelocityScale".|
+|**Arp Gate Scale**|A knob that controls the gate scale of the variation. Its "Value" must be set to "@GateScale".|
+|**Arp Swing**|A knob that controls the swing of the variation. Its "Value" must be set to "@Swing".|
+|**Arp TempoScale**|A value box that controls the note value of the tempo scale of the variation. Its "Value" must be set to "@TempoScale".|
+|**Tempo**|A Disable control that specifies whether the "Arp Tempo" template inside is active. If Sync is set to on, the Tempo is disabled. Its "Value" must be set to "@Sync".|
