@@ -2,6 +2,20 @@
 
 # getPeak
 
-{{#include ./_getPeak-Description.md}}
+## Description
+
+{{#include ./_getPeak-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_getPeak-Reference.md:arguments}}
+
+## Return Values
+
+{{#include ./_getPeak-Reference.md:return-values}}
+
+## Example
+
+{{#include ./_getPeak-Reference.md:example}}
 
 **See also:** [AudioFile](./Audio-File.md), [AudioFile.open](./AudioFileopen.md)

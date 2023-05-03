@@ -1,25 +1,33 @@
+/* ANCHOR: all */
 >**getPeak(start, length, rms)**
 
 #### Description
 
+// ANCHOR: description
 Function to analyze the levels in an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The arguments start and length define the range in the audio file to be analyzed. The rms argument determines whether the peak level or the RMS level of the specified range is returned.
 
 **Available in:** Controller.
+// ANCHOR_END: description
 
 #### Arguments
 
+// ANCHOR: arguments
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**start**|The start position in samples.|number|
 |**length**|The duration in samples. Set this to equal to or less than 0 to use all samples from the specified start to the end of the file.|number|
 |**rms**|If this is set to 0, the peak level of the specified range will be returned. If this is set to a value above 0, the RMS level over the specified range will be calculated.|number|
+// ANCHOR_END: arguments
 
 #### Return Values
 
+// ANCHOR: return-values
 Returns the level of the specifed range as a linear value. The example shows how to convert the value from linear to dB.
+// ANCHOR_END: return-values
 
 #### Example
 
+// ANCHOR: example
 ```lua
 function lin2db(lin)
   return 20 * math.log(lin) / math.log(10)
@@ -38,3 +46,6 @@ susrms = af:getPeak(1000, -1, 1)
 print("Attack Peak:", attpeak, "(", lin2db(attpeak), "dB )")
 print("Sustain RMS:", susrms, "(", lin2db(susrms), "dB )")
 ```
+// ANCHOR_END: example
+
+/* ANCHOR_END: all */

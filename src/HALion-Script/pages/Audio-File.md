@@ -79,36 +79,36 @@ end
 
 ### analyzePitch
 
-{{#include ./_analyzePitch-Description.md}}
+{{#include ./_analyzePitch-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 
 ### cancelPitchAnalysis
 
-{{#include ./_cancelPitchAnalysis-Description.md}}
+{{#include ./_cancelPitchAnalysis-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 
 ### getOnsets
 
-{{#include ./_getOnsets-Description.md}}
+{{#include ./_getOnsets-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 
 ### getPeak
 
-{{#include ./_getPeak-Description.md}}
+{{#include ./_getPeak-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 
 ### getPitch
 
-{{#include ./_getPitch-Description.md}}
+{{#include ./_getPitch-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 
 ### getPitchAnalysisProgress
 
-{{#include ./_getPitchAnalysisProgress-Description.md}}
+{{#include ./_getPitchAnalysisProgress-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
