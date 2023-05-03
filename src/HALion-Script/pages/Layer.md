@@ -170,7 +170,7 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 ### addQCAssignment
 
-{{#include ./_addQCAssignment-Description.md}}
+{{#include ./_addQCAssignment-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
