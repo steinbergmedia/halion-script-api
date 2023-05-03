@@ -2,6 +2,22 @@
 
 # getEffect
 
-{{#include ./_getEffect-Description.md}}
+{{#include ./_getEffect-Reference.md:function}}
+
+## Description
+
+{{#include ./_getEffect-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_getEffect-Reference.md:arguments}}
+
+## Return Values
+
+{{#include ./_getEffect-Reference.md:return-values}}
+
+## Example
+
+{{#include ./_getEffect-Reference.md:example}}
 
 **See also:** [getBus](./getBus.md), [getChild](./getChild.md), [getLayer](./getLayer.md), [getMidiModule](./getMidiModule.md), [getSlot](./getSlot.md), [getZone](./getZone.md), [Effect](./Effect.md)

@@ -48,7 +48,7 @@ print(this.moduleType)
 
 ### MidiModule Constructor
 
-{{#include ./_MidiModule-Constructor-Description.md}}
+{{#include ./_MidiModule-Constructor-Reference.md:all}}
 
 [Jump to Top ](#midimodule)
 

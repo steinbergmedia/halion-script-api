@@ -58,24 +58,24 @@ print(modRow.rowNumber)
 
 ### getSource1
 
-{{#include ./_getSource1-Description.md}}
+{{#include ./_getSource1-Reference.md:all}}
 
 [Jump to Top ](#modulationmatrixrow)
 
 ### getSource2
 
-{{#include ./_getSource2-Description.md}}
+{{#include ./_getSource2-Reference.md:all}}
 
 [Jump to Top ](#modulationmatrixrow)
 
 ### setSource1
 
-{{#include ./_setSource1-Description.md}}
+{{#include ./_setSource1-Reference.md:all}}
 
 [Jump to Top ](#modulationmatrixrow)
 
 ### setSource2
 
-{{#include ./_setSource2-Description.md}}
+{{#include ./_setSource2-Reference.md:all}}
 
 [Jump to Top ](#modulationmatrixrow)

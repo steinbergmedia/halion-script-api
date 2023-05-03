@@ -53,6 +53,6 @@ end
 
 ### Effect Constructor
 
-{{#include ./_Effect-Constructor-Description.md}}
+{{#include ./_Effect-Constructor-Reference.md:all}}
 
 [Jump to Top ](#effect)

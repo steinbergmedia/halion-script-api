@@ -24,7 +24,7 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 ### Layer Constructor
 
-{{#include ./_Layer-Constructor-Description.md}}
+{{#include ./_Layer-Constructor-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
@@ -32,139 +32,139 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 ### appendBus
 
-{{#include ./_appendBus-Description.md}}
+{{#include ./_appendBus-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### appendLayer
 
-{{#include ./_appendLayer-Description.md}}
+{{#include ./_appendLayer-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### appendLayerAsync
 
-{{#include ./_appendLayerAsync-Description.md}}
+{{#include ./_appendLayerAsync-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### appendMidiModule
 
-{{#include ./_appendMidiModule-Description.md}}
+{{#include ./_appendMidiModule-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### appendZone
 
-{{#include ./_appendZone-Description.md}}
+{{#include ./_appendZone-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### findBusses
 
-{{#include ./_findBusses-Description.md}}
+{{#include ./_findBusses-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### findEffects
 
-{{#include ./_findEffects-Description.md}}
+{{#include ./_findEffects-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### findLayers
 
-{{#include ./_findLayers-Description.md}}
+{{#include ./_findLayers-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### findMidiModules
 
-{{#include ./_findMidiModules-Description.md}}
+{{#include ./_findMidiModules-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### findZones
 
-{{#include ./_findZones-Description.md}}
+{{#include ./_findZones-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getBus
 
-{{#include ./_getBus-Description.md}}
+{{#include ./_getBus-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getLayer
 
-{{#include ./_getLayer-Description.md}}
+{{#include ./_getLayer-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getMidiModule
 
-{{#include ./_getMidiModule-Description.md}}
+{{#include ./_getMidiModule-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getZone
 
-{{#include ./_getZone-Description.md}}
+{{#include ./_getZone-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### insertBus
 
-{{#include ./_insertBus-Description.md}}
+{{#include ./_insertBus-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### insertLayer
 
-{{#include ./_insertLayer-Description.md}}
+{{#include ./_insertLayer-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### insertLayerAsync
 
-{{#include ./_insertLayerAsync-Description.md}}
+{{#include ./_insertLayerAsync-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### insertMidiModule
 
-{{#include ./_insertMidiModule-Description.md}}
+{{#include ./_insertMidiModule-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### insertZone
 
-{{#include ./_insertZone-Description.md}}
+{{#include ./_insertZone-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### removeBus
 
-{{#include ./_removeBus-Description.md}}
+{{#include ./_removeBus-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### removeLayer
 
-{{#include ./_removeLayer-Description.md}}
+{{#include ./_removeLayer-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### removeMidiModule
 
-{{#include ./_removeMidiModule-Description.md}}
+{{#include ./_removeMidiModule-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### removeZone
 
-{{#include ./_removeZone-Description.md}}
+{{#include ./_removeZone-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
@@ -176,97 +176,97 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 ### removeQCAssignment
 
-{{#include ./_removeQCAssignment-Description.md}}
+{{#include ./_removeQCAssignment-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getNumQCAssignments
 
-{{#include ./_getNumQCAssignments-Description.md}}
+{{#include ./_getNumQCAssignments-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentParamId
 
-{{#include ./_getQCAssignmentParamId-Description.md}}
+{{#include ./_getQCAssignmentParamId-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentScope
 
-{{#include ./_getQCAssignmentScope-Description.md}}
+{{#include ./_getQCAssignmentScope-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentMin
 
-{{#include ./_getQCAssignmentMin-Description.md}}
+{{#include ./_getQCAssignmentMin-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentMax
 
-{{#include ./_getQCAssignmentMax-Description.md}}
+{{#include ./_getQCAssignmentMax-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentCurve
 
-{{#include ./_getQCAssignmentCurve-Description.md}}
+{{#include ./_getQCAssignmentCurve-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentMode
 
-{{#include ./_getQCAssignmentMode-Description.md}}
+{{#include ./_getQCAssignmentMode-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### getQCAssignmentBypass
 
-{{#include ./_getQCAssignmentBypass-Description.md}}
+{{#include ./_getQCAssignmentBypass-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentParamId
 
-{{#include ./_setQCAssignmentParamId-Description.md}}
+{{#include ./_setQCAssignmentParamId-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentScope
 
-{{#include ./_setQCAssignmentScope-Description.md}}
+{{#include ./_setQCAssignmentScope-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentMin
 
-{{#include ./_setQCAssignmentMin-Description.md}}
+{{#include ./_setQCAssignmentMin-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentMax
 
-{{#include ./_setQCAssignmentMax-Description.md}}
+{{#include ./_setQCAssignmentMax-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentCurve
 
-{{#include ./_setQCAssignmentCurve-Description.md}}
+{{#include ./_setQCAssignmentCurve-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentMode
 
-{{#include ./_setQCAssignmentMode-Description.md}}
+{{#include ./_setQCAssignmentMode-Reference.md:all}}
 
 [Jump to Top ](#layer)
 
 ### setQCAssignmentBypass
 
-{{#include ./_setQCAssignmentBypass-Description.md}}
+{{#include ./_setQCAssignmentBypass-Reference.md:all}}
 
 [Jump to Top ](#layer)
 

@@ -2,6 +2,18 @@
 
 # removeEffect
 
-{{#include ./_removeEffect-Description.md}}
+{{#include ./_removeEffect-Reference.md:function}}
+
+## Description
+
+{{#include ./_removeEffect-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_removeEffect-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_removeEffect-Reference.md:example}}
 
 **See also:** [removeBus](./removeBus.md), [removeLayer](./removeLayer.md), [removeMidiModule](./removeMidiModule.md), [removeZone](./removeZone.md), [Effect](./Effect.md)

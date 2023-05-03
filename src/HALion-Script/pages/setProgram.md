@@ -2,6 +2,18 @@
 
 # setProgram
 
-{{#include ./_setProgram-Description.md}}
+{{#include ./_setProgram-Reference.md:function}}
+
+## Description
+
+{{#include ./_setProgram-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_setProgram-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_setProgram-Reference.md:example}}
 
 **See also:** [getProgram](./getProgram.md), [Program](./Program.md)

@@ -2,6 +2,22 @@
 
 # getBus
 
-{{#include ./_getBus-Description.md}}
+{{#include ./_getBus-Reference.md:function}}
+
+## Description
+
+{{#include ./_getBus-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_getBus-Reference.md:arguments}}
+
+## Return Values
+
+{{#include ./_getBus-Reference.md:return-values}}
+
+## Example
+
+{{#include ./_getBus-Reference.md:example}}
 
 **See also:** [getChild](./getChild.md), [getEffect](./getEffect.md), [getLayer](./getLayer.md), [getMidiModule](./getMidiModule.md), [getSlot](./getSlot.md), [getZone](./getZone.md), [Bus](./Bus.md)

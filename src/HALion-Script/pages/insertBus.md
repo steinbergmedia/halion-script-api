@@ -2,6 +2,18 @@
 
 # insertBus
 
-{{#include ./_insertBus-Description.md}}
+{{#include ./_insertBus-Reference.md:function}}
+
+## Description
+
+{{#include ./_insertBus-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_insertBus-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_insertBus-Reference.md:example}}
 
 **See also:** [insertEffect](./insertEffect.md), [insertLayer](./insertLayer.md), [insertLayerAsync](./insertLayerAsync.md), [insertMidiModule](./insertMidiModule.md), [insertZone](./insertZone.md), [Bus](./Bus.md)

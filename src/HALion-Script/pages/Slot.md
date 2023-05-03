@@ -24,24 +24,24 @@ The Slot class inherits all properties and methods of the [Element](./Element.md
 
 ### findBusses
 
-{{#include ./_findBusses-Description.md}}
+{{#include ./_findBusses-Reference.md:all}}
 
 [Jump to Top ](#slot)
 
 ### findEffects
 
-{{#include ./_findEffects-Description.md}}
+{{#include ./_findEffects-Reference.md:all}}
 
 [Jump to Top ](#slot)
 
 ### getBus
 
-{{#include ./_getBus-Description.md}}
+{{#include ./_getBus-Reference.md:all}}
 
 [Jump to Top ](#slot)
 
 ### setProgram
 
-{{#include ./_setProgram-Description.md}}
+{{#include ./_setProgram-Reference.md:all}}
 
 [Jump to Top ](#slot)

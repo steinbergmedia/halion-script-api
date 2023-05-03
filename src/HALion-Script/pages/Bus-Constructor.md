@@ -2,6 +2,18 @@
 
 # Bus Constructor
 
-{{#include ./_Bus-Constructor-Description.md}}
+{{#include ./_Bus-Reference.md:function}}
+
+## Description
+
+{{#include ./_Bus-Reference.md:description}}
+
+## Return Values
+
+{{#include ./_Bus-Reference.md:return-values}}
+
+## Example
+
+{{#include ./_Bus-Reference.md:example}}
 
 **See also:** [Program Constructor](./Program-Constructor.md), [Layer Constructor](./Layer-Constructor.md), [Zone Constructor](./Zone-Constructor.md), [MidiModule Constructor](./MidiModule-Constructor.md), [Effect Constructor](./Effect-Constructor.md)

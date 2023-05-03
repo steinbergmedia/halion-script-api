@@ -2,6 +2,18 @@
 
 # removeBus
 
-{{#include ./_removeBus-Description.md}}
+{{#include ./_removeBus-Reference.md:function}}
+
+## Description
+
+{{#include ./_removeBus-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_removeBus-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_removeBus-Reference.md:example}}
 
 **See also:** [removeEffect](./removeEffect.md), [removeLayer](./removeLayer.md), [removeMidiModule](./removeMidiModule.md), [removeZone](./removeZone.md), [Bus](./Bus.md)

@@ -2,6 +2,18 @@
 
 # setQCAssignmentCurve
 
-{{#include ./_setQCAssignmentCurve-Description.md}}
+{{#include ./_setQCAssignmentCurve-Reference.md:function}}
+
+## Description
+
+{{#include ./_setQCAssignmentCurve-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_setQCAssignmentCurve-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_setQCAssignmentCurve-Reference.md:example}}
 
 **See also:**  [setQCAssignmentParamId](./setQCAssignmentParamId.md), [setQCAssignmentScope](./setQCAssignmentScope.md), [setQCAssignmentMin](./setQCAssignmentMin.md), [setQCAssignmentMax](./setQCAssignmentMax.md), [setQCAssignmentMode](./setQCAssignmentMode.md), [setQCAssignmentBypass](./setQCAssignmentBypass.md), [addQCAssignment](./addQCAssignment.md), [removeQCAssignment](./removeQCAssignment.md), [getNumQCAssignments](./getNumQCAssignments.md), [getQCAssignmentParamId](./getQCAssignmentParamId.md), [getQCAssignmentScope](./getQCAssignmentScope.md), [getQCAssignmentMin](./getQCAssignmentMin.md), [getQCAssignmentMax](./getQCAssignmentMax.md), [getQCAssignmentCurve](./getQCAssignmentCurve.md), [getQCAssignmentMode](./getQCAssignmentMode.md), [getQCAssignmentBypass](./getQCAssignmentBypass.md), [Quick Control Assignment Modes](./Quick-Control-Assignment-Modes.md)

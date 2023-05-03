@@ -2,6 +2,18 @@
 
 # setOutputBus
 
-{{#include ./_setOutputBus-Description.md}}
+{{#include ./_setOutputBus-Reference.md:function}}
+
+## Description
+
+{{#include ./_setOutputBus-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_setOutputBus-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_setOutputBus-Reference.md:example}}
 
 **See also:** [getOutputBus](./getOutputBus.md), [Bus](./Bus.md)

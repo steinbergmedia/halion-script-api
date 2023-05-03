@@ -58,7 +58,7 @@ print(zone.velHigh)
 
 ### Zone Constructor
 
-{{#include ./_Zone-Constructor-Description.md}}
+{{#include ./_Zone-Constructor-Reference.md:all}}
 
 [Jump to Top ](#zone)
 
@@ -66,18 +66,18 @@ print(zone.velHigh)
 
 ### getModulationMatrixRow
 
-{{#include ./_getModulationMatrixRow-Description.md}}
+{{#include ./_getModulationMatrixRow-Reference.md:all}}
 
 [Jump to Top ](#zone)
 
 ### getOutputBus
 
-{{#include ./_getOutputBus-Description.md}}
+{{#include ./_getOutputBus-Reference.md:all}}
 
 [Jump to Top ](#zone)
 
 ### setOutputBus
 
-{{#include ./_setOutputBus-Description.md}}
+{{#include ./_setOutputBus-Reference.md:all}}
 
 [Jump to Top ](#zone)

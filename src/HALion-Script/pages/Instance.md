@@ -24,43 +24,43 @@ The Instance class inherits all properties and methods of the [Element](./Elemen
 
 ### findBusses
 
-{{#include ./_findBusses-Description.md}}
+{{#include ./_findBusses-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### findEffects
 
-{{#include ./_findEffects-Description.md}}
+{{#include ./_findEffects-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### findSlots
 
-{{#include ./_findSlots-Description.md}}
+{{#include ./_findSlots-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### getBus
 
-{{#include ./_getBus-Description.md}}
+{{#include ./_getBus-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### getSlot
 
-{{#include ./_getSlot-Description.md}}
+{{#include ./_getSlot-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### getProgram
 
-{{#include ./_getProgram-Description.md}}
+{{#include ./_getProgram-Reference.md:all}}
 
 [Jump to Top ](#instance)
 
 ### setProgram
 
-{{#include ./_setProgram-Description.md}}
+{{#include ./_setProgram-Reference.md:all}}
 
 [Jump to Top ](#instance)
 

@@ -60,7 +60,7 @@ end
 
 ### Bus Constructor
 
-{{#include ./_Bus-Constructor-Description.md}}
+{{#include ./_Bus-Constructor-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
@@ -68,42 +68,42 @@ end
 
 ### findEffects
 
-{{#include ./_findEffects-Description.md}}
+{{#include ./_findEffects-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### getEffect
 
-{{#include ./_getEffect-Description.md}}
+{{#include ./_getEffect-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### insertEffect
 
-{{#include ./_insertEffect-Description.md}}
+{{#include ./_insertEffect-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### appendEffect
 
-{{#include ./_appendEffect-Description.md}}
+{{#include ./_appendEffect-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### removeEffect
 
-{{#include ./_removeEffect-Description.md}}
+{{#include ./_removeEffect-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### getOutputBus
 
-{{#include ./_getOutputBus-Description.md}}
+{{#include ./_getOutputBus-Reference.md:all}}
 
 [Jump to Top ](#bus)
 
 ### setOutputBus
 
-{{#include ./_setOutputBus-Description.md}}
+{{#include ./_setOutputBus-Reference.md:all}}
 
 [Jump to Top ](#bus)
