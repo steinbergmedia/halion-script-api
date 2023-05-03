@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**getPeak(start, length, rms)**
+// ANCHOR_END: function
 
 #### Description
 

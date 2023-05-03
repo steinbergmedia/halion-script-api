@@ -2,6 +2,8 @@
 
 # getPitchAnalysisProgress
 
+{{#include ./_getPitchAnalysisProgress-Reference.md:function}}
+
 ## Description
 
 {{#include ./_getPitchAnalysisProgress-Reference.md:description}}

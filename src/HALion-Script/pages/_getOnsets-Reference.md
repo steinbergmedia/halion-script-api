@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**getOnsets(start, length, peakThreshold, sensThreshold, minLength)**
+// ANCHOR_END: function
 
 #### Description
 

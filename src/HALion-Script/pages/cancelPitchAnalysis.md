@@ -2,6 +2,8 @@
 
 # cancelPitchAnalysis
 
+{{#include ./_cancelPitchAnalysis-Reference.md:function}}
+
 ## Description
 
 {{#include ./_cancelPitchAnalysis-Reference.md:description}}

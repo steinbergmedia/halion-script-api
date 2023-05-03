@@ -2,6 +2,8 @@
 
 # getPitch
 
+{{#include ./_getPitch-Reference.md:function}}
+
 ## Description
 
 {{#include ./_getPitch-Reference.md:description}}

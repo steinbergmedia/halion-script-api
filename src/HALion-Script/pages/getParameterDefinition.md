@@ -2,6 +2,22 @@
 
 # getParameterDefinition
 
-{{#include ./_getParameterDefinition-Description.md}}
+{{#include ./_getParameterDefinition-Reference.md:function}}
+
+## Description
+
+{{#include ./_getParameterDefinition-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_getParameterDefinition-Reference.md:arguments}}
+
+## Return Values
+
+{{#include ./_getParameterDefinition-Reference.md:return-values}}
+
+## Example
+
+{{#include ./_getParameterDefinition-Reference.md:example}}
 
 **See also:** [ParameterDefinition](./ParameterDefinition.md)

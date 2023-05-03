@@ -2,4 +2,12 @@
 
 # removeFromParent
 
-{{#include ./_removeFromParent-Description.md}}
+{{#include ./_removeFromParent-Reference.md:function}}
+
+## Description
+
+{{#include ./_removeFromParent-Reference.md:description}}
+
+## Example
+
+{{#include ./_removeFromParent-Reference.md:example}}

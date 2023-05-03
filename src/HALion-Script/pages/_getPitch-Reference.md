@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**getPitch(start, length, channel)**
+// ANCHOR_END: function
 
 #### Description
 

@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**cancelPitchAnalysis(channel)**
+// ANCHOR_END: function
 
 #### Description
 

@@ -2,6 +2,8 @@
 
 # getPeak
 
+{{#include ./_getPeak-Reference.md:function}}
+
 ## Description
 
 {{#include ./_getPeak-Reference.md:description}}

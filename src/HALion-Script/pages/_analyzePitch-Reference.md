@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**analyzePitch(callback, channel)**
+// ANCHOR_END: function
 
 #### Description
 

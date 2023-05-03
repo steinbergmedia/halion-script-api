@@ -2,6 +2,8 @@
 
 # getOnsets
 
+{{#include ./_getOnsets-Reference.md:function}}
+
 ## Description
 
 {{#include ./_getOnsets-Reference.md:description}}

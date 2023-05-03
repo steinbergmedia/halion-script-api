@@ -61,60 +61,60 @@ end
 
 ### findChildren
 
-{{#include ./_findChildren-Description.md}}
+{{#include ./_findChildren-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### getChild
 
-{{#include ./_getChild-Description.md}}
+{{#include ./_getChild-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### getParameter
 
-{{#include ./_getParameter-Description.md}}
+{{#include ./_getParameter-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### getParameterDefinition
 
-{{#include ./_getParameterDefinition-Description.md}}
+{{#include ./_getParameterDefinition-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### getParameterNormalized
 
-{{#include ./_getParameterNormalized-Description.md}}
+{{#include ./_getParameterNormalized-reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### hasParameter
 
-{{#include ./_hasParameter-Description.md}}
+{{#include ./_hasParameter-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### removeFromParent
 
-{{#include ./_removeFromParent-Description.md}}
+{{#include ./_removeFromParent-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### setName
 
-{{#include ./_setName-Description.md}}
+{{#include ./_setName-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### setParameter
 
-{{#include ./_setParameter-Description.md}}
+{{#include ./_setParameter-Reference.md:all}}
 
 [Jump to Top ](#element)
 
 ### setParameterNormalized
 
-{{#include ./_setParameterNormalized-Description.md}}
+{{#include ./_setParameterNormalized-Reference.md:all}}
 
 [Jump to Top ](#element)

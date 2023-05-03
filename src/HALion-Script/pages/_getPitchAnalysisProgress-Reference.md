@@ -1,5 +1,8 @@
 /* ANCHOR: all */
+
+// ANCHOR: function
 >**getPitchAnalysisProgress(channel)**
+// ANCHOR_END: function
 
 #### Description
 

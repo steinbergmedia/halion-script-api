@@ -2,6 +2,8 @@
 
 # analyzePitch
 
+{{#include ./_analyzePitch-Reference.md:function}}
+
 ## Description
 
 {{#include ./_analyzePitch-Reference.md:description}}

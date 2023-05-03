@@ -2,4 +2,16 @@
 
 # setName
 
-{{#include ./_setName-Description.md}}
+{{#include ./_setName-Reference.md:function}}
+
+## Description
+
+{{#include ./_setName-Reference.md:description}}
+
+## Arguments
+
+{{#include ./_setName-Reference.md:arguments}}
+
+## Example
+
+{{#include ./_setName-Reference.md:example}}
