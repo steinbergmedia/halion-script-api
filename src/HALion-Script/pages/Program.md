@@ -38,7 +38,7 @@ The [Element](./Element.md) object of the program can be obtained with ``this.pr
 
 |Field|Description|Value Type|
 |:-|:-|:-|
-|**.instance**|The [Element](./Element.md) object of the plug-in instance.|[Instance](./Instance.md|
+|**.instance**|The [Element](./Element.md) object of the plug-in instance.|[Instance](./Instance.md)|
 |**.assignedSlots**|An array with the Element objects of the slots to which this program is assigned.|table|
 
 #### Example

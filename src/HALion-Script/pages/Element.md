@@ -29,7 +29,7 @@ The different types of elements are [Instance](./Instance.md), [Slot](./Slot.md)
 |**.type**|Returns the type of the element.|string|
 |**.parameterDefinitions**|Returns an array with all [ParameterDefinition](./ParameterDefinition.md) objects of the element.|table|
 |**.parent**|Returns the parent element in the Program Tree. This evaluates to ``nil`` if the element is the program.|[Element](./Element.md) or ``nil``|
-|**.program**|Returns the program element in the Program Tree.|[Program](./Program.md|
+|**.program**|Returns the program element in the Program Tree.|[Program](./Program.md)|
 |**.level**|Returns the level in the Program Tree hierarchy. The program equals level 1. Each sublayer adds +1 to the level.|number|
 
 #### Example

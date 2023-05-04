@@ -28,6 +28,7 @@ Returns the [Bus](./Bus.md) object of the found bus. Returns ``nil`` if no bus i
 
 #### Example
 
+// ANCHOR: example
 ```lua
 -- Locate the first bus in the program and print its name.
 

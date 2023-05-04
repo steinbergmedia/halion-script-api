@@ -8,10 +8,6 @@
 
 {{#include ./_getSource2-Reference.md:description}}
 
-## Arguments
-
-{{#include ./_getSource2-Reference.md:arguments}}
-
 ## Return Values
 
 {{#include ./_getSource2-Reference.md:return-values}}

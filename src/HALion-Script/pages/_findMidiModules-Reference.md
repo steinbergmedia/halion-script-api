@@ -10,6 +10,7 @@
 Function to find MIDI modules in the specified layer. For example, ``this.parent`` specifies the parent layer of the script module as the layer to be searched in. If recursive is set to ``true``, sublayers will also be searched. The function returns an array with the [MidiModule](./MidiModule.md) objects of the found MIDI modules. Particular MIDI modules can be searched by name or through a filter function. If searching by name, findMidiModules accepts only the [MidiModule](./MidiModule.md) objects that match the specified name. The filter function uses the [MidiModule](./MidiModule.md) object of each MIDI module as argument. Only those [MidiModule](./MidiModule.md) objects that return ``true`` for the search criteria defined in the filter function will be accepted by findMidiModules. Without a name or filter function the [MidiModule](./MidiModule.md) objects of all MIDI modules in the searched layers will be returned.
 
 **Available in:** Controller, Processor.
+// ANCHOR_END: description
 
 #### Arguments
 
