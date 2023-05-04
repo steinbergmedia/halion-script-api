@@ -12,7 +12,7 @@ Download the precompiled binaries and install them, so that the executables are 
 
 ## Build
 
-To build the HTML pages run mdbook from the checkout folder of this repository.
+To build the HTML pages use the command line to run mdbook from the checkout folder of this repository.
 
 ```
 mdbook build
