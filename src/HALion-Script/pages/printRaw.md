@@ -4,19 +4,19 @@
 
 >**printRaw(value1, value2, ...)**
 
-#### Description
+## Description
 
 Receives any number of arguments and prints their values to the output window of the script module. In contrast to Lua's print function, printRaw does not insert a space character after every value and does not add a line feed on the end.
 
 **Available in:** Controller, Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|
 |:-|:-|
 |**value1, value2, ...**|The values to be printed. Multiple arguments must be separated with commas.|
 
-#### Example
+## Example
 
 ```lua
 -- Print valriables a and b to the output window using printRaw.
@@ -28,7 +28,7 @@ function onInit()
     printRaw("Variable b is", b)
 end
 ```
-**Output Messages**
+**Output Messages:**
 
 ```lua
 Variable a is10Variable b is20

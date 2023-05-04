@@ -4,13 +4,13 @@
 
 >**getUndoContext()**
 
-#### Description
+## Description
 
 Function to check if the current script execution is part of an undo or redo operation.
 
 **Available in:** Controller.
 
-#### Return Values
+## Return Values
 
 The function returns
 
@@ -18,16 +18,13 @@ The function returns
 * 2 if the changes come from a redo operation,
 * ``nil`` if the changes do not come from an undo or redo operation.
 
-#### Enumerators
+## Enumerators
 
 You can use the following enumerators to identify the [Undo Context Types](./Undo-Context-Types.md).
 
-|Index|Undo Context|
-|:-|:-|
-|1|UndoContext.inUndo|
-|2|UndoContext.inRedo|
+{{#include ./Undo-Context-Types.md:undo-context-types}}
 
-#### Example
+## Example
 
 ```lua
 -- Do nothing if the change callback is executed as part of an undo or redo operation.

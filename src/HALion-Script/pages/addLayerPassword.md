@@ -4,7 +4,7 @@
 
 >**addLayerPassword(pwd)**
 
-#### Description
+## Description
 
 Function that gives access to protected layers. By default, protected layers cannot be accessed by scripts. The parameters of a protected layer and any elements inside of it are hidden for scripts. This prevents someone unauthorized from parsing the **Program Tree** to retrieve hidden information. By calling this function with the correct password, the calling script can access the corresponding protected layers again.
 
@@ -12,13 +12,13 @@ Function that gives access to protected layers. By default, protected layers can
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**pwd**|The password of the protected layer(s).|string|
 
-#### Example
+## Example
 
 {{#include ./_addLayerpassword-Example.md}}
 

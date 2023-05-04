@@ -4,23 +4,23 @@
 
 >**AudioFile.open(filename)**
 
-#### Description
+## Description
 
 The ``AudioFile.open`` function creates an [AudioFile](./Audio-File.md) object of the specified audio file. The [AudioFile](./Audio-File.md) object can be used to retrieve information from the audio file, for example, the sample rate, bit depth, length in samples, etc. The location of the audio file can be a folder or a VST Sound archive.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**filename**|The file path and name of the audio file.|string|
 
-#### Return Values
+## Return Values
 
 Returns an [AudioFile](./Audio-File.md) object of the specified audio file.
 
-#### Example
+## Example
 
 ```lua
 -- Open an audio file from Skylab.

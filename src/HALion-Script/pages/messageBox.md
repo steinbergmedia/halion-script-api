@@ -4,19 +4,27 @@
 
 >**messageBox(stringOrConfigTable)**
 
-#### Description
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
+## Description
 
 Function to open a modal message box. If the argument is a single string, the text will be displayed in the default message box. Alternatively, you can customize the message box by using a configuration table, e.g., if you want to display the text with a warning icon.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**stringOrConfigTable**|The message as a string or the configuration table that customizes the message box.|string or table|
 
-#### Configuration Table
+## Configuration Table
 
 The message box can be configured by creating a table with the following fields:
 
@@ -28,11 +36,11 @@ The message box can be configured by creating a table with the following fields:
 |**.button2**|This button will only be displayed if you assign a string to this field.|string, optional|
 |**.button3**|This button will only be displayed if you assign a string to this field.|string, optional|
 
-#### Return Values
+## Return Values
 
 Returns the result of the message box, i.e., which action closed the message box, as a number.
 
-#### Message Box Types
+## Message Box Types
 
 Enumerator to identify the types of the message box. The type of the message box also defines which icon will be displayed.
 
@@ -42,7 +50,7 @@ Enumerator to identify the types of the message box. The type of the message box
 |2|MessageBoxType.question|
 |3|MessageBoxType.information|
 
-#### Message Box Results
+## Message Box Results
 
 Enumerator to identify the results of the message box.
 
@@ -53,7 +61,7 @@ Enumerator to identify the results of the message box.
 |3|MessageBoxResult.button2|
 |4|MessageBoxResult.button3|
 
-#### Example
+## Example
 
 ```lua
 -- Customized message box.

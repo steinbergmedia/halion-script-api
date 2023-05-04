@@ -2,13 +2,13 @@
 
 # Bypass Masks
 
-#### Description
+## Description
 
 Enumerator to determine the values that configure if a bus or effect follows the global inserts and Aux bypass buttons of the plug-in. The values must be applied to the ``bypassMask`` field of the desired [Bus](./Bus.md) or [Effect](./Effect.md) object. See the example below for details.
 
 **Available in:** Controller.
 
-#### Bypass Masks
+## Bypass Masks
 
 The values are determined with these names:
 
@@ -18,7 +18,7 @@ The values are determined with these names:
 |2|BypassMask.bypassInserts|
 |4|BypassMask.bypassAux|
 
-#### Example
+## Example
 
 ```lua
 bus = this.parent:getBus()

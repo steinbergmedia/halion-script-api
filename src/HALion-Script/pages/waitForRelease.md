@@ -4,13 +4,13 @@
 
 >**waitForRelease()**
 
-#### Description
+## Description
 
 Function to suspend the execution of the [onNote](./onNote.md) callback until the note that called [onNote](./onNote.md) gets released either by a corresponding note-off or sustain pedal off.
 
 **Available in:** Processor.
 
-#### Example
+## Example
 
 ```lua
 -- Print the note length in milliseconds.

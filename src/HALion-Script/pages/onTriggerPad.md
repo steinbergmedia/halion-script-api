@@ -4,7 +4,7 @@
 
 >**onTriggerPad(number)**
 
-#### Description
+## Description
 
 This callback function is called when the script module receives a trigger event from a trigger pad. The Trigger Pads module must be placed before the script module. Trigger events are produced when the pad is pressed with the mouse, when a trigger note is played via MIDI or by calling [playTriggerPad](./playTriggerPad.md) from another script module.
 
@@ -12,13 +12,13 @@ This callback function is called when the script module receives a trigger event
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**number**|The number of the trigger pad in the range from 1 to 8.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Print the pad number and pass the trigger event on.

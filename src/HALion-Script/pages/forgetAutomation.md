@@ -4,20 +4,20 @@
 
 >**forgetAutomation(element, nameOrID)**
 
-#### Description
+## Description
 
 Function to remove the specified parameter from its automation parameter.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**element**|The [Element](./Element.md) object of the parameter to be removed.|[Element](./Element.md)|
 |**nameOrID**|The name or ID of the parameter.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Forget the automation assignments of all parameters of all zones.

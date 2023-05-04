@@ -4,7 +4,7 @@
 
 >**onSaveSubPreset(section)**
 
-#### Description
+## Description
 
 This callback function is called when saving a subpreset with a corresponding [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template. The callback will only be called if the scope of the [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template is set correctly.
 
@@ -17,17 +17,17 @@ In addition, the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Br
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**section**|The section as defined in the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.|string|
 
-#### Return Values
+## Return Values
 
 The returned data will be stored in a subpreset.
 
-#### Example
+## Example
 
 {{#include ./_onLoadSaveSubPreset-Example.md}}
 

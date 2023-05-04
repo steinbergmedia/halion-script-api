@@ -4,13 +4,13 @@
 
 >**getKeyProperties()**
 
-#### Description
+## Description
 
 Function to access the internal key properties array. This array manages the colors and tooltips of the keys on the plug-in keyboard and the instrument names that will be shown in Cubase's Drum Editor when you use **Create Drum Map from Instrument** in the Inspector. This function does not retrieve colors or tooltips from other MIDI modules like MegaTrig, for example. Therefore, the first time you call getKeySwitches, the returned array will be empty. You must initialize the array by specifying each key property using a table with a set of predefined fields. The valid fields are listed below. The index of the array must be in the range from 0 to 127. Each index adresses the properties of the key with the corresponding note number. You change the properites by creating a table for the desired index/key and then you assign values to the fields ``.color``, ``.tooltip`` or ``.drummap``. Making changes to the properties of a key will override any properties the key might have from other MIDI modules, e.g., the tooltip and coloring from a key switch of a MegaTrig module, even if the MIDI module is located earlier in the processing chain, i.e., higher in the hierarchy of the Program Tree. Any key properties from other script modules that are later in the processing chain will also be overridden. The key properties from the first script module in the Program Tree always have priority.
 
 **Available in:** Controller.
 
-#### Fields
+## Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -20,11 +20,11 @@ Function to access the internal key properties array. This array manages the col
 
 >&#10069; To clear a property, set the respective field to ``nil``. Setting ``.color`` or ``.tooltip`` to nil will use the next valid key properties, i.e., the color and toolip from another MIDI or script module. If no properties from other modules are available, no color and tooltip will be used.
 
-#### Return Values
+## Return Values
 
 Returns the reference to the internal key properties array.
 
-#### Example 1
+## Example 1
 
 ```lua
 -- Set and clear colors on the keyboard.
@@ -56,7 +56,7 @@ function onNote(event)
 end
 ```
 
-#### Example 2
+## Example 2
 
 ```lua
  -- Set the GM drum map as tooltip and drummap name.

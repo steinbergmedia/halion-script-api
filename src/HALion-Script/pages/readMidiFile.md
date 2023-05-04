@@ -4,23 +4,23 @@
 
 >**readMidiFile(path)**
 
-#### Description
+## Description
 
 Function to read a MIDI file (.mid). The function creates a MIDI sequence table that contains the data of the MIDI file. See [MIDI Sequence Table](./MIDI-Sequence-Table.md) for details on the fields of the MIDI sequence table.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**path**|The path and file name of the MIDI file.|string|
 
-#### Return Values
+## Return Values
 
 Returns a MIDI sequence table. See [MIDI Sequence Table](./MIDI-Sequence-Table.md) for details.
 
-#### Example
+## Example
 
 To explore the following script:
 

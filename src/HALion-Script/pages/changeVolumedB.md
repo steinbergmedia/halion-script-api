@@ -4,13 +4,13 @@
 
 >**changeVolumedB(noteID, gain_dB, relative, immediateorDuration)**
 
-#### Description
+## Description
 
 Function to change the volume of a specific note in decibels (dB). Positive values amplify the signal and negative values attenuate the signal.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
@@ -19,7 +19,7 @@ Function to change the volume of a specific note in decibels (dB). Positive valu
 |**relative**|The value is added to the current amount if  this is set to ``true``. The default is ``false``.|boolean, optional|
 |**immediateOrDuration**|Change the value immediately or in the specified duration. Set this to ``true`` to change the value immediately without controller smoothing. Set a duration in milliseconds to change the value with controller smoothing in the specified time. If not set, this setting defaults to ``false`` and the controller smoothing setting in the **Options** editor is used.|boolean or number, optional|
 
-#### Example
+## Example
 
 ```lua
 -- Apply note-on velocity with a dynamic range of 40dB.

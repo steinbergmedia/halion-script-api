@@ -4,17 +4,17 @@
 
 >**getScriptExecTimeOut()**
 
-#### Description
+## Description
 
 Function to read the duration of the script execution time-out either for the controller or the processor thread, depending on where getScriptExecTimeOut is called. The duration for the script execution time-out is returned in milliseconds. The default is 5000 ms for the controller thread and 1000 ms for the processor thread.
 
 **Available in:** Controller, Processor.
 
-#### Return Values
+## Return Values
 
 Returns the duration of the script execution time-out in milliseconds either for the controller or the processor thread.
 
-#### Example
+## Example
 
 ```lua
  -- Print the script execution time-out of the controller and the processor thread.

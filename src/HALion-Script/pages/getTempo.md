@@ -4,17 +4,17 @@
 
 >**getTempo()**
 
-#### Description
+## Description
 
 Function to read the tempo of the host software.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the current tempo in beats per minute (BPM). If no tempo information is available, this function returns the value -1.
 
-#### Example
+## Example
 
 ```lua
 -- Print the playing speed of subsequent notes in percentage of the host tempo.

@@ -4,19 +4,19 @@
 
 >**onController(event)**
 
-#### Description
+## Description
 
 This callback function is called when the script module receives a continuous controller event. If the script doesn't implement [onAfterTouch](./onAfterTouch.md) or [onPitchBend](./onPitchBend.md), the respective aftertouch or pitch bend events will be passed on to onController. This way, continuous controller, aftertouch and pitch bend events can be treated in the same callback function onController.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|[Event](./Event.md) object of the type controller|[Event](./Event.md)|
 
-#### Fields
+## Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -24,7 +24,7 @@ This callback function is called when the script module receives a continuous co
 |**.controller**|The controller number. See [Controller Numbers](./Controller-Numbers.md) for a description of the different controllers.|number|
 |**.value**|The controller value in the range of 0 to 127.|number|
 
-#### Example
+## Example
 
 {{#include _onController-Example.md}}
 

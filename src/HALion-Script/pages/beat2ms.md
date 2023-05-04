@@ -4,23 +4,23 @@
 
 >**beat2ms(beats)**
 
-#### Description
+## Description
 
 Function to convert a number of beats to the equivalent duration in milliseconds. One beat equals a quarter note. The current tempo is taken into account.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**beats**|The desired duration in number of beats and fractions of it.|number|
 
-#### Return Values
+## Return Values
 
 Returns the specified number of beats (quarter notes) as duration in milliseconds.
 
-#### Example
+## Example
 
 ```lua
 -- Print the position in the current bar in milliseconds when triggering a note.

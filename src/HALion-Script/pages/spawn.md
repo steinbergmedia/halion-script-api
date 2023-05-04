@@ -4,20 +4,20 @@
 
 >**spawn(func, arg1, arg2, ...)**
 
-#### Description
+## Description
 
 Calls a Lua function and executes it in a separate, parallel thread.
 
 **Available in:** Controller, Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**func**|The name of the function to be called.|function|
 |**arg1, arg2, ...**|The arguments of the function.|optional|
 
-#### Example
+## Example
 
 ```lua
 -- Play echos after releasing the note.

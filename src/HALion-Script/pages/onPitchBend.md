@@ -4,7 +4,7 @@
 
 >**onPitchBend(event)**
 
-#### Description
+## Description
 
 This callback function is called when the script module receives a pitch bend event. The ``.value`` field of the [Event](./Event.md) object contains the pitch bend value as a signed integer in the range from -8191 to 8191. The ``.bend`` field contains the pitch bend value as a floating point number in the range from -1.0 to 1.0. Use ``.bend`` for greater accuracy.
 
@@ -12,13 +12,13 @@ This callback function is called when the script module receives a pitch bend ev
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|[Event](./Event.md) object of the type controller.|[Event](./Event.md)|
 
-#### Fields
+## Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -26,7 +26,7 @@ This callback function is called when the script module receives a pitch bend ev
 |**.bend**|The pitch bend value in the range of -1.0 to 1.0.|number|
 |**.value**|The pitch bend value in the range of -8191 to 8191.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Print event.value and event.bend.

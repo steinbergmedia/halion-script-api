@@ -2,13 +2,21 @@
 
 # MIDI Sequence Table
 
-#### Description
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
+## Description
 
 MIDI Files are managed through a special predefined table: the MIDI sequence table. This table allows you to change values and add or remove notes like with normal Lua tables, but the structure of that table must remain as defined below.
 
 **Available in:** Controller.
 
-#### MIDI Sequence Fields
+## MIDI Sequence Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -20,14 +28,14 @@ MIDI Files are managed through a special predefined table: the MIDI sequence tab
 |**.songname**|The name of the song.|string|
 |**.tracks**|The tracks of the MIDI file as an array with the index starting at 1. Name, channel and event are separate fields of that table (see Tracks Table below).|table|
 
-#### Signature Table
+## Signature Table
 
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.numerator**|The numerator of the time signature. The default is 4.|number|
 |**.denominator**|The denominator of the time signature. The default is 4.|number|
 
-#### Tracks Table
+## Tracks Table
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -35,7 +43,7 @@ MIDI Files are managed through a special predefined table: the MIDI sequence tab
 |**.channel**|The MIDI channel of the track. The default is 1.|number|
 |**.events**|The events of the track as an array with the index starting at 1. The events are stored as Event objects.|table|
 
-#### Example
+## Example
 
 To explore the following script:
 

@@ -4,17 +4,17 @@
 
 >**getSlotIndex()**
 
-#### Description
+## Description
 
 Function to retrieve the index of the slot in which the program is loaded.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the index of the slot in which the program is loaded.
 
-#### Example
+## Example
 
 ```lua
 -- Print the slot index with onInit and onNote.

@@ -2,7 +2,7 @@
 
 # Note Expression Types
 
-#### Description
+## Description
 
 Enumerator to identify the different note expression types.
 
@@ -10,7 +10,7 @@ Enumerator to identify the different note expression types.
 
 **Available in:** Processor.
 
-#### Note Expression Types
+## Note Expression Types
 
 |Index|Name|
 |:-|:-|
@@ -26,7 +26,7 @@ Enumerator to identify the different note expression types.
 |10|NoteExpressionType.custom7|
 |11|NoteExpressionType.custom8|
 
-#### Example
+## Example
 
 ```lua
 -- Detect the type of note expression.

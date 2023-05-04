@@ -4,7 +4,7 @@
 
 >**getFreeVoices()**
 
-#### Description
+## Description
 
 Function to retrieve the number of free voices of the plug-in instance.
 
@@ -12,11 +12,11 @@ Function to retrieve the number of free voices of the plug-in instance.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the number of free voices of the plug-in instance.
 
-#### Example
+## Example
 
 ```lua
 -- Print the number of free voices of the plug-in.

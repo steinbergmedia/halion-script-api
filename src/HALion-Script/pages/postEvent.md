@@ -4,24 +4,24 @@
 
 >**postEvent(event, delay)**
 
-#### Description
+## Description
 
 Function to post the event to the engine. The second argument is optional. It allows you to delay the event by a specific time in milliseconds.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|The [Event](./Event.md) object that will be posted.|[Event](./Event.md)|
 |**delay**|Delay time in milliseconds. The default is 0 ms.|number, optional|
 
-#### Return Values
+## Return Values
 
 Returns a note ID in case of a note-on event, ``nil`` for any other type of event. For this reason, assigning the return value of postEvent to a variable is only meaningful in the [onNote](./onNote.md) callback.
 
-#### Example
+## Example
 
 ```lua
 local delayTime = 1000

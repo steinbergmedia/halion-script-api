@@ -4,19 +4,19 @@
 
 >**onNote(event)**
 
-#### Description
+## Description
 
 This callback function is called when the script module receives a note-on event.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|Event object of the type noteOn.|Event|
 
-#### Fields
+## Fields
 
 |Field|Description|Value Type|
 |:-|:-|:-|
@@ -25,7 +25,7 @@ This callback function is called when the script module receives a note-on event
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-on velocity in the range of 0 to 127.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Print note ID, note number and velocity.

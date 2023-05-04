@@ -4,7 +4,7 @@
 
 >**onLoadSubPreset(section, data)**
 
-#### Description
+## Description
 
 This callback function is called when loading a subpreset with a corresponding [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template. The callback will only be called if the scope of the [Preset Browser](../../HALion-Macro-Page/pages/Preset-Browser.md) template is set correctly.
 
@@ -17,14 +17,14 @@ In addition, the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Br
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**section**|The section as defined in the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.|string|
 |**data**|The data that was returned by [onSaveSubPreset](./onSaveSubPreset.md).||
 
-#### Example
+## Example
 
 {{#include ./_onLoadSaveSubPreset-Example.md}}
 

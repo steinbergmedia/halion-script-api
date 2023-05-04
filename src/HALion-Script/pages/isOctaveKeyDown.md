@@ -4,23 +4,23 @@
 
 >**isOctaveKeyDown(note)**
 
-#### Description
+## Description
 
 Function to detect whether a key is held or not, regardless of the octave.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**note**|The note number which specifies the key in the range of 0 to 127.|number|
 
-#### Return Values
+## Return Values
 
 Returns ``true`` if the specified key is held, no matter in which octave. The function returns ``false`` if the specified key and any octave keys have been released. The note events must come from outside the script, e.g., from the host software or another MIDI module.
 
-#### Example
+## Example
 
 ```lua
 -- Detect whether a key is held, no matter in which octave.

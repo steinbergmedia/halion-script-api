@@ -4,23 +4,23 @@
 
 >**loadPreset(path)**
 
-#### Description
+## Description
 
 Function to load the elements of a VST preset. Depending on whether you load a layer, program or multi-program VST preset, the function returns either an [Element](./Element.md) object of the type [Layer](./Layer.md), [Program](./Program.md) or [Instance](./Instance.md). You can use the returned [Element](./Element.md) object to insert layers, zones, MIDI modules, busses, effects, etc. from the VST preset into the program or HALion instance where the script is executed.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**path**|The path and file name of the VST preset.|string|
 
-#### Return Values
+## Return Values
 
 Returns an [Element](./Element.md) object of the type [Layer](./Layer.md), [Program](./Program.md) or [Instance](./Instance.md), depending on whether a layer, program or multi-program VST preset was loaded.
 
-#### Example
+## Example
 
 To explore the following script:
 

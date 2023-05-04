@@ -4,7 +4,7 @@
 
 >**playNote(note, velocity, duration, layerOrZone, volume, pan, tune)**
 
-#### Description
+## Description
 
 Function to generate note events.
 
@@ -14,7 +14,7 @@ Function to generate note events.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
@@ -26,11 +26,11 @@ Function to generate note events.
 |**pan**|The initial pan position in the range of -1.0 to 1.0. The default is 0.|number, optional|
 |**tune**|The initial tuning in the range of -120.0 to 120.0. The default is 0.|number, optional|
 
-#### Return Values
+## Return Values
 
 Returns the note ID of the generated note.
 
-#### Example
+## Example
 
 ```lua
 -- Play a major scale with each note.

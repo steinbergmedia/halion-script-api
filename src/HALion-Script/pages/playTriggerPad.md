@@ -4,7 +4,7 @@
 
 >**playTriggerPad(number)**
 
-#### Description
+## Description
 
 Function to send the trigger events of the Trigger Pads to subsequent modules of the script module.
 
@@ -12,13 +12,13 @@ Function to send the trigger events of the Trigger Pads to subsequent modules of
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**number**|The number of the trigger pad in the range from 1 to 8.|number|
 
-#### Example
+## Example
 
 ```lua
 --[[

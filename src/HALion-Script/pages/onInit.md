@@ -4,7 +4,7 @@
 
 >**onInit()**
 
-#### Description
+## Description
 
 This callback function is called after executing any global statements and the [onLoadIntoSlot](./onLoadIntoSlot.md) callback function. It is the first callback function that is called when the processor thread is initialized. You can use this function to initialize variables with information from the context, for example.
 
@@ -12,7 +12,7 @@ This callback function is called after executing any global statements and the [
 
 **Available in:** Processor.
 
-#### Example
+## Example
 
 ```lua
 -- Print the time signature and tempo of the host software.

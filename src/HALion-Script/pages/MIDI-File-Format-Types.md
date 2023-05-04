@@ -2,7 +2,7 @@
 
 # MIDI File Format Types
 
-#### Description
+## Description
 
 Enumerator to identify the different MIDI file formats.
 
@@ -15,14 +15,14 @@ MidiFileFormat.singleMultiChannelTrack refers to format 0 and MidiFileFormat.sim
 
 **Available in:** Controller.
 
-#### MIDI File Format Types
+## MIDI File Format Types
 
 |Index|Name|
 |:-|:-|
 |0|MidiFileFormat.singleMultiChannelTrack|
 |1|MidiFileFormat.simultaneousTracks|
 
-#### Example
+## Example
 
 To explore the following script:
 

@@ -4,17 +4,17 @@
 
 >**getUsedMemory()**
 
-#### Description
+## Description
 
 Function to obtain the amount of memory that is used by the script.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the number of bytes in the memory that are used by the script.
 
-#### Example
+## Example
 
 ```lua
 -- Print the used memory in bytes.

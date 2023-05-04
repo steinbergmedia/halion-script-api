@@ -2,7 +2,15 @@
 
 # Modulation Destination Types
 
-#### Description
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
+## Description
 
 Enumerator to identify the modulation destinations.
 
@@ -138,7 +146,9 @@ Enumerator to identify the modulation destinations.
 |125|ModulationDestination.wavetable1FormantShift|
 |126|ModulationDestination.wavetable2FormantShift|
 
-#### Example
+[Jump to Top ](#modulation-destination-types)
+
+## Example
 
 ```lua
 -- Define modulation destinations.

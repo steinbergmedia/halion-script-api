@@ -4,17 +4,17 @@
 
 >**getHostVersion()**
 
-#### Description
+## Description
 
 Function to retrieve the version of the host software.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns a string with the version of the host software.
 
-#### Example
+## Example
 
 ```lua
 -- Print the version of the host software.

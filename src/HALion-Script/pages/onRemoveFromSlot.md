@@ -4,13 +4,13 @@
 
 >**onRemoveFromSlot()**
 
-#### Description
+## Description
 
 This callback function is called when the program is removed from the **Slot Rack**.
 
 **Available in:** Controller.
 
-#### Example
+## Example
 
 ```lua
 -- Print a message when removing the program from the Slot Rack.

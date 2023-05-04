@@ -37,6 +37,7 @@ The following example shows that parameters can be used just like global variabl
 -- Change the parameter Scale through a MIDI controller and use its value to replace the note-on velocity.
  
 -- Initialize variables.
+
 min = 0
 max = 100
 maxVel = 127
@@ -45,15 +46,18 @@ default = defVel / maxVel * max
 maxCC = 127
  
 -- Define Scale using the previous variables.
+
 defineParameter("Scale", nil, default, min, max)
  
 -- Use the value of Scale to replace the note-on velocity.
+
 function onNote(event)
     event.velocity = maxVel * Scale / max
     postEvent(event)
 end
  
 -- Change the value of Scale through the last incoming MIDI controller.
+
 function onController(event)
     Scale = event.value / maxCC * max
 end
@@ -72,14 +76,17 @@ How a parameter behaves depends on its characteristics. You determine the charac
 -- Showcase different parameters.
  
 -- Initialize variables.
+
 maxVelocity = 127
  
 -- Change callback of the parameter "Label".
+
 function nameChanged()
     print("name changed to", Label) --Print the value of the parameter.
 end
  
 -- Initialize parameters.
+
 defineParameter("Scale", nil, 100)                                          -- Parameter with default 100 and range 0 to 100.
 defineParameter("Offset", nil, 0, -100, 100, 1)                             -- Bipolar parameter with integer steps.
 defineParameter("Pan", nil, 0, -100, 100, 0.1)                              -- Bipolar parameter with 0.1 steps.
@@ -90,6 +97,7 @@ defineParameter("Intervals", nil, { 0, 4, 7 })                              -- T
 defineParameter("Volume", nil, this.parent:getParameterDefinition("Level")) -- Parameter with the same behavior as the "Level" parameter of the parent layer.
 
 -- Use the parameters Scale and Intervals to play a chord with fixed velocity.
+
 function onNote(event)
     fixedVelocity = maxVelocity * Scale / 100
     local id1 = playNote(event.note + Intervals[1], fixedVelocity)
@@ -111,6 +119,7 @@ The change callback is only called if the value of the parameter was changed fro
 -- The current value of Scale is printed only if changed from UI, e.g., go to the Parameter List to adjust Scale
  
 -- Initialize variables.
+
 min = 0
 max = 100
 maxVel = 127
@@ -119,20 +128,24 @@ default = defVel / maxVel * max
 maxCC = 127
  
 -- This callback function will only be called if you adjust Scale from the UI.
+
 function valueChanged()
     print("Value of Scale changed to:", Scale)
 end
  
 -- Define Scale with the previous variables.
+
 defineParameter("Scale", nil, default, min, max, valueChanged)
  
 -- Use the value of Scale to replace the note-on velocity.
+
 function onNote(event)
     event.velocity = maxVel * Scale / max
     postEvent(event)
 end
  
 -- Change the value of Scale through the last incoming MIDI controller.
+
 function onController(event)
     -- Assigning a value to Scale will not call the callback function.
     Scale = event.value / maxCC * max
@@ -149,6 +162,7 @@ In [Example 2](#example-2) the function nameChanged is declared before the assoc
 
 ```lua
 -- Define a string parameter.
+
 defineParameter("Name", nil, "untitled", function() nameChanged() end)
 
 -- If nameChanged is called inside an anonymous function, it can be declared after defineParameter.
@@ -160,7 +174,7 @@ end
 
 [Jump to Top ](#creating-parameters)
 
-## Defining Parameters By Named Arguments
+## Defining Parameters by Named Arguments
 
 When calling [defineParameter](./defineParameter.md) with several arguments, the arguments are matched by their position and the associated values are passed on to the function. For this reason, the arguments of [defineParameter](./defineParameter.md) must match the exact order and position when calling the function. Alternatively, you can set the arguments with the keys and values of a table. This method of passing arguments and values to a function is called *named arguments*.
 
@@ -172,17 +186,20 @@ Named arguments have the advantage that they can be set in any order you want an
 -- Different parameters created with named arguments.
  
 -- Change callback of the parameter "Label".
+
 function nameChanged()
     print("name changed to", Label) --Print the value of the parameter.
 end
  
 -- Parameter with default 100 and range 0 to 100.
+
 defineParameter{
     name = "Scale",
     default = 100
 }
  
 -- Bipolar parameter with integer steps.
+
 defineParameter{
     name = "Offset",
     default = 0,
@@ -192,6 +209,7 @@ defineParameter{
 }
  
 -- Bipolar parameter with 0.1 steps.
+
 defineParameter{
     name = "Pan",
     default = 0,
@@ -201,6 +219,7 @@ defineParameter{
 }
  
 -- Indexed string array.
+
 defineParameter{
     name = "Mode",
     default = 1,
@@ -208,6 +227,7 @@ defineParameter{
 }
  
 -- Switch with long name.
+
 defineParameter{
     name = "Enable",
     longName = "Enable Filter",
@@ -215,13 +235,15 @@ defineParameter{
 }
  
 -- String parameter.
+
 defineParameter{
     name = "Label",
     default = "untitled",
     onChanged = nameChanged,
 }
  
--- Table parameter
+-- Table parameter.
+
 defineParameter{
     name = "Intervals",
     default = { 0, 4, 7 },
@@ -236,6 +258,7 @@ defineParameter{
 
 If you create a parameter by named arguments, you get access to these additional arguments:
 
+<!-- ANCHOR: additional-named-arguments -->
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**type**|The value type of the parameter (integer, float, boolean, string, variant, or envelope). The type must match the default and increment arguments.|string, optional|
@@ -247,11 +270,14 @@ If you create a parameter by named arguments, you get access to these additional
 |**persistent**|The parameter will not be restored from the VST preset if this is set to ``false``. The argument defaults to ``true`` if not set.|bool, optional|
 
 The arguments readOnly, writeAlways and automatable are helpful if you have a parameter that is used only for indication, but not for entering values.
+<!-- ANCHOR_END: additional-named-arguments -->
 
 #### Example 6
 
+<!-- ANCHOR: additional-named-arguments-example -->
 ```lua
 -- The following parameter is read only, not automatable and not persistent.
+
 defineParameter {
     name = "deltaTime",
     longName = "Delta Time",
@@ -266,6 +292,7 @@ defineParameter {
 }
    
 -- Measure the time between subsequent notes.
+
 function onNote(event)
     postEvent(event)
     t2 = getTime()
@@ -276,11 +303,13 @@ function onNote(event)
 end
  
 -- The following parameter change callback is executed in the processor context with high accuracy.
+
 function onP1changed()
    this.parent:setParameterNormalized("Level", P1 / 100)
 end
  
 defineParameter{name = "P1", min=0, max=100, onChanged = onP1changed, processorCallback = true}
 ```
+<!-- ANCHOR_END: additional-named-arguments-example -->
 
 [Jump to Top ](#creating-parameters)

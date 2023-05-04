@@ -4,19 +4,19 @@
 
 >**sortEvents(eventsTable)**
 
-#### Description
+## Description
 
 Function to sort the events of the specified events table according to their PPQ position. The function sorts the events from first to last PPQ position. The events table is part of a tracks table which is part of the MIDI sequence table. See [MIDI Sequence Table](./MIDI-Sequence-Table.md) for details.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**eventsTable**|The table record referencing the events table.|table|
 
-#### Example
+## Example
 
 ```lua
 -- Produce a minor scale with reverse PPQ positions, then sort it.

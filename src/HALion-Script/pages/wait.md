@@ -4,7 +4,7 @@
 
 >**wait(ms)**
 
-#### Description
+## Description
 
 Function to suspend the execution of a callback for a specific time in milliseconds.
 
@@ -12,13 +12,13 @@ Function to suspend the execution of a callback for a specific time in milliseco
 
 **Available in:** Controller, Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**ms**|Time in ms.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Delay notes which have not been released for 1000 ms.

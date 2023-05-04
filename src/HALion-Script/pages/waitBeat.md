@@ -4,7 +4,7 @@
 
 >**waitBeat(beats)**
 
-#### Description
+## Description
 
 Function to suspend the execution of a callback for a specific time. This time is specified in number of beats. One beat equals the length of a quarter note based on the current tempo.
 
@@ -12,13 +12,13 @@ Function to suspend the execution of a callback for a specific time. This time i
 
 **Available in:** Controller, Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**beats**|Time in number of quarter notes and fractions of it.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Change tuning periodically after one beat.

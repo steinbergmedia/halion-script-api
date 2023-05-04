@@ -4,20 +4,20 @@
 
 >**controlChange(controller, value)**
 
-#### Description
+## Description
 
 Function to generate controller events.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**controller**|The controller number. See [Controller Numbers](./Controller-Numbers.md) for a description of the different controllers.|number|
 |**value**|The controller value in the range of 0 to 127.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Invert the values of all MIDI controllers.

@@ -4,7 +4,7 @@
 
 >**isNoteHeld()**
 
-#### Description
+## Description
 
 Function to detect inside the [onNote](./onNote.md) callback function if a note is held or not.
 
@@ -12,11 +12,11 @@ Function to detect inside the [onNote](./onNote.md) callback function if a note 
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns ``true`` if [onNote](./onNote.md) has received a note-on event and ``false`` if [onNote](./onNote.md) has received a corresponding note-off event. The note events must come from outside the script, e.g., from the host software or another MIDI module.
 
-#### Example
+## Example
 
 ```lua
 -- Detect inside onNote, if a note is held.

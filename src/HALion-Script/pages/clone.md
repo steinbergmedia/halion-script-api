@@ -4,7 +4,7 @@
 
 >**clone(object)**
 
-#### Description
+## Description
 
 Function to create a copy of the specified object. If you want to modify an object, and you want to keep the original object, you can clone the object before modifying it. The allowed objects are [Bus](./Bus.md), [Effect](./Effect.md), [Event](./Event.md), [Layer](./Layer.md), [MidiModule](./MidiModule.md), [Program](./Program.md) and [Zone](./Zone.md). Event objects can be cloned in the processor or the controller thread. All other objects can only be cloned in the controller thread.
 
@@ -12,17 +12,17 @@ Function to create a copy of the specified object. If you want to modify an obje
 
 **Available in:** Controller, Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**event**|The allowed objects are [Bus](./Bus.md), [Effect](./Effect.md), [Event](./Event.md), [Layer](./Layer.md), [MidiModule](./MidiModule.md), [Program](./Program.md) and [Zone](./Zone.md).|object|
 
-#### Return Values
+## Return Values
 
 Returns a copy of the specified object.
 
-#### Example
+## Example
 
 ```lua
 -- Create a copy of the event and transpose it.

@@ -1,12 +1,12 @@
 ```lua
 --[[
-    The corresponding MacroPage needs two preset templates: One with
-    the section set to Pitch and the other with the section set to Filter.
+    The corresponding MacroPage needs two Preset Browser templates:
+    One with the section set to Pitch and the other with the section set to Filter.
  
-    The preset template with the section Pitch stores/restores the
+    The Preset Browser template with the section Pitch stores/restores the
     parameters Pitch.Coarse and Pitch.Fine.
  
-    The preset template with the section Filter stores/restores the
+    The Preset Brrowser template with the section Filter stores/restores the
     parameters Filter.Cutoff and Filter.Resonance.
 --]]
  

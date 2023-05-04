@@ -2,13 +2,13 @@
 
 # Voice Group Steal Modes
 
-#### Description
+## Description
 
 Enumerator to identify the different voice group steal modes.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 The voice group steal modes can be determined with these names or indices:
 
@@ -21,7 +21,7 @@ The voice group steal modes can be determined with these names or indices:
 |5|StealMode.stealLowestAmplitude|
 |6|StealMode.stealReleasedNotes|
 
-#### Example
+## Example
 
 {{#include ./_VoiceGroups-Example.md}}
 

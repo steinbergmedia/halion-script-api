@@ -2,7 +2,7 @@
 
 # Controller Numbers
 
-#### Description
+## Description
 
 Continuous controller events are determined by their controller number. Controller numbers from 0 to 127 follow the MIDI specification. Controller numbers above 127 are additional controllers that are specific to HALion.
 
@@ -10,7 +10,7 @@ Continuous controller events are determined by their controller number. Controll
 
 **Available in:** Processor.
 
-#### Additional Controllers
+## Additional Controllers
 
 Controllers like aftertouch, pitch bend and other special controllers are determined by controller numbers above 127.
 
@@ -44,7 +44,7 @@ Controllers like aftertouch, pitch bend and other special controllers are determ
 
 >&#10069; The function [onController](./onController.md) will not be called by controllers 138 to 146. They are reserved for the polyphonic sources note-on velocity and note expression custom 1-8. You can use the callback functions [onNote](./onNote.md) and [onNoteExpression](./onNoteExpression.md) instead.
 
-#### Example
+## Example
 
 {{#include _onController-Example.md}}
 

@@ -4,19 +4,19 @@
 
 >**releaseVoice(noteID)**
 
-#### Description
+## Description
 
 Function to release a note with a specific note ID.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**noteID**|The note ID of the note you want to release.|number|
 
-#### Example
+## Example
 
 ```lua
 -- Generate major chords.

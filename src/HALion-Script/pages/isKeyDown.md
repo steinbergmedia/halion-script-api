@@ -4,23 +4,23 @@
 
 >**isKeyDown(note)**
 
-#### Description
+## Description
 
 Function to detect whether a key with a specific note number is held or not.
 
 **Available in:** Processor.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**note**|The note number in the range of 0 to 127.|number|
 
-#### Return Values
+## Return Values
 
 Returns ``true`` if the key with the specified note number is held and ``false`` if the key has been released. The note events must come from outside the script, e.g., from the host software or another MIDI module.
 
-#### Example
+## Example
 
 ```lua
 -- Detect if a key is held.

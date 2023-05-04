@@ -4,24 +4,24 @@
 
 >**writeMidiFile(path, midiSequence)**
 
-#### Description
+## Description
 
 Function to write a MIDI file (.mid) to disk.
 
 **Available in:** Controller.
 
-#### Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**path**|The path and file name of the MIDI file.|string|
 |**midiSequence**|The MIDI sequence table that contains the data. The structure of the table is defined in the [MIDI Sequence Table](./MIDI-Sequence-Table.md).|table|
 
-#### Return Values
+## Return Values
 
 Returns ``true`` if the MIDI file was written successfully and ``false`` if not.
 
-#### Example
+## Example
 
 {{#include ./_insertEvent-writeMidiFile-Example.md}}
 

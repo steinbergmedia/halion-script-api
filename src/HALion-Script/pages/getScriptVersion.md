@@ -4,17 +4,17 @@
 
 >**getScriptVersion()**
 
-#### Description
+## Description
 
 Function to retrieve the version of the script engine.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns a string with the version of the script engine.
 
-#### Example
+## Example
 
 ```lua
 -- Print the version of the script engine.

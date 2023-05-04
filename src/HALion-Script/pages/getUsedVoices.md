@@ -4,7 +4,7 @@
 
 >**getUsedVoices()**
 
-#### Description
+## Description
 
 Function to obtain the number of used voices of the plug-in instance.
 
@@ -12,11 +12,11 @@ Function to obtain the number of used voices of the plug-in instance.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the number of used voices of the plug-in instance.
 
-#### Example
+## Example
 
 ```lua
 -- Print the number of used voices of the plug-in.

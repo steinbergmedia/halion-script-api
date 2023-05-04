@@ -4,17 +4,17 @@
 
 >**getProductName()**
 
-#### Description
+## Description
 
 Function to retrieve the name of the plug-in.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns a string with the name of the plug-in.
 
-#### Example
+## Example
 
 ```lua
 -- Print the name of the plug-in.

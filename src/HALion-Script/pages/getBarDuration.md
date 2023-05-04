@@ -4,17 +4,17 @@
 
 >**getBarDuration()**
 
-#### Description
+## Description
 
 Function to obtain the duration of one bar in milliseconds.
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the duration of one bar in milliseconds based on the current time signature and tempo. If no time signature or tempo are available, this function returns the value -1.
 
-#### Example
+## Example
 
 ```lua
 -- Limit the note length to one bar.

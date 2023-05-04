@@ -2,17 +2,17 @@
 
 # Undo Context Types
 
-#### Description
+## Description
 
 Enumerator to identify the undo context.
 
 **Available in:** Controller.
 
-#### Arguments
-
+<!-- ANCHOR: undo-context-types -->
 |Index|Undo Context|
 |:-|:-|
 |1|UndoContext.inUndo|
 |2|UndoContext.inRedo|
+<!-- ANCHOR_END: undo-context-types -->
 
 **See also:** [getUndoContext](./getUndoContext.md), [startUndoBlock](./startUndoBlock.md), [endUndoBlock](./endUndoBlock.md)

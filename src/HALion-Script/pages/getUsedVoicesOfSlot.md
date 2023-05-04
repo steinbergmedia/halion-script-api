@@ -4,7 +4,7 @@
 
 >**getUsedVoicesOfSlot()**
 
-#### Description
+## Description
 
 Function to obtain the number of used voices of the slot in which a program is loaded.
 
@@ -12,11 +12,11 @@ Function to obtain the number of used voices of the slot in which a program is l
 
 **Available in:** Processor.
 
-#### Return Values
+## Return Values
 
 Returns the number of used voices of the corresponding slot.
 
-#### Example
+## Example
 
 ```lua
 -- Print the number of used voices of the slot.
