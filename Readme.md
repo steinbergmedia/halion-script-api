@@ -24,4 +24,4 @@ Alternatively, you can build and serve the HTML pages locally as follows.
 mdbook serve -open
 ```
 
-The HTML pages will automatically be updated if you change the source files.
+When using ``mdbook serve -open``, the HTML pages will be updated automatically, if you change the source files.
