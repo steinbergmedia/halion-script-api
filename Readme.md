@@ -4,12 +4,11 @@ The source is written in [Markdown](https://www.markdownguide.org/getting-starte
 
 ## Requirements
 
-mdbook
-mdbook-mermaid
-mdbook-toc
-mdbook-linkcheck
+* [mdbook](https://github.com/rust-lang/mdBook)
+* [mdbook-toc](https://github.com/badboy/mdbook-toc)
+* [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck)
 
-Install all of the above, so that the executables are in your environments path variable.
+Download the precompiled binaries and install them, so that the executables are in your environments path variable.
 
 ## Build
 
