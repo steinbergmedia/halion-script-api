@@ -2,7 +2,11 @@
 
 # HALion Script
 
+## Getting Started
+
 {{#include _Getting-Started.md}}
+
+## HALion Script Reference
 
 {{#include _HALion-Script-Reference.md}}
 
