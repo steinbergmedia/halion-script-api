@@ -1,0 +1,1 @@
+|**Margin**|**Left, Top, Right, Bottom:** As soon as a margin is set, the margin area is not stretched or tiled, but only the area outside. This can be used to define frames, for example, where the four corners of the bitmap are preserved in size and only the rest of the bitmap is stretched.|
