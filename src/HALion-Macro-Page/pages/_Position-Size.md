@@ -1,1 +1,1 @@
-|**Position/Size**|Position and size of the element in pixels. Pos x/y = Position of upper left corner.<p>**Pos x, Pos y, Width, Height.**</p>|
+|**Position/Size**|**Position X, Position Y, Width, Height:** Position and size of the element in pixels. Position X/Y defines the position of the upper left corner.|

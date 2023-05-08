@@ -10,7 +10,7 @@ The Wavetable control allows you to display the resulting wave of the wavetable 
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Wavetable control.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}

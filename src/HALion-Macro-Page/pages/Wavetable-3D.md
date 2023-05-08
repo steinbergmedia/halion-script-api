@@ -18,7 +18,7 @@ The Wavetable 3D control allows you to display a three-dimensional representatio
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Wavetable 3D control.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}

@@ -1,0 +1,1 @@
+|**Show Value**|Activate this option if you want to display a tooltip with the current parameter value when using the control. This option can be exported to the template level. The exported parameter can then be activated by setting it to ``true`` (the default is ``false``).|

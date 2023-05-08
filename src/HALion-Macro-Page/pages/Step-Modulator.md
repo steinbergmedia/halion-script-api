@@ -12,13 +12,13 @@
 
 ## Description
 
-The Step Modulator is intended to control HALion's step modulator. It provides all necessary properties to be connected to the engine. Furthermore, there are properties for index, level, and level12 of the selected node and a snap option, which only affect the GUI and not the engine. These properties can be connected using UI parameters.
+The Step Modulator is intended to control HALion's step modulator. It provides all necessary properties to be connected to the engine parameters. Furthermore, there are properties for index, level, and level12 of the selected node and a snap option, which only affect the GUI parameters and not the engine parameters. These properties can be connected using UI variables.
 
 ## Properties
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Step Modulator.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}
@@ -26,8 +26,8 @@ The Step Modulator is intended to control HALion's step modulator. It provides a
 |**Slope**|The Slope Mode. This property must be connected to the engine parameter Slope to show the slope. Connect additional controls, e.g., a menu, to set the slope mode.|
 |**Slope Amnt**|This property must be connected to the engine parameter SlopeAmount to show the slope. Connect additional controls, e.g., a knob, to set the slope.|
 |**Show All**|Activate this option to show all steps with a fixed width. When dectivated, the width of the individual steps scales with the number of steps as set in **Steps**, to fill the full size of the control.|
-|**Advanced Editing**|Activate this option to provide additional editing possibillities. These are either available as context menu entries or as line editing functions using modifier keys (Shift, Alt). These editing functions were originally made to work best inside HALions Stepmodulator and Flexphraser. In case the control is used to control other custom script modules, where these functions are not needed or need to work differently, they can be deactivated.|
-|**Height**|Defines how the indivdual step values are displayed.<ul><li>&nbsp;&nbsp;0 = Standard look, with bars starting at 0 and going up to the adjusted value.</li><li>>0 = Bars with a defined heigth in pixels for continous parameters.</li><li>&nbsp;&nbsp;1 = Bars with a an automatic heigth for stepped parameters. The height of a bar correponds to 1/number of steps.</li></ul>|
+|**Advanced Editing**|Activate this option to provide additional editing possibillities. These are either available as context menu entries or as line editing functions using modifier keys (Shift, Alt). These editing functions were originally made to work best inside HALion's Stepmodulator and Flexphraser. In case the control is used to control other custom script modules, where these functions are not needed or need to work differently, they can be deactivated.|
+|**Height**|Defines how the indivdual step values are displayed.<ul><li>&nbsp;&nbsp;0 = Standard look, with bars starting at 0 and going up to the adjusted value.</li><li>>0 = Bars with a defined heigth in pixels for continous parameters.</li><li>&nbsp;&nbsp;1 = Bars with a an automatic height or stepped parameters. The height of a bar correponds to 1/number of steps.</li></ul>|
 |**Step 1-32**|The Step levels. This property can be connected to the engine stepmodulator parameters Step1-32.
 |**Length**|If the step modulator is used to control a custom script module, the Length parameter can be used to adjust the length of each step.|
 |**Enable**|If the step modulator is used to control a custom script module, the Enable parameter can be used to turn individual steps on and off.|
@@ -43,7 +43,7 @@ Create variables to connect the Step Modulator properties with the engine and fu
 |**Index**|index|The index of the selected node.|integer|1 to 32|
 |**Level**|level|Level of the selected node.|float|-100 to 100|
 |**Level 12**|level12|The level in fractions of 12 (used when Snap is active).|float|-12 to 12|
-|**Snap**|snap|Activates the snap line.|integer|0 or 1|
+|**Snap**|snap|Activates the snap line.|integer|0, 1|
 
 [Jump to Top ](#step-modulator)
 

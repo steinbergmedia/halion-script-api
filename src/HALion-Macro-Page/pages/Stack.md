@@ -10,7 +10,7 @@ A Stack allows you to create switchable subpages or sections. Each child of the 
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Stack.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}

@@ -10,7 +10,7 @@ Labels are intended to display text that names controls like knobs, text fields,
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Label.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}

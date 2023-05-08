@@ -10,7 +10,7 @@ A template control represents an instance of a template. The number of available
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the template control.|
+{{#include ./_Name.md}}
 {{#include ./_Position-Size.md}}
 {{#include ./_Attach.md}}
 {{#include ./_Tooltip.md}}
