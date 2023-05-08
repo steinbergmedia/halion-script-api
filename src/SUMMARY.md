@@ -234,6 +234,8 @@
 # HALion Macro Page
 
 - [HALion Macro Page](./HALion-Macro-Page/pages/HALion-Macro-Page.md)
+- [Example Macro Pages](./HALion-Macro-Page/pages/Example-Macro-Pages.md)
+- [Exploring Templates](./HALion-Macro-Page/pages/Exploring-Templates.md)
 - [Resources](./HALion-Macro-Page/pages/Resources.md)
     - [Bitmap](./HALion-Macro-Page/pages/Bitmap.md)
     - [Font](./HALion-Macro-Page/pages/Font.md)
@@ -275,7 +277,6 @@
     - [Studio EQ Meter](./HALion-Macro-Page/pages/Studio-EQ-Meter.md)
     - [Wavetable Noise Selector](./HALion-Macro-Page/pages/Wavetable-Noise-Selector.md)
     - [Wavetable Selector](./HALion-Macro-Page/pages/Wavetable-Selector.md)
-- [Exploring Templates](./HALion-Macro-Page/pages/Exploring-Templates.md)
 
 # HALion Tutorials & Guidelines
 
