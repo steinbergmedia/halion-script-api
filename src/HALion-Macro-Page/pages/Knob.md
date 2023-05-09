@@ -4,7 +4,7 @@
 
 ## Description
 
-The Knob control allows to create potentiometers by using a bitmap or section resources with frames. These frames are played as an animation when turning the knob. You can specify whether the knob reacts on its entire area or only on those parts where the alpha channel of the bitmap is bigger than 0 (shaped). Furthermore, the control can be inverted and set to be Scalable, which allows resizing of the bitmap. The Slider option can be used to display a pop-up slider when using the knob, which can be helpful when working with rather small knobs.
+The Knob control allows to create potentiometers by using a bitmap or section resources with frames. These frames are played as an animation when turning the knob. You can specify whether the knob reacts on its entire area or only on those parts where the alpha channel of the bitmap is bigger than 0 (Shaped). Furthermore, the control can be inverted and set to be Scalable, which allows resizing of the bitmap. The Slider option can be used to display a pop-up slider when using the knob, which can be helpful when working with rather small knobs.
 
 ## Properties
 
