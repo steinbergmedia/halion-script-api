@@ -10,11 +10,11 @@ The Text control can be used to edit either strings or values, depending on the 
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Style**|<ul><li>**Fit Strings:** Activate this option if you want a string to be shortened automatically if it cannot be fully displayed in the edit field. This method first removes spaces, then vowels.</li><li>**Fit Path:** Activate this option if you want a path string to be shortened automatically if it cannot be fully displayed in the edit field. This method keeps the first and last characters of the string and puts "..." in between to indicate that letters were omitted.</li><li>**Wordwrap:** Activate this option if you want to write text in more than one line. The text continues on the next line as soon as it does not fit into the current line.</li><li>**Read-Only:** Activate this option if you want to use the text as a display-only parameter which cannot be edited.</li></ul>|
-|**Font**|Allows you to select the [Font](./Font.md) resource that is used to display the text.|
+{{#include ./_Properties.md:font}}
 |**Units**|A unit, such as milliseconds (ms) or decibel (dB), can be displayed with the value. Any string can be used. The value must be displayed in the correct value format to match the selected unit.|
-{{#include ./_Alignment-Text.md}}
+{{#include ./_Properties.md:alignment}}

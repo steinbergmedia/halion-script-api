@@ -10,11 +10,11 @@ Used to display animations or graphical option menus.
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-{{#include ./_Value.md}}
-{{#include ./_ShowValue.md}}
-|**Style**|<ul><li>**Invert:** Inverts the animation.</li><li>**Scalable:** Activate this option if you want to be able to resize the animation. The assigned [Bitmap](./Bitmap.md) resources are resized according to the Scale Mode that is defined for the [Bitmap](./Bitmap.md) resource.</li></ul>|
-{{#include ./_Bitmap.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:value}}
+{{#include ./_Properties.md:show-value}}
+|**Style**|<ul><li>**Invert:** Inverts the animation.</li><li>**Scalable:** {{#include ./_Properties.md:scalable}}</li></ul>|
+{{#include ./_Properties.md:bitmap}}

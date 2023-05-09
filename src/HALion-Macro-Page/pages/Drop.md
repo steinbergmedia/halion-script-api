@@ -10,11 +10,11 @@ The Drop control allows you to create an area where you can drop objects, like f
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Value**|Allows you to connect a parameter that receives the string or the path.|
-|**Style**|<ul><li>**Path:** Set this option if you want to accept path objects.</li><li>**String:** Set this option if you want to accept string objects.</li><li>**Scalable:** Activate this option if you want to be able to resize the drop control. In that case, the assigned bitmap resources are resized according to the scale mode that is defined for the bitmap resource.</li></ul>|
+|**Style**|<ul><li>**Path:** Set this option if you want to accept path objects.</li><li>**String:** Set this option if you want to accept string objects.</li><li>**Scalable:** {{#include ./_Properties.md:scalable}}</li></ul>|
 |**Accept Filter**|Allows you to define a regular expression to accept only files of a specific type.|
 |**Bitmaps**|<ul><li>**Background:** Allows you to assign a bitmap resource that is displayed permanently.</li><li>**Reject:** Allows you to assign a bitmap resource that is displayed if an object cannot be dropped.</li><li>**Accept:** Allows you to assign a bitmap resource that is displayed if an object can be dropped.</li></ul>|

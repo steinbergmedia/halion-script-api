@@ -10,9 +10,9 @@ A Template List can be used to create a list of template instances, where each t
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
 |**Layout**|<ul><li>**Horizontal:** Activate this option to align the child templates horizontally in a row.</li><li>**Vertical:** Activate this option to align the child templates vertically in a column.</li><li>**Grid:** Activate this option to align the child templates in a two-dimensional grid.</li></ul>
 |**Alignment**|Here, you can adjust how the referenced child templates are positioned in the available template list view area.<ul><li>**Center:** All child templates are added to the list in their original size. The row, column, or grid is then centered inside the template list area.</li><li>**Left:** All child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the template list area.</li><li>**Right:** All child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the template list area.</li><li>**Fill:** All list cells are resized equally to match the size of the template list. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul>|
 {{#include ./_Tooltip.md}}

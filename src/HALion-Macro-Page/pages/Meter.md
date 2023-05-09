@@ -14,11 +14,11 @@ To display the meter and peak outputs of HALion's busses, a special vu meter tem
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-{{#include ./_Value.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:value}}
 |**Peak Value**|Allows you to connect a parameter that delivers a peak hold value.|
-|**Style**|<ul><li>**Vertical:** Activate this option if you want to display a vertical meter instead of the standard horizontal meter.</li><li>**Scalable:** Activate this option if you want to be able to resize the meter. In that case, the assigned bitmap resources are resized according to the Scale Mode that is defined for the [Bitmap](./Bitmap.md) resource.</li></ul>|
-|**Bitmaps**|<ul><li>**Meter:** Allows you to assign the bitmap that is used for the lit meter bar.</li><li>**Background:** Allows you to assign the bitmap that is used as background for the meter (e.g., a dimmed version of the lit meter bar bitmap).</li></ul>|
+|**Style**|<ul><li>**Vertical:** Activate this option if you want to display a vertical meter instead of the standard horizontal meter.</li><li>**Scalable:** {{#include ./_Properties.md:scalable}}</li></ul>|
+|**Bitmaps**|<ul><li>**Meter:** Allows you to assign the bitmap that is used for the lit meter.</li><li>**Background:** Allows you to assign the bitmap that is used as background for the meter (e.g., a dimmed version of the lit meter bitmap).</li></ul>|

@@ -10,9 +10,9 @@ Labels are intended to display text that names controls like knobs, text fields,
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-|**Font**|Allows you to select which font resource to be used to display the text.|
-{{#include ./_Alignment-Text.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:font}}
+{{#include ./_Properties.md:alignment}}

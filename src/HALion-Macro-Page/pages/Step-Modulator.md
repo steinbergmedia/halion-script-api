@@ -18,10 +18,10 @@ The Step Modulator is intended to control HALion's step modulator. It provides a
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Steps**|The number of steps. This property must be connected to the engine parameter Steps and further display controls.|
 |**Slope**|The Slope Mode. This property must be connected to the engine parameter Slope to show the slope. Connect additional controls, e.g., a menu, to set the slope mode.|
 |**Slope Amnt**|This property must be connected to the engine parameter SlopeAmount to show the slope. Connect additional controls, e.g., a knob, to set the slope.|
@@ -51,18 +51,18 @@ Create variables to connect the Step Modulator properties with the engine and fu
 
 |Poperty|Description|
 |:-|:-|
-|**Step0**|Fill color of all even steps (0,2,4, ..., 32).|
-|**Step1**|Fill color of all odd steps (1,3,5, ..., 31).|
-|**Back0**|Background color of all even steps (0,2,4, ..., 32).|
-|**Back1**|Background color of all odd steps (1,3,5, ..., 31).|
-|**Hover0**|Hover fill color of all even steps (0,2,4, ..., 32).|
-|**Hover1**|Hover fill color of all odd steps (1,3,5, ..., 31).|
-|**Line Hov0**|Line hover color of all even steps (0,2,4, ..., 32).|
-|**Line Hov1**|Line hover color of all odd steps (1,3,5, ..., 31).|
-|**Line Drag0**|Line drag color of all even steps (0,2,4, ..., 32).|
-|**Line Drag1**|Line drag color of all odd steps (1,3,5, ..., 31).|
-|**Line Sel0**|Line selection color of all even steps (0,2,4, ..., 32).|
-|**Line Sel1**|Line selection color of all odd steps (1,3,5, ..., 31).|
+|**Step0**|Fill color of all even steps with index 0, 2, 4, ..., 32.|
+|**Step1**|Fill color of all odd steps with index 1, 3, 5, ..., 31.|
+|**Back0**|Background color of all even steps with index 0, 2, 4, ..., 32.|
+|**Back1**|Background color of all odd steps with index 1, 3, 5, ..., 31.|
+|**Hover0**|Hover fill color of all even steps with index 0, 2, 4, ..., 32.|
+|**Hover1**|Hover fill color of all odd steps with index 1, 3, 5, ..., 31.|
+|**Line Hov0**|Line hover color of all even steps with index 0, 2, 4, ..., 32.|
+|**Line Hov1**|Line hover color of all odd steps with index 1, 3, 5, ..., 31.|
+|**Line Drag0**|Line drag color of all even steps with index 0, 2, 4, ..., 32.|
+|**Line Drag1**|Line drag color of all odd steps with index 1, 3, 5, ..., 31.|
+|**Line Sel0**|Line selection color of all even steps with index 0, 2, 4, ..., 32.|
+|**Line Sel1**|Line selection color of all odd steps with index 1, 3, 5, ..., 31.|
 |**Middle Line**|Middle grid line color.|
 |**Snap Line 0**|Primary snap line color.|
 |**Snap Line 1**|Secondary snap line color.|

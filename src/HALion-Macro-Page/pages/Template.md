@@ -10,8 +10,8 @@ A template control represents an instance of a template. The number of available
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Template Parameters**|In this section, all parameters that are exported by controls and templates from inside the template are displayed. When using a template, these exported parameters can be set or connected like standard properties.|

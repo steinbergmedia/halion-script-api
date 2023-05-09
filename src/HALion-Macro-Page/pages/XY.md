@@ -10,11 +10,11 @@ The XY control allows you to control two parameters with one two-dimensional con
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the XY control.|
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-|**X Value**|Drag and drop a parameter from the **Parameter List** to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
-|**Y Value**|Drag and drop a parameter from the **Parameter List** to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+|**X Value**|Drag and drop a parameter from the Parameter List to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
+|**Y Value**|Drag and drop a parameter from the Parameter List to this text field to establish a connection. The assigned parameter will be displayed. Alternatively, you can export the property, which can then be used as a template parameter on a template instance.|
 |**Click Value**|Allows you to transmit the information that the XY control has been clicked. The value changes from 0 to 1. The main purpose is to connect it to a UI script that needs to react to mouse clicks. It is not intended to be connected to HALion engine parameters.|
 |**Handle**|Allows you to assign a bitmap that is used as a handle.|

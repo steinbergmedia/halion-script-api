@@ -10,9 +10,9 @@ This control allows you to add pure graphical elements without further functiona
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-{{#include ./_Bitmap.md}}
-|**Scalable**|Activate this option if you want to be able to resize the image. The assigned [Bitmap](./Bitmap.md) resources are resized according to the Scale Mode that is defined for the [Bitmap](./Bitmap.md) resource.|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:bitmap}}
+|**Scalable**|{{#include ./_Properties.md:scalable}}|

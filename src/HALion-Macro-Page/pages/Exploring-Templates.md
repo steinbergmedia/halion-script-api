@@ -14,7 +14,7 @@ The Basic Controls library contains standard controls like knobs, sliders, text 
 
 The Basic Controls library also contains an example macro page that gives an overview of the available templates.
 
-To get access to this macro page:
+**To get access to this macro page:**
 
 1. Download the program [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset).
 1. Drag the program to the **Slot Rack**.
@@ -22,6 +22,8 @@ To get access to this macro page:
 The Basic Controls macro page contains multiple pages to demonstrate the usage of the available templates. Each template examplifies how the connections to the engine and UI parameters have to be set up to work correctly.
 
 ![Basic Controls Macro Page](../images/BasicControlsMacroPage.PNG)
+
+**To explore the templates:**
 
 1. In the **Macro Page Designer**, activate **Test Macro Page** ![Test Macro Page](../images/TestMacroPage-On.PNG) and navigate to the page that contains the template that you want to use.
 1. Deactivate **Test Macro Page** ![Test Macro Page](../images/TestMacroPage-Off.PNG) and select the template on the macro page.

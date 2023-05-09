@@ -10,10 +10,10 @@ This control allows you to add rectangular shapes as graphical elements to creat
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Fill Style**|Decors can be filled. You can choose from the following fill styles:<ul><li>**No Fill:** The inside of the rectangle remains fully transparent.  This mode is useful for decors that show only an outline.</li><li>**Solid:** The inside of the rectangle will be filled with a color.</li><li>**Linear Gradient:** The inside of the rectangle will be filled with a linear gradient. The gradient has a top and a bottom color which refers to the default angle of 0 degree.</li><li>**Radial Gradient:** The inside of the rectangle will be filled with a radial gradient.</li></ul>
 |**Radius**|Specifies the roundness of the rectangle corners.|
 |**Line Width**|Specifies the width of the outline.|

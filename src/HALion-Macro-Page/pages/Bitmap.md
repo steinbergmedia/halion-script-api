@@ -14,5 +14,5 @@ The Bitmap resource requires either a 24-bit png file with alpha channel or a bm
 |**Path**|Specifies the path and file name of the used bitmap.|
 |**Alpha**|Defines the opacity of the bitmap from 0 (transparent)  to 255 (opaque).|
 |**Frames**|Defines the number of subframes in a bitmap. Bitmaps with frames can be used as animations in controls like knobs, sliders, and animations.|
-{{#include ./_ScaleMode.md}}
-{{#include ./_Margin.md}}
+{{#include ./_Properties.md:scale-mode}}
+{{#include ./_Properties.md:margin}}

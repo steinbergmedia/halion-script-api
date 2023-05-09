@@ -18,10 +18,10 @@ The Wavetable 3D control allows you to display a three-dimensional representatio
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Play Data**|Allows you to connect the Play Data parameter of the wavetable oscillator.|
 |**ScaleX**|Specifies the scaling factor of the width of the 3D representation.|
 |**ScaleY**|Specifies the scaling factor of the height of the 3D representation.|

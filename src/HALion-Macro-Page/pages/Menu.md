@@ -10,10 +10,10 @@ The Menu control allows you to create special switches that open a menu. This me
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-{{#include ./_Value.md}}
-|**Style**|<ul><li>**Popup:** If this option is activated, a tree menu is displayed instead of the standard menu.</li><li>**Hover:** Shows a dedicated bitmap when hovering over the menu.</li><li>**Shaped:** The control only reacts when you click the visible pixels, i.e., the pixels with an alpha value > 0.</li><li>**Scalable:** Activate this option if you want to be able to resize the switch. In that case, the assigned bitmap resources are resized according to the Scale Mode that is defined for the [Bitmap](./Bitmap.md) resource.</li><li>**Checkable:** Activate this option to show a check mark for the selected menu item. Deactivate this option if you want to be able to use a menu entry, e.g., to call a script function. In this case, no check mark is wanted, and the same menu item can be clicked repeatedly.</li></ul>|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:value}}
+|**Style**|<ul><li>**Popup:** If this option is activated, a tree menu is displayed instead of the standard menu.</li><li>**Hover:** Shows a dedicated bitmap when hovering over the menu.</li><li>**Shaped:** The control only reacts when you click the visible pixels, i.e., the pixels with an alpha value > 0.</li><li>**Scalable:** {{#include ./_Properties.md:scalable}}</li><li>**Checkable:** Activate this to show a check mark for the selected menu item. Deactivate this option if you want to be able to use a menu entry, e.g., to call a script function. In this case, no check mark is wanted, and the same menu item can be clicked repeatedly.</li></ul>|
 |**Bitmaps**|<ul><li>**Background:** Allows you to assign the bitmap that is used for the off state.</li><li>**Hover:** Allows you to assign the bitmap that is used when the mouse is hovering over the control.</li></ul>|

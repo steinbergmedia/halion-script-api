@@ -20,5 +20,5 @@ Sections can also be used for animations, by setting the Frames property to the 
 |**Width**|The horizontal size in pixels.|
 |**Height**|The vertical size in pixels.|
 |**Frames**|Defines the number of subframes in a bitmap. Bitmaps with frames can be used as animations in controls like knobs, sliders, and animations.|
-{{#include ./_ScaleMode.md}}
-{{#include ./_Margin.md}}
+{{#include ./_Properties.md:scale-mode}}
+{{#include ./_Properties.md:margin}}

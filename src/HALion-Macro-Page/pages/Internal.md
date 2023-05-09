@@ -10,8 +10,8 @@ The Internal control is used by Steinberg to implement functionality that could 
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-|**View**|Used for HALion specific purposes. The strings must remain unchanged to guarantee the functionality of the control.|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+|**View**|Used for HALion specific purposes. The set strings must remain unchanged to guarantee the functionality of the control.|

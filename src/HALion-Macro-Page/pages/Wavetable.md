@@ -10,10 +10,10 @@ The Wavetable control allows you to display the resulting wave of the wavetable 
 
 |Poperty|Description|
 |:-|:-|
-{{#include ./_Name.md}}
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Play Data**|Allows you to connect the Play Data parameter of the wavetable oscillator.|
 |**Line Width**|Adjusts the width of the waveform line from 1 to 3 pixels.|
 
