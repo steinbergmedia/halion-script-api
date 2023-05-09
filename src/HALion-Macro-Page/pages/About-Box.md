@@ -44,7 +44,7 @@ defineParameter("WebHome", nil, true, onWebHomeChanged)
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the template. The Popup List variable must refer to this name.|
+|**Name**|The name of the template. The first entry of the Popup List variable must refer to this name.|
 
 ## Template Components
 
