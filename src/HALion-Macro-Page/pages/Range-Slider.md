@@ -10,10 +10,10 @@ The Range Slider allows you to control two parameters with one control. You can 
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Range Slider.|
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
 |**Low Value**|Allows you to connect the first parameter, e.g., Velocity Low of a layer.|
 |**High Value**|Allows you to connect the second parameter, e.g., Velocity High of a layer.|
 {{#include ./_ShowValue.md}}
