@@ -15,7 +15,7 @@
 
 The Curve Editor template allows you to display and edit curves, such as the custom curve of the velocity curve module or the modulation matrix. The template contains a combination of controls to modify the values of the selected node. These controls are connected using UI parameters, which are be part of the template and that must use the UI variables defined inside the template.
 
->&#10069; The Curve Editor control cannot be created manually in the GUI Tree. It only comes as part of the Curve Editor template. Please load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library and reuse this template. You can adapt the look and feel of the Curve Editor template to your own needs.
+>&#10069; The Curve Editor control cannot be created manually in the GUI Tree. It only comes as part of the Curve Editor template. Please load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library and reuse this template. You can adapt the look and feel of the Curve Editor template to your own needs with the [Properties](#properties) and [Colors](#colors) described below.
 
 ## Template Properties
 
