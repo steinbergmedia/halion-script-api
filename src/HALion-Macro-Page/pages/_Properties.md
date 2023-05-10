@@ -38,6 +38,10 @@ Activate this if you want to be able to resize the element. The assigned [Bitmap
 |**Show Value**|Activate this if you want to display a tooltip with the current parameter value when using the control. This option can be exported to the template level. The exported parameter can then be activated by setting it to ``true`` (the default is ``false``).|
 // ANCHOR_END: show-value
 
+// ANCHOR: template
+|**Template**|Defines the template to be referenced.|
+// ANCHOR_END: template
+
 // ANCHOR: tooltip
 |**Tooltip**|Text that appears as a tooltip when the mouse hovers over the element.|
 // ANCHOR_END: tooltip
