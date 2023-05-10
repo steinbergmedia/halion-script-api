@@ -10,12 +10,11 @@
 
 ---
 
-
 ## Description
 
-The Curve Editor template allows you to display and edit curves, such as the custom curve of the Velocity Curve MIDI module or the modulation matrix, for example. The template contains various controls to modify the values of the selected node. These controls use UI parameters to connect with the Curve Editor. The controls must be part of the template and they must use the UI variables as defined in the template.
+The Curve Editor template allows you to display and edit curves, such as the custom curve of the Velocity Curve MIDI module or the modulation matrix, for example. The template contains controls to modify the values of the selected node. The controls must be part of the template and they must use the UI variables as defined in the template to connect with the Curve Editor.
 
->&#10069; The Curve Editor control cannot be created manually in the GUI Tree. {{#include ./_Templates.md:special-template}}
+>&#10069; The Curve Editor cannot be created manually in the GUI Tree. {{#include ./_Templates.md:special-template}}
 
 ## Template Properties
 
