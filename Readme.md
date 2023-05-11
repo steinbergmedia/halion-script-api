@@ -21,7 +21,9 @@ mdbook build
 Alternatively, you can build and serve the HTML pages locally as follows.
 
 ```
-mdbook serve -open
+mdbook serve -o
 ```
 
-When using ``mdbook serve -open``, the HTML pages will be updated automatically, if you change the source files.
+When using ``mdbook serve -o``, the HTML pages will be updated automatically, if you change the source files.
+
+You can also use just ``mdbook serve``. In this case, you can enter http://localhost:3000/ as adress in your browser to open the book.
