@@ -2,29 +2,61 @@
 
 # FlexPhraser
 
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
 ## Description
 
-The FlexPhaser template is a special template that allows to control HALion's FlexPhraser. It combines several controls which are preconfigured within the template and partially use dedicated internal parameters which are not supposed to change. This also guarantees that the template supports the usage of HALion's FlexPhraser variations. If engine parameters like Swing, Gate Scale, Vel Scale, etc. are connected directly to controls outside the template, they only control the first variation. To understand the functionality and options, add the template to your macro page and enter edit mode on it. This way, you can see the structure of the template.
+The FlexPhaser template contains controls for selecting the phrases, adjusting the performance parameters like Swing, Gate Scale, etc., and for using the eight variations of the FlexPhraser MIDI module. In addition, there are controls for recording the MIDI output of the FlexPhraser and to export the recorded phrase via drag and drop.
 
->&#10069; To see an example how to use the template, load the Basic Controls macro page and check the FlexPhraser example page. Here, you can see how the various parameters are connected and how the template is combined with the FlexPhraserStepSeq template, which allows to edit user phrases.
+To implement the functionality of the eight variations and for exporting the recorded MIDI output the [Internal](./Internal.md) control was used. The performance parameters like Swing, Gate Scale, Vel Scale, etc. are connected to the eight variations by corresponding UI variables and they must be part of this template. To guarantee the operation of the performance paramters, the eight variations and the MIDI phrase export, the preconfigured properties should not be modified. The look and the size of the controls can be modified freely.
 
-## Properties
+**To explore the functionality and connections:**
+
+* Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+* Open the **Macro Page Designer**, go to the GUI Tree and navigate to FlexPhraser Page > Arp Parameter. 
+* Select FlexPhaser View and click Edit to examine the template.
+
+>&#10069; The other control templates inside the Arp Parameter group are directly connected to the FlexPhraser MIDI module and should not require detailed explanation. The control template for creating user patterns can be found in the StepSEQ group. See [FlexPhraserStepSeq](./FlexPhraserStepSeq.md) for details.
+
+## Template Properties
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the FlexPhraser.|
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-|**Template**|The referenced template.|
-|**Scope**|Defines the path to the FlexPhraser that is controlled.|
-|**Product**|Set this to "HALion" if you want to load HALion factory and user StepSEQ phrases from the standard HALion path. **Load From** must be set to "StepSEQ Phrases". When saving user phrases, these will be written to /User/documents/Steinberg/HALion/Subpresets/StepSEQ Phrases/.<p>You can also specify the name for your own product. When preparing factory StepSEQ Phrases as part of a VST Sound container, StepSEQ Phrases must be located in the corresponding folder /"Product"/Sub Presets/StepSEQ Phrases/. In that case only StepSEQ Phrases located in the "Product" subfolder are shown in the phrase selector. When saving user phrases, these will be written into /User/documents/Steinberg/"Product"/Sub Presets/StepSEQ Phrases/</p><p>You can also include both the "HALion" folder and the folder of your product, by setting Product to "Product|HALion". The selector will then show the content of both locations. Saving a phrase will use the first "Product" folder.</p>|
-|**Load From**|Here you can specify a sub path to define a folder (or path) inside your product folder. When delivering VST Sound containers that contain StepSEQ Phrases, these must be located in the corresponding path to be found. To see HALion factory phrases, you must select "StepSEQ Phrases".<p>**Example:** Load From = "StepSEQ Phrases" in combination with product = "MyProduct", will load presets from /MyProduct/Sub Presets/StepSEQ Phrases</p>|
-|**Save To**|Allows you to specify a sub path relative to the Load From path, to define in which folder presets are saved by default.<p>**Example:** Save To = "MySEQ" in combination with Load From = "StepSEQ Phrases" and with product = "MyProduct", will save presets to /MyProduct/Sub Presets/StepSEQ Phrases/MySEQ</p>|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:template}}
 
-## Template Components
+## Template Parameters
 
-### Controls and Sub Templates
+|Parameter|Description|
+|:-|:-|
+|**Scope**|Defines the path to the FlexPhraser MIDI modue that is controlled.|
+|**Product**|Product specifies the root folder for the location of the subpresets, both for loading and saving. Set this to ``HALion`` if you want to load phrases from the standard file path for subpresets. Load From (see below) must be set to ``StepSEQ Phrases``, which specifies the path to the folder that contains the subpresets for the user phrases. When saving user phrases, these will be written to ./Documents/Steinberg/HALion/Sub Presets/StepSEQ Phrases accordingly.<p>If you wish to deliver your own StepSEQ phrases as part of your library, you can set Product to the name of your instrument, e.g., *``ProductName``*. The StepSEQ phrases must be added to the corresponding folder ./*``ProductName``*/Sub Presets/StepSEQ Phrases inside the VST Sound of your library. Thereby, only the StepSEQ phrases for the specified *``ProductName``* will be shown in the phrase selector. When saving user phrases, these will be written to ./Documents/Steinberg/*``ProductName``*/Sub Presets/StepSEQ Phrases.</p><p>You can also include both the HALion folder and the folder of your instrument, by setting Product to *``ProductName``*&vert;``HALion``. The phrase selector will then show the content of both locations. Saving a user phrase will use the first entry specified by *``ProductName``* as root folder.</p>|
+|**Load From**|Load From specifies the subpath to the location of the subpresets inside the root folder. The root folder is set by Product (see above). You can specify this subfolder freely. However, if you want to see the factory phrases along with your own phrases, Load From must be set to ``StepSEQ Phrases`` and the second entry of Product must be set to ``HALion``. The user phrases for your library must be added to the corresponding location inside the VST Sound. For example, if Load From is set to ``StepSEQ Phrases`` and Product is set just to ``MyProduct``, the subpresets inside the VST Sound must be located at ./*``MyProduct``*/Sub Presets/*``StepSEQ Phrases``*.|
+|**Save To**|Allows you to specify the subpath to the location where the subpresets will be saved by default.<ul><li>If Product has only one entry, e.g., ``Halion`` or the name of your instrument, then the path of Load From will be included and prepend the path of Save To.</li><li>If Product has two entries (*``Product``*&vert;``HALion``), then only the path of Save To will be used. In this case it makes sense to set Save To to something like this: *``MyProduct``*/*``MySubfolder``*.</li></ul>|
+
+>&#10069; If you need further control over the content locations, you can specify the required subfolder together with the Product: **Product** = ``MyProduct/StepSEQ Phrases``&vert;``HALion/StepSEQ Phrases``. See configuration 4 in the following table.
+
+#### Content Locations for Different Configurations
+
+|#|Configuration|Content visible in Phrase Selector|Save Path|
+|:-|:-|:-|:-|
+|1|<p>**Product** = ``HALion``</p><p>**Load From** = ``StepSEQ Phrases``</p><p>**Save To** = ``MySubfolder``</p>|Only phrases from HALion, including any phrases the user has saved.|./Documents/Steinberg/HALion/Sub Presets/StepSEQ Phrases/MySubfolder|
+|2|<p>**Product** = ``MyProduct``</p><p>**Load From** = ``StepSEQ Phrases``</p><p>**Save To** = ``MySubfolder``</p>|Only phrases from the specified library, including any phrases the user has saved with the instrument.|./Documents/Steinberg/MyProduct/Sub Presets/StepSEQ Phrases/MySubfolder|
+|3|<p>**Product** = ``MyProduct``&vert;``HALion``</p><p>**Load From** = ``StepSEQ Phrases``</p><p>**Save To** = ``MyProduct/MySubfolder``</p>|All phrases from HALion, the specified library and any phrases the user has saved.|./Documents/Steinberg/MyProduct/Sub Presets/MyProduct/MySubfolder|
+|4|<p>**Product** = ``MyProduct/StepSEQ Phrases``&vert;``HALion/StepSEQ Phrases``</p><p>**Load From** = not used, leave empty </p><p>**Save To** = ``MySubfolder``</p>|All phrases from HALion, the specified library and any phrases the user has saved.|./Documents/Steinberg/MyProduct/Sub Presets/StepSEQ Phrases/MySubfolder|
+
+## Components inside the Template
+
+### Controls and Subtemplates
 
 |Item|Description|
 |:-|:-|
