@@ -16,8 +16,8 @@ You can use the About Box template to display information about the library manu
 
 **To explore the functionality and connections:**
 
-* Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
-* In the **Macro Page Designer**, examine the template "Aboutbox" in the Templates Tree and the "Popup Views" variable in the GUI Tree.
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. In the **Macro Page Designer**, examine the template "Aboutbox" in the Templates Tree and the "Popup Views" variable in the GUI Tree.
 
 To open an about box, a Popup List variable is required. See "Popup Views" in the GUI Tree. The first entry of the Popup List variable must refer to the template name of the about box, here: ``Aboutbox``. The page switch "Sw_About Box" in the GUI Tree is used to open the about box. The Value of "Sw_About Box" must be set to ``@Popup Views`` and the Onvalue must be set to ``1``. The "Close switch" inside the Aboutbox template is used to close the about box. Its Value must also be set to ``@Popup Views`` and its Onvalue must be set to ``0``. A click on the opened about box will close it.
 
