@@ -45,7 +45,7 @@ Functionality such as using the eight variations, exporting the recorded MIDI ou
 
 >&#10069; If you need further control over the content locations, you can specify the required subfolder together with the Product: ``MyProductName/StepSEQ Phrases``&vert;``HALion/StepSEQ Phrases``. See configuration 4 in the following table.
 
-#### Content Locations for Different Configurations
+### Content Locations for Different Configurations
 
 |#|Configuration|Content visible in Phrase Selector|Default Save Path|
 |:-|:-|:-|:-|
