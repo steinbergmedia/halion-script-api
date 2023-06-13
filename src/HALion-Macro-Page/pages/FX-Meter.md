@@ -2,47 +2,73 @@
 
 # FX Meter
 
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
 ## Description
 
-The FX Meter template allows you to display input, output, and reduction meter for a number of effects like Compressor, Expander, Limiter, etc. It also contains text controls for peak values and switches for peak resets. The template contains a combination of controls that are already pre-assigned inside the template using "@parameter". You can exchange controls, remove them, or modify the used resources to customize the appearance of the template, provided that you keep the correct parameter connections as defined in the template. Since the template is set up to work with a whole range of effects, it contains elements that are not usable with certain effects, for example there is no need fo a reduction meter for an EQ. In these cases, you can remove the elements that are not needed from the template and save it as a template variation.
+The FX Meter template allows you to display input, output, and reduction meters for effects like Compressor, Expander, Limiter, etc. It also contains text controls for peak values and switches for reseting them. The controls are connected by corresponding UI variables. To guarantee the operation of the controls the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page. For example, if an effect does not need a reduction meter, you can remove it and save this configuration in another template.
 
-## Properties
+**To explore the functionality and connections:**
+
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Deco and Meter Page". 
+3. Select "FX Meter" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
+## Template Properties
 
 |Poperty|Description|
 |:-|:-|
-|**FXType**|Allows you to specify to which effect type you want to connect the meter. To establish a connection, you need to type in the effect type of the effect. See [Effect Types](#effect-types) for a list of the supported types.|
-|**Scope**|Allows you to define to which effect the meter is connected.<p>**Example:** Use Scope=@bus:0/@0:Tube Compressor' to connect it to the first Tube Compressor in the first bus.</p>|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:template}}
+
+## Template Parameters
+
+|Poperty|Description|
+|:-|:-|
+|**FXType**|Specifies the effect type the controls should connect to. See [Effect Types](#effect-types) for a list of the supported types.|
+|**Scope**|Determines to which effect the controls should connect. For example, ``@bus:0/@0:Tube Compressor`` connects the controls to the first Tube Compressor in the first bus.</p>|
 
 ### Effect Types
 
 |Module|FX Type|Comment|
 |:-|:-|:-|
-|Compressor|Compressor||
-|Expander|Expander||
-|Limter|Limiter||
-|Maximizer|Optimiser|
-|Brickwall Limiter|BrickwallLimiter||
-|Tube Compressor|TubeCompressor|
-|Vintage Compressor|VintageCompressor||
-|Gate|Gate|no reduction meter|
-|Graph EQ|GraphicEQ10|only output meter|
-|Morph Filter|MorphFilter|only output meter|
-|DJ EQ|HiFiEq|only output meter|
+|Compressor|Compressor|-|
+|Expander|Expander|-|
+|Limter|Limiter|-|
+|Maximizer|Optimiser|-|
+|Brickwall Limiter|BrickwallLimiter|-|
+|Tube Compressor|TubeCompressor|-|
+|Vintage Compressor|VintageCompressor|-|
+|Gate|Gate|No reduction meter.|
+|Graph EQ|GraphicEQ10|Only output meter.|
+|Morph Filter|MorphFilter|Only output meter.|
+|DJ EQ|HiFiEq|Only output meter.|
 
 >&#10069; The Studio EQ effect requires the specialized template [Studio EQ Meter](./Studio-EQ-Meter.md).
 
-## Template Components
+## Components inside the Template
 
-### Controls and Sub Templates
+![FX Meter Template](../images/FX-Meter-Template.PNG)
+
+### Controls and Subtemplates
 
 |Item|Description|
 |:-|:-|
-|**In_Meter_Left**|A meter control that is connected via Value=@VUInL with the left input channel of the effect.|
-|**In_Meter_Right**|A meter control that is connected via Value=@VUInR with the right input channel of the effect.|
-|**Reduction_Meter**|A meter control that is connected via Value=@GainReduction with the gain reduction output of the effect.|
-|**Out_Meter_Left**|A meter control that is connected via Value=@VUOutL with the left output channel of the effect.|
-|**Out_Meter_Right**|A meter control that is connected via Value=@VUOutR with the right output channel of the effect.|
-|**Peak_In**|A group containing two items:<ul><li>**Peak_In_Reset:** A switch that resets the input meter peak value. Its Value must be set to "@ResetInputVU".</li><li>**Peak_In_Text:** A text control that displays the input meter peak value. Its Value must be set to "@VUInMax".</li></ul>|
-|**Peak_Output**|A group containing two items:<ul><li>**Peak_Out_Reset:** A switch that resets the output meter peak value. Its Value must be set to "@ResetOutputVU".</li><li>**Peak_Out_Text:** A text control that displays the output meter peak value. Its Value must be set to "@VUOutMax".</li></ul>|
-|**Peak_Reduction**| A group containing two items:<ul><li>**Peak_Reduction_Reset:** A switch that resets the reduction meter peak value. Its Value must be set to "@ResetReduction".</li><li>**Peak_Reduction_Text:** A text control that displays the reduction meter peak value. Its Value must be set to "@maxgainreduction".</li></ul>|
-|**Back**|A background image.|
+|**In_Meter_Left**|A [Meter](./Meter.md) control connected with the left input channel of the effect. Its Value must be set to ``@VUInL`` .|
+|**In_Meter_Right**|A [Meter](./Meter.md) control connected with the right input channel of the effect. Its Value must be set to ``@VUInR`` .|
+|**Reduction_Meter**|A [Meter](./Meter.md) control connected with the gain reduction output of the effect. Its Value must be set to ``@GainReduction`` .|
+|**Out_Meter_Left**|A [Meter](./Meter.md) control connected with the left output channel of the effect. Its Value must be set to ``@VUOutL`` .|
+|**Out_Meter_Right**|A [Meter](./Meter.md) control connected with the right output channel of the effect. Its Value must be set to ``@VUOutR`` .|
+|**Peak_Input**|A [Group](./Group.md) with two elements:<ul><li>**Peak_In_Reset:** A switch that resets the peak value of the input meter. Its Value must be set to ``@ResetInputVU``.</li><li>**Peak_In_Text:** A text control that displays the peak value of the input meter. Its Value must be set to ``@VUInMax``.</li></ul>|
+|**Peak_Output**|A [Group](./Group.md) with two elements:<ul><li>**Peak_Out_Reset:** A switch that resets the peak value of the output meter. Its Value must be set to ``@ResetOutputVU``.</li><li>**Peak_Out_Text:** A text control that displays the peak value of the ouput meter. Its Value must be set to ``@VUOutMax``.</li></ul>|
+|**Peak_Reduction**| A [Group](./Group.md) with two elements:<ul><li>**Peak_Reduction_Reset:** A switch that resets the peak value of the reduction meter. Its Value must be set to ``@ResetReduction``.</li><li>**Peak_Reduction_Text:** A text control that displays the peak value of the reduction meter. Its Value must be set to ``@maxgainreduction``.</li></ul>|
+|**Back**|An [Image](./Image.md) control for the background bitmap.|
