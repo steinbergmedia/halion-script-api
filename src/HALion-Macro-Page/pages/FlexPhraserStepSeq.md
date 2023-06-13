@@ -17,7 +17,7 @@ The FlexPhaserStepSeq template allows you to control the User phrase editor of t
 **To explore the functionality and connections:**
 
 1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
-2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "FlexPhraser Page > StepSEQ". 
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > FlexPhraser Page > StepSEQ". 
 3. Select "StepSeq" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
 >&#10069; The control templates for selecting phrases and for adjusting the performance parameters can be found in the Arp Parameter group. See [FlexPhraser](./FlexPhraser.md) for details.

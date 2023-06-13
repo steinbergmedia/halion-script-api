@@ -19,8 +19,8 @@ Functionality such as using the eight variations, exporting the recorded MIDI ou
 **To explore the functionality and connections:**
 
 1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
-2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > FlexPhraser Page". 
-3. Select "Arp Parameter" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > FlexPhraser Page > Arp Parameter". 
+3. Select "FlexPhraser View" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
 >&#10069; The other control templates inside the Arp Parameter group are directly connected to the FlexPhraser MIDI module and do not require detailed explanation. The control template for creating User phrases can be found in the StepSEQ group. See [FlexPhraserStepSeq](./FlexPhraserStepSeq.md) for details.
 
