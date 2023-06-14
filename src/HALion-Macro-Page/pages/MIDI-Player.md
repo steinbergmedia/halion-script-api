@@ -38,9 +38,9 @@ Functionality such as using the eight variations, exporting the current MIDI fil
 
 |#|Configuration|Content visible in MIDI File Selector|
 |:-|:-|:-|
-|1|<p>**Product** = ``HALion``</p><p>**Load From** = ``MIDI Files``</p>|Only phrases from HALion, including any phrases the user has saved on hard disk.|
-|2|<p>**Product** = ``MyProductName``</p><p>**Load From** = ``MIDI Files``</p>|Only phrsaved with the instrument on hard disk.|
-|3|<p>**Product** = ``MyProductName``&vert;``HALion``</p><p>**Load From** = ``MIDI Files``</p>|All phrases from HALion, the specified library and any phrases the user has saved on hard disk.|
+|1|<p>**Product** = ``HALion``</p><p>**Load From** = ``MIDI Files``</p>|Only MIDI files from HALion, including any MIDI files the user has saved on hard disk.|
+|2|<p>**Product** = ``MyProductName``</p><p>**Load From** = ``MIDI Files``</p>|Only MIDI files from the specified library.|
+|3|<p>**Product** = ``MyProductName``&vert;``HALion``</p><p>**Load From** = ``MIDI Files``</p>|All MIDI files from HALion, the specified library and any MIDI files the user has saved on hard disk.|
 
 >&#10069; The location of the MIDI files inside the VST Sound must match the path defined by Product and Load From, otherwise the MIDI File selector will not see them.
 
