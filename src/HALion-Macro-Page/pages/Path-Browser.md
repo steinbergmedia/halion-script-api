@@ -12,7 +12,14 @@
 
 ## Description
 
-The Path Browser is a preconfigured template that contains several objects (image, text, dropview, switch) and can be used to open folders and select objects, such as sample files, for example. In addition to the common properties like size, position etc., it provides a number of special properties which allow you to configure the control template. If the control needs to be adapted graphically, this can be done inside the template by changing the components. The control also accepts the drop of folders or files directly from sources like the Explorer or Finder. When clicking the open icon, a file browser opens that lets you choose the file or folder. Clicking OK sets this path for the parameter that is connected to the Value parameter of the template.
+The Path Browser is a preconfigured template that can be used to open folders and objects, such as sample files, for example. The template can be configured with the available [Template Parameters](#template-parameters). The look of the controls can be adapted freely by changing the components inside the template. The template also accepts the drop of folders or files from sources like the Explorer or Finder. When clicking the open icon, the OS file browser opens that lets you choose the folder and file. By Clicking OK this file path is set for the parameter that is connected to the Value parameter of the template.
+
+**To explore the functionality and connections:**
+
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Path & Preset Page". 
+3. Select "Sample Path - PathBrowser" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
 
 ## Template Properties
 
@@ -29,10 +36,10 @@ The Path Browser is a preconfigured template that contains several objects (imag
 |Parameters|Description|
 |:-|:-|
 |**Value**|Connect the parameter that requires a path and file name here.|
-|**Typename**|Allows you to specify the name of the file type filter that will be shown in the file browser.|
-|**Extension**|Allows you to specify a file type filter like .wav or .aiff, so that the file browser only shows files of that type.|
-|**Title**|Allows you to specify the title of the file browser that will be shown in the caption.|
-|**Tag**|Allows you to specify an unique identifier that is used to memorize the location at which you left the file browser the last time. All path browsers that use the this tag will point to the same last location.|
+|**Typename**|Allows you to specify the name of the file type filter that will be shown in the OS file browser.|
+|**Extension**|Allows you to specify a file type filter like .wav or .aiff, so that the OS file browser only shows files of that type.|
+|**Title**|Allows you to specify the title of the OS file browser that will be shown in the caption.|
+|**Tag**|Allows you to specify an unique identifier that is used to memorize the location at which you left the OS file browser the last time. All path browsers that use this tag will point to the same last location.|
 
 ## Components inside the Template
 
@@ -42,7 +49,7 @@ The Path Browser is a preconfigured template that contains several objects (imag
 
 |Item|Description|
 |:-|:-|
-|**switch:**|A [Switch](./Switch.md) that opens the file browser. Its Value must be set to ``@Browser``.|
-|**dropview:**|A [Drop](./Drop.md) control for dropping files and folders. Its Value must be set to ``@Path``. The regular expression for the Accept Filter uses the file extension that is specified by the Extension parameter.|
-|**text:**|A [Text](./Text.md) control for displaying the path.|
+|**switch:**|A [Switch](./Switch.md) that opens the OS file browser. Its Value must be set to ``@Browser``.|
+|**dropview:**|A [Drop](./Drop.md) control for dropping files and folders. Its Value must be set to ``@Path``. The regular expression for the Accept Filter uses the file extension that is specified by the Extension parameter of the template.|
+|**text:**|A [Text](./Text.md) control for displaying the path. Its Value must be set to ``@Path``.|
 |**Back:**|An [Image](./Image.md) control that provides the background bitmap for the path.|
