@@ -12,7 +12,7 @@
 
 ## Description
 
-The Path Browser is a preconfigured template that can be used to open folders and objects, such as sample files, for example. The template can be configured with the available [Template Parameters](#template-parameters). The look of the controls can be adapted freely by changing the components inside the template. The template also accepts the drop of folders or files from sources like the Explorer or Finder. When clicking the open icon, the OS file browser opens that lets you choose the folder and file. By Clicking OK this file path is set for the parameter that is connected to the Value parameter of the template.
+The PathBrowser is a preconfigured template that can be used to open folders and objects, such as sample files, for example. The template can be configured with the available [Template Parameters](#template-parameters). The look of the controls can be adapted freely by changing the components inside the template. The template also accepts the drop of folders or files from sources like the Explorer or Finder. When clicking the open icon, the OS file browser opens that lets you choose the folder and file. By Clicking OK this file path is set for the parameter that is connected to the Value parameter of the template.
 
 **To explore the functionality and connections:**
 

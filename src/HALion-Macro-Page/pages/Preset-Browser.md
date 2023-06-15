@@ -4,17 +4,45 @@
 
 ## Description
 
-The Preset Browser is a preconfigured template that contains several objects (image, text, switches) and that can be used on macro pages to manage subpresets for modules, such as the presets of a MIDI script module or an audio effect, for example. In addition to common properties like Size, Position, etc., it provides a Scope property that allows you to define the module or component in the program hierarchy for which the preset management is performed. If the control needs to be adapted graphically, this can be done inside the template by changing the individual components. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.
+The PresetBrowser Module is a preconfigured template that can be used to manage subpresets, such as the presets of a MIDI script module or an audio effect, for example. The Scope parameter determines for which module or effect the preset management applies. The look of the controls can be adapted freely by changing the components inside the template. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.
 
-Subpresets are loaded from the standard HALion subpreset path and saved to the standard user documents path, which is derived from the specified scope. You can click the Save switch to open a save dialog which shows the path for the current preset, to see the exact path of a module. If you want to build a VST Sound container that contains subpresets, your presets must be located in the same path structure inside the container.
+The PresetBrowser Module template uses the default file path for loading and saving subpresets. User subpresets will be saved to the Documents folder of your OS inside the corresponding folder of the module or effect you specified by Scope. By opening the Save dialog you can see the full file path. If you wish to deliver your own subpresets as part of your library, the location of your subpresets inside the VST Sound must match this path, otherwise the preset selector will not see them.
 
-## Properties
+**To explore the functionality and connections:**
+
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Path & Preset Page". 
+3. Select "Subpresets Delay - Module" or "Subpresets FlexPhraser - Module" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
+## Template Properties
 
 |Poperty|Description|
 |:-|:-|
-|**Name**|The name of the Preset Browser.|
-{{#include ./_Position-Size.md}}
-{{#include ./_Attach.md}}
-{{#include ./_Tooltip.md}}
-|**Template**|The referenced template.|
-|**Scope**|Allows you to specify which module in the program hierarchy the presets should affect.<p>**Example:** Use 'Scope=@bus:0/@0:Tube Compressor' to manage the subpresets of the first Tube Compressor in the first bus.</p>|
+{{#include ./_Properties.md:name}}
+{{#include ./_Properties.md:position-size}}
+{{#include ./_Properties.md:attach}}
+{{#include ./_Properties.md:tooltip}}
+{{#include ./_Properties.md:template}}
+
+## Template Parameters
+
+|Parameters|Description|
+|:-|:-|
+|**Scope**|The Scope parameter determines for which module or effect the preset management applies. For example, by setting Scope to ``@bus:0/@0:Tube Compressor`` the preset management applies to the first Tube Compressor in the first bus.|
+
+## Components inside the Template
+
+![PresetBrowser Module Template](../images/PresetBrowser-Module-Template.PNG)
+
+### Controls and Subtemplates
+
+|Item|Description|
+|:-|:-|
+|**Prev:**|A [Switch](./Switch.md) control to load the previous preset. Its Value must be set to ``@SubPresetPrev``.|
+|**Next:**|A [Switch](./Switch.md) control to load the next preset. Its Value must be set to ``@SubPresetPrev``.|
+|**Selector:**|A [Switch](./Switch.md) control to open the preset selector. Its Value must be set to ``@SubPresetSelectPopup``.|
+|**Name:**|A [Text](./Text.md) control to display the name of the preset. Its Value must be set to ``@SubPresetName``.|
+|**Save:**|A [Switch](./Switch.md) control to open the save dialog. Its Value must be set to ``@SubPresetSave``.|
+|**Select:**|A [Switch](./Switch.md) control to open the preset selector. Its Value must be set to ``@SubPresetSelectPopup``.|
+|**Delete:**|A [Switch](./Switch.md) control to open the delete dialog. Its Value must be set to ``@SubPresetDelete``.|
+|**Back:**|An [Image](./Image.md) control that provides the background bitmap for the preset name.|

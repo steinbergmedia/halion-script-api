@@ -39,7 +39,7 @@ Activate this if you want to be able to resize the element. The assigned [Bitmap
 // ANCHOR_END: show-value
 
 // ANCHOR: template
-|**Template**|Defines the template to be referenced.|
+|**Template**|Determines the template to be referenced.|
 // ANCHOR_END: template
 
 // ANCHOR: tooltip

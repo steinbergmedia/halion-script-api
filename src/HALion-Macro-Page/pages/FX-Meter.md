@@ -35,7 +35,7 @@ The FX Meter template allows you to display input, output, and reduction meters 
 |Parameters|Description|
 |:-|:-|
 |**FXType**|Specifies the effect type the controls should connect to. See [Effect Types](#effect-types) for a list of the supported types.|
-|**Scope**|Determines to which effect the controls should connect. For example, ``@bus:0/@0:Tube Compressor`` connects the controls to the first Tube Compressor in the first bus.</p>|
+|**Scope**|Determines to which effect the controls should connect. For example, ``@bus:0/@0:Tube Compressor`` connects the controls to the first Tube Compressor in the first bus.|
 
 ### Effect Types
 
