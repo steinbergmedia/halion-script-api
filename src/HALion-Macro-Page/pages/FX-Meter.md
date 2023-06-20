@@ -35,7 +35,7 @@ The FX Meter template allows you to display input, output, and reduction meters 
 |Parameters|Description|
 |:-|:-|
 |**FXType**|Specifies the effect type the controls should connect to. See [Effect Types](#effect-types) for a list of the supported types.|
-|**Scope**|Determines to which effect the controls should connect. For example, ``@bus:0/@0:Tube Compressor`` connects the controls to the first Tube Compressor in the first bus.|
+|**Scope**|Determines to which effect the controls should connect. For example, ``@bus:0/@0:Tube Compressor`` connects the controls to the first effect named Tube Compressor in the first bus.|
 
 ### Effect Types
 
@@ -71,4 +71,4 @@ The FX Meter template allows you to display input, output, and reduction meters 
 |**Peak_Input**|A [Group](./Group.md) with two elements:<ul><li>**Peak_In_Reset:** A switch that resets the peak value of the input meter. Its Value must be set to ``@ResetInputVU``.</li><li>**Peak_In_Text:** A text control that displays the peak value of the input meter. Its Value must be set to ``@VUInMax``.</li></ul>|
 |**Peak_Output**|A [Group](./Group.md) with two elements:<ul><li>**Peak_Out_Reset:** A switch that resets the peak value of the output meter. Its Value must be set to ``@ResetOutputVU``.</li><li>**Peak_Out_Text:** A text control that displays the peak value of the ouput meter. Its Value must be set to ``@VUOutMax``.</li></ul>|
 |**Peak_Reduction**| A [Group](./Group.md) with two elements:<ul><li>**Peak_Reduction_Reset:** A switch that resets the peak value of the reduction meter. Its Value must be set to ``@ResetReduction``.</li><li>**Peak_Reduction_Text:** A text control that displays the peak value of the reduction meter. Its Value must be set to ``@maxgainreduction``.</li></ul>|
-|**Back**|An [Image](./Image.md) control for the background bitmap.|
+|**Back**|An [Image](./Image.md) control that provides the background bitmap for the meters.|
