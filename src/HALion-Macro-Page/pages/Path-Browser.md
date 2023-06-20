@@ -49,7 +49,7 @@ The PathBrowser is a preconfigured template that can be used to open folders and
 
 |Item|Description|
 |:-|:-|
-|**switch:**|A [Switch](./Switch.md) that opens the OS file browser. Its Value must be set to ``@Browser``.|
-|**dropview:**|A [Drop](./Drop.md) control for dropping files and folders. Its Value must be set to ``@Path``. The regular expression for the Accept Filter uses the file extension that is specified by the Extension parameter of the template.|
-|**text:**|A [Text](./Text.md) control for displaying the path. Its Value must be set to ``@Path``.|
-|**Back:**|An [Image](./Image.md) control that provides the background bitmap for the path.|
+|**switch**|A [Switch](./Switch.md) that opens the OS file browser. Its Value must be set to ``@Browser``.|
+|**dropview**|A [Drop](./Drop.md) control for dropping files and folders. Its Value must be set to ``@Path``. The regular expression for the Accept Filter uses the file extension that is specified by the Extension parameter of the template.|
+|**text**|A [Text](./Text.md) control for displaying the path. Its Value must be set to ``@Path``.|
+|**Back**|An [Image](./Image.md) control that provides the background bitmap for the path.|
