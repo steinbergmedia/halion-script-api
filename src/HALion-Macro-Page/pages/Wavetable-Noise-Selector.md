@@ -20,7 +20,6 @@ The Wavetable Noise Selector is a preconfigured template that can be used to sel
 2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Wavetable Page". 
 3. Select "WT Noise Selector" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
-
 ## Template Properties
 
 |Poperty|Description|
@@ -39,14 +38,16 @@ The Wavetable Noise Selector is a preconfigured template that can be used to sel
 |**Product**|The Product parameter defines the source folders of the sample files to be displayed in the noise selector. Set this to ``HALion`` if you want to load sample files from the default file paths, which includes factory and user sample files. If you wish to deliver your own sample files as part of your library, you can set Product to the name of your instrument, e.g., ``MyProductName``. Thereby, only the sample files for ``MyProductName`` will be shown in the noise selector. If Product is set to ``MyProductName``: Then, the sample files must be added to the folder ./*``MyProductName``*/Sub Presets/*``Wavetable/Noises``* inside the VST Sound, otherwise the noise selector will not see these sample files. You can also include both, the HALion root folder and the root folder of your instrument, by setting Product to ``MyProductName``&vert;``HALion``. The noise selector will then show the content of both locations.|
 |**Label**|A [Label](./Label.md) control for displaying a label above the menu.|
 
+>&#10069; If you need further control over the content locations, you can specify the required subfolder together with the Product: ``MyProductName/MyNoises``&vert;``HALion/MyNoises``. See configuration 4 in the following table.
+
 ### Content Locations for Different Configurations
 
-|#|Product/Visibility|Default File Paths|
+|#|Product/Content|Default File Paths|
 |:-|:-|:-|
-|1|``HALion`` <p>Only sample files from HALion, including any sample files the user has saved on hard disk.</p>|<p>**Hard Disk:**</p><p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises</p>|
-|2|``MyProductName`` <p>Only sample files from the specified library, including any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises</p><p>**Hard Disk:**</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises</p>|
-|3|``MyProductName``&vert;``HALion`` <p>All sample files from HALion, the specified library and any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises</p><p>**Hard Disk:**<p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises</p>|
-|4|``MyProductName/MySubfolder``&vert;``HALion/MySubfolder`` <p>All sample files from HALion, the specified library and any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises/MySubfolder</p><p>**Hard Disk:**</p><p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises/MySubfolder</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises/MySubfolder</p>|
+|1|<p>**Product** = ``HALion``</p><p>Only sample files from HALion, including any sample files the user has saved on hard disk.</p>|<p>**Hard Disk:**</p><p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises</p>|
+|2|<p>**Product** = ``MyProductName``</p><p>Only sample files from the specified library, including any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises</p><p>**Hard Disk:**</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises</p>|
+|3|<p>**Product** = ``MyProductName``&vert;``HALion``</p><p>All sample files from HALion, the specified library and any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises</p><p>**Hard Disk:**<p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises</p>|
+|4|<p>**Product** = ``MyProductName/MyNoises``&vert;``HALion/MyNoises``</p><p>All sample files from HALion, the specified library and any sample files the user has saved on hard disk.</p>|<p>**VST Sound:**</p><p>./MyProductName/Sub Presets/Wavetable/Noises/MyNoises</p><p>**Hard Disk:**</p><p>./Documents/Steinberg/HALion/Sub Presets/Wavetable/Noises/MyNoises</p><p>./Documents/Steinberg/MyProductName/Sub Presets/Wavetable/Noises/MyNoises</p>|
 
 >&#10069; The location of the sample files inside the VST Sound must match the path defined by Product, otherwise the noise selector will not see these sample files. If libraries deliver sample files in multiple VST Sounds, all sample files with the same path will be shown together in the noise selector.
 
