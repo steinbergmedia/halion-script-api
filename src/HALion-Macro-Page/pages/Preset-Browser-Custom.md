@@ -45,7 +45,7 @@ The template provided with the Init Basic Controls.vstpreset uses LFO1 of the zo
 
 ### Content Locations for Different Configurations
 
-|#|Configuration|Content visible in Phrase Selector|Default Save Path|
+|#|Configuration|Content visible in Preset Selector|Default Save Path|
 |:-|:-|:-|:-|
 |1|<p>**Product** = ``HALion``</p><p>**Load From** = ``Fx/Delay/Multi Delay``</p><p>**Save To** = ``MySubfolder``</p>|Only subpresets from HALion, including any subpresets the user has saved on hard disk.|./Documents/Steinberg/HALion/Sub Presets/Fx/Delay/Multi Delay/MySubfolder|
 |2|<p>**Product** = ``MyProductName``</p><p>**Load From** = ``Fx/Delay/Multi Delay``</p><p>**Save To** = ``MySubfolder``</p>|Only subpresets from the specified library, including any subpresets the user has saved with the instrument on hard disk.|./Documents/Steinberg/MyProductName/Sub Presets/Fx/Delay/Multi Delay/MySubfolder|

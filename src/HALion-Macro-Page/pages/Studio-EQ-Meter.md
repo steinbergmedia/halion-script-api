@@ -46,5 +46,5 @@ The Studio EQ Meter template contains all necessary controls for displaying the 
 |:-|:-|
 |**Out_Meter_Left**|A [Meter](./Meter.md) control that is connected by ``@VUOutL`` with the left output channel of the EQ.|
 |**Out_Meter_Right**|A [Meter](./Meter.md) control that is connected by ``@VUOutR`` with the right output channel of the EQ.|
-|**Peak_Output**|A group with three elements:<ul><li>**Peak_Out_Reset:** A [Switch](./Switch.md) control that resets the peak value of the ouput meter. Its Value must be set to ``@ResetOutputVU``.</li><li>**Peak_Out_Text:** A [Text](./Text.md) control that displays the peak value of the output meter. Its Value must be set to ``@VUOutMax``.</li><li>**Peak_Back:** An [Image](./Image.md) control that provides the background bitmap for the peak value.</li></ul>|
+|**Peak_Output**|A [Group](./Group.md) with three elements:<ul><li>**Peak_Out_Reset:** A [Switch](./Switch.md) control that resets the peak value of the ouput meter. Its Value must be set to ``@ResetOutputVU``.</li><li>**Peak_Out_Text:** A [Text](./Text.md) control that displays the peak value of the output meter. Its Value must be set to ``@VUOutMax``.</li><li>**Peak_Back:** An [Image](./Image.md) control that provides the background bitmap for the peak value.</li></ul>|
 |**Back**|An [Image](./Image.md) control that provides the background bitmap for the meter.|
