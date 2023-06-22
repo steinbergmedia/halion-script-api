@@ -1,0 +1,1 @@
+In this section you find Steinberg's guidelines for creating libraries and many details on how to build your own instruments that work in HALion Sonic SE.

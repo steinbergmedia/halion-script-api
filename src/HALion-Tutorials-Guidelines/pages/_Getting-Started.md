@@ -1,0 +1,1 @@
+This section provides general information about HALion Libraries and how to create instruments.

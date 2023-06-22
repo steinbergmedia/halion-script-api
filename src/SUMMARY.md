@@ -285,3 +285,14 @@
 # HALion Tutorials & Guidelines
 
 - [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.md)
+- [Getting Started](./HALion-Tutorials-Guidelines/pages/Getting-Started.md)
+    - [HALion Libraries](./HALion-Tutorials-Guidelines/pages/HALion-Libraries.md)
+    - [Creating Instruments](./HALion-Tutorials-Guidelines/pages/Creating-Instruments.md)
+    - [Exploring the Turorials and How-tos](./HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.md)
+- [Tutorials](./HALion-Tutorials-Guidelines/pages/Tutorials.md)
+    - [Using Relative Paths](./HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.md)
+    - [Using Velocity Crossfades](./HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.md)
+    - [Working with Exported Properties](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.md)
+- [How-tos](./HALion-Tutorials-Guidelines/pages/How-tos.md)
+- [Guidelines](./HALion-Tutorials-Guidelines/pages/Guidelines.md)
+    - [MediaBay Guideline](./HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.md)
