@@ -37,11 +37,11 @@ This how-to demonstrates how to build a custom multi-level menu for the oscillat
 
 ### Multi-Level Menu Selector
 
-The Multi-Level Menu Selector [Group](../../HALion-Macro-Page/pages/Group.md) contains the elements [Menu Switch](#menu-switch), [Menu Value](#menu-value) and [Menu Back](#menu-back).
+The Multi-Level Menu Selector [Group](../../HALion-Macro-Page/pages/Group.md) in the GUI Tree contains the elements [Menu Switch](#menu-switch), [Menu Value](#menu-value) and [Menu Back](#menu-back).
 
 ![Custom-Multi-Level Menu Selector](../images/Custom-Multi-Level-Menu-Group.png)
 
-[Menu Switch](#menu-switch) is a [Switch](../../HALion-Macro-Page/pages/Switch.md) control that is configured to open the popup menu. It uses the Popup style with the [Menu Root](#menu-root) template which contains a Popup List variable and entries for each submenu. The entries for the submenus use the [RootMenuEntry](#rootmenuentry) template to determine the entries in the root menu. All entries must be connected to the same Popup List variable which selects the [SubMenu_1,2,3,4](#submenu_1-2-3-4) template for the respective entry. The [RootMenuEntry](#rootmenuentry) template uses the hover exclusive mode to open the respective submenu template when you hover over an entry. The [SubMenu_1,2,3,4](#submenu_1-2-3-4) and [MenuEntry](#menuentry) templates determine the entries of the submenus. All aforementioned templates will be explained in more detail below. [Menu Value](#menu-value) is a text control for displaying the current value and [Menu Back](#menu-back) is an image control for the background picture.
+[Menu Switch](#menu-switch) is a [Switch](../../HALion-Macro-Page/pages/Switch.md) control that is configured to open the popup menu. It uses the Popup style with the [Menu Root](#menu-root) template which contains a Popup List variable and entries for each submenu. The entries for the submenus use the [RootMenuEntry](#rootmenuentry) template to determine the entries in the root menu. All entries must be connected to the same Popup List variable which selects the [SubMenu_1,2,3,or 4](#submenu_1-2-3-4) template for the respective entry. The [RootMenuEntry](#rootmenuentry) template uses the hover exclusive mode to open the respective submenu template when you hover over an entry. The [SubMenu_1,2,3,4](#submenu_1-2-3-4) and [MenuEntry](#menuentry) templates determine the entries of the submenus. All aforementioned templates will be explained in more detail below. [Menu Value](#menu-value) is a text control for displaying the current value and [Menu Back](#menu-back) is an image control for the background picture.
 
 #### Menu Switch
 
@@ -64,19 +64,21 @@ This [Text](../../HALion-Macro-Page/pages/Text.md) control is connected to the o
 This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a backgroud picture, which is simply a black panel.
 
 ### Menu Root
-This template contains four instances of the [RootMenutEntry](#rootmenuentry) template, one for each oscillator subgroup. The entries are determined by their Template Parameters: The names of the entries is set with the MenuText (Standard, Sync, Cross, or XOR). All four entries must be connected to the same Popup List variable (@submenus) and the OnValues must be set accordingly (1-4). When hovering the mouse over a menu entry, it will open the submenu template that refers to the OnValues 1-4.
+This template contains four instances of the [RootMenutEntry](#rootmenuentry) template, one for each oscillator subgroup. The entries are determined by their Template Parameters: The names of the entries is set with the MenuText (Standard, Sync, Cross, or XOR). All four entries must be connected to the same Popup List variable ``@submenus`` and the OnValues must be set accordingly (1-4). When hovering the mouse over a menu entry, it will open the submenu template that refers to the OnValues 1-4.
 
-![Custom Multi-Level Menu Root Entry.png](../images/Custom-Multi-Level-Menu-Root-Entry.png)
+![Custom Multi-Level Menu Root Entry](../images/Custom-Multi-Level-Menu-Root-Entry.png)
 
 #### Variables submenus
 
 The Popup List variable "submenus" selects the [SubMenu_1,2,3,4](#submenu_1-2-3-4) templates for the respective entry. The order of the list refers to the OnValues 1-4.
 
-![Custom Multi-Level Menu Popup List.png](../images/Custom-Multi-Level-Menu-Popup-List.png)
+![Custom Multi-Level Menu Popup List](../images/Custom-Multi-Level-Menu-Popup-List.png)
 
 ### RootMenuEntry
 
 This template represents one entry of the root menu. It consists of four elements:
+
+![Custom Multi-Level RootMenuEntry](../images/Custom-Multi-Level-RootMenuEntry.png)
 
 #### Triangle
 
@@ -109,15 +111,19 @@ Each of these templates contains four instances of the [MenuEntry](#menuentry) t
 
 For example:
 
-* MenuText = Sine
-* OnValue = 0
-* Value = @0:Zone 1/@id:b0001
+|Parameter|Value|
+|:-|:-|
+|MenuText|Sine|
+|OnValue|0|
+|Value|@0:Zone 1/@id:b0001|
 
 for the Sine oscillator or
 
-* MenuText = Sine
-* OnValue = 4
-* Value = @0:Zone 1/@id:b0001
+|Parameter|Value|
+|:-|:-|
+|MenuText|Sine|
+|OnValue|4|
+|Value|@0:Zone 1/@id:b0001|
 
 for the Sine Sync oscillator.
 
@@ -126,6 +132,8 @@ for the Sine Sync oscillator.
 ### MenuEntry
 
 This template represents one menu entry of the [SubMenu_1,2,3,4](#submenu_1-2-3-4) templates and must be instantiated for each oscillator type. It consists of three elements:
+
+![Custom Multi-Level MenuEntry](../images/Custom-Multi-Level-MenuEntry.png)
 
 #### Text
 This [Text](../../HALion-Macro-Page/pages/Text.md) control displays the name of the entry. The Style of the control is set to Read-Only so that the text cannot be edited. The Value of the text is exported and the name is set to MenuText on the template level.
