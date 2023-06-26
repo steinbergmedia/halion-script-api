@@ -4,7 +4,7 @@
 
 ## Controls Libraries
 
-HALion provides a large number of preconfigured templates that can directly be used on macro pages. These are packed into two libraries [Basic Controls](#basic-controls) and [Additional Controls](#additional-controls).
+HALion provides a large number of preconfigured templates that can directly be used on macro pages. These are packed into two libraries: [Basic Controls](#basic-controls) and [Additional Controls](#additional-controls).
 
 ![Library Location Basic Controls](../images/LibraryLocationsBasic.PNG)
 
