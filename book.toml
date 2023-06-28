@@ -3,7 +3,7 @@ authors = ["mklag"]
 language = "en"
 multilingual = false
 src = "src"
-title = "HALion 6.4.40"
+title = "HALion 7.0.0"
 
 [build]
 build-dir = "book"
