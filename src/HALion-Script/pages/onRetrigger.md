@@ -29,7 +29,7 @@ Note-off events use the following fields of the [Event](./Event.md) object.
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-off velocity in the range of 0 to 127.|number|
 
->&#10069; The note ids of the note-retrigger events cannot be used in functions like [releaseVoice](./releaseVoice.md), [changeVolume](./changeVolume.md), [changeNoteExpression](./changeNoteExpression.md), etc. You must use the note id of the original note-on event instead. See Example 2 for details.
+>&#10069; The note ids of the note-retrigger events cannot be used in functions like [releaseVoice](./releaseVoice.md), [changeVolume](./changeVolume.md), [changeNoteExpression](./changeNoteExpression.md), etc. You must use the note id of the original note-on event instead. See [Example 2](#example-2) for details.
 
 ## Example 1
 
