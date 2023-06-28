@@ -36,4 +36,4 @@ function onNote(event)
 end
 ```
 
-**See Also:** [postEvent](./postEvent.md), [playNote](./playNote.md), [releaseVoice](./releaseVoice.md)
+**See Also:** [postEvent](./postEvent.md), [playNote](./playNote.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md)

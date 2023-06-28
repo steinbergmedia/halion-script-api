@@ -6,7 +6,7 @@
 
 ## Description
 
-This callback function is called when the script module receives an event that is not handled by the specific event callback functions, e.g., [onNote](./onNote.md), [onRelease](./onRelease.md), [onController](./onController.md) and [onNoteExpression](./onNoteExpression.md). If none of the specific callback functions are defined, onUnhandledEvent will receive all incoming events.
+This callback function is called when the script module receives an event that is not handled by the specific event callback functions, e.g., [onNote](./onNote.md), [onRelease](./onRelease.md), [onRetrigger](./onRetrigger.md), [onController](./onController.md) and [onNoteExpression](./onNoteExpression.md). If none of the specific callback functions are defined, onUnhandledEvent will receive all incoming events.
 
 **Available in:** Processor.
 
@@ -27,4 +27,4 @@ function onUnhandledEvent(event)
 end
 ```
 
-**See also:** [onNote](./onNote.md), [onRelease](./onRelease.md), [onController](./onController.md), [onNoteExpression](./onNoteExpression.md)
+**See also:** [onNote](./onNote.md), [onRelease](./onRelease.md), [onRetrigger](./onRetrigger.md), [onController](./onController.md), [onNoteExpression](./onNoteExpression.md)

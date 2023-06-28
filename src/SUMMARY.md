@@ -179,6 +179,7 @@
     - [onPitchBend](./HALion-Script/pages/onPitchBend.md)
     - [onRelease](./HALion-Script/pages/onRelease.md)
     - [onRemoveFromSlot](./HALion-Script/pages/onRemoveFromSlot.md)
+    - [onRetrigger](./HALion-Script/pages/onRetrigger.md)
     - [onSave](./HALion-Script/pages/onSave.md)
     - [onSaveSubPreset](./HALion-Script/pages/onSaveSubPreset.md)
     - [onTriggerPad](./HALion-Script/pages/onTriggerPad.md)

@@ -48,4 +48,4 @@ function onController(event)
 end
 ```
 
-**See also:** [onNote](./onNote.md), [playNote](./playNote.md), [onRelease](./onRelease.md), [releaseVoice](./releaseVoice.md)
+**See also:** [onNote](./onNote.md), [playNote](./playNote.md), [onRelease](./onRelease.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md)

@@ -46,4 +46,4 @@ function onNote(event)
 end
 ```
 
-**See also:** [onNote](./onNote.md), [postEvent](./postEvent.md), [onRelease](./onRelease.md), [releaseVoice](./releaseVoice.md)
+**See also:** [onNote](./onNote.md), [postEvent](./postEvent.md), [onRelease](./onRelease.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md)

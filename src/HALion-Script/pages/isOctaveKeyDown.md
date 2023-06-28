@@ -38,6 +38,13 @@ function onRelease(event)
     print("Note #: "..(event.note+7)..", "..tostring(isOctaveKeyDown(event.note+7)))
     print("Note #: "..(event.note + 12)..", "..tostring(isOctaveKeyDown(event.note + 12)).."\n")
 end
+
+function onRetrigger(event)
+    print("Note-retrigger:")
+    print("Note #: "..event.note..", "..tostring(isOctaveKeyDown(event.note)))
+    print("Note #: "..(event.note+7)..", "..tostring(isOctaveKeyDown(event.note+7)))
+    print("Note #: "..(event.note + 12)..", "..tostring(isOctaveKeyDown(event.note + 12)).."\n")
+end
 ```
 
 **See also:** [isKeyDown](./isKeyDown.md), [isNoteHeld](./isNoteHeld.md)

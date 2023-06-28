@@ -10,6 +10,25 @@ This page lists the modified and added pages for each version.
 
 ---
 
+## HALion 7.0.0
+
+#### Added Pages
+
+* [onRetrigger](./onRetrigger.md)
+
+#### Modified Pages
+
+* [Event](./Event.md)
+* [Event Types](./Event-Types.md)
+* [getNoteDuration](./getNoteDuration.md)
+* [isKeyDown](./isKeyDown.md)
+* [isOctaveKeyDown](./isOctaveKeyDown.md)
+* [onNote](./onNote.md)
+* [onRelease](./onRelease.md)
+* [onUnhandledEvent](./onUnhandledEvent.md)
+* [playNote](./playNote.md)
+* [postEvent](./postEvent.md)
+
 ## HALion 6.4.20
 
 #### Modified Pages

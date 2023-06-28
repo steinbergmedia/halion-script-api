@@ -17,6 +17,8 @@ Enumerator to identify the different types of events. See [Event Constructor](./
 |3|EventType.controller|Continuous controller events.|
 |4|EventType.noteExpression|Note expression events.|
 |5|EventType.programChange|Only used for Standard MIDI files.|
+|6|EventType.noteRetrigger|Note-retrigger events.|
+|7|EventType.data|System exclusive messages.|
 
 ## Example
 
@@ -32,6 +34,10 @@ function printEventType(event)
         print("Controller event received!")
     elseif event.type == EventType.noteExpression then
         print("Note Expression event received!")
+    elseif event.type == EventType.noteRetrigger then
+        print("Note-retrigger event received!")
+    elseif event.type == EventType.data then
+        print("System exclusive message received!")
     end
 end
  
@@ -53,6 +59,16 @@ end
 function onNoteExpression(event)
     printEventType(event)
     -- postEvent(event), not needed for note expression.
+end
+
+function onRetrigger(event)
+    printEventType(event)
+    postEvent(event)
+end
+ 
+function onData(event)
+    printEventType(event)
+    postEvent(event)
 end
 ```
 
