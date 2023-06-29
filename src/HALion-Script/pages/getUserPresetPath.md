@@ -31,3 +31,5 @@ halionSonicPresetPath = getUserPresetPath("HALion Sonic")
 print(plugInPresetPath)
 print(halionSonicPresetPath)
 ```
+
+**See also:** [getUserSubPresetPath](./getUserSubPresetPath.md)

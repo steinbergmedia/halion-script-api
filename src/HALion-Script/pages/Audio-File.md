@@ -8,7 +8,7 @@ The AudioFile class describes the properties of audio files.
 
 **On this page:**
 
-[AudioFile Class](#audiofile-class), [analyzePitch](#analyzepitch), [cancelPitchAnalysis](#cancelpitchanalysis), [getOnsets](#getonsets), [getPeak](#getpeak), [getPitch](#getpitch), [getPitchAnalysisProgress](#getpitchanalysisprogress)
+[AudioFile Class](#audiofile-class), [analyzePitch](#analyzepitch), [cancelDecompose](#canceldecompose), [cancelPitchAnalysis](#cancelpitchanalysis), [decompose](#decompose), [getDecomposeProgress](#getdecomposeprogress), [getOnsets](#getonsets), [getPeak](#getpeak), [getPitch](#getpitch), [getPitchAnalysisProgress](#getpitchanalysisprogress)
 
 ---
 
@@ -83,9 +83,27 @@ end
 
 [Jump to Top ](#audio-file)
 
+### cancelDecompose
+
+{{#include ./_cancelDecompose-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
 ### cancelPitchAnalysis
 
 {{#include ./_cancelPitchAnalysis-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
+### decompose
+
+{{#include ./_decompose-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
+### getDecomposeProgress
+
+{{#include ./_getDecomposeProgress-Reference.md:all}}
 
 [Jump to Top ](#audio-file)
 

@@ -14,13 +14,27 @@ This page lists the modified and added pages for each version.
 
 #### Added Pages
 
+* [cancelDecompose](./cancelDecompose.md)
+* [decompose](./decompose.md)
+* [Decompose Output Modes](./Decompose-Output-Modes.md)
+* [getDecomposeOutputPath](./getDecomposeOutputPath.md)
+* [getDecomposeProgress](./getDecomposeProgress.md)
+* [getDecomposeSettings](./getDecomposeSettings.md)
+* [getUserSubPresetPath](./getUserSubPresetPath.md)
+* [getWavetable](./getWavetable.md)
+* [onData](./onData.md)
 * [onRetrigger](./onRetrigger.md)
+* [setWavetable](./setWavetable.md)
+* [setZoneFMXAlgo](./setZoneFMXAlgo.md)
+* [Using External Files](./Using-External-Files.md)
+* [Wavetable Table](./Wavetable-Table.md)
 
 #### Modified Pages
 
 * [Event](./Event.md)
 * [Event Types](./Event-Types.md)
 * [getNoteDuration](./getNoteDuration.md)
+* [getUserPresetPath](./getUserPresetPath.md)
 * [isKeyDown](./isKeyDown.md)
 * [isOctaveKeyDown](./isOctaveKeyDown.md)
 * [onNote](./onNote.md)
