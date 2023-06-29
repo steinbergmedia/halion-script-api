@@ -39,9 +39,11 @@ HALion Script uses [Lua 5.2.3](https://www.lua.org/manual/5.2/) with the followi
 * [table manipulation](https://www.lua.org/manual/5.2/manual.html#6.5)
 * [mathematical functions](https://www.lua.org/manual/5.2/manual.html#6.6)
 * [bitwise operations](https://www.lua.org/manual/5.2/manual.html#6.7)
+* [input and output facilities](https://www.lua.org/manual/5.2/manual.html#6.8)
+* [operating system facilities](https://www.lua.org/manual/5.2/manual.html#6.9)
 * [debug facilities](https://www.lua.org/manual/5.2/manual.html#6.10)
 
->&#10069; The standard libraries [coroutine](https://www.lua.org/manual/5.2/manual.html#6.2), [io](https://www.lua.org/manual/5.2/manual.html#6.8) and [os](https://www.lua.org/manual/5.2/manual.html#6.9) are not supported.
+>&#10069; The standard library [coroutine](https://www.lua.org/manual/5.2/manual.html#6.2) is not supported. Furthermore, the functions ``io.popen``, ``io.tmpfile``, ``os.execute``, ``os.exit``, ``os.getenv``, ``os.setlocale`` and ``os.tmpname`` are not supported.
 
 {{#include ./_HALion-Script-Reference.md}}
 
