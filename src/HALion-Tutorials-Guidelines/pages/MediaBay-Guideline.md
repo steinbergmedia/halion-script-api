@@ -69,7 +69,7 @@ Properties, Moods and Articulations describe the character of a sound with label
 * Fewer labels that perfectly match are much better than too many labels that only partially match.
 * Use the auto complete feature to avoid spelling mistakes.
 
->&#10069; Presets that use an arpeggiator should not get the attribute Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should set the Category Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, set Arpeggio or Sequenced as label for the Properties, instead.
+>&#10069; Presets that use an arpeggiator should not get the Category Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should set the Category Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, set Arpeggio or Sequenced as label for the Properties, instead.
 
 ### Additional Attributes
 
