@@ -49,17 +49,31 @@ The following MediaBay attributes must be set:
 |:-|:-|
 |Author|The name of the company or of the sound designer.|
 |Category|Use this attribute to classify the sound. If you set the Sub Category first, the Category is set automatically.|
-|Character|See [Character Attribute Conventions](#character-attribute-conventions).|
+|Sub Category|Use this attribute to classify the sound. If you set the Sub Category before the Category, the Category is set automatically.|
+|Properties|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
+|Moods|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
+|Articulations|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
+|Rating|A rating of three stars is recommended as starting point for presets. The users can then lower or raise the rating.|
 |Library Manufacturer|This attribute does not have to be set manually. It is defined with the Manufacturer property in the **Library Creator**.|
 |Library Name|This attribute doesnot have to be set manually. It is defined with the Long Name property in the **Library Creator**.|
 |Name|This attribute doesnot have to be set manually. It is defined with the preset name when the preset is saved.|
 |PlugIn Name|This attribute doesnot have to be set manually. It is defined with the Family property in the **Library Creator**.|
-|Rating|A rating of three stars is recommended as starting point for presets. The users can then lower or raise the rating.|
-|Sub Category|Use this attribute to classify the sound. If you set the Sub Category before the Category, the Category is set automatically.|
+
+
+### Properties, Moods and Articulations
+
+Properties, Moods and Articulations describe the character of a sound with labels. As soon as you type, you get a suggestion of labels. You can select a suggested label to auto complete it. This also helps to avoid spelling mistakes. You should at least set some Properties that describe the sound as you hear it. Moods and Articulations are optional. The difference between Properties and Moods is that the Properties describe a sound acoustically without judging it. The Moods describe a sound emotionally and therefore judge it at the same time. Articulations describe the way the sound or instrument is played, as a composer would describe it.
+
+* Set the Properties, Moods and Articulations so that they describe the preset as precisely as possible.
+* Labels that do not match what you hear should be avoided.
+* Fewer labels that perfectly match are much better than too many labels that only partially match.
+* Use the auto complete feature to avoid spelling mistakes.
+
+>&#10069; Presets that use an arpeggiator should not get the attribute Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should set the Category Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, set Arpeggio or Sequenced as label for the Properties, instead.
 
 ### Additional Attributes
 
-These attributes should be set in addition, for example, for VST3 presets with the Category Drum&Perc > Beats.
+These attributes can be set in addition, e.g., for VST3 presets with the Category Drum&Perc > Beats.
 
 |MediaBay Attribute|Description|
 |:-|:-|
@@ -82,10 +96,3 @@ These attributes are mainly needed to display information in HALion's **Browser*
 |Key|The key in which a loop was written, for example, a loop with chords or a loop with a melody.|
 |Keywords|This attribute is set by HALion when you import third-party sampler programs.|
 
-### Properties, Moods, and Articulations
-
-* Set the Character attributes so that they describe the preset as precisely as possible.
-* Character attributes that do not fit should not be used at all.
-* Fewer character attributes that perfectly match are much better than too many character attributes that do not match.
-
->&#10069; Presets that use an arpeggiator should not get the attribute Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should add the attribute Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, use the Sequenced or Arpeggio Character attributes, instead.
