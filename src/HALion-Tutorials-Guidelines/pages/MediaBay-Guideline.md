@@ -8,9 +8,9 @@
 
 ---
 
-With the help of MediaBay attributes, you can quickly and easily browse and search presets. Attributes are descriptive keywords that you can assign to your presets. Good search results in the MediaBay highly depend on accurately set attributes. When you specify attributes for your final HS(SE) Program presets, you should follow the guideline below. This ensures an equal quality of the attributes and, therefore, improves browsing and searching in the MediaBay.
+With the help of MediaBay attributes, you can quickly and easily browse and search presets. Attributes are descriptive keywords that you can assign to your presets. Good search results in the MediaBay highly depend on accurately set attributes. When you specify attributes for your final HALion Sonic Program presets, you should follow the guideline below. This ensures an equal quality of the attributes and, therefore, improves browsing and searching in the MediaBay.
 
->&#10069; Please use the MediaBay of HALion Sonic to specify attributes for your presets. Do not use the MediaBay of Cubase, because it contains attributes that are not supported by HAlion Sonic (SE) presets.
+>&#10069; Please use the MediaBay of HALion Sonic to specify attributes for your presets. Do not use the MediaBay of Cubase, because it contains attributes that are not supported by HAlion Sonic presets.
 
 ## Library Creator Properties
 
@@ -80,40 +80,10 @@ These attributes are mainly needed to display information in HALion's **Browser*
 |Key|The key in which a loop was written, for example, a loop with chords or a loop with a melody.|
 |Keywords|This attribute is set by HALion when you import third-party sampler programs.|
 
-### Character Attribute Conventions
+### Properties, Moods, and Articulations
 
 * Set the Character attributes so that they describe the preset as precisely as possible.
 * Character attributes that do not fit should not be used at all.
 * Fewer character attributes that perfectly match are much better than too many character attributes that do not match.
-
-|Character|Description|
-|:-|:-|
-|Mono/Poly|This attribute should be set for instruments. Mono for monophonic, and Poly for polyphonic.|
-|Split/Layer|Use this attribute for combi presets that use more than one layer.|
-|Glide/Glissando|Set this attribute to Glide if the sound has glide activated.|
-|Major/Minor|Use this attribute for major or minor chord stacks, for example.|
-|Single/Ensemble|Set this attribute to Ensemble if your instrument is an ensemble, such as string or brass sections, for example.|
-|Acoustic/Electric|Set this attribute to Acoustic for acoustic instruments. Set it to Electric for electro-acoustic instruments such as a tonewheel organ or an e-piano.|
-|Analog/Digital|Set this attribute to Analog for typical analog synth sounds. Set it to Digital for typical digital synth sounds.|
-|Vintage/Modern|This attribute describes the decade of the sound. Set this as required. Do not use this attribute if it does not match.|
-|Old/New|This attribute describes the condition of the sound. Set this as required. Do not use this attribute if it does not match.|
-|Clean/Distorted|Set this attribute to Distorted if the sound has a lot of distortion. Use Clean only for very clean sounds. Do not use this attribute for sounds that are in between.|
-|Dry/Processed|Set this attribute to Dry if no effects such as modulation, delay, or reverb are used. Set it to Processed if effects are used.|
-|Harmonic/Dissonant|Set this attribute to Harmonic for additive sounds, for example. Set it to Dissonant for inharmonic sounds with ring modulation, for example.|
-|Clear/Noisy|Use Clear only for pristine additive or digital sounds, for example. Set it to Noisy for sounds with prominent noise. Do not use this attribute for sounds that are in between.|
-|Thin/Rich|Set this as required. Do not use this attribute if it does not match.|
-|Dark/Bright|Set this as required. Do not use this attribute if it does not match.|
-|Cold/Warm|Set this as required. Do not use this attribute if it does not match.|
-|Metallic/Wooden|Set this as required. Do not use this attribute if it does not match.|
-|Glass/Plastic|Set this as required. Do not use this attribute if it does not match.|
-|Percussive/Soft|Set this as required. Do not use this attribute for sounds that are in between.|
-|Fast/Slow|Set this as required. Do not use this attribute if it does not match.|
-|Short/Long|Set this as required. Do not use this attribute if it does not match.|
-|Attack/Release|Use this attribute if the sound has an attack or release. Alternatively, you can use Fast Attack/Slow Attack or Short Release/Long Release.|
-|Decay/Sustain|Set this attribute to Decay if there is no sustain. Set it to Sustain if the sound has a sustain.|
-|Fast Attack/Slow Attack|Set this as required. Do not use this attribute for sounds that are in between.|
-|Short Release/Long Release|Set this as required. Do not use this attribute for sounds that are in between.|
-|Loop/One Shot|Set this as required. Do not use this attribute if it does not match.|
-|Sequenced/Arpeggio|Set this attribute to Sequenced if a step sequencer or MIDI phrase is used. Set this to Arpeggio if an arpeggio is used.|
 
 >&#10069; Presets that use an arpeggiator should not get the attribute Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should add the attribute Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, use the Sequenced or Arpeggio Character attributes, instead.

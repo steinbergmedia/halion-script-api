@@ -320,6 +320,6 @@
     - [Relative Paths](./HALion-Tutorials-Guidelines/pages/Relative-Paths.md)
     - [Switching Control Templates](./HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.md)
 - [Guidelines](./HALion-Tutorials-Guidelines/pages/Guidelines.md)
-    - [HS(SE) Preset Guideline](./HALion-Tutorials-Guidelines/pages/HSSE-Preset-Guideline.md)
+    - [HS Preset Guideline](./HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.md)
     - [Quick Controls Guideline](./HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.md)
     - [MediaBay Guideline](./HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.md)
