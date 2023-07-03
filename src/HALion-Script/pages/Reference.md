@@ -191,6 +191,7 @@ The reference pages describe the functions and features of the HALion Script lan
 [runAsync](./runAsync.md),
 [runSync](./runSync.md),
 [samples2ms](./samples2ms.md),
+[savePreset](./savePreset.md),
 [setName](./setName.md),
 [setOutputBus](./setOutputBus.md),
 [setParameter](./setParameter.md),
@@ -211,6 +212,8 @@ The reference pages describe the functions and features of the HALion Script lan
 [sortEvents](./sortEvents.md),
 [spawn](./spawn.md),
 [startUndoBlock](./startUndoBlock.md),
+[startWriteOutputToFile](./startWriteOutputToFile.md),
+[stopWriteOutputToFile](./stopWriteOutputToFile.md),
 
 ## U-Z
 

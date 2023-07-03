@@ -24,8 +24,11 @@ This page lists the modified and added pages for each version.
 * [getWavetable](./getWavetable.md)
 * [onData](./onData.md)
 * [onRetrigger](./onRetrigger.md)
+* [savePreset](./HALion-Script/pages/savePreset.md)
 * [setWavetable](./setWavetable.md)
 * [setZoneFMXAlgo](./setZoneFMXAlgo.md)
+* [startWriteOutputToFile](./HALion-Script/pages/startWriteOutputToFile.md)
+* [stopWriteOutputToFile](./HALion-Script/pages/stopWriteOutputToFile.md)
 * [Using External Files](./Using-External-Files.md)
 * [Wavetable Table](./Wavetable-Table.md)
 
