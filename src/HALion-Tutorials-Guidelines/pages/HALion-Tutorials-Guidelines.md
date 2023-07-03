@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) /
+
 # HALion Tutorials & Guidelines
 
 ## Getting Sarted

@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [Tutorials](./Tutorials.md) /
+
 # Using Velocity Crossfades
 
 ---

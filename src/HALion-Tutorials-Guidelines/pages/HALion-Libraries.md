@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [Getting Started](./Getting-Started.md) /
+
 # HALion Libraries
 
 ---

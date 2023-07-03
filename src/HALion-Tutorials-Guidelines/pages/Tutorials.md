@@ -1,3 +1,5 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) /
+
 # Tutorials
 
 {{#include _Tutorials.md}} By following the instructions step by step you will learn important workflows and skills that make your sound designer life easier.
