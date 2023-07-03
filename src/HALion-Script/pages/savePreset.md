@@ -2,7 +2,9 @@
 
 # savePreset
 
->**savePreset(filename, layer, product, attr)**
+>**savePreset(filename, layer, plugin, attr)**
+
+## Description
 
  Function to save a layer as VST preset to disk.
 
@@ -13,8 +15,8 @@
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**filename**|The absolute path and name of the VST preset.|string|
-|**layer**|Specifies the [Layer](./Layer.md) element which is to be saved.|[Layer](./Layer.md|
-|**product**|Determines the plug-in format for the VST preset. You can choose "HALion7" or "HALion Sonic". |string, optional|
+|**layer**|Specifies the [Layer](./Layer.md) element which is to be saved.|[Layer](./Layer.md)|
+|**plugin**|Determines the plug-in for the VST preset. You can choose "HALion7" or "HALion Sonic". |string, optional|
 |**attr**|Set this to "program" to save a program VST preset. A layer VST preset will be saved, if this is not set.|string, optional|
 
 ## Example
