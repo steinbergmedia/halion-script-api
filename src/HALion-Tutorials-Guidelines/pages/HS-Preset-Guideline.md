@@ -43,7 +43,7 @@ When you create the final HALion Sonic Program presets, you should follow the gu
 * Remove any effects that you do not use anymore.
 * Avoid empty slots in the insert rack.
 
-![HS3 Inserts Tab](../images/HS3-Inserts-Tab.png)
+![HS Inserts Tab](../images/HS-Inserts-Tab.png)
 
 In the example above, the second insert is deactivated and the third is empty. This should be avoided.
 
