@@ -43,26 +43,33 @@ The different preset categories require different sets of attributes. This guide
 
 ### Common Attributes
 
-The following MediaBay attributes must be set:
+The following MediaBay attributes must be set for each preset manually:
 
 |MediaBay Attribute|Description|
 |:-|:-|
 |Author|The name of the company or of the sound designer.|
-|Category|Use this attribute to classify the sound. If you set the Sub Category first, the Category is set automatically.|
-|Sub Category|Use this attribute to classify the sound. If you set the Sub Category before the Category, the Category is set automatically.|
+|Category/Sub Category|Use this attribute to classify the sound. If you set the Sub Category first, the Category is set automatically.|
 |Properties|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
 |Moods|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
 |Articulations|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
 |Rating|A rating of three stars is recommended as starting point for presets. The users can then lower or raise the rating.|
-|Library Manufacturer|This attribute does not have to be set manually. It is defined with the Manufacturer property in the **Library Creator**.|
-|Library Name|This attribute doesnot have to be set manually. It is defined with the Long Name property in the **Library Creator**.|
-|Name|This attribute doesnot have to be set manually. It is defined with the preset name when the preset is saved.|
-|PlugIn Name|This attribute doesnot have to be set manually. It is defined with the Family property in the **Library Creator**.|
+|Name|This attribute is defined with the preset filename when the preset is saved.|
 
+The following MediaBay attributes are set automatically by the **Library Creator**. You must set the corresponding properties in the **Library Creator** before you build the library.
+
+|MediaBay Attribute|Description|
+|:-|:-|
+|Library Manufacturer|This attribute is defined with the Manufacturer property in the **Library Creator**.|
+|Library Name|This attribute is defined with the Long Name property in the **Library Creator**.|
+|PlugIn Name|This attribute is defined with the Family property in the **Library Creator**.|
 
 ### Properties, Moods and Articulations
 
 Properties, Moods and Articulations describe the character of a sound with labels. As soon as you type, you get a suggestion of labels. You can select a suggested label to auto complete it. This also helps to avoid spelling mistakes. You should at least set some Properties that describe the sound as you hear it. Moods and Articulations are optional. The difference between Properties and Moods is that the Properties describe a sound acoustically without judging it. The Moods describe a sound emotionally and therefore judge it at the same time. Articulations describe the way the sound or instrument is played, as a composer would describe it.
+
+The libraries of FM Lab and Tales both use Properties. FM Lab even uses Articulations on some presets. You can use these two libraries as examples for your own productions.
+
+![FM Lab MediaBay](../images/FM-Lab-MediaBay.png)
 
 * Set the Properties, Moods and Articulations so that they describe the preset as precisely as possible.
 * Labels that do not match what you hear should be avoided.
