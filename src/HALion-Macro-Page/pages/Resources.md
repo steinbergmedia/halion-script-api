@@ -2,8 +2,11 @@
 
 # Resources
 
-There are three types of resources available on macro pages. These are [Bitmaps](./Bitmap.md), [Fonts](./Font.md), and [Sections](./Section.md). Resources are the most basic objects and are used by controls to display graphics, animations, or text.
+Resources are the most basic objects and are used by controls to display graphics, animations, or text. The following types of resources are available: 
 
 * [Bitmap](./Bitmap.md)
+* [Color](./Color.md)
+* [Decor (Resource)](./Decor-Resource.md)
 * [Font](./Font.md)
 * [Section](./Section.md)
+* [SVG](./SVG.md)

@@ -2,13 +2,15 @@
 
 # Templates
 
-A template is a group of control elements that is created to be used multiple times on a macro page, each time with different property values. The HALion Basic Controls library comes with a large number of templates. Most of the templates are generic, such as knobs, sliders, and switches, and do not need any further documentation. However, some templates are more complex, prepared for specific tasks, like controlling a MIDI player module or a Step Modulator. For these templates, you will find further information in this documentation.
+A template is a group of control elements that is created to be used multiple times on a macro page, each time with different property values. The [Basic Controls](./Exploring-Templates.md#basic-controls) library comes with a large number of templates. Most of the templates are generic, such as knobs, sliders, and switches, and do not need any further documentation. However, there are also more complex templates prepared for specific tasks, like controlling a MIDI player module or a Step Modulator. For such templates you find more information in this documentation.
 
-All templates  described in this section can be found in the Basic Controls library. Additional templates for knobs, sliders, switches etc. can be found in the Additional Controls library. See [Exploring Templates](./Exploring-Templates.md) how to access templates.
+All templates described in this section can be found in the [Basic Controls](./Exploring-Templates.md#basic-controls) library. Additional templates for knobs, sliders, switches etc. can be found in the [Additional Controls](Exploring-Templates.md#additional-controls) library. See [Exploring Templates](./Exploring-Templates.md) how to access templates.
 
 * [About Box](./About-Box.md)
+* [Animation Script](./Animation-Script.md)
 * [Curve Editor](./Curve-Editor.md)
 * [Envelope](./Envelope.md)
+* [Envelope Shaper](./Envelope-Shaper.md)
 * [FlexPhraser](./FlexPhraser.md)
 * [FlexPhraserStepSeq](./FlexPhraserStepSeq.md)
 * [FX Meter](./FX-Meter.md)
@@ -18,7 +20,7 @@ All templates  described in this section can be found in the Basic Controls libr
 * [Preset Browser](./Preset-Browser.md)
 * [Preset Browser Custom](./Preset-Browser-Custom.md)
 * [Sample Display](./Sample-Display.md)
-* [Step Modulator(Template)](./Step-Modulator-Template.md)
+* [Step Modulator (Template)](./Step-Modulator-Template.md)
 * [Studio EQ Meter](./Studio-EQ-Meter.md)
 * [Wavetable Noise Selector](./Wavetable-Noise-Selector.md)
 * [Wavetable Selector](./Wavetable-Selector.md)

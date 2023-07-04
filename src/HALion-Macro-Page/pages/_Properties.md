@@ -10,6 +10,10 @@
 |**Bitmap**|Bitmap refers to a [Bitmap](./Bitmap.md) resource which can be:<ul><li>An individual bitmap file in png or bmp format defined as resource.</li><li>A section, specifying a region within a larger source bitmap.</li></ul>You can either select an existing resource or drop an image file onto the text field. In this case, the corresponding resource is created and set as reference.|
 // ANCHOR_END: bitmap
 
+// ANCHOR: bitmap-svg
+|**Bitmap**|Bitmap refers to:<ul><li>An individual bitmap file in png or bmp format defined as resource.</li><li>A section, specifying a region within a larger source bitmap.</li><li>A SVG file defined as resource.</li></ul>You can either select an existing resource or drop an image file onto the text field. In this case, the corresponding resource is created and set as reference.|
+// ANCHOR_END: bitmap-svg
+
 // ANCHOR: font
 |**Font**|Allows you to select which [Font](./Font.md) resource to be used to display the text.|
 // ANCHOR_END: font
@@ -33,6 +37,10 @@ Activate this if you want to be able to resize the element. The assigned [Bitmap
 // ANCHOR: scale-mode
 |**Scale Mode**|This mode defines how a bitmap is adapted in size when the control that is using it is set to Scalable and sized smaller or larger than the original bitmap.<ul><li>**Stretch**: By default, scale mode is set to stretch, which means that the bitmap is drawn smaller or larger.</li><li>**Tile**: This means that the original bitmap will be drawn repeatedly as soon as the size of the control exceeds the size of the original bitmap.</li><li>**Tile Border**: This mode only draws the area defined by the margin settings repeatedly and leaves the inner area empty.</li></ul>|
 // ANCHOR_END: scale-mode
+
+// ANCHOR: scope
+|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the group.|
+// ANCHOR_END: scope
 
 // ANCHOR: show-value
 |**Show Value**|Activate this if you want to display a tooltip with the current parameter value when using the control. This option can be exported to the template level. The exported parameter can then be activated by setting it to ``true`` (the default is ``false``).|

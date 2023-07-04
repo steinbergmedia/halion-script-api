@@ -11,7 +11,7 @@ A Group has no graphical representation and only serves as a container for other
 |Poperty|Description|
 |:-|:-|
 {{#include ./_Properties.md:name}}
-|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the group.|
+{{#include ./_Properties.md:scope}}
 {{#include ./_Properties.md:position-size}}
 {{#include ./_Properties.md:attach}}
 {{#include ./_Properties.md:tooltip}}
