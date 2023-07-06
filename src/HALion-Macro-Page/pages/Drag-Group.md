@@ -33,7 +33,7 @@ The Drag control allows you to implement drag operations. You can drag a simple 
 
 #### Description
 
-Callback for the drag source when the drag operation starts. The text in ``draginfo`` is taken from the corresponding property of the control.
+Callback for the source of the drag operation when the operation starts. The text in ``draginfo`` is taken from the corresponding property of the control.
 
 #### Arguments
 
@@ -51,7 +51,7 @@ The function can return a table with the following keys:
 |**copy**|Set this to ``true`` if copy is allowed, ``false`` if not.|boolean|
 |**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
 |**info**|A modified Drag Info text.|string|
-|**files**|A table of files.|table of strings|
+|**files**|A table of files.|table with strings|
 
 ### onDropInsert
 
@@ -59,7 +59,7 @@ The function can return a table with the following keys:
 
 #### Description
 
-Callback for the drag target when the drop operation is executed.
+Callback for the target of the drag operation when the drop is executed.
 
 #### Arguments
 
@@ -67,7 +67,7 @@ Callback for the drag target when the drop operation is executed.
 |:-|:-|:-|
 |**viewname**|The name of the targeted view.|string|
 |**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**copy**| This is ``true``, if drag is a copy operation.|string|
+|**copy**|Indicates if drag is a copy operation (``true``).|string|
 
 ### onDropDone
 
@@ -75,12 +75,12 @@ Callback for the drag target when the drop operation is executed.
 
 #### Description
 
-Callback for the drag source, when the drop was completed.
+Callback for the source of the drag operation when the drop has completed.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted view.|string|
+|**viewname**|The name of the source view.|string|
 |**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**copy**|This is ``true``, if drag is a copy operation.|string|
+|**copy**|Indicates if drag is a copy operation (``true``).|string|
