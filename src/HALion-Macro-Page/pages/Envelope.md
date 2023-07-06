@@ -16,6 +16,13 @@ The Envelope template allows you to edit HALion's multi-stage envelopes. The tem
 
 >&#10069; The [Envelope View Control](#envelope-view-control) cannot be created manually in the GUI Tree. {{#include ./_Templates.md:special-template}}
 
+**To explore the functionality and connections:**
+
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Envelope Page". 
+3. Select "Envelope" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
+
 ## Template Properties
 
 |Poperty|Description|
