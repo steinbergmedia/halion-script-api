@@ -50,20 +50,20 @@ These variables are needed to allow the communication between the Envelope View 
 
 |Variable|Description|Type|Range|
 |:-|:-|:-|:-:|
-|**index**|Index of the selected node.|integer|0 - 128|
+|**beat**|Time in beats.|rational|n.a.|
+|**curve**|Curvature of the selected node segment.|float|-10 - 10|
 |**level**|Level of the selected node.|float|0 - 100|
 |**time**|Time of the selected note.|float|0 - 30000|
-|**curve**|Curvature of the selected node segment.|float|-10 - 10|
-|**beat**|Time in beats.|rational|n.a.|
+|**index**|Index of the selected node.|integer|0 - 128|
+|**fixed**|Fixed mode of the envelope.|integer| 0, 1|
 |**syncnote**|Specifies the note grid.|stringlist|1/1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, 1/256|
 
 ### Controls and Subtemplates
 
 |Item|Description|
 |:-|:-|
-|**Scroll & Zoom**|This [Group](./Group.md) contains controls that allow you to scroll and zoom the envelope.<ul><li>**Scrollbar:** A [Range Slider](./Range-Slider.md) to reach areas of the envelope that are not visible through the zoom. The Low Value of the [Range Slider](./Range-Slider.md) must be set to ``@ScrollMin`` and the High Value must be set to ``@ScrollMax``.</li><li>**Background:** A background bitmap for the scrollbar.</li><li>**Zoom Out:** A switch template that allows you to zoom out the envelope. Its Value must be set to ``@ZoomOut``.</li><li>**Zoom In:** A switch template that allows you to zoom in the envelope. Its Value must be set to ``@ZoomIn``.</li><li>**Zoom Alternate:** A switch template that toggles between the last zoom state or completely zoomed out. Its Value must be set to ``@StateA.``</li><li>**Zoom1:** A switch template to activate zoom state 1. Its Value must be set to ``@State1``.</li><li>**Zoom2:** A switch template to activate zoom state 2. Its Value must be set to ``@State2``.</li><li>**Zoom3:** A switch template to activate zoom state 3. Its Value must be set to ``@State3``.</li></ul>|
-|**Edit**|This [Group](./Group.md) contains controls that allow you to adjust the selected node and further options of the envelope.<ul><li>**Time:** A [Stack](./Stack.md) with two templates to either set the time of a node in ms or fractions of a beat. The Value of the [Stack](./Stack.md) is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone. The Value of the "Time ms" and the "Time Beat" templates must be set to the [UI variables](#ui-variables) ``@time`` and ``@beat`` respectively. This way, they are connected to the corresponding properties of the Envelope View, which use the same [UI variables](#ui-variables).</li><li>**Mode:** A menu template. Its Value is exported as ``Mode`` and should be connected to the Mode parameter of the corresponding envelope in the zone.</li><li>**Sync:** A switch template. Its Value is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone.</li><li>**Fixed:** A switch template. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@fixed``.</li><li>**Curve:** A valuebox template to adjust the curvature of the selected node. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@curve``.</li><li>**Level:** A valuebox template to adjust the level of the selected node. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@level``.</li><li>**Index:** A valuebox template to select the index of the node to be edited. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@index``.</li><li>**SyncNote:** A [Disable](./Disable.md) view with two templates: Sync Note and Triplet. The Value of the [Disable](./Disable.md) view is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone. If Sync is active, the [Disable](./Disable.md) view becomes active too and the contained templates can be used to set the Sync Note and Triplet parameters of the envelope.</li><ul><li>**Sync Note:** A menu template. Its Value must be set to ``@syncnote``, a stringlist [UI variable](#ui-variables) that defines the allowed note values. It is also connected to the corresponding property of the Envelope View, which uses the same [UI variable](#ui-variables).</li><li>**Triplet:** A switch template. Its Value is exported as ``Triplet`` and should be connected to the Triplet parameter of the corresponding envelope in the zone.</li></ul></ul>|
-|**Envelope View**|The graphical envelope editor. The properties EnvValue, Mode, Sync, Triplet, Loop Start, Loop End, Sustain and Play Pos are exported and thus are available as template parameters. They should be connected to the parameters of the corresponding envelope in the zone. The Value of the properties SyncNote, Fixed, Index, Level, Time, Beat and Curve is set to the corresponding [UI variable](#ui-variables). This way, each property is connected to one of the control templates mentioned above.|
+|**Edit**|This [Group](./Group.md) contains controls that allow you to draw shapes, adjust the selected node and further options of the envelope.<ul><li>**Time:** A [Stack](./Stack.md) with two templates to either set the time of a node in ms or fractions of a beat. The Value of the [Stack](./Stack.md) is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone.<ul><li>**Time ms/Time Beat:** The Value of the "Time ms" and the "Time Beat" templates must be set to the [UI variables](#ui-variables) ``@time`` and ``@beat`` respectively. This way, they are connected to the corresponding properties of the Envelope View, which use the same [UI variables](#ui-variables).</li></ul></li><li>**Mode:** A menu template. Its Value is exported as ``Mode`` and should be connected to the Mode parameter of the corresponding envelope in the zone.</li><li>**Sync:** A switch template. Its Value is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone.</li><li>**Fixed:** A switch template. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@fixed``.</li><li>**Curve:** A valuebox template to adjust the curvature of the selected node. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@curve``.</li><li>**Level:** A valuebox template to adjust the level of the selected node. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@level``.</li><li>**Index:** A valuebox template to select the index of the node to be edited. Its Value is connected to the corresponding property of the Envelope View by the [UI variable](#ui-variables) ``@index``.</li><li>**SyncNote:** A [Disable](./Disable.md) view with two templates: Sync Note and Triplet. The Value of the [Disable](./Disable.md) view is exported as ``Sync`` and should be connected to the Sync parameter of the corresponding envelope in the zone. If Sync is active, the [Disable](./Disable.md) view becomes active too and the contained templates can be used to set the Sync Note and Triplet parameters of the envelope.</li><ul><li>**Sync Note:** A menu template. Its Value must be set to ``@syncnote``, a stringlist [UI variable](#ui-variables) that defines the allowed note values. It is also connected to the corresponding property of the Envelope View, which uses the same [UI variable](#ui-variables).</li><li>**Triplet:** A switch template. Its Value is exported as ``Triplet`` and should be connected to the Triplet parameter of the corresponding envelope in the zone.</li></ul></ul>|
+|**EnvView**|This [Group](./Group.md) contains a group with controls for scrolling and zooming the envelope and the Envelope View.<ul><li>**Scroll & Zoom:** This [Group](./Group.md) contains controls that allow you to scroll and zoom the envelope.<ul><li>**Scrollbar:** A [Range Slider](./Range-Slider.md) to reach areas of the envelope that are not visible through the zoom. The Low Value of the [Range Slider](./Range-Slider.md) must be set to ``@ScrollMin`` and the High Value must be set to ``@ScrollMax``.</li><li>**Background:** A background bitmap for the scrollbar.</li><li>**Zoom Out:** A switch template that allows you to zoom out the envelope. Its Value must be set to ``@ZoomOut``.</li><li>**Zoom In:** A switch template that allows you to zoom in the envelope. Its Value must be set to ``@ZoomIn``.</li><li>**Zoom Alternate:** A switch template that toggles between the last zoom state or completely zoomed out. Its Value must be set to ``@StateA.``</li><li>**Zoom1:** A switch template to activate zoom state 1. Its Value must be set to ``@State1``.</li><li>**Zoom2:** A switch template to activate zoom state 2. Its Value must be set to ``@State2``.</li><li>**Zoom3:** A switch template to activate zoom state 3. Its Value must be set to ``@State3``.</li></ul></li><li>**Envelope View:** The graphical envelope editor. The properties EnvValue, Mode, Sync, Triplet, Loop Start, Loop End, Sustain and Play Pos are exported and thus are available as template parameters. They should be connected to the parameters of the corresponding envelope in the zone. The Value of the properties SyncNote, Fixed, Index, Level, Time, Beat and Curve is set to the corresponding [UI variable](#ui-variables). This way, each property is connected to one of the control templates mentioned above. See [Envelope View Control](#envelope-view-control) for further details.</li></ul>|
 |**Env Background**|The background bitmap for the envelope.|
 
 ### Envelope View Control
@@ -85,6 +85,10 @@ In addition to standard properties like size, position, etc., the Envelope View 
 |**Triplet**|Exported as ``Triplet`` See [Template Parameters](#template-parameters) above.|
 |**SyncNote**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@syncnote``.|
 |**Fixed**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@fixed``.|
+|**Tool**|Not used in this template. See [Envelope Shaper](./Envelope-Shaper.md) template for details of this property.|
+|**ShapeSave**|Not used in this template. See [Envelope Shaper](./Envelope-Shaper.md) template for details of this property.|
+|**ShapeSelect**|Not used in this template. See [Envelope Shaper](./Envelope-Shaper.md) template for details of this property.|
+|**Shape**|Not used in this template. See [Envelope Shaper](./Envelope-Shaper.md) template for details of this property.|
 |**Index**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@index``.|
 |**Level**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@level``.|
 |**Time**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@time``.|
@@ -93,7 +97,7 @@ In addition to standard properties like size, position, etc., the Envelope View 
 |**Loop Start**|Exported as ``Loop Start``. See [Template Parameters](#template-parameters) above.|
 |**Loop End**|Exported as ``Loop End``. See [Template Parameters](#template-parameters) above.|
 |**Sustain**|Exported as ``Sustain``. See [Template Parameters](#template-parameters) above.|
-**Play Pos**|Exported as ``Play Pos``. See [Template Parameters](#template-parameters) above.|
+|**Play Pos**|Exported as ``Play Pos``. See [Template Parameters](#template-parameters) above.|
 |**Min X**|Defines the minimum value of the horizontal zoom.|
 |**Max X**|Defines the maximum value of the horizontal zoom.|
 |**Min Y**|Defines the minimum value of the vertical zoom.|
@@ -101,7 +105,7 @@ In addition to standard properties like size, position, etc., the Envelope View 
 
 #### Colors
 
->&#10069; Some colors are only available if the corresponding Style options are active.
+>&#10069; Some colors are available only if the corresponding Style options are enabled.
 
 |Poperty|Description|
 |:-|:-|
@@ -114,16 +118,17 @@ In addition to standard properties like size, position, etc., the Envelope View 
 |**Sustain**|Color of the Sustain node and line.|
 |**Synced**|Dot color of nodes that are aligned to the sync grid.|
 |**Crosshair**|Node edit crosshair color.|
-|**Playback**|Color of the playback position indicator.|
+|**Play Pos**|Color of the playback position indicator.|
 |**Border**|Overall border color.|
 |**Grid V**|Vertical grid color.|
 |**Grid V2**|Vertical fine grid color.|
+|**Grid V3**|Vertical fine grid color.|
 |**Grid H**|Horizontal grid color.|
 |**Grid H2**|Horizontal fine grid color.|
 |**Font**|Timeline font color.|
 |**Selector**|Selection area fill color.|
 |**SelFrame**|Selection area frame color.|
-|**Loop**|Loop area fill color.|
-|**LoopFrame**|Loop area frame color.|
 |**Zoom**|Zoom area fill color.|
 |**ZoomFrame**|Zoom area frame color.|
+|**Loop**|Loop area fill color.|
+|**LoopFrame**|Loop area frame color.|
