@@ -18,6 +18,12 @@ The Curve Editor template allows you to display and edit curves, such as the cus
 
 >&#10069; The [Curve Editor Control](#curve-editor-control) cannot be created manually in the GUI Tree. {{#include ./_Templates.md:special-template}}
 
+**To explore the functionality and connections:**
+
+1. Load the [Init Basic Controls.vstpreset](../vstpresets/Init%20Basic%20Controls.vstpreset) from the [Basic Controls](./Exploring-Templates.md#basic-controls) library.
+2. Open the **Macro Page Designer**, go to the **GUI Tree** and navigate to "Pages > Curve Editor Page". 
+3. Select "Curve Editor" and click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
 ## Template Properties
 
 |Poperty|Description|
