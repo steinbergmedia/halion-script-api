@@ -8,7 +8,7 @@ The Zone class inherits all properties and methods of the [Element](./Element.md
 
 **On this page:**
 
-[Zone Class](#zone-class), [Zone Constructor](#zone-constructor), [getModulationMatrixRow](#getmodulationmatrixrow), [getWavetable](#getwavetable), [getOutputBus](#getoutputbus), [setOutputBus](#setoutputbus), [setWavetable](#setwavetable)
+[Zone Class](#zone-class), [Zone Constructor](#zone-constructor), [getModulationMatrixRow](#getmodulationmatrixrow), [getOutputBus](#getoutputbus), [setOutputBus](#setoutputbus)
 
 ---
 
