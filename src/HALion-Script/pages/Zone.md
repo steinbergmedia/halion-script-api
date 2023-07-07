@@ -76,18 +76,9 @@ print(zone.velHigh)
 
 [Jump to Top ](#zone)
 
-### getWavetable
-
-{{#include ./_getWavetable-Reference.md:all}}
-
 ### setOutputBus
 
 {{#include ./_setOutputBus-Reference.md:all}}
 
 [Jump to Top ](#zone)
 
-### setWavetable
-
-{{#include ./_setWavetable-Reference.md:all}}
-
-[Jump to Top ](#zone)
