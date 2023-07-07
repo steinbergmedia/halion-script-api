@@ -20,7 +20,7 @@ You can add your script module to the MIDI module library by saving it as a MIDI
 
 1. In the **Program Tree**, right-click the script module that you want to save.
 1. On the submenu **MIDI Module Library**, select **Save Module...**
-1. In the file dialog , enter a name for the module and click **Save**.
+1. In the file dialog, enter a name for the module and click **Save**.
 
 ## Deleting Modules
 

@@ -14,7 +14,7 @@ In previous releases of HALion Sonic (< 3.0.10), parameters of layers could only
 
 ## Show Layer QC
 
-On HALion Sonic's **Options** page , there is a new option in the Global section: **Show Layer QC**.
+On HALion Sonic's **Options** page, there is a new option in the Global section: **Show Layer QC**.
 
 If **Show Layer QC** is switched off:
 

@@ -12,9 +12,9 @@ Wavetables are managed through a special predefined table: the Wavetable table. 
 
 |Field|Description|Value Type|
 |:-|:-|:-|
-|**.normalizeMode**|If you extract waves from loud and from quiet parts of the sample, the level of these extracted waves differ. Use this to keep the original level, 0 (Off), or normalize the waves during playback , 1 (Wave) or 2 (Sequence), which compensates the level differences. The default is 1 (Off).|number|
+|**.normalizeMode**|If you extract waves from loud and from quiet parts of the sample, the level of these extracted waves differ. Use this to keep the original level, 0 (Off), or normalize the waves during playback, 1 (Wave) or 2 (Sequence), which compensates the level differences. The default is 1 (Off).|number|
 |**.phaseMode**|Depending on the phase of the waves, different amounts of phase cancellation occurs during playback. Use this to keep, 0 (Keep Original Phases), or alter the phases of the waves during playback, 1 (Align Phases) or 2 (Reset Phases to Zero).  The default is 1 (Align Phases).|number|
-|**.interpolatePhase**|If this is ``true`` , the wavetable envelope creates crossfades for both the levels and the phases of the waves. This can minimize the effects of phase cancellation even more. The default is ``false`` .|boolean|
+|**.interpolatePhase**|If this is ``true``, the wavetable envelope creates crossfades for both the levels and the phases of the waves. This can minimize the effects of phase cancellation even more. The default is ``false`` .|boolean|
 |**.loopStart**|Use this to specify the first wave that is part of the loop playback.|number|
 |**.loopEnd**|Use this to specify the last wave that is part of the loop playback.|number|
 |**.modelType**|Use this to select Wavetable, Tonal, Noise or Phase Vocoder as playback engine.|number|

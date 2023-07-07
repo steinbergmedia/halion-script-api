@@ -69,5 +69,5 @@ defineParameter("WebHome", nil, true, onWebHomeChanged)
 |**Weblinks**|A [Menu](./Menu.md) control to display a list of web links. The menu is connected to the UI script using ``@WebLink`` as Value. The UI script is attached to the Aboutbox template. Edit the script to change the suggested links.|
 |**Steinberg Website**|A [Switch](./Switch.md) control connected to the UI script using ``@Webhome`` as Value. The UI script is attached to the Aboutbox template. Edit the script to change the suggested link.|
 |**Close switch**|A [Switch](./Switch.md) control set to ``exclusive`` mode. The Value must be set to the same Popup List variable ``@Popup Views`` that is used to open the about box. The Onvalue must be set to ``0``.|
-|**Person ... , Role ...**|Several [Label](./Label.md) controls that can be used to mention developers. Alternatively, the labels could also be part of the background bitmap.|
+|**Person ..., Role ...**|Several [Label](./Label.md) controls that can be used to mention developers. Alternatively, the labels could also be part of the background bitmap.|
 |**Background**|An [Image](./Image.md) control for the background bitmap.|

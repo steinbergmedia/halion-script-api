@@ -26,7 +26,7 @@ Function to decompose an audio file into its tonal and noise components. You spe
 |**tonalLevel**|Use this to specify the level of the tonal component in dB. The value range is from -96 to +12 dB. The default is 0 dB.|number, optional|
 |**noiseLevel**|Use this to specify the level of the noise component in dB. The value range is from -96 to +12 dB. The default is 0 dB.|number, optional|
 |**outputMode**|This defines if just one of the components, both or a mix of them is created. See Decompose Output Modes for details.|number, optional|
-|**outputPath**|This specifies the path for the decomposed audio files. If the string is empty, invalid, or nil , the file paths of the decompose settings of the plug-in will be used. The default is nil.|string, optional|
+|**outputPath**|This specifies the path for the decomposed audio files. If the string is empty, invalid, or nil, the file paths of the decompose settings of the plug-in will be used. The default is nil.|string, optional|
 
 >&#10069; Samples that were loaded from a VST Sound container can only be decomposed if the ouputPath argument is set to a valid file location. You can use getDecomposeOutputPath to obtain the file location from the decompose settings of the plug-in.
 // ANCHOR_END: arguments

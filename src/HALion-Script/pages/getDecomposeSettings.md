@@ -22,7 +22,7 @@ Function to obtain the decompose settings of the plug-in. Custom samples origina
 |**.FileFolderNameLibrary**|The file path to the folder in which the decomposed samples from VST Sound containers will be saved. This setting applies only if FileProjectFolderLibrary is set to false.|string|
 |**.FileProjectFolderLibrary**|If this is set to true, the decomposed samples from VST Sound containers will be saved in the project folder of your Steinberg DAW, The file path of FileFolderNameLibrary will be used instead, if this is set to false.|boolean|
 |**.FileProjectSubFolderLibrary**|This setting applies only if FileProjectFolderLibrary is set to true.The decomposed samples from VST Sound containers will be saved in the specified subfolder in the project folder of your Steinberg DAW. The decomposed samples will be saved directly to the project folder if this is empty.|string|
-|**.SubFolder**|The decomposed samples will be saved to Tonal and Noise subfolders , if this is set to true.|boolean|
+|**.SubFolder**|The decomposed samples will be saved to Tonal and Noise subfolders, if this is set to true.|boolean|
 
 ## Return Values
 
