@@ -20,7 +20,7 @@ The actual value of a parameter is not part of the [ParameterDefinition](./Param
 
 Functions like [getParameter](./getParameter.md), [setParameter](./setParameter.md) or [getParameterDefinition](./getParameterDefinition.md) address the desired parameter by its name or ID.
 
-### Adressing Parameters by Name
+### Addressing Parameters by Name
 
 Please do not mix up the parameter's label on the UI with its name in the engine. Sometimes, the label and the name of a parameter are the same, but most of the time they are different.
 
@@ -49,7 +49,7 @@ end
 
 >&#10069; Addressing a parameter by its name is case sensitive.
 
-### Adressing Parameters by ID
+### Addressing Parameters by ID
 
 The ID of a parameter can also be found in the **Parameter List**. By default, the **Parameter List** does not show the ID.
 
