@@ -315,6 +315,7 @@
     - [Using Velocity Crossfades](./HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.md)
     - [Working with Exported Properties](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.md)
 - [How-tos](./HALion-Tutorials-Guidelines/pages/How-tos.md)
+    - [Animating SVGs](./HALion-Tutorials-Guidelines/pages/Animating-SVGs.md)
     - [Custom Multi-Level Menus](./HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.md)
     - [Custom Popup Menus](./HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.md)
     - [Dynamic Template References](./HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.md)
