@@ -8,10 +8,12 @@
 }
 
 html {
-    font-family: "Open Sans", sans-serif;
-    color: var(--fg);
+    font-family: "Roboto", sans-serif;
+    color:  var(--tc);
     background-color: var(--bg);
     text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
     -webkit-text-size-adjust: none;
 }
 
@@ -22,18 +24,8 @@ body {
 }
 
 code {
-    font-family: var(--mono-font) !important;
-    font-size: var(--code-font-size);
-}
-
-/* make long words/inline code not x overflow */
-main {
-    overflow-wrap: break-word;
-}
-
-/* make wide tables scroll if they overflow */
-.table-wrapper {
-    overflow-x: auto;
+    font-family: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace !important;
+    font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
 }
 
 /* Don't change font size in headers. */
@@ -90,7 +82,8 @@ h6:target::before {
 
 .content {
     overflow-y: auto;
-    padding: 0 5px 50px 5px;
+    padding: 0 15px;
+    padding-bottom: 50px;
 }
 .content main {
     margin-left: auto;
@@ -142,24 +135,12 @@ table tbody tr:nth-child(2n) {
 blockquote {
     margin: 20px 0;
     padding: 0 20px;
-    color: var(--fg);
+    color: var(--tc);
     background-color: var(--quote-bg);
     border-top: .1em solid var(--quote-border);
     border-bottom: .1em solid var(--quote-border);
 }
 
-kbd {
-    background-color: var(--table-border-color);
-    border-radius: 4px;
-    border: solid 1px var(--theme-popup-border);
-    box-shadow: inset 0 -1px 0 var(--theme-hover);
-    display: inline-block;
-    font-size: var(--code-font-size);
-    font-family: var(--mono-font);
-    line-height: 10px;
-    padding: 4px 5px;
-    vertical-align: middle;
-}
 
 :not(.footnote-definition) + .footnote-definition,
 .footnote-definition + :not(.footnote-definition) {
@@ -176,7 +157,7 @@ kbd {
 .tooltiptext {
     position: absolute;
     visibility: hidden;
-    color: #fff;
+    color: rgb(255, 255, 255);
     background-color: #333;
     transform: translateX(-50%); /* Center by moving tooltip 50% of its width left */
     left: -8px; /* Half of the width of the icon */
