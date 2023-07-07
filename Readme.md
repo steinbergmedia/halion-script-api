@@ -26,4 +26,4 @@ mdbook serve -o
 
 When using ``mdbook serve -o``, the HTML pages will be updated automatically, if you change the source files.
 
-You can also use just ``mdbook serve``. In this case, you can enter http://localhost:3000/ as adress in your browser to open the book.
+You can also use just ``mdbook serve``. In this case, you can enter http://localhost:3000/ as address in your browser to open the book.

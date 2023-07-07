@@ -50,7 +50,7 @@ print(this.program:getChild().name, this.program:getChild().type)
 
 ## Calling Methods
 
-To operate on an element in the **Program Tree**, you must first adress its object and then call the desired method. The basic syntax is as follows:
+To operate on an element in the **Program Tree**, you must first address its object and then call the desired method. The basic syntax is as follows:
 
 >**object:method()**
 

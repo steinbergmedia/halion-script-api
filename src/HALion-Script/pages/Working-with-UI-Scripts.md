@@ -44,7 +44,7 @@ The **Output Messages** section for the UI scripts is hidden by default.
 
 The **Output Messages** section displays the messages of all UI scripts. The UI script the message belongs to is indicated by a prefix.
 
-## Adressing the Elements of the Program
+## Addressing the Elements of the Program
 
 A UI script cannot address the elements of a program directly. To address a program and its elements from the UI script, you must use [getElement](./getElement.md).
 

@@ -2,7 +2,7 @@
 
 # openURL
 
->**openURL(adress)**
+>**openURL(address)**
 
 ## Description
 
@@ -14,7 +14,7 @@ Function to open a website in the web browser.
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**adress**|The internet adress of the website.|string|
+|**address**|The internet address of the website.|string|
 
 ## Example
 
