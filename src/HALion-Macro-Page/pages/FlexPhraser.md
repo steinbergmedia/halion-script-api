@@ -10,6 +10,8 @@
 
 ---
 
+![Flexphraser](../images/Flexphraser-Page.png)
+
 ## Description
 
 The FlexPhaser template contains controls for selecting the phrases, adjusting the performance parameters like Swing, Gate Scale, etc., and for using the eight variations of the FlexPhraser MIDI module. In addition, there are controls for recording the MIDI output of the FlexPhraser and to export the recorded phrase via drag and drop.

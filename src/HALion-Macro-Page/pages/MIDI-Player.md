@@ -2,6 +2,16 @@
 
 # MIDI Player
 
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
+![MIDI Player](../images/MIDI-Player-Page.png)
+
 ## Description
 
 The MIDI Player template contains controls for selecting MIDI files, adjusting the performance parameters like Swing, Gate Scale, etc., and for using the eight variations of the MIDI Player module. In addition, there are controls for exporting the current MIDI File via drag and drop.

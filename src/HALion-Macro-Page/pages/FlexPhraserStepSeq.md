@@ -10,6 +10,8 @@
 
 ---
 
+![Flexphraser](../images/Flexphraser-Page.png)
+
 ## Description
 
 The FlexPhaserStepSeq template allows you to control the User phrase editor of the FlexPhraser. It combines several [Step Modulator](./Step-Modulator.md) controls with additional value boxes for Key Transpose and Key Replace and switches that modifiy the entire phrase. These controls are all preconfigured within the template and use dedicated parameters which are not supposed to change. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.

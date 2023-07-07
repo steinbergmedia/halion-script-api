@@ -10,6 +10,8 @@
 
 ---
 
+![About Box](../images/About-Box-Page.png)
+
 ## Description
 
 You can use the About Box template to display information about the library manufacturer and the developers, for example. Its default size matches the standard size of a HALion Sonic macro page and it contains several control elements, such as a background bitmap, several example labels, two switches, and a menu. You can adapt these elements to your own needs.

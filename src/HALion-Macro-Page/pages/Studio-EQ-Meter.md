@@ -10,6 +10,8 @@
 
 ---
 
+![Deco/VU](../images/Deco-VU-Page.png)
+
 ## Description
 
 The Studio EQ Meter template contains all necessary controls for displaying the output meters of the Studio EQ effect module. The controls are connected by corresponding UI variables. To guarantee the operation of the controls the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page.

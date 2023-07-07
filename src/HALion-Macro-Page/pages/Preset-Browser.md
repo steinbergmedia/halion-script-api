@@ -10,6 +10,8 @@
 
 ---
 
+![Path](../images/Path-Page.png)
+
 ## Description
 
 PresetBrowser Module is a preconfigured template that can be used to manage subpresets, such as the presets of a MIDI script module or an audio effect, for example. The Scope parameter determines for which module or effect the preset management applies. The look of the controls can be adapted freely by changing the components inside the template. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.

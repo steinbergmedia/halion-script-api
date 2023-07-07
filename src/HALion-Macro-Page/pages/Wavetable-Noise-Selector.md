@@ -10,6 +10,8 @@
 
 ---
 
+![Wavetable](../images/Wavetable-Page.png)
+
 ## Description
 
 The Wavetable Noise Selector is a preconfigured template that can be used to select sample files for the noise of a Wavetable Zone. The template can be configured with the available [Template Parameters](#template-parameters). The Scope parameter determines for which Wavetable Zone the noise selector applies. The Product parameter defines the source folders of the sample files to be displayed in the noise selector. The look of the controls can be adapted freely by changing the components inside the template.

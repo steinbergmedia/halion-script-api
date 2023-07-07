@@ -10,6 +10,8 @@
 
 ---
 
+![Wavetable](../images/Wavetable-Page.png)
+
 ## Description
 
 The Wavetable Selector is a preconfigured template that can be used to select the wavetables for Osc 1 and Osc 2 of the Wavetable Zone. The template can be configured with the available [Template Parameters](#template-parameters). The Scope parameter determines for which Wavetable Zone the wavetable selector applies. The Product and Load From parameters define the source folders of the wavetables to be displayed in the selector. The Osc parameter determines the oscillator of the Wavetable Zone for which the wavetable selector applies. The look of the controls can be adapted freely by changing the components inside the template.
