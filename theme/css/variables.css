@@ -270,7 +270,7 @@
     --fg: #e6e1da;
     --tc: #e5e0d8;
 
-    --sidebar-bg: #0d0d0d;
+    --sidebar-bg: #14191f;
     --sidebar-fg: #c9c5bf;
     --sidebar-non-existant: #505254;
     --sidebar-active: #db304c;
@@ -281,7 +281,7 @@
     --icons: #737480;
     --icons-hover: var(--tc);
 
-    --links: #db304c;
+    --links: #2b79a2;
 
     --inline-code-color: #575757;
 
