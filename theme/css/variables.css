@@ -223,7 +223,7 @@
     --sidebar-active: #c90526;
     --sidebar-spacer: #45373a;
 
-     --scrollbar: #cfcfcf; /*var(--sidebar-fg);*/
+    --scrollbar: #cfcfcf; /*var(--sidebar-fg);*/
 
     --icons: #737480;
     --icons-hover: #262625;
@@ -291,7 +291,7 @@
 
     --table-border-color: #d5d5cd;
     --table-header-bg: #3b3b3b;
-    --table-alternate-bg: #272727;
+    --table-alternate-bg: #2f2f2f;
 
     --searchbar-border-color: #aaa;
     --searchbar-bg: #000;
