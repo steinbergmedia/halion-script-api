@@ -8,10 +8,12 @@
 }
 
 html {
-    font-family: "Open Sans", sans-serif;
-    color: var(--fg);
+    font-family: "Roboto", sans-serif;
+    color:  var(--tc);
     background-color: var(--bg);
     text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
     -webkit-text-size-adjust: none;
 }
 
@@ -142,7 +144,7 @@ table tbody tr:nth-child(2n) {
 blockquote {
     margin: 20px 0;
     padding: 0 20px;
-    color: var(--fg);
+    color: var(--tc);
     background-color: var(--quote-bg);
     border-top: .1em solid var(--quote-border);
     border-bottom: .1em solid var(--quote-border);

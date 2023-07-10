@@ -95,7 +95,6 @@
 .light {
     --bg: hsl(0, 0%, 100%);
     --fg: hsl(0, 0%, 0%);
-    --tc: #353535;
 
     --sidebar-bg: #fafafa;
     --sidebar-fg: hsl(0, 0%, 0%);
@@ -136,7 +135,6 @@
 .navy {
     --bg: hsl(226, 23%, 11%);
     --fg: #bcbdd0;
-    --tc: #353535;
 
     --sidebar-bg: #282d3f;
     --sidebar-fg: #c8c9db;
@@ -177,7 +175,6 @@
 .rust {
     --bg: hsl(60, 9%, 87%);
     --fg: #262625;
-    --tc: #353535;
 
     --sidebar-bg: #3b2e2a;
     --sidebar-fg: #c8c9db;
