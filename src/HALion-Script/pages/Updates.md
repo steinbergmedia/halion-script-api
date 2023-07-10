@@ -23,10 +23,10 @@ This page lists the modified and added pages for each version.
 * [getUserSubPresetPath](./getUserSubPresetPath.md)
 * [onData](./onData.md)
 * [onRetrigger](./onRetrigger.md)
-* [savePreset](./HALion-Script/pages/savePreset.md)
+* [savePreset](./savePreset.md)
 * [setZoneFMXAlgo](./setZoneFMXAlgo.md)
-* [startWriteOutputToFile](./HALion-Script/pages/startWriteOutputToFile.md)
-* [stopWriteOutputToFile](./HALion-Script/pages/stopWriteOutputToFile.md)
+* [startWriteOutputToFile](./startWriteOutputToFile.md)
+* [stopWriteOutputToFile](./stopWriteOutputToFile.md)
 * [Using External Files](./Using-External-Files.md)
 
 
