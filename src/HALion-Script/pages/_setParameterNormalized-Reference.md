@@ -1,7 +1,7 @@
 /* ANCHOR: all */
 
 // ANCHOR: function
->**setParameterNormalized(nameOrID, value)**
+>**setParameterNormalized(nameOrID, value, undo)**
 // ANCHOR_END: function
 
 #### Description
@@ -19,6 +19,7 @@ Function to set the value of a parameter in the normalized range from 0 to 1.0. 
 |:-|:-|:-|
 |**nameOrID**|The name or ID of the parameter.|string or number|
 |**value**|The value you want to set in the normalized range from 0 to 1.0.|number|
+{{#include ./_setParameter-undo.md}}
 // ANCHOR_END: arguments
 
 #### Example

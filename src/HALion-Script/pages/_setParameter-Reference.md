@@ -1,7 +1,7 @@
 /* ANCHOR: all */
 
 // ANCHOR: function
->**setParameter(nameOrID, value)**
+>**setParameter(nameOrID, value, undo)**
 // ANCHOR_END: function
 
 #### Description
@@ -19,6 +19,7 @@ Function to set the value of a parameter. The parameter can be determined by nam
 |:-|:-|:-|
 |**nameOrID**|The name or ID of the parameter.|string or number|
 |**value**|The value that you want to set.|The new value must match the data type of the parameter.|
+{{#include ./_setParameter-undo.md}}
 // ANCHOR_END: arguments
 
 #### Example
