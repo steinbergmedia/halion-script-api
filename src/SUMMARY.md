@@ -149,7 +149,6 @@
     - [getUserPresetPath](./HALion-Script/pages/getUserPresetPath.md)
     - [getUserSubPresetPath](./HALion-Script/pages/getUserSubPresetPath.md)
     - [getVoices](./HALion-Script/pages/getVoices.md)
-    - [getWavetable](./HALion-Script/pages/getWavetable.md)
     - [getZone](./HALion-Script/pages/getZone.md)
     - [hasParameter](./HALion-Script/pages/hasParameter.md)
     - [insertBus](./HALion-Script/pages/insertBus.md)
@@ -231,7 +230,6 @@
     - [setScriptExecTimeOut](./HALion-Script/pages/setScriptExecTimeOut.md)
     - [setSource1](./HALion-Script/pages/setSource1.md)
     - [setSource2](./HALion-Script/pages/setSource2.md)
-    - [setWavetable](./HALion-Script/pages/setWavetable.md)
     - [setZoneFMXAlgo](./HALion-Script/pages/setZoneFMXAlgo.md)
     - [sortEvents](./HALion-Script/pages/sortEvents.md)
     - [spawn](./HALion-Script/pages/spawn.md)
@@ -244,7 +242,6 @@
     - [wait](./HALion-Script/pages/wait.md)
     - [waitBeat](./HALion-Script/pages/waitBeat.md)
     - [waitForRelease](./HALion-Script/pages/waitForRelease.md)
-    - [Wavetable Table](./HALion-Script/pages/Wavetable-Table.md)
     - [writeMidiFile](./HALion-Script/pages/writeMidiFile.md)
     - [Zone Constructor](./HALion-Script/pages/Zone-Constructor.md)
 

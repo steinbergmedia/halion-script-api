@@ -256,6 +256,5 @@ Here you can browse the functions of the HALion Script language by their subject
 
 [getModulationMatrixRow](./getModulationMatrixRow.md),
 [getOutputBus](./getOutputBus.md),
-[getWavetable](./getWavetable.md),
 [setOutputBus](./setOutputBus.md),
-[setWavetable](./setWavetable.md),
+
