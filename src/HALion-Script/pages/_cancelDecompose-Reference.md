@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to cancel the [decompose](./decompose.md) function for an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The [AudioFile](./Audio-File.md) object must match the call to [decompose](./decompose.md).
+Function to cancel the [decompose](./decompose.md) function for an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. To cancel the decompose of a certain audio file, the [AudioFile](./Audio-File.md) object of the cancelDecompose function must match the [AudioFile](./Audio-File.md) object of the corresponding [decompose](./decompose.md) function.
 
 **Available in:** Controller.
 // ANCHOR_END: description
