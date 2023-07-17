@@ -8,7 +8,7 @@
 
 Function to obtain the number of used voices of the slot in which a program is loaded.
 
-{{#include _getUsedVoices-note.md}}
+{{#include _getUsedVoices-Note.md}}
 
 **Available in:** Processor.
 

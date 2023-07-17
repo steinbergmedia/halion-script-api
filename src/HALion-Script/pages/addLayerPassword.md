@@ -20,6 +20,6 @@ Function that gives access to protected layers. By default, protected layers can
 
 ## Example
 
-{{#include ./_addLayerpassword-Example.md}}
+{{#include ./_addLayerPassword-Example.md}}
 
 **See also:** [Protecting Layers](./Protecting-Layers.md)

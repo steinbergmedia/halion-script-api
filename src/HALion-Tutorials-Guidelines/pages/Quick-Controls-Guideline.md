@@ -42,6 +42,6 @@ By default, Show Layer QC is switched off.
 * Keep the layout of the quick control assignments consistent. For example, if you assign Filter Cutoff and Fitler Resonance for all your presets, always assign them to the same quick controls.
 * Assign effect parameters in groups with the Mix parameter as last quick control assignment. For example, like this:
 
-|[...]|QC5|QC6|QC7|QC8|
+|\[...\]|QC5|QC6|QC7|QC8|
 |:-|:-|:-|:-|:-|
-|[...]|Delay Time|Delay Mix|Reverb Time|Reverb Mix|
+|\[...\]|Delay Time|Delay Mix|Reverb Time|Reverb Mix|
