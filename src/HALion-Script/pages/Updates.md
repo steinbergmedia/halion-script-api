@@ -38,6 +38,8 @@ This page lists the modified and added pages for each version.
 * [getUserPresetPath](./getUserPresetPath.md)
 * [isKeyDown](./isKeyDown.md)
 * [isOctaveKeyDown](./isOctaveKeyDown.md)
+* [Modulation Destination Types](./Modulation-Destination-Types.md)
+* [Modulation Source Types](./Modulation-Source-Types.md)
 * [onNote](./onNote.md)
 * [onRelease](./onRelease.md)
 * [onUnhandledEvent](./onUnhandledEvent.md)
