@@ -34,11 +34,13 @@ A Template List can be used to create a list of child templates from a single re
 
 ## Template List Callbacks
 
+To enable the graphic reordering, the Order option must be active and either [onTemplateListViewDrop](#ontemplatelistviewdrop) or [onTemplateListDrop](#ontemplatelistdrop) must be implemented in a UI script.
+
+>&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. Please do not combine them.
+
 ### onTemplateListViewDrop
 
-To enable the graphic reordering, the Order option must be active and at least this callback must be implemented in a UI script. The callback is called when the drop is done. If you need more advanced control over the drag and drop operation, you can use the callbacks described below as an alternative.
-
->&#10069; The callback onTemplateListViewDrop replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. Please do not combine them.
+This callback is called when the drop is done. If you need more advanced control over the drag and drop operation, you can use the callbacks described below as an alternative.
 
 >**onTemplateListViewDrop(viewname, fromindex, toindex)**
 
@@ -49,8 +51,6 @@ To enable the graphic reordering, the Order option must be active and at least t
 |**toindex**|New index of the dropped list item.|integer|
 
 [Jump to Top ](#template-list)
-
-
 
 ### onTemplateListGetDragInfo
 
