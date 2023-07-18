@@ -12,7 +12,7 @@
 
 ## Description
 
-The Drag control allows you to implement drag operations. You can drag a simple text information or excecute more complex script functions. As a drop target you can use either the [Drop](./Drop.md) control, or an external target. The graphical representation of the dragged object includes a snapshot of all controls that exists inside the Drag Group.
+The Drag Group control allows you to implement drag operations. You can drag a simple text information or excecute more complex script functions. As a drop target you can use either the [Drop](./Drop.md) control, or an external target. The graphical representation of the dragged object includes a snapshot of all controls that exists inside the Drag Group.
 
 ## Properties
 
@@ -25,7 +25,7 @@ The Drag control allows you to implement drag operations. You can drag a simple 
 {{#include ./_Properties.md:attach}}
 {{#include ./_Properties.md:tooltip}}
 
-## Optional Script Callbacks
+## Drag Group Callbacks
 
 ### onDropGetInfo
 
