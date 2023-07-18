@@ -12,7 +12,7 @@
 
 ## Description
 
-A Template List can be used to create a list of child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns, depends on the referenced template. You can choose any template in the Template property. Depending on the Layout property, Horizontal, Vertical, or Grid, the templates are arranged in a row, a column or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.
+A Template List can be used to create a list of child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, Horizontal, Vertical, or Grid, the templates are arranged in a row, a column or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.
 
 ## Properties
 
