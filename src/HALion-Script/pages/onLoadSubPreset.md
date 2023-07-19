@@ -26,6 +26,6 @@ In addition, the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Br
 
 ## Example
 
-{{#include ./_onLoadSaveSubPreset-Example.md}}
+{{#include ./_onLoad-onSaveSubPreset-Example.md}}
 
 **See also:** [onSaveSubPreset](./onSaveSubPreset.md)

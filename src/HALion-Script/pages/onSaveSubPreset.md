@@ -29,6 +29,6 @@ The returned data will be stored in a subpreset.
 
 ## Example
 
-{{#include ./_onLoadSaveSubPreset-Example.md}}
+{{#include ./_onLoad-onSaveSubPreset-Example.md}}
 
 **See also:** [onLoadSubPreset](./onLoadSubPreset.md)
