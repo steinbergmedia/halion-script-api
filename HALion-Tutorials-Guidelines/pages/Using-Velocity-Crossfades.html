@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Using Velocity Crossfades - HALion 7.0.0</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../.././theme/css/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="../../HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Advanced-Topics.html">Advanced Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Destination-Types.html">Modulation Destination Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraserStepSeq.html">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials & Guidelines</li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials & Guidelines</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item expanded "><a href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item expanded "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html" class="active">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Animating-SVGs.html">Animating SVGs</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.0.0</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="./Tutorials.html">Tutorials</a> /</p>
+<h1 id="using-velocity-crossfades"><a class="header" href="#using-velocity-crossfades">Using Velocity Crossfades</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#prerequisite">Prerequisite</a>
+<ul>
+<li><a href="#loading-the-example-vst-preset">Loading the Example VST Preset</a></li>
+</ul>
+</li>
+<li><a href="#activating-velocity-crossfades">Activating Velocity Crossfades</a>
+<ul>
+<li><a href="#overview-of-workflows">Overview of Workflows</a></li>
+<li><a href="#activating-the-layer">Activating the Layer</a></li>
+<li><a href="#activating-the-zones">Activating the Zones</a></li>
+<li><a href="#adjusting-the-velocity-crossfades">Adjusting the Velocity Crossfades</a></li>
+</ul>
+</li>
+<li><a href="#using-the-velocity-options">Using the Velocity Options</a></li>
+<li><a href="#setting-the-level-velocity">Setting the Level Velocity</a></li>
+<li><a href="#fine-tuning-the-velocity-crossfades">Fine-Tuning the Velocity Crossfades</a>
+<ul>
+<li><a href="#tips-for-adjusting-the-pitches-of-the-samples">Tips for adjusting the Pitches of the Samples</a></li>
+<li><a href="#tips-for-adjusting-the-gains-of-the-samples">Tips for adjusting the Gains of the Samples</a></li>
+</ul>
+</li>
+<li><a href="#example-vst-preset">Example VST Preset</a></li>
+</ul>
+<hr />
+<p>The sampled velocities of an instrument usually have differences in timbre and level. Velocity crossfades allow you to blend between adjacent velocities for smoothing out these differences, which makes the instrument more playable and realistic.</p>
+<h2 id="prerequisite"><a class="header" href="#prerequisite">Prerequisite</a></h2>
+<p>To set up velocity crossfades, you need a multi-sample with two or more velocity layers. The following example program has three velocity layers.</p>
+<h3 id="loading-the-example-vst-preset"><a class="header" href="#loading-the-example-vst-preset">Loading the Example VST Preset</a></h3>
+<ol>
+<li>Download <a href="../vstpresets/Using%20Velocity%20Crossfades%2001.vstpreset">Using Velocity Crossfades 01.vstpreset</a>.</li>
+<li>Drag the VST preset to the <strong>Slot Rack</strong>.</li>
+</ol>
+<blockquote>
+<p>❕ The example VST preset requires the factory content of HALion.</p>
+</blockquote>
+<h2 id="activating-velocity-crossfades"><a class="header" href="#activating-velocity-crossfades">Activating Velocity Crossfades</a></h2>
+<h3 id="overview-of-workflows"><a class="header" href="#overview-of-workflows">Overview of Workflows</a></h3>
+<ul>
+<li><strong>Individual Velocity Mode</strong> and <strong>Velocity Fade</strong> must be activated for the layer containing the zones that you want to crossfade.</li>
+<li><strong>Enable Crossfade on Velocity Axis</strong> must be activated for all zones that you want to crossfade.</li>
+<li>Adjust the fade handles in the mapping using <strong>Crossfade: Symmetric</strong>.</li>
+</ul>
+<h3 id="activating-the-layer"><a class="header" href="#activating-the-layer">Activating the Layer</a></h3>
+<p>The options <strong>Individual Velocity Mode</strong> and <strong>Velocity Fade</strong> can be found in the Sound editor.</p>
+<ol>
+<li>In the <strong>Program Tree</strong>, select the layer containing the zones that you want to crossfade.</li>
+<li>Open the <strong>Sound</strong> editor, go to the <strong>Trigger</strong> section and activate <strong>Individual Velocity Mode</strong> and <strong>Velocity Fade</strong>.</li>
+</ol>
+<p><img src="../images/Using-Velocity-Crossfades-Trigger-Section.png" alt="Using Velocity Crossfades Trigger Section" /></p>
+<h3 id="activating-the-zones"><a class="header" href="#activating-the-zones">Activating the Zones</a></h3>
+<p>The option <strong>Enable Crossfade on Velocity Axis</strong> can be found in the context menu of the <strong>Mapping</strong> editor.</p>
+<ol>
+<li>Open the <strong>Mapping</strong> editor and select all zones.</li>
+<li>Right-click a zone and select <strong>Crossfades &gt; Enable Crossfade on Velocity Axis</strong>.</li>
+</ol>
+<blockquote>
+<p>❕ The <strong>Enable Crossfade on Velocity Axis option</strong> is grayed out and cannot be used if <strong>Individual Velocity Mode</strong> or <strong>Velocity Fade</strong> are not activated.</p>
+</blockquote>
+<p><img src="../images/Using-Velocity-Crossfades-Enable-Crossfades.png" alt="Using Velocity Crossfades Enable Crossfades" /></p>
+<h3 id="adjusting-the-velocity-crossfades"><a class="header" href="#adjusting-the-velocity-crossfades">Adjusting the Velocity Crossfades</a></h3>
+<p>Velocity crossfades are adjusted with the fade handles in the <strong>Mapping</strong> editor.</p>
+<blockquote>
+<p>❕ The fade handles are only visible if the options for the layer and zones have been activated, as described above. In addition, the zones must be selected and the zoom level must be high enough.</p>
+</blockquote>
+<ol>
+<li>In the toolbar of the <strong>Mapping</strong> editor, activate <strong>Crossfades: Symmetric</strong> <img src="../images/Using-Velocity-Crossfades-Symmetric.png" alt="Using Velocity Crossfades Symmetric" />.</li>
+<li>Select the zones that you want to crossfade or select all zones.</li>
+<li>Zoom in until you see the fade handles.</li>
+<li>Drag a fade handle to adjust the range of the crossfade.</li>
+<li>Drag one of the fade handle's lines to adjust the curvature of the crossfade.</li>
+</ol>
+<p><img src="../images/Using-Velocity-Crossfades-Fade-Handles.png" alt="Using Velocity Crossfades Fade Handles" /></p>
+<h2 id="using-the-velocity-options"><a class="header" href="#using-the-velocity-options">Using the Velocity Options</a></h2>
+<p>Once the velocity crossfades are set up in the mapping, they can be used. You can crossfade the zones using the note-on velocity or by using the value of a MIDI controller, for example. The different usages are configured with the velocity options in the <strong>Trigger</strong> section of the corresponding layer. Which settings you must use depends on the requirements of your content. The following table lists the different requirements and the settings for the velocity options.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">#</th><th style="text-align: left">Content Requirements</th><th style="text-align: left">Velocity Mode</th><th style="text-align: left">Velocity Fade</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left">1</td><td style="text-align: left"><ul><li>Timbre and level only need to change at the note-on.</li><li>Crossfades are not required.</li></ul></td><td style="text-align: left">Note-on</td><td style="text-align: left">Off</td><td style="text-align: left"><ul><li>Only the zones that belong to a specific note and velocity will be triggered.</li><li>The crossfades in the mapping are not applied (velocity switching).</li><li>The level of the triggered zones is set at the note-on.</li></ul></td></tr>
+<tr><td style="text-align: left">2</td><td style="text-align: left"><ul><li>Timbre and level only need to change at the note-on.</li><li>Crossfades are required.</li></ul></td><td style="text-align: left">Note-on</td><td style="text-align: left">On</td><td style="text-align: left"><ul><li>Only the zones that belong to a specific note and velocity will be triggered.</li><li>If the velocity lies within a crossfade, the crossfading zones will be triggered simultaneously.</li><li>The crossfades in the mapping are applied at the note-on (velocity crossfading).</li><li>The level of the triggered zones is set at the note-on.</li></ul></td></tr>
+<tr><td style="text-align: left">3</td><td style="text-align: left"><ul><li>Timbre only needs to change at the note-on.</li><li>Level needs to change also after the note-on.</li><li>Crossfades are not required.</li></ul></td><td style="text-align: left">Controller</td><td style="text-align: left">Off</td><td style="text-align: left"><ul><li>The velocity of the note-on event is replaced by the value of the MIDI controller.</li><li>Only the zones that belong to a specific note and velocity will be triggered.</li><li>The crossfades in the mapping are not applied (velocity switching).</li><li>After the note-on, the MIDI controller cannot switch between the velocities.</li><li>The MIDI controller can change the level of the triggered zones, even after the note-on.</li></ul></td></tr>
+<tr><td style="text-align: left">4</td><td style="text-align: left"><ul><li>Timbre only needs to change at the note-on.</li><li>Level needs to change also after the note-on.</li><li>Crossfades are required.</li></ul></td><td style="text-align: left">Controller</td><td style="text-align: left">On</td><td style="text-align: left"><ul><li>The velocity of the note-on event is replaced by the value of the MIDI controller.</li><li>Only the zones that belong to a specific note and velocity will be triggered.</li><li>If the velocity lies within a crossfade, the crossfading zones will be triggered simultaneously.</li><li>The crossfades in the mapping are applied at the note-on (velocity crossfading).</li><li>After the note-on, the MIDI controller cannot crossfade between the velocities.</li><li>The MIDI controller can change the level of the triggered zones, even after the note-on.</li></ul></td></tr>
+<tr><td style="text-align: left">5</td><td style="text-align: left"><ul><li>Timbre and level need to change freely.</li><li>Crossfades are not required..</li></ul></td><td style="text-align: left">Continuous</td><td style="text-align: left">Off</td><td style="text-align: left"><ul><li>The velocity of the note-on event is replaced by the value of the MIDI controller.</li><li>The velocity of the note-on event is replaced by the value of the MIDI controller.</li><li>All zones that belong to the same note are triggered simultaneously regardless of their velocity.</li><li>The crossfades in the mapping are not applied (velocity switching).</li><li>The MIDI controller can switch between the velocities of the triggered zones and change their level, even after the note-on..</li></ul></td></tr>
+<tr><td style="text-align: left">6</td><td style="text-align: left"><ul><li>Timbre and level need to change freely.</li><li>Crossfades are required.</li></ul></td><td style="text-align: left">Continuous</td><td style="text-align: left">On</td><td style="text-align: left"><ul><li>The velocity of the note-on event is replaced by the value of the MIDI controller.</li><li>All zones that belong to the same note are triggered simultaneously regardless of their velocity.</li><li>The crossfades in the mapping are applied (velocity crossfading).</li><li>The MIDI controller can crossfade between the velocities of the triggered zones and change their level, even after the note-on.</li></ul></td></tr>
+</tbody></table>
+</div>
+<p>We will use Velocity Mode Continuous and Velocity Fade On for the example VST preset.</p>
+<ol>
+<li>In the <strong>Program Tree</strong>, select the layer on which you activated the <strong>Individual Velocity Mode</strong> and <strong>Velocity Fade</strong> options.</li>
+<li>Open the <strong>Sound</strong> editor, go to the <strong>Trigger</strong> section and set <strong>Velocity Mode</strong> to &quot;Continuous&quot; and <strong>Controller</strong> to &quot;&quot;Modulation Wheel&quot;&quot;.</li>
+</ol>
+<p><img src="../images/Using-Velocity-Crossfades-Continuous.png" alt="Using Velocity Crossfades Continuous" /></p>
+<ul>
+<li>Play a note and use the modulation wheel.</li>
+</ul>
+<h2 id="setting-the-level-velocity"><a class="header" href="#setting-the-level-velocity">Setting the Level Velocity</a></h2>
+<p>The overall dynamic range and response is determined by the <strong>Level Velocity</strong> settings of the amplitude envelope of the zone.</p>
+<p><img src="../images/Using-Velocity-Crossfades-Amp-Env.png" alt="Using Velocity Crossfades Amp Env" /></p>
+<p>Depending on whether your samples are normalized or not, there are two basic concepts for setting up the level velocity.</p>
+<p><strong>If your samples are normalized:</strong></p>
+<ol>
+<li>Choose a <strong>Level Velocity Curve</strong>. The Squared velocity curve is the most commonly used curve.</li>
+<li>Adjust the dynamic range with the <strong>Level Velocity</strong> parameter. The higher the value, the greater the dynamic range.</li>
+</ol>
+<p><img src="../images/Using-Velocity-Crossfades-Vel.png" alt="Using Velocity Crossfades Vel" /></p>
+<p>With these settings, the dynamic range and response is mainly determined by the level velocity settings of the zones.</p>
+<p><strong>If your samples are not normalized:</strong></p>
+<ol>
+<li>Set the <strong>Level Velocity Curve</strong> to Linear.</li>
+<li>Activate <strong>Use Normalized Velocity</strong>.</li>
+<li>Increase the <strong>Level Velocity</strong> parameter for each velocity layer only as much as necessary until the crossfades sound smooth.</li>
+</ol>
+<p><img src="../images/Using-Velocity-Crossfades-Vel-Norm.png" alt="Using Velocity Crossfades Vel Norm" /></p>
+<p>With these settings, the dynamic range and response is determined by the combination of the gains of the samples and the Level Velocity settings of the zones.</p>
+<h2 id="fine-tuning-the-velocity-crossfades"><a class="header" href="#fine-tuning-the-velocity-crossfades">Fine-Tuning the Velocity Crossfades</a></h2>
+<p>To make the crossfades as seamless as possible, the pitches and the levels of the samples must match as closely as possible. For example, you might hear flanging or breaks in the level during the crossfade if the pitches and the levels of adjacent samples do not match. In the <strong>Mapping</strong> editor, you can adjust the pitch and the level for each sample individually.</p>
+<ol>
+<li>Go to the <strong>Mapping</strong> editor and select the sample that you want to adjust.</li>
+<li>Adjust the <strong>Tune</strong> and <strong>Gain</strong> parameters until the crossfade of adjacent samples sounds smooth.</li>
+</ol>
+<h3 id="tips-for-adjusting-the-pitches-of-the-samples"><a class="header" href="#tips-for-adjusting-the-pitches-of-the-samples">Tips for adjusting the Pitches of the Samples</a></h3>
+<p>The velocity fades should be activated while adjusting the pitches.</p>
+<ol>
+<li>Play a note with a velocity within the range of a crossfade.</li>
+<li>Adjust the pitches of the adjacent samples until the flanging is minimized or gone.</li>
+</ol>
+<h3 id="tips-for-adjusting-the-gains-of-the-samples"><a class="header" href="#tips-for-adjusting-the-gains-of-the-samples">Tips for adjusting the Gains of the Samples</a></h3>
+<p>When using normalized samples, it can be useful to switch off any velocity fades and level velocity settings while adjusting the gains in the mapping.</p>
+<ol>
+<li>In the <strong>Program Tree</strong>, select the layer on which you activated the <strong>Individual Velocity Mode</strong> and <strong>Velocity Fade</strong> options.</li>
+<li>Open the <strong>Sound</strong> editor, go to the <strong>Trigger</strong> section and deactivate the <strong>Velocity Fade</strong> option.</li>
+<li>Open the <strong>Zone</strong> editor, go to the amplitude envelope and set <strong>Level Velocity</strong> to 0%.</li>
+</ol>
+<p>Now, you hear only the differences in level and timbre between adjacent samples.</p>
+<ul>
+<li>Adjust the sample gains until you hear only changes in timbre.</li>
+</ul>
+<p>Once you are happy with the gains, activate the <strong>Velocity Fade</strong> option on the layer and set the <strong>Level Velocity</strong> of the zones as desired.</p>
+<h2 id="example-vst-preset"><a class="header" href="#example-vst-preset">Example VST Preset</a></h2>
+<p>In the finished example VST preset, the pitch and gain of each zone was adjusted in the mapping for smoother crossfades.</p>
+<ol>
+<li>Download <a href="../vstpresets/Using%20Velocity%20Crossfades%2002.vstpreset">Using Velocity Crossfades 02.vstpreset</a>.</li>
+<li>Drag the preset to the Slot Rack.</li>
+<li>Play a note and use the modulation wheel.</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2023 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

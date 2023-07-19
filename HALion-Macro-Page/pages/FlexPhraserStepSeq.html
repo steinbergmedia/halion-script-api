@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>FlexPhraserStepSeq - HALion 7.0.0</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../.././theme/css/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="../../HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Advanced-Topics.html">Advanced Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Destination-Types.html">Modulation Destination Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item expanded "><a href="../../HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item expanded "><a href="../../HALion-Macro-Page/pages/FlexPhraserStepSeq.html" class="active">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials & Guidelines</li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials & Guidelines</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Animating-SVGs.html">Animating SVGs</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.0.0</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Macro-Page.html">HALion Macro Page</a> / <a href="./Templates.html">Templates</a> /</p>
+<h1 id="flexphraserstepseq"><a class="header" href="#flexphraserstepseq">FlexPhraserStepSeq</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#template-properties">Template Properties</a></li>
+<li><a href="#template-parameters">Template Parameters</a></li>
+<li><a href="#components-inside-the-template">Components inside the Template</a>
+<ul>
+<li><a href="#ui-variables">UI Variables</a></li>
+<li><a href="#controls-and-subtemplates">Controls and Subtemplates</a></li>
+<li><a href="#ui-script">UI Script</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><img src="../images/Flexphraser-Page.png" alt="Flexphraser" /></p>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>The FlexPhaserStepSeq template allows you to control the User phrase editor of the FlexPhraser. It combines several <a href="./Step-Modulator.html">Step Modulator</a> controls with additional value boxes for Key Transpose and Key Replace and switches that modifiy the entire phrase. These controls are all preconfigured within the template and use dedicated parameters which are not supposed to change. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.</p>
+<p><strong>To explore the functionality and connections:</strong></p>
+<ol>
+<li>Load the <a href="../vstpresets/Init%20Basic%20Controls.vstpreset">Init Basic Controls.vstpreset</a> from the <a href="./Exploring-Templates.html#basic-controls">Basic Controls</a> library.</li>
+<li>Open the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and navigate to &quot;Pages &gt; FlexPhraser Page &gt; StepSEQ&quot;. </li>
+<li>Select &quot;StepSeq&quot; and click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to examine the template.</li>
+</ol>
+<blockquote>
+<p>❕ The control templates for selecting phrases and for adjusting the performance parameters can be found in the Arp Parameter group. See <a href="./FlexPhraser.html">FlexPhraser</a> for details.</p>
+</blockquote>
+<h2 id="template-properties"><a class="header" href="#template-properties">Template Properties</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
+<tr><td style="text-align: left"><strong>Position/Size</strong></td><td style="text-align: left"><strong>Position X, Position Y, Width, Height:</strong> Position and size of the element in pixels. Position X/Y defines the position of the upper left corner.</td></tr>
+<tr><td style="text-align: left"><strong>Attach</strong></td><td style="text-align: left">Defines how an element behaves, when its parent element is resized. You can set the following parameters: <ul><li><strong>Left:</strong> If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li><strong>Right:</strong> If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li><strong>Top:</strong> If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li><strong>Bottom:</strong> If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li><strong>Left + Right:</strong> If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li></td></tr>
+<tr><td style="text-align: left"><strong>Tooltip</strong></td><td style="text-align: left">Text that appears as a tooltip when the mouse hovers over the element.</td></tr>
+<tr><td style="text-align: left"><strong>Template</strong></td><td style="text-align: left">Determines the template to be referenced.</td></tr>
+</tbody></table>
+</div>
+<h2 id="template-parameters"><a class="header" href="#template-parameters">Template Parameters</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Parameter</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Scope</strong></td><td style="text-align: left">Defines the path to the FlexPhraser MIDI modue that will be controlled. For example: <code>@0:FlexPhraser</code> controls the first FlexPhraser in the program.</td></tr>
+</tbody></table>
+</div>
+<h2 id="components-inside-the-template"><a class="header" href="#components-inside-the-template">Components inside the Template</a></h2>
+<p><img src="../images/FlexPhraserStepSeq-Template.PNG" alt="FlexPhraserStepSeq Template" /></p>
+<h3 id="ui-variables"><a class="header" href="#ui-variables">UI Variables</a></h3>
+<p>These variables are needed to allow the communication between the <a href="./Step-Modulator.html">Step Modulator</a> control and other controls in the template.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Variable</th><th style="text-align: left">Description</th><th style="text-align: left">Type</th><th style="text-align: left">Range</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>VarTransp</strong></td><td style="text-align: left">List of transpose variables used by the &quot;templatelistview Transpose&quot; template.</td><td style="text-align: left">string list</td><td style="text-align: left">@Transpose1 - 32</td></tr>
+<tr><td style="text-align: left"><strong>VarKey</strong></td><td style="text-align: left">List of key variables used by the &quot;templatelistview Key&quot; template.</td><td style="text-align: left">string list</td><td style="text-align: left">@Key1 - 32</td></tr>
+<tr><td style="text-align: left"><strong>VarTie</strong></td><td style="text-align: left">List of tie variables used by the &quot;StepTie&quot; template.</td><td style="text-align: left">string list</td><td style="text-align: left">@Tie1 - 32</td></tr>
+<tr><td style="text-align: left"><strong>VarEnable</strong></td><td style="text-align: left">List of enable variables used by the &quot;Enable&quot; template.</td><td style="text-align: left">string list</td><td style="text-align: left">@Enable1 - 32</td></tr>
+<tr><td style="text-align: left"><strong>VarTransposeKey</strong></td><td style="text-align: left">Used to switch between the pages of the &quot;TranspKey&quot; stack.</td><td style="text-align: left">integer</td><td style="text-align: left">0, 1</td></tr>
+<tr><td style="text-align: left"><strong>VarKeyLabel</strong></td><td style="text-align: left">List of numbers used as labels in the &quot;Enable&quot; template.</td><td style="text-align: left">string list</td><td style="text-align: left">1 - 32</td></tr>
+<tr><td style="text-align: left"><strong>VarStepPages</strong></td><td style="text-align: left">Used to switch between the pages of the &quot;Step Pages&quot; stack.</td><td style="text-align: left">integer</td><td style="text-align: left">0 - 3</td></tr>
+</tbody></table>
+</div>
+<h3 id="controls-and-subtemplates"><a class="header" href="#controls-and-subtemplates">Controls and Subtemplates</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Item</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Disable</strong></td><td style="text-align: left">A <a href="./Disable.html">Disable</a> control containing all further elements. It is needed to disable the contained elements if the FlexPhraser variation is not set to User mode. Its Value must be set to <code>@UserMode</code>.</td></tr>
+<tr><td style="text-align: left"><strong>Sw Vel, Sw C1, Sw C2, Sw C3</strong></td><td style="text-align: left">These switches are used to switch between the velocity and controller lane pages. The Value is set to <code>@VarStepPages</code> and the Onvalue is set to the index of the corresponding page.</td></tr>
+<tr><td style="text-align: left"><strong>ArpMod</strong></td><td style="text-align: left">A <a href="./Stack.html">Stack</a> for switching between the pages that contain the controls for selecting the MIDI controller that is sent by the corresponding controller lane. It is switched by the UI Variable <code>@VarStepPages</code>.<ul><li><strong>Empty Page:</strong> A <a href="./Group.html">Group</a> without content. It is displayed if the velocity lane is selected.</li><li><strong>Ctrl1/2/3:</strong> These Groups contain the templates for selecting the MIDI controller of the corresponding controller lane.</li><ul><li><strong>MIDI Ctrl1/2/3:</strong> The templates for selecting the MIDI controller. Their values must be set to <code>@UsrCC1</code>, <code>@UsrCC1</code>, <code>@UsrCC2</code>, or <code>@UsrCC3</code> accordingly.</li><li><strong>MIDI Ctrl Label:</strong> The label for the parameters.</li></ul></ul></td></tr>
+<tr><td style="text-align: left"><strong>LED pages</strong></td><td style="text-align: left">A <a href="./Stack.html">Stack</a> that switches between two LED chain bitmap displays, &quot;LED Chain Off&quot; and &quot;LED Chain&quot;. They are both identical. &quot;LED Chain Off&quot; is not connected to the engine and is used when User mode is set to off. &quot;LED Chain&quot; is connected to the engine via <code>@CurrentStep</code>.</td></tr>
+<tr><td style="text-align: left"><strong>StepTie</strong></td><td style="text-align: left">A <a href="./Template-List.html">Template List</a> that controls the Tie parameter of the 32 steps. It uses the &quot;StepTie&quot; template as a switch. The switch will be disabled if the length of the phrase is smaller than the index of the corresponding step. This is controlled by <code>@disableStepParams</code> which is defined and managed in the UI script FlexPhraserStepSeq.lua that is attached to the FlexPhraserStepSeq template. See <a href="#ui-script">UI Script</a> for details.</td></tr>
+<tr><td style="text-align: left"><strong>Enable</strong></td><td style="text-align: left">A <a href="./Template-List.html">Template List</a> used to control the Enable parameter of the 32 steps. It uses the &quot;StepSwitch OnOff &quot; template as a switch. The switch will be disabled if the length of the phrase is smaller than the index of the corresponding step. This is is controlled by <code>@disableStepParams</code> which is defined and managed in the UI script FlexPhraserStepSeq.lua that is attached to the FlexPhraserStepSeq template. See <a href="#ui-script">UI Script</a> for details. The Label parameter uses the stringlist variable <code>@VarKeyLabel</code> to set the label for each step.</td></tr>
+<tr><td style="text-align: left"><strong>TranspKey</strong></td><td style="text-align: left">A <a href="./Stack.html">Stack</a> switching between the Key Transpose and Key Replace values. This is controlled by the <a href="#ui-variables">UI variable</a> <code>@VarTransposeKey</code>. These values are managed by &quot;templatelistview Transpose&quot; and &quot;templatelistview Key&quot;. &quot;templatelistview Transpose&quot; uses the string list variable <code>@VarTrans</code>. &quot;templatelistview Key&quot; uses the string list variable <code>@VarKey</code>. Both will be disabled if the length of the phrase is smaller than the index of the corresponding step. This is is controlled by <code>@disableStepParams</code> which is defined and managed in the UI script FlexPhraserStepSeq.lua that is attached to the FlexPhraserStepSeq template. See <a href="#ui-script">UI Script</a> for details.</td></tr>
+<tr><td style="text-align: left"><strong>Sw_TranspKey</strong></td><td style="text-align: left">A <a href="./Switch.html">Switch</a> that toggles between the Key Transpose and Key Replace values. Connected to the &quot;TranspKey&quot; stack by the <a href="#ui-variables">UI variable</a> <code>@VarTranposeKey</code>.</td></tr>
+<tr><td style="text-align: left"><strong>Duplicate</strong></td><td style="text-align: left">A push button that duplicates the active steps. Connected by the internal variable <code>@Duplicate</code>. This works only inside the FlexPhraserStepSeq template.</td></tr>
+<tr><td style="text-align: left"><strong>Reverse</strong></td><td style="text-align: left">A push button that reverses the order of the active steps. Connected by the internal variable <code>@Reverse</code>. This works only inside the FlexPhraserStepSeq template.</td></tr>
+<tr><td style="text-align: left"><strong>ShiftRight</strong></td><td style="text-align: left">A push button that shifts the active steps to the right. Connected by the internal variable <code>@ShiftPhraseRight</code>. This works only inside the FlexPhraserStepSeq template.</td></tr>
+<tr><td style="text-align: left"><strong>ShiftLeft</strong></td><td style="text-align: left">A push button that shifts the active steps to the left. Connected by the internal variable <code>@ShiftPhraseLeft</code>. This works only inside the FlexPhraserStepSeq template.</td></tr>
+<tr><td style="text-align: left"><strong>PatternLength</strong></td><td style="text-align: left">A <a href="./Slider.html">Slider</a> to change the number of steps. Connected by <code>@PatternLength</code> which is defined and managed in the UI script FlexPhraserStepSeq.lua that is attached to the FlexPhraserStepSeq template. See <a href="#ui-script">UI Script</a> for details.</td></tr>
+<tr><td style="text-align: left"><strong>Step Pages</strong></td><td style="text-align: left">A <a href="./Stack.html">Stack</a> that contains four <a href="./Step-Modulator.html">Step Modulator</a> controls, one for the step velocity and three for the available controller lanes. It is switched by the <a href="#ui-variables">UI variable</a> <code>@VarStepPages</code>.<ul><li><strong>stepmodulator:</strong> A <a href="./Step-Modulator.html">Step Modulator</a> controlling the step velocity. The required setting for Formats is <code>Level%d;Length%d;Enable%d</code>. This allows to control the level, the length, and the enable state of the steps. This setting only works inside the FlexPhraserStepSeq template.</li><li><strong>stepmodulator C1:</strong> A <a href="./Step-Modulator.html">Step Modulator</a> for controlling the first controller lane. The required setting for Formats is <code>Control1_%d</code>. This allows to control the level of each step in the controller lane. This setting only works inside the FlexPhraserStepSeq template.</li><li><strong>stepmodulator C2:</strong> A <a href="./Step-Modulator.html">Step Modulator</a> for controlling the second controller lane. The required setting for Formats is <code>Control2_%d</code>. This allows to control the level of each step in the controller lane. This setting only works inside the FlexPhraserStepSeq template.</li><li><strong>stepmodulator C3:</strong> A <a href="./Step-Modulator.html">Step Modulator</a> for controlling the third controller lane. The required setting for Formats is <code>Control3_%d</code>. This allows to control the level of each step in the controller lane. This setting only works inside the FlexPhraserStepSeq template.</li></ul></td></tr>
+</tbody></table>
+</div>
+<h3 id="ui-script"><a class="header" href="#ui-script">UI Script</a></h3>
+<pre><code class="language-lua">-- FlexPhraserStepSeq.lua  (Manages the disable state of the steps)
+
+function onStepCountChanged()  
+  step = math.floor (StepCount+0.5)
+
+  for i = 1, step, 1 do
+    _G[&quot;disableStep&quot;..tostring(i)] = 0
+  end
+
+  for i=step + 1, 32, 1 do
+	_G[&quot;disableStep&quot;..tostring(i)] = 1
+  end
+end
+
+defineParameter(&quot;StepCount&quot;, nil, 1, 1, 32, onStepCountChanged)
+
+disableStepParams = {}
+for i=1,32,1 do
+	disableStepParams[i]=&quot;@disableStep&quot;..tostring(i);
+	defineParameter(&quot;disableStep&quot;..tostring(i), nil, 0,0,1)	
+end
+
+defineParameter(&quot;disableStepParams&quot;, nil, 1, disableStepParams)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Macro-Page/pages/FlexPhraser.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Macro-Page/pages/FX-Meter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2023 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Macro-Page/pages/FlexPhraser.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Macro-Page/pages/FX-Meter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Template List - HALion 7.0.0</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../.././theme/css/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="../../HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Advanced-Topics.html">Advanced Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Destination-Types.html">Modulation Destination Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item expanded "><a href="../../HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item expanded "><a href="../../HALion-Macro-Page/pages/Template-List.html" class="active">Template List</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraserStepSeq.html">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials & Guidelines</li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials & Guidelines</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Animating-SVGs.html">Animating SVGs</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.0.0</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Macro-Page.html">HALion Macro Page</a> / <a href="./Controls.html">Controls</a> /</p>
+<h1 id="template-list"><a class="header" href="#template-list">Template List</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#template-list-callbacks">Template List Callbacks</a>
+<ul>
+<li><a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a></li>
+<li><a href="#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a></li>
+<li><a href="#ontemplatelistdrop">onTemplateListDrop</a></li>
+<li><a href="#ontemplatelistdropfeedback">onTemplateListDropFeedback</a></li>
+<li><a href="#ontemplatelistdropdone">onTemplateListDropDone</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#creating-a-template-list">Creating a Template List</a></li>
+<li><a href="#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></li>
+<li><a href="#showing-the-focus-in-the-list">Showing the Focus in the List</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>A Template List can be used to create a list of child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, Horizontal, Vertical, or Grid, the templates are arranged in a row, a column or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.</p>
+<h2 id="properties"><a class="header" href="#properties">Properties</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
+<tr><td style="text-align: left"><strong>Position/Size</strong></td><td style="text-align: left"><strong>Position X, Position Y, Width, Height:</strong> Position and size of the element in pixels. Position X/Y defines the position of the upper left corner.</td></tr>
+<tr><td style="text-align: left"><strong>Attach</strong></td><td style="text-align: left">Defines how an element behaves, when its parent element is resized. You can set the following parameters: <ul><li><strong>Left:</strong> If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li><strong>Right:</strong> If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li><strong>Top:</strong> If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li><strong>Bottom:</strong> If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li><strong>Left + Right:</strong> If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li></td></tr>
+<tr><td style="text-align: left"><strong>Layout</strong></td><td style="text-align: left"><ul><li><strong>Horizontal:</strong> Activate this option to arrange the child templates horizontally in a row.</li><li><strong>Vertical:</strong> Activate this option to arrange the child templates vertically in a column.</li><li><strong>Grid:</strong> Activate this option to arrange the child templates in a two-dimensional grid.</li></ul></td></tr>
+<tr><td style="text-align: left"><strong>Alignment</strong></td><td style="text-align: left">Here you can set how the child templates are positioned in the Template List area.<ul><li><strong>Center:</strong> The child templates are added to the list in their original size. The row, column, or grid is then centered inside the Template List area.</li><li><strong>Left:</strong> The child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the Template List area.</li><li><strong>Right:</strong> The child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the Template List area.</li><li><strong>Fill Height:</strong> The child templates are scaled to fill the Template List area vertically.</li><li><strong>Fill Width:</strong> The child templates are scaled to fill the Template List area horizontally.</li><li><strong>Fill:</strong> All cells in the list are scaled equally horizontally and vertically to match the Template List area. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul></td></tr>
+<tr><td style="text-align: left"><strong>Tooltip</strong></td><td style="text-align: left">Text that appears as a tooltip when the mouse hovers over the element.</td></tr>
+<tr><td style="text-align: left"><strong>Value</strong></td><td style="text-align: left">Allows you to read the index of the focused child template. This is useful to synchronize the selection focus across several lists, for example.</td></tr>
+<tr><td style="text-align: left"><strong>Style</strong></td><td style="text-align: left"><ul><li><strong>H-Scroll:</strong> Shows a horizontal scrollbar. This setting is not available with Alignment set to Fill or Fill Height.</li><li><strong>V-Scroll:</strong> Shows a vertical scrollbar. This setting is not available with Alignment set to Fill or Fill Width.</li><li><strong>Order:</strong> Set this option if you want to be able to change the order of the child templates via drag and drop. This option activates only the graphic reordering and only if at least the Template List callback <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> has been implemented. If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must be programmed in a script. For more information about the available callbacks, see <a href="#template-list-callbacks">Template List Callbacks</a>.</li><li><strong>Custom SB:</strong> Set this option if you want to use custom scrollbars. For custom scrollbars, you must assign corresponding bitmap resources in the Scrollbars section. The height of the horizontal scrollbar and the width of the vertical scrollbar depend on the maximum width/height in pixels of the Hor Back and Ver Back bitmaps. For example, if Hor Back is set to a height of 30 pixels and Ver Back to 36 pixels, both will use 36 pixels.<ul><li><strong>Note:</strong> Scrollbars can only be scaled in their original orientation, i.e., vertical scrollbars scale only vertically and horizontal scrollbars only horizontally.</li></ul></li></ul></td></tr>
+<tr><td style="text-align: left"><strong>Focus Var</strong></td><td style="text-align: left">Allows you to specify a variable name, e.g., <code>MyFocusVariable</code>, that can be used inside the referenced template, for example, to switch the focus within a stack view or an Animation. You can access this variable inside the referenced template with <code>@MyFocusVariable</code>.</td></tr>
+<tr><td style="text-align: left"><strong>Index Var</strong></td><td style="text-align: left">Allows you to specify a variable name, e.g., <code>MyIndexVariable</code>, that can be used inside the referenced template to display the index of the list entry. You can access this variable inside the referenced template with <code>@MyIndexVariable</code>.</td></tr>
+<tr><td style="text-align: left"><strong>Scrollbars</strong></td><td style="text-align: left">Allows you to assign the <a href="./Bitmap.html">Bitmap</a> resources that are required to draw the custom scrollbars.<ul><li><strong>Up:</strong> Up button..</li><li><strong>Up Press:</strong> Up button Pressed.</li><li><strong>Down:</strong> Down button.</li><li><strong>Down Press:</strong> Down button Pressed.</li><li><strong>Ver Back:</strong> Vertical scrollbar background.</li><li><strong>Ver Handle:</strong> Vertical scrollbar handle.</li><li><strong>Handle Top:</strong> Top section of the vertical handle.</li><li><strong>Handle Bot:</strong> Bottom section of the vertical handle.</li><li><strong>Left:</strong> Left button.</li><li><strong>Left Press:</strong> Left button Pressed.</li><li><strong>Right:</strong> Right button.</li><li><strong>Right Press:</strong> Right button Pressed.</li><li><strong>Hor Back:</strong> Vertical scrollbar background.</li><li><strong>Hor Handle:</strong> Vertical scrollbar handle.</li><li><strong>Handle Left:</strong> Left section of the horizontal handle.</li><li><strong>Handle Right:</strong> Right section of the horizontal handle.</li></ul></td></tr>
+</tbody></table>
+</div>
+<p><a href="#template-list">Jump to Top </a></p>
+<h2 id="template-list-callbacks"><a class="header" href="#template-list-callbacks">Template List Callbacks</a></h2>
+<p>To enable the graphic reordering, the Order option must be active and either <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> or <a href="#ontemplatelistdrop">onTemplateListDrop</a> must be implemented in a UI script.</p>
+<blockquote>
+<p>❕ The callback <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> is a simplified callback that replaces the callbacks <a href="#ontemplatelistdropfeedback">onTemplateListDropFeedback</a>, <a href="#ontemplatelistdrop">onTemplateListDrop</a> and <a href="#ontemplatelistdropdone">onTemplateListDropDone</a> from below. Please do not combine them.</p>
+</blockquote>
+<h3 id="ontemplatelistviewdrop"><a class="header" href="#ontemplatelistviewdrop">onTemplateListViewDrop</a></h3>
+<p>This callback is called when the drop is done. If you need more advanced control over the drag and drop operation, you can use the callbacks described below as an alternative.</p>
+<blockquote>
+<p><strong>onTemplateListViewDrop(viewname, fromindex, toindex)</strong></p>
+</blockquote>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>fromindex</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">New index of the dropped list item.</td><td style="text-align: left">integer</td></tr>
+</tbody></table>
+</div>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="ontemplatelistgetdraginfo"><a class="header" href="#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a></h3>
+<blockquote>
+<p><strong>onTemplateListGetDragInfo(viewname, draginfo, index)</strong></p>
+</blockquote>
+<h4 id="description-1"><a class="header" href="#description-1">Description</a></h4>
+<p>Callback for the source of the drag operation when the operation starts. The string in <code>draginfo</code> is taken from the Drag Info property of the referenced template. The Drag Info property must be set insided the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the <a href="#ontemplatelistdrop">onTemplateListDrop</a> callback must be implemented in a UI script.</p>
+<h4 id="arguments"><a class="header" href="#arguments">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The text specified by the Drag Info property.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the dragged list item.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
+<p>The function can return a table with the following keys:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copy is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if move is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">A modified Drag Info text.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table of files.</td><td style="text-align: left">table with strings</td></tr>
+</tbody></table>
+</div>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="ontemplatelistdrop"><a class="header" href="#ontemplatelistdrop">onTemplateListDrop</a></h3>
+<blockquote>
+<p><strong>onTemplateListDrop(viewname, draginfo, toindex, offset, copy)</strong></p>
+</blockquote>
+<h4 id="description-2"><a class="header" href="#description-2">Description</a></h4>
+<p>Callback for the target of the drag operation when the drop is executed.</p>
+<h4 id="arguments-1"><a class="header" href="#arguments-1">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">Index of the targeted list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The values -1,0,1 indicates if the drop is before, on or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">boolean</td></tr>
+</tbody></table>
+</div>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="ontemplatelistdropfeedback"><a class="header" href="#ontemplatelistdropfeedback">onTemplateListDropFeedback</a></h3>
+<blockquote>
+<p><strong>onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)</strong></p>
+</blockquote>
+<h4 id="description-3"><a class="header" href="#description-3">Description</a></h4>
+<p>Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.</p>
+<h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The draginfo text specified at drag start time.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">The index of the targeted item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The values -1,0,1 indicates if the drop is before, on or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">boolean</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values-1"><a class="header" href="#return-values-1">Return Values</a></h4>
+<p>The function can return a table with the following keys:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>accept</strong></td><td style="text-align: left">Set this to <code>true</code> to allow or <code>false</code> to reject the drop operation. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>template</strong></td><td style="text-align: left">Name of a template to be shown as animation.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the item, where the template should be placed to.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>insert</strong></td><td style="text-align: left">Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>resize</strong></td><td style="text-align: left">Set this to <code>true</code> if template should be resized to the size of the targeted item.</td><td style="text-align: left">boolean</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>❕ When using onTemplateListDropFeedback: Since the default of <code>accept</code> is <code>false</code>, you must at least return <code>accept=true</code> to enable the graphic reordering.</p>
+</blockquote>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="ontemplatelistdropdone"><a class="header" href="#ontemplatelistdropdone">onTemplateListDropDone</a></h3>
+<blockquote>
+<p><strong>onTemplateListDropDone(viewname, draginfo, index, copy)</strong></p>
+</blockquote>
+<p>Callback for the source of the drag operation when the drop has completed.</p>
+<h4 id="arguments-3"><a class="header" href="#arguments-3">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the source Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag was a copy operation.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<p><a href="#template-list">Jump to Top </a></p>
+<blockquote>
+<p>❕ If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must also be programmed in a script.</p>
+</blockquote>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="creating-a-template-list"><a class="header" href="#creating-a-template-list">Creating a Template List</a></h3>
+<ul>
+<li>Add Template List to your macro page.</li>
+<li>Select the template that you want to use for each list entry.</li>
+<li>Check the Template parameters which are added to the Template List.</li>
+<li>Create a String List variable for each template parameter that you want to connect.</li>
+<li>Connect the template parameters to the variables.</li>
+<li>As soon as the first variable is connected, the list is filled with a template for each string list entry.</li>
+</ul>
+<h4 id="example-1"><a class="header" href="#example-1">Example 1</a></h4>
+<p>You can use a Label control inside the template which exports its text property to the template, to name each row.</p>
+<ul>
+<li>Create a string list variable with all the labels that are needed and in the order in which you want them to appear in the list.</li>
+<li>Connect the variable to the Text parameter of the Template List.</li>
+</ul>
+<h4 id="example-2"><a class="header" href="#example-2">Example 2</a></h4>
+<p>There is a control inside the template, e.g., a switch with an exported Value parameter.</p>
+<ul>
+<li>Create a string list variable with the different parameter scopes that you want to control, e.g., the Mute state of different layers within a program.</li>
+<li>Connect the variable with the switch Value parameter of the Template List.</li>
+</ul>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="switching-the-scope-for-controls-outside-the-template-list"><a class="header" href="#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></h3>
+<p>One useful usage of the Template List is to manage different articulations of an instrument and to use the list to change the scope for controls that exists only once one the macro page but need to control the different articulations, for example. In this case, you can use the Value property of the Template List which delivers the index of the selected row.</p>
+<ul>
+<li>Create a string list &quot;LayerSelect&quot; variable with an entry for each articulation layer.</li>
+<li>Add the different scopes for each articulation to the string list.</li>
+<li>Add a Template List.</li>
+<li>Specify the source template for the Template List.</li>
+<li>Connect the template parameters (delivered by the source template) using further string list variables defining the different parameters.</li>
+<li>Set the Value property of the Template List to the string list variable (@LayerSelect). This way, the list index can change the scope.</li>
+<li>Add a group and set the Scope to &quot;LayerSelect&quot;. Now the group scope changes with the the selection in the Template List.</li>
+<li>Add controls to the group and connect them to HALion parameters. Use only the parameters, not their path information, which is delivered by the group scope.</li>
+<li>When clicking inside a Template List row, the selection changes the focus of the connected control group and you modify each articulation individually.</li>
+</ul>
+<p><a href="#template-list">Jump to Top </a></p>
+<h3 id="showing-the-focus-in-the-list"><a class="header" href="#showing-the-focus-in-the-list">Showing the Focus in the List</a></h3>
+<p>To visualize which entry of the Template List currently has the focus you can use the Focus Var property. It works in combination with an element that needs to be set up inside the source template.</p>
+<h4 id="example-1-1"><a class="header" href="#example-1-1">Example 1</a></h4>
+<p><strong>An animation to show a focus rectangle:</strong></p>
+<ul>
+<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
+<li>Add an animation with two frames to the source template. The second frame should show a colored outline rectangle, for example.</li>
+<li>Set the Value property of the animation to @SelectedRow&quot;, too.</li>
+<li>When clicking inside a Template List row, the animation of the corresponding row switches to the second frame which shows the colored rectangle.</li>
+</ul>
+<h4 id="example-2-1"><a class="header" href="#example-2-1">Example 2</a></h4>
+<p><strong>A stack to change the whole appearance of a Template List row:</strong></p>
+<ul>
+<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
+<li>Add a Stack.</li>
+<li>Group the existing controls of the source template and place the group inside the stack.</li>
+<li>Duplicate the group and modify the appearance of the controls of the second group.</li>
+<li>Set the value property of the stack to &quot;@SelectedRow&quot;, too.</li>
+<li>When clicking inside a Template List row, the stack of the corresponding row switches to the second group and shows the modified version.</li>
+</ul>
+<p><a href="#template-list">Jump to Top </a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Macro-Page/pages/Template.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Macro-Page/pages/Text.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2023 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Macro-Page/pages/Template.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Macro-Page/pages/Text.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

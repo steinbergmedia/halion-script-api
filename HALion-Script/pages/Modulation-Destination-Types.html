@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Modulation Destination Types - HALion 7.0.0</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../.././theme/css/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="../../HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Advanced-Topics.html">Advanced Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item expanded "><a href="../../HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item expanded "><a href="../../HALion-Script/pages/Modulation-Destination-Types.html" class="active">Modulation Destination Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="../../HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FlexPhraserStepSeq.html">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="../../HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials & Guidelines</li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials & Guidelines</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Animating-SVGs.html">Animating SVGs</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li></ol></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.0.0</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
+<h1 id="modulation-destination-types"><a class="header" href="#modulation-destination-types">Modulation Destination Types</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+<hr />
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>Enumerator to identify the modulation destinations.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Index</th><th style="text-align: left">Destination</th></tr></thead><tbody>
+<tr><td style="text-align: left">0</td><td style="text-align: left">ModulationDestination.unassigned</td></tr>
+<tr><td style="text-align: left">1</td><td style="text-align: left">ModulationDestination.pitch</td></tr>
+<tr><td style="text-align: left">2</td><td style="text-align: left">ModulationDestination.cutoff</td></tr>
+<tr><td style="text-align: left">3</td><td style="text-align: left">ModulationDestination.resonance</td></tr>
+<tr><td style="text-align: left">4</td><td style="text-align: left">ModulationDestination.distortion</td></tr>
+<tr><td style="text-align: left">5</td><td style="text-align: left">ModulationDestination.morphX</td></tr>
+<tr><td style="text-align: left">6</td><td style="text-align: left">ModulationDestination.morphY</td></tr>
+<tr><td style="text-align: left">7</td><td style="text-align: left">ModulationDestination.cutoffOffset</td></tr>
+<tr><td style="text-align: left">8</td><td style="text-align: left">ModulationDestination.resonanceOffset</td></tr>
+<tr><td style="text-align: left">9</td><td style="text-align: left">ModulationDestination.level</td></tr>
+<tr><td style="text-align: left">10</td><td style="text-align: left">ModulationDestination.volume1</td></tr>
+<tr><td style="text-align: left">11</td><td style="text-align: left">ModulationDestination.volume2</td></tr>
+<tr><td style="text-align: left">12</td><td style="text-align: left">ModulationDestination.pan</td></tr>
+<tr><td style="text-align: left">13</td><td style="text-align: left">ModulationDestination.sampleStart</td></tr>
+<tr><td style="text-align: left">14</td><td style="text-align: left">ModulationDestination.speedFactor</td></tr>
+<tr><td style="text-align: left">15</td><td style="text-align: left">ModulationDestination.formantShift</td></tr>
+<tr><td style="text-align: left">16</td><td style="text-align: left">ModulationDestination.grainPosition</td></tr>
+<tr><td style="text-align: left">17</td><td style="text-align: left">ModulationDestination.grainDirection</td></tr>
+<tr><td style="text-align: left">18</td><td style="text-align: left">ModulationDestination.grainDuration</td></tr>
+<tr><td style="text-align: left">19</td><td style="text-align: left">ModulationDestination.grainLength</td></tr>
+<tr><td style="text-align: left">20</td><td style="text-align: left">ModulationDestination.grainPitch</td></tr>
+<tr><td style="text-align: left">21</td><td style="text-align: left">ModulationDestination.grainFormant</td></tr>
+<tr><td style="text-align: left">22</td><td style="text-align: left">ModulationDestination.grainLevel</td></tr>
+<tr><td style="text-align: left">23</td><td style="text-align: left">ModulationDestination.osc1Pitch</td></tr>
+<tr><td style="text-align: left">24</td><td style="text-align: left">ModulationDestination.osc1Level</td></tr>
+<tr><td style="text-align: left">25</td><td style="text-align: left">ModulationDestination.osc1Waveform</td></tr>
+<tr><td style="text-align: left">26</td><td style="text-align: left">ModulationDestination.osc1MultiDetune</td></tr>
+<tr><td style="text-align: left">27</td><td style="text-align: left">ModulationDestination.osc1MultiPan</td></tr>
+<tr><td style="text-align: left">28</td><td style="text-align: left">ModulationDestination.osc1MultiVoices</td></tr>
+<tr><td style="text-align: left">29</td><td style="text-align: left">ModulationDestination.osc2Pitch</td></tr>
+<tr><td style="text-align: left">30</td><td style="text-align: left">ModulationDestination.osc2Level</td></tr>
+<tr><td style="text-align: left">31</td><td style="text-align: left">ModulationDestination.osc2Waveform</td></tr>
+<tr><td style="text-align: left">32</td><td style="text-align: left">ModulationDestination.osc2MultiDetune</td></tr>
+<tr><td style="text-align: left">33</td><td style="text-align: left">ModulationDestination.osc2MultiPan</td></tr>
+<tr><td style="text-align: left">34</td><td style="text-align: left">ModulationDestination.osc2MultiVoices</td></tr>
+<tr><td style="text-align: left">35</td><td style="text-align: left">ModulationDestination.osc3Pitch</td></tr>
+<tr><td style="text-align: left">36</td><td style="text-align: left">ModulationDestination.osc3Level</td></tr>
+<tr><td style="text-align: left">37</td><td style="text-align: left">ModulationDestination.osc3Waveform</td></tr>
+<tr><td style="text-align: left">38</td><td style="text-align: left">ModulationDestination.osc3MultiDetune</td></tr>
+<tr><td style="text-align: left">39</td><td style="text-align: left">ModulationDestination.osc3MultiPan</td></tr>
+<tr><td style="text-align: left">40</td><td style="text-align: left">ModulationDestination.osc3MultiVoices</td></tr>
+<tr><td style="text-align: left">41</td><td style="text-align: left">ModulationDestination.subOscLevel</td></tr>
+<tr><td style="text-align: left">42</td><td style="text-align: left">ModulationDestination.ringModLevel</td></tr>
+<tr><td style="text-align: left">43</td><td style="text-align: left">ModulationDestination.noiseLevel</td></tr>
+<tr><td style="text-align: left">44</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">45</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">46</td><td style="text-align: left">ModulationDestination.lfo1Freq</td></tr>
+<tr><td style="text-align: left">47</td><td style="text-align: left">ModulationDestination.lfo1Shape</td></tr>
+<tr><td style="text-align: left">48</td><td style="text-align: left">ModulationDestination.lfo2Freq</td></tr>
+<tr><td style="text-align: left">49</td><td style="text-align: left">ModulationDestination.lfo2Shape</td></tr>
+<tr><td style="text-align: left">50</td><td style="text-align: left">ModulationDestination.ampEnvAttack</td></tr>
+<tr><td style="text-align: left">51</td><td style="text-align: left">ModulationDestination.ampEnvDecay</td></tr>
+<tr><td style="text-align: left">52</td><td style="text-align: left">ModulationDestination.ampEnvSustain</td></tr>
+<tr><td style="text-align: left">53</td><td style="text-align: left">ModulationDestination.ampEnvRelease</td></tr>
+<tr><td style="text-align: left">54</td><td style="text-align: left">ModulationDestination.filterEnvAttack</td></tr>
+<tr><td style="text-align: left">55</td><td style="text-align: left">ModulationDestination.filterEnvDecay</td></tr>
+<tr><td style="text-align: left">56</td><td style="text-align: left">ModulationDestination.filterEnvSustain</td></tr>
+<tr><td style="text-align: left">57</td><td style="text-align: left">ModulationDestination.filterEnvRelease</td></tr>
+<tr><td style="text-align: left">58</td><td style="text-align: left">ModulationDestination.pitchEnvStartLev</td></tr>
+<tr><td style="text-align: left">59</td><td style="text-align: left">ModulationDestination.pitchEnvAttack</td></tr>
+<tr><td style="text-align: left">60</td><td style="text-align: left">ModulationDestination.pitchEnvAttLev</td></tr>
+<tr><td style="text-align: left">61</td><td style="text-align: left">ModulationDestination.pitchEnvDecay</td></tr>
+<tr><td style="text-align: left">62</td><td style="text-align: left">ModulationDestination.pitchEnvSustain</td></tr>
+<tr><td style="text-align: left">63</td><td style="text-align: left">ModulationDestination.pitchEnvRelease</td></tr>
+<tr><td style="text-align: left">64</td><td style="text-align: left">ModulationDestination.pitchEnvRelLev</td></tr>
+<tr><td style="text-align: left">65</td><td style="text-align: left">ModulationDestination.userEnvStartLev</td></tr>
+<tr><td style="text-align: left">66</td><td style="text-align: left">ModulationDestination.userEnvAttack</td></tr>
+<tr><td style="text-align: left">67</td><td style="text-align: left">ModulationDestination.userEnvAttLev</td></tr>
+<tr><td style="text-align: left">68</td><td style="text-align: left">ModulationDestination.userEnvDecay</td></tr>
+<tr><td style="text-align: left">69</td><td style="text-align: left">ModulationDestination.userEnvSustain</td></tr>
+<tr><td style="text-align: left">70</td><td style="text-align: left">ModulationDestination.userEnvRelease</td></tr>
+<tr><td style="text-align: left">71</td><td style="text-align: left">ModulationDestination.userEnvRelLev</td></tr>
+<tr><td style="text-align: left">72</td><td style="text-align: left">ModulationDestination.stepModFreq</td></tr>
+<tr><td style="text-align: left">73</td><td style="text-align: left">ModulationDestination.stepModSlope</td></tr>
+<tr><td style="text-align: left">74</td><td style="text-align: left">ModulationDestination.bus1</td></tr>
+<tr><td style="text-align: left">75</td><td style="text-align: left">ModulationDestination.bus2</td></tr>
+<tr><td style="text-align: left">76</td><td style="text-align: left">ModulationDestination.bus3</td></tr>
+<tr><td style="text-align: left">77</td><td style="text-align: left">ModulationDestination.bus4</td></tr>
+<tr><td style="text-align: left">78</td><td style="text-align: left">ModulationDestination.bus5</td></tr>
+<tr><td style="text-align: left">79</td><td style="text-align: left">ModulationDestination.bus6</td></tr>
+<tr><td style="text-align: left">80</td><td style="text-align: left">ModulationDestination.bus7</td></tr>
+<tr><td style="text-align: left">81</td><td style="text-align: left">ModulationDestination.bus8</td></tr>
+<tr><td style="text-align: left">82</td><td style="text-align: left">ModulationDestination.bus9</td></tr>
+<tr><td style="text-align: left">83</td><td style="text-align: left">ModulationDestination.bus10</td></tr>
+<tr><td style="text-align: left">84</td><td style="text-align: left">ModulationDestination.bus11</td></tr>
+<tr><td style="text-align: left">85</td><td style="text-align: left">ModulationDestination.bus12</td></tr>
+<tr><td style="text-align: left">86</td><td style="text-align: left">ModulationDestination.bus13</td></tr>
+<tr><td style="text-align: left">87</td><td style="text-align: left">ModulationDestination.bus14</td></tr>
+<tr><td style="text-align: left">88</td><td style="text-align: left">ModulationDestination.bus15</td></tr>
+<tr><td style="text-align: left">89</td><td style="text-align: left">ModulationDestination.bus16</td></tr>
+<tr><td style="text-align: left">90</td><td style="text-align: left">ModulationDestination.xlfoRateX</td></tr>
+<tr><td style="text-align: left">91</td><td style="text-align: left">ModulationDestination.xlfoRateY</td></tr>
+<tr><td style="text-align: left">92</td><td style="text-align: left">ModulationDestination.audioIn</td></tr>
+<tr><td style="text-align: left">93</td><td style="text-align: left">ModulationDestination.wavetable1Pitch</td></tr>
+<tr><td style="text-align: left">94</td><td style="text-align: left">ModulationDestination.wavetable1Level</td></tr>
+<tr><td style="text-align: left">95</td><td style="text-align: left">ModulationDestination.wavetable1Pan</td></tr>
+<tr><td style="text-align: left">96</td><td style="text-align: left">ModulationDestination.wavetable1MultiDetune</td></tr>
+<tr><td style="text-align: left">97</td><td style="text-align: left">ModulationDestination.wavetable1MultiPan</td></tr>
+<tr><td style="text-align: left">98</td><td style="text-align: left">ModulationDestination.wavetable1MultiSpread</td></tr>
+<tr><td style="text-align: left">99</td><td style="text-align: left">ModulationDestination.wavetable1MultiVoices</td></tr>
+<tr><td style="text-align: left">100</td><td style="text-align: left">ModulationDestination.wavetable1Pos</td></tr>
+<tr><td style="text-align: left">101</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">102</td><td style="text-align: left">ModulationDestination.wavetable1Dir</td></tr>
+<tr><td style="text-align: left">103</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">104</td><td style="text-align: left">ModulationDestination.wavetable1Speed</td></tr>
+<tr><td style="text-align: left">105</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">106</td><td style="text-align: left">ModulationDestination.wavetable2Pitch</td></tr>
+<tr><td style="text-align: left">107</td><td style="text-align: left">ModulationDestination.wavetable2Level</td></tr>
+<tr><td style="text-align: left">108</td><td style="text-align: left">ModulationDestination.wavetable2Pan</td></tr>
+<tr><td style="text-align: left">109</td><td style="text-align: left">ModulationDestination.wavetable2MultiDetune</td></tr>
+<tr><td style="text-align: left">110</td><td style="text-align: left">ModulationDestination.wavetable2MultiPan</td></tr>
+<tr><td style="text-align: left">111</td><td style="text-align: left">ModulationDestination.wavetable2MultiSpread</td></tr>
+<tr><td style="text-align: left">112</td><td style="text-align: left">ModulationDestination.wavetable2MultiVoices</td></tr>
+<tr><td style="text-align: left">113</td><td style="text-align: left">ModulationDestination.wavetable2Pos</td></tr>
+<tr><td style="text-align: left">114</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">115</td><td style="text-align: left">ModulationDestination.wavetable2Dir</td></tr>
+<tr><td style="text-align: left">116</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">117</td><td style="text-align: left">ModulationDestination.wavetable2Speed</td></tr>
+<tr><td style="text-align: left">118</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">119</td><td style="text-align: left">ModulationDestination.wavetableSubPitch</td></tr>
+<tr><td style="text-align: left">120</td><td style="text-align: left">ModulationDestination.wavetableSubLevel</td></tr>
+<tr><td style="text-align: left">121</td><td style="text-align: left">ModulationDestination.wavetableSubPan</td></tr>
+<tr><td style="text-align: left">122</td><td style="text-align: left">ModulationDestination.wavetableNoiseSpeed</td></tr>
+<tr><td style="text-align: left">123</td><td style="text-align: left">ModulationDestination.wavetableNoiseLevel</td></tr>
+<tr><td style="text-align: left">124</td><td style="text-align: left">ModulationDestination.wavetableNoisePan</td></tr>
+<tr><td style="text-align: left">125</td><td style="text-align: left">ModulationDestination.wavetable1FormantShift</td></tr>
+<tr><td style="text-align: left">126</td><td style="text-align: left">ModulationDestination.wavetable2FormantShift</td></tr>
+<tr><td style="text-align: left">[...]</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">150</td><td style="text-align: left">ModulationDestination.fmOp1Level</td></tr>
+<tr><td style="text-align: left">151</td><td style="text-align: left">ModulationDestination.fmOp2Level</td></tr>
+<tr><td style="text-align: left">152</td><td style="text-align: left">ModulationDestination.fmOp3Level</td></tr>
+<tr><td style="text-align: left">153</td><td style="text-align: left">ModulationDestination.fmOp4Level</td></tr>
+<tr><td style="text-align: left">154</td><td style="text-align: left">ModulationDestination.fmOp5Level</td></tr>
+<tr><td style="text-align: left">155</td><td style="text-align: left">ModulationDestination.fmOp6Level</td></tr>
+<tr><td style="text-align: left">156</td><td style="text-align: left">ModulationDestination.fmOp7Level</td></tr>
+<tr><td style="text-align: left">157</td><td style="text-align: left">ModulationDestination.fmOp8Level</td></tr>
+<tr><td style="text-align: left">158</td><td style="text-align: left">ModulationDestination.fmOp1Pitch</td></tr>
+<tr><td style="text-align: left">159</td><td style="text-align: left">ModulationDestination.fmOp2Pitch</td></tr>
+<tr><td style="text-align: left">160</td><td style="text-align: left">ModulationDestination.fmOp3Pitch</td></tr>
+<tr><td style="text-align: left">161</td><td style="text-align: left">ModulationDestination.fmOp4Pitch</td></tr>
+<tr><td style="text-align: left">162</td><td style="text-align: left">ModulationDestination.fmOp5Pitch</td></tr>
+<tr><td style="text-align: left">163</td><td style="text-align: left">ModulationDestination.fmOp6Pitch</td></tr>
+<tr><td style="text-align: left">164</td><td style="text-align: left">ModulationDestination.fmOp7Pitch</td></tr>
+<tr><td style="text-align: left">165</td><td style="text-align: left">ModulationDestination.fmOp8Pitch</td></tr>
+<tr><td style="text-align: left">166</td><td style="text-align: left">ModulationDestination.fmOp1TimeScale</td></tr>
+<tr><td style="text-align: left">167</td><td style="text-align: left">ModulationDestination.fmOp2TimeScale</td></tr>
+<tr><td style="text-align: left">168</td><td style="text-align: left">ModulationDestination.fmOp3TimeScale</td></tr>
+<tr><td style="text-align: left">169</td><td style="text-align: left">ModulationDestination.fmOp4TimeScale</td></tr>
+<tr><td style="text-align: left">170</td><td style="text-align: left">ModulationDestination.fmOp5TimeScale</td></tr>
+<tr><td style="text-align: left">171</td><td style="text-align: left">ModulationDestination.fmOp6TimeScale</td></tr>
+<tr><td style="text-align: left">172</td><td style="text-align: left">ModulationDestination.fmOp7TimeScale</td></tr>
+<tr><td style="text-align: left">173</td><td style="text-align: left">ModulationDestination.fmOp8TimeScale</td></tr>
+<tr><td style="text-align: left">174</td><td style="text-align: left">ModulationDestination.fmFeedback</td></tr>
+<tr><td style="text-align: left">175</td><td style="text-align: left">ModulationDestination.fmModuatorLevel</td></tr>
+<tr><td style="text-align: left">176</td><td style="text-align: left">ModulationDestination.fmModulatorTimeScale</td></tr>
+<tr><td style="text-align: left">177</td><td style="text-align: left">ModulationDestination.fmCarrierTimeScale</td></tr>
+<tr><td style="text-align: left">178</td><td style="text-align: left">ModulationDestination.spectralUnisonVoices</td></tr>
+<tr><td style="text-align: left">179</td><td style="text-align: left">ModulationDestination.spectralUnisonDetune</td></tr>
+<tr><td style="text-align: left">180</td><td style="text-align: left">ModulationDestination.spectralUnisonPan</td></tr>
+<tr><td style="text-align: left">181</td><td style="text-align: left">ModulationDestination.spectralUnisonSpread</td></tr>
+<tr><td style="text-align: left">182</td><td style="text-align: left">ModulationDestination.spectralPos</td></tr>
+<tr><td style="text-align: left">183</td><td style="text-align: left">ModulationDestination.spectralDir</td></tr>
+<tr><td style="text-align: left">184</td><td style="text-align: left">ModulationDestination.spectralSpeed</td></tr>
+<tr><td style="text-align: left">185</td><td style="text-align: left">ModulationDestination.spectralTargetSpeed</td></tr>
+<tr><td style="text-align: left">186</td><td style="text-align: left">ModulationDestination.spectralAcceleration</td></tr>
+<tr><td style="text-align: left">187</td><td style="text-align: left">ModulationDestination.spectralLevel</td></tr>
+<tr><td style="text-align: left">188</td><td style="text-align: left">ModulationDestination.spectralPurity</td></tr>
+<tr><td style="text-align: left">189</td><td style="text-align: left">ModulationDestination.spectralInharmonicity</td></tr>
+<tr><td style="text-align: left">190</td><td style="text-align: left">ModulationDestination.spectralFormantShift</td></tr>
+<tr><td style="text-align: left">191</td><td style="text-align: left">ModulationDestination.spectralFormantScale</td></tr>
+<tr><td style="text-align: left">192</td><td style="text-align: left">ModulationDestination.spectralFilterShift</td></tr>
+<tr><td style="text-align: left">193</td><td style="text-align: left">ModulationDestination.spectralFilterScale</td></tr>
+<tr><td style="text-align: left">194</td><td style="text-align: left">ModulationDestination.spectralLowCutAmount</td></tr>
+</tbody></table>
+</div>
+<p><a href="#modulation-destination-types">Jump to Top </a></p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">-- Define modulation destinations.
+
+defineSlotLocal(&quot;modDestinations&quot;)
+modDestinations = {
+            { name = &quot;-&quot;,           index = ModulationDestination.unassigned },
+            { name = &quot;Pitch&quot;,       index = ModulationDestination.pitch },
+            { name = &quot;Cutoff&quot;,      index = ModulationDestination.cutoff },
+            { name = &quot;Resonance&quot;,   index = ModulationDestination.resonance },
+            { name = &quot;Distortion&quot;,  index = ModulationDestination.distortion }
+            }
+ 
+-- Create a table with the names of the modulation destinations.
+
+function getModDestNames()
+    modDestNames = {}
+    for i=1, #modDestinations do
+        modDestNames[i] = modDestinations[i].name
+    end
+end
+getModDestNames()
+ 
+-- Parameter change callback to set the modulation destination.
+
+function onModDestChanged(row, modDestinationParam)
+    local modRow = this.parent:getZone():getModulationMatrixRow(row)
+    local modDestination = modDestinations[modDestinationParam]
+    modRow:setParameter(&quot;Destination.Destination&quot;, modDestination.index)
+end
+ 
+-- Define parameters for modulation matrix destinations 1-4.
+
+defineParameter(&quot;ModDestination1&quot;, &quot;Modulation Destination 1&quot;,  1, modDestNames, function() onModDestChanged(1,  ModDestination1)  end)
+defineParameter(&quot;ModDestination2&quot;, &quot;Modulation Destination 2&quot;,  1, modDestNames, function() onModDestChanged(2,  ModDestination2)  end)
+defineParameter(&quot;ModDestination3&quot;, &quot;Modulation Destination 3&quot;,  1, modDestNames, function() onModDestChanged(3,  ModDestination3)  end)
+defineParameter(&quot;ModDestination4&quot;, &quot;Modulation Destination 4&quot;,  1, modDestNames, function() onModDestChanged(4,  ModDestination4)  end)
+</code></pre>
+<p><strong>See also:</strong> <a href="./ModulationMatrixRow.html">ModulationMatrixRow</a>, <a href="./getModulationMatrixRow.html">getModulationMatrixRow</a>, <a href="./setSource1.html">setSource1</a>, <a href="./setSource2.html">setSource2</a>, <a href="./getSource1.html">getSource1</a>, <a href="./getSource2.html">getSource2</a>, <a href="./Modulation-Source-Types.html">Modulation Source Types</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Script/pages/MIDI-Sequence-Table.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Script/pages/Modulation-Source-Types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2023 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Script/pages/MIDI-Sequence-Table.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Script/pages/Modulation-Source-Types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
