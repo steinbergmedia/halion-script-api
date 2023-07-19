@@ -85,7 +85,7 @@ end
 
 ### getParameterNormalized
 
-{{#include ./_getParameterNormalized-reference.md:all}}
+{{#include ./_getParameterNormalized-Reference.md:all}}
 
 [Jump to Top ](#element)
 
