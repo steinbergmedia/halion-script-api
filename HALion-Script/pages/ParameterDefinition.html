@@ -222,7 +222,29 @@ end
 <p><a href="#parameterdefinition">Jump to Top </a></p>
 <h2 id="methods"><a class="header" href="#methods">Methods</a></h2>
 <h3 id="getdisplaystring"><a class="header" href="#getdisplaystring">getDisplayString</a></h3>
-<p>{{#include ./_getDisplayString-reference.md:all}}</p>
+<blockquote>
+<p><strong>getDisplayString(value)</strong></p>
+</blockquote>
+<h4 id="description-1"><a class="header" href="#description-1">Description</a></h4>
+<p>The internal precision of parameter values is usually higher than the precision of the corresponding display string on the user interface. You can use this function to obtain the display string of the specified parameter and value. You specify the parameter with <a href="./getParameterDefinition.html">getParameterDefinition</a>.</p>
+<p><strong>Available in:</strong> Controller, Processor.</p>
+<h4 id="arguments"><a class="header" href="#arguments">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>value</strong></td><td style="text-align: left">The value for the display string.</td><td style="text-align: left">number or string</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>❕ The data type of the value for getDisplayString must match the data type of the corresponding parameter value.</p>
+</blockquote>
+<h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
+<p>Returns the display string of the specified parameter and value.</p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<pre><code class="language-lua">-- Get the display string of a value.
+
+value = -2.471
+print(&quot;value = &quot;..value)
+print(&quot;Display String = &quot;..this.program:getParameterDefinition(&quot;Level&quot;):getDisplayString(-2.471))
+</code></pre>
 <p><a href="#parameterdefinition">Jump to Top </a></p>
 
                     </main>

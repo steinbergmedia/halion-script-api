@@ -334,14 +334,11 @@ end
 </code></pre>
 <p><a href="#element">Jump to Top </a></p>
 <h3 id="getparameternormalized"><a class="header" href="#getparameternormalized">getParameterNormalized</a></h3>
-<p>{{#include ./_getParameterNormalized-reference.md:all}}</p>
-<p><a href="#element">Jump to Top </a></p>
-<h3 id="hasparameter"><a class="header" href="#hasparameter">hasParameter</a></h3>
 <blockquote>
-<p><strong>hasParameter(nameOrID)</strong></p>
+<p><strong>getParameterNormalized(nameOrID)</strong></p>
 </blockquote>
 <h4 id="description-4"><a class="header" href="#description-4">Description</a></h4>
-<p>Function to check if a parameter exists. The parameter can be determined by name or ID.</p>
+<p>Function to read the current value of a parameter in the normalized range from 0 to 1.0. The parameter can be determined by name or ID.</p>
 <p><strong>Available in:</strong> Controller, Processor.</p>
 <h4 id="arguments-4"><a class="header" href="#arguments-4">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -349,8 +346,31 @@ end
 </tbody></table>
 </div>
 <h4 id="return-values-4"><a class="header" href="#return-values-4">Return Values</a></h4>
-<p>Returns <code>true</code> if the parameter exists or <code>false</code> if not.</p>
+<p>Returns the current value of the parameter in the normalized range from 0 to 1.0 or nil if the parameter doesn't exist. If the parameter is not numeric, the function returns the same as getParameter</p>
 <h4 id="example-5"><a class="header" href="#example-5">Example</a></h4>
+<pre><code class="language-lua">-- Print the normalized value of the parent layer's level parameter.
+
+function onLoadIntoSlot()
+    print(&quot;Level = &quot;..this.parent:getParameterNormalized(&quot;Level&quot;)) -- via name
+    print(&quot;Level = &quot;..this.parent:getParameterNormalized(38))      -- via ID
+end
+</code></pre>
+<p><a href="#element">Jump to Top </a></p>
+<h3 id="hasparameter"><a class="header" href="#hasparameter">hasParameter</a></h3>
+<blockquote>
+<p><strong>hasParameter(nameOrID)</strong></p>
+</blockquote>
+<h4 id="description-5"><a class="header" href="#description-5">Description</a></h4>
+<p>Function to check if a parameter exists. The parameter can be determined by name or ID.</p>
+<p><strong>Available in:</strong> Controller, Processor.</p>
+<h4 id="arguments-5"><a class="header" href="#arguments-5">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>nameOrID</strong></td><td style="text-align: left">The name or ID of the parameter.</td><td style="text-align: left">string or number</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values-5"><a class="header" href="#return-values-5">Return Values</a></h4>
+<p>Returns <code>true</code> if the parameter exists or <code>false</code> if not.</p>
+<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
 <pre><code class="language-lua">-- Check if the elements in the Program Tree have filter cutoff.
 
 function onLoadIntoSlot()
@@ -369,10 +389,10 @@ end
 <blockquote>
 <p><strong>removeFromParent()</strong></p>
 </blockquote>
-<h4 id="description-5"><a class="header" href="#description-5">Description</a></h4>
+<h4 id="description-6"><a class="header" href="#description-6">Description</a></h4>
 <p>Function to remove an element in the <strong>Program Tree</strong> from the parent element. The function can remove elements of the type <a href="./Layer.html">Layer</a>, <a href="./Zone.html">Zone</a>, <a href="./MidiModule.html">MidiModule</a>, <a href="./Bus.html">Bus</a> and <a href="./Effect.html">Effect</a>. It can even remove the script module that calls the function.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
+<h4 id="example-7"><a class="header" href="#example-7">Example</a></h4>
 <pre><code class="language-lua">-- Remove the second child element.
 
 childs = this.program:findChildren(true)
@@ -392,15 +412,15 @@ end
 <blockquote>
 <p><strong>setName(name)</strong></p>
 </blockquote>
-<h4 id="description-6"><a class="header" href="#description-6">Description</a></h4>
+<h4 id="description-7"><a class="header" href="#description-7">Description</a></h4>
 <p>Function to change the name of an element in the <strong>Program Tree</strong>.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-5"><a class="header" href="#arguments-5">Arguments</a></h4>
+<h4 id="arguments-6"><a class="header" href="#arguments-6">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>name</strong></td><td style="text-align: left">The new name for the element.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-7"><a class="header" href="#example-7">Example</a></h4>
+<h4 id="example-8"><a class="header" href="#example-8">Example</a></h4>
 <pre><code class="language-lua">-- Print current name of the script module.
 
 print(this.name)
@@ -418,17 +438,17 @@ print(this.name)
 <blockquote>
 <p><strong>setParameter(nameOrID, value, undo)</strong></p>
 </blockquote>
-<h4 id="description-7"><a class="header" href="#description-7">Description</a></h4>
+<h4 id="description-8"><a class="header" href="#description-8">Description</a></h4>
 <p>Function to set the value of a parameter. The parameter can be determined by name or ID. The function will have no effect if the parameter does not exist.</p>
 <p><strong>Available in:</strong> Controller, Processor.</p>
-<h4 id="arguments-6"><a class="header" href="#arguments-6">Arguments</a></h4>
+<h4 id="arguments-7"><a class="header" href="#arguments-7">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>nameOrID</strong></td><td style="text-align: left">The name or ID of the parameter.</td><td style="text-align: left">string or number</td></tr>
 <tr><td style="text-align: left"><strong>value</strong></td><td style="text-align: left">The value that you want to set.</td><td style="text-align: left">The new value must match the data type of the parameter.</td></tr>
 <tr><td style="text-align: left"><strong>undo</strong></td><td style="text-align: left">Determines if the parameter change will be part of the undo. This argument is only evaluated in the controller context. A parameter change in the processor context never has undo. If setParameter is called in the controller context it will be part of the undo, unless you set this argument to <code>false</code>. For example, you should set this to <code>false</code> if the call to setParameter is made within a parameter callback that is already part of the undo, and if the order of execution of these parameter changes is important.</td><td style="text-align: left">boolean, optional</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-8"><a class="header" href="#example-8">Example</a></h4>
+<h4 id="example-9"><a class="header" href="#example-9">Example</a></h4>
 <pre><code class="language-lua">-- Set the value of the Level parameter of the parent layer.
 
 function onLoadIntoSlot()
@@ -441,17 +461,17 @@ end
 <blockquote>
 <p><strong>setParameterNormalized(nameOrID, value, undo)</strong></p>
 </blockquote>
-<h4 id="description-8"><a class="header" href="#description-8">Description</a></h4>
+<h4 id="description-9"><a class="header" href="#description-9">Description</a></h4>
 <p>Function to set the value of a parameter in the normalized range from 0 to 1.0. The parameter can be determined by name or ID. This function has no effect if the parameter does not exist or if the value is of the type string.</p>
 <p><strong>Available in:</strong> Controller, Processor.</p>
-<h4 id="arguments-7"><a class="header" href="#arguments-7">Arguments</a></h4>
+<h4 id="arguments-8"><a class="header" href="#arguments-8">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>nameOrID</strong></td><td style="text-align: left">The name or ID of the parameter.</td><td style="text-align: left">string or number</td></tr>
 <tr><td style="text-align: left"><strong>value</strong></td><td style="text-align: left">The value you want to set in the normalized range from 0 to 1.0.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>undo</strong></td><td style="text-align: left">Determines if the parameter change will be part of the undo. This argument is only evaluated in the controller context. A parameter change in the processor context never has undo. If setParameter is called in the controller context it will be part of the undo, unless you set this argument to <code>false</code>. For example, you should set this to <code>false</code> if the call to setParameter is made within a parameter callback that is already part of the undo, and if the order of execution of these parameter changes is important.</td><td style="text-align: left">boolean, optional</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-9"><a class="header" href="#example-9">Example</a></h4>
+<h4 id="example-10"><a class="header" href="#example-10">Example</a></h4>
 <pre><code class="language-lua">-- Set the normalized value of the parent layer's level parameter.
 
 function onLoadIntoSlot()
