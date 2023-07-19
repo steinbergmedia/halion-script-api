@@ -53,6 +53,6 @@ By default, protected layers cannot be accessed by scripts. The parameters of a 
 
 #### Example
 
-{{#include ./_addLayerpassword-Example.md}}
+{{#include ./_addLayerPassword-Example.md}}
 
 >&#10069; To hide the password in [addLayerPassword](./addLayerPassword.md), you must also protect the script module. See [Managing Script Modules](./Managing-Script-Modules.md) for details.

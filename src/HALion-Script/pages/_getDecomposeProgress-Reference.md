@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to monitor the progress of the [decompose](./decompose.md) function for an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The [AudioFile](./Audio-File.md) object must match the call to [decompose](./decompose.md). The function returns two values: the progress as a value between 0 and 1 and an error message if the decompose did not succeed.
+Function to monitor the progress of the [decompose](./decompose.md) function for an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. To get the progress of a certain audio file that is being decomposed, the [AudioFile](./Audio-File.md) object of the getDecomposeProgress function must match the [AudioFile](./Audio-File.md) object of the corresponding [decompose](./decompose.md) function. The function returns two values: the progress as a value between 0 and 1 and an error message if the decompose did not succeed.
 
 **Available in:** Controller.
 // ANCHOR_END: description

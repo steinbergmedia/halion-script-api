@@ -59,8 +59,8 @@ Enumerator to identify the different modulation sources.
 |36|ModulationSource.bus14|-|-||
 |37|ModulationSource.bus15|-|-||
 |38|ModulationSource.bus16|-|-||
-|39|-|-|-||
-|40|-|-|-||
+|39|ModulationSource.xlfoX|-|-||
+|40|ModulationSource.xlfoY|-|-||
 |41|ModulationSource.sampleAndHold|Index of the S&H (0 - 5).|-|Source 2 only.|
 
 [Jump to Top ](#modulation-source-types)

@@ -8,7 +8,7 @@
 
 Function to obtain the number of used voices of the plug-in instance.
 
-{{#include _getUsedVoices-note.md}}
+{{#include _getUsedVoices-Note.md}}
 
 **Available in:** Processor.
 

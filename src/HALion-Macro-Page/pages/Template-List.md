@@ -12,7 +12,7 @@
 
 ## Description
 
-A Template List can be used to create a list of template instances, where each template is used to control different parameter scopes. You can choose any template in the template property. The look of each list view row or column, depends on the selected template. All templates are added as line entries in a column, as entries in a row or in a grid without spaces in between. If you need an optical space between two entries, position and resize the referenced template content accordingly or add separating graphical elements.
+A Template List can be used to create a list of child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, Horizontal, Vertical, or Grid, the templates are arranged in a row, a column or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.
 
 ## Properties
 
@@ -21,18 +21,36 @@ A Template List can be used to create a list of template instances, where each t
 {{#include ./_Properties.md:name}}
 {{#include ./_Properties.md:position-size}}
 {{#include ./_Properties.md:attach}}
-|**Layout**|<ul><li>**Horizontal:** Activate this option to align the child templates horizontally in a row.</li><li>**Vertical:** Activate this option to align the child templates vertically in a column.</li><li>**Grid:** Activate this option to align the child templates in a two-dimensional grid.</li></ul>
-|**Alignment**|Here, you can adjust how the referenced child templates are positioned in the available Template List area.<ul><li>**Center:** All child templates are added to the list in their original size. The row, column, or grid is then centered inside the Template List area.</li><li>**Left:** All child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the Template List area.</li><li>**Right:** All child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the Template List area.</li><li>**Fill Height:** The child templates are scaled to fill the Template List area vertically.</li><li>**Fill Width:** The child templates are scaled to fill the Template List area horizontally.</li><li>**Fill:** All list cells are resized equally to match the size of the Template List. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul>|
+|**Layout**|<ul><li>**Horizontal:** Activate this option to arrange the child templates horizontally in a row.</li><li>**Vertical:** Activate this option to arrange the child templates vertically in a column.</li><li>**Grid:** Activate this option to arrange the child templates in a two-dimensional grid.</li></ul>
+|**Alignment**|Here you can set how the child templates are positioned in the Template List area.<ul><li>**Center:** The child templates are added to the list in their original size. The row, column, or grid is then centered inside the Template List area.</li><li>**Left:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the Template List area.</li><li>**Right:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the Template List area.</li><li>**Fill Height:** The child templates are scaled to fill the Template List area vertically.</li><li>**Fill Width:** The child templates are scaled to fill the Template List area horizontally.</li><li>**Fill:** All cells in the list are scaled equally horizontally and vertically to match the Template List area. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul>|
 {{#include ./_Tooltip.md}}
-|**Value**|Allows you to read out the index of the focused template instance.|
-|**Style**|<ul><li>**H-Scroll:** Shows a horizontal scrollbar. (Not available with Alignment = Fill or Fill Height.)</li><li>**V-Scroll:** Shows a vertical scrollbar. (Not available with Alignment = Fill or Fill Width.)</li><li>**Fill:** The template is scaled to fill the list entry space completely.</li><li>**Horizontal:** By default, the templates are listed vertically in a column. Activate this option to align them horizontally in a row.</li><li>**Order:** Set this option if you want to be able to change the order of items via drag and drop. This is only a graphical reordering option. If you want the order change to have an effect on the program, for example, if you want to change the order of alternating layers, this functionality must be scripted.</li><li>**Custom SB:** Set this option if you want to use custom scrollbars. For custom scrollbars, you must assign various bitmap resources in the Scrollbars section. The height of the horizontal scroll bar and the width of the vertical scroll bar depend on the maximum width/height of the Hor Back and Ver Back bitmaps.<ul><li>**Example:** If Hor Back is set to a height of 30 pixels and Ver Back to 36 pixels, both will use 36 pixels.</li><li>**Note:** Scrollbars can only be scaled in their original orientation, i.e., vertical scrollbars scale only vertically and horizontal scrollbars only horizontally.</li></ul></li></ul>|
-|**Focus Var**|Allows you to specify a variable (``@MyFocusVariable``) that can be used inside the source template, for example to switch the focus within a stack view or an Animation.|
-|**Index Var**|Allows you to specify a variable (``@MyIndexVariable``) that can be used inside the source template to display the index number of the list entry.|
-|**Scrollbars**|Allows you to assign the resources that are required to draw custom scrollbars.<ul><li>**Up:** Up button bitmap.</li><li>**Up Press:** Up button Pressed bitmap.</li><li>**Down:** Down button bitmap.</li><li>**Down Press:** Down button Pressed bitmap.</li><li>**Ver Back:** Vertical scrollbar background bitmap.</li><li>**Ver Handle:** Vertical scrollbar handle bitmap.</li><li>**Handle Top:** Top section of the vertical handle.</li><li>**Handle Bot:** Bottom section of the vertical handle.</li><li>**Left:** Left button bitmap.</li><li>**Left Press:** Left button Pressed bitmap.</li><li>**Right:** Right button bitmap.</li><li>**Right Press:** Right button Pressed bitmap.</li><li>**Hor Back:** Vertical scrollbar background bitmap.</li><li>**Hor Handle:** Vertical scrollbar handle bitmap.</li><li>**Handle Left:** Left section of the horizontal handle.</li><li>**Handle Right:** Right section of the horizontal handle.</li></ul>|
+|**Value**|Allows you to read the index of the focused child template. This is useful to synchronize the selection focus across several lists, for example.|
+|**Style**|<ul><li>**H-Scroll:** Shows a horizontal scrollbar. This setting is not available with Alignment set to Fill or Fill Height.</li><li>**V-Scroll:** Shows a vertical scrollbar. This setting is not available with Alignment set to Fill or Fill Width.</li><li>**Order:** Set this option if you want to be able to change the order of the child templates via drag and drop. This option activates only the graphic reordering and only if at least the Template List callback [onTemplateListViewDrop](#ontemplatelistviewdrop) has been implemented. If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must be programmed in a script. For more information about the available callbacks, see [Template List Callbacks](#template-list-callbacks).</li><li>**Custom SB:** Set this option if you want to use custom scrollbars. For custom scrollbars, you must assign corresponding bitmap resources in the Scrollbars section. The height of the horizontal scrollbar and the width of the vertical scrollbar depend on the maximum width/height in pixels of the Hor Back and Ver Back bitmaps. For example, if Hor Back is set to a height of 30 pixels and Ver Back to 36 pixels, both will use 36 pixels.<ul><li>**Note:** Scrollbars can only be scaled in their original orientation, i.e., vertical scrollbars scale only vertically and horizontal scrollbars only horizontally.</li></ul></li></ul>|
+|**Focus Var**|Allows you to specify a variable name, e.g., ``MyFocusVariable``, that can be used inside the referenced template, for example, to switch the focus within a stack view or an Animation. You can access this variable inside the referenced template with ``@MyFocusVariable``.|
+|**Index Var**|Allows you to specify a variable name, e.g., ``MyIndexVariable``, that can be used inside the referenced template to display the index of the list entry. You can access this variable inside the referenced template with ``@MyIndexVariable``.|
+|**Scrollbars**|Allows you to assign the [Bitmap](./Bitmap.md) resources that are required to draw the custom scrollbars.<ul><li>**Up:** Up button..</li><li>**Up Press:** Up button Pressed.</li><li>**Down:** Down button.</li><li>**Down Press:** Down button Pressed.</li><li>**Ver Back:** Vertical scrollbar background.</li><li>**Ver Handle:** Vertical scrollbar handle.</li><li>**Handle Top:** Top section of the vertical handle.</li><li>**Handle Bot:** Bottom section of the vertical handle.</li><li>**Left:** Left button.</li><li>**Left Press:** Left button Pressed.</li><li>**Right:** Right button.</li><li>**Right Press:** Right button Pressed.</li><li>**Hor Back:** Vertical scrollbar background.</li><li>**Hor Handle:** Vertical scrollbar handle.</li><li>**Handle Left:** Left section of the horizontal handle.</li><li>**Handle Right:** Right section of the horizontal handle.</li></ul>|
 
 [Jump to Top ](#template-list)
 
-## Optional Script Callbacks
+## Template List Callbacks
+
+To enable the graphic reordering, the Order option must be active and either [onTemplateListViewDrop](#ontemplatelistviewdrop) or [onTemplateListDrop](#ontemplatelistdrop) must be implemented in a UI script.
+
+>&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. Please do not combine them.
+
+### onTemplateListViewDrop
+
+This callback is called when the drop is done. If you need more advanced control over the drag and drop operation, you can use the callbacks described below as an alternative.
+
+>**onTemplateListViewDrop(viewname, fromindex, toindex)**
+
+|Argument|Description|Value Type|
+|:-|:-|:-|
+|**viewname**|The name of the Template List.|string|
+|**fromindex**|Index of the dragged list item.|integer|
+|**toindex**|New index of the dropped list item.|integer|
+
+[Jump to Top ](#template-list)
 
 ### onTemplateListGetDragInfo
 
@@ -40,14 +58,15 @@ A Template List can be used to create a list of template instances, where each t
 
 #### Description
 
-Callback for the source of the drag operation when the operation starts. The text in ``draginfo`` is taken from the corresponding property of the control.
+Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set insided the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the dragging view.|string|
+|**viewname**|The name of the Template List.|string|
 |**draginfo**|The text specified by the Drag Info property.|string|
+|**index**|The index of the dragged list item.|string|
 
 #### Return Values
 
@@ -59,38 +78,6 @@ The function can return a table with the following keys:
 |**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
 |**info**|A modified Drag Info text.|string|
 |**files**|A table of files.|table with strings|
-
-[Jump to Top ](#template-list)
-
-### onTemplateListDropFeedback
-
->**onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)**
-
-#### Description
-
-Callback for the target of the drag operation when an item is held over the view. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.
-
-#### Arguments
-
-|Argument|Description|Value Type|
-|:-|:-|:-|
-|**viewname**|The name of the targeted view.|string|
-|**draginfo**|The draginfo text specified at drag start time.|string|
-|**toindex**|The index of the targeted item.|integer|
-|**offset**|The values -1,0,1 indicates if the drop is before, on or behind the targeted item.|integer|
-|**copy**|Indicates if drag is a copy operation (``true``).|boolean|
-
-#### Return Values
-
-The function can return a table with the following keys:
-
-|Return Value|Description|Value Type|
-|:-|:-|:-|
-|**accept**|Set this to false to reject the drop operation|boolean|
-|**template**|Name of a template to show as animation|string|	
-|**index**|Index of the item, where the **template** should be placed to.|string|
-|**insert**|Set this to true if the **template** should be placed before the targeted item instead of placing it above. All items below will be shifted then.|boolean|
-|**resize**|Set this to ``true`` if **template** should be resized to the size of the targeted item.|boolean|
 
 [Jump to Top ](#template-list)
 
@@ -106,13 +93,49 @@ Callback for the target of the drag operation when the drop is executed.
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted list view.|string|
+|**viewname**|The name of the targeted Template List.|string|
 |**draginfo**|The Drag Info text.|string|
-|**toindex**|Index of the targeted item.|integer|
+|**toindex**|Index of the targeted list item.|integer|
+|**offset**|The values -1,0,1 indicates if the drop is before, on or behind the targeted item.|integer|
+|**copy**|Indicates if the drag is a copy operation.|boolean|
+
+[Jump to Top ](#template-list)
+
+
+### onTemplateListDropFeedback
+
+>**onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)**
+
+#### Description
+
+Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.
+
+#### Arguments
+
+|Argument|Description|Value Type|
+|:-|:-|:-|
+|**viewname**|The name of the targeted Template List.|string|
+|**draginfo**|The draginfo text specified at drag start time.|string|
+|**toindex**|The index of the targeted item.|integer|
 |**offset**|The values -1,0,1 indicates if the drop is before, on or behind the targeted item.|integer|
 |**copy**|Indicates if drag is a copy operation (``true``).|boolean|
 
+#### Return Values
+
+The function can return a table with the following keys:
+
+|Return Value|Description|Value Type|
+|:-|:-|:-|
+|**accept**|Set this to ``true`` to allow or ``false`` to reject the drop operation. The default is ``false``.|boolean|
+|**template**|Name of a template to be shown as animation.|string|	
+|**index**|Index of the item, where the template should be placed to.|string|
+|**insert**|Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.|boolean|
+|**resize**|Set this to ``true`` if template should be resized to the size of the targeted item.|boolean|
+
+>&#10069; When using onTemplateListDropFeedback: Since the default of ``accept`` is ``false``, you must at least return ``accept=true`` to enable the graphic reordering.
+
 [Jump to Top ](#template-list)
+
 
 ### onTemplateListDropDone
 
@@ -124,28 +147,14 @@ Callback for the source of the drag operation when the drop has completed.
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the source view.|string|
+|**viewname**|The name of the source Template List.|string|
 |**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**index**|Index of the dragged item.|integer|
-|**copy**|Indicates if drag is a copy operation (``true``).|string|
+|**index**|Index of the dragged list item.|integer|
+|**copy**|Indicates if the drag was a copy operation.|string|
 
 [Jump to Top ](#template-list)
 
-### onTemplateListViewDrop
-
-Simplified callback for just reordering items inside a list. If implemented the drag feedback is done automatically. The callback is called if the drop is done to do the reordering operation.
-
->&#10069; Replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone). Do not combine them.
-
->**onTemplateListViewDrop(viewname, fromindex, toindex)**
-
-|Argument|Description|Value Type|
-|:-|:-|:-|
-|**viewname**|The name of the source view.|string|
-|**fromindex**|Index of the dragged item.|integer|
-|**toindex**|new index of the dragged item.|integer|
-
-[Jump to Top ](#template-list)
+>&#10069; If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must also be programmed in a script.
 
 ## Examples
 

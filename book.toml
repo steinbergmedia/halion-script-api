@@ -24,6 +24,10 @@ default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
 additional-css = ["./theme/css/custom.css"]
 
+[output.linkcheck]
+optional = true
+exclude = ['.+\.(vstpreset|mid)']
+
 [output.html.fold]
 enable = true
 level = 0

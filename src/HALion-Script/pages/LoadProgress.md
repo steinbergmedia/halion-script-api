@@ -27,7 +27,7 @@ The functions [loadPresetAsync](./loadPresetAsync.md), [appendLayerAsync](./appe
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.progress**|The load progress in the range from 0 to 1.|number|
-|**.root**|The value of ``.root`` will be the [Element](./Element.md) object of the first element (root) of the loaded VST preset. Depending on whether you load a layer, program, or multi-program VST preset, this is either an [Element](./Element.md) object of the type [Layer](./Layer.md), [Program](./Program.md),or [Instance](./Instance.md).|[Layer](./Layer.md), [Program](./Program.md) or [Instance](./Instance.md|
+|**.root**|The value of ``.root`` will be the [Element](./Element.md) object of the first element (root) of the loaded VST preset. Depending on whether you load a layer, program, or multi-program VST preset, this is either an [Element](./Element.md) object of the type [Layer](./Layer.md), [Program](./Program.md),or [Instance](./Instance.md).|[Layer](./Layer.md), [Program](./Program.md), or [Instance](./Instance.md)|
 |**.cancel**|Set this to true to cancel the loading of the preset.|boolean|
 |**.error**|Message if an error occured.|string|
 |**.info**|User definable field, for example, to manage several loading threads.|string or table|
