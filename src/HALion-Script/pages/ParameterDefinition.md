@@ -67,6 +67,6 @@ end
 
 ### getDisplayString
 
-{{#include ./_getDisplayString-reference.md:all}}
+{{#include ./_getDisplayString-Reference.md:all}}
 
 [Jump to Top ](#parameterdefinition)
