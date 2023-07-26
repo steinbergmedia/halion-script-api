@@ -8,9 +8,9 @@
 
 Function to generate note events.
 
-* If ``duration`` is -1 the generated note plays as long as the key that called playNote is held.
-* If ``duration`` is greater 0 the note plays as long as the key is held, but maximum for the time specified in milliseconds.
-* If ``duration`` is 0 playNote generates only the note-on event. The release can be managed manually with [onRelease](./onRelease.md) or with [releaseVoice](./releaseVoice.md) and the ID returned by playNote.
+* If ``duration`` is -1, the generated note plays for as long as the key that called playNote is held.
+* If ``duration`` is greater 0, the note plays for as long as the key is held, with the maximum duration specified in milliseconds.
+* If ``duration`` is 0, playNote generates only the note-on event. The release can be managed manually with [onRelease](./onRelease.md) or with [releaseVoice](./releaseVoice.md) and the ID returned by playNote.
 
 **Available in:** Processor.
 
@@ -21,7 +21,7 @@ Function to generate note events.
 |**note**|The note number of the note in the range of 0 to 127.|number|
 |**velocity**|The velocity of the note in the range of 0 to 127.|number|
 |**duration**|The length of the note in milliseconds. The default is -1.|number, optional|
-|**layerOrZone**|The layer or zone which shall receive the note. Only elements after the script module are addressable. The default is nil (all layers).|[Layer](./Layer.md) or [Zone](./Zone.md), optional|
+|**layerOrZone**|The layer or zone to receive the note. Only elements that come after the script module are addressable. The default is nil (all layers).|[Layer](./Layer.md) or [Zone](./Zone.md), optional|
 |**volume**|The initial volume in the range of 0 to 1.0. The default is 1.0.|number, optional|
 |**pan**|The initial pan position in the range of -1.0 to 1.0. The default is 0.|number, optional|
 |**tune**|The initial tuning in the range of -120.0 to 120.0. The default is 0.|number, optional|
