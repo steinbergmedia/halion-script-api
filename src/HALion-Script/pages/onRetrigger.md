@@ -20,7 +20,7 @@ This callback function is called when the script module receives a note-retrigge
 
 ## Fields
 
-Note-off events use the following fields of the [Event](./Event.md) object.
+Note-retrigger events use the following fields of the [Event](./Event.md) object.
 
 |Field|Description|Value Type|
 |:-|:-|:-|
