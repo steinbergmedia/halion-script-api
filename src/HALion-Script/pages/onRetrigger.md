@@ -16,7 +16,7 @@ This callback function is called when the script module receives a note-retrigge
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|event|[Event](./Event.md) object of the type noteRetrigger.|[Event](./Event.md)|
+|**event**|[Event](./Event.md) object of the type noteRetrigger.|[Event](./Event.md)|
 
 ## Fields
 

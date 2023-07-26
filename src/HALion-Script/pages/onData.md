@@ -14,7 +14,7 @@ This callback is called when the script module receives a system exclusive messa
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**event**|Event object of the type data.|Event|
+|**event**|[Event](./Event.md) object of the type data.|[Event](./Event.md)|
 
 ## Fields
 
