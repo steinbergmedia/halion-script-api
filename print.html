@@ -171,14 +171,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="halion-instrument--sound-designers"><a class="header" href="#halion-instrument--sound-designers">HALion Instrument &amp; Sound Designers</a></h1>
+                        <h1 id="halion-developer-resource"><a class="header" href="#halion-developer-resource">HALion Developer Resource</a></h1>
 <p>Whether you want to dive into the Macro Page Editor or get in-depth descriptions of the classes and functions provided in HALion Script, HALion Developer Resource is the go-to reference for all relevant information concerned with creating advanced content libraries in HALion.</p>
 <p>Please choose from the below to learn how to get started and find short examples and detailed information on the selected topic.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center">HALion Developer Resource</th><th style="text-align: center"></th></tr></thead><tbody>
-<tr><td style="text-align: center"><img src="Scripting.png" alt="HALion Script" /></td><td style="text-align: center"><img src="Macro-Page-Designer.png" alt="HALion Macro Page" /></td><td style="text-align: center"><img src="Library-Creator.png" alt="HALion Tutorials &amp; Guidelines" /></td></tr>
-<tr><td style="text-align: center"><strong><a href="./HALion-Script/pages/HALion-Script.html">HALion Script</a></strong></td><td style="text-align: center"><strong><a href="./HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></strong></td><td style="text-align: center"><strong><a href="./HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a></strong></td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Script/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> /</p>
+<div class="image-container">
+    <div class="image-with-caption">
+        <a href="./HALion-Script/pages/HALion-Script.html">
+            <img src="Scripting.png">
+            <figcaption><a href="./HALion-Script/pages/HALion-Script.html">HALion Script</a></figcaption>
+        </a>
+    </div>
+    <div class="image-with-caption">
+        <a href="./HALion-Macro-Page/pages/HALion-Macro-Page.html">
+            <img src="Macro-Page-Designer.png">
+            <figcaption><a href="./HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></figcaption>
+        </a>
+    </div>
+    <div class="image-with-caption">
+        <a href="./HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">
+            <img src="Library-Creator.png">
+            <figcaption><a href="./HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials & Guidelines</a></figcaption>
+        </a>
+    </div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Script/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> /</p>
 <h1 id="halion-script"><a class="header" href="#halion-script">HALion Script</a></h1>
 <h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
 <p>This section provides general information about HALion Script and the Lua scripting language.
@@ -5326,7 +5342,7 @@ print(&quot;Output of &quot;..zone.name..&quot; is assigned to &quot;..masterbus
 <tr><td style="text-align: left"><strong>.data</strong></td><td style="text-align: left">An array with the bytes of a system exclusive message. For the interpretation of these values, please consult the documentation of the MIDI data format of the device sending the system exclusive message.</td><td style="text-align: left">table</td></tr>
 <tr><td style="text-align: left"><strong>.dataType</strong></td><td style="text-align: left">Currently, there is only one data type (0 = sysex).</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>.dataSize</strong></td><td style="text-align: left">The number of bytes in the system exclusive message.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>.ppqPosition</strong></td><td style="text-align: left">The position of the event in ppq relative to the song start. The host must be in in playback. This value will be 0.0 if the host is not in playback.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>.ppqPosition</strong></td><td style="text-align: left">The position of the event in ppq relative to the project start. The host must be in playback. This value will be 0.0 if the host is not in playback.</td><td style="text-align: left">number</td></tr>
 </tbody></table>
 </div>
 <h4 id="fields-per-event-type"><a class="header" href="#fields-per-event-type">Fields per Event Type</a></h4>
@@ -7403,13 +7419,13 @@ end
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="event-types-1"><a class="header" href="#event-types-1">Event Types</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Index</th><th style="text-align: left">Name</th><th style="text-align: left">Description</th></tr></thead><tbody>
-<tr><td style="text-align: left">1</td><td style="text-align: left">EventType.noteOn</td><td style="text-align: left">Note-on events.</td></tr>
-<tr><td style="text-align: left">2</td><td style="text-align: left">EventType.noteOff</td><td style="text-align: left">Note-off events.</td></tr>
-<tr><td style="text-align: left">3</td><td style="text-align: left">EventType.controller</td><td style="text-align: left">Continuous controller events.</td></tr>
-<tr><td style="text-align: left">4</td><td style="text-align: left">EventType.noteExpression</td><td style="text-align: left">Note expression events.</td></tr>
-<tr><td style="text-align: left">5</td><td style="text-align: left">EventType.programChange</td><td style="text-align: left">Only used for Standard MIDI files.</td></tr>
-<tr><td style="text-align: left">6</td><td style="text-align: left">EventType.noteRetrigger</td><td style="text-align: left">Note-retrigger events.</td></tr>
-<tr><td style="text-align: left">7</td><td style="text-align: left">EventType.data</td><td style="text-align: left">System exclusive messages.</td></tr>
+<tr><td style="text-align: left">1</td><td style="text-align: left">EventType.noteOn</td><td style="text-align: left">Note-on events</td></tr>
+<tr><td style="text-align: left">2</td><td style="text-align: left">EventType.noteOff</td><td style="text-align: left">Note-off events</td></tr>
+<tr><td style="text-align: left">3</td><td style="text-align: left">EventType.controller</td><td style="text-align: left">Continuous controller events</td></tr>
+<tr><td style="text-align: left">4</td><td style="text-align: left">EventType.noteExpression</td><td style="text-align: left">Note expression events</td></tr>
+<tr><td style="text-align: left">5</td><td style="text-align: left">EventType.programChange</td><td style="text-align: left">Only used for Standard MIDI files</td></tr>
+<tr><td style="text-align: left">6</td><td style="text-align: left">EventType.noteRetrigger</td><td style="text-align: left">Note-retrigger events</td></tr>
+<tr><td style="text-align: left">7</td><td style="text-align: left">EventType.data</td><td style="text-align: left">System exclusive messages</td></tr>
 </tbody></table>
 </div>
 <h2 id="example-142"><a class="header" href="#example-142">Example</a></h2>
@@ -11187,7 +11203,7 @@ end
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="arguments-169"><a class="header" href="#arguments-169">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>event</strong></td><td style="text-align: left">Event object of the type data.</td><td style="text-align: left">Event</td></tr>
+<tr><td style="text-align: left"><strong>event</strong></td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a> object of the type data.</td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a></td></tr>
 </tbody></table>
 </div>
 <h2 id="fields-18"><a class="header" href="#fields-18">Fields</a></h2>
@@ -11464,12 +11480,12 @@ end
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="arguments-172"><a class="header" href="#arguments-172">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>event</strong></td><td style="text-align: left">Event object of the type noteOn.</td><td style="text-align: left">Event</td></tr>
+<tr><td style="text-align: left"><strong>event</strong></td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a> object of the type noteOn.</td><td style="text-align: left">Event</td></tr>
 </tbody></table>
 </div>
 <h2 id="fields-19"><a class="header" href="#fields-19">Fields</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>.type</strong></td><td style="text-align: left">The type of event (1 = noteOn). See Event Types for details.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>.type</strong></td><td style="text-align: left">The type of event (1 = noteOn). See <a href="HALion-Script/pages/./Event-Types.html">Event Types</a> for details.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>.id</strong></td><td style="text-align: left">The note ID of the note-on event.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>.note</strong></td><td style="text-align: left">The note number in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>.velocity</strong></td><td style="text-align: left">The note-on velocity in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
@@ -11637,11 +11653,11 @@ end
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="arguments-176"><a class="header" href="#arguments-176">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left">event</td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a> object of the type noteRetrigger.</td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a></td></tr>
+<tr><td style="text-align: left"><strong>event</strong></td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a> object of the type noteRetrigger.</td><td style="text-align: left"><a href="HALion-Script/pages/./Event.html">Event</a></td></tr>
 </tbody></table>
 </div>
 <h2 id="fields-23"><a class="header" href="#fields-23">Fields</a></h2>
-<p>Note-off events use the following fields of the <a href="HALion-Script/pages/./Event.html">Event</a> object.</p>
+<p>Note-retrigger events use the following fields of the <a href="HALion-Script/pages/./Event.html">Event</a> object.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>.type</strong></td><td style="text-align: left">The type of event (6 = noteRetrigger). See <a href="HALion-Script/pages/./Event-Types.html">Event Types</a> for details.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>.id</strong></td><td style="text-align: left">The note ID of the note-off event.</td><td style="text-align: left">number</td></tr>
@@ -11949,9 +11965,9 @@ end
 <h2 id="description-257"><a class="header" href="#description-257">Description</a></h2>
 <p>Function to generate note events.</p>
 <ul>
-<li>If <code>duration</code> is -1 the generated note plays as long as the key that called playNote is held.</li>
-<li>If <code>duration</code> is greater 0 the note plays as long as the key is held, but maximum for the time specified in milliseconds.</li>
-<li>If <code>duration</code> is 0 playNote generates only the note-on event. The release can be managed manually with <a href="HALion-Script/pages/./onRelease.html">onRelease</a> or with <a href="HALion-Script/pages/./releaseVoice.html">releaseVoice</a> and the ID returned by playNote.</li>
+<li>If <code>duration</code> is -1, the generated note plays for as long as the key that called playNote is held.</li>
+<li>If <code>duration</code> is greater 0, the note plays for as long as the key is held, with the maximum duration specified in milliseconds.</li>
+<li>If <code>duration</code> is 0, playNote generates only the note-on event. The release can be managed manually with <a href="HALion-Script/pages/./onRelease.html">onRelease</a> or with <a href="HALion-Script/pages/./releaseVoice.html">releaseVoice</a> and the ID returned by playNote.</li>
 </ul>
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="arguments-182"><a class="header" href="#arguments-182">Arguments</a></h2>
@@ -11959,7 +11975,7 @@ end
 <tr><td style="text-align: left"><strong>note</strong></td><td style="text-align: left">The note number of the note in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>velocity</strong></td><td style="text-align: left">The velocity of the note in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>duration</strong></td><td style="text-align: left">The length of the note in milliseconds. The default is -1.</td><td style="text-align: left">number, optional</td></tr>
-<tr><td style="text-align: left"><strong>layerOrZone</strong></td><td style="text-align: left">The layer or zone which shall receive the note. Only elements after the script module are addressable. The default is nil (all layers).</td><td style="text-align: left"><a href="HALion-Script/pages/./Layer.html">Layer</a> or <a href="HALion-Script/pages/./Zone.html">Zone</a>, optional</td></tr>
+<tr><td style="text-align: left"><strong>layerOrZone</strong></td><td style="text-align: left">The layer or zone to receive the note. Only elements that come after the script module are addressable. The default is nil (all layers).</td><td style="text-align: left"><a href="HALion-Script/pages/./Layer.html">Layer</a> or <a href="HALion-Script/pages/./Zone.html">Zone</a>, optional</td></tr>
 <tr><td style="text-align: left"><strong>volume</strong></td><td style="text-align: left">The initial volume in the range of 0 to 1.0. The default is 1.0.</td><td style="text-align: left">number, optional</td></tr>
 <tr><td style="text-align: left"><strong>pan</strong></td><td style="text-align: left">The initial pan position in the range of -1.0 to 1.0. The default is 0.</td><td style="text-align: left">number, optional</td></tr>
 <tr><td style="text-align: left"><strong>tune</strong></td><td style="text-align: left">The initial tuning in the range of -120.0 to 120.0. The default is 0.</td><td style="text-align: left">number, optional</td></tr>
@@ -12627,7 +12643,7 @@ end
 <tr><td style="text-align: left"><strong>filename</strong></td><td style="text-align: left">The absolute path and name of the VST preset.</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">Specifies the <a href="HALion-Script/pages/./Layer.html">Layer</a> element which is to be saved.</td><td style="text-align: left"><a href="HALion-Script/pages/./Layer.html">Layer</a></td></tr>
 <tr><td style="text-align: left"><strong>plugin</strong></td><td style="text-align: left">Determines the plug-in for the VST preset. You can choose <code>H7</code> (HALion 7) or <code>HS</code> (HALion Sonic).</td><td style="text-align: left">string, optional</td></tr>
-<tr><td style="text-align: left"><strong>attr</strong></td><td style="text-align: left">Set this to <code>program</code> to save a program VST preset. A layer VST preset will be saved, if this is not set. Alternatively, you can provide a table with MediaBay attributes and values.</td><td style="text-align: left">string, optional</td></tr>
+<tr><td style="text-align: left"><strong>attr</strong></td><td style="text-align: left">Set this to <code>program</code> to save a program VST preset. If this is not set, a layer VST preset will be saved. Alternatively, you can provide a table with MediaBay attributes and values.</td><td style="text-align: left">string, optional</td></tr>
 </tbody></table>
 </div>
 <h2 id="mediabay-attributes"><a class="header" href="#mediabay-attributes">MediaBay Attributes</a></h2>
@@ -13165,7 +13181,7 @@ modRow:setSource2(ModulationSource.sampleAndHold, 0)
 <p><strong>setZoneFMXAlgo(zone, algo)</strong></p>
 </blockquote>
 <h2 id="description-292"><a class="header" href="#description-292">Description</a></h2>
-<p>Function to set the algorithm of the FM zone. The <code>zone</code> argument sets the target FM zone by its <a href="HALion-Script/pages/./Zone.html">Zone</a> object. You can use <a href="HALion-Script/pages/./getZone.html">getZone</a> or <a href="HALion-Script/pages/./findZones.html">findZones</a> to determine the Zone object of the target FM zone. The <code>algo</code> argument is the index that corresponds to the desired FM-X algorithm preset of the FM zone.</p>
+<p>Function to set the algorithm of the FM zone. The <code>zone</code> argument sets the target FM zone by its <a href="HALion-Script/pages/./Zone.html">Zone</a> object. You can use <a href="HALion-Script/pages/./getZone.html">getZone</a> or <a href="HALion-Script/pages/./findZones.html">findZones</a> to determine the <a href="HALion-Script/pages/./Zone.html">Zone</a> object of the target FM zone. The <code>algo</code> argument is the index that corresponds to the desired FM-X algorithm preset of the FM zone.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h2 id="arguments-214"><a class="header" href="#arguments-214">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -13380,7 +13396,7 @@ endUndoBlock() -- Terminate the undo block.
 <h2 id="arguments-218"><a class="header" href="#arguments-218">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>filename</strong></td><td style="text-align: left">The absolute path and name of the file.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>append</strong></td><td style="text-align: left">Appends the output in the file if this is set to <code>true</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>append</strong></td><td style="text-align: left">Appends the output to the file if this is set to <code>true</code>.</td><td style="text-align: left">boolean</td></tr>
 <tr><td style="text-align: left"><strong>silent</strong></td><td style="text-align: left">Hides the console output if this is set to <code>true</code>.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
@@ -13759,7 +13775,7 @@ createProgram()
 <li>Examine the <strong>Properties</strong> of the selected element in the tree to see how it is connected to the engine and UI parameters.</li>
 </ol>
 <h2 id="using-templates-from-the-example-macro-pages"><a class="header" href="#using-templates-from-the-example-macro-pages">Using Templates from the Example Macro Pages</a></h2>
-<p>The macro pages of Anima, Skylab, Eagle, Raven, Studio Strings, and Hot Brass are installed as independent VST Sounds for all HALion family products (HALion, HALion Sonic and HALion Sonic SE), which means that you can use the templates from these instruments for your own macro pages, too.</p>
+<p>The macro pages of Anima, Skylab, Eagle, Raven, Studio Strings, and Hot Brass are installed as independent VST Sounds for HALion and for HALion Sonic, which means that you can use the templates from both these instruments for your own macro pages, too.</p>
 <p>In the <strong>Resource/Library Browser</strong>, you have access to the templates of these macro pages.</p>
 <p><img src="HALion-Macro-Page/pages/../images/LibraryLocationsEagle.PNG" alt="Library Location Eagle Controls" /></p>
 <ol>
@@ -14392,7 +14408,7 @@ createProgram()
 </ul>
 <hr />
 <h2 id="description-334"><a class="header" href="#description-334">Description</a></h2>
-<p>A Template List can be used to create a list of child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, Horizontal, Vertical, or Grid, the templates are arranged in a row, a column or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.</p>
+<p>A Template List can be used to create child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, the templates are arranged in a row, a column, or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.</p>
 <h2 id="properties-25"><a class="header" href="#properties-25">Properties</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>

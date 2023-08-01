@@ -178,9 +178,9 @@
 <h2 id="description"><a class="header" href="#description">Description</a></h2>
 <p>Function to generate note events.</p>
 <ul>
-<li>If <code>duration</code> is -1 the generated note plays as long as the key that called playNote is held.</li>
-<li>If <code>duration</code> is greater 0 the note plays as long as the key is held, but maximum for the time specified in milliseconds.</li>
-<li>If <code>duration</code> is 0 playNote generates only the note-on event. The release can be managed manually with <a href="./onRelease.html">onRelease</a> or with <a href="./releaseVoice.html">releaseVoice</a> and the ID returned by playNote.</li>
+<li>If <code>duration</code> is -1, the generated note plays for as long as the key that called playNote is held.</li>
+<li>If <code>duration</code> is greater 0, the note plays for as long as the key is held, with the maximum duration specified in milliseconds.</li>
+<li>If <code>duration</code> is 0, playNote generates only the note-on event. The release can be managed manually with <a href="./onRelease.html">onRelease</a> or with <a href="./releaseVoice.html">releaseVoice</a> and the ID returned by playNote.</li>
 </ul>
 <p><strong>Available in:</strong> Processor.</p>
 <h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
@@ -188,7 +188,7 @@
 <tr><td style="text-align: left"><strong>note</strong></td><td style="text-align: left">The note number of the note in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>velocity</strong></td><td style="text-align: left">The velocity of the note in the range of 0 to 127.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>duration</strong></td><td style="text-align: left">The length of the note in milliseconds. The default is -1.</td><td style="text-align: left">number, optional</td></tr>
-<tr><td style="text-align: left"><strong>layerOrZone</strong></td><td style="text-align: left">The layer or zone which shall receive the note. Only elements after the script module are addressable. The default is nil (all layers).</td><td style="text-align: left"><a href="./Layer.html">Layer</a> or <a href="./Zone.html">Zone</a>, optional</td></tr>
+<tr><td style="text-align: left"><strong>layerOrZone</strong></td><td style="text-align: left">The layer or zone to receive the note. Only elements that come after the script module are addressable. The default is nil (all layers).</td><td style="text-align: left"><a href="./Layer.html">Layer</a> or <a href="./Zone.html">Zone</a>, optional</td></tr>
 <tr><td style="text-align: left"><strong>volume</strong></td><td style="text-align: left">The initial volume in the range of 0 to 1.0. The default is 1.0.</td><td style="text-align: left">number, optional</td></tr>
 <tr><td style="text-align: left"><strong>pan</strong></td><td style="text-align: left">The initial pan position in the range of -1.0 to 1.0. The default is 0.</td><td style="text-align: left">number, optional</td></tr>
 <tr><td style="text-align: left"><strong>tune</strong></td><td style="text-align: left">The initial tuning in the range of -120.0 to 120.0. The default is 0.</td><td style="text-align: left">number, optional</td></tr>
