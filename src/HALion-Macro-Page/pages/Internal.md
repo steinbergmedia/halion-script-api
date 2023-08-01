@@ -14,4 +14,4 @@ The Internal control is used by Steinberg to implement functionality that could 
 {{#include ./_Properties.md:position-size}}
 {{#include ./_Properties.md:attach}}
 {{#include ./_Properties.md:tooltip}}
-|**View**|Used for HALion specific purposes. The set strings must remain unchanged to guarantee the functionality of the control.|
+|**View**|Used for HALion-specific purposes. The set strings must remain unchanged to ensure the functionality of the control.|
