@@ -12,7 +12,7 @@ To learn more about macro pages and how to set them up, you can load the presets
 
 ## Using Templates from the Example Macro Pages
 
-The macro pages of Anima, Skylab, Eagle, Raven, Studio Strings, and Hot Brass are installed as independent VST Sounds for all HALion family products (HALion, HALion Sonic and HALion Sonic SE), which means that you can use the templates from these instruments for your own macro pages, too.
+The macro pages of Anima, Skylab, Eagle, Raven, Studio Strings, and Hot Brass are installed as independent VST Sounds for HALion and for HALion Sonic, which means that you can use the templates from both these instruments for your own macro pages, too.
 
 In the **Resource/Library Browser**, you have access to the templates of these macro pages.
 

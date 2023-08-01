@@ -15,7 +15,7 @@ Function to write the ouput of print functions to a file. Only the print functio
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**filename**|The absolute path and name of the file.|string|
-|**append**|Appends the output in the file if this is set to ``true``.|boolean|
+|**append**|Appends the output to the file if this is set to ``true``.|boolean|
 |**silent**|Hides the console output if this is set to ``true``.|boolean|
 
 ## Example

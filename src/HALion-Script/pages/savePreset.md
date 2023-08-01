@@ -17,7 +17,7 @@
 |**filename**|The absolute path and name of the VST preset.|string|
 |**layer**|Specifies the [Layer](./Layer.md) element which is to be saved.|[Layer](./Layer.md)|
 |**plugin**|Determines the plug-in for the VST preset. You can choose ``H7`` (HALion 7) or ``HS`` (HALion Sonic). |string, optional|
-|**attr**|Set this to ``program`` to save a program VST preset. A layer VST preset will be saved, if this is not set. Alternatively, you can provide a table with MediaBay attributes and values.|string, optional|
+|**attr**|Set this to ``program`` to save a program VST preset. If this is not set, a layer VST preset will be saved. Alternatively, you can provide a table with MediaBay attributes and values.|string, optional|
 
 ## MediaBay Attributes
 
