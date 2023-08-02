@@ -27,7 +27,7 @@
 // ANCHOR_END: name
 
 // ANCHOR: position-size
-|**Position/Size**|**Position X, Position Y, Width, Height:** Position and size of the element in pixels. Position X/Y defines the position of the upper left corner.|
+|**Position/Size**|**Position X, Position Y, Width, Height:** Position and size of the element in pixels. **Position X/Y** defines the position of the upper left corner.|
 // ANCHOR_END: position-size
 
 // ANCHOR: scalable
