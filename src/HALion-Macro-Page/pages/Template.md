@@ -4,7 +4,7 @@
 
 ## Description
 
-A template control represents an instance of a template. The number of available template parameters depends on the contents and setup of the template, i.e., the number of controls that are used in it and the number of control parameters that are exported. If a template has an attached UI script, additional script parameters can be exported.
+A Template control represents an instance of a template. The number of available template parameters depends on the contents and setup of the template, i.e., the number of controls that are used in it and the number of control parameters that are exported. If a Template has an attached UI script, additional script parameters can be exported.
 
 ## Properties
 

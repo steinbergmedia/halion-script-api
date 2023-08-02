@@ -41,7 +41,7 @@ Create variables to connect the Step Modulator properties with the engine and fu
 |Poperty|Variable|Description|Type|Range|
 |:-|:-|:-|:-|:-:|
 |**Index**|index|The index of the selected node.|integer|1 to 32|
-|**Level**|level|Level of the selected node.|float|-100 to 100|
+|**Level**|level|The level of the selected node.|float|-100 to 100|
 |**Level 12**|level12|The level in fractions of 12 (used when Snap is active).|float|-12 to 12|
 |**Snap**|snap|Activates the snap line.|integer|0, 1|
 
