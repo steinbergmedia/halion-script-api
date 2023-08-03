@@ -16,7 +16,7 @@
 
 The FlexPhaser template contains controls for selecting the phrases, adjusting the performance parameters like Swing, Gate Scale, etc., and for using the eight variations of the FlexPhraser MIDI module. In addition, there are controls for recording the MIDI output of the FlexPhraser and to export the recorded phrase via drag and drop.
 
-Functionality such as using the eight variations, exporting the recorded MIDI output, etc., can not be realized with standard macro page controls. The [Internal](./Internal.md) control is used if this is the case. The performance parameters like Swing, Gate Scale, Vel Scale, etc. are connected to the eight variations by corresponding UI variables and they must be part of this template. To guarantee the operation of the performance parameters, the eight variations and the MIDI phrase export, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+Functionality such as using the eight variations, exporting the recorded MIDI output, etc., cannot be realized with standard macro page controls. The [Internal](./Internal.md) control is used if this is the case. The performance parameters like Swing, Gate Scale, Vel Scale, etc. are connected to the eight variations by corresponding UI variables and they must be part of this template. To ensure the operation of the performance parameters, the eight variations and the MIDI phrase export, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 **To explore the functionality and connections:**
 
@@ -64,7 +64,7 @@ Functionality such as using the eight variations, exporting the recorded MIDI ou
 
 ### Controls and Subtemplates
 
-To guarantee the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+To ensure the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 |Item|Description|
 |:-|:-|

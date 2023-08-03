@@ -4,7 +4,7 @@
 
 ## Description
 
-The Text control can be used to edit either strings or values, depending on the type of parameter that it is connected to. If a parameter is defined as a value, you can increase and decrease the value by clicking on the text control and dragging up and down. For string parameters, you can enter the string. With Fit String and Fit Path, there are two options to automatically shorten a string if it is getting too long to be displayed completely. For value parameters, you can add a unit that is displayed behind the value. If you want increment and decrement buttons, take the combined value box template, which contains a text control with up and down buttons.
+The Text control can be used to edit either strings or values, depending on the type of parameter that it is connected to. If a parameter is defined as a value, you can increase and decrease the value by clicking on the text control and dragging up and down. For string parameters, you can enter the string. The Fit String and Fit Path options automatically shorten a string if it is getting too long to be displayed completely. For value parameters, you can add a unit that is displayed behind the value. If you want increment and decrement buttons, you can use the "ValueBox Black Flat" template from the Basic Controls library (in the "Flat" folder found in the "Text and Value" folder). This template contains a text control with up and down buttons.
 
 ## Properties
 
