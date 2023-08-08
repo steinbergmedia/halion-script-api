@@ -14,7 +14,7 @@
 
 ## Description
 
-The FX Meter template allows you to display input, output, and reduction meters for effects like Compressor, Expander, Limiter, etc. It also contains text controls for peak values and switches for reseting them. The controls are connected by corresponding UI variables. To guarantee the operation of the controls the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page. For example, if an effect does not need a reduction meter, you can remove it and save this configuration in another template.
+The FX Meter template allows you to display input, output, and reduction meters for effects like Compressor, Expander, Limiter, etc. It also contains text controls for peak values and switches for resetting them. The controls are connected by corresponding UI variables. To ensure the operation of the controls, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page. For example, if an effect does not need a reduction meter, you can remove it and save this configuration in another template.
 
 **To explore the functionality and connections:**
 

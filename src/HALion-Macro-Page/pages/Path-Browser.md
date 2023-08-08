@@ -37,11 +37,11 @@ The PathBrowser is a preconfigured template that can be used to open folders and
 
 |Parameters|Description|
 |:-|:-|
-|**Value**|Connect the parameter that requires a path and file name here.|
+|**Value**|Allows you to connect the parameter that requires a path and file name.|
 |**Typename**|Allows you to specify the name of the file type filter that will be shown in the OS file browser.|
 |**Extension**|Allows you to specify a file type filter like .wav or .aiff, so that the OS file browser only shows files of that type.|
 |**Title**|Allows you to specify the title of the OS file browser that will be shown in the caption.|
-|**Tag**|Allows you to specify an unique identifier that is used to memorize the location at which you left the OS file browser the last time. All path browsers that use this tag will point to the same last location.|
+|**Tag**|Allows you to specify a unique identifier that is used to memorize the location at which you left the OS file browser the last time. All path browsers that use this tag will point to the same last location.|
 
 ## Components inside the Template
 

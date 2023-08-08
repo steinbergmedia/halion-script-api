@@ -16,7 +16,7 @@
 
 PresetBrowser Module is a preconfigured template that can be used to manage subpresets, such as the presets of a MIDI script module or an audio effect, for example. The Scope parameter determines for which module or effect the preset management applies. The look of the controls can be adapted freely by changing the components inside the template. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.
 
-The PresetBrowser Module template uses the default file path for loading and saving subpresets. User subpresets will be saved to the Documents folder of your OS in the corresponding folder of the module or effect you specified by Scope. You can see the full file path by opening the Save dialog. If you wish to deliver your own subpresets as part of your library, the location of your subpresets inside the VST Sound must match this path, otherwise the preset selector will not see them.
+The PresetBrowser Module template uses the default file path for loading and saving subpresets. User subpresets will be saved to the Documents folder of your OS in the folder of the module or effect you specify with the Scope parameter. You can see the full file path by opening the Save dialog. If you want to deliver your own subpresets as part of your library, the location of your subpresets inside the VST Sound must match this path, otherwise the preset selector cannot access them.
 
 **To explore the functionality and connections:**
 

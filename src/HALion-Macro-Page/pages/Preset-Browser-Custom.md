@@ -14,7 +14,7 @@
 
 ## Description
 
-PresetBrowser Custom is a preconfigured template that can be used to manage subpresets, such as the presets of a MIDI script module or an audio effect, for example. The Scope parameters determines for which module, effect, or zone the preset management applies. The optional Section determines for which part of a zone the preset management applies. The parameters Product, Load From, and Save To define the locations for loading and saving presets. The look of the controls can be adapted freely by changing the components inside the template. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.
+PresetBrowser Custom is a preconfigured template that can be used to manage subpresets, such as the presets of a MIDI script module or an audio effect, for example. The Scope parameter determines for which module, effect, or zone the preset management applies. The optional Section parameter determines for which part of a zone the preset management applies. The parameters Product, Load From, and Save To define the locations for loading and saving presets. The look of the controls can be adapted freely by changing the components inside the template. The template contains switches for Load, Save, and Delete which open the corresponding dialogs.
 
 **To explore the functionality and connections:**
 
