@@ -2,7 +2,7 @@
 
 # HALion Tutorials & Guidelines
 
-## Getting Sarted
+## Getting Started
 
 {{#include _Getting-Started.md}}
 
