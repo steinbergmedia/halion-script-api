@@ -86,7 +86,7 @@ The following picture shows the program structure of the example instrument afte
 
 The Trigger Pads, two FlexPhrasers and a Program-Bus were added, because HALion Sonic requires them.
 
->&#10069; If you load a Program preset from HALion Sonic in HALion, do not export the Program preset as HALion Sonic Layer preset again. If you do so and load this preset in HALion Sonic, the MIDI modules will be added again and the preset will not be compatible anymore. You must use the HS Edit mode instead. See Using HS Edit Mode for details.
+>&#10069; If you load a Program preset from HALion Sonic in HALion, do not export the Program preset as HALion Sonic Layer preset again. If you do so and load this preset in HALion Sonic, the MIDI modules will be added again and the preset will not be compatible anymore. You must use the HS Edit mode instead. See [Using HS Edit Mode](#using-halion-sonic-edit-mode) for details.
 
 Once your instrument is finished, the final sound design can start.
 
