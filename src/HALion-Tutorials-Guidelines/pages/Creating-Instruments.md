@@ -33,13 +33,13 @@ The program structure of your instrument in the **Program Tree** of HALion might
 
 The program structure of your instrument must fulfill the following requirements to work in HALion Sonic:
 
-* The macro page must be attached to the top element in the Program Tree. In the example above, this would be the element Instrument. HALion Sonic will not see the macro page if it is not attached to the top element.
+* The macro page must be attached to the top element in the Program Tree. In the example above, this would be the element Instrument. HALion Sonic cannot access the macro page if it is not attached to the top element.
 
 {{#include _Maximum-Macro-Page-Size.md}}
 
 * The last element in the Program Tree must be one bus with a maximum of four insert effects. In the example above, this would be the element Instrument-Bus. There must be only one bus at the top level. Several busses at the top level are not allowed. The maximum number of insert effects per Layer in HALion Sonic is limited to four. The insert effects are optional. In the example above, the Instrument-Bus does not have any insert effects. In fact, it is good practice to leave the bus empty in HALion and assign the insert effects later on the Inserts tab in HALion Sonic.
 
->&#10069; HALion Sonic does not accept layer presets that do not match the requirements. When exporting a Program as HALion Sonic Layer preset, please activate **Verify HALion Sonic Layer Structure**. By activating this option, HALion will warn you if the program structure does not comply with the requirements. 
+>&#10069; HALion Sonic does not accept layer presets that do not match the requirements. When exporting a Program as HALion Sonic Layer preset, please activate **Verify HALion Sonic Layer Structure**. By activating this option, HALion will warn you if the program structure does not meet the requirements. 
 
 The following elements can be added freely to the program structure:
 
@@ -56,7 +56,7 @@ If you follow these guidelines, your instrument will be compatible with HALion S
 * Except for the topmost and the last element in the Program Tree, the program structure can be set up as needed for your instrument.
 * Inside the "Instrument" element, you are free to add any element you want.
 * You must set up a macro page that provides access to the important parameters. The macro page must be attached to the topmost element.
-*The "Instrument-Bus" is already part of HALion Sonic program structure. You can assign up to four insert effects to it.
+* The "Instrument-Bus" is already part of the HALion Sonic program structure. You can assign up to four insert effects to it.
 
 ## HALion Sonic Program Structure
 
@@ -68,7 +68,7 @@ To export the program as HALion Sonic Layer preset:
 
 ![Export HS Layer Preset](../images/Export-HS-Layer-Preset.png)
 
-2. Choose a location and filename.
+2. Choose a location and a file name.
 2. Activate the options **Export as HALion Sonic Layer** and **Verify HALion Sonic Layer Structure**.
 2. Finally, click OK.
 
