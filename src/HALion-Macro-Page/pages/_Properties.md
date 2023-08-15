@@ -39,7 +39,7 @@ Activate this if you want to be able to resize the element. The assigned [Bitmap
 // ANCHOR_END: scale-mode
 
 // ANCHOR: scope
-|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the group.|
+|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the Group.|
 // ANCHOR_END: scope
 
 // ANCHOR: show-value
