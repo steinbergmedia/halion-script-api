@@ -108,7 +108,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |LineMain|``transform``|``rotate(180,32,32)``|
 
-The object is rotated by a fixed amount of 180 degrees around the center at x,y = 32,32 pixels.
+**Description:** The object is rotated by a fixed amount of 180 degrees around the center at x,y = 32,32 pixels.
 
 #### Knob Black, Knob Red to Black, Knob Black to White, Knob Opacity
 
