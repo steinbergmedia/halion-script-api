@@ -1,6 +1,6 @@
 / [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [How-tos](./How-tos.md) /
 
-# Animating SVGs
+# Animating and Modifying SVGs
 
 ---
 
@@ -28,7 +28,7 @@ You can use the following variables in Lua expressions:
 
 Strings are set either by a stringlist variable or by MIDI script or UI script parameters. The ability to use the string output of a parameter allows you to transmit even a full sequence of values, such as the path of an object, for example.
 
-## Modifying SVG Properties
+## Animating and Modifying SVG Properties
 
 The subsequent examples are presented solely as illustrative guides to kickstart your own solution-building process.
 
@@ -36,7 +36,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 
 * [Animating SVGs 1.vstpreset](../vstpresets/Animating%20SVGs%201.vstpreset)
 
-![Animating SVGs](../images/Animating-SVGs.png)
+![Animating and Modifying SVGs](../images/Animating-and-Modifying-SVGs.png)
 
 **To explore the templates in this example:**
 
@@ -96,7 +96,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |Stern|``fill``|``$(SColor)``|
 
-**Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see for details.
+**Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details.
 
 ### Changing the Rotation of an Object
 
