@@ -70,7 +70,7 @@ To export the program as HALion Sonic Layer preset:
 
 2. Choose a location and a file name.
 2. Activate the options **Export as HALion Sonic Layer** and **Verify HALion Sonic Layer Structure**.
-2. Finally, click OK.
+2. Finally, click **OK**.
 
 ![Export HS Layer Preset Dialog](../images/Export-HS-Layer-Preset-Dialog.png)
 

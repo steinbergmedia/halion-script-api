@@ -28,7 +28,7 @@ A typical folder structure could look like this:
 
 ### Overview of Workflows
 
-* To export the VST preset to the working directory, you must use Export Program as VST Preset... or Export Program as HALion Sonic SE Layer Preset....
+* To export the VST preset to the working directory, you must use Export Program as VST3 Preset...
 * Place the source files in the subfolders of the working directory and load them from there.
 * Load the source files from any location, then export them into the respective subfolders of the working directory using one of HALion's export functions. There are different functions for exporting samples, macro pages, etc. Then relocate the files with a replace function or load them from their new location.
 
@@ -38,14 +38,16 @@ The different workflows will be explained in detail below.
 
 ### Exporting VST Presets to the Working Directory
 
-If you want to save your VST preset for the first time, you might be tempted to use **Save Program** or **Save Program As...** The save functions only allow to save in the default location for VST presets. However, the default location is scanned by the MediaBay and is therefore not the adequate location for working directories. The export functions allow to choose the location freely. You must use **Export Program as VST Preset...** or **Export Program as HALion Sonic SE Layer Preset...** at least once to export your VST preset to the working directory. After loading the exported VST preset from the working directory, you can save your VST preset using the **Save Program** command or the export functions. **Save Program** will not ask for a location or file name if the preset was loaded from the working directory.
+If you want to save your VST preset for the first time, you might be tempted to use **Save Program** or **Save Program As...** The save functions only allow to save in the default location for VST presets. However, the default location is scanned by the MediaBay and is therefore not the adequate location for working directories. The export function allows to choose the location freely. You must use **Export Program as VST3 Preset...** at least once to export your VST preset to the working directory. After loading the exported VST preset from the working directory, you can save your VST preset using the **Save Program** command or the export function. **Save Program** will not ask for a location or file name if the preset was loaded from the working directory.
 
 To achieve relative paths for your VST preset:
 
-1. Export the VST preset with **Export Program as VST Preset...** or **Export Program as HALion Sonic SE Layer Preset...** to the working directory.
-1. oad the VST preset from the working directory.
+1. Export the VST preset with **Export Program as VST3 Preset...** to the working directory.
+1. Load the VST preset from the working directory.
 
-From now on, you can either use **Save Program** or one of the export functions to save your VST preset.
+From now on, you can either use **Save Program** or the export function to save your VST preset.
+
+>&#10069; If you are working on a HALion Sonic library, you usually want to save HALion Sonic Layers and not HALion Programs. In this case **Save Program** cannot be used and you must use **Export Program as VST3 Preset...** with the options **As HS Layer** and **Verify** activated.
 
 ### Using Source Files from the Working Directory
 
@@ -55,13 +57,15 @@ A practical way to achieve relative paths for your library is to place the sourc
 
 >&#10069; Do not forget to save or export your VST preset after adding new ressources to it.
 
-## Using Export Program as VST3 Preset with Files...
+## Using Export Program as VST3 Preset... with Export Files
 
-**Export Program as VST3 Preset with Files...** allows you to create a working directory and export all the required files to it in a single operation.
+**Export Program as VST3 Preset...** with **Export Files** allows you to create a working directory and export all the required files to it in a single operation.
 
-1. In the **Program Tree**, right-click the program and select **Import/Export > Export Program as VST3 Preset with Files...**
+1. In the **Program Tree**, right-click the program and select **Import/Export > Export Program as VST3 Preset...**
+1. Activate **Export files**.
+1. If you are working on a HALion Sonic library, activate **As HS Layer** and **Verify**.
 1. Choose a location and a file name. The location becomes your working directory. The file name should correspond to the name of your instrument.
-1. Click OK to start the export.
+1. Click **OK** to start the export.
 
 HALion now creates a VST preset and several subfolders in the working directory. The subfolders store all the ressources that were in use when you exported the program.
 

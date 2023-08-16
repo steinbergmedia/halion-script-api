@@ -30,7 +30,7 @@ Most often, you will probably want to build your library so that it works with H
 |Plug-in|Description|Compatibility|
 |:-|:-|:-|
 |HALion|HALion libraries have no restrictions.|HALion|
-|HALion Sonic|HALion Sonic libraries have restrictions regarding the program structure. The number of instrument layers is limited to four and certain MIDI modules are always needed. See [HALionSonic (SE) Program Structure](./Creating-Instruments.md#halion-sonic-se-program-structure) for details.|HALion, HALion Sonic|
+|HALion Sonic|HALion Sonic libraries have restrictions regarding the program structure. The number of instrument layers is limited to four and certain MIDI modules are always needed. See [HALion Sonic Program Structure](./Creating-Instruments.md#halion-sonic-program-structure) for details.|HALion, HALion Sonic|
 
 {{#include _Maximum-Macro-Page-Size.md}}
 
