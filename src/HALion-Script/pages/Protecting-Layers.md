@@ -22,7 +22,7 @@ You might want to avoid that users make edits to critical parts of the program. 
 
 Protecting layers is a two-step process:
 
-* First, you define the layers you want to protect by setting the **Layer Protection** in the **Program Tree**. This has the advantage that you can decide at an early stage which layers you want to be protected. You can continue work as normal and you still can add or remove the protection as needed. The permanent activation of the layer protection happens later.
+* First, you define the layers you want to protect by setting the **Layer Protection** in the **Program Tree**. This has the advantage that you can decide at an early stage which layers you want to be protected. You can continue your work as usual and you still can add or remove the protection as needed. The permanent activation of the layer protection happens later.
 * Before you release the instrument to the public, you export the program and apply the protection by using **Export Program as VST3 Preset...** with the **Protect** option activated. All layers with the layer protection set will be permanently protected in the exported program.
 
 >&#10069; Applying the layer protection permanently by exporting a protected VST3 preset cannot be undone. For this reason, you should always keep a backup of the unprotected program.
@@ -38,14 +38,14 @@ The **Layer Protection** is engaged if the lock next to the layer is closed. If 
 
 ### Applying the Layer Protection Automatically
 
-The **Library Creator** protects any layers with activated protection automatically when building a VST Sound. This affects only the presets that go into the VST Sound and not your source presets on disk. Using the **Library Creator** is the preferred way to protect layers permanently for release.
+The **Library Creator** protects layers with activated protection automatically when building a VST Sound. This affects only the presets that go into the VST Sound and not your source presets on disk. Using the **Library Creator** is the preferred way to protect layers permanently for release.
 
 1. Set the **Layer Protection** as described above.
 1. In the **Library Creator**, add the respective presets to your library.
 1. Build the library and mount it.
 1. Go to the **MediaBay** and load a preset from the library.
 
-The protected layers cannot be accessed anymore in the **Program Tree**.
+The protected layers cannot be accessed in the **Program Tree** any longer.
 
 ### Applying the Layer Protection Manually
 
@@ -55,9 +55,9 @@ The protected layers cannot be accessed anymore in the **Program Tree**.
 1. Select **Export Program as VST3 Preset...**
 1. Activate the **Protect** option.
 1. Choose a location and file name.
-1. Click **Save** to export the program and apply the layer protection permanently. Click **Cancel** to close the dialog without exporting the program and applying the layer protection.
+1. Click **Save** to export the program and apply the layer protection permanently.
 
-When you load the exported program, the protected layers cannot be accessed anymore in the **Program Tree**.
+When you load the exported program, the protected layers cannot be accessed in the **Program Tree** any longer.
 
 ## Accessing Protected Layers from a Script
 
