@@ -34,7 +34,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 
 ### Example VST Preset
 
-* [Animating SVGs 1.vstpreset](../vstpresets/Animating%20SVGs%201.vstpreset)
+* [Animating and Modifying SVGs.vstpreset](../vstpresets/Animating%20and%20Modifying%20SVGs.vstpreset)
 
 ![Animating and Modifying SVGs](../images/Animating-and-Modifying-SVGs.png)
 
