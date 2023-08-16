@@ -10,6 +10,8 @@
 
 ---
 
+![Envelope Shaper](../images/Envelope-Shaper-Page.png)
+
 ## Description
 
 The Envelope Shaper template allows you to edit HALion's multi-stage envelopes. The template contains controls for scrolling and zooming the envelope and for setting the envelope mode or the values of the selected node, for example. In addition, it offers tools for drawing shapes. The controls must be part of the template and they must use the [UI variables](#ui-variables) as defined in the template to connect with the [Envelope View Control](#envelope-view-control).
