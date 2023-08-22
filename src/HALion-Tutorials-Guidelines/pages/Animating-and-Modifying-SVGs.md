@@ -56,7 +56,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |Knob|``fill``|``rgb(0,0,0)``|
 
-**Description:** Static color, in this case black.
+**Description:** Static color, in this case black. The original color of the control was green.
 
 #### Knob Red to Black
 
@@ -108,7 +108,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |LineMain|``transform``|``rotate(180,32,32)``|
 
-**Description:** The object is rotated by a fixed amount of 180 degrees around the center at x,y = 32,32 pixels.
+**Description:** The object is rotated by a fixed amount of 180 degrees around the center at x,y = 32,32 pixels. In this case, the scale is turned up side down.
 
 #### Knob Black, Knob Red to Black, Knob Black to White, Knob Opacity
 
@@ -118,7 +118,7 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |KnobLine|``transform``|``rotate($(-135+N*270),32,32)``|
 
-**Description:** A knob control rotates the object by 270 degrees with a start offset of -135 degrees, around the center at x,y = 32,32 pixels.
+**Description:** A knob control rotates the object by 270 degrees with a start offset of -135 degrees, around the center at x,y = 32,32 pixels. In this case, the indicator of the control is rotated displaying the current value.
 
 ### Changing the Position of an Object
 
