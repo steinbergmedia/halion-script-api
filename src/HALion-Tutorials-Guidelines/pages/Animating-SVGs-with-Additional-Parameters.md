@@ -57,19 +57,19 @@ This integration empowers the manipulation of SVG elements and their subordinate
 |:-|:-|:-|
 |Stern|``transform``|``scale($(1-NScale))``|
 
-**Description:** The star is faded out by scaling it from full to minimum size.
+**Description:** The star is faded out by scaling it from original to minimum size. The name of the additional parameter is 'Scale'.
 
 |ID|Property|Value|
 |:-|:-|:-|
 |Stern|``transform``|``rotate($(N*360), 50,50)``|
 
-**Description:** The star is rotated by 360 degrees.
+**Description:** The star is rotated by 360 degrees. It does not need a name variable, because it uses the 'Value' parameter of the [Animation](../../HALion-Macro-Page/pages/Animation.md) control.
 
 |ID|Property|Value|
 |:-|:-|:-|
 |Stern|``transform``|``rgb(255,$(math.floor(255-NColor*255)),$(math.floor(255-NColor*255)))``|
 
-**Description:** The color fades from white to red.
+**Description:** The color fades from white to red. The name of the additional parameter is 'Color'.
 
 The script has three outputs which are connected to the corresponding SVG properties. The speed for each animation is defined inside the script. The script is attached to the Animation Script Example Template.
 
@@ -109,4 +109,3 @@ function animate()
     out1, out2, out3 = 0, 0, 0  
 end  
 ```
-
