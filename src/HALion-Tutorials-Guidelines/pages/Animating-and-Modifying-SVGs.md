@@ -14,23 +14,11 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 ## Lua Expressions
 
-An expression begins with ``$`` followed by ``()``. Everything inside the brackets will be evaluated and returns the effective value for the property.
-
->**$(expression)**
-
-You can use the following variables in Lua expressions:
-
-|Variable|Description|
-|:-|:-|
-|**N**|The normalized value (0 to 1.0) of the control itself.|
-|**V**|The value as sent by the connected engine parameter.|
-|**S**|A string as sent by the connected parameter|
-
-Strings are set either by a stringlist variable or by MIDI script or UI script parameters. The ability to use the string output of a parameter allows you to transmit even a full sequence of values, such as the path of an object, for example.
+{{#include ./_Lua-Expressions.md:lua-expressions}}
 
 ## Animating and Modifying SVG Properties
 
-The subsequent examples are presented solely as illustrative guides to kickstart your own solution-building process.
+{{#include ./_Examples-Hint.md:plural}}
 
 ### Example VST Preset
 
@@ -96,7 +84,20 @@ The subsequent examples are presented solely as illustrative guides to kickstart
 |:-|:-|:-|
 |Stern|``fill``|``$(SColor)``|
 
-**Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details.
+**Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details. The following script switches between two colors.
+
+```lua
+function onSwitchChanged() 
+    if Switch then
+        this:setParameter("FillColor", "rgb(255,0,0)")
+    else
+        this:setParameter("FillColor", "rgb(255,255,255)")
+    end
+end
+
+defineParameter("Switch", nil, false, onSwitchChanged)
+defineParameter("FillColor", nil, "rgb(255,255,255)")
+```
 
 ### Changing the Rotation of an Object
 
