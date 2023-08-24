@@ -18,7 +18,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 ## Animating and Modifying SVG Properties
 
-{{#include ./_Examples-Hint.md:plural}}
+{{#include ./_Excerpts.md:multiple-examples}}
 
 ### Example VST Preset
 

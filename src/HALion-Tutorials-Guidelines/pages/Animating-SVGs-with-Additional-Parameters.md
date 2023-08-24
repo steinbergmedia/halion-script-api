@@ -33,7 +33,7 @@ This integration empowers the manipulation of SVG elements and their subordinate
 
 ## Animating Additional SVG Parameters
 
-{{#include ./_Examples-Hint.md:singular}}
+{{#include ./_Excerpts.md:single-example}}
 
 ### Example VST Preset
 

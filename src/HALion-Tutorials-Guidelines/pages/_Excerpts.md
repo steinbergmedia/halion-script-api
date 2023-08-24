@@ -1,7 +1,7 @@
-// ANCHOR: plural
+// ANCHOR: multiple-examples
 The subsequent examples are presented solely as illustrative guides to kickstart your own solution-building process.
-// ANCHOR_END: plural
+// ANCHOR_END: multiple-examples
 
-// ANCHOR: singular
+// ANCHOR: single-example
 The subsequent example is presented solely as illustrative guide to kickstart your own solution-building process.
-// ANCHOR_END: singular
+// ANCHOR_END: single-example
