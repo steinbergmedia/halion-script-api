@@ -16,7 +16,7 @@ This custom popup menu can be extended to a custom multi-level menu: The templat
 
 Creating menus with this structure is very flexible and you can configure them freely in every detail. For example, you can reduce the available options by leaving them out. This structure also allows you to create menus that have a completely different look than standard menus. You can create menus with entries that are arranged in a circle or use icons instead of text, for example.
 
-This how-to demonstrates how to build a custom multi-level menu for the oscillator type of the synth oscillator.
+{{#include ./_Excerpts.md:custom-multi-level-menus}}
 
 >&#10069; The menu in the example below structures the oscillator types into four subgroups. If you want to show the oscillator types in a single list, please refer to [Custom Popup Menus](./Custom-Popup-Menus.md).
 
