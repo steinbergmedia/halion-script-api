@@ -14,7 +14,7 @@ The standard menu control can be used to control parameters offering a list of o
 
 This custom popup menu can be extended to a custom multi-level menu: The template for the first level of the menu provides exclusive switches that open further popup templates for the next level of the menu. The exclusive switches on the first level must be connected to the same Popup List variable. On the next level, the menu provides exclusive switches that are connected to the desired parameter.
 
-Creating menus with this structure is very flexible and you can configure them freely in every detail.  For example, you can reduce the available options by leaving them out. This structure also allows you to create menus that have a completely different look than standard menus. You can create menus with entries that are arranged in a circle or use icons instead of text, for example.
+Creating menus with this structure is very flexible and you can configure them freely in every detail. For example, you can reduce the available options by leaving them out. This structure also allows you to create menus that have a completely different look than standard menus. You can create menus with entries that are arranged in a circle or use icons instead of text, for example.
 
 This how-to demonstrates how to build a custom multi-level menu for the oscillator type of the synth oscillator.
 
