@@ -10,7 +10,9 @@
 
 ---
 
-By using SVGs as resources for the different states of a [Switch](../../HALion-Macro-Page/pages/Switch.md) control, you can facilitate state-specific animations to enhance the visibility of each state. The state-specific animations are defined in the SVG resource properties by using Lua expressions. The SVG resources to be animated require an [animation object](#adding-an-animation-object) that defines the duration and number of cycles for the animation. This integration enables the manipulation of SVG objects without necessitating the utilization of UI scripts. See [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details on using UI scripts for animations.
+By using SVGs as resources for the different states of a [Switch](../../HALion-Macro-Page/pages/Switch.md) control, you can facilitate state-specific animations to enhance the visibility of each state. The state-specific animations are defined by using Lua expressions in the resource properties of the SVG that is assigned to each state. The SVG resources to be animated require an [animation object](#adding-an-animation-object) that defines the duration and number of cycles for the animation. This integration enables the manipulation of SVG objects without necessitating the utilization of UI scripts.
+
+>&#10069; See [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details on using UI scripts for animations.
 
 ## Adding an Animation Object
 
