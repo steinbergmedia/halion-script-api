@@ -4,7 +4,7 @@
 
 {{#include _How-tos.md}} The how-tos often feature small code examples you can adapt for your scripts.
 
->&#10069; The minimum version for working through the how-tos is HALion 6.3.
+>&#10069; The minimum version for exploring the how-tos is HALion 6.3.
 
 * [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md)
 * [Custom Multi-Level Menus II](./Custom-Multi-Level-Menus-II.md)
