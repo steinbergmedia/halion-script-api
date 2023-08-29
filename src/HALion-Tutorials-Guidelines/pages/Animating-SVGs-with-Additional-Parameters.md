@@ -15,9 +15,11 @@
 ## Defining Additional SVG Parameters
 
  To define additional parameters, you must use a Lua expression with the V, N, or S variable extended by a name variable. {{#include ./_Lua-Expressions.md:paragraph1}}
+ 
+ {{#include ./_Lua-Expressions.md:paragraph2}}
 |**Name**|A definable name for the variable.|
 
-{{#include ./_Lua-Expressions.md:paragraph2}}
+{{#include ./_Lua-Expressions.md:paragraph3}}
 
 >**$(VName) | $(NName) | $(SName)**
 
