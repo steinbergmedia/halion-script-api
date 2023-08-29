@@ -328,6 +328,7 @@
     - [Multi-Level System Menus](./HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.md)
     - [Relative Paths](./HALion-Tutorials-Guidelines/pages/Relative-Paths.md)
     - [Switching Control Templates](./HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.md)
+    - [Using Mouse States in SVGs](./HALion-Tutorials-Guidelines/pages/Using-Mouse-States-in-SVGs.md)
     - [Working with Exported Variables](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Variables.md)
 - [Guidelines](./HALion-Tutorials-Guidelines/pages/Guidelines.md)
     - [HS Preset Guideline](./HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.md)
