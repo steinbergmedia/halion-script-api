@@ -42,7 +42,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Knob|``fill``|``rgb(0,0,0)``|
+|Knob|fill|``rgb(0,0,0)``|
 
 **Description:** Static color, in this case black. The original color of the control was green.
 
@@ -52,7 +52,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Knob|``fill``|``rgb($(math.floor((1-N)*255)),0,0)``|
+|Knob|fill|``rgb($(math.floor((1-N)*255)),0,0)``|
 
 **Description:** The normalized value (0 to 1.0) of the control scales the red channel from 255 to 0. This creates a fade from red to black.
 
@@ -62,7 +62,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Knob|``fill``|``rgb($(math.floor(N*255)),$(math.floor(N*255)),$(math.floor(N*255)))``|
+|Knob|fill|``rgb($(math.floor(N*255)),$(math.floor(N*255)),$(math.floor(N*255)))``|
 
 **Description:** The normalized value (0 to 1.0) of the control scales all channels from 0 to 255. This creates a fade from black to white.
 
@@ -72,7 +72,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Knob|``fill``|``hsla (220,75%,62%,$(1-N))``|
+|Knob|fill|``hsla (220,75%,62%,$(1-N))``|
 
 **Description:** The normalized value of the control scales the opacity from 1.0 to 0.
 
@@ -82,7 +82,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Stern|``fill``|``$(SColor)``|
+|Stern|fill|``$(SColor)``|
 
 **Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details. The following script switches between two colors.
 
@@ -107,7 +107,7 @@ defineParameter("FillColor", nil, "rgb(255,255,255)")
 
 |ID|Property|Value|
 |:-|:-|:-|
-|LineMain|``transform``|``rotate(180,32,32)``|
+|LineMain|transform|``rotate(180,32,32)``|
 
 **Description:** The object is rotated by a fixed amount of 180 degrees around the center at x,y = 32,32 pixels. In this case, the scale is turned up side down.
 
@@ -117,7 +117,7 @@ defineParameter("FillColor", nil, "rgb(255,255,255)")
 
 |ID|Property|Value|
 |:-|:-|:-|
-|KnobLine|``transform``|``rotate($(-135+N*270),32,32)``|
+|KnobLine|transform|``rotate($(-135+N*270),32,32)``|
 
 **Description:** A knob control rotates the object by 270 degrees with a start offset of -135 degrees, around the center at x,y = 32,32 pixels. In this case, the indicator of the control is rotated displaying the current value.
 
@@ -129,7 +129,7 @@ defineParameter("FillColor", nil, "rgb(255,255,255)")
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Circle|``transform``|``translate(-0.5,0.5)``|
+|Circle|transform|``translate(-0.5,0.5)``|
 
 **Description:** The upper left corner of the object is moved by a fixed amount, -0.5 pixels down and 0.5 pixels to the right. Here, it places the handle of the slider at the correct position.
 
@@ -141,6 +141,6 @@ defineParameter("FillColor", nil, "rgb(255,255,255)")
 
 |ID|Property|Value|
 |:-|:-|:-|
-|Path|``d``|``M 0 9.5 L $(N*100) 9.5``|
+|Path|d|``M 0 9.5 L $(N*100) 9.5``|
 
 **Description:** Draws a vertical line using the normalized value of the control.
