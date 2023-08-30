@@ -31,7 +31,7 @@ Before you can define the animation in the SVG resource properties, you must add
 
 In this example, one cycle of the animation takes 1 second and the animation is played for 200 cycles. The settings should be sufficient to keep the animation running, even if you hover the mouse over the switch for a longer time, for example. Depending on the application of your animation, you can increase or decrease these values.
 
-|Variable|Description|Type|
+|Property|Description|Type|
 |:-|:-|:-|
 |**duration**|This property defines how long it takes to play one cycle of the animation in seconds.|float|
 |**cycles**| This property defines how often the animation is played. The minimum number of cycles must be greater 0.|integer|
