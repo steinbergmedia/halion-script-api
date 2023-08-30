@@ -16,7 +16,7 @@ For most applications, standard menus are well suited to select options from a l
 
 Please see the example below for details.
 
->&#10069; This how-to demonstrates multi-level menus using the generic look of the operating system. If you want to create menus with a customized look, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md) and [Custom Popup Menus](./Custom-Popup-Menus.md).
+>&#10069; This how-to demonstrates multi-level menus using the generic look of the operating system. If you want to create menus with a customized look, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md), [Custom Multi-Level Menus II](./Custom-Multi-Level-Menus-II.md) or [Custom Popup Menus](./Custom-Popup-Menus.md).
 
 ## Example VST Preset
 
