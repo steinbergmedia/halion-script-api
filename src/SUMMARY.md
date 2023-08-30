@@ -9,7 +9,7 @@
     - [What is HALion Script?](./HALion-Script/pages/What-is-HALion-Script.md)
     - [Exploring the Code Examples](./HALion-Script/pages/Exploring-the-Code-Examples.md)
     - [Lua Syntax Highlighting](./HALion-Script/pages/Lua-Syntax-Highlighting.md)
-- [Advanced Topics](./HALion-Script/pages/Advanced-Topics.md)
+- [Diving Deeper](./HALion-Script/pages/Diving-Deeper.md)
     - [Working with Objects](./HALion-Script/pages/Working-with-Objects.md)
     - [Working with UI Scripts](./HALion-Script/pages/Working-with-UI-Scripts.md)
     - [Threads in HALion](./HALion-Script/pages/Threads-in-HALion.md)
