@@ -66,6 +66,8 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 
 **Description:** The normalized value (0 to 1.0) of the control scales all channels from 0 to 255. This creates a fade from black to white.
 
+>&#10069; rgb values must be integer values, therefore ``math.floor`` is used in the examples above.
+
 #### Knob Opacity
 
 **Resource:** Knob11_Scale2_Blue_1.
@@ -143,4 +145,4 @@ defineParameter("FillColor", nil, "rgb(255,255,255)")
 |:-|:-|:-|
 |Path|d|``M 0 9.5 L $(N*100) 9.5``|
 
-**Description:** Draws a vertical line using the normalized value of the control.
+**Description:** Draws a horizontal line using the normalized value of the control.
