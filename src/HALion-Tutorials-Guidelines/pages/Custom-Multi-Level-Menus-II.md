@@ -61,10 +61,11 @@ The Selector template contains the elements which are required to open the [Root
 
 #### UI Variables
 
-|Variable|Description|Type|Range|
-|:-|:-|:-|:-:|
-|**sel**|This variable is used by all menu entries of the popup menu. ``sel`` is exported as 'Value' and combined with the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control. Through this the currently selected value of the connected engine parameter will be displayed.|Integer|0 - 100|
+|Variable|Description|Type|
+|:-|:-|:-|
+|**sel**|This variable is used by all menu entries of the popup menu. ``sel`` is exported as 'Value' and combined with the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control. Through this the display string of the currently selected value of the connected engine parameter will be displayed.|Integer|
 
+>&#10069; For further information about exported variables, see [Working with Exported Variables](./Working-with-Exported-Variables.md).
 
 #### Controls and Subtemplates
 
