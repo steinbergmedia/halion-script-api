@@ -63,7 +63,7 @@ The Selector template contains the elements which are required to open the [Root
 
 |Variable|Description|Type|
 |:-|:-|:-|
-|**sel**|This variable is used by all menu entries of the popup menu. ``sel`` is exported as 'Value' and combined with the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control. Through this the display string of the currently selected value of the connected engine parameter will be displayed.|Integer|
+|**sel**|This variable is used by all menu entries of the popup menu. ``sel`` is exported as 'Value' and combined with the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control.  Through this the display string of the connected engine parameter will be displayed instead of the integer value.|Integer|
 
 >&#10069; For further information about exported variables, see [Working with Exported Variables](./Working-with-Exported-Variables.md).
 
@@ -72,7 +72,7 @@ The Selector template contains the elements which are required to open the [Root
 |Element|Description|
 |:-|:-|
 |**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control that opens the popup menu. Its Popup Template property is exported as 'Popup'. This allows you to select which popup menu to open for each instance of the Selector template.|
-|**Text**|A [Text](../../HALion-Macro-Page/pages/Text.md) control for displaying the selected parameter value. Its Value property is exported as 'Value' and combined with the ``sel`` variable.|
+|**Text**|A [Text](../../HALion-Macro-Page/pages/Text.md) control for displaying the display string of the connected engine parameter. This is achieved by exporting the Value property as 'Value'. Since the ``sel`` UI variable is also exported as 'Value', both are combined into one template parameter, creating the interface for connecting the engine parameter.|
 |**Triangle**|An [Image](../../HALion-Macro-Page/pages/Image.md) control to indicate that a popup menu can be opened.|
 |**Decor**|A [Decor](../../HALion-Macro-Page/pages/Decor-Control.md) control used as background.|
 |**Label**|A [Label](../../HALion-Macro-Page/pages/Label.md) control for displaying the name of the connected parameter. Its Text property is exported as 'Label'. This allows you to name the Selector template differently for each instance.|
@@ -131,4 +131,4 @@ This template represents one entry in the [Submenu](#submenu) template. It consi
 |Element|Description|
 |:-|:-|
 |**Label**|A [Label](../../HALion-Macro-Page/pages/Label.md) control to display the name of the menu entry. Its Text property is exported as 'Label'. This allows you to name the template differently for each instance.|
-|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with exclusive mode. The OnValue property is exported to be set by each instance of the template. See [Submenu](#submenu) for details. The Value property must be set to `@sel`, the [UI variable](#ui-variables) of the [Selector](#selector) template. the OnValue will be sent to the Value parameter which is sent to the ``sel`` variable. Through this the currently selected value of the connected engine parameter will be sent to the [Selector](#selector) template and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.|
+|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with exclusive mode. The OnValue property is exported to be set by each instance of the template. See [Submenu](#submenu) for details. The Value property must be set to `@sel`, the [UI variable](#ui-variables) of the [Selector](#selector) template. The OnValue will be sent to the Value parameter which is sent to the ``sel`` variable. Through this the currently selected value will be sent to the [Selector](#selector) template which is connected to the engine parameter and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.|
