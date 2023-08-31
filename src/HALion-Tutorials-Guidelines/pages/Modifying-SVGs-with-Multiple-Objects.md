@@ -10,44 +10,61 @@
 
 ---
 
-If an SVG contains more than one object, their properties can also be changed.
-
-1. Click the + button in the Objects line to add another object
-1. Set the ID of the second object.
-1. Set the properties of the object.
-
-The example below demonstrates how to build a checkbox. {{#include ./_Excerpts.md:single-example}}
-
-## Prerequisites.
-
-* A program with a macro page.
 
 ## Creating a Checkbox Control
 
-1. Create an SVG file, for example in Affinity Designer.
+The example below demonstrates how to build a checkbox with two states, the off-state and on-state, from a single SVG file.
+
+### Creating a SVG file
+
+Before you can build the checkbox in HALion, you need an SVG file with the representation of a typical checkbox, e.g. two concentric circles.
+
+1. Create an SVG file, for example with [Inkscape](https://inkscape.org/), an open source SVG editor.
+2. Add two concentric circles and name them 'Back' for the background of the checkbox and 'Check' for the dot that indicates the checked state.
 
 ![Modifying SVGs with Multiple Objects Checkbox](../images/Modifying-SVGs-with-Multiple-Objects-Checkbox.png)
 
-1. Add two circles and name them 'Back' for the background of the checkbox and 'Check' for the dot that indicates the checked state.
-
-If you open the SVG file in a text editor this might look similar to this:
+By viewing SVG files in a text editor you gain insight about the available objects and their values. If you open the SVG file in a text editor, it might look like this:
 
 ![Modifying SVGs with Multiple Objects Text Editor](../images/Modifying-SVGs-with-Multiple-Objects-Text-Editor.png)
 
-1. Add an SVG resource in the **Resources Tree** and set the Path to the SVG file.
+3. In HALion, open the Macro Page Designer, add an SVG resource in the **Resources Tree** and set the Path to the SVG file.
 
-In this example, the added SVG resource is named 'SVG original' and looks like it was designed in Affinity Designer.
+In this example, the added [SVG](../../HALion-Macro-Page/pages/SVG.md) resource is named 'SVG original' and looks the same as in the SVG editor.
 
-To create the two states of the checkbox:
+![Modifying SVGs with Multiple Objects Original](../images/Modifying-SVGs-with-Multiple-Objects-Original.png)
 
-1. Duplicate the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource two times and name them 'SVG Checkbox Off' and 'SVG Checkbox On'.
-1. In the SVG Checkbox Off resource, adapt the look to your liking. In this example, Back is set to ``fill`` and ``orange`` and Check is set to ``fill`` and ``rgba (0,0,0,0.4)`` which is black with an opacity of 40%.
+### Adding Objects
+
+To edit the objects, you must enter the ID of the object, the property you wish to change and the corresponding values. If an SVG file contains more than one object, these objects and their properties can be added for further editing like this.
+
+1. Go to the **Resource Tree** and select the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource your want to edit.
+1. In the **Objects** line, click **+**.
+1. Set the **ID** of the additional object.
+1. Set the properties and values of the object.
+
+### Creating Multiple Checkbox States
+
+#### Prerequisites.
+
+* A program with a macro page.
+
+#### Creating the Checkbox States
+
+1. Duplicate the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource 'SVG original' and name it 'SVG Checkbox Off'.
+2. In the 'SVG Checkbox Off' resource, add the objects 'Back' and 'Check' as described above in [Adding Objects](#adding-objects).
+3. Adapt the look to your liking. In this example, 'Back' is set to ``fill`` and ``orange`` and 'Check' is set to ``fill`` and ``rgba (0,0,0,0.4)`` which is black with an opacity of 40 %.
 
 ![Modifying SVGs with Multiple Objects Off](../images/Modifying-SVGs-with-Multiple-Objects-Off.png)
 
-1. In the SVG Checkbox On resource, set the ``fill`` property of the Check circle to ``black``.
+4. Duplicate the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource 'SVG Checkbox Off' and name it 'SVG Checkbox On'.
+5. In the 'SVG Checkbox On' resource, set the ``fill`` property of the 'Check' circle to ``black``.
 
 ![Modifying SVGs with Multiple Objects On](../images/Modifying-SVGs-with-Multiple-Objects-On.png)
 
-Now, you have two resources that can be used for the On and Off [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resources of a switch.
-Of course, you can derive other variants to implement additional hover state resources, for example.
+6. In the **GUI Tree**, add a [Switch](../../HALion-Macro-Page/pages/Switch.md) control and set its Mode to 'onoff'.
+7. Assign the 'SVG Checkbox Off' and 'SVG Checkbox On' resources to the Bitmaps Off and On respectively.
+
+![Modifying SVGs with Multiple Objects Switch](../images/Modifying-SVGs-with-Multiple-Objects-Switch.png)
+
+If you want, you can create more variants to implement additional hover-state resources, for example.
