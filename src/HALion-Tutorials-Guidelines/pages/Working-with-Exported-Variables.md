@@ -18,9 +18,13 @@ In this example, there is one exported UI variable. Look for the the ``sel`` UI 
 
 ![Working with Exported Variables sel Variable](../images/Working-with-Exported-Variables-sel-Variable.png)
 
-Within the [Selector](#selector) template the ``sel`` UI variable and the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control are exported both as 'Value'. This creates the interface for connecting the engine parameter, the oscillator type of Zone 1 in this case.
+Within the [Selector](#selector) template the ``sel`` UI variable and the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control are exported both as 'Value'. This creates the interface for connecting the engine parameter, the oscillator type of Zone 1 in this case. The [Switch](../../HALion-Macro-Page/pages/Switch.md) control inside the [Selector](#selector) template is only used to open the [Menu](#menu) template. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the values you can select.
 
 ![Working with Exported Variables GUI Tree](../images/Working-with-Exported-Variables-GUI-Tree.png)
+
+The Popup parameter of the [Selector](#selector) template is defined to open the [Menu](#menu) template. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the values you can select.
+
+![Working with Exported Variables Menu](../images/Working-with-Exported-Variables-Menu.png)
 
 The Value property of the [MenuEntry](#menuentry) template has the ``sel`` UI variable assigned. Through this the currently selected value will be sent to the [Selector](#selector) template which is connected to the engine parameter and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.
 
@@ -40,7 +44,7 @@ The Value property of the [MenuEntry](#menuentry) template has the ``sel`` UI va
 
 ## Single-Level Popup Menu
 
-The single-level popup menu is implemented through a combination of a Selector, a Menu and a MenuEntry template. The Selector template opens the Menu template for selecting the values and contains the controls for displaying the display string of the connected engine parameter. The Menu template contains four MenuEntry templates which represent the values you can select.
+The single-level popup menu is implemented through a combination of a [Selector](#selector), a [Menu](#menu) and a [MenuEntry](#menuentry) template. The [Selector](#selector) template opens the [Menu](#menu) template for selecting the values and contains the controls for displaying the display string of the connected engine parameter. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the selectable the values.
 
 ## How the Elements Interact
 
