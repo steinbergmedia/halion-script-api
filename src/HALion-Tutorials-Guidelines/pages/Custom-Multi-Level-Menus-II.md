@@ -10,7 +10,7 @@
 
 ---
 
-This how-to describes another way to build custom popup menus. The solution shown can be used to build single-level or multi-level popup menus.
+This how-to describes another way to build custom popup menus. The solution shown can be used to build single-level or multi-level popup menus. An example of a single-level popup menu can be found in [Working with Exported Variables](./Working-with-Exported-Variables.md).
 
 {{#include ./_Excerpts.md:custom-multi-level-menus}}
 
@@ -79,7 +79,7 @@ The Selector template contains the elements which are required to open the [Root
 
 ### RootMenu
 
-The RootMenu template displays when clicking the Selector on the macro page. It defines the menu entries and opens the assigned [Submenu](#submenu) templates when navigating through the menu. 
+The RootMenu template displays when clicking the selector on the macro page. It defines the menu entries and opens the assigned [Submenu](#submenu) templates when navigating through the menu. 
 
 ![Custom Multi-Level Menus II RootMenu](../images/Custom-Multi-Level-Menus-II-RootMenu.png)
 
@@ -87,7 +87,7 @@ The RootMenu template displays when clicking the Selector on the macro page. It 
 
 |Variable|Description|Type|Range|
 |:-|:-|:-|:-|
-|**submenus**|This Popup List variable is required to assign the [Submenu](#submenu) templates to the entries of the RootMenu template. The entries in the Popup List correspond to the names of the [Submenu](#submenu) templates to be opened when navigating through the menu.|String|Menu_Standard, Menu_Sync, Menu_Crossmod, Menu_XOR|
+|**submenus**|This Popup List variable is required to assign the [Submenu](#submenu) templates to the entries of the RootMenu template. The entries in the Popup List correspond to the names of the [Submenu](#submenu) templates to be opened when navigating through the menu. The Popup List variable opens the assigned [Submenu](#submenu) template, when it receives the OnValue of the corresponding [RootMenuEntry](#rootmenuentry) template.|String|Menu_Standard, Menu_Sync, Menu_Crossmod, Menu_XOR|
 
 ![Custom Multi-Level Menus II PopupListVariable](../images/Custom-Multi-Level-Menus-II-PopupListVar.png)
 
@@ -95,7 +95,7 @@ The RootMenu template displays when clicking the Selector on the macro page. It 
 
 |Element|Description|
 |:-|:-|
-|**Standard, Sync, Crossmod, XOR**|These represent the four entries of the menu. They use the [RootMenuEntry](#rootmenuentry) template which defines the look and functionality of an entry. The Value parameter of all [RootMenuEntry](#rootmenuentry) templates must be set to ``@submenus``. The OnValue parameters of the specific [RootMenuEntry](#rootmenuentry) templates must be set to the index of the corresponding entry in the Popup List. The Label parameter defines the name of the entry to be displayed.|
+|**Standard, Sync, Crossmod, XOR**|These represent the four entries of the menu. They use the [RootMenuEntry](#rootmenuentry) template which defines the look and functionality of an entry. The Value parameter of all [RootMenuEntry](#rootmenuentry) templates must be set to ``@submenus``. The OnValue parameters of the specific [RootMenuEntry](#rootmenuentry) templates must be set to the index of the corresponding entry in the Popup List variable. The OnValue will be sent to the Value parameter which is sent to the ``submenu`` Popup List variable which opens the corresponding [RootMenuEntry](#rootmenuentry) template. The Label parameter defines the name of the entry to be displayed in the menu.|
 
 ### RootMenuEntry
 
@@ -108,17 +108,17 @@ This template represents one entry in the [RootMenu](#rootmenu) template. It con
 |Element|Description|
 |:-|:-|
 |**Label**|A [Label](../../HALion-Macro-Page/pages/Label.md) control to display the name of the menu entry. Its Text property is exported as 'Label'. This allows you to name the template differently for each instance.|
-|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with hover exclusive mode which sends its OnValue when the mouse is above the menu entry. The OnValue and Value properties are exported to be set by each instance of the template.|
+|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with hover exclusive mode which sends its OnValue when the mouse is above the menu entry. The OnValue and Value properties are exported to be set by each instance of the template. See [RootMenu](#rootmenu) for details.|
 
 ### Submenu
 
-There are four submenu templates in the Template List: Menu_Standard, Menu_Sync, Menu_Crossmod, and Menu_XOR. Each Submenu template contains four MenuEntry templates that define the entries of the submenu.
+There are four submenu templates in the Template List: Menu_Standard, Menu_Sync, Menu_Crossmod, and Menu_XOR. Each Submenu template contains four [MenuEntry](#menuentry) templates that define the entries of the submenu.
 
 ![Custom Multi-Level Menus II Menu_Standard](../images/Custom-Multi-Level-Menus-II-Menu_Standard.png)
 
 |Element|Description|
 |:-|:-|
-|**Sine, Triangle,Saw, Square**|These represent the four entries of the submenu. They use the [MenuEntry](#menuentry) template which defines the look and functionality of an entry. The OnValue parameter of each [MenuEntry](#rootmenuentry) template must be set to the corresponding value of the engine parameter it selects. This value will be sent to the `sel` variable. See [MenuEntry](#rootmenuentry) and [Selector/UI Variables](#ui-variables) for details. The Label parameter defines the name of the entry to be displayed.|
+|**Sine, Triangle,Saw, Square**|These represent the four entries of the submenu. They use the [MenuEntry](#menuentry) template which defines the look and functionality of an entry. The OnValue parameter of each [MenuEntry](#rootmenuentry) template must be set to the corresponding value of the engine parameter it selects. This value will be sent to the `sel` variable. See [MenuEntry](#rootmenuentry) and [Selector/UI Variables](#ui-variables) for details. The Label parameter defines the name of the entry to be displayed in the menu.|
 
 ### MenuEntry
 
@@ -131,4 +131,4 @@ This template represents one entry in the [Submenu](#submenu) template. It consi
 |Element|Description|
 |:-|:-|
 |**Label**|A [Label](../../HALion-Macro-Page/pages/Label.md) control to display the name of the menu entry. Its Text property is exported as 'Label'. This allows you to name the template differently for each instance.|
-|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with hover exclusive mode which sends its OnValue when the mouse is above the menu entry. The OnValue property is exported to be set by each instance of the template. The Value property must be set to `@sel`, the [UI variable](#ui-variables) of the [Selector](#selector) template. Through this the currently selected value of the connected engine parameter will be displayed by the [Selector](#selector) template.|
+|**Switch**|A [Switch](../../HALion-Macro-Page/pages/Switch.md) control with exclusive mode. The OnValue property is exported to be set by each instance of the template. See [Submenu](#submenu) for details. The Value property must be set to `@sel`, the [UI variable](#ui-variables) of the [Selector](#selector) template. the OnValue will be sent to the Value parameter which is sent to the ``sel`` variable. Through this the currently selected value of the connected engine parameter will be sent to the [Selector](#selector) template and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.|
