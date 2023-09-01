@@ -12,25 +12,11 @@
 
 UI variables can be defined within any template. The UI variables inside a template can be used to connect multiple controls, for example. By exporting the value of a property and the UI variable itself to the same template parameter, you create an interface for connecting engine parameters outside of the template to the property and UI variable within the template. The subsequent example illustrates this with a single-level popup menu. An example of a multi-level popup menu using an exported variable can be found in [Custom Multi-Level Menu II](./Custom-Multi-Level-Menus-II.md).
 
-## Overview
+## Single-Level Popup Menu
 
-In this example, there is one exported UI variable. Look for the the ``sel`` UI variable inside the [Selector](#selector) template.
+The single-level popup menu is implemented through a combination of a [Selector](#selector), a [Menu](#menu) and a [MenuEntry](#menuentry) template. The [Selector](#selector) template opens the [Menu](#menu) template for selecting the values and contains the controls for displaying the display string of the connected engine parameter. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the selectable the values.
 
-![Working with Exported Variables sel Variable](../images/Working-with-Exported-Variables-sel-Variable.png)
-
-Within the [Selector](#selector) template the ``sel`` UI variable and the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control are exported both as 'Value'. This creates the interface for connecting the engine parameter, the oscillator type of Zone 1 in this case. The [Switch](../../HALion-Macro-Page/pages/Switch.md) control inside the [Selector](#selector) template is only used to open the [Menu](#menu) template. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the values you can select.
-
-![Working with Exported Variables GUI Tree](../images/Working-with-Exported-Variables-GUI-Tree.png)
-
-The Popup parameter of the [Selector](#selector) template is defined to open the [Menu](#menu) template. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the values you can select.
-
-![Working with Exported Variables Menu](../images/Working-with-Exported-Variables-Menu.png)
-
-The Value property of the [MenuEntry](#menuentry) template has the ``sel`` UI variable assigned. Through this the currently selected value will be sent to the [Selector](#selector) template which is connected to the engine parameter and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.
-
-![Working with Exported Variables MenuEntry](../images/Working-with-Exported-Variables-MenuEntry.png)
-
-## Example VST Preset
+### Example VST Preset
 
 * [Working with Exported Variables.vstpreset](../vstpresets/Working%20with%20Exported%20Variables.vstpreset)
 
@@ -42,9 +28,23 @@ The Value property of the [MenuEntry](#menuentry) template has the ``sel`` UI va
 1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
-## Single-Level Popup Menu
+### Overview
 
-The single-level popup menu is implemented through a combination of a [Selector](#selector), a [Menu](#menu) and a [MenuEntry](#menuentry) template. The [Selector](#selector) template opens the [Menu](#menu) template for selecting the values and contains the controls for displaying the display string of the connected engine parameter. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the selectable the values.
+In this example, there is one exported UI variable. Look for the the ``sel`` UI variable inside the [Selector](#selector) template.
+
+![Working with Exported Variables sel Variable](../images/Working-with-Exported-Variables-sel-Variable.png)
+
+Within the [Selector](#selector) template the ``sel`` UI variable and the Value property of the [Text](../../HALion-Macro-Page/pages/Text.md) control are exported both as 'Value'. This creates the interface for connecting the engine parameter, the oscillator type of Zone 1 in this case.
+
+![Working with Exported Variables GUI Tree](../images/Working-with-Exported-Variables-GUI-Tree.png)
+
+The Popup parameter of the [Selector](#selector) template is defined to open the [Menu](#menu) template. The [Menu](#menu) template contains four [MenuEntry](#menuentry) templates which represent the values you can select.
+
+![Working with Exported Variables Menu](../images/Working-with-Exported-Variables-Menu.png)
+
+The Value property of the [MenuEntry](#menuentry) template has the ``sel`` UI variable assigned. Through this the currently selected value will be sent to the [Selector](#selector) template which is connected to the engine parameter and the [Text](../../HALion-Macro-Page/pages/Text.md) control within the [Selector](#selector) template shows the display string of the engine parameter.
+
+![Working with Exported Variables MenuEntry](../images/Working-with-Exported-Variables-MenuEntry.png)
 
 ## How the Elements Interact
 
