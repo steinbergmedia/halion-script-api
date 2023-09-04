@@ -16,7 +16,7 @@ This how-to demonstrates how to build a custom popup menu for the ocillator type
 
 ![Custom Popup Menu Opened](../images/Custom-Popup-Menu-Opened.png)
 
->&#10069; The menu in the example below shows all oscillator types in a long list. If you want to create a menu with mutiple levels, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md) or [Multi-Level System Menus](./Multi-Level-System-Menus.md).
+>&#10069; The menu in the example below shows all oscillator types in a long list. If you want to create a menu with mutiple levels, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md), [Custom Multi-level Menus II](./Custom-Multi-Level-Menus-II.md) or [Multi-Level System Menus](./Multi-Level-System-Menus.md).
 
 >&#10069; HALion 7 introduced another method for creating custom popup menus making use of exported variables. See [Working with Exported Variables](./Working-with-Exported-Properties.md) for details.
 

@@ -22,6 +22,14 @@ Please see the example below for details.
 
 [Multi-Level System Menu.vstpreset](../vstpresets/Multi-Level%20System%20Menu.vstpreset)
 
+![Multi-Level System Menu](../images/Multi-Level-System-Menu.png)
+
+**To explore the templates in this example:**
+
+1. Load [Multi-Level System Menu.vstpreset](../vstpresets/Multi-Level%20System%20Menu.vstpreset).
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
 ## Prerequisites
 
 * A macro page with a [Menu](../../HALion-Macro-Page/pages/Menu.md), a [Text](../../HALion-Macro-Page/pages/Text.md), and a [Label](../../HALion-Macro-Page/pages/Label.md) control, optionally combined as a template.
