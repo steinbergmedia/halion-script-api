@@ -44,8 +44,8 @@ These variables are needed to allow the communication between the [Animation](./
 
 |Variable|Description|Type|Range|
 |:-|:-|:-|:-|
-|**Frames**|An integer variable to connect the Out parameter of the Animation Script Template with the Value of the [Animation](./Animation.md) control.|
-|**On**|An integer variable to connect the On parameter of the Animation Script Template with the Play button.|
+|**Frames**|A float variable to connect the Out parameter of the Animation Script Template with the Value of the [Animation](./Animation.md) control.|float|0 - 1.0|
+|**On**|An integer variable to connect the On parameter of the Animation Script Template with the Play button.|integer|0 - 1|
 
 ### Controls and Subtemplates
 

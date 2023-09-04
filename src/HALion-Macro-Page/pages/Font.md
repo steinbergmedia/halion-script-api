@@ -8,7 +8,7 @@ Font resources are used to define different text styles which are referenced by 
 
 Each resource specifies which of the system fonts (available for both Mac and PC) are used, which font size, color, alpha channel value, and style (bold, italic, underlined). If you want to use a custom truetype font, you can specify this truetype font file in the custom font field. Even when you are working with custom fonts, it is still good practice to specify a system font to function as fallback solution for characters that might not exist in a specific truetype font.
 
->&#10069; When distributing content sets that include TrueType fonts, only include those fonts that can be freely distributed. Do not include fonts that need to be licensed.
+>&#10069; When distributing libraries that include TrueType fonts, only include those fonts that can be freely distributed. Do not include fonts that need to be licensed.
 
 >&#10069; TrueType fonts must be based on Unicode tables to work correctly.
 

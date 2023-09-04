@@ -1,5 +1,5 @@
 // ANCHOR: description
-A decor can be drawn as an outline, a filled, or a combined rectangle. The fill style can either be a solid color, a linear gradient, or a radial gradient. Furthermore, the rectangle can have rounded corners with an adjustable radius.
+The rectangular shape can be drawn as an outline, filled, or both. The fill style can either be a solid color, a linear gradient, or a radial gradient. Furthermore, the rectangle can have rounded corners with an adjustable radius.
 // ANCHOR_END: description
 
 // ANCHOR: properties
