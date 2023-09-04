@@ -291,6 +291,10 @@
 <tr><td style="text-align: left"><strong>Switch</strong></td><td style="text-align: left">A <a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a> control with exclusive mode. The OnValue property is exported to be set by each instance of the template. See <a href="#submenu">Submenu</a> for details. The Value property must be set to <code>@sel</code>, the <a href="#ui-variables">UI variable</a> of the <a href="#selector">Selector</a> template. The OnValue will be sent to the Value parameter which is sent to the <code>sel</code> variable. Through this the currently selected value will be sent to the <a href="#selector">Selector</a> template which is connected to the engine parameter and the <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> control within the <a href="#selector">Selector</a> template shows the display string of the engine parameter.</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p>❕ Popup menus can only be displayed within the dimensions of the macro page. If a popup menu is too large, it will be clipped. To prevent this, you can either change the direction in which the popup menu opens, e.g., open it to the top instead of to the bottom, or you can change the size of the template, so that it fits, and then activate the scrollbar to be able to scroll to the available entries.</p>
+</blockquote>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
