@@ -18,9 +18,19 @@ This how-to demonstrates how to build a custom popup menu for the ocillator type
 
 >&#10069; The menu in the example below shows all oscillator types in a long list. If you want to create a menu with mutiple levels, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md) or [Multi-Level System Menus](./Multi-Level-System-Menus.md).
 
+>&#10069; HALion 7 introduced another method for creating custom popup menus making use of exported variables. See [Working with Exported Variables](./Working-with-Exported-Properties.md) for details.
+
 ## Example VST Preset
 
 * [Custom Popup Menus.vstpreset](../vstpresets/Custom%20Popup%20Menus.vstpreset)
+
+![Custom Popup Menus](../images/Custom-Popup-Menus.png)
+
+**To explore the templates in this example:**
+
+1. Load [Custom Popup Menus.vstpreset](../vstpresets/Custom%20Popup%20Menus.vstpreset).
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
 ## Prerequisites
 * A program with a synth zone and a macro page.
@@ -86,4 +96,4 @@ This [Switch](../../HALion-Macro-Page/pages/Switch.md) control provides the hove
 
 This [Image](../../HALion-Macro-Page/pages/Image.md) control displays the gray background for an entry.
 
->&#10069; Popup menus can only be displayed within the dimensions of the macro page. If a popup menu is too large, it will be clipped. To remedy this, you can either change the direction in which the popup menu opens, for example, open it to the top instead of to the bottom, or you can change the size of the template, so that it fits, and then activate the scrollbar to be able to scroll to the available entries.
+{{#include ./_Excerpts.md:popup-menus}}

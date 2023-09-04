@@ -20,9 +20,19 @@ Creating menus with this structure is very flexible and you can configure them f
 
 >&#10069; The menu in the example below structures the oscillator types into four subgroups. If you want to show the oscillator types in a single list, please refer to [Custom Popup Menus](./Custom-Popup-Menus.md).
 
+>&#10069; HALion 7 introduced another method for creating custom multi-level menus. See [Custom Multi-Level Menus II](./Custom-Multi-Level-Menus-II.md) for details.
+
 ## Example VST Preset
 
 * [Custom Multi-Level Menus.vstpreset](../vstpresets/Custom%20Multi-Level%20Menus.vstpreset)
+
+![Custom Multi-Level Menus](../images/Custom-Multi-Level-Menus.png)
+
+**To explore the templates in this example:**
+
+1. Load [Custom Multi-Level Menus.vstpreset](../vstpresets/Custom%20Multi-Level%20Menus.vstpreset).
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
 ## Prerequisites
 
@@ -33,7 +43,7 @@ Creating menus with this structure is very flexible and you can configure them f
 * A [SubMenu_1, 2, 3, 4](#submenu_1-2-3-4) template for each second level menu.
 * A [MenuEntry](#menuentry) template for creating the entries of the second level menu.
 
-![Custom-Multi-Level-Menu-Templates](../images/Custom-Multi-Level-Menu-Templates.png)
+![Custom Multi-Level Menu Templates](../images/Custom-Multi-Level-Menu-Templates.png)
 
 ## How the Elements Interact
 
@@ -86,6 +96,10 @@ This template represents one entry of the root menu. It consists of four element
 
 This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a open menu triangle.
 
+#### Text
+
+This [Text](../../HALion-Macro-Page/pages/Text.md) control displays the name of the entry. The Style of the control is set to Read-Only so that the text cannot be edited. The Value of the text is exported and the name is set to MenuText on the template level.
+
 #### Switch
 
 This [Switch](../../HALion-Macro-Page/pages/Switch.md) control uses the hover exclusive mode to open the respective submenu template when you hover over an entry. Since it is combined with a background image and a text, the switch itself does not require any graphics. To open the submenu template, the properties of the switch must be set to the following values:
@@ -99,10 +113,6 @@ This [Switch](../../HALion-Macro-Page/pages/Switch.md) control uses the hover ex
 |Placement|Place Right, Place Below|
 |Bmp On|MenuHover|
 |Onvalue|Exported to the template level.|
-
-#### Text
-
-This [Text](../../HALion-Macro-Page/pages/Text.md) control displays the name of the entry. The Style of the control is set to Read-Only so that the text cannot be edited. The Value of the text is exported and the name is set to MenuText on the template level.
 
 #### Image
 
@@ -123,7 +133,7 @@ for the Sine oscillator or
 
 |Parameter|Value|
 |:-|:-|
-|MenuText|Sine|
+|MenuText|Sine Sync|
 |OnValue|4|
 |Value|@0:Zone 1/@id:b0001|
 
@@ -155,4 +165,4 @@ This [Switch](../../HALion-Macro-Page/pages/Switch.md) control uses the exclusiv
 
 This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a background picture for the entry.
 
->&#10069; Popup menus can only be displayed within the dimensions of the macro page. If a popup menu is too large, it will be clipped. To remedy this, you can either change the direction in which the popup menu opens, for example, open it to the top instead of to the bottom, or you can change the size of the template, so that it fits, and then activate the scrollbar to be able to scroll to the available entries.
+{{#include ./_Excerpts.md:popup-menus}}
