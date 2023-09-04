@@ -14,7 +14,7 @@
 
 ## Description
 
-The Mixer Channel template contains all necessary controls for the parameters of a bus. The controls are connected by corresponding UI variables. To guarantee the operation of the controls the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page.
+The Mixer Channel template contains all necessary controls for the parameters of a bus. The controls are connected by corresponding UI variables. To ensure the operation of the controls the preconfigured properties must not be modified. The look and the size of the controls can be modified freely including their ressources. Controls that are not needed for your instrument can be omitted on your macro page.
 
 **To explore the functionality and connections:**
 

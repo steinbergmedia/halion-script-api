@@ -45,6 +45,7 @@ This page lists the modified and added pages for each version.
 * [onUnhandledEvent](./onUnhandledEvent.md)
 * [playNote](./playNote.md)
 * [postEvent](./postEvent.md)
+* [Protecting Layers](./Protecting-Layers.md)
 
 ## HALion 6.4.20
 

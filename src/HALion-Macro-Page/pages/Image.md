@@ -4,7 +4,7 @@
 
 ## Description
 
-This control allows you to add pure graphical elements without further functionality. The control can be changed in size and adapt the referenced bitmap to the [Bitmap](./Bitmap.md) resource if this is set to scalable.
+This control allows you to add purely graphical elements without further functionality. The control can be changed in size and adapt the referenced bitmap to the [Bitmap](./Bitmap.md) resource if this is set to scalable.
 
 ## Properties
 

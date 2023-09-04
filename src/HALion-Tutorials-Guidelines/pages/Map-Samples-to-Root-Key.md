@@ -18,8 +18,9 @@ The script parameters Start, Cancel and Channel can be accessed from the macro p
 
 * [Map Samples to Root Key.vstpreset](../vstpresets/Map%20Samples%20to%20Root%20Key.vstpreset)
 
->&#10069; The example VST preset requires the factory content of HALion.
+![Map Samples to Root Key](../images/Map-Samples-to-Root-Key.png)
 
+>&#10069; The example VST preset requires the factory content of HALion.
 
 ## Prerequisites
 

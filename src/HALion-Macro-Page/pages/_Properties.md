@@ -3,7 +3,7 @@
 // ANCHOR_END: alignment
 
 // ANCHOR: attach
-|**Attach**|Defines how an element behaves, when its parent element is resized. You can set the following parameters: <ul><li>**Left:** If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li>**Right:** If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li>**Top:** If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li>**Bottom:** If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li>**Left + Right:** If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li>|<li>**Top + Bottom:** If the parent element is resized, the element is resized vertically relatively to the top and bottom edges, with the specified ratio.</li></ul>|
+|**Attach**|Defines how an element behaves when its parent element is resized. You can set the following parameters: <ul><li>**Left:** If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li>**Right:** If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li>**Top:** If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li>**Bottom:** If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li>**Left + Right:** If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li>|<li>**Top + Bottom:** If the parent element is resized, the element is resized vertically relatively to the top and bottom edges, with the specified ratio.</li></ul>|
 // ANCHOR_END: attach
 
 // ANCHOR: bitmap
@@ -27,7 +27,7 @@
 // ANCHOR_END: name
 
 // ANCHOR: position-size
-|**Position/Size**|**Position X, Position Y, Width, Height:** Position and size of the element in pixels. Position X/Y defines the position of the upper left corner.|
+|**Position/Size**|**Position X, Position Y, Width, Height:** Position and size of the element in pixels. **Position X/Y** defines the position of the upper left corner.|
 // ANCHOR_END: position-size
 
 // ANCHOR: scalable
@@ -39,7 +39,7 @@ Activate this if you want to be able to resize the element. The assigned [Bitmap
 // ANCHOR_END: scale-mode
 
 // ANCHOR: scope
-|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the group.|
+|**Scope**|Allows you to define which part of the Program Tree is affected by the controls inside the Group.|
 // ANCHOR_END: scope
 
 // ANCHOR: show-value

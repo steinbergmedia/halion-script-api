@@ -12,7 +12,7 @@
 
 ## Description
 
-The Wavetable 3D control allows you to display a three-dimensional representation of the wavetable in real-time. The display allows the rendering of parameters that define the material of the view. You can connect it directly to the oscillator and configure scaling factors, view angles, lines and colors.
+The Wavetable 3D control can be connected directly to the oscillator and display a three-dimensional representation of the wavetable in real time. You can configure the appearance of the representation – that is, the shininess of its surface, its brightness, the scaling factors, view angles, lines and colors, etc. – using the available parameters of the control.
 
 ## Properties
 

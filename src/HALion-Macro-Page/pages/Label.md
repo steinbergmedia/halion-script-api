@@ -4,7 +4,7 @@
 
 ## Description
 
-Labels are intended to display text that names controls like knobs, text fields, or sections. A label can either use one of the available system fonts or a custom font for more decorative text styles, depending on the selected font resource.
+Labels are intended to display text that names elements such as [Knobs](Knob.md), [Text fields](Text.md), etc. A Label can either use one of the available system fonts or a custom font for more decorative text styles, depending on the selected font resource.
 
 ## Properties
 

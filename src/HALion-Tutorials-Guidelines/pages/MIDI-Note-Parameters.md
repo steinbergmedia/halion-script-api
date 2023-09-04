@@ -22,6 +22,8 @@ By using the parameter definition of a MIDI note parameter, you can create a scr
 
 * [MIDI Note Parameters.vstpreset](../vstpresets/MIDI%20Note%20Parameters.vstpreset)
 
+![MIDI Note Parameters](../images/MIDI-Note-Parameters.png)
+
 ## Prerequisites
 
 * A Program with a Lua Script module and a Synth zone.

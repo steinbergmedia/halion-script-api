@@ -16,11 +16,19 @@ For most applications, standard menus are well suited to select options from a l
 
 Please see the example below for details.
 
->&#10069; This how-to demonstrates multi-level menus using the generic look of the operating system. If you want to create menus with a customized look, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md) and [Custom Popup Menus](./Custom-Popup-Menus.md).
+>&#10069; This how-to demonstrates multi-level menus using the generic look of the operating system. If you want to create menus with a customized look, please refer to [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md), [Custom Multi-Level Menus II](./Custom-Multi-Level-Menus-II.md) or [Custom Popup Menus](./Custom-Popup-Menus.md).
 
 ## Example VST Preset
 
 [Multi-Level System Menu.vstpreset](../vstpresets/Multi-Level%20System%20Menu.vstpreset)
+
+![Multi-Level System Menu](../images/Multi-Level-System-Menu.png)
+
+**To explore the templates in this example:**
+
+1. Load [Multi-Level System Menu.vstpreset](../vstpresets/Multi-Level%20System%20Menu.vstpreset).
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 
 ## Prerequisites
 

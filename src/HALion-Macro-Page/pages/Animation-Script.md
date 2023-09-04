@@ -10,6 +10,8 @@
 
 ---
 
+![Animation Script](../images/Animation-Script-Page.png)
+
 ## Description
 
 The Animation Script template can be added to a macro page to run timer-controlled animations. These can be turned on and off by any parameter and the integrated script can be customized to set animation properties, such as the number of frames and the duration of a frame. There are two templates included in the [Basic Controls](./Exploring-Templates.md#basic-controls) library, the Animation Script template providing only the UI script and the Animation Script Example template, which includes additional components such as a play button, variables, and an example animation to show how the UI script can be connected.
@@ -42,8 +44,8 @@ These variables are needed to allow the communication between the [Animation](./
 
 |Variable|Description|Type|Range|
 |:-|:-|:-|:-|
-|**Frames**|An integer variable to connect the Out parameter of the Animation Script Template with the Value of the [Animation](./Animation.md) control.|
-|**On**|An integer variable to connect the On parameter of the Animation Script Template with the Play button.|
+|**Frames**|A float variable to connect the Out parameter of the Animation Script Template with the Value of the [Animation](./Animation.md) control.|float|0 - 1.0|
+|**On**|An integer variable to connect the On parameter of the Animation Script Template with the Play button.|integer|0 - 1|
 
 ### Controls and Subtemplates
 

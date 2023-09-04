@@ -14,7 +14,7 @@
 
 ## Description
 
-The StepModulator template contains controls for adjusting the steps and their slopes, for shifting the steps left or right and for reversing the steps. To guarantee the operation of these controls, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+The StepModulator template contains controls for adjusting the steps and their slopes, for shifting the steps left or right and for reversing the steps. To ensure the operation of these controls, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 **To explore the functionality and connections:**
 
@@ -63,7 +63,7 @@ These variables are defined to allow the communication between the stepmodulator
 
 ### Controls and Subtemplates
 
-To guarantee the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+To ensure the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 |Item|Description|
 |:-|:-|

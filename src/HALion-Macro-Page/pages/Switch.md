@@ -42,7 +42,7 @@ A radio switch group can be realized by connecting several switches, all set to 
 1. Add three exclusive switches and set their Values to the variable "Pages".
 1. Set the Onvalues of the switches to 0,1, and 2.
 1. Add a Stack with three child views and set the stack Value to the variable "Pages", too.
-1. The switches now allow to switch between the three views.
+1. The switches now allow you to switch between the three views.
 
 ### Hover Mode Switch
 The Hover mode can be used to switch between stack views when hovering over a switch control. Since the switch can also be used invisible, i.e., without any bitmap assigned, it can be layered under a knob control and control a stack view switching between the parameter label and a text view displaying the current parameter value. To see how this can be set up, load one of the knobs from the [Additional Controls](./Exploring-Templates.md#additional-controls) library.

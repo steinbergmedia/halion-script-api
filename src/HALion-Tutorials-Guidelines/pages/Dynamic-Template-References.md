@@ -18,6 +18,15 @@ This how-to demonstrates how to use a stringlist variable with template referenc
 
 * [Dynamic Template References.vstpreset](../vstpresets/Dynamic%20Template%20Reference.vstpreset)
 
+![Dynamic Template References](../images/Dynamic-Template-References.png)
+
+**To explore the templates in this example:**
+
+1. Load [Dynamic Template References.vstpreset](../vstpresets/Dynamic%20Template%20Reference.vstpreset).
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
+
 ## Prerequisites
 
 * A macro page with a template view.
@@ -25,7 +34,7 @@ This how-to demonstrates how to use a stringlist variable with template referenc
 * A stringlist variable t determining the names of the templates.
 * A Menu template to select the template to be displayed.
 
-![Dynamic Template References](../images/Dynamic-Template-References.png)
+![Dynamic Template References GUI Tree](../images/Dynamic-Template-References-GUI-Tree.png)
 
 
 ## How the Elements Interact

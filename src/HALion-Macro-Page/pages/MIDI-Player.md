@@ -16,7 +16,7 @@
 
 The MIDI Player template contains controls for selecting MIDI files, adjusting the performance parameters like Swing, Gate Scale, etc., and for using the eight variations of the MIDI Player module. In addition, there are controls for exporting the current MIDI File via drag and drop.
 
-Functionality such as using the eight variations, exporting the current MIDI file, etc., can not be realized with standard macro page controls. The [Internal](./Internal.md) control is used if this is the case. The performance parameters like Swing, Gate Scale, Vel Scale, etc. are connected to the eight variations by corresponding UI variables and they must be part of this template. To guarantee the operation of the performance parameters, the eight variations and the MIDI file export, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+Functionality such as using the eight variations, exporting the current MIDI file, etc., cannot be realized with standard macro page controls. The [Internal](./Internal.md) control is used if this is the case. The performance parameters like Swing, Gate Scale, Vel Scale, etc. are connected to the eight variations by corresponding UI variables and they must be part of this template. To ensure the operation of the performance parameters, the eight variations and the MIDI file export, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 **To explore the functionality and connections:**
 
@@ -52,7 +52,7 @@ Functionality such as using the eight variations, exporting the current MIDI fil
 |2|<p>**Product** = ``MyProductName``</p><p>**Load From** = ``MIDI Files``</p>|Only MIDI files from the specified library.|
 |3|<p>**Product** = ``MyProductName``&vert;``HALion``</p><p>**Load From** = ``MIDI Files``</p>|All MIDI files from HALion, the specified library and any MIDI files the user has saved on hard disk.|
 
->&#10069; The location of the MIDI files inside the VST Sound must match the path defined by Product and Load From, otherwise the MIDI File selector will not see them.
+>&#10069; The location of the MIDI files inside the VST Sound must match the path defined by the Product and Load From parameters, otherwise the MIDI File selector cannot access them.
 
 ## Components inside the Template
 
@@ -60,7 +60,7 @@ Functionality such as using the eight variations, exporting the current MIDI fil
 
 ### Controls and Subtemplates
 
-To guarantee the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
+To ensure the operation of the controls and subtemplates, the preconfigured properties must not be modified. The look and the size of the controls can be modified freely. All controls for functions that are not needed for your instrument can be omitted on your macro page.
 
 |Item|Description|
 |:-|:-|

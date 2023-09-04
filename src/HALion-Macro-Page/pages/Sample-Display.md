@@ -14,7 +14,7 @@
 
 ## Description
 
-The Sample Display template contains a [Waveform](./Waveform.md) control for displaying the sample data of the connected zone. The template has a script attached that matches the display of the [Waveform](./Waveform.md) control with the corresponding SampleOsc parameters of the zone. For example, the script shows or hides the looped regions, depending on whether the loop is active or not, and it decides which loop regions to display, depending on the selected loop A or B for the release and sustain loops respectively. The template itself only provides a Scope parameter to determine which zone to display. The template works for Sample and Grain Zones.
+The Sample Display template contains a [Waveform](./Waveform.md) control for displaying the sample data of the connected zone. A script that matches the display of the [Waveform](./Waveform.md) control with the corresponding SampleOsc parameters of the zone is attached to the template. For example, this script shows or hides the looped regions, depending on whether the loop is active or not, and it decides which loop regions to display, depending on the selected loop (A or B) for the release and sustain loops, respectively. The template itself only provides a Scope parameter to determine which zone to display. The template works for Sample and Grain Zones.
 
 **To explore the functionality and connections:**
 
