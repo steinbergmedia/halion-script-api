@@ -4,7 +4,7 @@
 
 A template is a group of control elements that is created to be used multiple times on a macro page, each time with different property values. The [Basic Controls](./Exploring-Templates.md#basic-controls) library comes with a large number of templates. Most of the templates are generic, such as knobs, sliders, and switches, and do not need any further documentation. However, there are also more complex templates, prepared for specific tasks, like controlling a MIDI Player module or a Step Modulator. For such templates, you will find further information in this documentation.
 
-All templates described in this section can be found in the [Basic Controls](./Exploring-Templates.md#basic-controls) library. Additional templates for knobs, sliders, switches etc. can be found in the [Additional Controls](Exploring-Templates.md#additional-controls) library. See [Exploring Templates](./Exploring-Templates.md) for information on how to access templates.
+All templates described in this section can be found in the [Basic Controls](./Exploring-Templates.md#basic-controls) library. Additional templates for knobs, sliders, switches etc. can be found in the [Additional Controls](Exploring-Templates.md#additional-and-vector-controls) and the [Vector Controls](Exploring-Templates.md#additional-and-vector-controls) library. See [Exploring Templates](./Exploring-Templates.md) for information on how to access templates.
 
 * [About Box](./About-Box.md)
 * [Animation Script](./Animation-Script.md)
