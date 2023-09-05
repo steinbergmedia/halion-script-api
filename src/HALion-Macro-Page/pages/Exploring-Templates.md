@@ -4,7 +4,7 @@
 
 ## Controls Libraries
 
-HALion provides a large number of preconfigured templates that can directly be used on macro pages. These are packed into two libraries: [Basic Controls](#basic-controls), [Additional Controls](#additional-and-vector-controls) and [Vector Controls](#additional-and-vector-controls).
+HALion provides a large number of preconfigured templates that can directly be used on macro pages. These are packed into three libraries: [Basic Controls](#basic-controls), [Additional Controls](#additional-and-vector-controls) and [Vector Controls](#additional-and-vector-controls).
 
 ![Library Location Basic Controls](../images/LibraryLocationsBasic.PNG)
 
@@ -34,4 +34,4 @@ For further details on the available templates, see the [Templates](./Templates.
 
 ### Additional and Vector Controls
 
-The Additional Controls library provides further templates for knobs, sliders and switches with a customized look. The Vector Controls library provides templates for knobs, sliders and switches that use SVGs. You can use them just like the templates from the [Basic Controls](#basic-controls) library.
+The Additional Controls and Vector Controls libraries provide further templates for knobs, sliders and switches with an individual look. The templates in the Vector Controls library use Scalable Vector Graphics (SVG), which offer more customization options for your macro page designs. You can use the provided templates just like the ones from the [Basic Controls](#basic-controls) library.
