@@ -154,7 +154,7 @@ Callback for the source of the drag operation when the drop has completed.
 
 [Jump to Top ](#template-list)
 
->&#10069; If you want changing the order of graphical elements to affect the program structure, e.g. changing the order of alternating layers or changing the signal chain of effects within a bus, this must be implemented separately in your script with dedicated functions.
+>&#10069; If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately in your script with dedicated functions.
 
 ## Examples
 
