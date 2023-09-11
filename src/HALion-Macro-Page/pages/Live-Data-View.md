@@ -2,6 +2,8 @@
 
 # Live Data View
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 The Live Data View control allows you to visualize the output signal of sources with a LiveViewData parameter, such as LFOs, the Step Modulator, envelopes, etc. You can connect these sources directly to the Data Input of the view. Furthermore, you can configure the appearance of the line.

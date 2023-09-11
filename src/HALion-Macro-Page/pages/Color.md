@@ -2,6 +2,8 @@
 
 # Color
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 This resource allows you to define colors that can be used wherever colors can be assigned, e.g., in controls or other resources.

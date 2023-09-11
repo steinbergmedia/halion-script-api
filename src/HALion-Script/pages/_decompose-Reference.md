@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**decompose{arguments}**
+
+{{#include ../../_Version.md:halion700}}
 // ANCHOR_END: function
 
 #### Description

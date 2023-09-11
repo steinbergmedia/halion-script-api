@@ -34,9 +34,9 @@ The state of an Event object is described by the following fields.
 |**.value**|The value of a controller, pitch bend, or note expression event. The value range depends on the event type.|number|
 |**.bend**|The value of a pitch bend event in the range of -1.0 to 1.0.|number|
 |**.noteExpressionType**|The type of note expression event. See [Note Expression Types](./Note-Expression-Types.md) for details.|number|
-|**.data**|An array with the bytes of a system exclusive message. For the interpretation of these values, please consult the documentation of the MIDI data format of the device sending the system exclusive message.|table|
-|**.dataType**|Currently, there is only one data type (0 = sysex).|number|
-|**.dataSize**|The number of bytes in the system exclusive message.|number|
+|**.data**|An array with the bytes of a system exclusive message. For the interpretation of these values, please consult the documentation of the MIDI data format of the device sending the system exclusive message. {{#include ../../_Version.md:halion700}}|table|
+|**.dataType**|Currently, there is only one data type (0 = sysex). {{#include ../../_Version.md:halion700}}|number|
+|**.dataSize**|The number of bytes in the system exclusive message. {{#include ../../_Version.md:halion700}}|number|
 |**.ppqPosition**|The position of the event in ppq relative to the project start. The host must be in playback. This value will be 0.0 if the host is not in playback.|number|
 
 #### Fields per Event Type

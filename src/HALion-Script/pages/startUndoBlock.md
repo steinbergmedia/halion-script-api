@@ -15,7 +15,7 @@ Function to combine multiple undo entries into one undo block. For example, if y
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**name**|This will be displayed as entry in the undo history.|string|
-|**id**|Set this to combine the undo blocks that refer to this ID.|number|
+|**id**|Set this to combine the undo blocks that refer to this ID. {{#include ../../_Version.md:halion610}}|number|
 
 ## Return Values
 

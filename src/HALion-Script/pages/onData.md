@@ -4,6 +4,8 @@
 
 >**onData(event)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 This callback is called when the script module receives a system exclusive message.

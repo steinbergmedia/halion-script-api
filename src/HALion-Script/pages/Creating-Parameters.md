@@ -256,6 +256,8 @@ defineParameter{
 
 ## Additional Named Arguments
 
+{{#include ../../_Version.md:halion610}}
+
 If you create a parameter by named arguments, you get access to these additional arguments:
 
 <!-- ANCHOR: additional-named-arguments -->
@@ -266,7 +268,7 @@ If you create a parameter by named arguments, you get access to these additional
 |**readOnly**|The parameter can only be changed from the script if this is set to ``true``. The argument defaults to ``false`` if no value is set.|bool, optional|
 |**writeAlways**|A parameter does not call its change callback if its value is set without being changed. Set this to ``true`` if you want to guarantee that the change callback of the parameter is called. The argument defaults to ``false`` if not set.|bool, optional|
 |**automatable**|Set this to ``false`` if you do not want the parameter to be automated. The argument defaults to ``true`` if not set.|bool, optional|
-|**processorCallback**|The parameter change callback will be executed in the processor context with high accuracy, if this is set to ``true``. For example, this is required for automated script parameters to update correctly when using Render in Place or Export Audio.  If no processor exists, the call back is still run in the controller context.|bool, optional|
+|**processorCallback**|The parameter change callback will be executed in the processor context with high accuracy, if this is set to ``true``. For example, this is required for automated script parameters to update correctly when using Render in Place or Export Audio.  If no processor exists, the call back is still run in the controller context. {{#include ../../_Version.md:halion6420}}|bool, optional|
 |**persistent**|The parameter will not be restored from the VST preset if this is set to ``false``. The argument defaults to ``true`` if not set.|bool, optional|
 
 The arguments readOnly, writeAlways and automatable are helpful if you have a parameter that is used only for indication, but not for entering values.

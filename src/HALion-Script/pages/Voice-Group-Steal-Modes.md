@@ -2,6 +2,8 @@
 
 # Voice Group Steal Modes
 
+{{#include ../../_Version.md:halion6410}}
+
 ## Description
 
 Enumerator to identify the different voice group steal modes.

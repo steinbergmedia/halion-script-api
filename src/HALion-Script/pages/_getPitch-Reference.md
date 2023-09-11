@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**getPitch(start, length, channel)**
+
+{{#include ../../_Version.md:halion630}}
 // ANCHOR_END: function
 
 #### Description

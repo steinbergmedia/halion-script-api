@@ -2,6 +2,8 @@
 
 # Undo Context Types
 
+{{#include ../../_Version.md:halion610}}
+
 ## Description
 
 Enumerator to identify the undo context.
