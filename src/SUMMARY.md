@@ -311,6 +311,7 @@
     - [Creating Instruments](./HALion-Tutorials-Guidelines/pages/Creating-Instruments.md)
     - [Exploring the Turorials and How-tos](./HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.md)
 - [Tutorials](./HALion-Tutorials-Guidelines/pages/Tutorials.md)
+    - [Creating a Template List](./HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.md)
     - [Using Relative Paths](./HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.md)
     - [Using Velocity Crossfades](./HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.md)
     - [Working with Exported Properties](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.md)
