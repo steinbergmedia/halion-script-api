@@ -4,6 +4,8 @@
 
 >**runSync(func, id)**
 
+{{#include ../../_Version.md:halion610}}
+
 ## Description
 
 Executes a function in the processor thread. By calling runSync in the controller thread, you can invoke a function that is executed in the processor thread. For example, by calling runSync in a parameter change callback, you can invoke an event function like [playNote](./playNote.md), [releaseVoice](./releaseVoice.md), [controlChange](./controlChange.md), etc. The callback that called runSync is not stopped and continues its execution. The specified function will be exectued in the next audio block. If ``id`` is specified, another call to runSync with the same ID overwrites the previous function if it has not been executed yet. Only the last function with the same ID will be executed in the next audio block.

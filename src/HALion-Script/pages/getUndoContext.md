@@ -4,6 +4,8 @@
 
 >**getUndoContext()**
 
+{{#include ../../_Version.md:halion610}}
+
 ## Description
 
 Function to check if the current script execution is part of an undo or redo operation.

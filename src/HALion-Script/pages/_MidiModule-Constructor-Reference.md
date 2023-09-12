@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**MidiModule(type)**
+
+{{#include ../../_Version.md:halion640}}
 // ANCHOR_END: function
 
 #### Description

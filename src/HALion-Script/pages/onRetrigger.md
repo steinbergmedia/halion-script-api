@@ -4,6 +4,8 @@
 
 >**onRetrigger(event)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 This callback function is called when the script module receives a note-retrigger event.

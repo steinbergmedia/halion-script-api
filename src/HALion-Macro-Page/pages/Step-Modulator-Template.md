@@ -45,7 +45,7 @@ The StepModulator template contains controls for adjusting the steps and their s
 
 ## Components inside the Template
 
-![FlexPhraser Template](../images/FlexPhraser-Template.PNG)
+![StepModulatorTemplate](../images/StepModulator-Template.PNG)
 
 ### UI Variables
 

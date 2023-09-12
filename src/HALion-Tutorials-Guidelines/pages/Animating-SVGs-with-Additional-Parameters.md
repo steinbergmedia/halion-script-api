@@ -2,6 +2,8 @@
 
 # Animating SVGs with Additional Parameters
 
+{{#include ../../_Version.md:halion700}}
+
 ---
 
 **On this page:**

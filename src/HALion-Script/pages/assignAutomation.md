@@ -17,7 +17,7 @@ Function to assign a parameter to an automation parameter. The arguments ``eleme
 |**element**|The [Element](./Element.md) object of the parameter to be assigned.|[Element](./Element.md)|
 |**nameOrID**|The name or ID of the parameter.|string or number|
 |**index**|The index of the automation parameter, or ``nil``.|number or ``nil``, optional
-|**scope**|The [Element](./Element.md) object that will be affected by the automation parameter.|[Element](./Element.md)|
+|**scope**|The [Element](./Element.md) object that will be affected by the automation parameter. {{#include ../../_Version.md:halion610}}|[Element](./Element.md)|
 
 ## Return Values
 

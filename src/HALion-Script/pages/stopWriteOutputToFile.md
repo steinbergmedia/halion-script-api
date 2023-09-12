@@ -4,6 +4,8 @@
 
 >**stopWriteOutputToFile()**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Stops writing the ouput to the file. See [startWriteOutputToFile](./startWriteOutputToFile.md) for further details.

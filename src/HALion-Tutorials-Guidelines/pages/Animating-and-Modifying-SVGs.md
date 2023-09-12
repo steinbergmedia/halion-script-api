@@ -2,6 +2,8 @@
 
 # Animating and Modifying SVGs
 
+{{#include ../../_Version.md:halion700}}
+
 ---
 
 **On this page:**

@@ -37,6 +37,25 @@ The Sample Display template contains a [Waveform](./Waveform.md) control for dis
 |Parameters|Description|
 |:-|:-|
 |**Scope**|Allows you to determine the zone with the sample data to be displayed. The template works for Sample and Grain Zones. If a Sample Zone is connected, the Play Pos property on the [Waveform](./Waveform.md) control inside the template must be set to ``@id:a0064``, for Grain Zones this must be set to ``@id:100064``.|
+|**FFT**|Sets the block size of the window that is used for the analysis. This allows you to adjust the trade-off between temporal resolution and frequency resolution.|
+|**Overlap**|Sets the number of overlapping FFT windows. Increasing the overlap can be used to reduce analysis limitations of the FFT windows, which can lead to a loss of details, such as transients.|
+|**Min Level**|Sets the minimum signal level for the FFT. The colors of the FFT are sclaed accordingly reveiling more or less details.|
+|**Max Level**|Sets the maximum signal level for the FFT. The colors of the FFT are sclaed accordingly reveiling more or less details.|
+|**Opacity**|Allows you to seamlessly blend between sample and FFT display.|
+
+The template parameters FFT, Overlap, Min Level, Max Level, and Opacity are connected to their respective control templates through the corresponding parameters of a [MIDI script](#midi-script). This configuration ensures that the FFT settings are saved with the presets. However, if you prefer not to include FFT settings in presets, you can connect the template parameters with the control templates by using UI variables. In this manner, the settings will only be preserved with the current project.
+
+### MIDI Script
+
+```lua
+-- define parameters for sample display
+
+defineParameter("FFT", nil, 6, {"32", "64", "128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65768"})
+defineParameter("Overlap", nil, 4, { "No", "2x", "4", "8x", "16x", "32x", "64x", "128x"})
+defineParameter("MinLevel", nil , -120, -240, 20, 1.0)
+defineParameter("MaxLevel", nil, 0, -220, 0, 1.0)
+defineParameter("Opacity", nil, 0, -100, 100, 1.0)
+```
 
 ## Components inside the Template
 
@@ -46,7 +65,7 @@ The Sample Display template contains a [Waveform](./Waveform.md) control for dis
 
 |Item|Description|
 |:-|:-|
-|**waveform**|The [Waveform](./Waveform.md) control for displaying the sample data. If a Sample Zone is connected, the Play Pos property must be set to ``@id:a0064``, for Grain Zones this must be set to ``@id:100064``. The loop properties must be connected to the corresponding script parameters: ``@SusLoopStart``, ``@SusLoopEnd``, ``@RelLoopStart``, and ``@RelLoopEnd``. All other properties must be connected to the corresponding parameters of the zone.|
+|**waveform**|The [Waveform](./Waveform.md) control for displaying the sample data. If a Sample Zone is connected, the Play Pos property must be set to ``@id:a0064``, for Grain Zones this must be set to ``@id:100064``. The loop properties must be connected to the corresponding parameters of the included [UI script](#ui-script): ``@SusLoopStart``, ``@SusLoopEnd``, ``@RelLoopStart``, and ``@RelLoopEnd``. All other properties must be connected to the corresponding parameters of the zone.|
 |**ZeroLine**|An [Image](./Image.md) control that provides the bitmap for the zero line of the sample display.|
 
 ### UI Script

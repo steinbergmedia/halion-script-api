@@ -2,6 +2,8 @@
 
 # SVG
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 A Scalable Vector Graphics (SVG) resource requires a standard SVG file and can be used in all controls as an alternative to [Bitmap](./Bitmap.md) resources. In the simplest case the SVG is used as it is, without any further changes, but it is also possible to modify it in the **Macro Page Designer**. The various subobjects that make up the SVG, such as groups and paths, can be manipulated individually. Each object can be addressed by its object ID and the pairs of properties and values. These values can either be static numbers or Lua expressions that can be used to calculate values. In the Lua expression you can use ``N``, the normalized control value, ``V``, the value of the connected parameter, or ``S``, the string representation of the connected parameter. This enables you to animate the properties of the SVG objects such as color, rotation, position, etc. when used in [Knobs](./Knob.md), [Sliders](./Slider.md), [Switches](./Switch.md), or [Animation](./Animation.md) controls. Only the aforementioned controls support animation. The Lua expression must be entered as follows: ``$(expression)``. In the following screenshot you can see the Lua expression ``$(N*360)``, for example.

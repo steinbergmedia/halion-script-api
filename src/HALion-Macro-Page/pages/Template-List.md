@@ -21,12 +21,12 @@ A Template List can be used to create child templates from a single referenced t
 {{#include ./_Properties.md:name}}
 {{#include ./_Properties.md:position-size}}
 {{#include ./_Properties.md:attach}}
-|**Layout**|<ul><li>**Horizontal:** Activate this option to arrange the child templates horizontally in a row.</li><li>**Vertical:** Activate this option to arrange the child templates vertically in a column.</li><li>**Grid:** Activate this option to arrange the child templates in a two-dimensional grid.</li></ul>
-|**Alignment**|Here you can set how the child templates are positioned in the Template List area.<ul><li>**Center:** The child templates are added to the list in their original size. The row, column, or grid is then centered inside the Template List area.</li><li>**Left:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the Template List area.</li><li>**Right:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the Template List area.</li><li>**Fill Height:** The child templates are scaled to fill the Template List area vertically.</li><li>**Fill Width:** The child templates are scaled to fill the Template List area horizontally.</li><li>**Fill:** All cells in the list are scaled equally horizontally and vertically to match the Template List area. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul>|
+|**Layout**  {{#include ../../_Version.md:halion610}}|<ul><li>**Horizontal:** Activate this option to arrange the child templates horizontally in a row.</li><li>**Vertical:** Activate this option to arrange the child templates vertically in a column.</li><li>**Grid:** Activate this option to arrange the child templates in a two-dimensional grid.</li></ul>
+|**Alignment**  {{#include ../../_Version.md:halion610}}|Here you can set how the child templates are positioned in the Template List area.<ul><li>**Center:** The child templates are added to the list in their original size. The row, column, or grid is then centered inside the Template List area.</li><li>**Left:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the left of the Template List area.</li><li>**Right:** The child templates are added to the list in their original size. The row, column, or grid is then positioned to the right of the Template List area.</li><li>**Fill Height:** The child templates are scaled to fill the Template List area vertically.  {{#include ../../_Version.md:halion700}}</li><li>**Fill Width:** The child templates are scaled to fill the Template List area horizontally.  {{#include ../../_Version.md:halion700}}</li><li>**Fill:** All cells in the list are scaled equally horizontally and vertically to match the Template List area. The content of the child templates is then positioned and resized according to the Scale and Attachment settings of the contained controls.</li></ul>|
 {{#include ./_Tooltip.md}}
 |**Value**|Allows you to read the index of the focused child template. This is useful to synchronize the selection focus across several lists, for example.|
 |**Style**|<ul><li>**H-Scroll:** Shows a horizontal scrollbar. This setting is not available with Alignment set to Fill or Fill Height.</li><li>**V-Scroll:** Shows a vertical scrollbar. This setting is not available with Alignment set to Fill or Fill Width.</li><li>**Order:** Set this option if you want to be able to change the order of the child templates via drag and drop. This option activates only the graphic reordering and only if at least the Template List callback [onTemplateListViewDrop](#ontemplatelistviewdrop) has been implemented. If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must be programmed in a script. For more information about the available callbacks, see [Template List Callbacks](#template-list-callbacks).</li><li>**Custom SB:** Set this option if you want to use custom scrollbars. For custom scrollbars, you must assign corresponding bitmap resources in the Scrollbars section. The height of the horizontal scrollbar and the width of the vertical scrollbar depend on the maximum width/height in pixels of the Hor Back and Ver Back bitmaps. For example, if Hor Back is set to a height of 30 pixels and Ver Back to 36 pixels, both will use 36 pixels.<ul><li>**Note:** Scrollbars can only be scaled in their original orientation, i.e., vertical scrollbars scale only vertically and horizontal scrollbars only horizontally.</li></ul></li></ul>|
-|**Focus Var**|Allows you to specify a variable name, e.g., ``MyFocusVariable``, that can be used inside the referenced template, for example, to switch the focus within a stack view or an Animation. You can access this variable inside the referenced template with ``@MyFocusVariable``.|
+|**Focus Var**|Allows you to specify a variable name, e.g., ``MyFocusVariable``, that can be used inside the referenced template, e.g., to switch the focus of a [Stack](./Stack.md) or an [Animation](./Animation.md) control. You can access this variable inside the referenced template with ``@MyFocusVariable``.|
 |**Index Var**|Allows you to specify a variable name, e.g., ``MyIndexVariable``, that can be used inside the referenced template to display the index of the list entry. You can access this variable inside the referenced template with ``@MyIndexVariable``.|
 |**Scrollbars**|Allows you to assign the [Bitmap](./Bitmap.md) resources that are required to draw the custom scrollbars.<ul><li>**Up:** Up button..</li><li>**Up Press:** Up button Pressed.</li><li>**Down:** Down button.</li><li>**Down Press:** Down button Pressed.</li><li>**Ver Back:** Vertical scrollbar background.</li><li>**Ver Handle:** Vertical scrollbar handle.</li><li>**Handle Top:** Top section of the vertical handle.</li><li>**Handle Bot:** Bottom section of the vertical handle.</li><li>**Left:** Left button.</li><li>**Left Press:** Left button Pressed.</li><li>**Right:** Right button.</li><li>**Right Press:** Right button Pressed.</li><li>**Hor Back:** Vertical scrollbar background.</li><li>**Hor Handle:** Vertical scrollbar handle.</li><li>**Handle Left:** Left section of the horizontal handle.</li><li>**Handle Right:** Right section of the horizontal handle.</li></ul>|
 
@@ -34,9 +34,11 @@ A Template List can be used to create child templates from a single referenced t
 
 ## Template List Callbacks
 
+ {{#include ../../_Version.md:halion700}}
+
 To enable the graphic reordering, the Order option must be active and either [onTemplateListViewDrop](#ontemplatelistviewdrop) or [onTemplateListDrop](#ontemplatelistdrop) must be implemented in a UI script.
 
->&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. Please do not combine them.
+>&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) cannot be combined with the callbacks just mentioned.
 
 ### onTemplateListViewDrop
 
@@ -58,7 +60,7 @@ This callback is called when the drop is done. If you need more advanced control
 
 #### Description
 
-Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set insided the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
+Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
 
 #### Arguments
 
@@ -96,7 +98,7 @@ Callback for the target of the drag operation when the drop is executed.
 |**viewname**|The name of the targeted Template List.|string|
 |**draginfo**|The Drag Info text.|string|
 |**toindex**|Index of the targeted list item.|integer|
-|**offset**|The values -1,0,1 indicates if the drop is before, on or behind the targeted item.|integer|
+|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
 |**copy**|Indicates if the drag is a copy operation.|boolean|
 
 [Jump to Top ](#template-list)
@@ -117,7 +119,7 @@ Callback for the target of the drag operation when an item is held over it. If i
 |**viewname**|The name of the targeted Template List.|string|
 |**draginfo**|The draginfo text specified at drag start time.|string|
 |**toindex**|The index of the targeted item.|integer|
-|**offset**|The values -1,0,1 indicates if the drop is before, on or behind the targeted item.|integer|
+|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
 |**copy**|Indicates if drag is a copy operation (``true``).|boolean|
 
 #### Return Values
@@ -154,7 +156,7 @@ Callback for the source of the drag operation when the drop has completed.
 
 [Jump to Top ](#template-list)
 
->&#10069; If you want the change of the graphical order to affect the program, e.g., if you want to change the order of alternating layers, this functionality must also be programmed in a script.
+>&#10069; If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately with dedicated functions.
 
 ## Examples
 

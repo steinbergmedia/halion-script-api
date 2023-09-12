@@ -17,8 +17,8 @@ Enumerator to identify the different types of events. See [Event Constructor](./
 |3|EventType.controller|Continuous controller events|
 |4|EventType.noteExpression|Note expression events|
 |5|EventType.programChange|Only used for Standard MIDI files|
-|6|EventType.noteRetrigger|Note-retrigger events|
-|7|EventType.data|System exclusive messages|
+|6|EventType.noteRetrigger|Note-retrigger events {{#include ../../_Version.md:halion700}}|
+|7|EventType.data|System exclusive messages {{#include ../../_Version.md:halion700}}|
 
 ## Example
 

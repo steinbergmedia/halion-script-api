@@ -68,6 +68,8 @@ defineParameter("Volume", nil, this.parent:getParameterDefinition("Level")) -- P
 
 ## Additional Named Arguments
 
+{{#include ../../_Version.md:halion610}}
+
 If you create a parameter by named arguments, you get access to the following additional arguments. See [Definging Parameters by Named Arguments](./Creating-Parameters.md#defining-parameters-by-named-arguments) for more details.
 
 {{#include ./Creating-Parameters.md:additional-named-arguments}}

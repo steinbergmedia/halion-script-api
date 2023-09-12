@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**getDecomposeProgress()**
+
+{{#include ../../_Version.md:halion700}}
 // ANCHOR_END: function
 
 #### Description

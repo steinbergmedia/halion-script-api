@@ -4,6 +4,8 @@
 
 >**startWriteOutputToFile(filename, append, silent)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Function to write the ouput of print functions to a file. Only the print functions between startWriteOutputToFile and [stopWriteOutputToFile](./stopWriteOutputToFile.md) are considered.

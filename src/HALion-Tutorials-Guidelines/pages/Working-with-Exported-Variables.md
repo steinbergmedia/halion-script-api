@@ -2,6 +2,8 @@
 
 # Working with Exported Variables
 
+{{#include ../../_Version.md:halion700}}
+
 ---
 
 **On this page:**

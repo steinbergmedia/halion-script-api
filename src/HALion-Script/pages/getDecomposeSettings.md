@@ -4,6 +4,8 @@
 
 >**getDecomposeSettings()**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Function to obtain the decompose settings of the plug-in. Custom samples originate from disk and library samples originate from VST Sound containers. Depending on the decompose settings specified by the user and on the origin of the samples, decomposed samples are written to different file paths. By evaluating the returned settings, your script can respond to the settings specified by the user.

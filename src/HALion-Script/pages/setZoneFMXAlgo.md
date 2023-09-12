@@ -4,6 +4,8 @@
 
 >**setZoneFMXAlgo(zone, algo)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Function to set the algorithm of the FM zone. The ``zone`` argument sets the target FM zone by its [Zone](./Zone.md) object. You can use [getZone](./getZone.md) or [findZones](./findZones.md) to determine the [Zone](./Zone.md) object of the target FM zone. The ``algo`` argument is the index that corresponds to the desired FM-X algorithm preset of the FM zone.

@@ -2,6 +2,8 @@
 
 # Bypass Masks
 
+{{#include ../../_Version.md:halion640}}
+
 ## Description
 
 Enumerator to determine the values that configure if a bus or effect follows the global inserts and Aux bypass buttons of the plug-in. The values must be applied to the ``bypassMask`` field of the desired [Bus](./Bus.md) or [Effect](./Effect.md) object. See the example below for details.

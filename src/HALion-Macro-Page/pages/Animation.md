@@ -18,4 +18,4 @@ Used to display animations or graphical option menus.
 {{#include ./_Properties.md:show-value}}
 |**Style**|<ul><li>**Invert:** Inverts the animation.</li><li>**Scalable:** {{#include ./_Properties.md:scalable}}</li></ul>|
 {{#include ./_Properties.md:bitmap-svg}}
-|**SVG Parameter**|If you use SVGs with animatable properties, they appear in the SVG Parameter section. You can connect SVG Parameter just like value parameters with engine, MIDI, or UI script parameters. In this way, the connected parameters can animate different properties of SVG child objects, such as color, position, rotation and so on.|
+|**SVG Parameter** {{#include ../../_Version.md:halion700}}|If you use SVGs with animatable properties, they appear in the SVG Parameter section. You can connect SVG Parameter just like value parameters with engine, MIDI, or UI script parameters. In this way, the connected parameters can animate different properties of SVG child objects, such as color, position, rotation and so on.|

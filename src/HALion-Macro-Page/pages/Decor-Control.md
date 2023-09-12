@@ -2,6 +2,8 @@
 
 # Decor (Control)
 
+{{#include ../../_Version.md:halion6420}}
+
 ## Description
 
 This control allows you to add rectangular shapes as graphical elements to create background frames, group frames, etc. {{#include ./_Decor.md:description}}

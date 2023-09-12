@@ -4,6 +4,8 @@
 
 >**getDecomposeOutputPath(filePath)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 This function evaluates the decompose settings of the plug-in and the file path of the original sample and returns the file path to the folder in which the decomposed samples are to be be saved. You can use this function to alter the ``outputPath`` argument of the [decompose](./decompose.md) function, e.g., to write the decomposed samples in a subfolder. The complete record of the decompose settings of the plug-in can be obtained with [getDecomposeSettings](./getDecomposeSettings.md).

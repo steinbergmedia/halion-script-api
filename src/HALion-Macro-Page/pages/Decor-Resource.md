@@ -2,6 +2,8 @@
 
 # Decor (Resource)
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 This resource allows you to specify rectangular shapes as graphical elements to create background frames, group frames, etc. {{#include ./_Decor.md:description}} Decor resources can be assigned in all controls that make use of bitmap resources.

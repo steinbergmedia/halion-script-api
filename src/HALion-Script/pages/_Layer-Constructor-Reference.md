@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**Layer()**
+
+{{#include ../../_Version.md:halion640}}
 // ANCHOR_END: function
 
 #### Description

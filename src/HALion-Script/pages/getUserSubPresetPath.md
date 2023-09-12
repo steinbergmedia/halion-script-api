@@ -4,6 +4,8 @@
 
 >**getUserSubPresetPath(product)**
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Function to obtain the file path for the user sub presets of a product. If no product is set, the function returns the file path of the current plug-in.

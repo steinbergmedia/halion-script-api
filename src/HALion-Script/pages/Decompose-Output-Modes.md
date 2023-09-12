@@ -2,6 +2,8 @@
 
 # Decompose Output Modes
 
+{{#include ../../_Version.md:halion700}}
+
 ## Description
 
 Enumerator to identify the different decompose output modes.
