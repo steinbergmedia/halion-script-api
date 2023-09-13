@@ -14,6 +14,8 @@
 
 A Template List can be used to create child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, the templates are arranged in a row, a column, or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.
 
+>&#10069; For a better understanding of template lists, read the tutorial [Creating a Template List](../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.md).
+
 ## Properties
 
 |Poperty|Description|
@@ -158,71 +160,8 @@ Callback for the source of the drag operation when the drop has completed.
 
 >&#10069; If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately with dedicated functions.
 
-## Examples
+## Example
 
-### Creating a Template List
-
-* Add Template List to your macro page.
-* Select the template that you want to use for each list entry.
-* Check the Template parameters which are added to the Template List.
-* Create a String List variable for each template parameter that you want to connect.
-* Connect the template parameters to the variables.
-* As soon as the first variable is connected, the list is filled with a template for each string list entry.
-
-#### Example 1
-
-You can use a Label control inside the template which exports its text property to the template, to name each row.
-
-* Create a string list variable with all the labels that are needed and in the order in which you want them to appear in the list.
-* Connect the variable to the Text parameter of the Template List.
-
-#### Example 2
-
-There is a control inside the template, e.g., a switch with an exported Value parameter.
-
-* Create a string list variable with the different parameter scopes that you want to control, e.g., the Mute state of different layers within a program.
-* Connect the variable with the switch Value parameter of the Template List.
-
-[Jump to Top ](#template-list)
-
-### Switching the Scope for Controls outside the Template List
-
-One useful usage of the Template List is to manage different articulations of an instrument and to use the list to change the scope for controls that exists only once one the macro page but need to control the different articulations, for example. In this case, you can use the Value property of the Template List which delivers the index of the selected row.
-
-* Create a string list "LayerSelect" variable with an entry for each articulation layer.
-* Add the different scopes for each articulation to the string list.
-* Add a Template List.
-* Specify the source template for the Template List.
-* Connect the template parameters (delivered by the source template) using further string list variables defining the different parameters.
-* Set the Value property of the Template List to the string list variable (@LayerSelect). This way, the list index can change the scope.
-* Add a group and set the Scope to "LayerSelect". Now the group scope changes with the the selection in the Template List.
-* Add controls to the group and connect them to HALion parameters. Use only the parameters, not their path information, which is delivered by the group scope.
-* When clicking inside a Template List row, the selection changes the focus of the connected control group and you modify each articulation individually.
-
-[Jump to Top ](#template-list)
-
-### Showing the Focus in the List
-
-To visualize which entry of the Template List currently has the focus you can use the Focus Var property. It works in combination with an element that needs to be set up inside the source template.
-
-#### Example 1
-
-**An animation to show a focus rectangle:**
-
-* Set Focus Var of the Template List to "@SelectedRow".
-* Add an animation with two frames to the source template. The second frame should show a colored outline rectangle, for example.
-* Set the Value property of the animation to @SelectedRow", too.
-* When clicking inside a Template List row, the animation of the corresponding row switches to the second frame which shows the colored rectangle.
-
-#### Example 2
-
-**A stack to change the whole appearance of a Template List row:**
-
-* Set Focus Var of the Template List to "@SelectedRow".
-* Add a Stack.
-* Group the existing controls of the source template and place the group inside the stack.
-* Duplicate the group and modify the appearance of the controls of the second group.
-* Set the value property of the stack to "@SelectedRow", too.
-* When clicking inside a Template List row, the stack of the corresponding row switches to the second group and shows the modified version.
-
-[Jump to Top ](#template-list)
+```lua
+-- Code example, work in progress.
+```
