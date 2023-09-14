@@ -273,14 +273,14 @@
     --sidebar-active: #3ca4d4;
     --sidebar-spacer: #49403d;
 
-    --scrollbar: #444444;
+    --scrollbar: #707070;
 
     --icons: #8a8a8a;
     --icons-hover: var(--tc);
 
     --links: #3ca4d4;
 
-    --inline-code-color: #6e6e6e;
+    --inline-code-color: #f8f7f5;;
 
     --theme-popup-bg: #1a1a1a;
     --theme-popup-border: #8a8a8a;
@@ -290,8 +290,8 @@
     --quote-border: #8a8a8a;
 
     --table-border-color: #c0c0b8;
-    --table-header-bg: #353535;
-    --table-alternate-bg: #292929;
+    --table-header-bg: #191d24; 
+    --table-alternate-bg: #1e232b;
 
     --searchbar-border-color: #999;
     --searchbar-bg: #111;
@@ -302,14 +302,14 @@
     --searchresults-li-bg: #d6ab8e;
     --search-mark-bg: #ea8c54;
 
-    --hljs-quote: #a0a0a0;
+    --hljs-quote: #afafaf;
     --hjls-red: #ff4d6d;
-    --hljs-orange: #ff6943;
-    --hjls-green: #1abc9c;
+    --hljs-orange: #e2573f;
+    --hjls-green: #0eb694;
     --hjls-blue: #5183ff;
-    --hjls-purple: #a77cf2;
+    --hjls-purple: #9562ec;
     --hljs-text: #f8f7f5;
-    --hljs-bg: #333333;
+    --hljs-bg: #4a4a4a;
 }
 
 
