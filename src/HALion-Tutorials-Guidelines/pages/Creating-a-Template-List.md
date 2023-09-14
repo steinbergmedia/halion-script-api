@@ -80,7 +80,7 @@ This last part of the tutorial describes how to use a [Template List](../../HALi
 
 ## Using UI Script Parameters Instead of UI Variables
 
-Instead of using UI Variables for defining the entries of the [Template List](../../HALion-Macro-Page/pages/Template-List.md) you can use a [string list parameter](../../HALion-Script/pages/Creating-Parameters.md#parameter-characteristics) that you defined in an UI script.
+Instead of using UI Variables for defining the entries of the [Template List](../../HALion-Macro-Page/pages/Template-List.md) you can use a [string list parameter](../../HALion-Script/pages/Creating-Parameters.md#parameter-characteristics) that you have defined in an UI script.
 
 1. Create a UI script and define a [string list parameter](../../HALion-Script/pages/Creating-Parameters.md#parameter-characteristics).
 1. Connect the [string list parameter](../../HALion-Script/pages/Creating-Parameters.md#parameter-characteristics) with the corresponding template parameter of the [Template List](../../HALion-Macro-Page/pages/Template-List.md).
