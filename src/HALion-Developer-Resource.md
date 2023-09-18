@@ -1,7 +1,5 @@
 # HALion Developer Resource
 
-Whether you want to dive into the Macro Page Editor or get in-depth descriptions of the classes and functions provided in HALion Script, HALion Developer Resource is the go-to reference for all relevant information concerned with creating advanced content libraries in HALion.
-
 Please choose from the below to learn how to get started and find short examples and detailed information on the selected topic.
 
 <div class="image-container">
