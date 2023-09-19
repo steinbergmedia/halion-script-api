@@ -50,10 +50,10 @@ The function can return a table with the following keys:
 
 |Return Value|Description|Value Type|
 |:-|:-|:-|
-|**copy**|Set this to ``true`` if copy is allowed, ``false`` if not.|boolean|
-|**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
+|**copy**|Set this to ``true`` if copying is allowed, ``false`` if not.|boolean|
+|**move**|Set this to ``true`` if moving is allowed, ``false`` if not.|boolean|
 |**info**|A modified Drag Info text.|string|
-|**files**|A table of files.|table with strings|
+|**files**|A table with file paths for evaluation by external software when the drop operation is performed there.|table with file paths as strings|
 
 ### onDropInsert
 

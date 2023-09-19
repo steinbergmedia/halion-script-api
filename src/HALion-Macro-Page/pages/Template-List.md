@@ -40,6 +40,8 @@ A Template List can be used to create child templates from a single referenced t
 
 To enable the graphic reordering, the Order option must be active and either [onTemplateListViewDrop](#ontemplatelistviewdrop) or [onTemplateListDrop](#ontemplatelistdrop) must be implemented in a UI script.
 
+>&#10069;  In order for the [onTemplateListDrop](#ontemplatelistdrop) function to be called, the Drag Info property must be set inside the referenced template.
+
 >&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) cannot be combined with the callbacks just mentioned.
 
 ### onTemplateListViewDrop
@@ -50,7 +52,7 @@ This callback is called when the drop is done. If you need more advanced control
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the Template List.|string|
+|**viewname**|The name of the Template List. Evaluate this to distinguish between different lists.|string|
 |**fromindex**|Index of the dragged list item.|integer|
 |**toindex**|New index of the dropped list item.|integer|
 
@@ -62,13 +64,13 @@ This callback is called when the drop is done. If you need more advanced control
 
 #### Description
 
-Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
+Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the Template List.|string|
+|**viewname**|The name of the Template List. Evaluate this to distinguish between different lists.|string|
 |**draginfo**|The text specified by the Drag Info property.|string|
 |**index**|The index of the dragged list item.|string|
 
@@ -78,10 +80,12 @@ The function can return a table with the following keys:
 
 |Return Value|Description|Value Type|
 |:-|:-|:-|
-|**copy**|Set this to ``true`` if copy is allowed, ``false`` if not.|boolean|
-|**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
+|**copy**|Set this to ``true`` if copying is allowed, ``false`` if not. If 'copy' is ``false`` the **Alt/Cmd**-key for copying cannot be used. The default for 'copy' is ``false``.|boolean|
+|**move**|Set this to ``true`` if moving is allowed, ``false`` if not. If 'move' is ``false`` the elements in the list will not be reordered when dragging. The default for 'move' is ``true``.|boolean|
 |**info**|A modified Drag Info text.|string|
-|**files**|A table of files.|table with strings|
+|**files**|A table with file paths for evaluation by external software when the drop operation is executed there.|table with file paths as strings|
+
+>&#10069; If both the 'copy' and 'move' return values are set to ``true``, the 'copy' argument in the callbacks [onTemplateListDrop](#ontemplatelistdrop), [onTemplateListDropFeedback](#ontemplatelistdropfeedback), and [onTemplateListDropDone](#ontemplatelistdropdone) will depend upon whether the **Alt/Cmd**-key was utilized during the drag operation. The 'copy' argument in these callbacks will be ``true`` if the **Alt/Cmd**-key was used and ``false`` if it was not. If the 'move' return value is ``false``, the use of the **Alt/Cmd**-key has no effect, and the 'copy' argument in the mentioned callbacks will depend solely on the 'copy' return value.
 
 [Jump to Top ](#template-list)
 
@@ -91,13 +95,13 @@ The function can return a table with the following keys:
 
 #### Description
 
-Callback for the target of the drag operation when the drop is executed.
+Callback for the target of the drag operation when the drop is executed. In order for the function to be called, the Drag Info property must be set inside the referenced template. Otherwise, the reordering will not work, even if the Order option of the template list is active.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted Template List.|string|
+|**viewname**|The name of the targeted Template List. Evaluate this to distinguish between different lists.|string|
 |**draginfo**|The Drag Info text.|string|
 |**toindex**|Index of the targeted list item.|integer|
 |**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
@@ -112,17 +116,17 @@ Callback for the target of the drag operation when the drop is executed.
 
 #### Description
 
-Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.
+Callback for the target of the drag operation when an item is held over it. If implemented it can control the graphical feedback for the potential drop operation or reject dropping the item.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted Template List.|string|
+|**viewname**|The name of the targeted Template List. Evaluate this to distinguish between different lists.|string|
 |**draginfo**|The draginfo text specified at drag start time.|string|
 |**toindex**|The index of the targeted item.|integer|
 |**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
-|**copy**|Indicates if drag is a copy operation (``true``).|boolean|
+|**copy**|Indicates if drag is a copy operation.|boolean|
 
 #### Return Values
 
@@ -131,10 +135,10 @@ The function can return a table with the following keys:
 |Return Value|Description|Value Type|
 |:-|:-|:-|
 |**accept**|Set this to ``true`` to allow or ``false`` to reject the drop operation. The default is ``false``.|boolean|
-|**template**|Name of a template to be shown as animation.|string|	
+|**template**|Name of a template that will be displayed to indicate the drop operation.|string|	
 |**index**|Index of the item, where the template should be placed to.|string|
-|**insert**|Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.|boolean|
-|**resize**|Set this to ``true`` if template should be resized to the size of the targeted item.|boolean|
+|**insert**|Set this to ``true`` if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.|boolean|
+|**resize**|Set this to ``true`` if the referenced template should be resized to the size of the targeted item.|boolean|
 
 >&#10069; When using onTemplateListDropFeedback: Since the default of ``accept`` is ``false``, you must at least return ``accept=true`` to enable the graphic reordering.
 
@@ -151,7 +155,7 @@ Callback for the source of the drag operation when the drop has completed.
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the source Template List.|string|
+|**viewname**|The name of the source Template List. Evaluate this to distinguish between different lists.|string|
 |**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
 |**index**|Index of the dragged list item.|integer|
 |**copy**|Indicates if the drag was a copy operation.|string|
