@@ -10,7 +10,7 @@
 
 ---
 
-![Envelope Shaper](../images/Envelope-Shaper-Page.png)
+![Envelope Shaper](../images/Envelope-Shaper-Page.PNG)
 
 ## Description
 
