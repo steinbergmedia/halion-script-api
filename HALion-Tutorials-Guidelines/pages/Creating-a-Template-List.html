@@ -34,7 +34,6 @@
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../.././theme/css/custom.css">
 
     </head>
     <body>
@@ -178,10 +177,17 @@
 <li><a href="#example-vst-preset">Example VST Preset</a></li>
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#overview-of-workflows">Overview of Workflows</a></li>
-<li><a href="#step-by-step-guide">Step-by-Step Guide</a></li>
+<li><a href="#creating-a-basic-template-list">Creating a Basic Template List</a></li>
+<li><a href="#adding-functionality">Adding Functionality</a></li>
+<li><a href="#setting-the-scope-for-controls-outside-the-template-list">Setting the Scope for Controls outside the Template List</a></li>
+<li><a href="#using-ui-script-parameters-instead-of-ui-variables">Using UI Script Parameters Instead of UI Variables</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
 </ul>
 <hr />
-<p>This tutortial describes the creation of a template list step by step. The following preset already contains the ready solution. For better understanding, it is recommended to try the steps described below by yourself.</p>
+<p><a href="../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> are a versatile and powerful tool for creating controls with repeating elements, such as an effects rack with multiple slots, or a list of articulations that share a set of parameters. The main concept behind <a href="../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> is based on creating repeating controls from a single template that is referenced and instantiated multiple times. Similar to programming where for-loops can save many lines of code, <a href="../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> save you from creating many individual templates. This tutortial describes the creation of a <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> step by step. The following preset already contains the ready solution. For better understanding, it is recommended to try the steps described below by yourself.</p>
 <h2 id="example-vst-preset"><a class="header" href="#example-vst-preset">Example VST Preset</a></h2>
 <ul>
 <li><a href="../vstpresets/Creating%20a%20Template%20List.vstpreset">Creating a Template List.vstpreset</a></li>
@@ -198,20 +204,72 @@
 <li>Add controls to the template and export the desired values as template parameters.</li>
 <li>Create variables for the desired entries in the list and connect them to the corresponding template parameters.</li>
 </ul>
-<h2 id="step-by-step-guide"><a class="header" href="#step-by-step-guide">Step-by-Step Guide</a></h2>
+<h2 id="creating-a-basic-template-list"><a class="header" href="#creating-a-basic-template-list">Creating a Basic Template List</a></h2>
+<p>This first part of the tutorial illustrates only the creation of a basic template list without furthergoing functionality.</p>
 <ol>
 <li>In the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and create a <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. Name it 'BasicList', for example.</li>
-<li>Go to the <strong>Templates Tree</strong> and create a <a href="../../HALion-Macro-Page/pages/Template.html">Template</a>. Name it 'RowEntry', for example.</li>
+<li>Go to the <strong>Templates Tree</strong> and create a <a href="../../HALion-Macro-Page/pages/Template.html">Template</a>. Name it 'RowEntry'.</li>
 <li>Click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the template.</li>
-<li>Add a <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> and a <a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control.</li>
-<li>The look of an entry is defined by the properties of the controls inside the template. Adjust the size and other properties of the controls as desired.</li>
-<li>Export the Value property of the <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> control. This exported value becomes a template parameter of the 'BasicList' template list.</li>
-<li>Close the template and go back to the to the <strong>GUI Tree</strong>. Select the 'BasicList' item, got to the <strong>Properties</strong> and set Template to 'RowEntry'.</li>
-<li>Create a Variables folder, then right-click it and  create a 'String List' variable. Name it 'Rows', for example.</li>
-<li>Select the String List variable, go to the <strong>Properties</strong> and create entries for each row you want to display, e.g., 'Row 1', 'Row 2', 'Row 3', and so on.</li>
-<li>Select the 'BasicList' item, got to the <strong>Properties</strong> and set the value under Template Parameter to '@Rows'. The rows you defined in step 9 should now display with the look you defined in step 5.</li>
-<li>Adjust the position and size of the 'BasicList' template list, if needed.</li>
+<li>Add a <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> and a <a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control. The look of an entry is defined by the properties of the controls inside the template. Adjust the size and other properties of the controls as desired.</li>
+<li>Select the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control and go to the <strong>Properties</strong> editor. Next to the Text property, click <strong>Export Property</strong> <img src="../images/Export-Property.png" alt="Export Property" /> to export it. This exported Text becomes a template parameter of the BasicList template list.</li>
+<li>It's advanteagous to rename the exported Text property. Select RowEntry and go to the Template Parameter section of the <strong>Properties</strong> editor, change the name of the exported Text property to 'Name'.<p><img src="../images/Creating-a-Template-List-RowEntry-RowName.png" alt="Creating a Template List RowEntry RowName" /></p></li>
+<li>Close the template and go back to the to the <strong>GUI Tree</strong>. Select the BasicList item, go to the <strong>Properties</strong> editor and set Template to 'RowEntry'.</li>
+<li>Create a Variables folder, right-click it and create a String List variable. Name it 'RowNames'.</li>
+<li>Select the String List variable, go to the <strong>Properties</strong> editor and create entries for each row you want to display. Name the entries 'Zone 1', 'Zone 2', and 'Zone 3'.<p><img src="../images/Creating-a-Template-List-RowNames-Variable.png" alt="Creating a Template List RowNames Variable" /></p></li>
+<li>Select the BasicList item, go to the <strong>Properties</strong> and set the Name template parameter to '@RowNames'. The list entries you defined in step 9 should now display with the look you defined in step 4.</li>
+<li>Adjust the position and size of the BasicList template list, if needed.<p><img src="../images/Creating-a-Template-List-BasicList.png" alt="Creating a Template List BasicList" /></p></li>
 </ol>
+<h2 id="adding-functionality"><a class="header" href="#adding-functionality">Adding Functionality</a></h2>
+<p>In this part of the tutorial, the variables Focus Var and Index Var of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> will be used to highlight the selected row and to display the row index. We will also add two more synth zones to the program and further controls to the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> for adjusting these zones. The synth zones are used only as a substitute for the different articulations of an instrument, which are normally provided by different layers with samples for each articulation.</p>
+<blockquote>
+<p>❕ To follow the subsequent steps, <a href="#creating-a-basic-template-list">Creating a Basic Template List</a> must be completed first.</p>
+</blockquote>
+<ol>
+<li>Go to the <strong>Program Tree</strong> and add two more synth layers.</li>
+<li>Open the <strong>Zone Editor</strong> and got to the <strong>Oscillator</strong> section, then switch off all oscillators except oscillator 1. Do this for all three zones. Choose different waveforms for oscillator 1 in each of the three zones.</li>
+<li>Open the <strong>Macro Page Designer</strong>, select the BasicList template list and go to the <strong>Properties</strong> editor. Set Focus Var to 'RowFocus' and Index Var to 'RowIndex'. These two variables will be used later inside the RowEntry template to highlight the selected row and to display the row index.<p><img src="../images/Creating-a-Template-List-RowFocus-RowIndex.png" alt="Creating a Template List RowFocus RowIndex" /></p></li>
+<li>Select the Variables folder and create a String List variable. Name it 'ZoneMute'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:66', '@0:Zone 2/@id:66', and '@0:Zone 3/@id:66'. The ZoneMute variable will be used later inside the RowEntry template to control the mute of the focused zone.<p><img src="../images/Creating-a-Template-List-ZoneMute.png" alt="Creating a Template List ZoneMute" /></p></li>
+<li>Create another String List variable and name it 'ZoneCoarse'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:330002', '@0:Zone 2/@id:330002', and '@0:Zone 3/@id:330002'. The ZoneCoarse variable will be used later inside the RowEntry template to control the coarse tune of the focused zone.<p><img src="../images/Creating-a-Template-List-ZoneCoarse.png" alt="Creating a Template List ZoneCoarse" /></p></li>
+<li>Create on more String List variable and name it 'ZoneLevel'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:320001', '@0:Zone 2/@id:320001', and '@0:Zone 3/@id:320001'. The ZoneLevel variable will be used later inside the RowEntry template to control the level of the focused zone.<p><img src="../images/Creating-a-Template-List-ZoneLevel.png" alt="Creating a Template List ZoneLevel" /></p></li>
+<li>Go to the <strong>Templates Tree</strong>, select the RowEntry template and click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open it.</li>
+<li>Add a <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'RowIndex'. Position it before the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control that displays the row names. Set the Value to '@RowIndex'. Now, the index of the row should display in the list.<p><img src="../images/Creating-a-Template-List-RowEntry-RowIndex.png" alt="Creating a Template List ZoneLevel" /></p></li>
+<li>Create a <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> control and drag the <a href="../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control into it. Rename the decor to 'DecorOff'. Copy the decor and rename it to 'DecorOn'. Go to the <strong>Properties</strong> editor and change the color of the DecorOn control to fully white. Select the <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> control and set its Value property to '@RowFocus'. Now, a row will highlight if you click it.<p><img src="../images/Creating-a-Template-List-RowEntry-Stack.png" alt="Creating a Template List RowEntry Stack" /></p></li>
+<li>Add a <a href="../../HALion-Macro-Page/pages/Switch.html">Switch</a> control and set Mode to 'onoff'. Assign bitmaps for the different states of the switch. Alternatively, you can use a preconfigured switch template from the <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> library. Postition the switch between the RowIndex and the RowName controls. Next to the Value property, click <strong>Export Property</strong> <img src="../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Mute'.<p><img src="../images/Creating-a-Template-List-RowEntry-Switch.png" alt="Creating a Template List RowEntry Switch" /></p></li>
+<li>Add a <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'CoarseVal'. Postition the control after the RowName control. Next to the Value property, click <strong>Export Property</strong> <img src="../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Coarse'.<p><img src="../images/Creating-a-Template-List-RowEntry-CoarseVal.png" alt="Creating a Template List RowEntry CoarseVal" /></p></li>
+<li>Add another <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'LevelVal'. Postition the control after the CoarseVal control. Next to the Value property, click <strong>Export Property</strong> <img src="../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Level'.<p><img src="../images/Creating-a-Template-List-RowEntry-LevelVal.png" alt="Creating a Template List RowEntry LevelVal" /></p></li>
+<li>Close the RowEntry template and go back to the to the <strong>GUI Tree</strong>. Select the BasicList item, go to the <strong>Properties</strong> editor and set the Template Parameters as follows: Set 'Mute' to '@ZoneMute', 'Coarse' to '@ZoneCoarse', and 'Level' to '@ZoneLevel'. Now, the rows will show the values of the connected parameters of the corresponding zones.<p><img src="../images/Creating-a-Template-List-BasicList-Template-Parameter.png" alt="Creating a Template List BasicList Template Parameter" /></p></li>
+</ol>
+<blockquote>
+<p>❕ The <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> from step 9 could contain further controls and thus change the appearance of a rowcompletely, e.g., <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> and <a href="../../HALion-Macro-Page/pages/Text.html">Text</a> controls with different colors, etc. To display the same parameters, their exported Value properties must share the same name.</p>
+</blockquote>
+<h2 id="setting-the-scope-for-controls-outside-the-template-list"><a class="header" href="#setting-the-scope-for-controls-outside-the-template-list">Setting the Scope for Controls outside the Template List</a></h2>
+<p>This last part of the tutorial describes how to use a <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> for managing a common set of controls for different zones, or the different articulations of an instrument, for example. The common controls exist only once and are not part of the template list. The focus of the template list is used to switch the scope of these controls, which connects them to the corresponding zone, or layer of an articulation.</p>
+<blockquote>
+<p>❕ To follow the subsequent steps, <a href="#creating-a-basic-template-list">Creating a Basic Template List</a> and <a href="#adding-functionality">Adding Functionality</a> must be completed beforehand.</p>
+</blockquote>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong>, select the Variables folder and create a String List variable. Name it 'ZoneList'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/', '@0:Zone 2/', and '@0:Zone 3/'. The ZoneList variable will be used later to set the focus for a set of common controls.<p><img src="../images/Creating-a-Template-List-ZoneList-Variable.png" alt="Creating a Template List ZoneList Variable" /></p></li>
+<li>Create a <a href="../../HALion-Macro-Page/pages/Group.html">Group</a> and set the Scope property to '@ZoneList'.</li>
+<li>Add two knobs from the <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> library to the group, one for the Coarse and one for the Level parameter of the zones. Set the Value property of the Coarse knob to '@id:330002' and the Value property of the Level knob to '@id:320001'. Name the labels of the respective knobs 'Coarse' and 'Level'.<p><img src="../images/Creating-a-Template-List-Group.png" alt="Creating a Template List Group" /></p></li>
+<li>Select the BasicList template list and set its Value property also to '@ZoneList'. Now, the scope of the knob controls is determined by the focussed row in the template list.<p><img src="../images/Creating-a-Template-List-BasicList-ZoneList.png" alt="Creating a Template List BasicList ZoneList" /></p></li>
+<li>Finally, create four <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> controls, name them 'Mute', 'Name', 'Coarse', and 'Level', and place them above the corresponding columns of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>.<p><img src="../images/Creating-a-Template-List-Labels.png" alt="Creating a Template List Labels" /></p></li>
+</ol>
+<h2 id="using-ui-script-parameters-instead-of-ui-variables"><a class="header" href="#using-ui-script-parameters-instead-of-ui-variables">Using UI Script Parameters Instead of UI Variables</a></h2>
+<p>Instead of using UI Variables for defining the entries of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> you can use a <a href="../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a> that you have defined in an UI script.</p>
+<ol>
+<li>Create a UI script and define a <a href="../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a>.</li>
+<li>Connect the <a href="../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a> with the corresponding template parameter of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>.</li>
+</ol>
+<p><img src="../images/Creating-a-Template-List-UI-Script.png" alt="Creating a Template List UI Script" /></p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<pre><code class="language-lua">rowsList = {}
+
+for i = 1, 4 do
+	rowsList[i] = &quot;Zone &quot;..tostring(i)
+end
+
+defineParameter(&quot;RowNames&quot;, nil, 1, rowsList)
+</code></pre>
 
                     </main>
 

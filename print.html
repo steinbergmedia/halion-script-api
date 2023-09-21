@@ -35,7 +35,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="./theme/css/custom.css">
 
     </head>
     <body>
@@ -172,7 +171,6 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="halion-developer-resource"><a class="header" href="#halion-developer-resource">HALion Developer Resource</a></h1>
-<p>Whether you want to dive into the Macro Page Editor or get in-depth descriptions of the classes and functions provided in HALion Script, HALion Developer Resource is the go-to reference for all relevant information concerned with creating advanced content libraries in HALion.</p>
 <p>Please choose from the below to learn how to get started and find short examples and detailed information on the selected topic.</p>
 <div class="image-container">
     <div class="image-with-caption">
@@ -14093,7 +14091,7 @@ createProgram()
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
 <tr><td style="text-align: left"><strong>Scope</strong></td><td style="text-align: left">Allows you to define which part of the Program Tree is affected by the controls inside the Group.</td></tr>
-<tr><td style="text-align: left"><strong>Drag Info</strong></td><td style="text-align: left">The Drag Info can be used as follows:<ul><li>It can be a text info that will be carried to the receiver.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback onDropGetInfo by returning another text.</li></td></tr>
+<tr><td style="text-align: left"><strong>Drag Info</strong></td><td style="text-align: left">The Drag Info can be used as follows:<ul><li>It can be a string that will be send to the target.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback <a href="HALion-Macro-Page/pages/Drag-Group.html#ondropgetinfo">onDropGetInfo</a> by returning another string.</li></td></tr>
 <tr><td style="text-align: left"><strong>Position/Size</strong></td><td style="text-align: left"><strong>Position X, Position Y, Width, Height:</strong> Position and size of the element in pixels. <strong>Position X/Y</strong> defines the position of the upper left corner.</td></tr>
 <tr><td style="text-align: left"><strong>Attach</strong></td><td style="text-align: left">Defines how an element behaves when its parent element is resized. You can set the following parameters: <ul><li><strong>Left:</strong> If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li><strong>Right:</strong> If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li><strong>Top:</strong> If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li><strong>Bottom:</strong> If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li><strong>Left + Right:</strong> If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li></td></tr>
 <tr><td style="text-align: left"><strong>Tooltip</strong></td><td style="text-align: left">Text that appears as a tooltip when the mouse hovers over the element.</td></tr>
@@ -14105,7 +14103,7 @@ createProgram()
 <p><strong>onDropGetInfo(viewname, draginfo)</strong></p>
 </blockquote>
 <h4 id="description-316"><a class="header" href="#description-316">Description</a></h4>
-<p>Callback for the source of the drag operation when the operation starts. The text in <code>draginfo</code> is taken from the corresponding property of the control.</p>
+<p>Callback for the source of the drag operation when the operation starts. The text in <code>draginfo</code> is taken from the Drag Info property of the control.</p>
 <h4 id="arguments-223"><a class="header" href="#arguments-223">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the dragging view.</td><td style="text-align: left">string</td></tr>
@@ -14115,10 +14113,10 @@ createProgram()
 <h4 id="return-values-159"><a class="header" href="#return-values-159">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copy is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if move is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">A modified Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table of files.</td><td style="text-align: left">table with strings</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copying is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if moving is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property. By modifying the 'info' return value you can control the response of the subsequent callbacks.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table with file paths for evaluation by external software when the drop operation is executed there.</td><td style="text-align: left">table with file paths as strings</td></tr>
 </tbody></table>
 </div>
 <h3 id="ondropinsert"><a class="header" href="#ondropinsert">onDropInsert</a></h3>
@@ -14130,8 +14128,8 @@ createProgram()
 <h4 id="arguments-224"><a class="header" href="#arguments-224">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted view.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="HALion-Macro-Page/pages/Drag-Group.html#ondropgetinfo">onDropGetInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
 <h3 id="ondropdone"><a class="header" href="#ondropdone">onDropDone</a></h3>
@@ -14139,12 +14137,12 @@ createProgram()
 <p><strong>onDropDone(viewname, draginfo, copy)</strong></p>
 </blockquote>
 <h4 id="description-318"><a class="header" href="#description-318">Description</a></h4>
-<p>Callback for the source of the drag operation when the drop has completed.</p>
+<p>This callback is called when the drop operation is complete.</p>
 <h4 id="arguments-225"><a class="header" href="#arguments-225">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the source view.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="HALion-Macro-Page/pages/Drag-Group.html#ondropgetinfo">onDropGetInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Macro-Page/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="HALion-Macro-Page/pages/./HALion-Macro-Page.html">HALion Macro Page</a> / <a href="HALion-Macro-Page/pages/./Controls.html">Controls</a> /</p>
 <h1 id="drop"><a class="header" href="#drop">Drop</a></h1>
@@ -14467,17 +14465,14 @@ createProgram()
 <li><a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdropdone">onTemplateListDropDone</a></li>
 </ul>
 </li>
-<li><a href="HALion-Macro-Page/pages/Template-List.html#examples">Examples</a>
-<ul>
-<li><a href="HALion-Macro-Page/pages/Template-List.html#creating-a-template-list">Creating a Template List</a></li>
-<li><a href="HALion-Macro-Page/pages/Template-List.html#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></li>
-<li><a href="HALion-Macro-Page/pages/Template-List.html#showing-the-focus-in-the-list">Showing the Focus in the List</a></li>
-</ul>
-</li>
+<li><a href="HALion-Macro-Page/pages/Template-List.html#example">Example</a></li>
 </ul>
 <hr />
 <h2 id="description-334"><a class="header" href="#description-334">Description</a></h2>
 <p>A Template List can be used to create child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, the templates are arranged in a row, a column, or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.</p>
+<blockquote>
+<p>❕ For a better understanding of template lists, read the tutorial <a href="HALion-Macro-Page/pages/../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html">Creating a Template List</a>.</p>
+</blockquote>
 <h2 id="properties-25"><a class="header" href="#properties-25">Properties</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
@@ -14498,6 +14493,9 @@ createProgram()
 <p><span class="version-text">(Since HALion 7.0)</span></p>
 <p>To enable the graphic reordering, the Order option must be active and either <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistviewdrop">onTemplateListViewDrop</a> or <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a> must be implemented in a UI script.</p>
 <blockquote>
+<p>❕  In order for the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a> function to be called, the Drag Info property must be set inside the referenced template.</p>
+</blockquote>
+<blockquote>
 <p>❕ The callback <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistviewdrop">onTemplateListViewDrop</a> is a simplified callback that replaces the callbacks <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdropfeedback">onTemplateListDropFeedback</a>, <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a> and <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdropdone">onTemplateListDropDone</a> from below. The callback <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistviewdrop">onTemplateListViewDrop</a> cannot be combined with the callbacks just mentioned.</p>
 </blockquote>
 <h3 id="ontemplatelistviewdrop"><a class="header" href="#ontemplatelistviewdrop">onTemplateListViewDrop</a></h3>
@@ -14506,9 +14504,9 @@ createProgram()
 <p><strong>onTemplateListViewDrop(viewname, fromindex, toindex)</strong></p>
 </blockquote>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>fromindex</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">New index of the dropped list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>fromindex</strong></td><td style="text-align: left">Index of the dragged element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">New index of the dropped element.</td><td style="text-align: left">integer</td></tr>
 </tbody></table>
 </div>
 <p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
@@ -14517,36 +14515,39 @@ createProgram()
 <p><strong>onTemplateListGetDragInfo(viewname, draginfo, index)</strong></p>
 </blockquote>
 <h4 id="description-335"><a class="header" href="#description-335">Description</a></h4>
-<p>Callback for the source of the drag operation when the operation starts. The string in <code>draginfo</code> is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a> callback must be implemented in a UI script.</p>
+<p>Callback for the source of the drag operation when the operation starts. The string in <code>draginfo</code> is taken from the Drag Info property of the template referenced in the Template List. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a> callback must be implemented in a UI script.</p>
 <h4 id="arguments-226"><a class="header" href="#arguments-226">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The text specified by the Drag Info property.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the dragged list item.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List that started the drag operation. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The string specified by the Drag Info property of the template referenced in the Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the dragged element.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values-160"><a class="header" href="#return-values-160">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copy is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if move is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">A modified Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table of files.</td><td style="text-align: left">table with strings</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copying is allowed, <code>false</code> if not. If 'copy' is <code>false</code> the <strong>Alt/Cmd</strong>-key for copying cannot be used. The default for 'copy' is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if moving is allowed, <code>false</code> if not. If 'move' is <code>false</code> the elements in the list will not be reordered when dragging. The default for 'move' is <code>true</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property of the template referenced in the Template List. By modifying the 'info' return value you can control the response of the subsequent callbacks.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table with file paths for evaluation by external software when the drop operation is executed there.</td><td style="text-align: left">table with file paths as strings</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p>❕ If both of the 'copy' and 'move' return values are set to <code>true</code>, the 'copy' argument in the callbacks <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdrop">onTemplateListDrop</a>, <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdropfeedback">onTemplateListDropFeedback</a>, and <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistdropdone">onTemplateListDropDone</a> will depend upon whether the <strong>Alt/Cmd</strong>-key was utilized during the drag operation. The 'copy' argument in these callbacks will be <code>true</code> if the <strong>Alt/Cmd</strong>-key was used and <code>false</code> if it was not. If one or both of the 'copy' and 'move' return values are <code>false</code>, the use of the <strong>Alt/Cmd</strong>-key has no effect, and the 'copy' argument in the mentioned callbacks will depend solely on the 'copy' return value.</p>
+</blockquote>
 <p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
 <h3 id="ontemplatelistdrop"><a class="header" href="#ontemplatelistdrop">onTemplateListDrop</a></h3>
 <blockquote>
 <p><strong>onTemplateListDrop(viewname, draginfo, toindex, offset, copy)</strong></p>
 </blockquote>
 <h4 id="description-336"><a class="header" href="#description-336">Description</a></h4>
-<p>Callback for the target of the drag operation when the drop is executed.</p>
+<p>Callback for the target of the drag operation when the drop is executed. In order for the function to be called, the Drag Info property of the template referenced in the Template List must be set. Otherwise, the reordering will not work, even if the Order option of the Template List is active.</p>
 <h4 id="arguments-227"><a class="header" href="#arguments-227">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">Index of the targeted list item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">Index of the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.</td><td style="text-align: left">integer</td></tr>
 <tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
@@ -14556,40 +14557,40 @@ createProgram()
 <p><strong>onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)</strong></p>
 </blockquote>
 <h4 id="description-337"><a class="header" href="#description-337">Description</a></h4>
-<p>Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.</p>
+<p>Callback for the target of the drag operation when an element is held over it. If implemented it can control the graphical feedback for the potential drop operation or reject dropping the element.</p>
 <h4 id="arguments-228"><a class="header" href="#arguments-228">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The draginfo text specified at drag start time.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">The index of the targeted item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">The index of the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values-161"><a class="header" href="#return-values-161">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>accept</strong></td><td style="text-align: left">Set this to <code>true</code> to allow or <code>false</code> to reject the drop operation. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>template</strong></td><td style="text-align: left">Name of a template to be shown as animation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the item, where the template should be placed to.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>insert</strong></td><td style="text-align: left">Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>resize</strong></td><td style="text-align: left">Set this to <code>true</code> if template should be resized to the size of the targeted item.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>template</strong></td><td style="text-align: left">Name of a template that will be displayed as 'indicator' for the drop operation. The default is <code>&quot;&quot;</code>.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the targeted element, where the 'indicator' should be displayed.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>insert</strong></td><td style="text-align: left">Set this to <code>true</code> if the 'indicator' should be placed before instead of on the element. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>resize</strong></td><td style="text-align: left">Set this to <code>true</code> if the 'indicator' should be resized to the size of the targeted element. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
 <blockquote>
-<p>❕ When using onTemplateListDropFeedback: Since the default of <code>accept</code> is <code>false</code>, you must at least return <code>accept=true</code> to enable the graphic reordering.</p>
+<p>❕ When using onTemplateListDropFeedback: Since the default of <code>accept</code> is <code>false</code>, you must at least return <code>accept=true</code>.</p>
 </blockquote>
 <p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
 <h3 id="ontemplatelistdropdone"><a class="header" href="#ontemplatelistdropdone">onTemplateListDropDone</a></h3>
 <blockquote>
 <p><strong>onTemplateListDropDone(viewname, draginfo, index, copy)</strong></p>
 </blockquote>
-<p>Callback for the source of the drag operation when the drop has completed.</p>
+<p>This callback is called when the drop operation is complete. Since the arguments of the callback refer to the source of the drag operation, it can be used to make modifications to the corresponding source Template List using additional functions.</p>
 <h4 id="arguments-229"><a class="header" href="#arguments-229">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the source Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List that started the drag operation.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="HALion-Macro-Page/pages/Template-List.html#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the dragged element.</td><td style="text-align: left">integer</td></tr>
 <tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag was a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
@@ -14597,64 +14598,64 @@ createProgram()
 <blockquote>
 <p>❕ If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately with dedicated functions.</p>
 </blockquote>
-<h2 id="examples-2"><a class="header" href="#examples-2">Examples</a></h2>
-<h3 id="creating-a-template-list"><a class="header" href="#creating-a-template-list">Creating a Template List</a></h3>
-<ul>
-<li>Add Template List to your macro page.</li>
-<li>Select the template that you want to use for each list entry.</li>
-<li>Check the Template parameters which are added to the Template List.</li>
-<li>Create a String List variable for each template parameter that you want to connect.</li>
-<li>Connect the template parameters to the variables.</li>
-<li>As soon as the first variable is connected, the list is filled with a template for each string list entry.</li>
-</ul>
-<h4 id="example-1-9"><a class="header" href="#example-1-9">Example 1</a></h4>
-<p>You can use a Label control inside the template which exports its text property to the template, to name each row.</p>
-<ul>
-<li>Create a string list variable with all the labels that are needed and in the order in which you want them to appear in the list.</li>
-<li>Connect the variable to the Text parameter of the Template List.</li>
-</ul>
-<h4 id="example-2-9"><a class="header" href="#example-2-9">Example 2</a></h4>
-<p>There is a control inside the template, e.g., a switch with an exported Value parameter.</p>
-<ul>
-<li>Create a string list variable with the different parameter scopes that you want to control, e.g., the Mute state of different layers within a program.</li>
-<li>Connect the variable with the switch Value parameter of the Template List.</li>
-</ul>
-<p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
-<h3 id="switching-the-scope-for-controls-outside-the-template-list"><a class="header" href="#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></h3>
-<p>One useful usage of the Template List is to manage different articulations of an instrument and to use the list to change the scope for controls that exists only once one the macro page but need to control the different articulations, for example. In this case, you can use the Value property of the Template List which delivers the index of the selected row.</p>
-<ul>
-<li>Create a string list &quot;LayerSelect&quot; variable with an entry for each articulation layer.</li>
-<li>Add the different scopes for each articulation to the string list.</li>
-<li>Add a Template List.</li>
-<li>Specify the source template for the Template List.</li>
-<li>Connect the template parameters (delivered by the source template) using further string list variables defining the different parameters.</li>
-<li>Set the Value property of the Template List to the string list variable (@LayerSelect). This way, the list index can change the scope.</li>
-<li>Add a group and set the Scope to &quot;LayerSelect&quot;. Now the group scope changes with the the selection in the Template List.</li>
-<li>Add controls to the group and connect them to HALion parameters. Use only the parameters, not their path information, which is delivered by the group scope.</li>
-<li>When clicking inside a Template List row, the selection changes the focus of the connected control group and you modify each articulation individually.</li>
-</ul>
-<p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
-<h3 id="showing-the-focus-in-the-list"><a class="header" href="#showing-the-focus-in-the-list">Showing the Focus in the List</a></h3>
-<p>To visualize which entry of the Template List currently has the focus you can use the Focus Var property. It works in combination with an element that needs to be set up inside the source template.</p>
-<h4 id="example-1-10"><a class="header" href="#example-1-10">Example 1</a></h4>
-<p><strong>An animation to show a focus rectangle:</strong></p>
-<ul>
-<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
-<li>Add an animation with two frames to the source template. The second frame should show a colored outline rectangle, for example.</li>
-<li>Set the Value property of the animation to @SelectedRow&quot;, too.</li>
-<li>When clicking inside a Template List row, the animation of the corresponding row switches to the second frame which shows the colored rectangle.</li>
-</ul>
-<h4 id="example-2-10"><a class="header" href="#example-2-10">Example 2</a></h4>
-<p><strong>A stack to change the whole appearance of a Template List row:</strong></p>
-<ul>
-<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
-<li>Add a Stack.</li>
-<li>Group the existing controls of the source template and place the group inside the stack.</li>
-<li>Duplicate the group and modify the appearance of the controls of the second group.</li>
-<li>Set the value property of the stack to &quot;@SelectedRow&quot;, too.</li>
-<li>When clicking inside a Template List row, the stack of the corresponding row switches to the second group and shows the modified version.</li>
-</ul>
-<p><a href="HALion-Macro-Page/pages/Template-List.html#template-list">Jump to Top </a></p>
+<h2 id="example-306"><a class="header" href="#example-306">Example</a></h2>
+<p>The subsequent example is presented as illustrative guide to kickstart your own solution-building process.</p>
+<p><img src="HALion-Macro-Page/pages/../images/TemplateList-Example.png" alt="Template List Example" /></p>
+<p><strong>To explore the example:</strong></p>
+<ol>
+<li>Load <a href="HALion-Macro-Page/pages/../vstpresets/Template%20List.vstpreset">Template List.vstpreset</a>.</li>
+<li>Open the <strong>Macro Page Designer</strong>, activate <strong>Show/Hide Script Output Messages</strong>.</li>
+<li>Click <strong>Test Macro page</strong> <img src="HALion-Macro-Page/pages/../images/TestMacroPage-Off.PNG" alt="Edit Element" />, then drag and drop elements from the left to the right template list and vice versa.</li>
+<li>Use the <strong>Alt/Cmd</strong>-key to copy elements.</li>
+<li>Read the output messages of the script.</li>
+</ol>
+<p>Reading the output messages of the script should help to understand how the callbacks work and how to use them.</p>
+<pre><code class="language-lua">-- Create row names through a parameter.
+rowNames = {}
+ 
+for i = 1, 5 do 
+ rowNames[i] = &quot;Row &quot;..tostring(i) 
+end 
+ 
+defineParameter{name=&quot;RowNames&quot;, strings=rowNames,}
+
+currentViewname = &quot;&quot;
+
+-- The following example accepts dropping of elements only from other template lists.
+
+function onTemplateListGetDragInfo(viewname, draginfo, index)
+	print(&quot;onTemplateListGetDragInfo:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;index = &quot;..index)
+	currentViewname = viewname
+	return{info = index, copy=true, move=true}
+end
+
+function onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)
+	print(&quot;onTemplateListDropFeedback:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;toindex = &quot;..toindex, &quot;offset = &quot;..offset, &quot;copy = &quot;..tostring(copy))
+	local acceptDrop = false
+	if viewname ~= currentViewname then
+	acceptDrop = true
+	end
+	return{accept=acceptDrop, insert=false, template=&quot;DropFrame&quot;, resize=true,}
+end
+
+function onTemplateListDrop(viewname, draginfo, toindex, offset, copy)
+	print(&quot;onTemplateListDrop:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;toindex = &quot;..toindex, &quot;offset = &quot;..offset, &quot;copy = &quot;..tostring(copy))
+	if viewname ~= currentViewname then
+		local fromindex = tonumber(draginfo)
+		if copy then
+			rowNames[toindex] = rowNames[fromindex]
+		else
+			local rowName = table.remove(rowNames, fromindex)
+			table.insert(rowNames, toindex, rowName)
+		end
+		defineParameter{name=&quot;RowNames&quot;, strings=rowNames,}
+	end
+end
+
+function onTemplateListDropDone(viewname, draginfo, index, copy)
+	print(&quot;onTemplateListDropDone:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;index = &quot;..index, &quot;copy = &quot;..tostring(copy))
+end
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Macro-Page/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="HALion-Macro-Page/pages/./HALion-Macro-Page.html">HALion Macro Page</a> / <a href="HALion-Macro-Page/pages/./Controls.html">Controls</a> /</p>
 <h1 id="text"><a class="header" href="#text">Text</a></h1>
 <h2 id="description-338"><a class="header" href="#description-338">Description</a></h2>
@@ -16553,22 +16554,30 @@ defineParameter(&quot;RelLoopEnd&quot;,   &quot;Display Release Loop End&quot;, 
 <p>❕ The minimum version for working through the tutorials is HALion 6.3.</p>
 </blockquote>
 <ul>
+<li><a href="HALion-Tutorials-Guidelines/pages/./Creating-a-Template-List.html">Creating a Template List</a></li>
 <li><a href="HALion-Tutorials-Guidelines/pages/./Using-Relative-Paths.html">Using Relative Paths</a></li>
 <li><a href="HALion-Tutorials-Guidelines/pages/./Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li>
 <li><a href="HALion-Tutorials-Guidelines/pages/./Working-with-Exported-Properties.html">Working with Exported Properties</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="HALion-Tutorials-Guidelines/pages/./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="HALion-Tutorials-Guidelines/pages/./How-tos.html">How-tos</a> /</p>
-<h1 id="creating-a-template-list-1"><a class="header" href="#creating-a-template-list-1">Creating a Template List</a></h1>
+<h1 id="creating-a-template-list"><a class="header" href="#creating-a-template-list">Creating a Template List</a></h1>
 <hr />
 <p><strong>On this page:</strong></p>
 <ul>
 <li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#example-vst-preset">Example VST Preset</a></li>
 <li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#prerequisites">Prerequisites</a></li>
 <li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#overview-of-workflows">Overview of Workflows</a></li>
-<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#step-by-step-guide">Step-by-Step Guide</a></li>
+<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#creating-a-basic-template-list">Creating a Basic Template List</a></li>
+<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#adding-functionality">Adding Functionality</a></li>
+<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#setting-the-scope-for-controls-outside-the-template-list">Setting the Scope for Controls outside the Template List</a></li>
+<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#using-ui-script-parameters-instead-of-ui-variables">Using UI Script Parameters Instead of UI Variables</a>
+<ul>
+<li><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#example">Example</a></li>
+</ul>
+</li>
 </ul>
 <hr />
-<p>This tutortial describes the creation of a template list step by step. The following preset already contains the ready solution. For better understanding, it is recommended to try the steps described below by yourself.</p>
+<p><a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> are a versatile and powerful tool for creating controls with repeating elements, such as an effects rack with multiple slots, or a list of articulations that share a set of parameters. The main concept behind <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> is based on creating repeating controls from a single template that is referenced and instantiated multiple times. Similar to programming where for-loops can save many lines of code, <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template Lists</a> save you from creating many individual templates. This tutortial describes the creation of a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a> step by step. The following preset already contains the ready solution. For better understanding, it is recommended to try the steps described below by yourself.</p>
 <h2 id="example-vst-preset"><a class="header" href="#example-vst-preset">Example VST Preset</a></h2>
 <ul>
 <li><a href="HALion-Tutorials-Guidelines/pages/../vstpresets/Creating%20a%20Template%20List.vstpreset">Creating a Template List.vstpreset</a></li>
@@ -16585,20 +16594,72 @@ defineParameter(&quot;RelLoopEnd&quot;,   &quot;Display Release Loop End&quot;, 
 <li>Add controls to the template and export the desired values as template parameters.</li>
 <li>Create variables for the desired entries in the list and connect them to the corresponding template parameters.</li>
 </ul>
-<h2 id="step-by-step-guide"><a class="header" href="#step-by-step-guide">Step-by-Step Guide</a></h2>
+<h2 id="creating-a-basic-template-list"><a class="header" href="#creating-a-basic-template-list">Creating a Basic Template List</a></h2>
+<p>This first part of the tutorial illustrates only the creation of a basic template list without furthergoing functionality.</p>
 <ol>
 <li>In the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and create a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. Name it 'BasicList', for example.</li>
-<li>Go to the <strong>Templates Tree</strong> and create a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template.html">Template</a>. Name it 'RowEntry', for example.</li>
+<li>Go to the <strong>Templates Tree</strong> and create a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template.html">Template</a>. Name it 'RowEntry'.</li>
 <li>Click <strong>Edit Element</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/EditElement.PNG" alt="Edit Element" /> to open the template.</li>
-<li>Add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> and a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control.</li>
-<li>The look of an entry is defined by the properties of the controls inside the template. Adjust the size and other properties of the controls as desired.</li>
-<li>Export the Value property of the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> control. This exported value becomes a template parameter of the 'BasicList' template list.</li>
-<li>Close the template and go back to the to the <strong>GUI Tree</strong>. Select the 'BasicList' item, got to the <strong>Properties</strong> and set Template to 'RowEntry'.</li>
-<li>Create a Variables folder, then right-click it and  create a 'String List' variable. Name it 'Rows', for example.</li>
-<li>Select the String List variable, go to the <strong>Properties</strong> and create entries for each row you want to display, e.g., 'Row 1', 'Row 2', 'Row 3', and so on.</li>
-<li>Select the 'BasicList' item, got to the <strong>Properties</strong> and set the value under Template Parameter to '@Rows'. The rows you defined in step 9 should now display with the look you defined in step 5.</li>
-<li>Adjust the position and size of the 'BasicList' template list, if needed.</li>
+<li>Add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Label.html">Label</a> and a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control. The look of an entry is defined by the properties of the controls inside the template. Adjust the size and other properties of the controls as desired.</li>
+<li>Select the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Label.html">Label</a> control and go to the <strong>Properties</strong> editor. Next to the Text property, click <strong>Export Property</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/Export-Property.png" alt="Export Property" /> to export it. This exported Text becomes a template parameter of the BasicList template list.</li>
+<li>It's advanteagous to rename the exported Text property. Select RowEntry and go to the Template Parameter section of the <strong>Properties</strong> editor, change the name of the exported Text property to 'Name'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-RowName.png" alt="Creating a Template List RowEntry RowName" /></p></li>
+<li>Close the template and go back to the to the <strong>GUI Tree</strong>. Select the BasicList item, go to the <strong>Properties</strong> editor and set Template to 'RowEntry'.</li>
+<li>Create a Variables folder, right-click it and create a String List variable. Name it 'RowNames'.</li>
+<li>Select the String List variable, go to the <strong>Properties</strong> editor and create entries for each row you want to display. Name the entries 'Zone 1', 'Zone 2', and 'Zone 3'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowNames-Variable.png" alt="Creating a Template List RowNames Variable" /></p></li>
+<li>Select the BasicList item, go to the <strong>Properties</strong> and set the Name template parameter to '@RowNames'. The list entries you defined in step 9 should now display with the look you defined in step 4.</li>
+<li>Adjust the position and size of the BasicList template list, if needed.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-BasicList.png" alt="Creating a Template List BasicList" /></p></li>
 </ol>
+<h2 id="adding-functionality"><a class="header" href="#adding-functionality">Adding Functionality</a></h2>
+<p>In this part of the tutorial, the variables Focus Var and Index Var of the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a> will be used to highlight the selected row and to display the row index. We will also add two more synth zones to the program and further controls to the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a> for adjusting these zones. The synth zones are used only as a substitute for the different articulations of an instrument, which are normally provided by different layers with samples for each articulation.</p>
+<blockquote>
+<p>❕ To follow the subsequent steps, <a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#creating-a-basic-template-list">Creating a Basic Template List</a> must be completed first.</p>
+</blockquote>
+<ol>
+<li>Go to the <strong>Program Tree</strong> and add two more synth layers.</li>
+<li>Open the <strong>Zone Editor</strong> and got to the <strong>Oscillator</strong> section, then switch off all oscillators except oscillator 1. Do this for all three zones. Choose different waveforms for oscillator 1 in each of the three zones.</li>
+<li>Open the <strong>Macro Page Designer</strong>, select the BasicList template list and go to the <strong>Properties</strong> editor. Set Focus Var to 'RowFocus' and Index Var to 'RowIndex'. These two variables will be used later inside the RowEntry template to highlight the selected row and to display the row index.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowFocus-RowIndex.png" alt="Creating a Template List RowFocus RowIndex" /></p></li>
+<li>Select the Variables folder and create a String List variable. Name it 'ZoneMute'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:66', '@0:Zone 2/@id:66', and '@0:Zone 3/@id:66'. The ZoneMute variable will be used later inside the RowEntry template to control the mute of the focused zone.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-ZoneMute.png" alt="Creating a Template List ZoneMute" /></p></li>
+<li>Create another String List variable and name it 'ZoneCoarse'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:330002', '@0:Zone 2/@id:330002', and '@0:Zone 3/@id:330002'. The ZoneCoarse variable will be used later inside the RowEntry template to control the coarse tune of the focused zone.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-ZoneCoarse.png" alt="Creating a Template List ZoneCoarse" /></p></li>
+<li>Create on more String List variable and name it 'ZoneLevel'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/@id:320001', '@0:Zone 2/@id:320001', and '@0:Zone 3/@id:320001'. The ZoneLevel variable will be used later inside the RowEntry template to control the level of the focused zone.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-ZoneLevel.png" alt="Creating a Template List ZoneLevel" /></p></li>
+<li>Go to the <strong>Templates Tree</strong>, select the RowEntry template and click <strong>Edit Element</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/EditElement.PNG" alt="Edit Element" /> to open it.</li>
+<li>Add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'RowIndex'. Position it before the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Label.html">Label</a> control that displays the row names. Set the Value to '@RowIndex'. Now, the index of the row should display in the list.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-RowIndex.png" alt="Creating a Template List ZoneLevel" /></p></li>
+<li>Create a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Stack.html">Stack</a> control and drag the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Decor-Control.html">Decor</a> control into it. Rename the decor to 'DecorOff'. Copy the decor and rename it to 'DecorOn'. Go to the <strong>Properties</strong> editor and change the color of the DecorOn control to fully white. Select the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Stack.html">Stack</a> control and set its Value property to '@RowFocus'. Now, a row will highlight if you click it.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-Stack.png" alt="Creating a Template List RowEntry Stack" /></p></li>
+<li>Add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Switch.html">Switch</a> control and set Mode to 'onoff'. Assign bitmaps for the different states of the switch. Alternatively, you can use a preconfigured switch template from the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> library. Postition the switch between the RowIndex and the RowName controls. Next to the Value property, click <strong>Export Property</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Mute'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-Switch.png" alt="Creating a Template List RowEntry Switch" /></p></li>
+<li>Add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'CoarseVal'. Postition the control after the RowName control. Next to the Value property, click <strong>Export Property</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Coarse'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-CoarseVal.png" alt="Creating a Template List RowEntry CoarseVal" /></p></li>
+<li>Add another <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> control and name it 'LevelVal'. Postition the control after the CoarseVal control. Next to the Value property, click <strong>Export Property</strong> <img src="HALion-Tutorials-Guidelines/pages/../images/Export-Property.png" alt="Export Property" /> to export it. Select RowEntry and change the name of the exported Value property to 'Level'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-RowEntry-LevelVal.png" alt="Creating a Template List RowEntry LevelVal" /></p></li>
+<li>Close the RowEntry template and go back to the to the <strong>GUI Tree</strong>. Select the BasicList item, go to the <strong>Properties</strong> editor and set the Template Parameters as follows: Set 'Mute' to '@ZoneMute', 'Coarse' to '@ZoneCoarse', and 'Level' to '@ZoneLevel'. Now, the rows will show the values of the connected parameters of the corresponding zones.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-BasicList-Template-Parameter.png" alt="Creating a Template List BasicList Template Parameter" /></p></li>
+</ol>
+<blockquote>
+<p>❕ The <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Stack.html">Stack</a> from step 9 could contain further controls and thus change the appearance of a rowcompletely, e.g., <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Label.html">Label</a> and <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Text.html">Text</a> controls with different colors, etc. To display the same parameters, their exported Value properties must share the same name.</p>
+</blockquote>
+<h2 id="setting-the-scope-for-controls-outside-the-template-list"><a class="header" href="#setting-the-scope-for-controls-outside-the-template-list">Setting the Scope for Controls outside the Template List</a></h2>
+<p>This last part of the tutorial describes how to use a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a> for managing a common set of controls for different zones, or the different articulations of an instrument, for example. The common controls exist only once and are not part of the template list. The focus of the template list is used to switch the scope of these controls, which connects them to the corresponding zone, or layer of an articulation.</p>
+<blockquote>
+<p>❕ To follow the subsequent steps, <a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#creating-a-basic-template-list">Creating a Basic Template List</a> and <a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html#adding-functionality">Adding Functionality</a> must be completed beforehand.</p>
+</blockquote>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong>, select the Variables folder and create a String List variable. Name it 'ZoneList'. Go to the <strong>Properties</strong> editor and create the following entries: '@0:Zone 1/', '@0:Zone 2/', and '@0:Zone 3/'. The ZoneList variable will be used later to set the focus for a set of common controls.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-ZoneList-Variable.png" alt="Creating a Template List ZoneList Variable" /></p></li>
+<li>Create a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Group.html">Group</a> and set the Scope property to '@ZoneList'.</li>
+<li>Add two knobs from the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> library to the group, one for the Coarse and one for the Level parameter of the zones. Set the Value property of the Coarse knob to '@id:330002' and the Value property of the Level knob to '@id:320001'. Name the labels of the respective knobs 'Coarse' and 'Level'.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-Group.png" alt="Creating a Template List Group" /></p></li>
+<li>Select the BasicList template list and set its Value property also to '@ZoneList'. Now, the scope of the knob controls is determined by the focussed row in the template list.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-BasicList-ZoneList.png" alt="Creating a Template List BasicList ZoneList" /></p></li>
+<li>Finally, create four <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Label.html">Label</a> controls, name them 'Mute', 'Name', 'Coarse', and 'Level', and place them above the corresponding columns of the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a>.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-Labels.png" alt="Creating a Template List Labels" /></p></li>
+</ol>
+<h2 id="using-ui-script-parameters-instead-of-ui-variables"><a class="header" href="#using-ui-script-parameters-instead-of-ui-variables">Using UI Script Parameters Instead of UI Variables</a></h2>
+<p>Instead of using UI Variables for defining the entries of the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a> you can use a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a> that you have defined in an UI script.</p>
+<ol>
+<li>Create a UI script and define a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a>.</li>
+<li>Connect the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Script/pages/Creating-Parameters.html#parameter-characteristics">string list parameter</a> with the corresponding template parameter of the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Template-List.html">Template List</a>.</li>
+</ol>
+<p><img src="HALion-Tutorials-Guidelines/pages/../images/Creating-a-Template-List-UI-Script.png" alt="Creating a Template List UI Script" /></p>
+<h3 id="example-307"><a class="header" href="#example-307">Example</a></h3>
+<pre><code class="language-lua">rowsList = {}
+
+for i = 1, 4 do
+	rowsList[i] = &quot;Zone &quot;..tostring(i)
+end
+
+defineParameter(&quot;RowNames&quot;, nil, 1, rowsList)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="HALion-Tutorials-Guidelines/pages/./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="HALion-Tutorials-Guidelines/pages/./Tutorials.html">Tutorials</a> /</p>
 <h1 id="using-relative-paths"><a class="header" href="#using-relative-paths">Using Relative Paths</a></h1>
 <hr />
@@ -16682,7 +16743,7 @@ defineParameter(&quot;RelLoopEnd&quot;,   &quot;Display Release Loop End&quot;, 
 <p>If you need to move the library to a new location, you must move the whole working directory with contents. As long as you do not change the folder structure inside the working directory, HALion will be able to load your library, even after moving it.</p>
 <h2 id="achieving-relative-paths-in-script"><a class="header" href="#achieving-relative-paths-in-script">Achieving Relative Paths in Script</a></h2>
 <p>Functions like <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Script/pages/loadPreset.html">loadPreset</a> require a file path as argument. The function <code>debug.getinfo</code> from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the if branch of the following script example must match the working directory on your hard disk. How to create a working directory is described in <a href="HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html#using-relative-paths">Using Relative Paths</a>. The folders in the else branch must match the folders that you specified in the <strong>Library Creator</strong>. If the folder on the hard disk cannot be found, the file path of the VST sound will be used instead. Note that the VST sound must be mounted for this to work.</p>
-<h3 id="example-306"><a class="header" href="#example-306">Example</a></h3>
+<h3 id="example-308"><a class="header" href="#example-308">Example</a></h3>
 <pre><code class="language-lua">-- Load a sub preset from hard disk or VST sound.
 -- Find relative path on hard disk.
 local info = debug.getinfo(1,'S') -- Function from the Lua debug library.
@@ -17860,19 +17921,12 @@ end
 <ol>
 <li>Duplicate the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/SVG.html">SVG</a> resource 'SVG original' and name it 'SVG Checkbox Off'.</li>
 <li>In the 'SVG Checkbox Off' resource, add the objects 'Back' and 'Check' as described above in <a href="HALion-Tutorials-Guidelines/pages/Modifying-SVGs-with-Multiple-Objects.html#adding-objects">Adding Objects</a>.</li>
-<li>Adapt the look to your liking. In this example, 'Back' is set to <code>fill</code> and <code>orange</code> and 'Check' is set to <code>fill</code> and <code>rgba (0,0,0,0.4)</code> which is black with an opacity of 40 %.</li>
-</ol>
-<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-Off.png" alt="Modifying SVGs with Multiple Objects Off" /></p>
-<ol start="4">
+<li>Adapt the look to your liking. In this example, 'Back' is set to <code>fill</code> and <code>orange</code> and 'Check' is set to <code>fill</code> and <code>rgba (0,0,0,0.4)</code> which is black with an opacity of 40 %.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-Off.png" alt="Modifying SVGs with Multiple Objects Off" /></p></li>
 <li>Duplicate the <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/SVG.html">SVG</a> resource 'SVG Checkbox Off' and name it 'SVG Checkbox On'.</li>
-<li>In the 'SVG Checkbox On' resource, set the <code>fill</code> property of the 'Check' circle to <code>black</code>.</li>
-</ol>
-<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-On.png" alt="Modifying SVGs with Multiple Objects On" /></p>
-<ol start="6">
+<li>In the 'SVG Checkbox On' resource, set the <code>fill</code> property of the 'Check' circle to <code>black</code>.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-On.png" alt="Modifying SVGs with Multiple Objects On" /></p></li>
 <li>In the <strong>GUI Tree</strong>, add a <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Macro-Page/pages/Switch.html">Switch</a> control and set its Mode to 'onoff'.</li>
-<li>Assign the 'SVG Checkbox Off' and 'SVG Checkbox On' resources to the Bitmaps Off and On respectively.</li>
+<li>Assign the 'SVG Checkbox Off' and 'SVG Checkbox On' resources to the Bitmaps Off and On respectively.<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-Switch.png" alt="Modifying SVGs with Multiple Objects Switch" /></p></li>
 </ol>
-<p><img src="HALion-Tutorials-Guidelines/pages/../images/Modifying-SVGs-with-Multiple-Objects-Switch.png" alt="Modifying SVGs with Multiple Objects Switch" /></p>
 <p>If you want, you can create more variants to implement additional hover-state resources, for example.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>/ <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="HALion-Tutorials-Guidelines/pages/./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="HALion-Tutorials-Guidelines/pages/./How-tos.html">How-tos</a> /</p>
 <h1 id="multi-level-system-menus"><a class="header" href="#multi-level-system-menus">Multi-Level System Menus</a></h1>
@@ -17911,7 +17965,7 @@ end
 </ul>
 <h2 id="defining-parameters-for-the-menu"><a class="header" href="#defining-parameters-for-the-menu">Defining Parameters for the Menu</a></h2>
 <p>The following code example shows how to create the menu entries and the resulting display string using a UI script.</p>
-<h3 id="example-307"><a class="header" href="#example-307">Example</a></h3>
+<h3 id="example-309"><a class="header" href="#example-309">Example</a></h3>
 <pre><code class="language-lua"> -- Create tables for menu entry strings and display output strings
 entry_and_output = {
     { &quot;/Folder1/Entry1&quot;, &quot;Value 1&quot; },
@@ -17944,7 +17998,7 @@ defineParameter(&quot;Output&quot;, nil, 1, outputs)
 </ul>
 <hr />
 <p>Functions like <a href="HALion-Tutorials-Guidelines/pages/../../HALion-Script/pages/loadPreset.html">loadPreset</a> require a file path as argument. The function <code>debug.getinfo</code> from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the if branch of the following script example must match the working directory on your hard disk. How to create a working directory is described in <a href="HALion-Tutorials-Guidelines/pages/./Using-Relative-Paths.html">Using Relative Paths</a>. The folders in the else branch must match the folders that you specified in the <strong>Library Creator</strong>. If the folder on the hard disk cannot be found, the file path of the VST sound will be used instead. Note that the VST sound must be mounted for this to work.</p>
-<h2 id="example-308"><a class="header" href="#example-308">Example</a></h2>
+<h2 id="example-310"><a class="header" href="#example-310">Example</a></h2>
 <pre><code class="language-lua">-- Load a sub preset from hard disk or VST sound.
 -- Find relative path on hard disk.
 

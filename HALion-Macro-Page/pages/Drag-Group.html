@@ -34,7 +34,6 @@
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../.././theme/css/custom.css">
 
     </head>
     <body>
@@ -193,7 +192,7 @@
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
 <tr><td style="text-align: left"><strong>Scope</strong></td><td style="text-align: left">Allows you to define which part of the Program Tree is affected by the controls inside the Group.</td></tr>
-<tr><td style="text-align: left"><strong>Drag Info</strong></td><td style="text-align: left">The Drag Info can be used as follows:<ul><li>It can be a text info that will be carried to the receiver.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback onDropGetInfo by returning another text.</li></td></tr>
+<tr><td style="text-align: left"><strong>Drag Info</strong></td><td style="text-align: left">The Drag Info can be used as follows:<ul><li>It can be a string that will be send to the target.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback <a href="#ondropgetinfo">onDropGetInfo</a> by returning another string.</li></td></tr>
 <tr><td style="text-align: left"><strong>Position/Size</strong></td><td style="text-align: left"><strong>Position X, Position Y, Width, Height:</strong> Position and size of the element in pixels. <strong>Position X/Y</strong> defines the position of the upper left corner.</td></tr>
 <tr><td style="text-align: left"><strong>Attach</strong></td><td style="text-align: left">Defines how an element behaves when its parent element is resized. You can set the following parameters: <ul><li><strong>Left:</strong> If the parent element is resized, the element remains attached to left edge, with the specified ratio.</li><li><strong>Right:</strong> If the parent element is resized, the element moves relatively to the right edge, with the specified ratio.</li><li><strong>Top:</strong> If the parent element is resized, the element remains attached to top edge, with the specified ratio.</li><li><strong>Bottom:</strong> If the parent element is resized, the element moves relatively to the bottom edge, with the specified ratio.</li><li><strong>Left + Right:</strong> If the parent element is resized, the element is resized horizontally relatively to the left and right edges, with the specified ratio.</li></td></tr>
 <tr><td style="text-align: left"><strong>Tooltip</strong></td><td style="text-align: left">Text that appears as a tooltip when the mouse hovers over the element.</td></tr>
@@ -205,7 +204,7 @@
 <p><strong>onDropGetInfo(viewname, draginfo)</strong></p>
 </blockquote>
 <h4 id="description-1"><a class="header" href="#description-1">Description</a></h4>
-<p>Callback for the source of the drag operation when the operation starts. The text in <code>draginfo</code> is taken from the corresponding property of the control.</p>
+<p>Callback for the source of the drag operation when the operation starts. The text in <code>draginfo</code> is taken from the Drag Info property of the control.</p>
 <h4 id="arguments"><a class="header" href="#arguments">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the dragging view.</td><td style="text-align: left">string</td></tr>
@@ -215,10 +214,10 @@
 <h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copy is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if move is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">A modified Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table of files.</td><td style="text-align: left">table with strings</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copying is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if moving is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property. By modifying the 'info' return value you can control the response of the subsequent callbacks.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table with file paths for evaluation by external software when the drop operation is executed there.</td><td style="text-align: left">table with file paths as strings</td></tr>
 </tbody></table>
 </div>
 <h3 id="ondropinsert"><a class="header" href="#ondropinsert">onDropInsert</a></h3>
@@ -230,8 +229,8 @@
 <h4 id="arguments-1"><a class="header" href="#arguments-1">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted view.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="#ondropgetinfo">onDropGetInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
 <h3 id="ondropdone"><a class="header" href="#ondropdone">onDropDone</a></h3>
@@ -239,12 +238,12 @@
 <p><strong>onDropDone(viewname, draginfo, copy)</strong></p>
 </blockquote>
 <h4 id="description-3"><a class="header" href="#description-3">Description</a></h4>
-<p>Callback for the source of the drag operation when the drop has completed.</p>
+<p>This callback is called when the drop operation is complete.</p>
 <h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the source view.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="#ondropgetinfo">onDropGetInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
                     </main>

@@ -34,7 +34,6 @@
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../.././theme/css/custom.css">
 
     </head>
     <body>
@@ -186,17 +185,14 @@
 <li><a href="#ontemplatelistdropdone">onTemplateListDropDone</a></li>
 </ul>
 </li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#creating-a-template-list">Creating a Template List</a></li>
-<li><a href="#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></li>
-<li><a href="#showing-the-focus-in-the-list">Showing the Focus in the List</a></li>
-</ul>
-</li>
+<li><a href="#example">Example</a></li>
 </ul>
 <hr />
 <h2 id="description"><a class="header" href="#description">Description</a></h2>
 <p>A Template List can be used to create child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, the templates are arranged in a row, a column, or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.</p>
+<blockquote>
+<p>❕ For a better understanding of template lists, read the tutorial <a href="../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html">Creating a Template List</a>.</p>
+</blockquote>
 <h2 id="properties"><a class="header" href="#properties">Properties</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Poperty</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>Name</strong></td><td style="text-align: left">The name of the element. This name will be displayed in the GUI Tree.</td></tr>
@@ -217,6 +213,9 @@
 <p><span class="version-text">(Since HALion 7.0)</span></p>
 <p>To enable the graphic reordering, the Order option must be active and either <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> or <a href="#ontemplatelistdrop">onTemplateListDrop</a> must be implemented in a UI script.</p>
 <blockquote>
+<p>❕  In order for the <a href="#ontemplatelistdrop">onTemplateListDrop</a> function to be called, the Drag Info property must be set inside the referenced template.</p>
+</blockquote>
+<blockquote>
 <p>❕ The callback <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> is a simplified callback that replaces the callbacks <a href="#ontemplatelistdropfeedback">onTemplateListDropFeedback</a>, <a href="#ontemplatelistdrop">onTemplateListDrop</a> and <a href="#ontemplatelistdropdone">onTemplateListDropDone</a> from below. The callback <a href="#ontemplatelistviewdrop">onTemplateListViewDrop</a> cannot be combined with the callbacks just mentioned.</p>
 </blockquote>
 <h3 id="ontemplatelistviewdrop"><a class="header" href="#ontemplatelistviewdrop">onTemplateListViewDrop</a></h3>
@@ -225,9 +224,9 @@
 <p><strong>onTemplateListViewDrop(viewname, fromindex, toindex)</strong></p>
 </blockquote>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>fromindex</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">New index of the dropped list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>fromindex</strong></td><td style="text-align: left">Index of the dragged element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">New index of the dropped element.</td><td style="text-align: left">integer</td></tr>
 </tbody></table>
 </div>
 <p><a href="#template-list">Jump to Top </a></p>
@@ -236,36 +235,39 @@
 <p><strong>onTemplateListGetDragInfo(viewname, draginfo, index)</strong></p>
 </blockquote>
 <h4 id="description-1"><a class="header" href="#description-1">Description</a></h4>
-<p>Callback for the source of the drag operation when the operation starts. The string in <code>draginfo</code> is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the <a href="#ontemplatelistdrop">onTemplateListDrop</a> callback must be implemented in a UI script.</p>
+<p>Callback for the source of the drag operation when the operation starts. The string in <code>draginfo</code> is taken from the Drag Info property of the template referenced in the Template List. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least the <a href="#ontemplatelistdrop">onTemplateListDrop</a> callback must be implemented in a UI script.</p>
 <h4 id="arguments"><a class="header" href="#arguments">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The text specified by the Drag Info property.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the dragged list item.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List that started the drag operation. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The string specified by the Drag Info property of the template referenced in the Template List.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the dragged element.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copy is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if move is allowed, <code>false</code> if not.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">A modified Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table of files.</td><td style="text-align: left">table with strings</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Set this to <code>true</code> if copying is allowed, <code>false</code> if not. If 'copy' is <code>false</code> the <strong>Alt/Cmd</strong>-key for copying cannot be used. The default for 'copy' is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>move</strong></td><td style="text-align: left">Set this to <code>true</code> if moving is allowed, <code>false</code> if not. If 'move' is <code>false</code> the elements in the list will not be reordered when dragging. The default for 'move' is <code>true</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>info</strong></td><td style="text-align: left">The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property of the template referenced in the Template List. By modifying the 'info' return value you can control the response of the subsequent callbacks.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>files</strong></td><td style="text-align: left">A table with file paths for evaluation by external software when the drop operation is executed there.</td><td style="text-align: left">table with file paths as strings</td></tr>
 </tbody></table>
 </div>
+<blockquote>
+<p>❕ If both of the 'copy' and 'move' return values are set to <code>true</code>, the 'copy' argument in the callbacks <a href="#ontemplatelistdrop">onTemplateListDrop</a>, <a href="#ontemplatelistdropfeedback">onTemplateListDropFeedback</a>, and <a href="#ontemplatelistdropdone">onTemplateListDropDone</a> will depend upon whether the <strong>Alt/Cmd</strong>-key was utilized during the drag operation. The 'copy' argument in these callbacks will be <code>true</code> if the <strong>Alt/Cmd</strong>-key was used and <code>false</code> if it was not. If one or both of the 'copy' and 'move' return values are <code>false</code>, the use of the <strong>Alt/Cmd</strong>-key has no effect, and the 'copy' argument in the mentioned callbacks will depend solely on the 'copy' return value.</p>
+</blockquote>
 <p><a href="#template-list">Jump to Top </a></p>
 <h3 id="ontemplatelistdrop"><a class="header" href="#ontemplatelistdrop">onTemplateListDrop</a></h3>
 <blockquote>
 <p><strong>onTemplateListDrop(viewname, draginfo, toindex, offset, copy)</strong></p>
 </blockquote>
 <h4 id="description-2"><a class="header" href="#description-2">Description</a></h4>
-<p>Callback for the target of the drag operation when the drop is executed.</p>
+<p>Callback for the target of the drag operation when the drop is executed. In order for the function to be called, the Drag Info property of the template referenced in the Template List must be set. Otherwise, the reordering will not work, even if the Order option of the Template List is active.</p>
 <h4 id="arguments-1"><a class="header" href="#arguments-1">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">Index of the targeted list item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">Index of the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.</td><td style="text-align: left">integer</td></tr>
 <tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag is a copy operation.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
@@ -275,40 +277,40 @@
 <p><strong>onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)</strong></p>
 </blockquote>
 <h4 id="description-3"><a class="header" href="#description-3">Description</a></h4>
-<p>Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.</p>
+<p>Callback for the target of the drag operation when an element is held over it. If implemented it can control the graphical feedback for the potential drop operation or reject dropping the element.</p>
 <h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The draginfo text specified at drag start time.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">The index of the targeted item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.</td><td style="text-align: left">integer</td></tr>
-<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation (<code>true</code>).</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the targeted Template List. Evaluate this to distinguish between different lists.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>toindex</strong></td><td style="text-align: left">The index of the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>offset</strong></td><td style="text-align: left">The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if drag is a copy operation.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values-1"><a class="header" href="#return-values-1">Return Values</a></h4>
 <p>The function can return a table with the following keys:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Return Value</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>accept</strong></td><td style="text-align: left">Set this to <code>true</code> to allow or <code>false</code> to reject the drop operation. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>template</strong></td><td style="text-align: left">Name of a template to be shown as animation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the item, where the template should be placed to.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>insert</strong></td><td style="text-align: left">Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.</td><td style="text-align: left">boolean</td></tr>
-<tr><td style="text-align: left"><strong>resize</strong></td><td style="text-align: left">Set this to <code>true</code> if template should be resized to the size of the targeted item.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>template</strong></td><td style="text-align: left">Name of a template that will be displayed as 'indicator' for the drop operation. The default is <code>&quot;&quot;</code>.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the targeted element, where the 'indicator' should be displayed.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>insert</strong></td><td style="text-align: left">Set this to <code>true</code> if the 'indicator' should be placed before instead of on the element. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>resize</strong></td><td style="text-align: left">Set this to <code>true</code> if the 'indicator' should be resized to the size of the targeted element. The default is <code>false</code>.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
 <blockquote>
-<p>❕ When using onTemplateListDropFeedback: Since the default of <code>accept</code> is <code>false</code>, you must at least return <code>accept=true</code> to enable the graphic reordering.</p>
+<p>❕ When using onTemplateListDropFeedback: Since the default of <code>accept</code> is <code>false</code>, you must at least return <code>accept=true</code>.</p>
 </blockquote>
 <p><a href="#template-list">Jump to Top </a></p>
 <h3 id="ontemplatelistdropdone"><a class="header" href="#ontemplatelistdropdone">onTemplateListDropDone</a></h3>
 <blockquote>
 <p><strong>onTemplateListDropDone(viewname, draginfo, index, copy)</strong></p>
 </blockquote>
-<p>Callback for the source of the drag operation when the drop has completed.</p>
+<p>This callback is called when the drop operation is complete. Since the arguments of the callback refer to the source of the drag operation, it can be used to make modifications to the corresponding source Template List using additional functions.</p>
 <h4 id="arguments-3"><a class="header" href="#arguments-3">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the source Template List.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">The Drag Info text specified at the start of the drag operation.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the dragged list item.</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left"><strong>viewname</strong></td><td style="text-align: left">The name of the Template List that started the drag operation.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>draginfo</strong></td><td style="text-align: left">This string is specified by the 'info' return value of the <a href="#ontemplatelistgetdraginfo">onTemplateListGetDragInfo</a> callback when the drag operation starts.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">Index of the dragged element.</td><td style="text-align: left">integer</td></tr>
 <tr><td style="text-align: left"><strong>copy</strong></td><td style="text-align: left">Indicates if the drag was a copy operation.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
@@ -316,64 +318,64 @@
 <blockquote>
 <p>❕ If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately with dedicated functions.</p>
 </blockquote>
-<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
-<h3 id="creating-a-template-list"><a class="header" href="#creating-a-template-list">Creating a Template List</a></h3>
-<ul>
-<li>Add Template List to your macro page.</li>
-<li>Select the template that you want to use for each list entry.</li>
-<li>Check the Template parameters which are added to the Template List.</li>
-<li>Create a String List variable for each template parameter that you want to connect.</li>
-<li>Connect the template parameters to the variables.</li>
-<li>As soon as the first variable is connected, the list is filled with a template for each string list entry.</li>
-</ul>
-<h4 id="example-1"><a class="header" href="#example-1">Example 1</a></h4>
-<p>You can use a Label control inside the template which exports its text property to the template, to name each row.</p>
-<ul>
-<li>Create a string list variable with all the labels that are needed and in the order in which you want them to appear in the list.</li>
-<li>Connect the variable to the Text parameter of the Template List.</li>
-</ul>
-<h4 id="example-2"><a class="header" href="#example-2">Example 2</a></h4>
-<p>There is a control inside the template, e.g., a switch with an exported Value parameter.</p>
-<ul>
-<li>Create a string list variable with the different parameter scopes that you want to control, e.g., the Mute state of different layers within a program.</li>
-<li>Connect the variable with the switch Value parameter of the Template List.</li>
-</ul>
-<p><a href="#template-list">Jump to Top </a></p>
-<h3 id="switching-the-scope-for-controls-outside-the-template-list"><a class="header" href="#switching-the-scope-for-controls-outside-the-template-list">Switching the Scope for Controls outside the Template List</a></h3>
-<p>One useful usage of the Template List is to manage different articulations of an instrument and to use the list to change the scope for controls that exists only once one the macro page but need to control the different articulations, for example. In this case, you can use the Value property of the Template List which delivers the index of the selected row.</p>
-<ul>
-<li>Create a string list &quot;LayerSelect&quot; variable with an entry for each articulation layer.</li>
-<li>Add the different scopes for each articulation to the string list.</li>
-<li>Add a Template List.</li>
-<li>Specify the source template for the Template List.</li>
-<li>Connect the template parameters (delivered by the source template) using further string list variables defining the different parameters.</li>
-<li>Set the Value property of the Template List to the string list variable (@LayerSelect). This way, the list index can change the scope.</li>
-<li>Add a group and set the Scope to &quot;LayerSelect&quot;. Now the group scope changes with the the selection in the Template List.</li>
-<li>Add controls to the group and connect them to HALion parameters. Use only the parameters, not their path information, which is delivered by the group scope.</li>
-<li>When clicking inside a Template List row, the selection changes the focus of the connected control group and you modify each articulation individually.</li>
-</ul>
-<p><a href="#template-list">Jump to Top </a></p>
-<h3 id="showing-the-focus-in-the-list"><a class="header" href="#showing-the-focus-in-the-list">Showing the Focus in the List</a></h3>
-<p>To visualize which entry of the Template List currently has the focus you can use the Focus Var property. It works in combination with an element that needs to be set up inside the source template.</p>
-<h4 id="example-1-1"><a class="header" href="#example-1-1">Example 1</a></h4>
-<p><strong>An animation to show a focus rectangle:</strong></p>
-<ul>
-<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
-<li>Add an animation with two frames to the source template. The second frame should show a colored outline rectangle, for example.</li>
-<li>Set the Value property of the animation to @SelectedRow&quot;, too.</li>
-<li>When clicking inside a Template List row, the animation of the corresponding row switches to the second frame which shows the colored rectangle.</li>
-</ul>
-<h4 id="example-2-1"><a class="header" href="#example-2-1">Example 2</a></h4>
-<p><strong>A stack to change the whole appearance of a Template List row:</strong></p>
-<ul>
-<li>Set Focus Var of the Template List to &quot;@SelectedRow&quot;.</li>
-<li>Add a Stack.</li>
-<li>Group the existing controls of the source template and place the group inside the stack.</li>
-<li>Duplicate the group and modify the appearance of the controls of the second group.</li>
-<li>Set the value property of the stack to &quot;@SelectedRow&quot;, too.</li>
-<li>When clicking inside a Template List row, the stack of the corresponding row switches to the second group and shows the modified version.</li>
-</ul>
-<p><a href="#template-list">Jump to Top </a></p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>The subsequent example is presented as illustrative guide to kickstart your own solution-building process.</p>
+<p><img src="../images/TemplateList-Example.png" alt="Template List Example" /></p>
+<p><strong>To explore the example:</strong></p>
+<ol>
+<li>Load <a href="../vstpresets/Template%20List.vstpreset">Template List.vstpreset</a>.</li>
+<li>Open the <strong>Macro Page Designer</strong>, activate <strong>Show/Hide Script Output Messages</strong>.</li>
+<li>Click <strong>Test Macro page</strong> <img src="../images/TestMacroPage-Off.PNG" alt="Edit Element" />, then drag and drop elements from the left to the right template list and vice versa.</li>
+<li>Use the <strong>Alt/Cmd</strong>-key to copy elements.</li>
+<li>Read the output messages of the script.</li>
+</ol>
+<p>Reading the output messages of the script should help to understand how the callbacks work and how to use them.</p>
+<pre><code class="language-lua">-- Create row names through a parameter.
+rowNames = {}
+ 
+for i = 1, 5 do 
+ rowNames[i] = &quot;Row &quot;..tostring(i) 
+end 
+ 
+defineParameter{name=&quot;RowNames&quot;, strings=rowNames,}
+
+currentViewname = &quot;&quot;
+
+-- The following example accepts dropping of elements only from other template lists.
+
+function onTemplateListGetDragInfo(viewname, draginfo, index)
+	print(&quot;onTemplateListGetDragInfo:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;index = &quot;..index)
+	currentViewname = viewname
+	return{info = index, copy=true, move=true}
+end
+
+function onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)
+	print(&quot;onTemplateListDropFeedback:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;toindex = &quot;..toindex, &quot;offset = &quot;..offset, &quot;copy = &quot;..tostring(copy))
+	local acceptDrop = false
+	if viewname ~= currentViewname then
+	acceptDrop = true
+	end
+	return{accept=acceptDrop, insert=false, template=&quot;DropFrame&quot;, resize=true,}
+end
+
+function onTemplateListDrop(viewname, draginfo, toindex, offset, copy)
+	print(&quot;onTemplateListDrop:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;toindex = &quot;..toindex, &quot;offset = &quot;..offset, &quot;copy = &quot;..tostring(copy))
+	if viewname ~= currentViewname then
+		local fromindex = tonumber(draginfo)
+		if copy then
+			rowNames[toindex] = rowNames[fromindex]
+		else
+			local rowName = table.remove(rowNames, fromindex)
+			table.insert(rowNames, toindex, rowName)
+		end
+		defineParameter{name=&quot;RowNames&quot;, strings=rowNames,}
+	end
+end
+
+function onTemplateListDropDone(viewname, draginfo, index, copy)
+	print(&quot;onTemplateListDropDone:&quot;, &quot;viewname = &quot;..viewname, &quot;draginfo = &quot;..draginfo, &quot;index = &quot;..index, &quot;copy = &quot;..tostring(copy))
+end
+</code></pre>
 
                     </main>
 

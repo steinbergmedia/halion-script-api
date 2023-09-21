@@ -5,6 +5,7 @@
 :root {
     /* Browser default font-size is 16px, this way 1 rem = 10px */
     font-size: 62.5%;
+    --content-max-width: 900px;
 }
 
 html {
@@ -49,7 +50,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 .hide-boring .boring { display: none; }
 .hidden { display: none !important; }
 
-h2, h3 { margin-top: 2.5em; }
+h2, h3 { margin-top: 2.25em; }
 h4, h5 { margin-top: 2em; }
 
 .header + .header h3,
@@ -118,7 +119,7 @@ table {
     margin: 0 auto;
     border-collapse: collapse;
     float: left;
-    line-height: 1.4;
+    line-height: 1.45em;
 }
 table td {
     padding: 3px 20px;
@@ -222,3 +223,8 @@ kbd {
 .image-container img {
     margin-bottom: 5px;
 }
+
+.version-text {
+    font-size: 0.9em;
+}
+
