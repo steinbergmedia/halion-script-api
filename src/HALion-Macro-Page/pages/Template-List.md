@@ -14,6 +14,8 @@
 
 A Template List can be used to create child templates from a single referenced template, where each instance of the referenced template can be used to control different parameter scopes, for example. The look of the Template List rows and columns is determined by the referenced template which you can choose in the Template property. Depending on the Layout property, the templates are arranged in a row, a column, or in a grid. The templates are arranged without spacing or graphic separators. If spacing or graphic separators are desired, they must be part of the referenced template.
 
+>&#10069; For a better understanding of template lists, read the tutorial [Creating a Template List](../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.md).
+
 ## Properties
 
 |Poperty|Description|
@@ -38,6 +40,8 @@ A Template List can be used to create child templates from a single referenced t
 
 To enable the graphic reordering, the Order option must be active and either [onTemplateListViewDrop](#ontemplatelistviewdrop) or [onTemplateListDrop](#ontemplatelistdrop) must be implemented in a UI script.
 
+>&#10069;  In order for the [onTemplateListDrop](#ontemplatelistdrop) function to be called, the Drag Info property must be set inside the referenced template.
+
 >&#10069; The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) is a simplified callback that replaces the callbacks [onTemplateListDropFeedback](#ontemplatelistdropfeedback), [onTemplateListDrop](#ontemplatelistdrop) and [onTemplateListDropDone](#ontemplatelistdropdone) from below. The callback [onTemplateListViewDrop](#ontemplatelistviewdrop) cannot be combined with the callbacks just mentioned.
 
 ### onTemplateListViewDrop
@@ -48,9 +52,9 @@ This callback is called when the drop is done. If you need more advanced control
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the Template List.|string|
-|**fromindex**|Index of the dragged list item.|integer|
-|**toindex**|New index of the dropped list item.|integer|
+|**viewname**|The name of the Template List. Evaluate this to distinguish between different lists.|string|
+|**fromindex**|Index of the dragged element.|integer|
+|**toindex**|New index of the dropped element.|integer|
 
 [Jump to Top ](#template-list)
 
@@ -60,15 +64,15 @@ This callback is called when the drop is done. If you need more advanced control
 
 #### Description
 
-Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the referenced template. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least this and the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
+Callback for the source of the drag operation when the operation starts. The string in ``draginfo`` is taken from the Drag Info property of the template referenced in the Template List. The Drag Info property must be set inside the referenced template. To enable the graphic reordering, the Order option must be active and at least the [onTemplateListDrop](#ontemplatelistdrop) callback must be implemented in a UI script.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the Template List.|string|
-|**draginfo**|The text specified by the Drag Info property.|string|
-|**index**|The index of the dragged list item.|string|
+|**viewname**|The name of the Template List that started the drag operation. Evaluate this to distinguish between different lists.|string|
+|**draginfo**|The string specified by the Drag Info property of the template referenced in the Template List.|string|
+|**index**|The index of the dragged element.|string|
 
 #### Return Values
 
@@ -76,10 +80,12 @@ The function can return a table with the following keys:
 
 |Return Value|Description|Value Type|
 |:-|:-|:-|
-|**copy**|Set this to ``true`` if copy is allowed, ``false`` if not.|boolean|
-|**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
-|**info**|A modified Drag Info text.|string|
-|**files**|A table of files.|table with strings|
+|**copy**|Set this to ``true`` if copying is allowed, ``false`` if not. If 'copy' is ``false`` the **Alt/Cmd**-key for copying cannot be used. The default for 'copy' is ``false``.|boolean|
+|**move**|Set this to ``true`` if moving is allowed, ``false`` if not. If 'move' is ``false`` the elements in the list will not be reordered when dragging. The default for 'move' is ``true``.|boolean|
+|**info**|The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property of the template referenced in the Template List. By modifying the 'info' return value you can control the response of the subsequent callbacks.|string|
+|**files**|A table with file paths for evaluation by external software when the drop operation is executed there.|table with file paths as strings|
+
+>&#10069; If both of the 'copy' and 'move' return values are set to ``true``, the 'copy' argument in the callbacks [onTemplateListDrop](#ontemplatelistdrop), [onTemplateListDropFeedback](#ontemplatelistdropfeedback), and [onTemplateListDropDone](#ontemplatelistdropdone) will depend upon whether the **Alt/Cmd**-key was utilized during the drag operation. The 'copy' argument in these callbacks will be ``true`` if the **Alt/Cmd**-key was used and ``false`` if it was not. If one or both of the 'copy' and 'move' return values are ``false``, the use of the **Alt/Cmd**-key has no effect, and the 'copy' argument in the mentioned callbacks will depend solely on the 'copy' return value.
 
 [Jump to Top ](#template-list)
 
@@ -89,16 +95,16 @@ The function can return a table with the following keys:
 
 #### Description
 
-Callback for the target of the drag operation when the drop is executed.
+Callback for the target of the drag operation when the drop is executed. In order for the function to be called, the Drag Info property of the template referenced in the Template List must be set. Otherwise, the reordering will not work, even if the Order option of the Template List is active.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted Template List.|string|
-|**draginfo**|The Drag Info text.|string|
-|**toindex**|Index of the targeted list item.|integer|
-|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
+|**viewname**|The name of the targeted Template List. Evaluate this to distinguish between different lists.|string|
+|**draginfo**|This string is specified by the 'info' return value of the [onTemplateListGetDragInfo](#ontemplatelistgetdraginfo) callback when the drag operation starts.|string|
+|**toindex**|Index of the targeted element.|integer|
+|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.|integer|
 |**copy**|Indicates if the drag is a copy operation.|boolean|
 
 [Jump to Top ](#template-list)
@@ -110,17 +116,17 @@ Callback for the target of the drag operation when the drop is executed.
 
 #### Description
 
-Callback for the target of the drag operation when an item is held over it. If implemented it can control the optical feedback for the potential drop operation or reject dropping the item.
+Callback for the target of the drag operation when an element is held over it. If implemented it can control the graphical feedback for the potential drop operation or reject dropping the element.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the targeted Template List.|string|
-|**draginfo**|The draginfo text specified at drag start time.|string|
-|**toindex**|The index of the targeted item.|integer|
-|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted item.|integer|
-|**copy**|Indicates if drag is a copy operation (``true``).|boolean|
+|**viewname**|The name of the targeted Template List. Evaluate this to distinguish between different lists.|string|
+|**draginfo**|This string is specified by the 'info' return value of the [onTemplateListGetDragInfo](#ontemplatelistgetdraginfo) callback when the drag operation starts.|string|
+|**toindex**|The index of the targeted element.|integer|
+|**offset**|The value -1, 0, or 1 indicates if the drop is before, on, or behind the targeted element.|integer|
+|**copy**|Indicates if drag is a copy operation.|boolean|
 
 #### Return Values
 
@@ -129,12 +135,12 @@ The function can return a table with the following keys:
 |Return Value|Description|Value Type|
 |:-|:-|:-|
 |**accept**|Set this to ``true`` to allow or ``false`` to reject the drop operation. The default is ``false``.|boolean|
-|**template**|Name of a template to be shown as animation.|string|	
-|**index**|Index of the item, where the template should be placed to.|string|
-|**insert**|Set this to true if the template should be placed before the targeted item instead of placing it above. All items below will be shifted then.|boolean|
-|**resize**|Set this to ``true`` if template should be resized to the size of the targeted item.|boolean|
+|**template**|Name of a template that will be displayed as 'indicator' for the drop operation. The default is ``""``.|string|	
+|**index**|Index of the targeted element, where the 'indicator' should be displayed.|string|
+|**insert**|Set this to ``true`` if the 'indicator' should be placed before instead of on the element. The default is ``false``.|boolean|
+|**resize**|Set this to ``true`` if the 'indicator' should be resized to the size of the targeted element. The default is ``false``.|boolean|
 
->&#10069; When using onTemplateListDropFeedback: Since the default of ``accept`` is ``false``, you must at least return ``accept=true`` to enable the graphic reordering.
+>&#10069; When using onTemplateListDropFeedback: Since the default of ``accept`` is ``false``, you must at least return ``accept=true``.
 
 [Jump to Top ](#template-list)
 
@@ -143,86 +149,81 @@ The function can return a table with the following keys:
 
 >**onTemplateListDropDone(viewname, draginfo, index, copy)**
 
-Callback for the source of the drag operation when the drop has completed.
+This callback is called when the drop operation is complete. Since the arguments of the callback refer to the source of the drag operation, it can be used to make modifications to the corresponding source Template List using additional functions.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**viewname**|The name of the source Template List.|string|
-|**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**index**|Index of the dragged list item.|integer|
+|**viewname**|The name of the Template List that started the drag operation.|string|
+|**draginfo**|This string is specified by the 'info' return value of the [onTemplateListGetDragInfo](#ontemplatelistgetdraginfo) callback when the drag operation starts.|string|
+|**index**|Index of the dragged element.|integer|
 |**copy**|Indicates if the drag was a copy operation.|string|
 
 [Jump to Top ](#template-list)
 
 >&#10069; If you want the change of the order of graphical elements to affect the program structure, e.g. the order of alternating layers or the order of effects within a bus, this must be implemented separately with dedicated functions.
 
-## Examples
+## Example
 
-### Creating a Template List
+The subsequent example is presented as illustrative guide to kickstart your own solution-building process.
 
-* Add Template List to your macro page.
-* Select the template that you want to use for each list entry.
-* Check the Template parameters which are added to the Template List.
-* Create a String List variable for each template parameter that you want to connect.
-* Connect the template parameters to the variables.
-* As soon as the first variable is connected, the list is filled with a template for each string list entry.
+![Template List Example](../images/TemplateList-Example.png)
 
-#### Example 1
+**To explore the example:**
 
-You can use a Label control inside the template which exports its text property to the template, to name each row.
+1. Load [Template List.vstpreset](../vstpresets/Template%20List.vstpreset).
+1. Open the **Macro Page Designer**, activate **Show/Hide Script Output Messages**.
+1. Click **Test Macro page** ![Edit Element](../images/TestMacroPage-Off.PNG), then drag and drop elements from the left to the right template list and vice versa.
+1. Use the **Alt/Cmd**-key to copy elements.
+1. Read the output messages of the script.
 
-* Create a string list variable with all the labels that are needed and in the order in which you want them to appear in the list.
-* Connect the variable to the Text parameter of the Template List.
+Reading the output messages of the script should help to understand how the callbacks work and how to use them.
 
-#### Example 2
+```lua
+-- Create row names through a parameter.
+rowNames = {}
+ 
+for i = 1, 5 do 
+ rowNames[i] = "Row "..tostring(i) 
+end 
+ 
+defineParameter{name="RowNames", strings=rowNames,}
 
-There is a control inside the template, e.g., a switch with an exported Value parameter.
+currentViewname = ""
 
-* Create a string list variable with the different parameter scopes that you want to control, e.g., the Mute state of different layers within a program.
-* Connect the variable with the switch Value parameter of the Template List.
+-- The following example accepts dropping of elements only from other template lists.
 
-[Jump to Top ](#template-list)
+function onTemplateListGetDragInfo(viewname, draginfo, index)
+	print("onTemplateListGetDragInfo:", "viewname = "..viewname, "draginfo = "..draginfo, "index = "..index)
+	currentViewname = viewname
+	return{info = index, copy=true, move=true}
+end
 
-### Switching the Scope for Controls outside the Template List
+function onTemplateListDropFeedback(viewname, draginfo, toindex, offset, copy)
+	print("onTemplateListDropFeedback:", "viewname = "..viewname, "draginfo = "..draginfo, "toindex = "..toindex, "offset = "..offset, "copy = "..tostring(copy))
+	local acceptDrop = false
+	if viewname ~= currentViewname then
+	acceptDrop = true
+	end
+	return{accept=acceptDrop, insert=false, template="DropFrame", resize=true,}
+end
 
-One useful usage of the Template List is to manage different articulations of an instrument and to use the list to change the scope for controls that exists only once one the macro page but need to control the different articulations, for example. In this case, you can use the Value property of the Template List which delivers the index of the selected row.
+function onTemplateListDrop(viewname, draginfo, toindex, offset, copy)
+	print("onTemplateListDrop:", "viewname = "..viewname, "draginfo = "..draginfo, "toindex = "..toindex, "offset = "..offset, "copy = "..tostring(copy))
+	if viewname ~= currentViewname then
+		local fromindex = tonumber(draginfo)
+		if copy then
+			rowNames[toindex] = rowNames[fromindex]
+		else
+			local rowName = table.remove(rowNames, fromindex)
+			table.insert(rowNames, toindex, rowName)
+		end
+		defineParameter{name="RowNames", strings=rowNames,}
+	end
+end
 
-* Create a string list "LayerSelect" variable with an entry for each articulation layer.
-* Add the different scopes for each articulation to the string list.
-* Add a Template List.
-* Specify the source template for the Template List.
-* Connect the template parameters (delivered by the source template) using further string list variables defining the different parameters.
-* Set the Value property of the Template List to the string list variable (@LayerSelect). This way, the list index can change the scope.
-* Add a group and set the Scope to "LayerSelect". Now the group scope changes with the the selection in the Template List.
-* Add controls to the group and connect them to HALion parameters. Use only the parameters, not their path information, which is delivered by the group scope.
-* When clicking inside a Template List row, the selection changes the focus of the connected control group and you modify each articulation individually.
-
-[Jump to Top ](#template-list)
-
-### Showing the Focus in the List
-
-To visualize which entry of the Template List currently has the focus you can use the Focus Var property. It works in combination with an element that needs to be set up inside the source template.
-
-#### Example 1
-
-**An animation to show a focus rectangle:**
-
-* Set Focus Var of the Template List to "@SelectedRow".
-* Add an animation with two frames to the source template. The second frame should show a colored outline rectangle, for example.
-* Set the Value property of the animation to @SelectedRow", too.
-* When clicking inside a Template List row, the animation of the corresponding row switches to the second frame which shows the colored rectangle.
-
-#### Example 2
-
-**A stack to change the whole appearance of a Template List row:**
-
-* Set Focus Var of the Template List to "@SelectedRow".
-* Add a Stack.
-* Group the existing controls of the source template and place the group inside the stack.
-* Duplicate the group and modify the appearance of the controls of the second group.
-* Set the value property of the stack to "@SelectedRow", too.
-* When clicking inside a Template List row, the stack of the corresponding row switches to the second group and shows the modified version.
-
-[Jump to Top ](#template-list)
+function onTemplateListDropDone(viewname, draginfo, index, copy)
+	print("onTemplateListDropDone:", "viewname = "..viewname, "draginfo = "..draginfo, "index = "..index, "copy = "..tostring(copy))
+end
+```

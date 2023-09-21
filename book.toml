@@ -22,7 +22,6 @@ max-level = 3
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
-additional-css = ["./theme/css/custom.css"]
 
 [output.linkcheck]
 optional = true

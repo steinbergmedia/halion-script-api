@@ -22,7 +22,7 @@ The Drag Group control allows you to implement drag operations. You can drag a s
 |:-|:-|
 {{#include ./_Properties.md:name}}
 {{#include ./_Properties.md:scope}}
-|**Drag Info**|The Drag Info can be used as follows:<ul><li>It can be a text info that will be carried to the receiver.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback onDropGetInfo by returning another text.</li>|
+|**Drag Info**|The Drag Info can be used as follows:<ul><li>It can be a string that will be send to the target.</li><li>It can be a UI variable that will be read at drag time.</li><li>It can also be modified at drag time by the script callback [onDropGetInfo](#ondropgetinfo) by returning another string.</li>|
 {{#include ./_Properties.md:position-size}}
 {{#include ./_Properties.md:attach}}
 {{#include ./_Properties.md:tooltip}}
@@ -35,7 +35,7 @@ The Drag Group control allows you to implement drag operations. You can drag a s
 
 #### Description
 
-Callback for the source of the drag operation when the operation starts. The text in ``draginfo`` is taken from the corresponding property of the control.
+Callback for the source of the drag operation when the operation starts. The text in ``draginfo`` is taken from the Drag Info property of the control.
 
 #### Arguments
 
@@ -50,10 +50,10 @@ The function can return a table with the following keys:
 
 |Return Value|Description|Value Type|
 |:-|:-|:-|
-|**copy**|Set this to ``true`` if copy is allowed, ``false`` if not.|boolean|
-|**move**|Set this to ``true`` if move is allowed, ``false`` if not.|boolean|
-|**info**|A modified Drag Info text.|string|
-|**files**|A table of files.|table with strings|
+|**copy**|Set this to ``true`` if copying is allowed, ``false`` if not.|boolean|
+|**move**|Set this to ``true`` if moving is allowed, ``false`` if not.|boolean|
+|**info**|The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property. By modifying the 'info' return value you can control the response of the subsequent callbacks.|string|
+|**files**|A table with file paths for evaluation by external software when the drop operation is executed there.|table with file paths as strings|
 
 ### onDropInsert
 
@@ -68,8 +68,8 @@ Callback for the target of the drag operation when the drop is executed.
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**viewname**|The name of the targeted view.|string|
-|**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**copy**|Indicates if drag is a copy operation (``true``).|string|
+|**draginfo**|This string is specified by the 'info' return value of the [onDropGetInfo](#ondropgetinfo) callback when the drag operation starts.|string|
+|**copy**|Indicates if the drag is a copy operation.|string|
 
 ### onDropDone
 
@@ -77,12 +77,12 @@ Callback for the target of the drag operation when the drop is executed.
 
 #### Description
 
-Callback for the source of the drag operation when the drop has completed.
+This callback is called when the drop operation is complete.
 
 #### Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**viewname**|The name of the source view.|string|
-|**draginfo**|The Drag Info text specified at the start of the drag operation.|string|
-|**copy**|Indicates if drag is a copy operation (``true``).|string|
+|**draginfo**|This string is specified by the 'info' return value of the [onDropGetInfo](#ondropgetinfo) callback when the drag operation starts.|string|
+|**copy**|Indicates if the drag is a copy operation.|string|
