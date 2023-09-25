@@ -191,6 +191,17 @@ Enumerator to identify the modulation destinations.
 |192|ModulationDestination.spectralFilterShift|
 |193|ModulationDestination.spectralFilterScale|
 |194|ModulationDestination.spectralLowCutAmount|
+|195|ModulationDestination.spectralBlurTime|
+|196|ModulationDestination.spectralBlurDepth|
+|197|ModulationDestination.spectralBlurMix|
+|198|ModulationDestination.spectralStackLevel1|
+|199|ModulationDestination.spectralStackLevel2|
+|200|ModulationDestination.spectralStackLevel3|
+|201|ModulationDestination.spectralStackLevel4|
+|202|ModulationDestination.spectralStackLevel5|
+|203|ModulationDestination.spectralStackLevel6|
+|204|ModulationDestination.spectralStackLevel7|
+|205|ModulationDestination.spectralStackLevel8|
 
 [Jump to Top ](#modulation-destination-types)
 
