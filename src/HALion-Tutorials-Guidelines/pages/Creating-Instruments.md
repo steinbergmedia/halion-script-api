@@ -74,9 +74,9 @@ To export the program as HALion Sonic layer preset:
 
 ![Export HS Layer Preset Dialog](../images/Export-HS-Layer-Preset-Dialog.png)
 
-The layout of HALion Sonic's interface and features requires some specific MIDI modules and busses. When you load a layer preset in HALion Sonic, any missing MIDI modules, busses, etc. that are required for HALion Sonic to operate are added automatically. For example, if the Instrument-Bus was missing in the example above, HALion Sonic would add this bus when loading the layer preset, because it is needed for the Inserts tab in HALion Sonic.
+The layout of HALion Sonic's interface and features requires specific MIDI modules and busses. When you load a layer preset in HALion Sonic, any missing MIDI modules, busses, etc. that are required for HALion Sonic to operate are automatically added. For example, if the Instrument-Bus was missing in the example above, HALion Sonic would add this bus when loading the layer preset, because it is needed for the Inserts tab in HALion Sonic.
 
-The following picture shows the program structure of the example instrument after these steps:
+The following image shows the program structure of the example instrument after these steps:
 
 * In HALion, export the instrument with **Export Program as VST3 Preset...**
 * Load the exported Layer in HALion Sonic and save it as program preset.
@@ -86,26 +86,26 @@ The following picture shows the program structure of the example instrument afte
 
 The Trigger Pads, two FlexPhrasers and a Program-Bus were added, because HALion Sonic requires them.
 
->&#10069; If you load a program preset from HALion Sonic in HALion, do not export the program preset as HALion Sonic layer preset again. If you do so and load this preset in HALion Sonic, the MIDI modules will be added again and the preset will not be compatible anymore. You must use the HS Edit mode instead. See [Using HS Edit Mode](#using-halion-sonic-edit-mode) for details.
+>&#10069; If you load a program preset from HALion Sonic in HALion, do not export the program preset as HALion Sonic layer preset again. If you do so and load this preset in HALion Sonic, the MIDI modules will be added again and the preset will not be compatible anymore. You must use **HALion Sonic Edit Mode** instead. See [Using HS Edit Mode](#using-halion-sonic-edit-mode) for details.
 
-Once your instrument is finished, the final sound design can start.
+Once your instrument is set up, the final sound design can start.
 
 ## Final Sound Design
 
-The exported HALion Sonic layer preset usually serves as your init preset for doing the final sound design in HALion Sonic.
+The exported HALion Sonic layer preset usually serves as your init preset for the final sound design in HALion Sonic.
 
-Doing the final sound design in HALion Sonic has the following advantages:
+Finalizing sound design in HALion Sonic has the following advantages:
 
 * The required elements are added automatically.
-* You have access to the Program tab, which allows you to combine up to four instruments, for example.
-* You have access to the Inserts tab, which allows you to assign insert effects to the layers and the program.
+* You have access to the **Program** tab, which allows you to combine up to four instruments, for example.
+* You have access to the **Inserts** tab, which allows you to assign insert effects to the layers and the program.
 * Additional parameters from HALion are hidden and cannot be adjusted by mistake.
 
-After the sound design, you can save your finished sound as HALion Sonic program preset. In this step, you should tag your presets in the **MediaBay**. See the [MediaBay Guideline](./MediaBay-Guideline.md) for more details.
+After the sound design, you can save your final sound as HALion Sonic program preset. In this step, you should tag your presets in the **MediaBay**. See the [MediaBay Guideline](./MediaBay-Guideline.md) for more details.
 
-It is recommended to save your sounds as program presets rather than HALion Sonic layer presets, because Steinberg users mainly use the Program filter when browsing for presets in the **MediaBay**.
+It is recommended to save your sounds as program presets rather than HALion Sonic layer presets, because Steinberg users mainly use the **Program** filter when browsing for presets in the **MediaBay**.
 
-Finally, in HALion's **Library Creator**, add your presets to a VST Sound and choose to build your library as HALion Sonic library.
+Finally, in HALion's **Library Creator**, add your presets to a VST Sound and choose to build your HALion Sonic library.
 
 ## Correcting Settings
 
@@ -113,20 +113,20 @@ To correct settings in your instrument, choose one of the two following ways:
 
 ### Using Export Program as VST3 Preset...
 
-If you need to correct settings in the phase of testing your instrument in HALion Sonic and if you have not done any serious sound design or saved further presets yet:
+If you need to correct settings in the phase of testing your instrument in HALion Sonic and if you have not performed any serious sound design or saved further presets yet:
 
 1. Go back to the original HALion program preset of your instrument.
-1. Correct settings as required and save the edits to the original HALion program preset.
+1. Correct the settings as required and your modifications to the original HALion program preset.
 1. Export the instrument again as HALion Sonic layer preset.
 
 ### Using HALion Sonic Edit Mode
 
-If you need to correct settings in the phase of sound design and you already created HALion Sonic Program presets:
+If you need to correct settings in the phase of sound design and you already created HALion Sonic program presets:
 
 1. Load the HALion Sonic program preset of your instrument. **HALion Sonic Edit Mode** will be activated. This ensures that you cannot accidentally change the program structure that is required by HALion Sonic.
 
 >&#10069; Do not deactivate **HALion Sonic Edit Mode**, it cannot be activated manually.
 
-2. Correct settings as appropriate and save the program preset. If **HALion Sonic Edit Mode** is active, the preset will be saved in the HALion Sonic preset format.
+2. Correct the settings as required and save the program preset. If **HALion Sonic Edit Mode** is active, the preset will be saved in the HALion Sonic preset format.
 
 **HALion Sonic Edit Mode** can be switched off permanently with the corresponding setting on the **Options** page. When loading HALion Sonic program presets, **HALion Sonic Edit Mode** will only be activated if the setting on the **Options** page is activated. See [HALion Sonic Edit Mode](https://steinberg.help/halion/v7/en/halion/topics/global_functions_and_settings/options_editor_edit_section_r.html) for details.
