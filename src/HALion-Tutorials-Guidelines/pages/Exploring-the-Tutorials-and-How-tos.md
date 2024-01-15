@@ -36,7 +36,7 @@ The functionality is as follows:
 
 * The title in the top left tells you if the VST preset belongs to a tutorial or a how-to.
 * A click on the Steinberg logo brings you to the [Steinberg](https://www.steinberg.net/) website.
-* The title in the middle tells you the topic the VST preset belongs to. Click this title to open the accompanying page on [developer.steinberg.help](https://developer.steinberg.help/).
+* The title in the middle tells you the topic the VST preset belongs to. Click this title to open the accompanying page.
 * The lower area often contains controls to try out the described functionality.
 
 ## Accessing the Code Examples
