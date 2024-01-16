@@ -10,9 +10,9 @@
 
 ---
 
-When creating universally reusable control templates, it is necessary to export all control properties that need to be accessible on the template level from the controls that are located inside the template.
+When creating reusable control templates, it is necessary to export all control properties that need to be accessible on the template level from the controls that are located inside the template.
 
-The properties that can be exported have an **Export Property** option ![Export Property](../images/Export-Property.png). The parameter is exported if this option is activated. You can see all exported parameters by selecting the topmost element in the **GUI Tree** of the template. The following screenshot shows this for the Knob H6 template from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) library.
+The properties that can be exported have an **Export Property** option ![Export Property](../images/Export-Property.png). The parameter is exported if this option is activated. You can see all exported parameters by selecting the topmost element in the **GUI Tree** of the template. The following screenshot shows this for the "Knob H6" template from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) library.
 
 ![Working with Exported Properties Knob H6](../images/Working-with-Exported-Properties-Knob-H6.png)
 
@@ -24,7 +24,7 @@ The properties that can be exported have an **Export Property** option ![Export 
 
 1. Go to the **Macro Page Designer**, create a [Knob](../../HALion-Macro-Page/pages/Knob.md) control on the macro page and assign an animation bitmap.
 
->&#10069; If you do not have an animation bitmap at hand: You can add temporarily a knob template from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) or [Additional Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-controls) libraries. This adds the necessary resources and you can assign the respective animation bitmap to your knob.
+>&#10069; If you do not have an animation bitmap at hand: You can temporarily add a knob template from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) or [Additional Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-controls) libraries. This adds the necessary resources and you can assign the respective animation bitmap to your knob.
 
 2. Select the [Knob](../../HALion-Macro-Page/pages/Knob.md) control in the **GUI Tree**, open the context menu and select **Create template 'Knob' from 'Knob'**.
 2. In the **GUI Tree** of the template, change the name of the topmost element to "MyKnob".
