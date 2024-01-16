@@ -40,7 +40,7 @@ The functionality is as follows:
 * The lower area often contains controls to try out the described functionality.
 
 ## Accessing the Code Examples
-We recommend to read the accompanying page while examining the example VST Preset. The accompanying page usually lists MIDI Scripts or UI Scripts, or both. You find the scripts in the VST preset as follows:
+We recommend to read the accompanying page while examining the example VST Preset. This page usually lists MIDI Scripts or UI Scripts, or both. You find the scripts in the VST preset as follows:
 
 **MIDI Scripts** can be found in the Lua Script MIDI module.
 
