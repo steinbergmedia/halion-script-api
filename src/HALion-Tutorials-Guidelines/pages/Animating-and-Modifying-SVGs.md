@@ -31,7 +31,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 **To explore the templates in this example:**
 
 1. Load [Animating and Modifying SVGs.vstpreset](../vstpresets/Animating%20and%20Modifying%20SVGs.vstpreset).
-1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the template you wish to explore. 
+1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the template you want to explore. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 1. Inside the template, select a [Knob](../../HALion-Macro-Page/pages/Knob.md) control, for example. Look which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resource has been assigned.
 1. Go to the **Resources Tree** and select the corresponding SVG resource. Look for the IDs, properties and values as listed below.

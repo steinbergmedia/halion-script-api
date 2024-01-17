@@ -33,7 +33,7 @@ These additional SVG resource attributes are introduced as supplementary values 
 
 ![Animation Properties with Additional Parameters](../images/Animation-Properties-with-Additional-Parameters.png)
 
-This integration empowers the manipulation of SVG elements and their subordinate objects through diverse avenues. Each associated parameter governs a specific facet of the animation. For instance, one parameter might change object rotation, while another parameter concurrently adjusts dimensions, color properties, and so forth.
+This integration enables the manipulation of SVG elements and their subordinate objects in various ways. Each associated parameter governs a specific facet of the animation. For instance, one parameter might change object rotation, while another parameter concurrently adjusts dimensions, color properties, etc.
 
 >&#10069; To animate SVGs without the utilization of UI scripts, see [Animating Switches Using SVGs](./Animating-Switches-Using-SVGs.md) for details.
 

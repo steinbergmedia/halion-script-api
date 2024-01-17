@@ -1,9 +1,9 @@
 // ANCHOR: multiple-examples
-The subsequent examples are presented as illustrative guides to kickstart your own solution-building process.
+The following examples are presented as illustrative guides to kickstart your own solution-building process.
 // ANCHOR_END: multiple-examples
 
 // ANCHOR: single-example
-The subsequent example is presented as illustrative guide to kickstart your own solution-building process.
+The following example is presented as illustrative guide to kickstart your own solution-building process.
 // ANCHOR_END: single-example
 
 // ANCHOR: custom-multi-level-menus
