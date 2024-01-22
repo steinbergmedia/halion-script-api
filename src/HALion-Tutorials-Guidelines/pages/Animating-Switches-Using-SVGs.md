@@ -49,7 +49,7 @@ Assuming the presence of an [animation object](#adding-an-animation-object), you
 |**Duration**|Corresponds to the value set by the ``duration`` property.|
 |**T**|The overal time since the start of the animation in seconds.|
 |**t**|The normalized time (0 to 1.0) within the current cycle.|
-|**Cycle**|The number of completed cycles, starting at 0. The ``cycles`` property defines the maximum.|
+|**Cycle**|The number of completed cycles, starting at 0. The ``cycles`` property defines the maximum number of cycles.|
 
 ## Animating Switches
 
@@ -67,7 +67,7 @@ Assuming the presence of an [animation object](#adding-an-animation-object), you
 1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the template you wish to explore. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
 1. Inside the template, select the [Switch](../../HALion-Macro-Page/pages/Switch.md) control. Take a look at which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resources have been assigned to the different states of the switch.
-1. Go to the **Resources Tree** and select the corresponding SVG resource. Look for the IDs, properties and values as listed below.
+1. Go to the **Resources Tree** and select the corresponding SVG resource. Take a look at the IDs, properties, and values as listed below.
 
 ### Animated Dashed Line
 
@@ -159,4 +159,4 @@ In this example, multiple properties get animated for each state and different a
 |ArrowR|transform|``translate ($(12-t*20))``|
 |ArrowR|fill|``hsla(154,40%,50%,$(1-t*0.9))``|
 
-**Description:** The switch blinks periodically in green and round brackets are moving from the outside to the inside when you hold the mouse over the switch while the switch is in the off state. The 'r' property describes the radius of the 'Circle' element. A negative value for 'r' must be avoided with ``math.abs``.
+**Description:** The switch blinks periodically in green and round brackets are moving from the outside to the inside when you hold the mouse over the switch while the switch is in the on state. The 'r' property describes the radius of the 'Circle' element. A negative value for 'r' must be avoided with ``math.abs``.
