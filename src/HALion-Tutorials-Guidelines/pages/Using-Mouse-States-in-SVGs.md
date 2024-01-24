@@ -25,7 +25,7 @@ You can use the following variables in Lua expressions:
 |:-|:-|
 |**On**|The on-state of the switch.|
 |**Down**|The down-state of the switch.|
-|**Hover**|The down-state of the switch.|
+|**Hover**|The hover-state of the switch.|
 
 ## Using Mouse States
 
@@ -42,8 +42,8 @@ You can use the following variables in Lua expressions:
 1. Load [Using Mouse States in SVGs.vstpreset](../vstpresets/Using%20Mouse%20States%20in%20SVGs.vstpreset).
 1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the 'SVG Mod Switch' template. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
-1. Inside the template, select the [Switch](../../HALion-Macro-Page/pages/Switch.md) control. Look which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resource has been assigned to the off-state of the switch.
-1. Go to the **Resources Tree** and select the corresponding [SVG](../../HALion-Macro-Page/pages/SVG.md) resource. Look for the IDs, properties and values as listed below.
+1. Inside the template, select the [Switch](../../HALion-Macro-Page/pages/Switch.md) control. Take a look at which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resource has been assigned to the off-state of the switch.
+1. Go to the **Resources Tree** and select the corresponding [SVG](../../HALion-Macro-Page/pages/SVG.md) resource. Take a look at the IDs, properties and values as listed below.
 
 ### Indicating Mouse States
 

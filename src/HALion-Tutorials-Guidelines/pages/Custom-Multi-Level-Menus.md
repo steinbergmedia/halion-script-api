@@ -53,7 +53,7 @@ The Multi-Level Menu Selector [Group](../../HALion-Macro-Page/pages/Group.md) in
 
 ![Custom-Multi-Level Menu Selector](../images/Custom-Multi-Level-Menu-Group.png)
 
-[Menu Switch](#menu-switch) is a [Switch](../../HALion-Macro-Page/pages/Switch.md) control that is configured to open the popup menu. It uses the Popup style with the [Menu Root](#menu-root) template which contains a Popup List variable and entries for each submenu. The entries for the submenus use the [RootMenuEntry](#rootmenuentry) template to determine the entries in the root menu. All entries must be connected to the same Popup List variable which selects the [SubMenu_1,2,3,or 4](#submenu_1-2-3-4) template for the respective entry. The [RootMenuEntry](#rootmenuentry) template uses the hover exclusive mode to open the respective submenu template when you hover over an entry. The [SubMenu_1,2,3,4](#submenu_1-2-3-4) and [MenuEntry](#menuentry) templates determine the entries of the submenus. All aforementioned templates will be explained in more detail below. [Menu Value](#menu-value) is a text control for displaying the current value and [Menu Back](#menu-back) is an image control for the background picture.
+[Menu Switch](#menu-switch) is a [Switch](../../HALion-Macro-Page/pages/Switch.md) control that is configured to open the popup menu. It uses the Popup style with the [Menu Root](#menu-root) template which contains a Popup List variable and entries for each submenu. The entries for the submenus use the [RootMenuEntry](#rootmenuentry) template to determine the entries in the root menu. All entries must be connected to the same Popup List variable which selects the [SubMenu_1,2,3,or 4](#submenu_1-2-3-4) template for the respective entry. The [RootMenuEntry](#rootmenuentry) template uses the hover exclusive mode to open the respective submenu template when you hover over an entry. The [SubMenu_1,2,3,4](#submenu_1-2-3-4) and [MenuEntry](#menuentry) templates determine the entries of the submenus. These templates will be explained in more detail below. [Menu Value](#menu-value) is a text control for displaying the current value and [Menu Back](#menu-back) is an image control for the background image.
 
 #### Menu Switch
 
@@ -73,10 +73,10 @@ This [Text](../../HALion-Macro-Page/pages/Text.md) control is connected to the o
 
 #### Menu Back
 
-This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a backgroud picture, which is simply a black panel.
+This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a backgroud image, in this case, a black panel.
 
 ### Menu Root
-This template contains four instances of the [RootMenutEntry](#rootmenuentry) template, one for each oscillator subgroup. The entries are determined by their Template Parameters: The names of the entries is set with the MenuText (Standard, Sync, Cross, or XOR). All four entries must be connected to the same Popup List variable ``@submenus`` and the OnValues must be set accordingly (1-4). When hovering the mouse over a menu entry, it will open the submenu template that refers to the OnValues 1-4.
+This template contains four instances of the [RootMenuEntry](#rootmenuentry) template, one for each oscillator subgroup. The entries are determined by their template parameters: The names of the entries is set with the MenuText parameter (Standard, Sync, Cross, or XOR). All four entries must be connected to the same Popup List variable ``@submenus`` and the OnValues must be set accordingly (1-4). When hovering the mouse over a menu entry, it will open the submenu template that refers to the OnValues 1-4.
 
 ![Custom Multi-Level Menu Root Entry](../images/Custom-Multi-Level-Menu-Root-Entry.png)
 
@@ -116,10 +116,10 @@ This [Switch](../../HALion-Macro-Page/pages/Switch.md) control uses the hover ex
 
 #### Image
 
-This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a background picture for the entry.
+This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a background image for the entry.
 
 ### SubMenu_1, 2, 3, 4
-Each of these templates contains four instances of the [MenuEntry](#menuentry) template, one for each oscillator type. The entries are determined by their Template Parameters: The names of the entries is set with the MenuText (e.g., Sine, Triangle, Saw, or Squ PWM). All four entries must be connected to the type parameter of the desired oscillator and the OnValues must be set accordingly (0-15).
+Each of these templates contains four instances of the [MenuEntry](#menuentry) template, one for each oscillator type. The entries are determined by their template parameters: The names of the entries is set with the MenuText parameter (e.g., Sine, Triangle, Saw, or Squ PWM). All four entries must be connected to the Type parameter of the desired oscillator and the OnValues must be set accordingly (0-15).
 
 For example:
 
@@ -163,6 +163,6 @@ This [Switch](../../HALion-Macro-Page/pages/Switch.md) control uses the exclusiv
 
 #### Image
 
-This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a background picture for the entry.
+This [Image](../../HALion-Macro-Page/pages/Image.md) control displays a background image for the entry.
 
 {{#include ./_Excerpts.md:popup-menus}}

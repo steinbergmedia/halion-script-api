@@ -10,7 +10,7 @@
 
 ---
 
-This how-to shows how to map sample zones automatically to the root key that matches the analyzed pitch of the sample. Such helper functions can be useful during the production of large scale sample libraries.
+This how-to shows how to map sample zones automatically to the root key that matches the analyzed pitch of the sample. Such helper functions can be useful during the production of large-scale sample libraries.
 
 ## Example VST Preset
 
@@ -24,12 +24,12 @@ The script parameters Start, Cancel and Channel can be accessed from the macro p
 
 ## Prerequisites
 
-* A Program with sample zones.
+* A program with sample zones.
 * The samples have a distinct pitch.
 
 ## Mapping Samples to the Root Key
 
-The example below assumes you have a program with sample zones that are not mapped to the root key yet. 
+The example below assumes that you have a program with sample zones that are not mapped to the root key yet. 
 
 <ol start = "1"><li>Add a Lua Script module to your program.</li><li>Copy the following code to the Lua Script module.</li></ol>
 

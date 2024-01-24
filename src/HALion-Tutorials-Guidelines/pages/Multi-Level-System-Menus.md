@@ -10,7 +10,7 @@
 
 ---
 
-For most applications, standard menus are well suited to select options from a list of strings, e.g., a menu that contains various filter types. If the number of entries is too high, one loses the overview and a subdivided menu would be advantageous. To achieve a subdivided menu, you must implement the menu entries as a stringlist parameter with strings in the following notation:
+For most applications, standard menus are well suited to select options from a list of strings, e.g., a menu that contains various filter types. However, if the number of entries is too high, for example, a subdivided menu might be preferable. To create a subdivided menu, you must implement the menu entries as a stringlist parameter with strings in the following notation:
 
 ``/Folder/Subfolder/../Menu Entry``
 
@@ -60,7 +60,7 @@ defineParameter("Entry", nil, 1, entries, function() Output = Entry end)
 defineParameter("Output", nil, 1, outputs)
 ```
 
-In the [Example VST Preset](#example-vst-preset) the UI script is attached to the macro page.
+In the [Example VST Preset](#example-vst-preset), the UI script is attached to the macro page.
 
 ![Multi Level System Menu UI Script](../images/Multi-Level-System-Menu-UI-Script.png)
 
@@ -70,4 +70,4 @@ The System Menu contains the elements that are needed to display the selected va
 
 ![Multi Level System Menu Template](../images/Multi-Level-System-Menu-Template.png)
 
-In this example the Output parameter is not connected to a physical parameter. To set the value of the desired parameter, the Output parameter of the UI script must be connected to the respective parameter in the program.
+In this example, the Output parameter is not connected to a physical parameter. To set the value of a parameter, the Output parameter of the UI script must be connected to this parameter in the program.

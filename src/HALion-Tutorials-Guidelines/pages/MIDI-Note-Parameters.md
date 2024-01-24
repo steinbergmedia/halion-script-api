@@ -12,8 +12,8 @@
 
 In HALion, value boxes for MIDI notes display the name of the MIDI note. You can set the value of a MIDI note in one of the following ways:
 
-* Enter the MIDI note number (0 - 127),
-* Enter the MIDI note name (C-2 - G8),
+* Enter the MIDI note number (0 – 127),
+* Enter the MIDI note name (C-2 – G8),
 * Play the key on your MIDI keyboard.
 
 By using the parameter definition of a MIDI note parameter, you can create a script parameter for this.
@@ -26,7 +26,7 @@ By using the parameter definition of a MIDI note parameter, you can create a scr
 
 ## Prerequisites
 
-* A Program with a Lua Script module and a Synth zone.
+* A program with a Lua Script module and a synth zone.
 * A macro page with a value box.
 
 ## Defining a Parameter for MIDI Notes

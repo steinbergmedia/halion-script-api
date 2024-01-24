@@ -17,7 +17,7 @@
 
 The example below demonstrates how to build a checkbox with two states, the off-state and on-state, from a single SVG file.
 
-### Creating a SVG file
+### Creating an SVG file
 
 Before you can build the checkbox in HALion, you need an SVG file with the representation of a typical checkbox, e.g. two concentric circles.
 
@@ -38,7 +38,7 @@ In this example, the added [SVG](../../HALion-Macro-Page/pages/SVG.md) resource 
 
 ### Adding Objects
 
-To edit the objects, you must enter the ID of the object, the property you wish to change and the corresponding values. If an SVG file contains more than one object, these objects and their properties can be added for further editing like this.
+To edit the objects, you must enter the ID of the object, the property you want to change and the corresponding values. If an SVG file contains more than one object, these objects and their properties can be added for further editing like this.
 
 1. Go to the **Resource Tree** and select the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource your want to edit.
 1. In the **Objects** line, click **+**.
@@ -59,6 +59,6 @@ To edit the objects, you must enter the ID of the object, the property you wish 
 1. Duplicate the [SVG](../../HALion-Macro-Page/pages/SVG.md) resource 'SVG Checkbox Off' and name it 'SVG Checkbox On'.
 1. In the 'SVG Checkbox On' resource, set the ``fill`` property of the 'Check' circle to ``black``.<p>![Modifying SVGs with Multiple Objects On](../images/Modifying-SVGs-with-Multiple-Objects-On.png)</p>
 1. In the **GUI Tree**, add a [Switch](../../HALion-Macro-Page/pages/Switch.md) control and set its Mode to 'onoff'.
-1. Assign the 'SVG Checkbox Off' and 'SVG Checkbox On' resources to the Bitmaps Off and On respectively.<p>![Modifying SVGs with Multiple Objects Switch](../images/Modifying-SVGs-with-Multiple-Objects-Switch.png)</p>
+1. Assign the 'SVG Checkbox Off' and 'SVG Checkbox On' resources to the Bitmaps Off and On, respectively.<p>![Modifying SVGs with Multiple Objects Switch](../images/Modifying-SVGs-with-Multiple-Objects-Switch.png)</p>
 
 If you want, you can create more variants to implement additional hover-state resources, for example.

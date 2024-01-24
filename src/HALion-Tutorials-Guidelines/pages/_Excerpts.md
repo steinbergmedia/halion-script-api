@@ -11,5 +11,5 @@ The example below demonstrates how to build a custom multi-level menu for the os
 // ANCHOR_END: custom-multi-level-menus
 
 // ANCHOR: popup-menus
->&#10069; Popup menus can only be displayed within the dimensions of the macro page. If a popup menu is too large, it will be clipped. To prevent this, you can either change the direction in which the popup menu opens, e.g., open it to the top instead of to the bottom, or you can change the size of the template, so that it fits, and then activate the scrollbar to be able to scroll to the available entries.
+>&#10069; Pop-up menus can only be displayed within the dimensions of the macro page. If a pop-up menu is too large, it will be clipped. To prevent this, you can either change the direction in which the pop-up menu opens, e.g., open it to the top instead of to the bottom, or you can change the size of the template, so that it fits, and then activate the scrollbar to be able to scroll to the available entries.
 // ANCHOR_END: popup-menus

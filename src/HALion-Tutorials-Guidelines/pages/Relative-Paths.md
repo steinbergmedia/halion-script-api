@@ -10,7 +10,7 @@
 
 ---
 
-Functions like [loadPreset](../../HALion-Script/pages/loadPreset.md) require a file path as argument. The function ``debug.getinfo`` from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the if branch of the following script example must match the working directory on your hard disk. How to create a working directory is described in [Using Relative Paths](./Using-Relative-Paths.md). The folders in the else branch must match the folders that you specified in the **Library Creator**. If the folder on the hard disk cannot be found, the file path of the VST sound will be used instead. Note that the VST sound must be mounted for this to work.
+Functions like [loadPreset](../../HALion-Script/pages/loadPreset.md) require a file path as argument. The function ``debug.getinfo`` from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the 'if branch' of the following script example must match the working directory on your hard disk. How to create a working directory is described in [Using Relative Paths](./Using-Relative-Paths.md). The folders in the 'else branch' must match the folders that you specified in the **Library Creator**. If the folder on the hard disk cannot be found, the file path of the VST sound container will be used instead. Note that the VST sound container must be mounted for this to work.
 
 ## Example
 
