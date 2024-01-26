@@ -10,7 +10,7 @@
 
 ---
 
-In the HALion Script language, the elements that make up the program, MIDI and note expression events, the definitions of parameters, etc., are all represented by *objects*. HALion Script provides dedicated functions for modifying these objects. To understand the principles of writing scripts that operate on objects, some terminology from object-oriented programming will be helpful.
+In the HALion Script language, elements that make up the program, MIDI and note expression events, the definitions of parameters, etc., are all represented by *objects*. HALion Script provides dedicated functions for modifying these objects. To understand the principles of writing scripts that operate on objects, some terminology from object-oriented programming will be helpful.
 
 ## Objects and Classes
 
@@ -27,7 +27,7 @@ The classes/objects of the HALion Script language are structured in the followin
 Classes deeper down inherit the data fields and methods of classes higher up in the class hierarchy. For example, the classes [Bus](./Bus-Constructor.md), [Instance](./Instance.md), [Layer](./Layer.md), [Effect](./Effect.md), and so on, inherit all data fields and methods of the [Element](./Element.md) class. Subclasses add functionality to their parent class by providing more data fields and methods.
 
 ## Addressing Objects
-The Lua Script MIDI module itself can be addressed with ``this``. Further objects can be addressed with ``this.parent``, ``this.program`` or with the respective get and find functions.
+The Lua Script MIDI module itself can be addressed with ``this``. Further objects can be addressed with ``this.parent``, ``this.program`` or with the respective 'get' and 'find' functions.
 
 |Syntax|Object|Class|
 |:-|:-|:-|

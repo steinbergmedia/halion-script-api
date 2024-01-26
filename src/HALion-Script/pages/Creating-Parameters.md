@@ -110,7 +110,7 @@ end
 
 ## Parameter Change Callback
 
-The change callback is only called if the value of the parameter was changed from the user interface, e.g., by adjusting the corresponding control on the macro page, or by calling [setParameter](./setParameter.md). It is not called if the value was changed through assigning a value from inside the script. The following example revisits [Example 1](#example-1) to demonstrate this:
+The change callback is only called if the value of the parameter was changed on the user interface, e.g., by adjusting the corresponding control on the macro page, or by calling [setParameter](./setParameter.md). It is not called if the value was changed by assigning a value from inside the script. The following example revisits [Example 1](#example-1) to demonstrate this:
 
 #### Example 3
 
@@ -156,7 +156,7 @@ end
 
 ## Change Callback with Anonymous Function
 
-In [Example 2](#example-2) the function nameChanged is declared before the associate parameter is defined. This is necessary for [defineParameter](./defineParameter.md) in order to detect that the argument nameChanged is a function. If you want to declare the callback function after defining the corresponding parameter, you must call the callback function within an anonymous function. As the name suggests, an anonymous function is a function without a name.
+In [Example 2](#example-2), the function nameChanged is declared before the associate parameter is defined. This is necessary for [defineParameter](./defineParameter.md) in order to detect that the argument nameChanged is a function. If you want to declare the callback function after defining the corresponding parameter, you must call the callback function within an anonymous function. As the name suggests, an anonymous function is a function without a name.
 
 #### Example 4
 
@@ -178,7 +178,7 @@ end
 
 When calling [defineParameter](./defineParameter.md) with several arguments, the arguments are matched by their position and the associated values are passed on to the function. For this reason, the arguments of [defineParameter](./defineParameter.md) must match the exact order and position when calling the function. Alternatively, you can set the arguments with the keys and values of a table. This method of passing arguments and values to a function is called *named arguments*.
 
-Named arguments have the advantage that they can be set in any order you want and that optional or additional arguments can be left out without destroying the predefined order and position of the arguments to that function. The following example shows the parameters from [Example 2](#example-2) created with named arguments.
+Named arguments have the advantage that they can be set in any order and that optional or additional arguments can be left out without destroying the predefined order and position of the arguments of that function. The following example shows the parameters from [Example 2](#example-2) created with named arguments.
 
 #### Example 5
 
@@ -265,13 +265,13 @@ If you create a parameter by named arguments, you get access to these additional
 |:-|:-|:-|
 |**type**|The value type of the parameter (integer, float, boolean, string, variant, or envelope). The type must match the default and increment arguments.|string, optional|
 |**format**|Formats the value string of a float value using the provided arguments. Only the format specifiers for float values are supported, i.e., e, E, f, g, or G. Other format specifiers are not supported. This overrides any automatic formatting from the ``increment`` argument.|string, optional|
-|**readOnly**|The parameter can only be changed from the script if this is set to ``true``. The argument defaults to ``false`` if no value is set.|bool, optional|
-|**writeAlways**|A parameter does not call its change callback if its value is set without being changed. Set this to ``true`` if you want to guarantee that the change callback of the parameter is called. The argument defaults to ``false`` if not set.|bool, optional|
+|**readOnly**|The parameter can only be changed by the script if this is set to ``true``. The argument defaults to ``false`` if no value is set.|bool, optional|
+|**writeAlways**|A parameter does not call its change callback if its value is set without being changed. Set this to ``true`` if you want to make sure that the change callback of the parameter is called. The argument defaults to ``false`` if not set.|bool, optional|
 |**automatable**|Set this to ``false`` if you do not want the parameter to be automated. The argument defaults to ``true`` if not set.|bool, optional|
-|**processorCallback**|The parameter change callback will be executed in the processor context with high accuracy, if this is set to ``true``. For example, this is required for automated script parameters to update correctly when using Render in Place or Export Audio.  If no processor exists, the call back is still run in the controller context. {{#include ../../_Version.md:halion6420}}|bool, optional|
+|**processorCallback**|If this is set to ``true``, the parameter change callback will be executed in the processor context with high accuracy. This is required for automated script parameters to update correctly when using **Render in Place** or **Export Audio**, for example.  If no processor exists, the callback is still run in the controller context. {{#include ../../_Version.md:halion6420}}|bool, optional|
 |**persistent**|The parameter will not be restored from the VST preset if this is set to ``false``. The argument defaults to ``true`` if not set.|bool, optional|
 
-The arguments readOnly, writeAlways and automatable are helpful if you have a parameter that is used only for indication, but not for entering values.
+The arguments readOnly, writeAlways and automatable are usepful if you have a parameter that is used only for indication, but not for entering values.
 <!-- ANCHOR_END: additional-named-arguments -->
 
 #### Example 6

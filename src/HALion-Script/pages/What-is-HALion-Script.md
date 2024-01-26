@@ -10,7 +10,7 @@
 
 ---
 
-HALion Script allows you to customize and expand the features of HALion to a great extent. It is a domain-specific programming language based on the Lua scripting language. It comes with many functions tailored to HALion, while maintaining the general programmability of Lua. HALion Script allows you to manipulate musical events, access and modify parameters of HALion, control the behavior of macro pages, and much more. All of this can enhance your instrument creations greatly.
+HALion Script allows you to customize and expand the features of HALion to a great extent. It is a domain-specific programming language based on the Lua scripting language. It comes with many functions tailored to HALion, while maintaining the general programmability of Lua. HALion Script allows you to manipulate musical events, access and modify parameters of HALion, control the behavior of macro pages, and much more. All of this can enhance your instrument creation greatly.
 
 **Fields of application:**
 
@@ -20,13 +20,13 @@ HALion Script allows you to customize and expand the features of HALion to a gre
 * Algorithmic composition
 * Advanced, interactive playback for creating more realistic performances
 * Custom-built workflows for macro pages
-* Automization of repeating tasks while building large scale libraries
+* Automization of repeating tasks while building large-scale libraries
 
 [Jump to Top ](#what-is-halion-script)
 
 ## Lua Resources
 
-Lua is a widespread scripting language, used in many professional fields, such as game development or image processing, for example. To find out more about Lua, please visit [lua.org](https://lua.org). For learning Lua, we recommend the official book [Programming in Lua](https://www.lua.org/pil/) and [Lua's Reference Manual](https://www.lua.org/manual/5.2/).
+Lua is a very common scripting language, used in many professional fields, such as game development or image processing, for example. To find out more about Lua, please visit [lua.org](https://lua.org). For learning Lua, we recommend the official book [Programming in Lua](https://www.lua.org/pil/) and [Lua's Reference Manual](https://www.lua.org/manual/5.2/).
 
 [Jump to Top ](#what-is-halion-script)
 

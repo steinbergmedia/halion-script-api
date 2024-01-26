@@ -15,7 +15,7 @@ HALion provides two threads:
 * Parameter changes and the storage of them are handled by the **Controller** thread.
 * MIDI event processing and sound reproduction happen in the **Processor** thread.
 
-You can think of these threads as two sections of code that are exectued in concurrency by HALion. Basically, the two threads are needed to split longer lasting function calls from timing critical function calls. The functions that are called in the **Controller** thread are executed only as fast as required, while the functions that are called in the **Processor** thread are executed within an ASIO block.
+You can think of these threads as two sections of code that are exectued in concurrency by HALion. Basically, the two threads are needed to separate longer-lasting function calls from timing-critical function calls. The functions that are called in the **Controller** thread are executed only as fast as required, while the functions that are called in the **Processor** thread are executed within an ASIO block.
 
 The information whether a function can be called in the **Controller** thread, the **Processor** thread, or in both threads, can be found on the [Reference](./Reference.md) pages below the description of each function.
 
@@ -48,7 +48,7 @@ If this ever happens to you, please review your code and try to place the functi
 
 ## Using runAsync
 
-By calling [runAsync](./runAsync.md) in the **Processor** thread you can invoke a function that is executed in the **Controller** thread. The execution of [runAsync](./runAsync.md) takes at least one audio block, or longer, depending on the function that was called. The callback that called [runAsync](./runAsync.md) is put on hold until the function has completed. Please be aware of this when using [runAsync](./runAsync.md).
+By calling [runAsync](./runAsync.md) in the **Processor** thread you can invoke a function that is executed in the **Controller** thread. The execution of [runAsync](./runAsync.md) takes at least one audio block, or longer, depending on the function that was called. Please note that when using [runAsync](./runAsync.md), the callback that called [runAsync](./runAsync.md) is put on hold until the function has completed.
 
 #### Example 2
 
