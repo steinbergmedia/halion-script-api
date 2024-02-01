@@ -37,7 +37,7 @@ The state of an Event object is described by the following fields.
 |**.data**|An array with the bytes of a system exclusive message. For the interpretation of these values, please consult the documentation of the MIDI data format of the device sending the system exclusive message. {{#include ../../_Version.md:halion700}}|table|
 |**.dataType**|Currently, there is only one data type (0 = sysex). {{#include ../../_Version.md:halion700}}|number|
 |**.dataSize**|The number of bytes in the system exclusive message. {{#include ../../_Version.md:halion700}}|number|
-|**.ppqPosition**|The position of the event in ppq relative to the project start. The host must be in playback. This value will be 0.0 if the host is not in playback.|number|
+|**.ppqPosition**|The position of the event in ppq relative to the project start. The host must be in playback, otherwise, this value will be 0.0.|number|
 
 #### Fields per Event Type
 

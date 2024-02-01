@@ -28,7 +28,7 @@ Function to obtain the decompose settings of the plug-in. Custom samples origina
 
 ## Return Values
 
-Returns a table with the decompose settings.
+Returns a table that lists the decompose settings.
 
 ```lua
 settings = getDecomposeSettings()

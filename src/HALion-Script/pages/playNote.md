@@ -9,7 +9,7 @@
 Function to generate note events.
 
 * If ``duration`` is -1, the generated note plays for as long as the key that called playNote is held.
-* If ``duration`` is greater 0, the note plays for as long as the key is held, with the maximum duration specified in milliseconds.
+* If ``duration`` is greater than 0, the note plays for as long as the key is held, with the maximum duration specified in milliseconds.
 * If ``duration`` is 0, playNote generates only the note-on event. The release can be managed manually with [onRelease](./onRelease.md) or with [releaseVoice](./releaseVoice.md) and the ID returned by playNote.
 
 **Available in:** Processor.

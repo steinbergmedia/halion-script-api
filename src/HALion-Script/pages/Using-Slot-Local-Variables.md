@@ -4,7 +4,7 @@
 
 If a program is loaded in several slots, the state of its parameters (e.g., level, cutoff, resonance, etc.) is synchronized across these slots. The same is true for the state of global variables in a Lua script. If a global variable is changed in one slot, its state will change in every other slot where the program is loaded.
 
-However, the engine's playback state of the program is handled independently for each slot. This is necessary because each slot can receive different MIDI events. If some functions in your script depend on global variables that store the state of MIDI events, the automatic synchronization of global variables is usually a hindrance, because the global variables will be overwritten by the slot that received the latest MIDI events. To attain global variables that operate independently per slot, use [defineSlotLocal](./defineSlotLocal.md).
+However, the engine's playback state of the program is handled independently for each slot. This is necessary because each slot can receive different MIDI events. If some functions in your script depend on global variables that store the state of MIDI events, the automatic synchronization of global variables is usually a hindrance, because the global variables will be overwritten by the slot that received the latest MIDI events. To attain global variables that operate independently per slot, use slot local variables by calling [defineSlotLocal](./defineSlotLocal.md).
 
 ## Declaring Slot Local Variables
 

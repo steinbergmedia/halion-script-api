@@ -6,7 +6,7 @@
 
 ## Description
 
-Function to measure the time delta between the last note-on or note-retrigger event of the specified note and the call of this function.
+Function to measure the time interval between the last note-on or note-retrigger event of the specified note and the call of this function.
 
 **Available in:** Processor.
 
@@ -18,12 +18,12 @@ Function to measure the time delta between the last note-on or note-retrigger ev
 
 ## Return Values
 
-Returns the time delta in milliseconds.
+Returns the time interval in milliseconds.
 
 ## Example
 
 ```lua
--- Print the time delta between the note-on or the note-retrigger and the note-off.
+-- Print the time interval between the note-on or the note-retrigger and the note-off.
 
 function onRelease(event)
     postEvent(event)
