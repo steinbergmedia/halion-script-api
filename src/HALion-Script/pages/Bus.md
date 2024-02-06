@@ -34,11 +34,11 @@ The [Element](./Element.md) object of a bus can be obtained with [findBusses](./
 
 |Field|Description|Value Type|
 |:-|:-|:-|
-|**.isAuxBus**|Returns true if this is an aux bus and false if it is not.|boolean|
+|**.isAuxBus**|Returns ``true`` if this is an aux bus and `false`` if it is not.|boolean|
 |**.auxNumber**|The number of the corresponding aux bus.|number|
 |**.numChannels**|The number of output channels of the bus.|number|
-|**.active**|Returns true if the bus is active and false if it is not active.|boolean|
-|**.bypassMask**|Determines if a bus follows the global inserts and Aux bypass buttons. See Bypass Masks for details.|number|
+|**.active**|Returns ``true`` if the bus is active and `false`` if it is not active.|boolean|
+|**.bypassMask**|Determines if a bus follows the global inserts and Aux bypass buttons. See [Bypass Masks](./Bypass-Masks.md) for details.|number|
 
 #### Example
 

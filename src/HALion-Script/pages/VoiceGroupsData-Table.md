@@ -6,7 +6,7 @@
 
 ## Description
 
-Voice Groups are managed through a special predefined table: the VoiceGroupsData table. This table can be obtained by making a call to [getParameter](./getParameter.md) with ``"VoiceManager.VoiceGroupsData"`` as parameter. The voice groups are referenced by their index. Each voice group has the fields ``.maxPolyphony``, ``.exclusiveGroup`` and ``.stealMode``. You can change the correspondig values, but the structure of this table must remain unaltered. The values are set by making a call to ``setParameter``. See the example below for more details.
+Voice Groups are managed via a predefined table: the VoiceGroupsData table. This table can be obtained by making a call to [getParameter](./getParameter.md) with ``"VoiceManager.VoiceGroupsData"`` as parameter. The voice groups are referenced by their index. Each voice group has the fields ``.maxPolyphony``, ``.exclusiveGroup`` and ``.stealMode``. You can change the correspondig values, but the structure of this table must remain unaltered. The values are set by making a call to ``setParameter``. See the example below for more details.
 
 **Available in:** Controller.
 

@@ -27,7 +27,7 @@ Function to obtain the pitch of an audio file that has been analyzed with [analy
 #### Return Values
 
 // ANCHOR: return-values
-Returns a tuple with two values:
+Returns two values:
 
 * A float value representing the pitch as MIDI note number with decimals for cents,
 * a boolean for voiced/unvoiced detection. The return value ``true`` means that a pitch was detected in the specified range.

@@ -6,7 +6,7 @@
 
 ## Description
 
-The alternations in the Alternation List of the Layer Alternate MIDI module are managed through a predefined table: the AlternateData table. This table can be obtained by making a call to [getParameter](./getParameter.md) with ``"AlternateData"`` as parameter. The alternations are referenced by their index. Each alternate has the fields ``.keyswitch`` and ``.layer``. You can change the values, but the structure of this table must remain unaltered. The values are set by making a call to [setParameter](./setParameter.md). See the example below for more details.
+The alternations in the Alternation List of the Layer Alternate MIDI module are managed via a predefined table: the AlternateData table. This table can be obtained by making a call to [getParameter](./getParameter.md) with ``"AlternateData"`` as parameter. The alternations are referenced by their index. Each alternation has the fields ``.keyswitch`` and ``.layer``. You can change the values, but the structure of this table must remain unaltered. The values are set by making a call to [setParameter](./setParameter.md). See the example below for more details.
 
 **Available in:** Controller.
 

@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to find the slots of the plug-in instance. Before calling this function you must access the Instance object with ``this.program.instance``. The function returns an array with the [Slot](./Slot.md) objects of the found slots. Particular slots can be searched by name or through a filter function. If searching by name, findSlots accepts only the [Slot](./Slot.md) objects that match the specified name. The filter function uses the [Slot](./Slot.md) object of each slot as argument. Only those [Slot](./Slot.md) objects that return ``true`` for the search criteria defined in the filter function will be accepted by findSlots. Without a name or filter function the [Slot](./Slot.md) objects of all slots in the instance will be returned.
+Function to find the slots of the plug-in instance. Before calling this function you must access the Instance object with ``this.program.instance``. The function returns an array with the [Slot](./Slot.md) objects of the found slots. Particular slots can be searched by name or via a filter function. If searching by name, findSlots accepts only the [Slot](./Slot.md) objects that match the specified name. The filter function uses the [Slot](./Slot.md) object of each slot as argument. Only those [Slot](./Slot.md) objects that return ``true`` for the search criteria defined in the filter function will be accepted by findSlots. Without a name or filter function, the [Slot](./Slot.md) objects of all slots in the instance will be returned.
 
 **Available in:** Controller, Processor.
 // ANCHOR_END: description
