@@ -1,3 +1,7 @@
+// ANCHOR: halion710
+<span class="version-text">(Since HALion 7.1.0)</span>
+// ANCHOR_END: halion710
+
 // ANCHOR: halion700
 <span class="version-text">(Since HALion 7.0)</span>
 // ANCHOR_END: halion700
