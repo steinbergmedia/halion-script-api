@@ -18,11 +18,11 @@ MediaBay attributes are a quick and easy way to browse and search presets. Attri
 
 ## Attribute Rules
 
-**Attribute Rules** is a special node that can be added to a VST Sound in the **Structure** view. Within the **Attribute Rules** node, you can create a set of rules and commands for setting, deleting and testing MediaBay attributes.
+**Attribute Rules** is a special node that can be added to a VST Sound in the **Structure** section. Within the **Attribute Rules** node, you can create a set of rules and commands for setting, deleting and testing MediaBay attributes.
 
 ![Attribute Rules Node](../images/Attribute-Rules-Node.png)
 
-The top node **Attribute Rules** cannot be renamed. You can create additional **Attribute Rules** nodes within the top node. These additional nodes define a subset of rules. Additional nodes can be renamed and referenced by that name, for example, to define separate rules for Program and Layer presets.
+The top node **Attribute Rules** cannot be renamed. You can create additional **Attribute Rules** nodes within the top node. These additional nodes define a subset of rules. Additional nodes can be renamed and referenced by that name, for example, to define separate rules for program and layer presets.
 
 ## Attribute Rule
 
@@ -32,30 +32,30 @@ An **Attribute Rule** can only be created within an **Attribute Rules** node. An
 
 ## Prerequisite
 
-To define rules and actions for MediaBay attributes, you need a library with a VST Sound that contains Program and/or Layer presets.
+To define rules and actions for MediaBay attributes, you need a library with a VST Sound that contains program and/or layer presets.
 
 ## Adding an Attribute Rules Node
 
 
-1. In the **VST Sound Container** view, select the **VST Sound** that contains the Program presets of your library.
-1. In the toolbar of the **Structure** view, click **Add**.
+1. In the **VST Sound Container** section, select the **VST Sound** that contains the program presets of your library.
+1. In the toolbar of the **Structure** section, click **Add**.
 1. Select **Attribute Rules > Create Attribute Rules**.
 
 An **Attribute Rules** node is added to the structure of the VST Sound. This node has no function. It serves only as a container for the actual rules and actions.
 
 ## Creating an Attribute Rule
 
-1. In the **Structure** view, select the **Attribute Rules** node.
-1. In the toolbar of the **Content** view, click **Add**.
+1. In the **Structure** section, select the **Attribute Rules** node.
+1. In the toolbar of the **Content** section, click **Add**.
 1. Select **Attribute Rule**.
 
-An **Attribute Rule** is added to the **Content** view. The **Attribute Rule** you just created has no function yet. It must be assigned to an attribute type and the desired operation must be selected.
+An **Attribute Rule** is added to the **Content** section. The **Attribute Rule** you just created has no function yet. It must be assigned to an attribute type and the desired operation must be selected.
 
 ## Setting Attribute Rule Properties
 
 ![Attribute Rule Properties](../images/Attribute-Rule-Properties.png)
 
-1. In the **Content** view, select the **Attribute Rule** you want to edit. The current set of rules and actions are displayed in the **Properties** view to the right.
+1. In the **Content** section, select the **Attribute Rule** you want to edit. The current set of rules and actions are displayed in the **Properties** section to the right.
 1. Open the **Attribute** menu and select the desired attribute type.
 1. Open the **Operation** menu and select the desired action for the selected attribute type.
 1. Enter a **Value** for the selected operation, if needed.
@@ -86,7 +86,7 @@ The scope defines to which presets an **Attribute Rule** applies. By default, an
 
 ### Creating Additional Attribute Rules
 
-1. In the **Structure** view, create the **Attribute Rules** node and select it.
+1. In the **Structure** section, create the **Attribute Rules** node and select it.
 1. Within the selected node, create another **Attribute Rules** node.
 1. Rename the **Attribute Rules** node you have just created.
 1. Add an **Attibute Rule**, see [Creating an Attribute Rule](#creating-an-attribute-rule).
@@ -94,7 +94,7 @@ The scope defines to which presets an **Attribute Rule** applies. By default, an
 
 ### Assigning a Subset of Attribute Rules
 
-1. In the **Structure** view, select the **VST3 Preset Folder**. The **Name** and **Rules** properties display in the **Properties** view to the right.
+1. In the **Structure** section, select the **VST3 Preset Folder**. The **Name** and **Rules** properties are displayed in the **Properties** section to the right.
 1. Navigate to the folder that contains the presets to which you want to apply the subset of attribute rules.
 1. Enter the name of the **Attribute Rules** node as reference for the **Rules** property.
 
@@ -105,37 +105,37 @@ You can even assign a subset of attribute rules to single presets.
 
 ## Attribute Rules Presets
 
-You can save and load presets for any **Attribute Rules** node. The preset saves all the rules for the selected node. Loading a preset restores these rules at the node where you load it.
+You can save and load presets for any **Attribute Rules** node. The preset saves all the rules for the selected node. Loading a preset restores these rules for the node where you load it.
 
 ### Saving Attribute Rules
 
-1. In the **Structure** view, select the **Attribute Rules** node you want to save.
-1. In the toolbar of the **Content** view, click **Add**.
+1. In the **Structure** section, select the **Attribute Rules** node that you want to save.
+1. In the toolbar of the **Content** section, click **Add**.
 1. Select **Save Preset**.
 1. Enter a meaningful name for your attribute rules and click **Save**.
 
 ### Loading Attribute Rules
 
-1. In the **Structure** view, select the node where you want to load the preset. This can be the node of the VST Sound or an **Attribute Rules** node.
-1. In the toolbar of the **Structure** view, click **Add**.
+1. In the **Structure** section, select the node for which you want to load the preset. This can be the node of the VST Sound or an **Attribute Rules** node.
+1. In the toolbar of the **Structure** section, click **Add**.
 1. Go to **Load Preset** and select the preset you want to load.
 
 ## Example
 
-Different Rules for Program presets and the Init Layer preset.
+Different rules for program presets and the Init layer preset.
 
-1. In the **Structure** view, create the **Attribute Rules** node and select it.
+1. In the **Structure** section, create the **Attribute Rules** node and select it.
 1. Within the selected node, create two more **Attribute Rules** nodes.
 1. Rename the **Attribute Rules** nodes you have just created to "Program Presets" and "Init Layer" respectively.
-1. Create different rules for your Program presets and the Init Layer preset.
-1. Navigate to the VST3 preset folder that contains the Program presets.
-1. In the **Properties** view to the right, set the **Rules** property to "Program Presets".
+1. Create different rules for your program presets and the Init layer preset.
+1. Navigate to the VST3 preset folder that contains the program presets.
+1. In the **Properties** section to the right, set the **Rules** property to "Program Presets".
 
 ![Attribute Rules Node](../images/Attribute-Rules-Program-Presets.png)
 
-7. Navigate to the VST3 preset folder that contains the Init Layer preset and select it
-7. In the **Properties** view to the right, set the **Rules** property to "Init Layer".
+7. Navigate to the VST3 preset folder that contains the Init layer preset and select it
+7. In the **Properties** section to the right, set the **Rules** property to "Init Layer".
 
 ![Attribute Rules Node](../images/Attribute-Rules-Init-Layer.png)
 
-The Library Creator scans each preset if the referenced rules apply and performs the defined action or reports an error during building the library.
+The **Library Creator** scans each preset to verify whether the referenced rules apply and performs the defined action or reports an error during building the library.
