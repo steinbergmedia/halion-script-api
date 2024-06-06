@@ -32,7 +32,7 @@ An **Attribute Rule** can only be created within an **Attribute Rules** node. An
 
 ## Prerequisite
 
-To define rules and actions for MediaBay attributes, you need a library with a VST Sound that contains program and/or layer presets.
+For this tutorial, you need a library with a VST Sound that contains program and/or layer presets.
 
 ## Adding an Attribute Rules Node
 
@@ -49,26 +49,24 @@ An **Attribute Rules** node is added to the structure of the VST Sound. This nod
 1. In the toolbar of the **Content** section, click **Add**.
 1. Select **Attribute Rule**.
 
-An **Attribute Rule** is added to the **Content** section. The **Attribute Rule** you just created has no function yet. It must be assigned to an attribute type and the desired operation must be selected.
+An **Attribute Rule** is added to the **Content** section. The **Attribute Rule** you just created has no function yet. It must be assigned to an attribute and the desired operation must be selected.
 
 ## Setting Attribute Rule Properties
 
 ![Attribute Rule Properties](../images/Attribute-Rule-Properties.png)
 
 1. In the **Content** section, select the **Attribute Rule** you want to edit. The current set of rules and actions are displayed in the **Properties** section to the right.
-1. Open the **Attribute** menu and select the desired attribute type.
-1. Open the **Operation** menu and select the desired action for the selected attribute type.
+1. Open the **Attribute** menu and select the desired attribute.
+1. Open the **Operation** menu and select the desired action for the selected attribute.
 1. Enter a **Value** for the selected operation, if needed.
 
 ### Attribute Property
 
-The **Attribute** property defines to which attribute type the **Attribute Rule** applies. To learn more about the different attribute types of MediaBay, see the [MediaBay Guideline](./MediaBay-Guideline.md).
+The **Attribute** property defines to which attribute the **Attribute Rule** applies. To learn more about the different attributes of MediaBay, see the [MediaBay Guideline](./MediaBay-Guideline.md).
 
 ### Operation Property
 
-The **Operation** of an **Attribute Rule** defines the action to be performed on the selected attribute type. The Library Creator checks each preset if the rule applies and performs the defined action or reports an error during building the library.
-
->&#10069; The library is built only if the defined set of rules and actions can be executed without errors.
+The **Operation** of an **Attribute Rule** defines the action to be performed on the selected attribute. The Library Creator checks each preset if the rule applies and performs the defined action or reports an error during building the library.
 
 |Operation|Description|
 |:-|:-|
@@ -77,6 +75,15 @@ The **Operation** of an **Attribute Rule** defines the action to be performed on
 |**Contains**|The attribute must contain the set value.|
 |**Set**|The attribute is set to the defined value.|
 |**Clear**|The attribute will be deleted.|
+
+## Investigating Errors
+
+A red warning sign next to a content file indicates errors before the library is built.
+
+* Click the red warning sign to open a report of the errors and investigate them.
+
+>&#10069; The library is built only if the defined set of rules and actions can be executed without errors.
+
 
 ## About the Scope of an Attribute Rule
 
@@ -102,6 +109,16 @@ You can even assign a subset of attribute rules to single presets.
 
 1. Navigate to the desired preset.
 1. Set the **Rules** property to the name of the **Attribute Rules** node you want to reference.
+
+## Attribute Rules for Other Media Types
+
+In addition to VST3 presets, you can create attribute rules also for other media types that support MediaBay attributes, for example, audio and MIDI files.
+
+>&#10069; The Private Audio Files folder hides samples from MediaBay. Therefore, attribute rules cannot be applied to samples in the Private Audio Files folder. Only samples in the Public Audio Files folder are visible to MediaBay. For this reason, attribute rules can only be applied to samples in the Public Audio Files folder. 
+
+1. In the **Structure** section, select **Public Audio Files** or **MIDI Files**, depending on the media type. The **Name** and **Rules** properties are displayed in the **Properties** section to the right.
+1. Navigate to the folder that contains the content to which you want to apply the subset of attribute rules.
+1. Enter the name of the **Attribute Rules** node as reference for the **Rules** property.
 
 ## Attribute Rules Presets
 
