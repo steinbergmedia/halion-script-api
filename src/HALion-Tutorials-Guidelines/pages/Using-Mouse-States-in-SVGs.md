@@ -2,6 +2,8 @@
 
 # Using Mouse States in SVGs
 
+{{#include ../../_Version.md:halion700}}
+
 ---
 
 **On this page:**
