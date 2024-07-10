@@ -135,11 +135,11 @@ You can save and load presets for any **Attribute Rules** node. The preset saves
 
 1. In the **Structure** section, select the node for which you want to load the preset. This can be the node of the VST Sound or an **Attribute Rules** node.
 1. In the toolbar of the **Structure** section, click **Add**.
-1. Go to **Load Preset** and select the preset you want to load.
+1. Go to **Load Preset** and select the preset that you want to load.
 
 ## Example
 
-Different rules for program presets and the Init layer preset.
+Using different rules for program presets and the Init layer preset.
 
 1. In the **Structure** section, create the **Attribute Rules** node and select it.
 1. Within the selected node, create two more **Attribute Rules** nodes.
@@ -155,4 +155,4 @@ Different rules for program presets and the Init layer preset.
 
 ![Attribute Rules Node](../images/Attribute-Rules-Init-Layer.png)
 
-The **Library Creator** scans each preset to verify whether the referenced rules apply and performs the defined action or reports an error during building the library.
+The **Library Creator** scans each preset to verify whether the referenced rules apply and performs the defined action or reports an error when building the library.
