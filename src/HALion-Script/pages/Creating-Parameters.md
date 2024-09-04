@@ -265,7 +265,7 @@ If you create a parameter by named arguments, you get access to these additional
 |:-|:-|:-|
 |**type**|The value type of the parameter (integer, float, boolean, string, variant, or envelope). The type must match the default and increment arguments.|string, optional|
 |**format**|Formats the value string of a float value using the provided arguments. Only the format specifiers for float values are supported, i.e., e, E, f, g, or G. Other format specifiers are not supported. This overrides any automatic formatting from the ``increment`` argument.|string, optional|
-|**readOnly**|The parameter can only be changed by the script if this is set to ``true``. The argument defaults to ``false`` if no value is set.|bool, optional|
+|**readOnly**|Setting this to ``true`` will prevent the parameter from being changed from outside the script. The argument defaults to ``false`` if no value is set.|bool, optional|
 |**writeAlways**|A parameter does not call its change callback if its value is set without being changed. Set this to ``true`` if you want to make sure that the change callback of the parameter is called. The argument defaults to ``false`` if not set.|bool, optional|
 |**automatable**|Set this to ``false`` if you do not want the parameter to be automated. The argument defaults to ``true`` if not set.|bool, optional|
 |**processorCallback**|If this is set to ``true``, the parameter change callback will be executed in the processor context with high accuracy. This is required for automated script parameters to update correctly when using **Render in Place** or **Export Audio**, for example.  If no processor exists, the callback is still run in the controller context. {{#include ../../_Version.md:halion6420}}|bool, optional|
