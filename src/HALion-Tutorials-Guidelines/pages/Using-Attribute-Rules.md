@@ -135,7 +135,12 @@ You can save and load presets for any **Attribute Rules** node. The preset saves
 
 1. In the **Structure** section, select the node for which you want to load the preset. This can be the node of the VST Sound or an **Attribute Rules** node.
 1. In the toolbar of the **Structure** section, click **Add**.
-1. Go to **Load Preset** and select the preset that you want to load.
+1. Go to **Attribute Rules > Load Preset** and select the preset that you want to load.
+
+### Deleting Attribute Rules
+
+1. In the toolbar of the **Structure** section, click **Add**.
+1. Go to **Attribute Rules > Delete Preset** and select the preset that you want to delete.
 
 ## Example
 
