@@ -215,6 +215,7 @@
     - [runSync](./HALion-Script/pages/runSync.md)
     - [samples2ms](./HALion-Script/pages/samples2ms.md)
     - [savePreset](./HALion-Script/pages/savePreset.md)
+    - [setBypassNoteOff](./HALion-Script/pages/setBypassNoteOff.md)
     - [setName](./HALion-Script/pages/setName.md)
     - [setOutputBus](./HALion-Script/pages/setOutputBus.md)
     - [setParameter](./HALion-Script/pages/setParameter.md)

@@ -191,6 +191,7 @@ The reference pages describe the functions and features of the HALion Script lan
 [runSync](./runSync.md),
 [samples2ms](./samples2ms.md),
 [savePreset](./savePreset.md),
+[setBypassNoteOff](./setBypassNoteOff.md),
 [setName](./setName.md),
 [setOutputBus](./setOutputBus.md),
 [setParameter](./setParameter.md),

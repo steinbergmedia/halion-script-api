@@ -10,6 +10,12 @@ This page lists the modified and added pages for each version.
 
 ---
 
+## HALion 7.1.0
+
+#### Added Pages
+
+* [setBypassNoteOff](./setBypassNoteOff.md)
+
 ## HALion 7.0.0
 
 #### Added Pages
