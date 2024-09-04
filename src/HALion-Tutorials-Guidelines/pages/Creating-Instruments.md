@@ -37,6 +37,10 @@ The program structure of your instrument must fulfill the following requirements
 
 {{#include _Maximum-Macro-Page-Size.md}}
 
+* The voice management of the top element in the **Program Tree** must be activated. In the example above, the top element would be the element Instrument. The Polyphony setting for each Layer on HALion Sonic's **Program** tab won't work if the voice management isn't activated.
+
+>&#10069; When activating the voice management, the Polyphony and Key Polyphony should be set to values that match your instrument. The following values have proven to be useful for many instruments: Polyphony = 16 and Key Polyphony = 4. 
+
 * The last element in the **Program Tree** must be one bus with a maximum of four insert effects. In the example above, this would be the element Instrument-Bus. There must be only one bus at the top level. Several busses at the top level are not allowed. The maximum number of insert effects per Layer in HALion Sonic is limited to four. The insert effects are optional. In the example above, the Instrument-Bus does not have any insert effects. In fact, it is good practice to leave the bus empty in HALion and assign the insert effects later on the Inserts tab in HALion Sonic.
 
 >&#10069; HALion Sonic does not accept layer presets that do not match the requirements. When exporting a program as HALion Sonic layer preset, please activate **Verify HALion Sonic Layer Structure**. By activating this option, HALion will warn you if the program structure does not meet the requirements. 
