@@ -55,4 +55,4 @@ function onRelease(event)
 end
 ```
 
-**See also:** [onNote](./onNote.md), [postEvent](./postEvent.md), [playNote](./playNote.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md), [setBaypassNoteOff](./setBypassNoteOff.md)
+**See also:** [onNote](./onNote.md), [postEvent](./postEvent.md), [playNote](./playNote.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md), [setBypassNoteOff](./setBypassNoteOff.md)

@@ -8,7 +8,7 @@
 
 ## Description
 
-The [playNote](./playNote.md) callback can disable the sending of a note-off. It does this by setting an internal flag in HALion's voice manager. If the script module is bypassed or removed from the slot, note events that were triggered by the [playNote](./playNote.md) callback may cause hanging notes. The [setBypassNoteOff](#setbypassnoteoff) function forces a note-off to be sent for the note specified by the ``note`` argument. By implementing this function in the [onRelease](./onRelease.md) callback, hanging notes can be avoided. A note-off is only sent if the function's ``enable`` argument is ``true``. The ``enable`` argument is optional and defaults to ``true`` if not set. If set to ``false``, the internal flag in HALion's voice manager and thus the sending of a note-off are disabled, as does the [playNote](./playNote.md) callback.
+The Halion engine keeps track of notes triggered by [playNote](./playNote.md). If note-off events are left unhandled in the [onRelease](./onRelease.md) callback and the script module is bypassed or removed from the slot, note events that were triggered by [playNote](./playNote.md) may cause hanging notes. By calling this function in the [onRelease](./onRelease.md) callback, hanging notes can be avoided. The [setBypassNoteOff](#setbypassnoteoff) function forces a note-off to be sent for the note specified by the ``note`` argument. A note-off is only sent if the function's ``enable`` argument is ``true``. The ``enable`` argument is optional and defaults to ``true`` if not set. When set to ``false``, it disables the sending of a note-off.
 
 **Available in:** Processor.
 
@@ -16,8 +16,8 @@ The [playNote](./playNote.md) callback can disable the sending of a note-off. It
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**note**|The MIDI note number of the note.|number|
-|**enable**|A note-off when bypassing the script module or removing it from the slot will only be sent if this argument is ``true``. The argument is optional and defaults to ``true``. If set to ``false``, it disables the sending of a note-off.|boolean, optional|
+|**note**|The MIDI note number.|number|
+|**enable**|A note-off will only be sent if this argument is ``true``. The argument defaults to ``true`` if not set. When set to ``false``, it disables the sending of a note-off.|boolean, optional|
 
 ## Example
 
@@ -46,4 +46,4 @@ end
 defineParameter("note", nil, -1, -1, 127, onPlayNote) 
 ```
 
-**See also:** [onNote](./onNote.md), [playNote](./playNote.md), [postEvent](./postEvent.md), [onRelease](./onRelease.md), [releaseVoice](./releaseVoice.md), [onRetrigger](./onRetrigger.md)
+**See also:** [playNote](./playNote.md), [onRelease](./onRelease.md)
