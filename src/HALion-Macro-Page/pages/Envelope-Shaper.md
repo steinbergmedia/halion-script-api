@@ -97,7 +97,7 @@ In addition to standard properties like size, position, etc., the Envelope View 
 |**Tool**|Connected to the corresponding controls Edit_1, Erase, Draw, and Paint by the [UI variable](#ui-variables) ``@tool``.|
 |**ShapeSave**|Connected to the corresponding control SaveShape_1 by the [UI variable](#ui-variables) ``@shapesave``.|
 |**ShapeSelect**|Connected to the corresponding control SelectShape by the [UI variable](#ui-variables) ``@shapeselect``.|
-|**ShapePage**|Controls the state of the page switches in the shape selector dialogue. Must be connected to the corresponding [UI variable](#ui-variables) ``@shapepage``.|
+|**ShapePage**|Controls the state of the page switches in the shape selector dialog. Must be connected to the corresponding [UI variable](#ui-variables) ``@shapepage``.|
 |**Shape**|Connected to the corresponding control Shape Preview by the [UI variable](#ui-variables) ``@shape``.|
 |**Index**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@index``.|
 |**Level**|Connected to the corresponding control template by the [UI variable](#ui-variables) ``@level``.|
