@@ -54,7 +54,7 @@ The function can return a table with the following keys:
 |**move**|Set this to ``true`` if moving is allowed, ``false`` if not.|boolean|
 |**info**|The draginfo argument of the subsequent callbacks is determined by this return value. By default, 'info' returns the string specified by the Drag Info property. By modifying the 'info' return value you can control the response of the subsequent callbacks.|string|
 |**files**|A table with file paths for evaluation by external software when the drop operation is executed there.|table with file paths as strings|
-|**data** {{#include ../../_Version.md:halion710}}|A table with filenames and region information when dropping a region from Cubase, for example.|See [Data Field Format](#data-field-format).|
+|**data** {{#include ../../_Version.md:halion710}}|A table with filenames and region information, created when dropping a region from Cubase, for example.|See [Data Field Format](#data-field-format).|
 
 ##### Data Field Format
 

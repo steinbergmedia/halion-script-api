@@ -37,7 +37,7 @@ The program structure of your instrument must fulfill the following requirements
 
 {{#include _Maximum-Macro-Page-Size.md}}
 
-* The voice management of the top element in the **Program Tree** must be activated. In the example above, the top element would be the element Instrument. The Polyphony setting for each Layer on HALion Sonic's **Program** tab won't work if the voice management isn't activated.
+* The voice management of the top element in the **Program Tree** must be activated. In the example above, the top element would be the element "Instrument". The Polyphony setting for each layer on HALion Sonic's **Program** tab will not work if the voice management is not activated.
 
 >&#10069; When activating the voice management, the Polyphony and Key Polyphony should be set to values that match your instrument. The following values have proven to be useful for many instruments: Polyphony = 16 and Key Polyphony = 4. 
 
