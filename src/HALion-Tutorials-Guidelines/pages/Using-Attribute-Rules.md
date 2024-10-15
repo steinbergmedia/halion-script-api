@@ -139,6 +139,8 @@ You can save and load presets for any **Attribute Rules** node. The preset saves
 
 ### Deleting Attribute Rules
 
+{{#include ../../_Version.md:halion7110}}
+
 1. In the toolbar of the **Structure** section, click **Add**.
 1. Go to **Attribute Rules > Delete Preset** and select the preset that you want to delete.
 

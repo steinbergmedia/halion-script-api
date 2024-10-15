@@ -26,6 +26,7 @@ Note-off events use the following fields of the [Event](./Event.md) object.
 |**.id**|The note ID of the note-off event.|number|
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-off velocity in the range of 0 to 127.|number|
+|**.tuning**|The tune offset in semitones.|number|
 
 ## Example
 

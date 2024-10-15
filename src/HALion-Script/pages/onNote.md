@@ -24,6 +24,7 @@ This callback function is called when the script module receives a note-on event
 |**.id**|The note ID of the note-on event.|number|
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-on velocity in the range of 0 to 127.|number|
+|**.tuning**|The tune offset in semitones.|number|
 
 ## Example
 
@@ -32,7 +33,7 @@ This callback function is called when the script module receives a note-on event
 
 function onNote(event)
     local id = postEvent(event)
-    print("ID: "..id..", Note #: "..event.note..", Velocity: "..event.velocity)
+    print("ID: "..id..", Note #: "..event.note..", Velocity: "..event.velocity..", Tuning: "..event.tuning)
 end
 ```
 
