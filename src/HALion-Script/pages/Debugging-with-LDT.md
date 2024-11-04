@@ -18,9 +18,9 @@
 ---
 
 
-HALion uses [Lua Development Tools (LDT)](https://www.eclipse.org/ldt/) by [Eclipse Foundation](https://www.eclipse.org/) as the front end for debugging. LDT is an open source software for Windows and Mac OSX that provides you with an integrated development environment (IDE) for Lua with tools like code assistance, debugging, syntax coloring, code formatting, and many more. LDT allows you to debug scripts that run in HALion. After configuring Attach Debug in LDT, you can connect a Lua Script module for debugging its script. In LDT you can monitor the script step by step, inspect variables and evaluate expressions. This way you can identify and remove errors from your script more easily.
+HALion uses [Lua Development Tools (LDT)](https://www.eclipse.org/ldt/) by [Eclipse Foundation](https://www.eclipse.org/) as the front end for debugging. LDT is an open source software for Windows and Mac OSX that provides you with an integrated development environment (IDE) for Lua with tools like code assistance, debugging, syntax coloring, code formatting, and many more. LDT allows you to debug scripts that run in HALion. After configuring Attach Debug in LDT, you can connect a Lua Script module for debugging its script. In LDT, you can monitor the script step by step, inspect variables and evaluate expressions. This way, you can identify and remove errors from your script more easily.
 
-More information about the LDT and support from the Eclipse community can be found here:
+More information about LDT and support from the Eclipse community can be found here:
 
 <https://wiki.eclipse.org/LDT>
 
@@ -64,7 +64,7 @@ Before starting a debug session, some preparations are required. In the followin
 
 ### Selecting a Workspace
 
-Upon start of LDT the Eclipse Launcher will ask you to select a directory as workspace.
+Upon start of LDT, the Eclipse Launcher will ask you to select a directory as workspace.
 
 * Choose a location for **Workspace** and click **Launch**.
 
@@ -72,7 +72,7 @@ Upon start of LDT the Eclipse Launcher will ask you to select a directory as wor
 
 ### Creating a Project
 
-1. Open **File > New > Project..**, select **Lua Project** and click **Next >**.
+1. Open **File > New > Project**, select **Lua Project** and click **Next >**.
 1. Enter a **Project name**.
 1. Select **Create project at existing location (from existing source)** and set **Directory** to the location of your scripts.
 
@@ -139,12 +139,12 @@ end
 
 Now it is time to start HALion and to load the script.
 
-1. Open HALion, create a Program with a Synth zone and a Lua Script module.
+1. Open HALion, create a program with a synth zone and a Lua Script module.
 1. Load the script file from the location where you saved it.
 
 ![HALion with Script](../images/HALion-with-Script.PNG)
 
->&#10069; The script running in the Lua Script module of HALion must be loaded from the same location where LDT saved it. This ensures that the script in LDT and HALion are physically the same file. Otherwise the debugger cannot establish a connection between LDT (debugger server) and the Lua Script module (debugger client).
+>&#10069; The script running in the Lua Script module of HALion must be loaded from the same location where LDT saved it. This ensures that the script in LDT and HALion are physically the same file. Otherwise, the debugger cannot establish a connection between LDT (debugger server) and the Lua Script module (debugger client).
 
 ### Opening the Debug Perspective
 
@@ -163,11 +163,11 @@ Breakpoints can be set by double-clicking the margin.
 
 The following steps will establish a connection between LDT (debugger server) and the Lua Script module (debugger client).
 
-1. Open HALion, go to the Lua Script module and click the **Connect to Debugger** button ![Connect to Debugger Gray](../images/Connect-Debugger-Gray.PNG). This defines the Lua Script module as debugger client. The **Connect to Debugger** button turns blue ![Connect to Debugger Blue](../images/Connect-Debugger-Blue.PNG) to indicate that it waits for the debugger server.
-1. Open LDT and go to **Run > Debug Configurations...** In **Lua Attach to Application**, select the configuarion you have previously created.
+1. Open HALion, go to the Lua Script module and click the **Connect to Debugger** ![Connect to Debugger Gray](../images/Connect-Debugger-Gray.PNG)  button. This defines the Lua Script module as debugger client. The **Connect to Debugger** button turns blue ![Connect to Debugger Blue](../images/Connect-Debugger-Blue.PNG) to indicate that it waits for the debugger server.
+1. Open LDT and go to **Run > Debug Configurations**. In **Lua Attach to Application**, select the configuarion you have previously created.
 1. Click **Debug** to start the debugger server.
 
-The **Connect to Debugger** button in HALion turns green if the debugger server and client are connected ![Connect to Debugger Green](../images/Connect-Debugger-Green.PNG).
+The **Connect to Debugger** button in HALion turns green ![Connect to Debugger Green](../images/Connect-Debugger-Green.PNG) if debugger server and client are connected.
 
 ![Lua Script Module](../images/Lua-Script-Module.PNG)
 
@@ -183,7 +183,7 @@ As a basic test, try the following steps with the code example from above and a 
 
 To stop the debug session:
 
-* Open the Lua Script module in HALion and click the **Connect to Debugger** button ![Connect to Debugger Green](../images/Connect-Debugger-Green.PNG).
+* Open the Lua Script module in HALion and click the **Connect to Debugger** ![Connect to Debugger Green](../images/Connect-Debugger-Green.PNG) button.
 
 The **Connect to Debugger** button turns gray ![Connect to Debugger Gray](../images/Connect-Debugger-Gray.PNG) and the Debug area in LDT says the Lua Attach to Application session has \<terminated\>.
 

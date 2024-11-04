@@ -38,16 +38,16 @@ The different workflows will be explained in detail below.
 
 ### Exporting VST Presets to the Working Directory
 
-If you want to save your VST preset for the first time, you might be tempted to use **Save Program** or **Save Program As...** The save functions only allow you to save in the default location for VST presets. However, the default location is scanned by the MediaBay and is therefore not the adequate location for working directories. The export function allows you to choose the location freely. You must use **Export Program as VST3 Preset...** at least once to export your VST preset to the working directory. After loading the exported VST preset from the working directory, you can save your VST preset using the **Save Program** command or the export function. **Save Program** will not ask for a location or file name if the preset was loaded from the working directory.
+If you want to save your VST preset for the first time, you might be tempted to use **Save Program** or **Save Program As**. However, the save functions only allow you to save programs in the default location for VST presets. The export function allows you to choose the location freely. You must use **Export Program as VST3 Preset** at least once to export your VST preset to the working directory. After loading the exported VST preset from the working directory, you can save your VST preset using the **Save Program** command or the export function. **Save Program** will not ask for a location or file name if the preset was loaded from the working directory.
 
 To achieve relative paths for your VST preset:
 
-1. Export the VST preset with **Export Program as VST3 Preset...** to the working directory.
+1. Export the VST preset with **Export Program as VST3 Preset** to the working directory.
 1. Load the VST preset from the working directory.
 
 From now on, you can either use **Save Program** or the export function to save your VST preset.
 
->&#10069; If you are working on a HALion Sonic library, you usually want to save HALion Sonic Layers and not HALion Programs. In this case **Save Program** cannot be used and you must use **Export Program as VST3 Preset...** with the options **As HS Layer** and **Verify** activated.
+>&#10069; If you are working on a HALion Sonic library, you usually want to save HALion Sonic layers and not HALion programs. In this case **Save Program** cannot be used and you must use **Export Program as VST3 Preset** with the options **Export as HALion Sonic Layer** and **Verify HALion Sonic Layer Structure** activated.
 
 ### Using Source Files from the Working Directory
 
@@ -57,13 +57,13 @@ A practical way to achieve relative paths for your library is to place the sourc
 
 >&#10069; Do not forget to save or export your VST preset after adding new ressources to it.
 
-## Using Export Program as VST3 Preset... with Export Files
+## Using Export Program as VST3 Preset with Export Files
 
-**Export Program as VST3 Preset...** with **Export Files** activated allows you to create a working directory and export all the required files to it in a single operation.
+**Export Program as VST3 Preset** with **Export Files** activated allows you to create a working directory and export all the required files to it in a single operation.
 
-1. In the **Program Tree**, right-click the program and select **Import/Export > Export Program as VST3 Preset...**
-1. Activate **Export files**.
-1. If you are working on a HALion Sonic library, activate **As HS Layer** and **Verify**.
+1. In the **Program Tree**, right-click the program and select **Import/Export > Export Program as VST3 Preset**
+1. Activate **Export Files**.
+1. If you are working on a HALion Sonic library, activate **Export as HALion Sonic Layer** and **Verify HALion Sonic Layer Structure**.
 1. Choose a location and a file name. The location becomes your working directory. The file name should correspond to the name of your instrument.
 1. Click **OK** to start the export.
 
@@ -81,11 +81,11 @@ To activate the relative paths, you must load the exported VST preset:
 
 ## Moving a Library
 
-If you need to move the library to a new location, you must move the whole working directory with contents. As long as you do not change the folder structure inside the working directory, HALion will be able to load your library, even after moving it.
+If you need to move the library to a new location, you must move the whole working directory with its contents. As long as you do not change the folder structure inside the working directory, HALion will be able to load your library, even after moving it.
 
-## Achieving Relative Paths in Script
+## Achieving Relative Paths in Scripts
 
-Functions like [loadPreset](../../HALion-Script/pages/loadPreset.md) require a file path as argument. The function ``debug.getinfo`` from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the if branch of the following script example must match the working directory on your hard disk. How to create a working directory is described in [Using Relative Paths](#using-relative-paths). The folders in the else branch must match the folders that you specified in the **Library Creator**. If the folder on the hard disk cannot be found, the file path of the VST sound will be used instead. Note that the VST sound must be mounted for this to work.
+Functions like [loadPreset](../../HALion-Script/pages/loadPreset.md) require a file path as argument. The function ``debug.getinfo`` from the Lua debug library returns the file path of the running script. You can use this information to create a relative file path for your script. The folders in the 'if' branch of the following script example must match the working directory on your hard disk. How to create a working directory is described in [Using Relative Paths](#using-relative-paths). The folders in the 'else' branch must match the folders that you specified in the **Library Creator**. If the folder on the hard disk cannot be found, the file path of the VST sound will be used instead. Note that the VST sound must be mounted for this to work.
 
 ### Example
 

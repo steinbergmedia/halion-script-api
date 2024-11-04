@@ -10,11 +10,11 @@
 
 ---
 
-Usually, parameters are connected to specific controls that have a certain look which never changes during the usage of the macro page. However, in some cases it might be useful to be able to change the look at runtime, either to allow the user to choose between different styles, or because one editor template is used to edit different parameters with different scopes which should be indicated by different controls. A simple example would be a template that provides several knobs to control oscillators 1, 2, and 3 of a synth zone, where each set of knobs has a different color to better distinguish between them.
+Usually, parameters are connected to specific controls that have a certain look which never changes during the usage of the macro page. However, in some cases it might be useful to be able to change the look, either to allow the user to choose between different styles, or because one editor template is used to edit different parameters with different scopes which should be indicated by different controls. A simple example would be a template that provides several knobs to control oscillators 1, 2, and 3 of a synth zone, where each set of knobs has a different color to better distinguish between them.
 
 This example demonstrates how to use a Lua Script MIDI module with a KnobType parameter to switch between two different knob templates. The parameter is defined in a MIDI module, which saves and restores the state with the preset. 
 
->&#10069; If it is not desired to save and restore the KnobType with the preset, but only with a project, you can implement this parameter in a UI script.
+>&#10069; If you do not want to save and restore the KnobType with the preset, but only with a project, you can implement this parameter in a UI script.
 
 ## Example VST Preset
 

@@ -174,8 +174,8 @@ The subsequent example is presented as illustrative guide to kickstart your own 
 **To explore the example:**
 
 1. Load [Template List.vstpreset](../vstpresets/Template%20List.vstpreset).
-1. Open the **Macro Page Designer**, activate **Show/Hide Script Output Messages**.
-1. Click **Test Macro page** ![Edit Element](../images/TestMacroPage-Off.PNG), then drag and drop elements from the left to the right template list and vice versa.
+1. Open the **Macro Page Designer**, activate **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/ShowHideScriptOutputMessages.png).
+1. Click **Test Macro Page** ![Test Macro Page](../images/TestMacroPage-Off.PNG), then drag and drop elements from the left to the right Template List and vice versa.
 1. Use the **Alt/Cmd**-key to copy elements.
 1. Read the output messages of the script.
 

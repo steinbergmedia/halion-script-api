@@ -9,7 +9,7 @@ When a program with a script is loaded into the **Slot Rack**, the global statem
 |1.|Global statements|Global statements are any expressions outside a function call.|Controller|
 |2.|Parameters|All parameters of the program, including the parameters that you defined in the script.|Controller|
 |3.|[onLoad](./onLoad.md)|This callback function is called when the script module is loaded as part of a preset or project.|Controller|
-|4.|[onLoadIntoSlot](./onLoadIntoSlot.md)|This callback function is called when the program is loaded into the Slot Rack.|Controller|
+|4.|[onLoadIntoSlot](./onLoadIntoSlot.md)|This callback function is called when the program is loaded into the **Slot Rack**.|Controller|
 |5.|[onInit](./onInit.md)|This is the first callback function that is called when the processor thread is initialized.|Processor|
 
 For more details about threads, see [Threads in HALion](./Threads-in-HALion.md).

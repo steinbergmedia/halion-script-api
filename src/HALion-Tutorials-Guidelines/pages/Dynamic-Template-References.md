@@ -10,7 +10,7 @@
 
 ---
 
-When building macro pages that use multiple, switchable editors, e.g., for different articulations of an instrument, it is advanteageous to use dynamic template references instead of stacked pages. The convenience of a stack is that you always have access to all subpages from the GUI Tree and that you can establish connections with engine parameters easily. The disadvantage of a stack is that the entire macro page with all subpages must be kept in memory, even if only parts of it get displayed. A more economic way to deal with multiple editors is to work with template views and to switch the template reference using a script or a stringlist variable.
+When building macro pages that use multiple, switchable editors, e.g., for different articulations of an instrument, it is advanteageous to use dynamic template references instead of stacked pages. The advantage of using a stack is that you always have access to all subpages from the GUI Tree and that you can establish connections with engine parameters easily. The disadvantage is that the entire macro page with all subpages must be kept in memory, even if only parts of it are displayed. A more economic way to deal with multiple editors is to work with template views and to switch the template reference using a script or a stringlist variable.
 
 This how-to demonstrates how to use a stringlist variable with template references for switching between two templates.
 
@@ -39,7 +39,7 @@ This how-to demonstrates how to use a stringlist variable with template referenc
 
 ## How the Elements Interact
 
-The UI variable defines the names of the templates, One and Two, that are to be switched. The templates One and Two have been setup separately. You find them in the Templates Tree. They are referenced by the template Dynamic Editor, which displays only one of them, depending on which template is selected by the Menu template. This is achieved by setting the Template property of the Dynamic Editor and the Value property of the Menu template both to the UI variable ``@t``.
+The UI variable defines the names of the templates, One and Two, that are to be switched. The templates One and Two have been set up separately. You find them in the Templates Tree. They are referenced by the template Dynamic Editor, which displays only one of them, depending on which template is selected by the Menu template. This is achieved by setting the Template property of the Dynamic Editor and the Value property of the Menu template both to the UI variable ``@t``.
 
 ### UI Variables
 

@@ -12,7 +12,7 @@
 
 ---
 
-By using SVGs as resources for the different states of a [Switch](../../HALion-Macro-Page/pages/Switch.md) control, you can facilitate state-specific animations to enhance the visibility of each state. The state-specific animations are defined by using Lua expressions in the resource properties of the SVG that is assigned to each state. The SVG resources to be animated require an [animation object](#adding-an-animation-object) that defines the duration and number of cycles for the animation. This integration enables the manipulation of SVG objects without necessitating the utilization of UI scripts.
+Using SVGs as resources for the different states of a [Switch](../../HALion-Macro-Page/pages/Switch.md) control allows for state-specific animations, to enhance the visibility of each state. The state-specific animations are defined by using Lua expressions in the resource properties of the SVG that is assigned to each state. The SVG resources to be animated require an [animation object](#adding-an-animation-object) that defines the duration and number of cycles for the animation. This integration enables the manipulation of SVG objects without the need to use UI scripts.
 
 >&#10069; See [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details on using UI scripts for animations.
 
@@ -36,7 +36,7 @@ In this example, one cycle of the animation takes 1 second and the animation is 
 |Property|Description|Type|
 |:-|:-|:-|
 |**duration**|This property defines how long it takes to play one cycle of the animation in seconds.|float|
-|**cycles**| This property defines how often the animation is played. The minimum number of cycles must be greater 0.|integer|
+|**cycles**| This property defines how often the animation is played. The minimum number of cycles must be greater than 0.|integer|
 
 ## Defining the Animation
 
@@ -49,7 +49,7 @@ Assuming the presence of an [animation object](#adding-an-animation-object), you
 |**Duration**|Corresponds to the value set by the ``duration`` property.|
 |**T**|The overal time since the start of the animation in seconds.|
 |**t**|The normalized time (0 to 1.0) within the current cycle.|
-|**Cycle**|The number of completed cycles, starting at 0. The ``cycles`` property defines the maximum.|
+|**Cycle**|The number of completed cycles, starting at 0. The ``cycles`` property defines the maximum number of cycles.|
 
 ## Animating Switches
 
@@ -66,8 +66,8 @@ Assuming the presence of an [animation object](#adding-an-animation-object), you
 1. Load [Animating Switches Using SVGs.vstpreset](../vstpresets/Animating%20Switches%20Using%20SVGs.vstpreset).
 1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the template you wish to explore. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
-1. Inside the template, select the [Switch](../../HALion-Macro-Page/pages/Switch.md) control. Look which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resources have been assigned to the different states of the switch.
-1. Go to the **Resources Tree** and select the corresponding SVG resource. Look for the IDs, properties and values as listed below.
+1. Inside the template, select the [Switch](../../HALion-Macro-Page/pages/Switch.md) control. Take a look at which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resources have been assigned to the different states of the switch.
+1. Go to the **Resources Tree** and select the corresponding SVG resource. Take a look at the IDs, properties, and values as listed below.
 
 ### Animated Dashed Line
 
@@ -159,4 +159,4 @@ In this example, multiple properties get animated for each state and different a
 |ArrowR|transform|``translate ($(12-t*20))``|
 |ArrowR|fill|``hsla(154,40%,50%,$(1-t*0.9))``|
 
-**Description:** The switch blinks periodically in green and round brackets are moving from the outside to the inside when you hold the mouse over the switch while the switch is in the off state. The 'r' property describes the radius of the 'Circle' element. A negative value for 'r' must be avoided with ``math.abs``.
+**Description:** The switch blinks periodically in green and round brackets are moving from the outside to the inside when you hold the mouse over the switch while the switch is in the on state. The 'r' property describes the radius of the 'Circle' element. A negative value for 'r' must be avoided with ``math.abs``.

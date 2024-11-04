@@ -33,7 +33,7 @@ These additional SVG resource attributes are introduced as supplementary values 
 
 ![Animation Properties with Additional Parameters](../images/Animation-Properties-with-Additional-Parameters.png)
 
-This integration empowers the manipulation of SVG elements and their subordinate objects through diverse avenues. Each associated parameter governs a specific facet of the animation. For instance, one parameter might change object rotation, while another parameter concurrently adjusts dimensions, color properties, and so forth.
+This integration enables the manipulation of SVG elements and their subordinate objects in various ways. Each associated parameter governs a specific facet of the animation. For instance, one parameter might change object rotation, while another parameter concurrently adjusts dimensions, color properties, etc.
 
 >&#10069; To animate SVGs without the utilization of UI scripts, see [Animating Switches Using SVGs](./Animating-Switches-Using-SVGs.md) for details.
 
@@ -52,8 +52,8 @@ This integration empowers the manipulation of SVG elements and their subordinate
 1. Load [Animating SVGs with Additional Parameters.vstpreset](../vstpresets/Animating%20SVGs%20with%20Additional%20Parameters.vstpreset).
 1. Open the **Macro Page Designer**, go to the **GUI Tree** and select the Animation Script Example template. 
 1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
-1. Inside the template, select the [Animation](../../HALion-Macro-Page/pages/Animation.md) control. Look which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resource has been assigned.
-1. Go to the **Resources Tree** and select the corresponding SVG resource. Look for the IDs, properties and values as listed below.
+1. Inside the template, select the [Animation](../../HALion-Macro-Page/pages/Animation.md) control. Take a look at which [Bitmap](../../HALion-Macro-Page/pages/Bitmap.md) resource has been assigned.
+1. Go to the **Resources Tree** and select the corresponding SVG resource. Take a look at the IDs, properties, and values as listed below.
 
 ### Changing Multiple SVG Properties
 

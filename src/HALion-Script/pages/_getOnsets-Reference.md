@@ -21,8 +21,8 @@ Function to analyze the onsets in an audio file. You specify the audio file with
 |:-|:-|:-|
 |**start**|The start position in samples.|number|
 |**length**|The duration in samples. Set this to equal to or less than 0 to use all samples from the specified ``start`` to the end of the sample.|number|
-|**peakThreshold**|The minimum level in decibels. Onsets with lower level are skipped. The value range is from -96 to 0.|number|
-|**sensThreshold**|The minimum weight in percent. Onsets with lower weight are skipped. The value range is from 0 to 100.|number|
+|**peakThreshold**|The minimum level in decibels. Onsets with a lower level are skipped. The value range is from -96 to 0.|number|
+|**sensThreshold**|The minimum weight in percent. Onsets with a lower weight are skipped. The value range is from 0 to 100.|number|
 |**minLength**|The minimum duration between consecutive onsets in milliseconds. The value range is from 0 to 10000.|number|
 // ANCHOR_END: arguments
 

@@ -10,7 +10,7 @@
 
 ---
 
-With the help of MediaBay attributes, you can quickly and easily browse and search presets. Attributes are descriptive keywords that you can assign to your presets. Good search results in the MediaBay highly depend on accurately set attributes. When you specify attributes for your final HALion Sonic Program presets, you should follow the guideline below. This ensures an equal quality of the attributes and, therefore, improves browsing and searching in the MediaBay.
+With the help of MediaBay attributes, you can quickly and easily browse and search presets. Attributes are descriptive keywords that you can assign to your presets. Good search results in the MediaBay highly depend on accurately set attributes. When you specify attributes for your final HALion Sonic program presets, you should follow the guideline below. This ensures an equal quality of the attributes and, therefore, improves browsing and searching in the MediaBay.
 
 >&#10069; Please use the MediaBay of HALion Sonic to specify attributes for your presets. Do not use the MediaBay of Cubase, because it contains attributes that are not supported by HAlion Sonic presets.
 
@@ -53,7 +53,7 @@ The following MediaBay attributes must be set for each preset manually:
 |Moods|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
 |Articulations|See [Properties, Moods and Articulations](#properties-moods-and-articulations).|
 |Rating|A rating of three stars is recommended as starting point for presets. The users can then lower or raise the rating.|
-|Name|This attribute is defined with the preset filename when the preset is saved.|
+|Name|This attribute is defined with the preset file name when the preset is saved.|
 
 The following MediaBay attributes are set automatically by the **Library Creator**. You must set the corresponding properties in the **Library Creator** before you build the library.
 
@@ -65,7 +65,7 @@ The following MediaBay attributes are set automatically by the **Library Creator
 
 ### Properties, Moods and Articulations
 
-Properties, Moods and Articulations describe the character of a sound with labels. As soon as you type, you get a suggestion of labels. You can select a suggested label to auto complete it. This also helps to avoid spelling mistakes. You should at least set some Properties that describe the sound as you hear it. Moods and Articulations are optional. The difference between Properties and Moods is that the Properties describe a sound acoustically without judging it. The Moods describe a sound emotionally and therefore judge it at the same time. Articulations describe the way the sound or instrument is played, as a composer would describe it.
+Properties, Moods and Articulations describe the character of a sound with labels. As soon as you type, you get a suggestion of labels. You can select a suggested label to autocomplete it. This also helps to avoid spelling mistakes. You should at least set some Properties that describe the sound as you hear it. Moods and Articulations are optional. The difference between Properties and Moods is that the Properties describe a sound acoustically without rating it. The Moods describe a sound emotionally and therefore interpret and rate it. Articulations describe the way the sound or instrument is played, as a composer would describe it.
 
 The libraries of FM Lab and Tales both use Properties. FM Lab even uses Articulations on some presets. You can use these two libraries as examples for your own productions.
 
@@ -74,7 +74,7 @@ The libraries of FM Lab and Tales both use Properties. FM Lab even uses Articula
 * Set the Properties, Moods and Articulations so that they describe the preset as precisely as possible.
 * Labels that do not match what you hear should be avoided.
 * Fewer labels that perfectly match are much better than too many labels that only partially match.
-* Use the auto complete feature to avoid spelling mistakes.
+* Use the autocomplete feature to avoid spelling mistakes.
 
 >&#10069; Presets that use an arpeggiator should not get the Category Synth Lead > Arpeggio by default. You should use this Category only for classic arpeggio sounds. If you have a synth bass with a step sequencer or arpeggio, you should set the Category Bass > Synth Bass. To indicate that the preset contains an arpeggio or a sequence, set Arpeggio or Sequenced as label for the Properties, instead.
 
