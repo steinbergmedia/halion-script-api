@@ -6,6 +6,7 @@
 
 >&#10069; The minimum version for working through the tutorials is HALion 6.3.
 
+* [Creating an FX Rack](./Creating-an-FX-Rack.md)
 * [Creating a Template List](./Creating-a-Template-List.md)
 * [Using Attribute Rules](./Using-Attribute-Rules.md)
 * [Using Relative Paths](./Using-Relative-Paths.md)

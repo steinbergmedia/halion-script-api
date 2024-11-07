@@ -1,0 +1,257 @@
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [Tutorials](./Tutorials.md) /
+
+# Creating an FX Rack
+
+---
+
+**On this page:**
+
+[[_TOC_]]
+
+---
+
+This tutorial describes how to create an FX rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects with drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template. 
+
+## Example VST Preset
+
+* [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset)
+
+The FX rack in this example uses both UI and MIDI script functionality. The corresponding scripts are just provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX rack without breaking anything. The following describes how to access [Templates](../../HALion-Macro-Page/pages/Template.md) and edit UI and MIDI scripts.
+
+* Load [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset).
+
+**To explore the templates in this example:**
+
+1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template you want to explore. 
+1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
+
+**To edit the UI script:**
+
+1. Open the **Macro Page Designer** and select the topmost element in the GUI tree. 
+1. Go to the Properties and click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
+
+**To edit the MIDI script:**
+
+1. In the Program Tree, select the FX Rack MIDI Module.
+1. Go to the Sound editor and click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
+
+The instructions that follow will use the internal script editor, which is perfectly adequate for the purposes of this tutorial.
+
+## Prerequisites
+
+* An instrument with macro page.
+* Load [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset) and your instrument side-by-side into HALion.
+
+## Overview of Workflows
+
+* Adjust the number of slots in the UI script.
+* Add further effects to the UI and MIDI scripts and create templates for them. 
+* Copy the bus and effects from the [Example VST Preset](#example-vst-preset) to your instrument.
+* Copy the templates and resources from the [Example VST Preset](#example-vst-preset) to your macro page.
+* Copy the code of the UI and MIDI scripts from the [Example VST Preset](#example-vst-preset) into the corresponding scripts of your instrument.
+* Change the look of the fx rack to match the look of your instrument.
+
+## Adjusting the Number of Slots
+
+The FX rack in the [Example VST Preset](#example-vst-preset) has four slots. You can decrease or increase the number of slots in the FX rack by setting the ``numFxSlots`` variable in the UI script to the desired number of slots.
+
+Let's increase the number of slots from four to five:
+
+1. In the **Macro Page Designer**, edit the UI script.
+1. Set the ``numFxSlots`` variable to 5.
+1. Update the UI, e.g., select a different program and then select the [Example VST Preset](#example-vst-preset) again. This will rebuild the macro page and apply changes.
+
+```lua
+-- FX Rack and effects UI
+
+numFxSlots = 5
+
+```
+
+The FX rack should now have five slots on the UI and in the Program Tree structure.
+
+![FX Rack with 5 Slots](../images/Creating-a-FX-Rack-5-Slots.png)
+
+## Adding Further Effects
+
+To add more effects, you will need to edit the UI and MIDI scripts, as well as modify and create the relevant [Templates](../../HALion-Macro-Page/pages/Template.md). Let's add the Tremolo to the selection of available effects.
+
+### Editing the UI Script
+
+1. In the **Macro Page Designer**, edit the UI script.
+1. Supplement the ``fxData`` table as follows:
+
+```lua
+fxData = {
+	-- Name           Bypass ID(hex)
+	{ "None",              "0" },
+	{ "Chorus",            "e" },
+	{ "Flanger",           "e" },
+	{ "Phaser",            "12" },
+    { "Tremolo",           "a" }, -- Add this line.
+	{ "Distortion",        "14" },
+	{ "Bit Crusher",       "14" },
+	{ "Delay",             "16" },
+	{ "Reverb",            "13" },
+}
+```
+
+The ID of the bypass parameter differs depending on the type of effect. You can look up the ID in hex format in the **Program List**, for example. This is important when adding other types of effects.
+
+### Editing the MIDI Script
+
+1. In the **Program Tree**, edit the FX Rack MIDI script.
+1. Add the following to the ``effectDefaults`` table.
+
+```lua
+-- FX selection handling
+
+effectDefaults = {
+    -- [...]
+	Tremolo = {
+		output = 0,
+		rate = 0.7979797979798,
+		syncnote = 0,
+		depth = 0.75,
+		phase = 1,
+		temposync = 0,
+	},
+    -- [...]
+}
+```
+
+The code above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1.0 is used for the defaults. The defaults will be used when loading an effect. 
+
+### Modifying the Effect Select Menu
+
+The Effect Select menu is hierarchical. It has submenus for Modulation, Distortion, and Time. Each submenu has its own [Template](../../HALion-Macro-Page/pages/Template.md). First, you need to add the 'Tremolo' menu entry to the Modulation submenu. Then you must increase the OnValues of the subsequent effects in the other submenus by one to match the indices of the arrays and [Indexed String Array](../../HALion-Script/pages/defineparameter.md#indexed-string-array) parameters in the UI script.
+
+1. In the **Macro Page Designer**, go to the **Templates Tree** and edit the 'M_FX Type Mod' template.
+1. In the **GUI Tree** copy and paste one of the existing [Templates](../../HALion-Macro-Page/pages/Template.md), e.g. the 'Phaser' template.
+1. Set the **Properties** of the new 'Tremolo' template as follows.
+
+|Property|Value|
+|:-|:-|
+|Name|Tremolo|
+|Position X|1|
+|Position Y|58|
+|Text|Tremolo|
+|OnValue|4|
+
+![Modulation Submenu](../images/Creating-a-FX-Rack-ModSubmenu.png)
+
+4. Now, edit the 'M_FX Type Dist' and 'M_FX Type Time' templates.
+4. Set the OnValue of the the subsequent effects as follows.
+
+|Template|Property|Value|
+|:-|:-|:-|
+|Distortion|OnValue|5|
+|Bit Crusher|OnValue|6|
+|Delay|OnValue|7|
+|Reverb|OnValue|8|
+
+### Creating a Template for the Tremolo
+
+The Tremolo needs a control surface. Let's create one by reusing an existing effect template.
+
+1. In the **Templates Tree**, go to 'library/FX Rack/FX/Effects'.
+1. Copy and paste an existing effect template to the 'Effects' folder. You can copy any effect template except the 'None' template.
+1. Rename the new template to 'Tremolo' and click **Edit Element** ![Edit Element](../images/EditElement.PNG).
+1. Adjust the **Properties** of the controls and templates as described below.
+
+![Tremolo](../images/Creating-a-FX-Rack-Tremolo.png)
+
+#### Knob Templates
+
+The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disable.md) control. The knobs can be configured with template parameters.
+
+* Set the **Template Parameters** as follows.
+
+![Knob Templates](../images/Creating-a-FX-Rack-Knobs.png)
+
+**Knob Template HZ**
+
+|Template Parameter|Value|
+|:-|:-|
+|Value|@0|
+|Label|RATE|
+|Unit|Hz|
+
+**Knob Template Depth**
+
+|Template Parameter|Value|
+|:-|:-|
+|Value|@1|
+|Label|DEPTH|
+
+
+**Knob Template Mix**
+
+|Template Parameter|Value|
+|:-|:-|
+|Value|@2|
+|Label|OUTPUT|
+|Unit|dB|
+
+The knobs now control the desired parameters and display the correct parameter names and units.
+
+#### Active Template
+
+The ID of the Bypass parameter must be set.
+
+* Set the **Template Parameter** of the 'Active' template as follows.
+
+![Active Template](../images/Creating-a-FX-Rack-Active.png)
+
+|Template Parameter|Value|
+|:-|:-|
+|Value|@a|
+
+#### Label Control
+
+The title of the effect must be changed.
+
+* Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control 'Phaser_1' as follows.
+
+![Label Control](../images/Creating-a-FX-Rack-Label.png)
+
+|Property|Value|
+|:-|:-|
+|Name|Tremolo_1|
+|Text|PHASER|
+
+#### Preset Browser Template
+
+The [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template provides the subpreset management for each effect. It can be configured with template parameters.
+
+* Set the **Template Parameters** as follows.
+
+![Preset Browser](../images/Creating-a-FX-Rack-PresetBrowser.png)
+
+|Template Parameters|Value|
+|:-|:-|
+|Product|FX Rack|
+|Category|FX/Tremolo|
+
+This way, the Tremolo will load and save subpresets from its own location.
+
+* Finally, update the UI by selecting a different program and then select the [Example VST Preset](#example-vst-preset) again. This will rebuild the macro page and apply changes.
+
+To add more effects, repeat the above steps, starting with [Adding Further Effects](#adding-further-effects), and adjust the values to match the particular effect.
+
+## Final Example VST Preset
+
+Here is the Example VST Preset with all editing steps applied.
+
+* [Creating an FX Rack 02.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2002.vstpreset)
+
+## Transfering the FX Rack to Your Instrument
+
+In order to integrate the FX Rack into your macro page, you need to do the following.
+
+* Copy the bus and effects. The structure of your instrumet in the **Program Tree** must match the structure of the [Example VST Preset](#example-vst-preset).
+* Copy all [Resources](../../HALion-Macro-Page/pages/Resources.md) and [Templates](../../HALion-Macro-Page/pages/Templates.md). The [Templates](../../HALion-Macro-Page/pages/Templates.md) in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. You can exchange the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
+* Copy the code from the UI and MIDI Scripts to the respective scripts of your instrument.
+
+## How the Elements Interact
+
