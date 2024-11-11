@@ -16,7 +16,9 @@ This tutorial describes how to create an FX Rack using a [Template List](../../H
 
 * [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset)
 
-The FX Rack in this example uses both UI and MIDI script functionality. The corresponding scripts are just provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX Rack without breaking anything. See [How the Elements Interact](#how-the-elements-interact). The following describes how to access [Templates](../../HALion-Macro-Page/pages/Template.md) and edit UI and MIDI scripts.
+The FX Rack in this example uses both UI and MIDI script functionality. The corresponding scripts are just provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX Rack without breaking anything. See [How the Elements Interact](#how-the-elements-interact).
+
+The following describes how to access [Templates](../../HALion-Macro-Page/pages/Template.md) and edit UI and MIDI scripts.
 
 * Load [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset).
 
@@ -251,9 +253,10 @@ The UI script plays a central role in the FX Rack and controls nearly all of the
 
 The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.
 
+1. Open the **Macro Page Designer**.
 1. Edit the UI script and remove the comments ``--`` before each print function. 
 1. To monitor the UI script's output messages, click **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/Show-Hide-Output-Messages.png).
-1. In the **Macro Page Designer**, activate **Test Macro Page** ![Test Macro Page](../images/Test-Macro-Page.png).
+1. Activate **Test Macro Page** ![Test Macro Page](../images/Test-Macro-Page.png).
 1. Operate the FX Rack in the **Macro Page Designer** (not the **Macro Page Editor**).
 
 >&#10069; You must operate the FX Rack in the **Macro Page Designer**, otherwise the output messages won't be correct.
