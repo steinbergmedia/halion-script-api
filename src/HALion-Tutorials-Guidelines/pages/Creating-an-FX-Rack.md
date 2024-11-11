@@ -152,7 +152,7 @@ The Effect Select menu is hierarchical. It has submenus for Modulation, Distorti
 
 ### Creating a Template for the Tremolo
 
-The Tremolo needs a control surface. Let's create one by reusing an existing effect template.
+The Tremolo needs a FX panel. Let's create one by reusing an existing effect template.
 
 1. In the **Templates Tree**, go to 'library/FX Rack/FX/Effects'.
 1. Copy and paste an existing effect template to the 'Effects' folder. You can copy any effect template except the 'None' template.
@@ -249,21 +249,30 @@ Here is the Example VST Preset with all editing steps applied.
 
 The UI script plays a central role in the FX Rack and controls nearly all of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements should help you to understand how the FX Rack works.
 
+The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.
+
+1. Edit the UI script and remove the comments ``--`` before each print function. 
+1. To monitor the UI script's output messages, click **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/Show-Hide-Output-Messages.png).
+1. In the **Macro Page Designer**, activate **Test Macro Page** ![Test Macro Page](../images/Test-Macro-Page.png).
+1. Operate the FX Rack in the **Macro Page Designer** (not the **Macro Page Editor**).
+
+>&#10069; You must operate the FX Rack in the **Macro Page Designer**, otherwise the output messages won't be correct.
+
 The following is a brief explanation of the connections and message exchange within the FX Rack.
 
 ### FX Handling
 
-1. When an FX is loaded into a slot, the UI script's "LoadInserts"..i parameter is changed and the onSelectFX function is called.
-1. The UI script's onSelectFX function sets the MIDI script's selectFx parameter. This calls the onSelectFx function in the MIDI script, which loads the FX on the bus.
-1. After the MIDI script's onSelectFx function has loaded the FX, the sendUpdateBus parameter is set. The MIDI script's sendUpdateBus parameter is connected to the UI script's updateBus parameter.
-1. When the UI script's updateBus parameter is changed, the onBusChanged function is called and the associated parameters and templates of the FX Rack are updated.
-1. After the UI script's onBusChanged function has updated the FX Rack, the onShowInsertChanged function is called. The onShowInsertChanged function sets the scope and the template for the FX panel.
+1. When an FX is loaded into a slot, the UI script's ``"LoadInserts"..i`` parameter is changed and the ``onSelectFX`` function is called.
+1. The UI script's ``onSelectFX`` function sets the MIDI script's ``selectFx`` parameter. This calls the ``onSelectFx`` function in the MIDI script, which loads the FX on the bus.
+1. After the MIDI script's ``onSelectFx`` function has loaded the FX, the ``sendUpdateBus`` parameter is set. The MIDI script's ``sendUpdateBus`` parameter is connected to the UI script's ``updateBus`` parameter.
+1. When the UI script's ``updateBus`` parameter is changed, the ``onBusChanged`` function is called and the associated parameters and templates of the FX Rack are updated.
+1. After the UI script's ``onBusChanged`` function has updated the FX Rack, the ``onShowInsertChanged`` function is called. The ``onShowInsertChanged`` function sets the scope and the template for the FX panel.
 
 ### FX Drag and Drop Handling
 
-1. When an FX is dragged and dropped to a new position in the FX Rack, the UI script's onTemplateListDrop function is called.
-1. The UI script's onTemplateListDrop function sets the MIDI script's moveFx parameter. This calls the MIDI script's onMoveFx function, which repositions the FX on the bus.
-1. After the onMoveFx function has moved the FX, the sendUpdateBus parameter is set. The MIDI script's sendUpdateBus parameter is connected to the UI script's updateBus parameter.
+1. When an FX is dragged and dropped to a new position in the FX Rack, the UI script's ``onTemplateListDrop`` function is called.
+1. The UI script's ``onTemplateListDrop`` function sets the MIDI script's ``moveFx`` parameter. This calls the MIDI script's ``onMoveFx`` function, which repositions the FX on the bus.
+1. After the ``onMoveFx`` function has moved the FX, the ``sendUpdateBus`` parameter is set. The MIDI script's ``sendUpdateBus`` parameter is connected to the UI script's ``updateBus`` parameter.
 
 All other steps are the same as in the [FX Handling](#fx-handling) section, starting with step four.
 
@@ -271,7 +280,7 @@ All other steps are the same as in the [FX Handling](#fx-handling) section, star
 
 In order to integrate the FX Rack into your macro page, you need to do the following.
 
-1. Copy the bus and effects. The structure of your instrumet in the **Program Tree** must match the structure of the [Example VST Preset](#example-vst-preset).
+1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset).
 
 ![Program Tree](../images/Creating-a-FX-Rack-Bus-FX.png)
 
@@ -288,6 +297,6 @@ In order to integrate the FX Rack into your macro page, you need to do the follo
 
 ![updateBus Parameter](../images/Creating-a-FX-Rack-updateBus.png)
 
->&#10069; **The FX Rack will only work if this connection exists.**
+>&#10069; The FX Rack will only work if this connection exists.
 
 6. Finally, update the UI, e.g., select a different program and then select your instrument again. This will rebuild the macro page and apply changes.
