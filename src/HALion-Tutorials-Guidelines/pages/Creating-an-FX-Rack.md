@@ -10,13 +10,13 @@
 
 ---
 
-This tutorial describes how to create an FX rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects with drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template. 
+This tutorial describes how to create an FX Rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects with drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template. 
 
 ## Example VST Preset
 
 * [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset)
 
-The FX rack in this example uses both UI and MIDI script functionality. The corresponding scripts are just provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX rack without breaking anything. The following describes how to access [Templates](../../HALion-Macro-Page/pages/Template.md) and edit UI and MIDI scripts.
+The FX Rack in this example uses both UI and MIDI script functionality. The corresponding scripts are just provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX Rack without breaking anything. See [How the Elements Interact](#how-the-elements-interact). The following describes how to access [Templates](../../HALion-Macro-Page/pages/Template.md) and edit UI and MIDI scripts.
 
 * Load [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset).
 
@@ -49,11 +49,11 @@ The instructions that follow will use the internal script editor, which is perfe
 * Copy the bus and effects from the [Example VST Preset](#example-vst-preset) to your instrument.
 * Copy the templates and resources from the [Example VST Preset](#example-vst-preset) to your macro page.
 * Copy the code of the UI and MIDI scripts from the [Example VST Preset](#example-vst-preset) into the corresponding scripts of your instrument.
-* Change the look of the fx rack to match the look of your instrument.
+* Change the look of the FX Rack to match the look of your instrument.
 
 ## Adjusting the Number of Slots
 
-The FX rack in the [Example VST Preset](#example-vst-preset) has four slots. You can decrease or increase the number of slots in the FX rack by setting the ``numFxSlots`` variable in the UI script to the desired number of slots.
+The FX Rack in the [Example VST Preset](#example-vst-preset) has four slots. You can decrease or increase the number of slots in the FX Rack by setting the ``numFxSlots`` variable in the UI script to the desired number of slots.
 
 Let's increase the number of slots from four to five:
 
@@ -68,7 +68,7 @@ numFxSlots = 5
 
 ```
 
-The FX rack should now have five slots on the UI and in the Program Tree structure.
+The FX Rack should now have five slots on the UI and in the Program Tree structure.
 
 ![FX Rack with 5 Slots](../images/Creating-a-FX-Rack-5-Slots.png)
 
@@ -245,13 +245,49 @@ Here is the Example VST Preset with all editing steps applied.
 
 * [Creating an FX Rack 02.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2002.vstpreset)
 
+## How the Elements Interact
+
+The UI script plays a central role in the FX Rack and controls nearly all of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements should help you to understand how the FX Rack works.
+
+The following is a brief explanation of the connections and message exchange within the FX Rack.
+
+### FX Handling
+
+1. When an FX is loaded into a slot, the UI script's "LoadInserts"..i parameter is changed and the onSelectFX function is called.
+1. The UI script's onSelectFX function sets the MIDI script's selectFx parameter. This calls the onSelectFx function in the MIDI script, which loads the FX on the bus.
+1. After the MIDI script's onSelectFx function has loaded the FX, the sendUpdateBus parameter is set. The MIDI script's sendUpdateBus parameter is connected to the UI script's updateBus parameter.
+1. When the UI script's updateBus parameter is changed, the onBusChanged function is called and the associated parameters and templates of the FX Rack are updated.
+1. After the UI script's onBusChanged function has updated the FX Rack, the onShowInsertChanged function is called. The onShowInsertChanged function sets the scope and the template for the FX panel.
+
+### FX Drag and Drop Handling
+
+1. When an FX is dragged and dropped to a new position in the FX Rack, the UI script's onTemplateListDrop function is called.
+1. The UI script's onTemplateListDrop function sets the MIDI script's moveFx parameter. This calls the MIDI script's onMoveFx function, which repositions the FX on the bus.
+1. After the onMoveFx function has moved the FX, the sendUpdateBus parameter is set. The MIDI script's sendUpdateBus parameter is connected to the UI script's updateBus parameter.
+
+All other steps are the same as in the [FX Handling](#fx-handling) section, starting with step four.
+
 ## Transfering the FX Rack to Your Instrument
 
 In order to integrate the FX Rack into your macro page, you need to do the following.
 
-* Copy the bus and effects. The structure of your instrumet in the **Program Tree** must match the structure of the [Example VST Preset](#example-vst-preset).
-* Copy all [Resources](../../HALion-Macro-Page/pages/Resources.md) and [Templates](../../HALion-Macro-Page/pages/Templates.md). The [Templates](../../HALion-Macro-Page/pages/Templates.md) in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. You can exchange the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
-* Copy the code from the UI and MIDI Scripts to the respective scripts of your instrument.
+1. Copy the bus and effects. The structure of your instrumet in the **Program Tree** must match the structure of the [Example VST Preset](#example-vst-preset).
 
-## How the Elements Interact
+![Program Tree](../images/Creating-a-FX-Rack-Bus-FX.png)
 
+2. Copy all [Templates](../../HALion-Macro-Page/pages/Templates.md). The [Templates](../../HALion-Macro-Page/pages/Templates.md) in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. Later, you can change the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
+
+![Templates](../images/Creating-a-FX-Rack-Templates.png)
+
+3. Copy the [Templates](../../HALion-Macro-Page/pages/Templates.md) from the **GUI Tree** to your macro page.
+
+![GUI Tree](../images/Creating-a-FX-Rack-GUI-Tree.png)
+
+4. Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.
+5. Connect the MIDI script's sendUpdateBus parameter with the UI script's updateBus parameter.
+
+![updateBus Parameter](../images/Creating-a-FX-Rack-updateBus.png)
+
+>&#10069; **The FX Rack will only work if this connection exists.**
+
+6. Finally, update the UI, e.g., select a different program and then select your instrument again. This will rebuild the macro page and apply changes.
