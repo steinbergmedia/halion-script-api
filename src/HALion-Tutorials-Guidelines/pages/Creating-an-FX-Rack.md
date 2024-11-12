@@ -72,7 +72,7 @@ numFxSlots = 5
 
 ```
 
-The FX Rack should now have five slots on the UI and in the Program Tree structure.
+The FX Rack should now have five slots on the macro page and in the Program Tree structure.
 
 ![FX Rack with 5 Slots](../images/Creating-a-FX-Rack-5-Slots.png)
 
