@@ -30,7 +30,7 @@ The state of an Event object is described by the following fields.
 |**.id**|The ID of the event.|number|
 |**.note**|The note number in the range of 0 to 127.|number|
 |**.velocity**|The note-on velocity in the range of 0 to 127.|number|
-|**.tuning**|The tune offset in semitones.|number|
+|**.tuning**|The tuning offset in semitones.|number|
 |**.controller**|The controller number. See [Controller Numbers](./Controller-Numbers.md) for a description of the different controllers.|number|
 |**.value**|The value of a controller, pitch bend, or note expression event. The value range depends on the event type.|number|
 |**.bend**|The value of a pitch bend event in the range of -1.0 to 1.0.|number|
