@@ -10,7 +10,9 @@
 
 ---
 
-This tutorial describes how to create an FX Rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects with drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template. 
+This tutorial describes how to create an FX Rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects with drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.
+
+![FX Rack with 4 Slots](../images/Creating-a-FX-Rack-4-Slots.png)
 
 ## Example VST Preset
 
@@ -124,9 +126,9 @@ effectDefaults = {
 
 The code above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1.0 is used for the defaults. The defaults will be used when loading an effect. 
 
-### Modifying the Effect Select Menu
+### Modifying the Effect Selector
 
-The Effect Select menu is hierarchical. It has submenus for Modulation, Distortion, and Time. Each submenu has its own [Template](../../HALion-Macro-Page/pages/Template.md). First, you need to add the 'Tremolo' menu entry to the Modulation submenu. Then you must increase the OnValues of the subsequent effects in the other submenus by one to match the indices of the arrays and [Indexed String Array](../../HALion-Script/pages/defineparameter.md#indexed-string-array) parameters in the UI script.
+The Select Effect menu is hierarchical. It has submenus for Modulation, Distortion, and Time. Each submenu has its own [Template](../../HALion-Macro-Page/pages/Template.md). First, you need to add the 'Tremolo' menu entry to the Modulation submenu. Then you must increase the OnValues of the subsequent effects in the other submenus by one to match the indices of the arrays and [Indexed String Array](../../HALion-Script/pages/defineparameter.md#indexed-string-array) parameters in the UI script.
 
 1. In the **Macro Page Designer**, go to the **Templates Tree** and edit the 'M_FX Type Mod' template.
 1. In the **GUI Tree** copy and paste one of the existing [Templates](../../HALion-Macro-Page/pages/Template.md), e.g. the 'Phaser' template.
@@ -213,7 +215,7 @@ The ID of the Bypass parameter must be set.
 
 The title of the effect must be changed.
 
-* Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control 'Phaser_1' as follows.
+* Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control as follows.
 
 ![Label Control](../images/Creating-a-FX-Rack-Label.png)
 
@@ -249,14 +251,16 @@ Here is the Example VST Preset with all editing steps applied.
 
 ## How the Elements Interact
 
-The UI script plays a central role in the FX Rack and controls nearly all of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements should help you to understand how the FX Rack works.
+The UI script plays a central role in the FX Rack and controls nearly all of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements should help you to understand how the FX Rack works. The following screenshot shows the Insert Rack template with its Template Parameters linked to the parameters of the UI script. These script parameters control how the insert rack is displayed on the macro page.
+
+![Insert Rack Template](../images/Creating-a-FX-Rack-InsertRack.png)
 
 The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.
 
 1. Open the **Macro Page Designer**.
 1. Edit the UI script and remove the comments ``--`` before each print function. 
-1. To monitor the UI script's output messages, click **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/Show-Hide-Output-Messages.png).
-1. Activate **Test Macro Page** ![Test Macro Page](../images/Test-Macro-Page.png).
+1. To monitor the UI script's output messages, click **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/ShowHideScriptOutputMessages.png).
+1. Activate **Test Macro Page** ![Test Macro Page](../images/TestMacroPage-On.PNG).
 1. Operate the FX Rack in the **Macro Page Designer** (not the **Macro Page Editor**).
 
 >&#10069; You must operate the FX Rack in the **Macro Page Designer**, otherwise the output messages won't be correct.
