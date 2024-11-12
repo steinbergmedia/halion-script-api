@@ -130,9 +130,12 @@ The code above lists only part of the ``effectDefaults`` table. The table lists 
 
 The Select Effect menu is hierarchical. It has submenus for Modulation, Distortion, and Time. Each submenu has its own [Template](../../HALion-Macro-Page/pages/Template.md). First, you need to add the 'Tremolo' menu entry to the Modulation submenu. Then you must increase the OnValues of the subsequent effects in the other submenus by one to match the indices of the arrays and [Indexed String Array](../../HALion-Script/pages/defineparameter.md#indexed-string-array) parameters in the UI script.
 
-1. In the **Macro Page Designer**, go to the **Templates Tree** and edit the 'M_FX Type Mod' template.
+1. In the **Macro Page Designer**, go to the **Templates Tree** and navigate to</br>'library/FX Rack/PopUps/FX Type/M_FX Type Mod'.
+1. Edit the 'M_FX Type Mod' template.
 1. In the **GUI Tree** copy and paste one of the existing [Templates](../../HALion-Macro-Page/pages/Template.md), e.g. the 'Phaser' template.
 1. Set the **Properties** of the new 'Tremolo' template as follows.
+
+![Modulation Submenu](../images/Creating-a-FX-Rack-ModSubmenu.png)
 
 |Property|Value|
 |:-|:-|
@@ -141,8 +144,6 @@ The Select Effect menu is hierarchical. It has submenus for Modulation, Distorti
 |Position Y|58|
 |Text|Tremolo|
 |OnValue|4|
-
-![Modulation Submenu](../images/Creating-a-FX-Rack-ModSubmenu.png)
 
 4. Now, edit the 'M_FX Type Dist' and 'M_FX Type Time' templates.
 4. Set the OnValue of the the subsequent effects as follows.
@@ -177,7 +178,7 @@ The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disabl
 
 |Template Parameter|Value|
 |:-|:-|
-|Value|@0|
+|Value|@id:0|
 |Label|RATE|
 |Unit|Hz|
 
@@ -185,7 +186,7 @@ The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disabl
 
 |Template Parameter|Value|
 |:-|:-|
-|Value|@1|
+|Value|@id:1|
 |Label|DEPTH|
 
 
@@ -193,7 +194,7 @@ The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disabl
 
 |Template Parameter|Value|
 |:-|:-|
-|Value|@2|
+|Value|@id:2|
 |Label|OUTPUT|
 |Unit|dB|
 
@@ -209,7 +210,17 @@ The ID of the Bypass parameter must be set.
 
 |Template Parameter|Value|
 |:-|:-|
-|Value|@a|
+|Value|@id:a|
+
+## Disable Group
+
+The value of the [Disable](../../HALion-Macro-Page/pages/Disable.md) group must be set to the same ID as the associate Bypass parameter. The three knobs will be disabled if the effect is bypassed.
+
+![Disable Group](../images/Creating-a-FX-Rack-Disable.png)
+
+|Property|Value|
+|:-|:-|
+|Value|@id:a|
 
 #### Label Control
 
@@ -222,7 +233,7 @@ The title of the effect must be changed.
 |Property|Value|
 |:-|:-|
 |Name|Tremolo_1|
-|Text|PHASER|
+|Text|TREMOLO|
 
 #### Preset Browser Template
 
@@ -287,7 +298,7 @@ All other steps are the same as in the [FX Handling](#fx-handling) section, star
 
 In order to integrate the FX Rack into your macro page, you need to do the following.
 
-1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset).
+1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 
 ![Program Tree](../images/Creating-a-FX-Rack-Bus-FX.png)
 
