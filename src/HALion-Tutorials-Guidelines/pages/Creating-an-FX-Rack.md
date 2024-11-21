@@ -155,7 +155,7 @@ The Select Effect menu is hierarchical. It has submenus for Modulation, Distorti
 |Delay|OnValue|7|
 |Reverb|OnValue|8|
 
-### Creating a Template for the Tremolo Effect
+### Creating a Template for the FX
 
 The Tremolo effect needs an FX panel. Let's create one by reusing an existing effect template.
 
