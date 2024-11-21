@@ -31,7 +31,7 @@ The following section describes how to access [Templates](../../HALion-Macro-Pag
 
 **To edit the UI script:**
 
-1. Open the **Macro Page Designer** and select the topmost element in the GUI tree. 
+1. Open the **Macro Page Designer** and select the topmost element in the **GUI Tree**. 
 1. Go to the Properties section and click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
 
 **To edit the MIDI script:**
@@ -78,12 +78,12 @@ The FX Rack should now have five slots on the macro page and in the **Program Tr
 
 ## Adding Further Effects
 
-To add additional effects, you need to edit the UI and MIDI scripts, as well as modify and create the relevant [Templates](../../HALion-Macro-Page/pages/Template.md). Let's add "Tremolo" to the selection of available effects.
+To add additional effects, you need to edit the UI and MIDI scripts, as well as modify and create the relevant [Templates](../../HALion-Macro-Page/pages/Template.md). Let's add ``"Tremolo"`` to the selection of available effects.
 
 ### Editing the UI Script
 
 1. In the **Macro Page Designer**, open the UI script in the internal script editor.
-1. In the ``fxData`` table, between "Phaser" and "Distortion", insert "Tremolo" as Name, and "a" as Bypass ID:
+1. In the ``fxData`` table, between ``"Phaser"`` and ``"Distortion"``, insert ``"Tremolo"`` as Name, and ``"a"`` as Bypass ID:
 
 ```lua
 fxData = {
@@ -104,7 +104,7 @@ The ID of the bypass parameter differs depending on the type of effect. You can 
 
 ### Editing the MIDI Script
 
-1. In the **Program Tree**, select the FX Rack MIDI Module and open it in the internal script editor.
+1. In the **Program Tree**, select the FX Rack MIDI Module and the internal script editor.
 1. Add the following information to the ``effectDefaults`` table.
 
 ```lua
@@ -124,7 +124,7 @@ effectDefaults = {
 }
 ```
 
-The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1.0 is used for the defaults. The defaults will be used when loading an effect. 
+The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect. 
 
 ### Modifying the Effect Selector
 
@@ -212,7 +212,7 @@ The ID of the Bypass parameter must be set.
 |:-|:-|
 |Value|@id:a|
 
-## Disable Group
+#### Disable Group
 
 The value of the [Disable](../../HALion-Macro-Page/pages/Disable.md) group must be set to the same ID as the associated Bypass parameter. The three knobs will be disabled if the effect is bypassed.
 
@@ -268,7 +268,7 @@ The UI script plays a central role in the FX Rack and controls most of its actio
 
 The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.
 
-1. Open the **Macro Page Designer**.
+1. Go to the **Macro Page Designer**.
 1. Open the UI script in the internal script editor and remove the comments ``--`` before each print function. 
 1. To monitor the UI script's output messages, click **Show/Hide Script Output Messages** ![Show/Hide Script Output Messages](../images/ShowHideScriptOutputMessages.png).
 1. Activate **Test Macro Page** ![Test Macro Page](../images/TestMacroPage-On.PNG).
