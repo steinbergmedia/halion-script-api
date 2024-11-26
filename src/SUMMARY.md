@@ -312,6 +312,7 @@
     - [Creating Instruments](./HALion-Tutorials-Guidelines/pages/Creating-Instruments.md)
     - [Exploring the Turorials and How-tos](./HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.md)
 - [Tutorials](./HALion-Tutorials-Guidelines/pages/Tutorials.md)
+    - [Creating an FX Chain](./HALion-Tutorials-Guidelines/pages/Creating-an-FX-Chain.md)
     - [Creating an FX Rack](./HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.md)
     - [Creating a Template List](./HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.md)
     - [Using Attribute Rules](./HALion-Tutorials-Guidelines/pages/Using-Attribute-Rules.md)
