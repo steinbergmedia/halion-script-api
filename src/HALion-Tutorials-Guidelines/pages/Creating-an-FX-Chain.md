@@ -49,7 +49,7 @@ The instructions that follow use the internal script editor.
 ## Overview of Workflows
 
 * Adjust the number of slots in the UI script.
-* Add further effects to the UI scripts and create templates for them. 
+* Add further effects to the UI script and create templates for them. 
 * Copy the bus and effects from the [Example VST Preset](#example-vst-preset) to your instrument.
 * Copy the templates and resources from the [Example VST Preset](#example-vst-preset) to your macro page.
 * Copy the code of the UI and MIDI scripts from the [Example VST Preset](#example-vst-preset) into the corresponding scripts of your instrument.
@@ -66,7 +66,8 @@ Let's increase the number of slots from six to seven:
 1. Update the UI, for example, by selecting a different program and then returning to the [Example VST Preset](#example-vst-preset). This will rebuild the macro page and apply your changes.
 
 ```lua
--- FX handling.
+-- FX Chain handling.
+
 numFxSlots = 7
 
 ```
@@ -75,62 +76,44 @@ The FX Rack should now have seven slots on the macro page.
 
 ## Adding Further Effects
 
-To add additional effects, you need to edit the UI script, as well as modify and create the relevant [Templates](../../HALion-Macro-Page/pages/Template.md). Let's add ``"Clipper"`` to the selection of available effects.
+To add additional effects, you need to edit the UI script, as well as modify and create the relevant [Templates](../../HALion-Macro-Page/pages/Template.md). Let's add ``"Distortion"`` to the selection of available effects.
 
 ### Editing the UI Script
 
 1. In the **Macro Page Designer**, open the UI script in the internal script editor.
-1. In the ``effects`` table, between ``"Frequency Shifter"`` and ``"Studio EQ 24"``, insert the following line:
+1. In the ``effects`` table, between ``"Freq Shifter"`` and ``"Studio EQ"``, insert the following lines:
 
 ```lua
--- All desired effects for the FX Chain.
+-- All effects for the FX Chain.
 effects = {
-	[0] = { fx = "No FX", },
-	{ fx = "Chorus", },
-	{ fx = "Flanger", },
-	{ fx = "Phaser", },
-	{ fx = "Tremolo", },
-	{ fx = "Ring Modulator",    menuName = "Ring Mod", },
-	{ fx = "Frequency Shifter", menuName = "Freq Shifter", },
-	{ fx = "Clipper",           menuName = "Distortion",}, -- Add this line.
-	{ fx = "Studio EQ 24",      menuName = "Studio EQ", },
-	{ fx = "Multi Delay",       menuName = "Delay", },
-	{ fx = "Reverb", },
+	-- [...]
+	{ name = "Distortion",
+	  fxType = "Clipper",
+	  settings = {
+	    outputgain = 0.5,
+	    hpcutoff = 0,
+	    hardclip = 0,
+	    Oversample = 1,
+	    lpcutoff = 1,
+	    hardclipoffset = 0,
+	    inputgain = 0.5,
+	  },
+	},	
+	-- [...]
 }
 ```
 
-``menuName``
-
-3. Add the following information to the ``effectDefaults`` table.
-
-```lua
--- FX defaults.
-effectDefaults = {
-    -- [...]
-	Clipper = {
-		hardclipoffset = 0,
-		lpcutoff = 1,
-		outputgain = 0.5,
-		Oversample = 1,
-		hardclip = 0,
-		hpcutoff = 0,
-		inputgain = 0.5,
-	},
-    -- [...]
-}
-```
-
-The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when initializing the effects.
+The code example above lists only part of the ``effects`` table. The table lists the available effects and their parameters with names and default settings. The normalized range from 0 to 1 is used for the default settings. The default settings will be used when initializing the effects.
 
 >&#10069; A code example for writing effects and their values to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Creating a Template for the FX
 
-The Clipper effect needs an FX panel. Let's create one by reusing an existing effect template.
+The Distortion effect needs an FX panel. Let's create one by reusing an existing effect template.
 
 1. In the **Templates Tree**, go to 'library/FX Chain/FX Editors'.
-1. Copy and paste an existing effect template to the 'Effects' folder. You can copy any effect template except the 'No FX' template.
-1. Rename the new template to 'FX_Editor_Clipper' and click **Edit Element** ![Edit Element](../images/EditElement.PNG).
+1. Copy and paste an existing effect template to the 'FX Editors' folder. You can copy any effect template except the 'No FX' template.
+1. Rename the new template to 'FX_Editor_Distortion' and click **Edit Element** ![Edit Element](../images/EditElement.PNG).
 1. Adjust the **Properties** of the controls and templates as described below.
 
 ![Tremolo](../images/Creating-a-FX-Rack-Tremolo.png)
