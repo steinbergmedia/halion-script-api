@@ -122,6 +122,8 @@ effectDefaults = {
 
 The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when initializing the effects.
 
+>&#10069; A code example for writing effects and their values to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
+
 ### Creating a Template for the FX
 
 The Clipper effect needs an FX panel. Let's create one by reusing an existing effect template.
