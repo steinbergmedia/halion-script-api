@@ -14,6 +14,8 @@ This tutorial describes how to create an FX Rack using a [Template List](../../H
 
 ![FX Rack with 4 Slots](../images/Creating-a-FX-Rack-4-Slots.png)
 
+>&#10069; For a classic FX Chain instead of an FX Rack, see [Creating an FX Chain](./Creating-an-FX-Chain.md).
+
 ## Example VST Preset
 
 * [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset)
@@ -124,7 +126,9 @@ effectDefaults = {
 }
 ```
 
-The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect. 
+The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect.
+
+>&#10069; A code example for writing effects and their values to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Modifying the Effect Selector
 
