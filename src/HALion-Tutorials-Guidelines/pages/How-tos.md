@@ -18,6 +18,7 @@
 * [Modifying SVGs with Multiple Objects](./Modifying-SVGs-with-Multiple-Objects.md)
 * [Multi-Level System Menus](./Multi-Level-System-Menus.md)
 * [Relative Paths](./Relative-Paths.md)
+* [Snapshot Effects](./Snapshot-Effects.md)
 * [Switching Control Templates](./Switching-Control-Templates.md)
 * [Using Mouse States in SVGs](./Using-Mouse-States-in-SVGs.md)
 * [Working with Exported Variables](./Working-with-Exported-Variables.md)
