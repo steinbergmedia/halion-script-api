@@ -332,6 +332,7 @@
     - [Modifying SVGs with Multiple Objects](./HALion-Tutorials-Guidelines/pages/Modifying-SVGs-with-Multiple-Objects.md)
     - [Multi-Level System Menus](./HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.md)
     - [Relative Paths](./HALion-Tutorials-Guidelines/pages/Relative-Paths.md)
+    - [Snapshot Effects](./HALion-Tutorials-Guidelines/pages/Snapshot-Effects.md)
     - [Switching Control Templates](./HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.md)
     - [Using Mouse States in SVGs](./HALion-Tutorials-Guidelines/pages/Using-Mouse-States-in-SVGs.md)
     - [Working with Exported Variables](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Variables.md)
