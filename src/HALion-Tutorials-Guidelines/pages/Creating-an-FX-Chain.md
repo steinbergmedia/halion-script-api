@@ -393,6 +393,6 @@ In order to integrate the FX Chain into your macro page, you need to do the foll
 
 ## FX Chain with Custom Look
 
-You can customize the look and feel of your instrument entirely by using your own [Resources](../../HALion-Macro-Page/pages/Resources.md). As an example, the FX chain of the Electric Bass is shown in the following screenshot.
+You can customize the look and feel of your instrument entirely by using your own [Resources](../../HALion-Macro-Page/pages/Resources.md). As an example, the FX chain of Electric Bass is shown in the following screenshot.
 
 ![Electric Bass](../images/Creating-an-FX-Chain-E-Bass.png)
