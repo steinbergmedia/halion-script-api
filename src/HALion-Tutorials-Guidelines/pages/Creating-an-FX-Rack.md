@@ -322,3 +322,9 @@ In order to integrate the FX Rack into your macro page, you need to do the follo
 >&#10069; The FX Rack will only work if this connection exists.
 
 6. Finally, update the UI, for example, by selecting a different program and then selecting your instrument again. This will rebuild the macro page and apply your changes.
+
+## FX Rack with Custom Look
+
+You can customize the look and feel of your instrument entirely by using your own [Resources](../../HALion-Macro-Page/pages/Resources.md). As an example, the FX rack of FM Lab is shown in the following screenshot.
+
+![FM Lab](../images/Creating-an-FX-Rack-FM-Lab.png)
