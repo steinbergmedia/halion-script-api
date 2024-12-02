@@ -12,7 +12,7 @@
 
 This tutorial describes how to create an FX Rack using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Rack provides several slots for loading effects using a [Custom Multi Level Menu](./Custom-Multi-Level-Menus-II.md). Furthermore, you can rearrange effects via drag and drop. Subpresets for each effect are managed using the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.
 
-![FX Rack with 4 Slots](../images/Creating-a-FX-Rack-4-Slots.png)
+![FX Rack with 4 Slots](../images/Creating-an-FX-Rack-4-Slots.png)
 
 >&#10069; For a classic FX Chain instead of an FX Rack, see [Creating an FX Chain](./Creating-an-FX-Chain.md).
 
@@ -76,7 +76,7 @@ numFxSlots = 5
 
 The FX Rack should now have five slots on the macro page and in the **Program Tree** structure.
 
-![FX Rack with 5 Slots](../images/Creating-a-FX-Rack-5-Slots.png)
+![FX Rack with 5 Slots](../images/Creating-an-FX-Rack-5-Slots.png)
 
 ## Adding Further Effects
 
@@ -139,7 +139,7 @@ The Select Effect menu is hierarchical. It has submenus for Modulation, Distorti
 1. In the **GUI Tree** copy and paste one of the existing [Templates](../../HALion-Macro-Page/pages/Template.md), e.g. the 'Phaser' template.
 1. Set the **Properties** of the new 'Tremolo' template as follows.
 
-![Modulation Submenu](../images/Creating-a-FX-Rack-ModSubmenu.png)
+![Modulation Submenu](../images/Creating-an-FX-Rack-ModSubmenu.png)
 
 |Property|Value|
 |:-|:-|
@@ -168,7 +168,7 @@ The Tremolo effect needs an FX panel. Let's create one by reusing an existing ef
 1. Rename the new template to 'Tremolo' and click **Edit Element** ![Edit Element](../images/EditElement.PNG).
 1. Adjust the **Properties** of the controls and templates as described below.
 
-![Tremolo](../images/Creating-a-FX-Rack-Tremolo.png)
+![Tremolo](../images/Creating-an-FX-Rack-Tremolo.png)
 
 #### Knob Templates
 
@@ -176,7 +176,7 @@ The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disabl
 
 * Set the **Template Parameters** as follows.
 
-![Knob Templates](../images/Creating-a-FX-Rack-Knobs.png)
+![Knob Templates](../images/Creating-an-FX-Rack-Knobs.png)
 
 **Knob Template HZ**
 
@@ -210,7 +210,7 @@ The ID of the Bypass parameter must be set.
 
 * Set the **Template Parameter** of the 'Active' template as follows.
 
-![Active Template](../images/Creating-a-FX-Rack-Active.png)
+![Active Template](../images/Creating-an-FX-Rack-Active.png)
 
 |Template Parameter|Value|
 |:-|:-|
@@ -220,7 +220,7 @@ The ID of the Bypass parameter must be set.
 
 The value of the [Disable](../../HALion-Macro-Page/pages/Disable.md) group must be set to the same ID as the associated Bypass parameter. The three knobs will be disabled if the effect is bypassed.
 
-![Disable Group](../images/Creating-a-FX-Rack-Disable.png)
+![Disable Group](../images/Creating-an-FX-Rack-Disable.png)
 
 |Property|Value|
 |:-|:-|
@@ -232,7 +232,7 @@ The title of the effect must be changed.
 
 * Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control as follows.
 
-![Label Control](../images/Creating-a-FX-Rack-Label.png)
+![Label Control](../images/Creating-an-FX-Rack-Label.png)
 
 |Property|Value|
 |:-|:-|
@@ -245,7 +245,7 @@ The [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.
 
 * Set the **Template Parameters** as follows.
 
-![Preset Browser](../images/Creating-a-FX-Rack-PresetBrowser.png)
+![Preset Browser](../images/Creating-an-FX-Rack-PresetBrowser.png)
 
 |Template Parameters|Value|
 |:-|:-|
@@ -268,7 +268,7 @@ Here, you can find the Example VST Preset with all the editing steps applied.
 
 The UI script plays a central role in the FX Rack and controls most of its actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements will help you to understand how the FX Rack works. The following screenshot shows the Insert Rack template with its Template Parameters linked to the parameters of the UI script. These script parameters control how the insert rack is displayed on the macro page.
 
-![Insert Rack Template](../images/Creating-a-FX-Rack-InsertRack.png)
+![Insert Rack Template](../images/Creating-an-FX-Rack-InsertRack.png)
 
 The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.
 
@@ -304,20 +304,20 @@ In order to integrate the FX Rack into your macro page, you need to do the follo
 
 1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 
-![Program Tree](../images/Creating-a-FX-Rack-Bus-FX.png)
+![Program Tree](../images/Creating-an-FX-Rack-Bus-FX.png)
 
 2. Copy all [Templates](../../HALion-Macro-Page/pages/Templates.md). The [Templates](../../HALion-Macro-Page/pages/Templates.md) in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. Later, you can change the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
 
-![Templates](../images/Creating-a-FX-Rack-Templates.png)
+![Templates](../images/Creating-an-FX-Rack-Templates.png)
 
 3. Copy the [Templates](../../HALion-Macro-Page/pages/Templates.md) from the **GUI Tree** to your macro page.
 
-![GUI Tree](../images/Creating-a-FX-Rack-GUI-Tree.png)
+![GUI Tree](../images/Creating-an-FX-Rack-GUI-Tree.png)
 
 4. Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.
 5. Connect the MIDI script's ``sendUpdateBus`` parameter with the UI script's ``updateBus`` parameter.
 
-![updateBus Parameter](../images/Creating-a-FX-Rack-updateBus.png)
+![updateBus Parameter](../images/Creating-an-FX-Rack-updateBus.png)
 
 >&#10069; The FX Rack will only work if this connection exists.
 
