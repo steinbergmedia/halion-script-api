@@ -126,6 +126,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [playTriggerPad](./playTriggerPad.md),
 [postEvent](./postEvent.md),
 [releaseVoice](./releaseVoice.md),
+[setBypassNoteOff](./setBypassNoteOff.md),
 
 ## Instance Functions
 
