@@ -29,6 +29,8 @@ The Drag Group control allows you to implement drag operations. You can drag a s
 
 ## Drag Group Callbacks
 
+>&#10069; For an example of how to use Drag Group Callbacks, see [Drag-and-Drop Sample Import](../../HALion-Tutorials-Guidelines/pages/Drag-and-Drop-Sample-Import.md).
+
 ### onDropGetInfo
 
 >**onDropGetInfo(viewname, draginfo)**
