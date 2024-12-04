@@ -4,7 +4,7 @@
 
 {{#include _How-tos.md}} The how-tos often feature small code examples you can adapt for your own solutions.
 
->&#10069; The minimum version for exploring the how-tos is HALion 6.3.
+>&#10069; The minimum version for exploring the how-tos is {{#include _Version.md}}.
 
 * [Animating and Modifying SVGs](./Animating-and-Modifying-SVGs.md)
 * [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md)
@@ -12,6 +12,7 @@
 * [Custom Multi-Level Menus](./Custom-Multi-Level-Menus.md)
 * [Custom Multi-Level Menus II](./Custom-Multi-Level-Menus-II.md)
 * [Custom Popup Menus](./Custom-Popup-Menus.md)
+* [Drag-and-Drop Sample Import](./Drag-and-Drop-Sample-Import.md)
 * [Dynamic Template References](./Dynamic-Template-References.md)
 * [Map Samples to Root Key](./Map-Samples-to-Root-Key.md)
 * [MIDI Note Parameters](./MIDI-Note-Parameters.md)

@@ -26,15 +26,9 @@ The following section describes how to access [Templates](../../HALion-Macro-Pag
 
 * Load [Creating an FX Chain 01.vstpreset](../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset).
 
-**To explore the templates in this example:**
+{{#include ./_Excerpts.md:to-explore-templates}}
 
-1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template that you want to explore. 
-1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
-
-**To edit the UI script:**
-
-1. Open the **Macro Page Designer** and select the topmost element in the **GUI Tree**. 
-1. Go to the Properties section and click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
+{{#include ./_Excerpts.md:to-edit-ui-scripts}}
 
 **To edit the MIDI script:**
 
@@ -354,7 +348,7 @@ Below follows a brief description of the connections and the message exchange wi
 1. The UI script's ``onFxMenuChanged`` function sets the MIDI script's ``selectFx`` parameter which uses a table to transfer information about which effect to load. The ``selectFx`` parameter calls the ``onSelectFx`` function in the MIDI script, which loads the effect on the bus.
 1. After the MIDI script's ``onSelectFx`` function has loaded the effect, the ``sendUpdateBus`` parameter is set. The MIDI script's ``sendUpdateBus`` parameter is connected to the UI script's ``updateBus`` parameter.
 1. When the UI script's ``updateBus`` parameter is changed, the ``onBusChanged`` function is called and the associated parameters and templates of the FX Chain are updated by calling ``defineFxSwitchesParam`` and ``defineFxMenuParam``.
-1. After the UI script's ``onBusChanged`` function has updated the FX Chain's templates, the ``onFxFocusChanged`` function is called. The FX Editor template is a dynamic template, i.e., the template it displays is defined by the ``@fxEditor`` UI variable. The ``onFxFocusChanged`` function defines the effect panel by setting the ``@fxEditor`` UI variable of the FX Editor template to the corresponding effect template.
+1. After the UI script's ``onBusChanged`` function has updated the FX Chain's templates, the ``onFxFocusChanged`` function is called. The FX Editor template uses [Dynamic Template References](./Dynamic-Template-References.md), i.e., the template it displays is defined by the ``@fxEditor`` UI variable. The ``onFxFocusChanged`` function defines the effect panel by setting the ``@fxEditor`` UI variable of the FX Editor template to the corresponding effect template.
 
 ![FX Chain FX Editor Template](../images/Creating-an-FX-Chain-FX-Editor.png)
 

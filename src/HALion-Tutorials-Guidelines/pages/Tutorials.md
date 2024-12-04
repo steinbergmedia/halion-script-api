@@ -4,7 +4,7 @@
 
 {{#include _Tutorials.md}} By following the instructions step by step you will learn important workflows and skills that make your sound designer life easier.
 
->&#10069; The minimum version for working through the tutorials is HALion 7.0.
+>&#10069; The minimum version for working through the tutorials is {{#include _Version.md}}.
 
 * [Creating an FX Chain](./Creating-an-FX-Chain.md)
 * [Creating an FX Rack](./Creating-an-FX-Rack.md)

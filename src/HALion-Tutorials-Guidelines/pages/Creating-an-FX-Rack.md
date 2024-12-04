@@ -26,15 +26,9 @@ The following section describes how to access [Templates](../../HALion-Macro-Pag
 
 * Load [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset).
 
-**To explore the templates in this example:**
+{{#include ./_Excerpts.md:to-explore-templates}}
 
-1. Open the **Macro Page Designer**, go to the **Templates Tree** and select the template that you want to explore. 
-1. Click **Edit Element** ![Edit Element](../images/EditElement.PNG) to examine the template.
-
-**To edit the UI script:**
-
-1. Open the **Macro Page Designer** and select the topmost element in the **GUI Tree**. 
-1. Go to the Properties section and click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
+{{#include ./_Excerpts.md:to-edit-ui-scripts}}
 
 **To edit the MIDI script:**
 
