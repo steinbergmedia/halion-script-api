@@ -235,7 +235,7 @@ The title of the effect must be changed.
 
 #### Preset Browser Template
 
-The [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template provides the subpreset management for each effect. It can be configured with template parameters.
+The Preset Browser FX Rack template provides the subpreset management for each effect. It can be configured with template parameters.
 
 * Set the **Template Parameters** as follows.
 
@@ -247,6 +247,8 @@ The [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.
 |Category|FX/Tremolo|
 
 This way, the Tremolo effect will load and save subpresets from its own location.
+
+>&#10069; The Preset Browser FX Rack template differs from the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template. The main difference is that it omits the Mix parameter when loading an FX subpreset. To keep this functionality, you must use the template from this example instead of the [Preset Browser Custom](../../HALion-Macro-Page/pages/Preset-Browser-Custom.md) template.
 
 * Finally, update the UI by selecting a different program and then selecting the [Example VST Preset](#example-vst-preset) again. This will rebuild the macro page and apply your changes.
 
