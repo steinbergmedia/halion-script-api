@@ -93,28 +93,24 @@ We will use the Clipper effect as a distortion. Therefore, we define ``fxType = 
 1. In the ``effects`` table, between the entries for ``"Freq Shifter"`` and ``"Studio EQ"``, insert the following lines:
 
 ```lua
--- All effects for the FX Chain.
-effects = {
-	-- [...]
-	{ name = "Distortion",
-	  fxType = "Clipper",
-	  settings = {
-	    outputgain = 0.5,
-	    hpcutoff = 0,
-	    hardclip = 0,
-	    Oversample = 1,
-	    lpcutoff = 1,
-	    hardclipoffset = 0,
-	    inputgain = 0.5,
-	  },
-	},	
-	-- [...]
-}
+{ name = "Distortion",
+  fxType = "Clipper",
+  settings = {
+    outputgain = 0.5,
+    hpcutoff = 0,
+    hardclip = 0,
+    Oversample = 1,
+    lpcutoff = 1,
+    hardclipoffset = 0,
+    inputgain = 0.5,
+  },
+},	
+
 ```
 
-The code example above lists only part of the ``effects`` table. The table lists the available effects and their parameters with names and default settings. The normalized range from 0 to 1 is used for the default settings. The default settings will be used when initializing the effects.
+The code example above lists only the lines of code that need to be added to the ``effects`` table. The table lists the available effects and their parameters with names and default settings. The normalized range from 0 to 1 is used for the default settings. The default settings will be used when initializing the effects.
 
->&#10069; A code example for writing effects and their values to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
+>&#10069; A code example for writing effects and their settings to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Creating a Template for the FX Slot
 
@@ -300,7 +296,7 @@ Each knob's template parameters must be configured so that they will have the co
 |Label|OUT GAIN|
 |Unit|dB|
 
-4. The Mix knob template is the sevenths and last knob you have to adjust. Drag and drop the Distortion's mix parameter from the **Parameter List** to the Template Parameters' Value and set the Template Parameters Label and Unit as follows.
+4. The Mix knob template is the seventh and last knob you have to adjust. Drag and drop the Distortion's mix parameter from the **Parameter List** to the Template Parameters' Value and set the Template Parameters Label and Unit as follows.
 
 **Knob Template Mix**
 
@@ -364,7 +360,7 @@ All other steps are the same as in the [FX Handling](#fx-handling) section, star
 
 In order to integrate the FX Chain into your macro page, you need to do the following.
 
-1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
+1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrument must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 
 ![Program Tree FX Bus](../images/Creating-an-FX-Chain-FX-Bus.png)
 

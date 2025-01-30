@@ -104,25 +104,19 @@ The ID of the bypass parameter differs depending on the type of effect. You can 
 1. Add the following information to the ``effectDefaults`` table.
 
 ```lua
--- FX selection handling
-
-effectDefaults = {
-    -- [...]
-	Tremolo = {
-		output = 0,
-		rate = 0.7979797979798,
-		syncnote = 0,
-		depth = 0.75,
-		phase = 1,
-		temposync = 0,
-	},
-    -- [...]
-}
+Tremolo = {
+	output = 0,
+	rate = 0.7979797979798,
+	syncnote = 0,
+	depth = 0.75,
+	phase = 1,
+	temposync = 0,
+},
 ```
 
-The code example above lists only part of the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect.
+The code example above lists only the lines of code that need to be added to the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect.
 
->&#10069; A code example for writing effects and their values to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
+>&#10069; A code example for writing effects and their settings to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Modifying the Effect Selector
 
@@ -298,7 +292,7 @@ All other steps are the same as in the [FX Handling](#fx-handling) section, star
 
 In order to integrate the FX Rack into your macro page, you need to do the following.
 
-1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrumet must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
+1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrument must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 
 ![Program Tree](../images/Creating-an-FX-Rack-Bus-FX.png)
 
