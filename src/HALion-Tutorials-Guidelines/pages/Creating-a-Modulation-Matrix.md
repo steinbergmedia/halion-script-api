@@ -155,7 +155,7 @@ The following steps are almost identical to the previous ones, except that a dif
 
 This connects the knob to the zone's pan parameter. Unit is not used.
 
-5. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropPan" and set its Value to "@DropPan".
+6. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropPan" and set its Value to "@DropPan".
 
 #### Properties
 
@@ -468,5 +468,121 @@ A source gets selected through the UI variable @MenuValue. MenuValue is a script
 The OnValue of the MenuEntry template corresponds to the index of the ``sources`` table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Thus, OnValue is always one less than the index of the corresponding source in the ``sources`` table.
 
 Together, MenuValue and OnValue control which source is selected and displayed.
+
+#### Edit the MenuSourceRoot Template
+
+1. Go to the **Templates Tree**, navigate to **library > Tutorial Controls > Popup** and edit **MenuSourceRoot**.
+2. Select the Aftertouch template and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Position X|0|
+|Position Y|171|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|9|
+|Value|@MenuValue|
+|Label|Aftertouch|
+
+3. Select the Mod Wheel template and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Position X|0|
+|Position Y|152|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|8|
+|Value|@MenuValue|
+|Label|Mod Wheel|
+
+4. Select the Pitch Bend template and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Position X|0|
+|Position Y|133|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|7|
+|Value|@MenuValue|
+|Label|Pitch Bend|
+
+5. Select the Velocity template and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Position X|0|
+|Position Y|114|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|6|
+|Value|@MenuValue|
+|Label|Velocity|
+
+6. Select the Key Follow template and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Position X|0|
+|Position Y|95|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|5|
+|Value|@MenuValue|
+|Label|Key Follow|
+
+7. Duplicate the Pitch Env template, then rename the duplicate to "User Env" and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Name|User Env|
+|Position X|0|
+|Position Y|76|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|4|
+|Value|@MenuValue|
+|Label|User Env|
+
+At this point in the tutorial, the new source should work with drag and drop and be selectable from the modulation matrix.
+
+## Increasing the Number of Rows in the Modulation Matrix
+
+Each time you drag a source to a destination, the ``findEmptyMatrixRow`` function in the UI script checks if there is an empty row available in the modulation matrix. If there aren't any free rows available, the ``CanDragMod`` variable in the UI script will be ``nil`` and you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know. ``CanDragMod`` is connected to the [Stack](../../HALion-Macro-Page/pages/Stack.md) control of each page tab. Depending on ``CanDragMod`` the [Stack](../../HALion-Macro-Page/pages/Stack.md) switches between the symbol, dragging is not allowed, and the [Drag Group](../../HALion-Macro-Page/pages/Drag-Group.md), dragging is allowed. The [Stack](../../HALion-Macro-Page/pages/Stack.md) also changes the tooltips that give instructions.
+
+* Drag and drop at least four sources to make the symbol appear. You won't be able to drag and drop further sources.
+
+The current number of modulation rows is four. To avoid running out of modulation rows too early, let's increase the number of modulation rows to eight.
 
 ## How the Elements Interact
