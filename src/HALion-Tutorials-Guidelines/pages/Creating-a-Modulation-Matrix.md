@@ -225,7 +225,7 @@ To make Resonance and Pan selectable in the modulation matrix, you must add them
 
 A destination gets selected through the UI variable @MenuValue. MenuValue is a script parameter defined in the UI script of the MenuDestRoot template. It is exported and set by the Destination template parameter of the [Template List](../../HALion-Macro-Page/pages/Template-List.md) that creates the modulation matrix. MenuValue is also connected to the exclusive switch and the [Label](../../HALion-Macro-Page/pages/Label.md) control within the MenuEntry template. The exclusive switch controls whether an entry is displayed as selected or not, and the [Label](../../HALion-Macro-Page/pages/Label.md) control displays the name of the selected destination.
 
-The OnValue of the MenuEntry template corresponds to the index of the ``destinations`` table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Thus, OnValue is always one less than the index of the corresponding destination in the ``destinations`` table.
+The OnValue of the MenuEntry template corresponds to the index in the ``destinations`` table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Thus, OnValue is always one less than the index of the corresponding destination in the ``destinations`` table.
 
 Together, MenuValue and OnValue control which destination is selected and displayed.
 
@@ -313,7 +313,7 @@ The page tabs labeled LFO 1, LFO 2 and PITCH ENV give you access to the controls
 
 ### Adjusting the Page Tabs
 
-You need to adjust the current page tabs before adding another.
+You need to adjust the position and size of the current page tabs before adding another.
 
 1. In the **Macro Page Designer**, go to the **GUI Tree** and navigate to the Page Tabs branch.
 2. Select the LFO 1 group and set the following properties.
@@ -465,7 +465,7 @@ To make the User Env selectable in the modulation matrix, you must add it to the
 
 A source gets selected through the UI variable @MenuValue. MenuValue is a script parameter defined in the UI script of the MenuSourceRoot template. It is exported and set by the Source1 or the Source2 template parameter of the [Template List](../../HALion-Macro-Page/pages/Template-List.md) that creates the modulation matrix. MenuValue is also connected to the exclusive switch and the [Label](../../HALion-Macro-Page/pages/Label.md) control within the MenuEntry template. The exclusive switch controls whether an entry is displayed as selected or not, and the [Label](../../HALion-Macro-Page/pages/Label.md) control displays the name of the selected source.
 
-The OnValue of the MenuEntry template corresponds to the index of the ``sources`` table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Thus, OnValue is always one less than the index of the corresponding source in the ``sources`` table.
+The OnValue of the MenuEntry template corresponds to the index in the ``sources`` table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Thus, OnValue is always one less than the index of the corresponding source in the ``sources`` table.
 
 Together, MenuValue and OnValue control which source is selected and displayed.
 
@@ -579,10 +579,104 @@ At this point in the tutorial, the new source should work with drag and drop and
 
 ## Increasing the Number of Rows in the Modulation Matrix
 
-Each time you drag a source to a destination, the ``findEmptyMatrixRow`` function in the UI script checks if there is an empty row available in the modulation matrix. If there aren't any free rows available, the ``CanDragMod`` variable in the UI script will be ``nil`` and you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know. ``CanDragMod`` is connected to the [Stack](../../HALion-Macro-Page/pages/Stack.md) control of each page tab. Depending on ``CanDragMod`` the [Stack](../../HALion-Macro-Page/pages/Stack.md) switches between the symbol, dragging is not allowed, and the [Drag Group](../../HALion-Macro-Page/pages/Drag-Group.md), dragging is allowed. The [Stack](../../HALion-Macro-Page/pages/Stack.md) also changes the tooltips that give instructions.
+Each time you drag a source to a destination, the ``findEmptyMatrixRow`` function in the UI script checks if there is an empty row available in the modulation matrix. If there aren't any free rows available, the ``CanDragMod`` variable in the UI script will be ``false`` and you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know. ``CanDragMod`` is connected to the [Stack](../../HALion-Macro-Page/pages/Stack.md) control of each page tab. Depending on ``CanDragMod`` the [Stack](../../HALion-Macro-Page/pages/Stack.md) switches between the symbol, dragging is not allowed, and the [Drag Group](../../HALion-Macro-Page/pages/Drag-Group.md), dragging is allowed. The [Stack](../../HALion-Macro-Page/pages/Stack.md) also changes the tooltips that give instructions.
 
 * Drag and drop at least four sources to make the symbol appear. You won't be able to drag and drop further sources.
 
 The current number of modulation rows is four. To avoid running out of modulation rows too early, let's increase the number of modulation rows to eight.
+
+1. Open the UI script in the internal script editor and set the ``numRows`` variable to 8.
+
+```lua
+local numRows = 8
+```
+
+2. In the **GUI Tree**, navigate to **Stack > Group MATRIX > Template List**. Activate the V-Scroll Style.
+
+The modulation matrix now has 8 rows, accessible via a vertical scrollbar.
+
+The parameters for the modulation matrix are defined in the UI script by calling the ``defineAllRowNamesParameter`` function. The defined parameters are connected to the template parameters of the [Template List](../../HALion-Macro-Page/pages/Template-List.md). The [Template List](../../HALion-Macro-Page/pages/Template-List.md) creates the number of rows in the matrix equal to the number of parameters specified.
+
+### Display Depth in Semitones or Percent
+
+Depending on whether or not Pitch has been assigned as a destination, the Depth parameter displays values either in semitones or in percent. Which of the two is displayed is controlled by a UI script that is part of the DepthSliderHorizontal template. The script defines a DestIndex parameter that is exported as a template parameter and is responsible for deciding whether the values are displayed as semitones or percent, depending on the selected destination. Currently, Pitch is the only destination that needs to display semitones. If there are other destinations that need to display semitones, you will need to add them to the ``isPitchDest`` table of the template's UI script. Have a look at the comments in the code below for details.
+
+```lua
+pitchRange = 60
+pitchStretch = 3.1336
+
+-- A table with all destinations that display their depth in semitones.
+-- The indices in the isPitchDest table must match the indices of the pitch destinations
+-- as previously defined in the destinations table in the MIDI script.
+
+isPitchDest = {
+	[1] = true, -- Pitch
+}
+
+function sinh(x)
+    return (math.exp(x) - math.exp(-x)) / 2
+end
+
+function asinh(x)
+    return math.log(x + math.sqrt(x * x + 1))
+end
+
+function onDepthChanged()
+	-- Convert from depth to semitones if the destination uses pitch.
+	if isPitchDest[DestIndex] then 
+		Text = pitchRange * sinh(pitchStretch * 0.01 * Depth) / sinh(pitchStretch)
+	else
+		Text = Depth
+	end
+end
+
+function onTextChanged()
+	-- Convert from semitones to depth if the destination uses pitch.
+	if isPitchDest[DestIndex] then
+		Depth = 100 * asinh(Text * sinh(pitchStretch) / pitchRange) / pitchStretch
+	else
+		Depth = Text
+	end
+end
+
+defineParameter("Depth", "", 0, -100, 100, 0.1, onDepthChanged)
+defineParameter("Text", "", 0, -100, 100, 0.1, onTextChanged)
+defineParameter("DestIndex", "", 0, 0, 1000, 1, onDepthChanged)
+```
+
+**To edit the UI script of the DepthSliderHorizontal Template:**
+
+1. Go to the **Templates Tree**, navigate to **Tutorial Controls > Matrix > DepthSliderHorizontal** and edit the template.
+2. Click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
+3. Add further destinations to the ``isPitchDest`` table. The indices in the ``isPitchDest``table must match the indices of the pitch destinations as previously defined in the ``destinations`` table in the MIDI script.
+
+## Adding User Env Destinations
+
+The parameters of the pitch envelope already exist as modulation destinations. Let's add the parameters of the user envelope as modulation destinations.
+
+### Add the User Env to the MIDI Script
+
+You must add the parameters of the User Env to the ``destinations`` table in the MIDI script.
+
+1. Go to the **Program Tree** and select the Mod Matrix MIDI Module.
+1. Open the MIDI script in the internal script editor and append the following lines to the ``destinations`` table.
+
+```lua
+{ name = "User Env Init Level"      , dest = ModulationDestination.userEnvStartLev },
+{ name = "User Env Attack"          , dest = ModulationDestination.userEnvAttack },
+{ name = "User Env Att Level"       , dest = ModulationDestination.userEnvAttLev },
+{ name = "User Env Decay"           , dest = ModulationDestination.userEnvDecay },
+{ name = "User Env Sustain"         , dest = ModulationDestination.userEnvSustain },
+{ name = "User Env Release"         , dest = ModulationDestination.userEnvRelease },
+{ name = "User Env Rel Level"       , dest = ModulationDestination.userEnvRelLev },
+```
+### Add the User Env to the Destination Menu
+
+You must add the User Env parameters to the MenuDestRoot template to make them selectable as destinations in the modulation matrix. As with the Pitch Env, we want the destinations to be in a submenu.
+
+
+
+## Adding Buses
+
 
 ## How the Elements Interact
