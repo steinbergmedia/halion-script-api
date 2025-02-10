@@ -644,7 +644,7 @@ defineParameter("Text", "", 0, -100, 100, 0.1, onTextChanged)
 defineParameter("DestIndex", "", 0, 0, 1000, 1, onDepthChanged)
 ```
 
-**To edit the UI script of the DepthSliderHorizontal Template:**
+**To edit the UI script of the DepthSliderHorizontal template:**
 
 1. Go to the **Templates Tree**, navigate to **Tutorial Controls > Matrix > DepthSliderHorizontal** and edit the template.
 2. Click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
@@ -656,7 +656,7 @@ The parameters of the pitch envelope already exist as modulation destinations. L
 
 ### Add the User Env to the MIDI Script
 
-You must add the parameters of the User Env to the ``destinations`` table in the MIDI script.
+You need to add the parameters of the User Env to the ``destinations`` table in the MIDI script.
 
 1. Go to the **Program Tree** and select the Mod Matrix MIDI Module.
 1. Open the MIDI script in the internal script editor and append the following lines to the ``destinations`` table.
@@ -672,9 +672,49 @@ You must add the parameters of the User Env to the ``destinations`` table in the
 ```
 ### Add the User Env to the Destination Menu
 
-You must add the User Env parameters to the MenuDestRoot template to make them selectable as destinations in the modulation matrix. As with the Pitch Env, we want the destinations to be in a submenu.
+You need to add the User Env parameters to the MenuDestRoot template to make them selectable as destinations in the modulation matrix. As with the Pitch Env, we want the User Env destinations to be in a submenu. The MenuDestRoot template uses the SubMenuEntry template and a Popup List Variable to accomplish this.
 
+1. Go to the **Templates Tree**, navigate to **library > Tutorial Controls > Popup** and edit **MenuDestRoot**.
+2. Duplicate the Pitch Env template, then rename the duplicate to "User Env" and set its properties and template parameters as follows.
 
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Name|User Env|
+|Position X|60|
+|Position Y|95|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|3|
+|Value|@PopupVar|
+|Label|User Env|
+
+3. Navigate to **Variables > PopupVar** and add "MenuDestUserEnv" to the Popup List Variable.
+
+The entries in the Popup List Variable correspond to the names of the templates to be opened when navigating through the menu.
+
+4. Go back to the **Templates Tree** and navigate to **library > Tutorial Controls > Popup**. Duplicate the MenuDestPitchEnv template and rename the duplicate to "MenuDestUserEnv".
+5. Edit MenuDestUserEnv and set the OnValue of the contained control templates as follows.
+
+|Template|OnValue|
+|:-|:-|
+|Init Level|19|
+|Attack|20|
+|Att Level|21|
+|Decay|22|
+|Sustain|23|
+|Release|24|
+|Release Level|25|
+
+The Value und Label template parameters of the respective control template are already set correctly.
+
+At this point in the tutorial, the User Env destinations should should be selectable from the modulation matrix.
+
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
 
 ## Adding Buses
 
