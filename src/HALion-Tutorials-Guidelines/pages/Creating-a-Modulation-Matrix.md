@@ -20,6 +20,8 @@ The macro page provides controls for the destinations Pitch, Cutoff and Level. P
 
 The next available row in the modulation matrix will be used for the drag and drop assignment. If there aren't any free rows available, you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know.
 
+![Creating a Modulation Matrix No Drag](../images/Creating-a-Mod-Matrix-NoDrag.png)
+
 [Jump to Top ](#creating-a-modulation-matrix)
 
 ## Example VST Preset
@@ -79,6 +81,8 @@ At the top of the macro page are the Pitch, Cutoff, and Level controls, which al
 |:-|:-|
 |Position X|75|
 
+![Creating a Modulation Matrix Cutoff Group](../images/Creating-a-Mod-Matrix-Cutoff-Group.png)
+
 3. Duplicate the Cutoff group, then rename the duplicate to "Resonance" and set it's Position X to 150.
 
 #### Properties
@@ -89,15 +93,15 @@ At the top of the macro page are the Pitch, Cutoff, and Level controls, which al
 |Position X|150|
 |Position Y|0|
 
-4. Go inside the new Resonance group and rename the knob template to "Resonance_1".
+![Creating a Modulation Matrix Resonance Group](../images/Creating-a-Mod-Matrix-Resonance-Group.png)
+
+4. Go inside the new Resonance group, rename the knob template to "Resonance_1" and set its template parameters as follows.
 
 #### Properties
 
 |Property|Value|
 |:-|:-|
 |Name|Resonance_1|
-
-5. Set the template parameters of the knob as follows.
 
 #### Template Parameters
 
@@ -107,9 +111,11 @@ At the top of the macro page are the Pitch, Cutoff, and Level controls, which al
 |Label|RESONANCE|
 |Unit| |
 
+![Creating a Modulation Matrix Resonance Knob](../images/Creating-a-Mod-Matrix-Resonance-Knob.png)
+
 This connects the knob to the zone's resonance parameter. Unit is not used.
 
-6. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropResonance" and set its Value to "@DropResonance".
+5. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropResonance" and set its Value to "@DropResonance".
 
 #### Properties
 
@@ -117,6 +123,8 @@ This connects the knob to the zone's resonance parameter. Unit is not used.
 |:-|:-|
 |Name|DropResonance|
 |Value|@DropResonance|
+
+![Creating a Modulation Matrix Resonance Drop](../images/Creating-a-Mod-Matrix-Resonance-Drop.png)
 
 The UI script uses the @DropResonance UI variable to resolve the source that is being dropped.
 
@@ -135,6 +143,8 @@ The following steps are almost identical to the previous ones, except that a dif
 |:-|:-|
 |Position X|225|
 
+![Creating a Modulation Matrix Level Group](../images/Creating-a-Mod-Matrix-Level-Group.png)
+
 3. Duplicate the Level group, then rename the duplicate to "Pan" and set it's Position X to 300.
 
 #### Properties
@@ -144,7 +154,9 @@ The following steps are almost identical to the previous ones, except that a dif
 |Name|Pan|
 |Position X|300|
 
-4. Go inside the new Pan group and rename the knob template to "Pan_1" and change its template reference to "KnobSVG7_Bi".
+![Creating a Modulation Matrix Pan Group](../images/Creating-a-Mod-Matrix-Pan-Group.png)
+
+4. Go inside the new Pan group, rename the knob template to "Pan_1", change its template reference to "KnobSVG7_Bi" and set its template parameters as follows.
 
 #### Properties
 
@@ -152,8 +164,6 @@ The following steps are almost identical to the previous ones, except that a dif
 |:-|:-|
 |Name|Pan_1|
 |Template|KnobSVG7_Bi|
-
-5. Set the template parameters of the knob as follows.
 
 #### Template Parameters
 
@@ -163,9 +173,11 @@ The following steps are almost identical to the previous ones, except that a dif
 |Label|PAN|
 |Unit| |
 
+![Creating a Modulation Matrix Pan Knob](../images/Creating-a-Mod-Matrix-Pan-Knob.png)
+
 This connects the knob to the zone's pan parameter. Unit is not used.
 
-6. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropPan" and set its Value to "@DropPan".
+5. Rename the [Drop](../../HALion-Macro-Page/pages/Drop.md) control to "DropPan" and set its Value to "@DropPan".
 
 #### Properties
 
@@ -173,6 +185,8 @@ This connects the knob to the zone's pan parameter. Unit is not used.
 |:-|:-|
 |Name|DropPan|
 |Value|@DropPan|
+
+![Creating a Modulation Matrix Pan Drop](../images/Creating-a-Mod-Matrix-Pan-Drop.png)
 
 The UI script uses the @DropPan UI variable to resolve the source that is being dropped.
 
@@ -268,25 +282,9 @@ Together, MenuValue and OnValue control which destination is selected and displa
 |Value|@MenuValue|
 |Label|Level|
 
-3. Duplicate the Level template, then rename the duplicate to "Pan" and set its properties and template parameters as follows.
+![Creating a Modulation Matrix MenuDestRoot Level](../images/Creating-a-Mod-Matrix-MenuDestRoot-Level.png)
 
-#### Properties
-
-|Property|Value|
-|:-|:-|
-|Name|Pan|
-|Position X|0|
-|Position Y|95|
-
-#### Template Parameters
-
-|Template Parameter|Value|
-|:-|:-|
-|OnValue|7|
-|Value|@MenuValue|
-|Label|Pan|
-
-4. Select the Cutoff template and duplicate it, then rename the duplicate to "Resonance" and set its properties and template parameters as follows.
+3. Select the Cutoff template and duplicate it, then rename the duplicate to "Resonance" and set its properties and template parameters as follows.
 
 #### Properties
 
@@ -304,6 +302,28 @@ Together, MenuValue and OnValue control which destination is selected and displa
 |Value|@MenuValue|
 |Label|Resonance|
 
+![Creating a Modulation Matrix MenuDestRoot Resonance](../images/Creating-a-Mod-Matrix-MenuDestRoot-Resonance.png)
+
+4. Duplicate the Level template, then rename the duplicate to "Pan" and set its properties and template parameters as follows.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Name|Pan|
+|Position X|0|
+|Position Y|95|
+
+#### Template Parameters
+
+|Template Parameter|Value|
+|:-|:-|
+|OnValue|7|
+|Value|@MenuValue|
+|Label|Pan|
+
+![Creating a Modulation Matrix MenuDestRoot Pan](../images/Creating-a-Mod-Matrix-MenuDestRoot-Pan.png)
+
 5. Select the Volume 1 template and set its OnValue to 5.
 
 #### Template Parameters
@@ -313,6 +333,8 @@ Together, MenuValue and OnValue control which destination is selected and displa
 |OnValue|5|
 |Value|@MenuValue|
 |Label|Volume 1|
+
+![Creating a Modulation Matrix MenuDestRoot Volume1](../images/Creating-a-Mod-Matrix-MenuDestRoot-Volume1.png)
 
 6. Select the Volume 2 template and set its OnValue to 6.
 
@@ -324,9 +346,11 @@ Together, MenuValue and OnValue control which destination is selected and displa
 |Value|@MenuValue|
 |Label|Volume 2|
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
+![Creating a Modulation Matrix MenuDestRoot Volume2](../images/Creating-a-Mod-Matrix-MenuDestRoot-Volume2.png)
 
 At this point in the tutorial, the new destinations should work with drag and drop and be selectable from the modulation matrix.
+
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -350,6 +374,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Position X|0|
 |Width|115|
 
+![Creating a Modulation Matrix Page Tabs LFO1](../images/Creating-a-Mod-Matrix-PageTabs-LFO1.png)
+
 3. Select the LFO 2 group and set the following properties.
 
 #### Properties
@@ -358,6 +384,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |:-|:-|
 |Position X|118|
 |Width|115|
+
+![Creating a Modulation Matrix Page Tabs LFO2](../images/Creating-a-Mod-Matrix-PageTabs-LFO2.png)
 
 4. Select the ENV 3 group and set the following properties.
 
@@ -368,6 +396,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Position X|236|
 |Width|115|
 
+![Creating a Modulation Matrix Page Tabs ENV3](../images/Creating-a-Mod-Matrix-PageTabs-ENV3.png)
+
 5. Select the MATRIX group and set the following properties.
 
 #### Properties
@@ -376,6 +406,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |:-|:-|
 |Position X|472|
 |Width|115|
+
+![Creating a Modulation Matrix Page Tabs MATRIX](../images/Creating-a-Mod-Matrix-PageTabs-MATRIX.png)
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -388,7 +420,9 @@ You need to adjust the position and size of the current page tabs before adding 
 |Property|Value|
 |:-|:-|
 |Name|ENV 4|
-|Position X|472|
+|Position X|354|
+
+![Creating a Modulation Matrix Page Tabs ENV4](../images/Creating-a-Mod-Matrix-PageTabs-ENV4.png)
 
 2. Select **ENV 4 > Stack_4 > Drag_3 > Select Drag Group_3** and set Drag Info to "ENV4".
 
@@ -397,6 +431,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Property|Value|
 |:-|:-|
 |Drag Info|ENV4|
+
+![Creating a Modulation Matrix Page Tabs ENV4 Drag Info](../images/Creating-a-Mod-Matrix-PageTabs-ENV4-DragInfo.png)
 
 3. Select **ENV 4 > Label PITCH ENV_1** and set the properties as follows.
 
@@ -407,6 +443,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Name|Label USER ENV|
 |Text|USER ENV|
 
+![Creating a Modulation Matrix Page Tabs ENV4 Label](../images/Creating-a-Mod-Matrix-PageTabs-ENV4-Label.png)
+
 4. Select **ENV 4 > Switch PITCH ENV_1** and set the properties as follows.
 
 #### Properties
@@ -416,6 +454,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Name|Switch USER ENV|
 |OnValue|3|
 
+![Creating a Modulation Matrix Page Tabs ENV4 Switch](../images/Creating-a-Mod-Matrix-PageTabs-ENV4-Switch.png)
+
 5. Select **ENV 4 > MATRIX > Switch MATRIX** and set the properties as follows.
 
 #### Properties
@@ -424,15 +464,27 @@ You need to adjust the position and size of the current page tabs before adding 
 |:-|:-|
 |OnValue|4|
 
+![Creating a Modulation Matrix Page Tabs MATRIX Switch](../images/Creating-a-Mod-Matrix-PageTabs-MATRIX-Switch.png)
+
 6. Select **Variables > Pages** and set the Maximum to 4.
+
+#### Properties
+
+|Property|Value|
+|:-|:-|
+|Maximum|4|
+
+![Creating a Modulation Matrix Page Tabs Variable](../images/Creating-a-Mod-Matrix-PageTabs-Variable.png)
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
 ### Add the User Env Controls
 
-1. Navigate to **Stack > Goup PITCH ENV**.
-2. Duplicate Group PITCH ENV and rename it to "Group USER ENV".
-3. Look inside Group USER ENV. Connect the Value of each control template to the following zone parameters.
+1. Navigate to **Stack > Goup PITCH ENV**. Duplicate Group PITCH ENV and rename it to "Group USER ENV".
+
+![Creating a Modulation Matrix Stack USER ENV Group](../images/Creating-a-Mod-Matrix-Stack-UserEnv-Group.png)
+
+2. Look inside Group USER ENV. Connect the Value of each control template to the following zone parameters.
 
 |Template|Value|Zone Parameter|
 |:-|:-|:-|
@@ -444,6 +496,8 @@ You need to adjust the position and size of the current page tabs before adding 
 |Release_1|@0:Layer/@0:Zone/@id:e9|UserRelOffset|
 |Rel Level_1|@0:Layer/@0:Zone/@id:ec|UserLROffset|
 |Velocity_1|@0:Layer/@0:Zone/@id:8001e|User Env.VelocityToLevel|
+
+![Creating a Modulation Matrix Stack USER ENV Controls](../images/Creating-a-Mod-Matrix-Stack-UserEnv-Controls.png)
 
 The controls on the USER ENV page are now connected to the user envelope.
 
@@ -508,7 +562,7 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 
 #### Edit the MenuSourceRoot Template
 
-1. Go to the **Templates Tree**, navigate to **library > Tutorial Controls > Popup** and edit **MenuSourceRoot**.
+1. Go to the **Templates Tree**, navigate to **library > Tutorial Controls > Popup > MenuSourceRoot** and edit the template.
 2. Select the Aftertouch template and set its properties and template parameters as follows.
 
 #### Properties
@@ -525,6 +579,8 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |OnValue|9|
 |Value|@MenuValue|
 |Label|Aftertouch|
+
+![Creating a Modulation Matrix MenuSourceRoot Aftertouch](../images/Creating-a-Mod-Matrix-MenuSourceRoot-Aftertouch.png)
 
 3. Select the Mod Wheel template and set its properties and template parameters as follows.
 
@@ -543,6 +599,8 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |Value|@MenuValue|
 |Label|Mod Wheel|
 
+![Creating a Modulation Matrix MenuSourceRoot Mod Wheel](../images/Creating-a-Mod-Matrix-MenuSourceRoot-ModWheel.png)
+
 4. Select the Pitch Bend template and set its properties and template parameters as follows.
 
 #### Properties
@@ -559,6 +617,8 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |OnValue|7|
 |Value|@MenuValue|
 |Label|Pitch Bend|
+
+![Creating a Modulation Matrix MenuSourceRoot Pitch Bend](../images/Creating-a-Mod-Matrix-MenuSourceRoot-PitchBend.png)
 
 5. Select the Velocity template and set its properties and template parameters as follows.
 
@@ -577,6 +637,8 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |Value|@MenuValue|
 |Label|Velocity|
 
+![Creating a Modulation Matrix MenuSourceRoot Velocity](../images/Creating-a-Mod-Matrix-MenuSourceRoot-Velocity.png)
+
 6. Select the Key Follow template and set its properties and template parameters as follows.
 
 #### Properties
@@ -593,6 +655,8 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |OnValue|5|
 |Value|@MenuValue|
 |Label|Key Follow|
+
+![Creating a Modulation Matrix MenuSourceRoot Key Follow](../images/Creating-a-Mod-Matrix-MenuSourceRoot-KeyFollow.png)
 
 7. Duplicate the Pitch Env template, then rename the duplicate to "User Env" and set its properties and template parameters as follows.
 
@@ -612,9 +676,11 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 |Value|@MenuValue|
 |Label|User Env|
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
+![Creating a Modulation Matrix MenuSourceRoot User Env](../images/Creating-a-Mod-Matrix-MenuSourceRoot-UserEnv.png)
 
 At this point in the tutorial, the new source should work with drag and drop and be selectable from the modulation matrix.
+
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -633,6 +699,8 @@ local numRows = 8
 ```
 
 2. In the **GUI Tree**, navigate to **Stack > Group MATRIX > Template List**. Activate the V-Scroll Style.
+
+![Creating a Modulation Matrix Template List](../images/Creating-a-Mod-Matrix-TemplateList.png)
 
 The modulation matrix now has 8 rows, accessible via a vertical scrollbar.
 
@@ -693,6 +761,8 @@ defineParameter("DestIndex", "", 0, 0, 1000, 1, onDepthChanged)
 2. Click **Edit Script** ![Edit Element](../images/EditElement.PNG) to open the internal script editor.
 3. Add further destinations to the ``isPitchDest`` table. The indices in the ``isPitchDest``table must match the indices of the pitch destinations as previously defined in the ``destinations`` table in the MIDI script.
 
+![Creating a Modulation Matrix DepthSliderHorizontal](../images/Creating-a-Mod-Matrix-DepthSliderHorizontal.png)
+
 [Jump to Top ](#creating-a-modulation-matrix)
 
 ## Adding User Env Destinations
@@ -743,11 +813,19 @@ You need to add the User Env parameters to the MenuDestRoot template to make the
 |Value|@PopupVar|
 |Label|User Env|
 
+![Creating a Modulation Matrix MenuDestRoot User Env](../images/Creating-a-Mod-Matrix-MenuDestRoot-UserEnv.png)
+
 3. Navigate to **Variables > PopupVar** and add "MenuDestUserEnv" to the Popup List Variable.
 
 The entries in the Popup List Variable correspond to the names of the templates to be opened when navigating through the menu.
 
+![Creating a Modulation Matrix MenuDestRoot PopupVar](../images/Creating-a-Mod-Matrix-MenuDestRoot-PopupVar.png)
+
 4. Go back to the **Templates Tree** and navigate to **library > Tutorial Controls > Popup**. Duplicate the MenuDestPitchEnv template and rename the duplicate to "MenuDestUserEnv".
+
+![Creating a Modulation Matrix MenuDestUserEnv](../images/Creating-a-Mod-Matrix-MenuDestUserEnv.png)
+
+
 5. Edit MenuDestUserEnv and set the OnValue of the contained control templates as follows.
 
 |Template|OnValue|
@@ -760,11 +838,13 @@ The entries in the Popup List Variable correspond to the names of the templates 
 |Release|24|
 |Release Level|25|
 
+![Creating a Modulation Matrix MenuDestUserEnv Controls](../images/Creating-a-Mod-Matrix-MenuDestUserEnv-Controls.png)
+
 The Value and Label template parameters for each control template are already set correctly.
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
-
 At this point in the tutorial, the User Env destinations should be selectable from the modulation matrix.
+
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -781,6 +861,8 @@ Here, you can find the Example VST Preset with all the editing steps applied.
 The previous tutorial should have given you an idea of how to customize a modulation matrix to suit your particular instrument. The following is a brief description of the connections and the exchange of messages between the various templates and the UI and MIDI scripts.
 
 The UI script plays a central role in the modulation matrix and controls most of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements will help you to understand how the modulation matrix works. The following screenshot shows the [Template List](../../HALion-Macro-Page/pages/Template-List.md), which creates the rows and controls for the modulation matrix, with its template parameters linked to the parameters of the UI script. These script parameters are defined in the ``defineAllRowNamesParameter`` function. They control which zone parameters are connected to the modulation matrix and can be adjusted from there.
+
+![Creating a Modulation Matrix Template List](../images/Creating-a-Mod-Matrix-TemplateList.png)
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -856,6 +938,33 @@ CanDragMod = findEmptyMatrixRow() ~= nil
 >&#10069; Checking for empty modulation rows will only work if the ``AnySourceChanged`` parameter is connected to the MIDI script.
 
 [Jump to Top ](#creating-a-modulation-matrix)
+
+### Reset Modulation Row
+
+The UI script contains also a function for resetting a modulation row. It gets called when clicking the trash bin of a row.
+
+![Creating a Modulation Matrix Trash Bin](../images/Creating-a-Mod-Matrix-TrashBin.png)
+
+```lua
+function onDeleteRow(r)
+	print("Delete Row"..r)
+	if _G["ModDelete" .. r] == 0 then
+		return
+	end
+	local row = zone:getModulationMatrixRow(r)
+	if not row then
+		return
+	end
+	startUndoBlock("Delete Modulation Row " .. r)
+	local rowname = "ModRow"..r
+	midiModule:setParameter(rowname.."_Src1", 1)
+	midiModule:setParameter(rowname.."_Src2", 1)
+	midiModule:setParameter(rowname.."_Dest", 1)
+	row:setParameter("Destination.Depth", 0)
+	row:setParameter("Destination.Bypass", false)
+	endUndoBlock()
+end
+```
 
 ### Defining Modulation Sources and Detinations in the MIDI Script
 
