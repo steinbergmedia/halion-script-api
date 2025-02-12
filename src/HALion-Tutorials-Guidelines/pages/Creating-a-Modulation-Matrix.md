@@ -350,7 +350,7 @@ Together, MenuValue and OnValue control which destination is selected and displa
 
 At this point in the tutorial, the new destinations should work with drag and drop and be selectable from the modulation matrix.
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus II](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -680,7 +680,7 @@ Together, MenuValue and OnValue control which source is selected and displayed.
 
 At this point in the tutorial, the new source should work with drag and drop and be selectable from the modulation matrix.
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus II](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -844,7 +844,7 @@ The Value and Label template parameters for each control template are already se
 
 At this point in the tutorial, the User Env destinations should be selectable from the modulation matrix.
 
->&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md).
+>&#10069; If you want to learn more about multi-level pop-up menus, see [Custom Multi Level Menus II](./Custom-Multi-Level-Menus-II.md).
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
