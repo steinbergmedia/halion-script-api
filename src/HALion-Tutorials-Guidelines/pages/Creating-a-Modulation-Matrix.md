@@ -947,7 +947,6 @@ The UI script contains also a function for resetting a modulation row. It gets c
 
 ```lua
 function onDeleteRow(r)
-	print("Delete Row"..r)
 	if _G["ModDelete" .. r] == 0 then
 		return
 	end
