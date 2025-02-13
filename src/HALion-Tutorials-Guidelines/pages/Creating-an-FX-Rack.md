@@ -14,7 +14,7 @@ This tutorial describes how to create an FX Rack using a [Template List](../../H
 
 ![FX Rack with 4 Slots](../images/Creating-an-FX-Rack-4-Slots.png)
 
->&#10069; For a classic FX Chain instead of an FX Rack, see [Creating an FX Chain](./Creating-an-FX-Chain.md).
+>&#10069; For an example of an FX Chain instead of an FX Rack, see [Creating an FX Chain](./Creating-an-FX-Chain.md).
 
 ## Example VST Preset
 
@@ -42,7 +42,7 @@ The instructions that follow use the internal script editor.
 * You have an instrument with a macro page.
 * You have loaded both the preset [Creating an FX Rack 01.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2001.vstpreset) and your instrument into HALion.
 
-## Overview of Workflows
+## Workflow Overview
 
 * Adjust the number of slots in the UI script.
 * Add further effects to the UI and MIDI scripts and create templates for them. 
@@ -58,8 +58,7 @@ The FX Rack in the [Example VST Preset](#example-vst-preset) has four slots. You
 Let's increase the number of slots from four to five:
 
 1. In the **Macro Page Designer**, open the UI script in the internal script editor.
-1. Set the ``numFxSlots`` variable to 5.
-1. Update the UI, for example, by selecting a different program and then returning to the [Example VST Preset](#example-vst-preset). This will rebuild the macro page and apply your changes.
+2. Set the ``numFxSlots`` variable to 5.
 
 ```lua
 -- FX Rack and effects UI
@@ -67,6 +66,8 @@ Let's increase the number of slots from four to five:
 numFxSlots = 5
 
 ```
+
+3. Update the UI, for example, by selecting a different program and then returning to the [Example VST Preset](#example-vst-preset). This will rebuild the macro page and apply your changes.
 
 The FX Rack should now have five slots on the macro page and in the **Program Tree** structure.
 
@@ -116,7 +117,7 @@ Tremolo = {
 
 The code example above lists only the lines of code that need to be added to the ``effectDefaults`` table. The table lists the available effects and their parameters with names and defaults. The normalized range from 0 to 1 is used for the defaults. The defaults will be used when loading an effect.
 
->&#10069; A code example for writing effects and their settings to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
+>&#10069; For a code example on how to write effects and their settings to a table, see [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Modifying the Effect Selector
 

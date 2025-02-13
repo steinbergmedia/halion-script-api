@@ -10,11 +10,11 @@
 
 ---
 
-This tutorial describes how to create an FX Chain using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Chain provides several slots for loading a predefined set of effects using a [Custom Popup Menu](./Custom-Popup-Menus.md). Furthermore, you can rearrange effects with drag and drop.
+This tutorial describes how to create an FX Chain using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The FX Chain provides several slots for loading a predefined set of effects using a [Custom Popup Menu](./Custom-Popup-Menus.md). Furthermore, you can rearrange effects using drag and drop.
 
 ![FX Chain with 6 Slots](../images/Creating-an-FX-Chain-6-Slots.png)
 
->&#10069; For a classic FX Rack instead of an FX Chain, see [Creating an FX Rack](./Creating-an-FX-Rack.md).
+>&#10069; For an example of a classic FX Rack instead of an FX Chain, see [Creating an FX Rack](./Creating-an-FX-Rack.md).
 
 ## Example VST Preset
 
@@ -39,10 +39,10 @@ The instructions that follow use the internal script editor.
 
 ## Prerequisites
 
-* An instrument with macro page.
-* Load [Creating an FX Chain 01.vstpreset](../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset) and your instrument side-by-side into HALion.
+* You have an instrument with a macro page.
+* You have loaded both the preset [Creating an FX Chain 01.vstpreset](../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset) and your instrument into HALion.
 
-## Overview of Workflows
+## Workflow Overview
 
 * Adjust the number of slots in the UI script.
 * Add further effects to the UI script and create templates for them. 
@@ -87,7 +87,7 @@ To add additional effects, you need to edit the UI script, as well as modify and
 
 ### Editing the UI Script
 
-We will use the Clipper effect as a distortion. Therefore, we define ``fxType = "Clipper"`` and ``name = "Distortion"``. The value of ``fxType`` will be used for loading the effect uppon initialization and the value of ``name`` will be used for naming the effect in the **Program Tree**. Functions and templates will also refer to this name.
+We will use the Clipper effect as a distortion. Therefore, we define ``fxType = "Clipper"`` and ``name = "Distortion"``. The value of ``fxType`` is used for loading the effect upon initialization and the value of ``name`` is used for naming the effect in the **Program Tree**. Functions and templates will also refer to this name.
 
 1. In the **Macro Page Designer**, open the UI script in the internal script editor.
 1. In the ``effects`` table, between the entries for ``"Freq Shifter"`` and ``"Studio EQ"``, insert the following lines:
@@ -110,11 +110,11 @@ We will use the Clipper effect as a distortion. Therefore, we define ``fxType = 
 
 The code example above lists only the lines of code that need to be added to the ``effects`` table. The table lists the available effects and their parameters with names and default settings. The normalized range from 0 to 1 is used for the default settings. The default settings will be used when initializing the effects.
 
->&#10069; A code example for writing effects and their settings to a table can be found in [Snapshot Effects](./Snapshot-Effects.md).
+>&#10069; For a code example on how to write effects and their settings to a table, see [Snapshot Effects](./Snapshot-Effects.md).
 
 ### Creating a Template for the FX Slot
 
-Each effect has its own template for displaying in the slot when selected. Let's create a slot template for the Distortion effect by reusing an existing one.
+Each effect has its own template that is displayed in the slot when the effect is selected. Let's create a slot template for the Distortion effect by reusing an existing one.
 
 1. In the **Templates Tree**, navigate to 'library/FX Chain/FX Slots'.
 2. Copy and paste an existing slot template to the 'FX Slots' folder. You can copy any slot template except the 'FX_Slot' and 'FX_Slot_No_FX' templates.
@@ -146,11 +146,11 @@ The Distortion effect needs an FX panel. Let's create one by reusing an existing
 
 #### Switch, On and Disable
 
-The Switch, On, and Disable elements must all be connected to the Distortion's Bypass parameter. The easiest way to connect the Bypass parameter is by drag-and-drop from the **Parameter List**. To do this, you need to select the Distortion in the **Program Tree** and open the **Parameter List**.
+The Switch, On, and Disable elements must all be connected to the Distortion's Bypass parameter. The easiest way to connect the Bypass parameter is by using drag and drop from the **Parameter List**. For this, you need to select the Distortion effect in the **Program Tree** and open the **Parameter List**.
 
-1. Select the element 'Switch' and drag-and-drop the Distortion's Bypass parameter to its Value.
-1. Select the element 'On', go to the **Template Parameters** section and drag-and-drop the Distortion's Bypass parameter to the Value.
-1. Select the element 'Disable' and drag-and-drop the Distortion's Bypass parameter to its Value.
+1. In the **GUI Tree**, select the 'Switch' element and drag the Distortion's Bypass parameter from the **Parameter List** onto the **Value** field.
+1. Select the 'On' element, go to the **Template Parameters** section and drag the Distortion's Bypass parameter from the **Parameter List** onto the **Value** field.
+1. Select the 'Disable' element and drag the Distortion's Bypass parameter from the **Parameter List** onto the **Value** field.
 
 ![Distortion FX Editor](../images/Creating-an-FX-Chain-FX-Editor-Distortion.png)
 
@@ -158,7 +158,7 @@ The Switch, On, and Disable elements must all be connected to the Distortion's B
 
 For displaying the correct title:
 
-* Select the element 'Label' and set its Text to "DISTORTION".
+* Select the 'Label' element and set its Text to "DISTORTION".
 
 |Property|Value|
 |:-|:-|
@@ -244,9 +244,9 @@ Seven knobs are required for the distortion, six knobs for tone control and one 
 |Width|60|
 |Height|63|
 
-Each knob's template parameters must be configured so that they will have the correct display and connection. The easiest way to connect a parameter is by drag-and-drop from the **Parameter List**. To do this, you need to select the Distortion in the **Program Tree** and open the **Parameter List**.
+Each knob's template parameters must be configured so that they will have the correct display and connection. The easiest way to connect a parameter is by using drag and drop from the **Parameter List**. To do this, you need to select the Distortion effect in the **Program Tree** and open the **Parameter List**.
 
-3. For each knob, drag and drop the respective Distortion parameter from the **Parameter List** to the Template Parameters' Value and set the Template Parameters Label and Unit as follows.
+4. For each knob, drag the respective Distortion parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set the Label and Unit of the Template Parameters as follows.
 
 **Knob Template Input Gain**
 
@@ -296,7 +296,7 @@ Each knob's template parameters must be configured so that they will have the co
 |Label|OUT GAIN|
 |Unit|dB|
 
-4. The Mix knob template is the seventh and last knob you have to adjust. Drag and drop the Distortion's mix parameter from the **Parameter List** to the Template Parameters' Value and set the Template Parameters Label and Unit as follows.
+5. The Mix knob template is the seventh and last knob that you have to adjust. Drag the Distortion's Mix parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set Label and Unit as follows.
 
 **Knob Template Mix**
 
@@ -306,7 +306,7 @@ Each knob's template parameters must be configured so that they will have the co
 |Label|MIX|
 |Unit|%|
 
-5. Finally, update the UI, for example, by selecting a different program and then returning to the [Example VST Preset](#example-vst-preset). This will rebuild the macro page and apply your changes.
+6. Finally, update the UI, for example, by selecting a different program and then returning to the [Example VST Preset](#example-vst-preset). This will rebuild the macro page and apply your changes.
 
 ![Distortion Template](../images/Creating-an-FX-Chain-Distortion.png)
 
@@ -340,40 +340,40 @@ Below follows a brief description of the connections and the message exchange wi
 
 ### FX Handling
 
-1. When an effect is loaded into a slot, the UI script's ``"fxMenuSelect`` parameter is changed and the ``onFxMenuChanged`` function is called.
-1. The UI script's ``onFxMenuChanged`` function sets the MIDI script's ``selectFx`` parameter which uses a table to transfer information about which effect to load. The ``selectFx`` parameter calls the ``onSelectFx`` function in the MIDI script, which loads the effect on the bus.
-1. After the MIDI script's ``onSelectFx`` function has loaded the effect, the ``sendUpdateBus`` parameter is set. The MIDI script's ``sendUpdateBus`` parameter is connected to the UI script's ``updateBus`` parameter.
-1. When the UI script's ``updateBus`` parameter is changed, the ``onBusChanged`` function is called and the associated parameters and templates of the FX Chain are updated by calling ``defineFxSwitchesParam`` and ``defineFxMenuParam``.
-1. After the UI script's ``onBusChanged`` function has updated the FX Chain's templates, the ``onFxFocusChanged`` function is called. The FX Editor template uses [Dynamic Template References](./Dynamic-Template-References.md), i.e., the template it displays is defined by the ``@fxEditor`` UI variable. The ``onFxFocusChanged`` function defines the effect panel by setting the ``@fxEditor`` UI variable of the FX Editor template to the corresponding effect template.
+1. When an effect is loaded into a slot, the ``"fxMenuSelect`` parameter of the UI script is changed and the ``onFxMenuChanged`` function is called.
+1. The ``onFxMenuChanged`` function of the UI script sets the ``selectFx`` parameter of the MIDI script, which uses a table to transfer information about which effect to load. The ``selectFx`` parameter calls the ``onSelectFx`` function in the MIDI script, which loads the effect on the bus.
+1. After the ``onSelectFx`` function of the MIDI script has loaded the effect, the ``sendUpdateBus`` parameter is set. The ``sendUpdateBus`` parameter of the MIDI script is connected to the ``updateBus`` parameter of the UI script.
+1. When the ``updateBus`` parameter of the UI script is changed, the ``onBusChanged`` function is called and the associated parameters and templates of the FX Chain are updated by calling ``defineFxSwitchesParam`` and ``defineFxMenuParam``.
+1. After the ``onBusChanged`` function of the UI script has updated the FX Chain templates, the ``onFxFocusChanged`` function is called. The FX Editor template uses [Dynamic Template References](./Dynamic-Template-References.md), i.e., the template it displays is defined by the ``@fxEditor`` UI variable. The ``onFxFocusChanged`` function defines the effect panel by setting the ``@fxEditor`` UI variable of the FX Editor template to the corresponding effect template.
 
 ![FX Chain FX Editor Template](../images/Creating-an-FX-Chain-FX-Editor.png)
 
 ### FX Drag and Drop Handling
 
-1. When an effect is dragged and dropped to a new position in the FX Chain, the UI script's ``onTemplateListViewDrop`` function is called.
-1. The UI script's ``onTemplateListViewDrop`` function sets the MIDI script's ``moveFx`` parameter. This calls the MIDI script's ``onMoveFx`` function, which repositions the effect on the bus.
-1. After the ``onMoveFx`` function has moved the effect, the ``sendUpdateBus`` parameter is set. The MIDI script's ``sendUpdateBus`` parameter is connected to the UI script's ``updateBus`` parameter.
+1. When an effect is dragged onto a new position in the FX Chain, the ``onTemplateListViewDrop`` function of the UI script is called.
+1. The ``onTemplateListViewDrop`` function of the UI script sets the ``moveFx`` parameter of the MIDI script. This calls the ``onMoveFx`` function of the MIDI script, which repositions the effect on the bus.
+1. After the ``onMoveFx`` function has moved the effect, the ``sendUpdateBus`` parameter is set. The ``sendUpdateBus`` parameter of the MIDI script is connected to the ``updateBus`` parameter of the UI script.
 
 All other steps are the same as in the [FX Handling](#fx-handling) section, starting with step four.
 
-## Transfering the FX Chain to Your Instrument
+## Transferring the FX Chain to Your Instrument
 
-In order to integrate the FX Chain into your macro page, you need to do the following.
+To integrate the FX Chain into your macro page, you need to do the following:
 
-1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrument must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
+1. Copy the bus and effects from the **Program Tree** to your instrument. The program structure of your instrument must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 
 ![Program Tree FX Bus](../images/Creating-an-FX-Chain-FX-Bus.png)
 
-2. Copy all [Templates](../../HALion-Macro-Page/pages/Templates.md). The [Templates](../../HALion-Macro-Page/pages/Templates.md) in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. Later, you can change the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
+2. Copy all the templates from the example VST preset that you edited in the steps above and paste them to the **Templates Tree** of your macro page. The templates in the example VST preset use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) libraries. In a later step, you can change these resources to match the look of your instrument.
 
 ![Templates](../images/Creating-an-FX-Chain-FX-Chain-Templates.png)
 
-3. Copy the [Templates](../../HALion-Macro-Page/pages/Templates.md) and Variables from the **GUI Tree** to your macro page.
+3. Copy the Templates and Variables from the **GUI Tree** of the example VST preset to your macro page.
 
 ![GUI Tree](../images/Creating-an-FX-Chain-GUI-Tree.png)
 
 4. Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.
-5. Connect the MIDI script's ``sendUpdateBus`` parameter with the UI script's ``updateBus`` parameter.
+5. Connect the ``sendUpdateBus`` parameter of the MIDI script with the ``updateBus`` parameter of the UI script.
 
 ![updateBus Parameter](../images/Creating-an-FX-Chain-updateBus.png)
 
