@@ -985,7 +985,7 @@ function defineAllModParameters()
 	end
 end
 ```
-The function defines the parameters for each row that select the two possible modulation sources and the destination.
+The function defines the parameters for each row that select the two possible modulation sources and the destination. The parameters provide the sources and destinations as defined in the associated tables.
 
 When a source is selected, the ``sourceChanged`` function is called, which sets either source 1 or source 2 in the specified row. The row and source are specified by the function's arguments.
 
