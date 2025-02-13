@@ -899,7 +899,7 @@ function addModRow(srcstr, dest)
 end
 ```
 
-The ``findEmptyMatrixRow`` function called in the ``addModRow`` function checks if there is an empty row available in the modulation matrix and returns its index. Returns ``nil`` if there is no row available.
+The ``findEmptyMatrixRow`` function called in the ``addModRow`` function checks if there is an empty row available in the modulation matrix and returns its index. It returns ``nil`` if there is no row available.
 
 ```lua
 function findEmptyMatrixRow()
@@ -925,7 +925,7 @@ function translateModSource(str)
 end
 ```
 
-The if statement of the ``addModRow`` function sets the source and destination parameters of the MIDI script, which in turn assigns the modulation.
+The instructions inside the if statement of the ``addModRow`` function set the source and destination parameters of the MIDI script, which in turn assigns the modulation.
 
 When assigning sources and destinations using the menus in the modulation matrix or by dragging and dropping, the MIDI script sets the ``AnySourceChanged`` parameter of the UI script, which calls the ``onAnySourcechanged`` function, which in turn checks if there are still rows available in the modulation matrix. If there aren't any free rows available, the ``CanDragMod`` variable will be ``false`` and you won't be able to drag and drop sources.
 
