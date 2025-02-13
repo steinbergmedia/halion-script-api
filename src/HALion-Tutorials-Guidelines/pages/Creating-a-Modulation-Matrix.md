@@ -61,6 +61,10 @@ The instructions that follow use the internal script editor.
 * Add the additional destinations and source to the modulation matrix menus and the associated UI and MIDI scripts.
 * Increase the number of rows in the modulation matrix.
 * Add the parameters of the User Env as destinations to the modulation matrix menus and the associated MIDI script.
+* Copy the templates and resources from the [Example VST Preset](#example-vst-preset) to your macro page.
+* Copy the code of the UI and MIDI scripts from the [Example VST Preset](#example-vst-preset) into the corresponding scripts of your instrument.
+* Change the look of the modulation matrix to match the look of your instrument.
+
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -935,7 +939,7 @@ defineParameter{name = "CanDragMod", default=true}
 CanDragMod = findEmptyMatrixRow() ~= nil
 ```
 
->&#10069; Checking for empty modulation rows will only work if the ``AnySourceChanged`` parameter is connected to the MIDI script.
+>&#10069; Checking for empty modulation rows will only work if the ``AnySourceChanged`` parameters are connected.
 
 [Jump to Top ](#creating-a-modulation-matrix)
 
@@ -1028,4 +1032,35 @@ function destChanged(row)
 	end
 end
 ```
+[Jump to Top ](#creating-a-modulation-matrix)
+
+## Transfering the Modulation Matrix to Your Instrument
+
+In order to integrate the moduation matrix into your macro page, you need to do the following.
+
+1. Copy all templates. The templates in the [Example VST Preset](#example-vst-preset) use [Resources](../../HALion-Macro-Page/pages/Resources.md) from the [Basic Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#basic-controls) and [Vector Controls](../../HALion-Macro-Page/pages/Exploring-Templates.md#additional-and-vector-controls) library. Later, you can change the [Resources](../../HALion-Macro-Page/pages/Resources.md) to match the look of your instrument.
+
+![Templates](../images/Creating-a-Mod-Matrix-Templates.png)
+
+2. Copy the templates from the **GUI Tree** to your macro page.
+
+![GUI Tree](../images/Creating-a-Mod-Matrix-GUI-Tree.png)
+
+3. Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.
+4. Connect the MIDI script's ``AnySourceChanged`` parameter with the UI script's ``AnySourceChanged`` parameter.
+
+![AnySourceChanged Parameter](../images/Creating-a-Mod-Matrix-AnySourceChanged.png)
+
+>&#10069; Checking for empty modulation rows will only work if the ``AnySourceChanged`` parameters are connected.
+
+5. Finally, update the UI, for example, by selecting a different program and then selecting your instrument again. This will rebuild the macro page and apply your changes.
+
+[Jump to Top ](#creating-a-modulation-matrix)
+
+## Modulation Matrix with Custom Look
+
+You can customize the look and feel of your instrument entirely by using your own [Resources](../../HALion-Macro-Page/pages/Resources.md). As an example, the modulation matrix of FM Lab is shown in the following screenshot.
+
+![FM Lab Modulation Matrix](../images/Creating-a-Mod-Matrix-FM-Lab.png)
+
 [Jump to Top ](#creating-a-modulation-matrix)
