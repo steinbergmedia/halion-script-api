@@ -338,6 +338,7 @@
     - [Modulation Matrix for Sample Zones](./HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Sample-Zones.md)
     - [Modulation Matrix for Spectral Zones](./HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Spectral-Zones.md)
     - [Modulation Matrix for Synth Zones](./HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Synth-Zones.md)
+    - [Modulation Matrix for Wavetable Zones](./HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Wavetable-Zones.md)
     - [Multi-Level System Menus](./HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.md)
     - [Relative Paths](./HALion-Tutorials-Guidelines/pages/Relative-Paths.md)
     - [Snapshot Effects](./HALion-Tutorials-Guidelines/pages/Snapshot-Effects.md)

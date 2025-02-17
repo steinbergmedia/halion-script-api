@@ -1037,7 +1037,7 @@ end
 
 ## Modulation Matrix for Different Zone Types
 
-There are several how-tos available that provide a modulation matrix for each zone type that you can use as an example to create your own. See [Modulation Matrix for FM Zones](./Modulation-Matrix-for-FM-Zones.md), [Modulation Matrix for Grain Zones](./Modulation-Matrix-for-Grain-Zones.md), [Modulation Matrix for Sample Zones](./Modulation-Matrix-for-Sample-Zones.md), [Modulation Matrix for Spectral Zones](./Modulation-Matrix-for-Spectral-Zones.md), and [Modulation Matrix for Synth Zones](./Modulation-Matrix-for-Synth-Zones.md), repectively.
+There are several how-tos available that provide a modulation matrix for each zone type that you can use as an example to create your own. See [Modulation Matrix for FM Zones](./Modulation-Matrix-for-FM-Zones.md), [Modulation Matrix for Grain Zones](./Modulation-Matrix-for-Grain-Zones.md), [Modulation Matrix for Sample Zones](./Modulation-Matrix-for-Sample-Zones.md), [Modulation Matrix for Spectral Zones](./Modulation-Matrix-for-Spectral-Zones.md), [Modulation Matrix for Synth Zones](./Modulation-Matrix-for-Synth-Zones.md), and [Modulation Matrix for Wavetable Zones](./Modulation-Matrix-for-Wavetable-Zones.md).
 
 ## Transfering the Modulation Matrix to Your Instrument
 
