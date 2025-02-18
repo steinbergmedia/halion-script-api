@@ -2,7 +2,7 @@
 
 # Drag-and-Drop Sample Import
 
-Using a [Drop](../../HALion-Macro-Page/pages/Drop.md) control, the [Sample Display](../../HALion-Macro-Page/pages/Sample-Display.md) template, and a UI script, this how-to shows how to import samples by dragging and dropping them.
+For your macro page to accept sample import by drag and drop, you need a [Drop](../../HALion-Macro-Page/pages/Drop.md) control, the [Sample Display](../../HALion-Macro-Page/pages/Sample-Display.md) template, and a UI script.
 
 ## Example VST Preset
 
@@ -20,7 +20,7 @@ The following section describes how to access [Templates](../../HALion-Macro-Pag
 
 ## Prerequisites
 
-* A program with a sample zone and a macro page.
+* You have a program that contains a sample zone and a macro page.
 
 ## How the Elements Interact
 
@@ -34,7 +34,7 @@ You can find more properties inside the [Sample Display](../../HALion-Macro-Page
 
 ![Sample Display Properties](../images/Drag-and-Drop-Sample-Import-Sample-Display-Properties.png)
 
-The original UI script that came with the [Sample Display](../../HALion-Macro-Page/pages/Sample-Display.md) template has been replaced with the UI script on the macro page, primarily to implement the [Drag Group Callbacks](../../HALion-Macro-Page/pages/Drag-Group.md#drag-group-callbacks) needed for the drag-and-drop functionality. The [Drag Group Callbacks](../../HALion-Macro-Page/pages/Drag-Group.md#drag-group-callbacks) are called when you drop something on a [Drop](../../HALion-Macro-Page/pages/Drop.md) control.
+In the current example, the original UI script that came with the [Sample Display](../../HALion-Macro-Page/pages/Sample-Display.md) template has been replaced with the UI script on the macro page, primarily to implement the [Drag Group Callbacks](../../HALion-Macro-Page/pages/Drag-Group.md#drag-group-callbacks) needed for the drag-and-drop functionality. [Drag Group Callbacks](../../HALion-Macro-Page/pages/Drag-Group.md#drag-group-callbacks) are called when you drop something on a [Drop](../../HALion-Macro-Page/pages/Drop.md) control.
 
 ### SampleDropArea
 
@@ -108,6 +108,6 @@ defineParameter("SampleFileName", nil, "Drag a sample onto the waveform display 
 
 ### Info
 
-Hovering over the 'Info' button on the macro page, displays the sample's file path. The 'Info Button' [Template](../../HALion-Macro-Page/pages/Template.md) and the 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) are both linked to the ``@SampleInfo`` UI variable, which controls whether the 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) and its contents are displayed or not. The 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) contains a [Text](../../HALion-Macro-Page/pages/Text.md) and a [Decor](../../HALion-Macro-Page/pages/Decor-Control.md) control. The information to be displayed by the [Text](../../HALion-Macro-Page/pages/Text.md) control is set by the ``SampleFileName`` parameter of the UI script.
+Hovering over the 'Info' button on the macro page displays the file path of the sample. The 'Info Button' [Template](../../HALion-Macro-Page/pages/Template.md) and the 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) are both linked to the ``@SampleInfo`` UI variable, which controls whether the 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) and its contents are displayed. The 'Info' [Disable Group](../../HALion-Macro-Page/pages/Disable.md) contains a [Text](../../HALion-Macro-Page/pages/Text.md) and a [Decor](../../HALion-Macro-Page/pages/Decor-Control.md) control. The information to be displayed by the [Text](../../HALion-Macro-Page/pages/Text.md) control is set by the ``SampleFileName`` parameter of the UI script.
 
 ![Text Control](../images/Drag-and-Drop-Sample-Import-Text.png)

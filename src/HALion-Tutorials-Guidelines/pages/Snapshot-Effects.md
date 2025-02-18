@@ -10,15 +10,17 @@
 
 ---
 
-It can be useful to keep the properties and values of the effects on a bus in a table, for example, if you want to manage effects via script. The following script takes a snapshot of each effect and prints out a properly formatted Lua table of the effects' properties and values. Depending on the ``WithKeys`` parameter, the script will either print out a table with the name of the effect as the key for the table entries, or it will print out the table entries as an indexed array. If you want to use the printed table, copy and paste it into your script that manages the effects.
+It can be useful to save the properties and values of the effects that are used on a bus in a table, for example, if you want to manage effects via a script. The following script takes a snapshot of each effect and prints out a properly formatted Lua table containing the effect properties and values.
 
-1. Load a **Lua Script** MIDI module into the branch of the **Program Tree** which contains the bus and effects you want to print out as a table.
+1. Load a **Lua Script** MIDI module into the branch of the **Program Tree** which contains the bus and effects that you want to print out as a table.
 1. Load [SnapshotEffects.lua](../scripts/SnapshotEffects.lua) with the **Lua Script** MIDI module.
-1. Go to the **Parameter List**. Set the ``WithKeys`` parameter to On, if you want to print out a table with the name of the effect as the key for the table entries. Set the ``WithKeys`` parameter to Off, if you want to print out the table entries as an indexed array.
-1. Change the **Snapshot** parameter to print the table to the **Output** of the **Lua Script** MIDI module.
-1. To use the printed table, copy and paste it from the **Output** into your script that manages the effects.
+1. Go to the **Parameter List**.
+- Set the ``WithKeys`` parameter to On if you want to print out a table with the effect name as the key for the table entries.
+- Set the ``WithKeys`` parameter to Off if you want to print out the table entries as an indexed array.
+4. Change the **Snapshot** parameter to print the table to the **Output** of the **Lua Script** MIDI module.
+5. To use the printed table, copy and paste it from the **Output** into the script that manages the effects.
 
->&#10069; For an example of using a table like this to manage effects via script, see [Creating an FX Chain](./Creating-an-FX-Chain.md) or [Creating an FX Rack](./Creating-an-FX-Rack.md).
+>&#10069; For an example of using a table like this to manage effects via a script, see [Creating an FX Chain](./Creating-an-FX-Chain.md) or [Creating an FX Rack](./Creating-an-FX-Rack.md).
 
 ## Example
 
