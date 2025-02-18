@@ -2,9 +2,9 @@
 
 # Modulation Matrix for Synth Zones
 
-This how-to provides a modulation matrix for synth zones that you can use as an example to create your own.
+This how-to provides a modulation matrix for Synth zones that you can use as an example to create your own. There are no modulation source or destination controls on the macro page, only the modulation matrix with its controls, and the UI and MIDI scripts. The main focus is on the selection of modulation destinations, which have been chosen in accordance with the Synth zone.
 
-For other zone types, see [Modulation Matrix for FM Zones](./Modulation-Matrix-for-FM-Zones.md), [Modulation Matrix for Grain Zones](./Modulation-Matrix-for-Grain-Zones.md), [Modulation Matrix for Sample Zones](./Modulation-Matrix-for-Sample-Zones.md), [Modulation Matrix for Spectral Zones](./Modulation-Matrix-for-Spectral-Zones.md), and [Modulation Matrix for Wavetable Zones](./Modulation-Matrix-for-Wavetable-Zones.md).
+For a modulation matrix that matches a different zone type, see [Modulation Matrix for FM Zones](./Modulation-Matrix-for-FM-Zones.md), [Modulation Matrix for Grain Zones](./Modulation-Matrix-for-Grain-Zones.md), [Modulation Matrix for Sample Zones](./Modulation-Matrix-for-Sample-Zones.md), [Modulation Matrix for Spectral Zones](./Modulation-Matrix-for-Spectral-Zones.md), and [Modulation Matrix for Wavetable Zones](./Modulation-Matrix-for-Wavetable-Zones.md).
 
 
 ## Example VST Preset
@@ -15,4 +15,4 @@ For other zone types, see [Modulation Matrix for FM Zones](./Modulation-Matrix-f
 
 ## How the Elements Interact
 
-The modulation matrix is provided as-is, without detailed explanation. If you want to understand the inner workings of this modulation matrix, see [Creating a Modulation Matrix](./Creating-a-Modulation-Matrix.md).
+The modulation matrix is provided as-is, without detailed explanation. The [Creating a Modulation Matrix](./Creating-a-Modulation-Matrix.md) tutorial explains how this modulation matrix works.
