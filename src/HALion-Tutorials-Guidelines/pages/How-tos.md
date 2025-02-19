@@ -14,7 +14,7 @@
 * [Custom Popup Menus](./Custom-Popup-Menus.md)
 * [Drag-and-Drop Sample Import](./Drag-and-Drop-Sample-Import.md)
 * [Dynamic Template References](./Dynamic-Template-References.md)
-* [Key Range with Limitation](./Key-Range-with-Limitation.md)
+* [Key Range Limitation](./Key-Range-Limitation.md)
 * [Map Samples to Root Key](./Map-Samples-to-Root-Key.md)
 * [MIDI Note Parameters](./MIDI-Note-Parameters.md)
 * [Modifying SVGs with Multiple Objects](./Modifying-SVGs-with-Multiple-Objects.md)
