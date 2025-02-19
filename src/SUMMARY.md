@@ -329,7 +329,7 @@
     - [Custom Popup Menus](./HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.md)
     - [Drag-and-Drop Sample Import](./HALion-Tutorials-Guidelines/pages/Drag-and-Drop-Sample-Import.md)
     - [Dynamic Template References](./HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.md)
-    - [Key Range with Limitation](./HALion-Tutorials-Guidelines/pages/Key-Range-with-Limitation.md)
+    - [Key Range Limitation](./HALion-Tutorials-Guidelines/pages/Key-Range-Limitation.md)
     - [Map Samples to Root Key](./HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.md)
     - [MIDI Note Parameters](./HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.md)
     - [Modifying SVGs with Multiple Objects](./HALion-Tutorials-Guidelines/pages/Modifying-SVGs-with-Multiple-Objects.md)
