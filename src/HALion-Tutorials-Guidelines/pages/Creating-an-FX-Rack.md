@@ -251,6 +251,8 @@ To add more effects, repeat the steps described above, starting with [Adding Fur
 
 ## Final Example VST Preset
 
+![Creating an FX Rack Final](../images/Creating-an-FX-Rack-Final.png)
+
 Here, you can find the Example VST Preset with all the editing steps applied.
 
 * [Creating an FX Rack 02.vstpreset](../vstpresets/Creating%20an%20FX%20Rack%2002.vstpreset)

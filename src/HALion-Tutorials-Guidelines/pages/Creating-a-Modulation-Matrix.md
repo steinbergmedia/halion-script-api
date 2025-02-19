@@ -854,6 +854,8 @@ At this point in the tutorial, the User Env destinations should be selectable fr
 
 ## Final Example VST Preset
 
+![Creating a Modulation Matrix Final](../images/Creating-a-Mod-Matrix-Final.png)
+
 Here, you can find the Example VST Preset with all the editing steps applied.
 
 * [Creating a Modulation Matrix 02.vstpreset](../vstpresets/Creating%20a%20Modulation%20Matrix%2002.vstpreset)
