@@ -10,15 +10,13 @@
 
 ---
 
-HALion offers a wealth of modulation sources and destinations, more than a standard instrument needs. For your particular instrument, it is usually necessary to limit the selection of modulation sources and destinations to the ones you really need. This tutorial describes how to create and customize a modulation matrix using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The modulation matrix in this tutorial has a configurable number of rows and uses only some of the available modulation sources and destinations. The number of rows and the selection of modulation sources and destinations are defined in the UI and MIDI scripts, respectively. The menus for modulation sources and destinations use [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md) that you can define. This means that only the defined modulation sources and destinations will appear in these menus.
+HALion offers a wealth of modulation sources and destinations. When creating an instrument, it is recommended to limit the selection of modulation sources and destinations to those that are required by the instrument. This tutorial describes how to create and customize a modulation matrix using a [Template List](../../HALion-Macro-Page/pages/Template-List.md). The modulation matrix in this tutorial has a configurable number of rows and uses a subset of the available modulation sources and destinations. The number of rows and the selection of modulation sources and destinations are defined in UI and MIDI scripts, respectively. The menus for modulation sources and destinations use definable [Custom Multi Level Menus](./Custom-Multi-Level-Menus-II.md). Only the defined modulation sources and destinations appear on the menus.
 
 ![Creating a Modulation Matrix](../images/Creating-a-Mod-Matrix.png)
 
-The macro page provides controls for the destinations Pitch, Cutoff and Level. Page tabs provide access to the controls of the sources LFO 1, LFO 2, and Pitch Env, as well as the modulation matrix. You can assign sources and destinations using the menus in the modulation matrix or by using drag and drop.
+The macro page provides controls for the destinations Pitch, Cutoff, and Level. Page tabs provide access to the controls of the sources LFO 1, LFO 2, and Pitch Env and to the modulation matrix. You can assign sources and destinations using the menus in the modulation matrix or by dragging the page tab of a source to a destination.
 
-* Drag the page tab of the desired source to the destination of your choice.
-
-The next available row in the modulation matrix will be used for the drag and drop assignment. If there aren't any free rows available, you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know.
+When using drag and drop, the next available row in the modulation matrix will be used for the modulation assignment. If no free rows are available, sources cannot be assigned via drag and drop. If this is the case, an icon is shown in the header of the source tab.
 
 ![Creating a Modulation Matrix No Drag](../images/Creating-a-Mod-Matrix-NoDrag.png)
 
