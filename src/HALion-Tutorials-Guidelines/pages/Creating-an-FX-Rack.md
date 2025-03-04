@@ -126,7 +126,7 @@ The Select Effect menu is hierarchical. It has submenus for Modulation, Distorti
 1. In the **Macro Page Designer**, go to the **Templates Tree** and navigate to</br>'library/FX Rack/PopUps/FX Type/M_FX Type Mod'.
 1. Edit the 'M_FX Type Mod' template.
 1. In the **GUI Tree** copy and paste one of the existing [Templates](../../HALion-Macro-Page/pages/Template.md), e.g. the 'Phaser' template.
-1. Set the **Properties** of the new 'Tremolo' template as follows.
+1. Set the **Properties** of the new 'Tremolo' template as follows:
 
 ![Modulation Submenu](../images/Creating-an-FX-Rack-ModSubmenu.png)
 
@@ -139,7 +139,7 @@ The Select Effect menu is hierarchical. It has submenus for Modulation, Distorti
 |OnValue|4|
 
 5. Now, edit the 'M_FX Type Dist' and 'M_FX Type Time' templates.
-4. Set the OnValue of the the subsequent effects as follows.
+4. Set the OnValue of the the subsequent effects as follows:
 
 |Template|Property|Value|
 |:-|:-|:-|
@@ -163,7 +163,7 @@ The Tremolo effect needs an FX panel. Let's create one by reusing an existing ef
 
 The knob templates are inside the [Disable](../../HALion-Macro-Page/pages/Disable.md) control. The knobs can be configured with template parameters.
 
-* Set the **Template Parameters** as follows.
+* Set the **Template Parameters** as follows:
 
 ![Knob Templates](../images/Creating-an-FX-Rack-Knobs.png)
 
@@ -197,7 +197,7 @@ Now, the knobs control the effect parameters and display the corresponding param
 
 The ID of the Bypass parameter must be set.
 
-* Set the **Template Parameter** of the 'Active' template as follows.
+* Set the **Template Parameter** of the 'Active' template as follows:
 
 ![Active Template](../images/Creating-an-FX-Rack-Active.png)
 
@@ -219,7 +219,7 @@ The value of the [Disable](../../HALion-Macro-Page/pages/Disable.md) group must 
 
 The title of the effect must be changed.
 
-* Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control as follows.
+* Set the **Properties** of the [Label](../../HALion-Macro-Page/pages/Label.md) control as follows:
 
 ![Label Control](../images/Creating-an-FX-Rack-Label.png)
 
@@ -232,7 +232,7 @@ The title of the effect must be changed.
 
 The Preset Browser FX Rack template provides the subpreset management for each effect. It can be configured with template parameters.
 
-* Set the **Template Parameters** as follows.
+* Set the **Template Parameters** as follows:
 
 ![Preset Browser](../images/Creating-an-FX-Rack-PresetBrowser.png)
 
@@ -291,9 +291,9 @@ Below follows a brief description of the connections and the message exchange wi
 
 All other steps are the same as in the [FX Handling](#fx-handling) section, starting with step four.
 
-## Transfering the FX Rack to Your Instrument
+## Transferring the FX Rack to Your Instrument
 
-In order to integrate the FX Rack into your macro page, you need to do the following.
+To integrate the FX Rack into your macro page, you need to do the following:
 
 1. Copy the bus and effects in the **Program Tree**. The Program structure of your instrument must match the structure of the [Example VST Preset](#example-vst-preset) and your macro page must be attached to the topmost element in the **Program Tree**.
 

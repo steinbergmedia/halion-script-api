@@ -66,7 +66,7 @@ Let's increase the number of slots from six to seven:
 numFxSlots = 7
 
 ```
-3. In the **GUI Tree**, select the 'FX Chain' [Template List](../../HALion-Macro-Page/pages/Template-List.md). Set the position and size as follows.
+3. In the **GUI Tree**, select the 'FX Chain' [Template List](../../HALion-Macro-Page/pages/Template-List.md). Set the position and size as follows:
 
 |Property|Value|
 |:-|:-|
@@ -122,7 +122,7 @@ Each effect has its own template that is displayed in the slot when the effect i
 
 ![Distortion Slot Template](../images/Creating-an-FX-Chain-Slot-Template.png)
 
-4. In the **GUI Tree**, navigate to 'FX_Slot_Distortion/FX Type'. Set the Text property as follows.
+4. In the **GUI Tree**, navigate to 'FX_Slot_Distortion/FX Type'. Set the Text property as follows:
 
 ![Distortion FX Type](../images/Creating-an-FX-Chain-FX-Type.png)
 
@@ -168,7 +168,7 @@ For displaying the correct title:
 
 Seven knobs are required for the distortion, six knobs for tone control and one knob for the dry/wet mix.
 
-1. In the **GUI Tree**, navigate to 'FX_Editor_Distortion/Disable/Controls'. Set position and size as follows.
+1. In the **GUI Tree**, navigate to 'FX_Editor_Distortion/Disable/Controls'. Set position and size as follows:
 
 ![Distortion Controls](../images/Creating-an-FX-Chain-Controls.png)
 
@@ -180,7 +180,7 @@ Seven knobs are required for the distortion, six knobs for tone control and one 
 |Height|63|
 
 2. Duplicate the knob templates until you have six of them inside the 'Controls' [Group](../../HALion-Macro-Page/pages/Group.md).
-3. Set the properties of the knob templates as follows.
+3. Set the properties of the knob templates as follows:
 
 ![Distortion Knob Templates](../images/Creating-an-FX-Chain-Knob-Templates.png)
 
@@ -246,7 +246,7 @@ Seven knobs are required for the distortion, six knobs for tone control and one 
 
 Each knob's template parameters must be configured so that they will have the correct display and connection. The easiest way to connect a parameter is by using drag and drop from the **Parameter List**. To do this, you need to select the Distortion effect in the **Program Tree** and open the **Parameter List**.
 
-4. For each knob, drag the respective Distortion parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set the Label and Unit of the Template Parameters as follows.
+4. For each knob, drag the respective Distortion parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set the Label and Unit of the Template Parameters as follows:
 
 **Knob Template Input Gain**
 
@@ -296,7 +296,7 @@ Each knob's template parameters must be configured so that they will have the co
 |Label|OUT GAIN|
 |Unit|dB|
 
-5. The Mix knob template is the seventh and last knob that you have to adjust. Drag the Distortion's Mix parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set Label and Unit as follows.
+5. The Mix knob template is the seventh and last knob that you have to adjust. Drag the Distortion's Mix parameter from the **Parameter List** onto the **Value** field of the Template Parameter and set Label and Unit as follows:
 
 **Knob Template Mix**
 
