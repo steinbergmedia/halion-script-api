@@ -23,7 +23,7 @@ This callback is called when the script module receives a system exclusive messa
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.type**|The type of event (7 = data). See [Event Types](./Event-Types.md) for details.|number|
-|**.data**|An array with the bytes of the system exclusive message. To determine the number of bytes in the system-exclusive message, use the length operator ``#``. For the interpretation of these values, please consult the documentation of the MIDI data format of the device sending the system exclusive message.|table|
+|**.data**|An array with the bytes of the system exclusive message. To determine the number of bytes in the system-exclusive message, use the length operator ``#``. For the interpretation of these values, please consult the documentation of the MIDI data format of the device that is sending the system exclusive message.|table|
 |**.dataType**|Currently, there is only one data type (0 = sysex).|number|
 
 

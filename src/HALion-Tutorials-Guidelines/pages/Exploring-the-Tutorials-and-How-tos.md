@@ -12,7 +12,7 @@
 
 Many of the tutorials and how-tos provide downloadable VST presets, either as starting point or as fully working example for the introduced topic.
 
->&#10069; The minimum version for using the example VST presets is HALion 6.3.
+>&#10069; The minimum version for using the example VST presets is {{#include _Version.md}}.
 
 ## Using the Example VST Presets
 

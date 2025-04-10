@@ -1,4 +1,4 @@
-/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [How-tos](./How-tos.md) /
+/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Tutorials & Guidelines](./HALion-Tutorials-Guidelines.md) / [Tutorials](./Tutorials.md) /
 
 # Creating a Template List
 
@@ -30,7 +30,7 @@
 
 ## Creating a Basic Template List
 
-This first part of the tutorial illustrates only the creation of a basic template list without adding any further functionality.
+This first part of the tutorial illustrates the creation of a basic template list without adding further functionality.
 
 1. In the **Macro Page Designer**, go to the **GUI Tree** and create a [Template List](../../HALion-Macro-Page/pages/Template-List.md). Name it 'BasicList', for example.
 1. Go to the **Templates Tree** and create a [Template](../../HALion-Macro-Page/pages/Template.md). Name it 'RowEntry'.

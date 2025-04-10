@@ -228,3 +228,5 @@ function onTemplateListDropDone(viewname, draginfo, index, copy)
 	print("onTemplateListDropDone:", "viewname = "..viewname, "draginfo = "..draginfo, "index = "..index, "copy = "..tostring(copy))
 end
 ```
+
+>&#10069; For a more detailed example, see [Creating an FX Rack](../../HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.md).
