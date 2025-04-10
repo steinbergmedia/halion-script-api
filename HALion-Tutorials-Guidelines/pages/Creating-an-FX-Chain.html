@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Creating an FX Chain - HALion 7.1.30</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Diving-Deeper.html">Diving Deeper</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/Modulation-Destination-Types.html">Modulation Destination Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/setBypassNoteOff.html">setBypassNoteOff</a></li><li class="chapter-item "><a href="HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Template-List.html">Template List</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FlexPhraserStepSeq.html">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials &amp; Guidelines</li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Modulation-Matrix.html">Creating a Modulation Matrix</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html">Creating a Template List</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-an-FX-Chain.html">Creating an FX Chain</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.html">Creating an FX Rack</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Attribute-Rules.html">Using Attribute Rules</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-and-Modifying-SVGs.html">Animating and Modifying SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-SVGs-with-Additional-Parameters.html">Animating SVGs with Additional Parameters</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-Switches-Using-SVGs.html">Animating Switches Using SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Drag-and-Drop-Sample-Import.html">Drag-and-Drop Sample Import</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Key-Range-Limitation.html">Key Range Limitation</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modifying-SVGs-with-Multiple-Objects.html">Modifying SVGs with Multiple Objects</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-FM-Zones.html">Modulation Matrix for FM Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Grain-Zones.html">Modulation Matrix for Grain Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Sample-Zones.html">Modulation Matrix for Sample Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Spectral-Zones.html">Modulation Matrix for Spectral Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Synth-Zones.html">Modulation Matrix for Synth Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Wavetable-Zones.html">Modulation Matrix for Wavetable Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Snapshot-Effects.html">Snapshot Effects</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Mouse-States-in-SVGs.html">Using Mouse States in SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Working-with-Exported-Variables.html">Working with Exported Variables</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.1.30</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="./Tutorials.html">Tutorials</a> /</p>
+<h1 id="creating-an-fx-chain"><a class="header" href="#creating-an-fx-chain">Creating an FX Chain</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#example-vst-preset">Example VST Preset</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#workflow-overview">Workflow Overview</a></li>
+<li><a href="#adjusting-the-number-of-slots">Adjusting the Number of Slots</a></li>
+<li><a href="#adding-further-effects">Adding Further Effects</a>
+<ul>
+<li><a href="#editing-the-ui-script">Editing the UI Script</a></li>
+<li><a href="#creating-a-template-for-the-fx-slot">Creating a Template for the FX Slot</a></li>
+<li><a href="#creating-a-template-for-the-fx-panel">Creating a Template for the FX Panel</a></li>
+</ul>
+</li>
+<li><a href="#final-example-vst-preset">Final Example VST Preset</a></li>
+<li><a href="#how-the-elements-interact">How the Elements Interact</a>
+<ul>
+<li><a href="#fx-handling">FX Handling</a></li>
+<li><a href="#fx-drag-and-drop-handling">FX Drag and Drop Handling</a></li>
+</ul>
+</li>
+<li><a href="#transferring-the-fx-chain-to-your-instrument">Transferring the FX Chain to Your Instrument</a></li>
+<li><a href="#fx-chain-with-custom-look">FX Chain with Custom Look</a></li>
+</ul>
+<hr />
+<p>This tutorial describes how to create an FX Chain using a <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. The FX Chain provides several slots for loading a predefined set of effects using a <a href="./Custom-Popup-Menus.html">Custom Popup Menu</a>. Furthermore, you can rearrange effects using drag and drop.</p>
+<p><img src="../images/Creating-an-FX-Chain-6-Slots.png" alt="FX Chain with 6 Slots" /></p>
+<blockquote>
+<p>❕ For an example of a classic FX Rack instead of an FX Chain, see <a href="./Creating-an-FX-Rack.html">Creating an FX Rack</a>.</p>
+</blockquote>
+<h2 id="example-vst-preset"><a class="header" href="#example-vst-preset">Example VST Preset</a></h2>
+<ul>
+<li><a href="../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset">Creating an FX Chain 01.vstpreset</a></li>
+</ul>
+<p>The FX Chain in this example uses both UI and MIDI script functionality. The corresponding scripts are provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of slots and customize the look of the FX Chain without the risk of introducing errors. See <a href="#how-the-elements-interact">How the Elements Interact</a>.</p>
+<p>The following section describes how to access <a href="../../HALion-Macro-Page/pages/Template.html">Templates</a> and edit UI and MIDI scripts.</p>
+<ul>
+<li>Load <a href="../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset">Creating an FX Chain 01.vstpreset</a>.</li>
+</ul>
+<p><strong>To explore the templates in this example:</strong></p>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong>, go to the <strong>Templates Tree</strong> and select the template that you want to explore.</li>
+<li>Click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to examine the template.</li>
+</ol>
+<p><strong>To edit the UI script:</strong></p>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong> and select the topmost element in the <strong>GUI Tree</strong>.</li>
+<li>Go to the Properties section and click <strong>Edit Script</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the internal script editor.</li>
+</ol>
+<p><strong>To edit the MIDI script:</strong></p>
+<ol>
+<li>In the <strong>Program Tree</strong>, select the FX Chain MIDI Module.</li>
+<li>Go to the Sound editor and click <strong>Edit Script</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the internal script editor.</li>
+</ol>
+<p>The instructions that follow use the internal script editor.</p>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<ul>
+<li>You have an instrument with a macro page.</li>
+<li>You have loaded both the preset <a href="../vstpresets/Creating%20an%20FX%20Chain%2001.vstpreset">Creating an FX Chain 01.vstpreset</a> and your instrument into HALion.</li>
+</ul>
+<h2 id="workflow-overview"><a class="header" href="#workflow-overview">Workflow Overview</a></h2>
+<ul>
+<li>Adjust the number of slots in the UI script.</li>
+<li>Add further effects to the UI script and create templates for them.</li>
+<li>Copy the bus and effects from the <a href="#example-vst-preset">Example VST Preset</a> to your instrument.</li>
+<li>Copy the templates and resources from the <a href="#example-vst-preset">Example VST Preset</a> to your macro page.</li>
+<li>Copy the code of the UI and MIDI scripts from the <a href="#example-vst-preset">Example VST Preset</a> into the corresponding scripts of your instrument.</li>
+<li>Change the look of the FX Chain to match the look of your instrument.</li>
+</ul>
+<h2 id="adjusting-the-number-of-slots"><a class="header" href="#adjusting-the-number-of-slots">Adjusting the Number of Slots</a></h2>
+<p>The FX Chain in the <a href="#example-vst-preset">Example VST Preset</a> has six slots. You can adjust the number of slots in the FX Chain by setting the <code>numFxSlots</code> variable in the UI script to the desired value.</p>
+<p>Let's increase the number of slots from six to seven:</p>
+<ol>
+<li>In the <strong>Macro Page Designer</strong>, open the UI script in the internal script editor.</li>
+<li>Set the <code>numFxSlots</code> variable to 7.</li>
+</ol>
+<pre><code class="language-lua">-- FX Chain handling.
+
+numFxSlots = 7
+
+</code></pre>
+<ol start="3">
+<li>In the <strong>GUI Tree</strong>, select the 'FX Chain' <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. Set the position and size as follows:</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">21</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">100</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">555</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">55</td></tr>
+</tbody></table>
+</div>
+<ol start="4">
+<li>Update the UI, for example, by selecting a different program and then returning to the <a href="#example-vst-preset">Example VST Preset</a>. This will rebuild the macro page and apply your changes.</li>
+</ol>
+<p>The FX Chain should now have seven slots on the macro page.</p>
+<p><img src="../images/Creating-an-FX-Chain-7-Slots.png" alt="FX Chain with 7 Slots" /></p>
+<h2 id="adding-further-effects"><a class="header" href="#adding-further-effects">Adding Further Effects</a></h2>
+<p>To add additional effects, you need to edit the UI script, as well as modify and create the relevant <a href="../../HALion-Macro-Page/pages/Template.html">Templates</a>. Let's add <code>"Distortion"</code> to the selection of available effects.</p>
+<h3 id="editing-the-ui-script"><a class="header" href="#editing-the-ui-script">Editing the UI Script</a></h3>
+<p>We will use the Clipper effect as a distortion. Therefore, we define <code>fxType = "Clipper"</code> and <code>name = "Distortion"</code>. The value of <code>fxType</code> is used for loading the effect upon initialization and the value of <code>name</code> is used for naming the effect in the <strong>Program Tree</strong>. Functions and templates will also refer to this name.</p>
+<ol>
+<li>In the <strong>Macro Page Designer</strong>, open the UI script in the internal script editor.</li>
+<li>In the <code>effects</code> table, between the entries for <code>"Freq Shifter"</code> and <code>"Studio EQ"</code>, insert the following lines:</li>
+</ol>
+<pre><code class="language-lua">{ name = "Distortion",
+  fxType = "Clipper",
+  settings = {
+    outputgain = 0.5,
+    hpcutoff = 0,
+    hardclip = 0,
+    Oversample = 1,
+    lpcutoff = 1,
+    hardclipoffset = 0,
+    inputgain = 0.5,
+  },
+},	
+
+</code></pre>
+<p>The code example above lists only the lines of code that need to be added to the <code>effects</code> table. The table lists the available effects and their parameters with names and default settings. The normalized range from 0 to 1 is used for the default settings. The default settings will be used when initializing the effects.</p>
+<blockquote>
+<p>❕ For a code example on how to write effects and their settings to a table, see <a href="./Snapshot-Effects.html">Snapshot Effects</a>.</p>
+</blockquote>
+<h3 id="creating-a-template-for-the-fx-slot"><a class="header" href="#creating-a-template-for-the-fx-slot">Creating a Template for the FX Slot</a></h3>
+<p>Each effect has its own template that is displayed in the slot when the effect is selected. Let's create a slot template for the Distortion effect by reusing an existing one.</p>
+<ol>
+<li>In the <strong>Templates Tree</strong>, navigate to 'library/FX Chain/FX Slots'.</li>
+<li>Copy and paste an existing slot template to the 'FX Slots' folder. You can copy any slot template except the 'FX_Slot' and 'FX_Slot_No_FX' templates.</li>
+<li>Rename the new template to 'FX_Slot_Distortion' and click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" />.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-Slot-Template.png" alt="Distortion Slot Template" /></p>
+<ol start="4">
+<li>In the <strong>GUI Tree</strong>, navigate to 'FX_Slot_Distortion/FX Type'. Set the Text property as follows:</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-FX-Type.png" alt="Distortion FX Type" /></p>
+<h4 id="fx-type"><a class="header" href="#fx-type">FX Type</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Text</td><td style="text-align: left">Distortion</td></tr>
+</tbody></table>
+</div>
+<h3 id="creating-a-template-for-the-fx-panel"><a class="header" href="#creating-a-template-for-the-fx-panel">Creating a Template for the FX Panel</a></h3>
+<p>The Distortion effect needs an FX panel. Let's create one by reusing an existing effect template.</p>
+<ol>
+<li>In the <strong>Templates Tree</strong>, navigate to 'library/FX Chain/FX Editors'.</li>
+<li>Copy and paste an existing effect template to the 'FX Editors' folder. You can copy any effect template except the 'FX_Editor_No_FX' template.</li>
+<li>Rename the new template to 'FX_Editor_Distortion' and click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" />.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-Editor-Template.png" alt="Distortion Editor Template" /></p>
+<ol start="4">
+<li>Adjust the <strong>Properties</strong> of the controls and templates as described below.</li>
+</ol>
+<h4 id="switch-on-and-disable"><a class="header" href="#switch-on-and-disable">Switch, On and Disable</a></h4>
+<p>The Switch, On, and Disable elements must all be connected to the Distortion's Bypass parameter. The easiest way to connect the Bypass parameter is by using drag and drop from the <strong>Parameter List</strong>. For this, you need to select the Distortion effect in the <strong>Program Tree</strong> and open the <strong>Parameter List</strong>.</p>
+<ol>
+<li>In the <strong>GUI Tree</strong>, select the 'Switch' element and drag the Distortion's Bypass parameter from the <strong>Parameter List</strong> onto the <strong>Value</strong> field.</li>
+<li>Select the 'On' element, go to the <strong>Template Parameters</strong> section and drag the Distortion's Bypass parameter from the <strong>Parameter List</strong> onto the <strong>Value</strong> field.</li>
+<li>Select the 'Disable' element and drag the Distortion's Bypass parameter from the <strong>Parameter List</strong> onto the <strong>Value</strong> field.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-FX-Editor-Distortion.png" alt="Distortion FX Editor" /></p>
+<h4 id="label"><a class="header" href="#label">Label</a></h4>
+<p>For displaying the correct title:</p>
+<ul>
+<li>Select the 'Label' element and set its Text to "DISTORTION".</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Text</td><td style="text-align: left">DISTORTION</td></tr>
+</tbody></table>
+</div>
+<h4 id="knob-templates"><a class="header" href="#knob-templates">Knob Templates</a></h4>
+<p>Seven knobs are required for the distortion, six knobs for tone control and one knob for the dry/wet mix.</p>
+<ol>
+<li>In the <strong>GUI Tree</strong>, navigate to 'FX_Editor_Distortion/Disable/Controls'. Set position and size as follows:</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-Controls.png" alt="Distortion Controls" /></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">15</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">40</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">435</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<ol start="2">
+<li>Duplicate the knob templates until you have six of them inside the 'Controls' <a href="../../HALion-Macro-Page/pages/Group.html">Group</a>.</li>
+<li>Set the properties of the knob templates as follows:</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-Knob-Templates.png" alt="Distortion Knob Templates" /></p>
+<p><strong>Knob 1</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Input Gain</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob 2</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">HP Cutoff</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">75</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob 3</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Hardclip</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">150</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob 4</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Offset</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">225</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob 5</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">LP Cutoff</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">300</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob 6</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Output Gain</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">375</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Height</td><td style="text-align: left">63</td></tr>
+</tbody></table>
+</div>
+<p>Each knob's template parameters must be configured so that they will have the correct display and connection. The easiest way to connect a parameter is by using drag and drop from the <strong>Parameter List</strong>. To do this, you need to select the Distortion effect in the <strong>Program Tree</strong> and open the <strong>Parameter List</strong>.</p>
+<ol start="4">
+<li>For each knob, drag the respective Distortion parameter from the <strong>Parameter List</strong> onto the <strong>Value</strong> field of the Template Parameter and set the Label and Unit of the Template Parameters as follows:</li>
+</ol>
+<p><strong>Knob Template Input Gain</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.inputgain</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">IN GAIN</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">dB</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob Template HP Cutoff</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.hpcutoff</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">HIGHPASS</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">Hz</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob Template Hardclip</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.hardclip</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">HARDCLIP</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">%</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob Template Offset</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.hardclipoffset</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">OFFSET</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">%</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob Template LP Cutoff</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.lpcutoff</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">LOWPASS</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">Hz</td></tr>
+</tbody></table>
+</div>
+<p><strong>Knob Template Output Gain</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.outputgain</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">OUT GAIN</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">dB</td></tr>
+</tbody></table>
+</div>
+<ol start="5">
+<li>The Mix knob template is the seventh and last knob that you have to adjust. Drag the Distortion's Mix parameter from the <strong>Parameter List</strong> onto the <strong>Value</strong> field of the Template Parameter and set Label and Unit as follows:</li>
+</ol>
+<p><strong>Knob Template Mix</strong></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">Distortion.mix</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">MIX</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left">%</td></tr>
+</tbody></table>
+</div>
+<ol start="6">
+<li>Finally, update the UI, for example, by selecting a different program and then returning to the <a href="#example-vst-preset">Example VST Preset</a>. This will rebuild the macro page and apply your changes.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-Distortion.png" alt="Distortion Template" /></p>
+<p>To add more effects, repeat the steps described above, starting with <a href="#adding-further-effects">Adding Further Effects</a>, and adjust the values to match the particular effect.</p>
+<h2 id="final-example-vst-preset"><a class="header" href="#final-example-vst-preset">Final Example VST Preset</a></h2>
+<p><img src="../images/Creating-an-FX-Chain-Final.png" alt="Creating an FX Chain Final" /></p>
+<p>Here, you can find the Example VST Preset with all the editing steps applied.</p>
+<ul>
+<li><a href="../vstpresets/Creating%20an%20FX%20Chain%2002.vstpreset">Creating an FX Chain 02.vstpreset</a>.</li>
+</ul>
+<h2 id="how-the-elements-interact"><a class="header" href="#how-the-elements-interact">How the Elements Interact</a></h2>
+<p>The UI script plays a central role in the FX Chain and controls most of its actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements will help you to understand how the FX Chain works. The following screenshot shows the FX Chain template with its Template Parameters linked to the parameters of the UI script. These script parameters control how the effects chain is displayed on the macro page.</p>
+<p><img src="../images/Creating-an-FX-Chain-Template-List.png" alt="FX Chain Template List" /></p>
+<p>The UI script also contains print functions that are commented out. The print functions can be used to track the function calls.</p>
+<ol>
+<li>Go to the <strong>Macro Page Designer</strong>.</li>
+<li>Open the UI script in the internal script editor and remove the comments <code>--</code> before each print function.</li>
+<li>To monitor the UI script's output messages, click <strong>Show/Hide Script Output Messages</strong> <img src="../images/ShowHideScriptOutputMessages.png" alt="Show/Hide Script Output Messages" />.</li>
+<li>Activate <strong>Test Macro Page</strong> <img src="../images/TestMacroPage-On.PNG" alt="Test Macro Page" />.</li>
+<li>Operate the FX Chain in the <strong>Macro Page Designer</strong> (not the <strong>Macro Page Editor</strong>).</li>
+</ol>
+<blockquote>
+<p>❕ You must operate the FX Chain in the <strong>Macro Page Designer</strong>, otherwise the output messages will not be correct.</p>
+</blockquote>
+<p>Below follows a brief description of the connections and the message exchange within the FX Chain.</p>
+<h3 id="fx-handling"><a class="header" href="#fx-handling">FX Handling</a></h3>
+<ol>
+<li>When an effect is loaded into a slot, the <code>"fxMenuSelect</code> parameter of the UI script is changed and the <code>onFxMenuChanged</code> function is called.</li>
+<li>The <code>onFxMenuChanged</code> function of the UI script sets the <code>selectFx</code> parameter of the MIDI script, which uses a table to transfer information about which effect to load. The <code>selectFx</code> parameter calls the <code>onSelectFx</code> function in the MIDI script, which loads the effect on the bus.</li>
+<li>After the <code>onSelectFx</code> function of the MIDI script has loaded the effect, the <code>sendUpdateBus</code> parameter is set. The <code>sendUpdateBus</code> parameter of the MIDI script is connected to the <code>updateBus</code> parameter of the UI script.</li>
+<li>When the <code>updateBus</code> parameter of the UI script is changed, the <code>onBusChanged</code> function is called and the associated parameters and templates of the FX Chain are updated by calling <code>defineFxSwitchesParam</code> and <code>defineFxMenuParam</code>.</li>
+<li>After the <code>onBusChanged</code> function of the UI script has updated the FX Chain templates, the <code>onFxFocusChanged</code> function is called. The FX Editor template uses <a href="./Dynamic-Template-References.html">Dynamic Template References</a>, i.e., the template it displays is defined by the <code>@fxEditor</code> UI variable. The <code>onFxFocusChanged</code> function defines the effect panel by setting the <code>@fxEditor</code> UI variable of the FX Editor template to the corresponding effect template.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-FX-Editor.png" alt="FX Chain FX Editor Template" /></p>
+<h3 id="fx-drag-and-drop-handling"><a class="header" href="#fx-drag-and-drop-handling">FX Drag and Drop Handling</a></h3>
+<ol>
+<li>When an effect is dragged onto a new position in the FX Chain, the <code>onTemplateListViewDrop</code> function of the UI script is called.</li>
+<li>The <code>onTemplateListViewDrop</code> function of the UI script sets the <code>moveFx</code> parameter of the MIDI script. This calls the <code>onMoveFx</code> function of the MIDI script, which repositions the effect on the bus.</li>
+<li>After the <code>onMoveFx</code> function has moved the effect, the <code>sendUpdateBus</code> parameter is set. The <code>sendUpdateBus</code> parameter of the MIDI script is connected to the <code>updateBus</code> parameter of the UI script.</li>
+</ol>
+<p>All other steps are the same as in the <a href="#fx-handling">FX Handling</a> section, starting with step four.</p>
+<h2 id="transferring-the-fx-chain-to-your-instrument"><a class="header" href="#transferring-the-fx-chain-to-your-instrument">Transferring the FX Chain to Your Instrument</a></h2>
+<p>To integrate the FX Chain into your macro page, you need to do the following:</p>
+<ol>
+<li>Copy the bus and effects from the <strong>Program Tree</strong> to your instrument. The program structure of your instrument must match the structure of the <a href="#example-vst-preset">Example VST Preset</a> and your macro page must be attached to the topmost element in the <strong>Program Tree</strong>.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-FX-Bus.png" alt="Program Tree FX Bus" /></p>
+<ol start="2">
+<li>Copy all the templates from the example VST preset that you edited in the steps above and paste them to the <strong>Templates Tree</strong> of your macro page. The templates in the example VST preset use <a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a> from the <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> and <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#additional-and-vector-controls">Vector Controls</a> libraries. In a later step, you can change these resources to match the look of your instrument.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-FX-Chain-Templates.png" alt="Templates" /></p>
+<ol start="3">
+<li>Copy the Templates and Variables from the <strong>GUI Tree</strong> of the example VST preset to your macro page.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-GUI-Tree.png" alt="GUI Tree" /></p>
+<ol start="4">
+<li>Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.</li>
+<li>Connect the <code>sendUpdateBus</code> parameter of the MIDI script with the <code>updateBus</code> parameter of the UI script.</li>
+</ol>
+<p><img src="../images/Creating-an-FX-Chain-updateBus.png" alt="updateBus Parameter" /></p>
+<blockquote>
+<p>❕ The FX Chain will only work if this connection exists.</p>
+</blockquote>
+<ol start="6">
+<li>Finally, update the UI, for example, by selecting a different program and then selecting your instrument again. This will rebuild the macro page and apply your changes.</li>
+</ol>
+<h2 id="fx-chain-with-custom-look"><a class="header" href="#fx-chain-with-custom-look">FX Chain with Custom Look</a></h2>
+<p>You can customize the look and feel of your instrument entirely by using your own <a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a>. As an example, the FX chain of Electric Bass is shown in the following screenshot.</p>
+<p><img src="../images/Creating-an-FX-Chain-E-Bass.png" alt="Electric Bass" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

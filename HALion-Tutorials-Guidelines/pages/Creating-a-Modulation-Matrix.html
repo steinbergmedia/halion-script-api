@@ -1,0 +1,1164 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js steinberg-light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Creating a Modulation Matrix - HALion 7.1.30</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-image"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="HALion-Developer-Resource.html">HALion Developer Resource</a></li><li class="chapter-item affix "><li class="part-title">HALion Script</li><li class="chapter-item "><a href="HALion-Script/pages/HALion-Script.html">HALion Script</a></li><li class="chapter-item "><a href="HALion-Script/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/What-is-HALion-Script.html">What is HALion Script?</a></li><li class="chapter-item "><a href="HALion-Script/pages/Exploring-the-Code-Examples.html">Exploring the Code Examples</a></li><li class="chapter-item "><a href="HALion-Script/pages/Lua-Syntax-Highlighting.html">Lua Syntax Highlighting</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Diving-Deeper.html">Diving Deeper</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Working-with-Objects.html">Working with Objects</a></li><li class="chapter-item "><a href="HALion-Script/pages/Working-with-UI-Scripts.html">Working with UI Scripts</a></li><li class="chapter-item "><a href="HALion-Script/pages/Threads-in-HALion.html">Threads in HALion</a></li><li class="chapter-item "><a href="HALion-Script/pages/Script-Initialization.html">Script Initialization</a></li><li class="chapter-item "><a href="HALion-Script/pages/Creating-Parameters.html">Creating Parameters</a></li><li class="chapter-item "><a href="HALion-Script/pages/Working-with-Parameters.html">Working with Parameters</a></li><li class="chapter-item "><a href="HALion-Script/pages/Using-Slot-Local-Variables.html">Using Slot Local Variables</a></li><li class="chapter-item "><a href="HALion-Script/pages/Protecting-Layers.html">Protecting Layers</a></li><li class="chapter-item "><a href="HALion-Script/pages/Managing-Script-Modules.html">Managing Script Modules</a></li><li class="chapter-item "><a href="HALion-Script/pages/Using-External-Files.html">Using External Files</a></li><li class="chapter-item "><a href="HALion-Script/pages/Debugging-with-LDT.html">Debugging with LDT</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Updates.html">Updates</a></li><li class="chapter-item "><a href="HALion-Script/pages/Functions-by-Subject.html">Functions by Subject</a></li><li class="chapter-item "><a href="HALion-Script/pages/Class-Reference.html">Class Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Audio-File.html">Audio File</a></li><li class="chapter-item "><a href="HALion-Script/pages/Element.html">Element</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Bus.html">Bus</a></li><li class="chapter-item "><a href="HALion-Script/pages/Effect.html">Effect</a></li><li class="chapter-item "><a href="HALion-Script/pages/Instance.html">Instance</a></li><li class="chapter-item "><a href="HALion-Script/pages/Layer.html">Layer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/Program.html">Program</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/MidiModule.html">MidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/ModulationMatrixRow.html">ModulationMatrixRow</a></li><li class="chapter-item "><a href="HALion-Script/pages/Slot.html">Slot</a></li><li class="chapter-item "><a href="HALion-Script/pages/Zone.html">Zone</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Event.html">Event</a></li><li class="chapter-item "><a href="HALion-Script/pages/LoadProgress.html">LoadProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/ParameterDefinition.html">ParameterDefinition</a></li></ol></li><li class="chapter-item "><a href="HALion-Script/pages/Reference.html">Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Script/pages/addLayerPassword.html">addLayerPassword</a></li><li class="chapter-item "><a href="HALion-Script/pages/addQCAssignment.html">addQCAssignment</a></li><li class="chapter-item "><a href="HALion-Script/pages/afterTouch.html">afterTouch</a></li><li class="chapter-item "><a href="HALion-Script/pages/AlternateData-Table.html">AlternateData Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/analyzePitch.html">analyzePitch</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendBus.html">appendBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendEffect.html">appendEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendLayer.html">appendLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendLayerAsync.html">appendLayerAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendMidiModule.html">appendMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/appendZone.html">appendZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/assignAutomation.html">assignAutomation</a></li><li class="chapter-item "><a href="HALion-Script/pages/AudioFileopen.html">AudioFile.open</a></li><li class="chapter-item "><a href="HALion-Script/pages/beat2ms.html">beat2ms</a></li><li class="chapter-item "><a href="HALion-Script/pages/Bus-Constructor.html">Bus Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Bypass-Masks.html">Bypass Masks</a></li><li class="chapter-item "><a href="HALion-Script/pages/calcModulation.html">calcModulation</a></li><li class="chapter-item "><a href="HALion-Script/pages/cancelDecompose.html">cancelDecompose</a></li><li class="chapter-item "><a href="HALion-Script/pages/cancelPitchAnalysis.html">cancelPitchAnalysis</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeNoteExpression.html">changeNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/changePan.html">changePan</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeTune.html">changeTune</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeVolume.html">changeVolume</a></li><li class="chapter-item "><a href="HALion-Script/pages/changeVolumedB.html">changeVolumedB</a></li><li class="chapter-item "><a href="HALion-Script/pages/clone.html">clone</a></li><li class="chapter-item "><a href="HALion-Script/pages/controlChange.html">controlChange</a></li><li class="chapter-item "><a href="HALion-Script/pages/Controller-Numbers.html">Controller Numbers</a></li><li class="chapter-item "><a href="HALion-Script/pages/decompose.html">decompose</a></li><li class="chapter-item "><a href="HALion-Script/pages/Decompose-Output-Modes.html">Decompose Output Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineModulation.html">defineModulation</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineParameter.html">defineParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/defineSlotLocal.html">defineSlotLocal</a></li><li class="chapter-item "><a href="HALion-Script/pages/Effect-Constructor.html">Effect Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/endUndoBlock.html">endUndoBlock</a></li><li class="chapter-item "><a href="HALion-Script/pages/Event-Constructor.html">Event Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Event-Types.html">Event Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/fade.html">fade</a></li><li class="chapter-item "><a href="HALion-Script/pages/findBusses.html">findBusses</a></li><li class="chapter-item "><a href="HALion-Script/pages/findChildren.html">findChildren</a></li><li class="chapter-item "><a href="HALion-Script/pages/findEffects.html">findEffects</a></li><li class="chapter-item "><a href="HALion-Script/pages/findLayers.html">findLayers</a></li><li class="chapter-item "><a href="HALion-Script/pages/findMidiModules.html">findMidiModules</a></li><li class="chapter-item "><a href="HALion-Script/pages/findSlots.html">findSlots</a></li><li class="chapter-item "><a href="HALion-Script/pages/findZones.html">findZones</a></li><li class="chapter-item "><a href="HALion-Script/pages/forgetAutomation.html">forgetAutomation</a></li><li class="chapter-item "><a href="HALion-Script/pages/getAllocatedMemory.html">getAllocatedMemory</a></li><li class="chapter-item "><a href="HALion-Script/pages/getAutomationIndex.html">getAutomationIndex</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBarDuration.html">getBarDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatDuration.html">getBeatDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatTime.html">getBeatTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBeatTimeInBar.html">getBeatTimeInBar</a></li><li class="chapter-item "><a href="HALion-Script/pages/getBus.html">getBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/getCC.html">getCC</a></li><li class="chapter-item "><a href="HALion-Script/pages/getChild.html">getChild</a></li><li class="chapter-item "><a href="HALion-Script/pages/getContext.html">getContext</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeOutputPath.html">getDecomposeOutputPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeProgress.html">getDecomposeProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDecomposeSettings.html">getDecomposeSettings</a></li><li class="chapter-item "><a href="HALion-Script/pages/getDisplayString.html">getDisplayString</a></li><li class="chapter-item "><a href="HALion-Script/pages/getEffect.html">getEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/getElement.html">getElement</a></li><li class="chapter-item "><a href="HALion-Script/pages/getFreeVoices.html">getFreeVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getHostName.html">getHostName</a></li><li class="chapter-item "><a href="HALion-Script/pages/getHostVersion.html">getHostVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getKeyProperties.html">getKeyProperties</a></li><li class="chapter-item "><a href="HALion-Script/pages/getKeySwitches.html">getKeySwitches</a></li><li class="chapter-item "><a href="HALion-Script/pages/getLayer.html">getLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/getMidiModule.html">getMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/getModulationMatrixRow.html">getModulationMatrixRow</a></li><li class="chapter-item "><a href="HALion-Script/pages/getMsTime.html">getMsTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteDuration.html">getNoteDuration</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteExpression.html">getNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNoteExpressionProperties.html">getNoteExpressionProperties</a></li><li class="chapter-item "><a href="HALion-Script/pages/getNumQCAssignments.html">getNumQCAssignments</a></li><li class="chapter-item "><a href="HALion-Script/pages/getOnsets.html">getOnsets</a></li><li class="chapter-item "><a href="HALion-Script/pages/getOutputBus.html">getOutputBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameter.html">getParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameterDefinition.html">getParameterDefinition</a></li><li class="chapter-item "><a href="HALion-Script/pages/getParameterNormalized.html">getParameterNormalized</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPeak.html">getPeak</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPitch.html">getPitch</a></li><li class="chapter-item "><a href="HALion-Script/pages/getPitchAnalysisProgress.html">getPitchAnalysisProgress</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProcessedSamples.html">getProcessedSamples</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProductName.html">getProductName</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProductVersion.html">getProductVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getProgram.html">getProgram</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentBypass.html">getQCAssignmentBypass</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentCurve.html">getQCAssignmentCurve</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMax.html">getQCAssignmentMax</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMin.html">getQCAssignmentMin</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentMode.html">getQCAssignmentMode</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentParamId.html">getQCAssignmentParamId</a></li><li class="chapter-item "><a href="HALion-Script/pages/getQCAssignmentScope.html">getQCAssignmentScope</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSamplingRate.html">getSamplingRate</a></li><li class="chapter-item "><a href="HALion-Script/pages/getScriptExecTimeOut.html">getScriptExecTimeOut</a></li><li class="chapter-item "><a href="HALion-Script/pages/getScriptVersion.html">getScriptVersion</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSlot.html">getSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSlotIndex.html">getSlotIndex</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSource1.html">getSource1</a></li><li class="chapter-item "><a href="HALion-Script/pages/getSource2.html">getSource2</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTempo.html">getTempo</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTime.html">getTime</a></li><li class="chapter-item "><a href="HALion-Script/pages/getTimeSignature.html">getTimeSignature</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUndoContext.html">getUndoContext</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedMemory.html">getUsedMemory</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedVoices.html">getUsedVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUsedVoicesOfSlot.html">getUsedVoicesOfSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUserPresetPath.html">getUserPresetPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getUserSubPresetPath.html">getUserSubPresetPath</a></li><li class="chapter-item "><a href="HALion-Script/pages/getVoices.html">getVoices</a></li><li class="chapter-item "><a href="HALion-Script/pages/getZone.html">getZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/hasParameter.html">hasParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertBus.html">insertBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEffect.html">insertEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEnvelopePoint.html">insertEnvelopePoint</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertEvent.html">insertEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertLayer.html">insertLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertLayerAsync.html">insertLayerAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertMidiModule.html">insertMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/insertZone.html">insertZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/isKeyDown.html">isKeyDown</a></li><li class="chapter-item "><a href="HALion-Script/pages/isNoteHeld.html">isNoteHeld</a></li><li class="chapter-item "><a href="HALion-Script/pages/isOctaveKeyDown.html">isOctaveKeyDown</a></li><li class="chapter-item "><a href="HALion-Script/pages/isPlaying.html">isPlaying</a></li><li class="chapter-item "><a href="HALion-Script/pages/Layer-Constructor.html">Layer Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/loadPreset.html">loadPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/loadPresetAsync.html">loadPresetAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/messageBox.html">messageBox</a></li><li class="chapter-item "><a href="HALion-Script/pages/MIDI-File-Format-Types.html">MIDI File Format Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/MidiModule-Constructor.html">MidiModule Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/MIDI-Sequence-Table.html">MIDI Sequence Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/Modulation-Destination-Types.html">Modulation Destination Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/Modulation-Source-Types.html">Modulation Source Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/ms2beat.html">ms2beat</a></li><li class="chapter-item "><a href="HALion-Script/pages/ms2samples.html">ms2samples</a></li><li class="chapter-item "><a href="HALion-Script/pages/Note-Expression-Types.html">Note Expression Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/onAfterTouch.html">onAfterTouch</a></li><li class="chapter-item "><a href="HALion-Script/pages/onController.html">onController</a></li><li class="chapter-item "><a href="HALion-Script/pages/onData.html">onData</a></li><li class="chapter-item "><a href="HALion-Script/pages/onIdle.html">onIdle</a></li><li class="chapter-item "><a href="HALion-Script/pages/onInit.html">onInit</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoad.html">onLoad</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoadIntoSlot.html">onLoadIntoSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/onLoadSubPreset.html">onLoadSubPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/onNote.html">onNote</a></li><li class="chapter-item "><a href="HALion-Script/pages/onNoteExpression.html">onNoteExpression</a></li><li class="chapter-item "><a href="HALion-Script/pages/onPitchBend.html">onPitchBend</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRelease.html">onRelease</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRemoveFromSlot.html">onRemoveFromSlot</a></li><li class="chapter-item "><a href="HALion-Script/pages/onRetrigger.html">onRetrigger</a></li><li class="chapter-item "><a href="HALion-Script/pages/onSave.html">onSave</a></li><li class="chapter-item "><a href="HALion-Script/pages/onSaveSubPreset.html">onSaveSubPreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/onTriggerPad.html">onTriggerPad</a></li><li class="chapter-item "><a href="HALion-Script/pages/onUnhandledEvent.html">onUnhandledEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/openURL.html">openURL</a></li><li class="chapter-item "><a href="HALion-Script/pages/pitchBend.html">pitchBend</a></li><li class="chapter-item "><a href="HALion-Script/pages/playNote.html">playNote</a></li><li class="chapter-item "><a href="HALion-Script/pages/playTriggerPad.html">playTriggerPad</a></li><li class="chapter-item "><a href="HALion-Script/pages/postEvent.html">postEvent</a></li><li class="chapter-item "><a href="HALion-Script/pages/printRaw.html">printRaw</a></li><li class="chapter-item "><a href="HALion-Script/pages/Program-Constructor.html">Program Constructor</a></li><li class="chapter-item "><a href="HALion-Script/pages/Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/readMidiFile.html">readMidiFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/releaseVoice.html">releaseVoice</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeBus.html">removeBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeEffect.html">removeEffect</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeEnvelopePoint.html">removeEnvelopePoint</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeFromParent.html">removeFromParent</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeLayer.html">removeLayer</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeMidiModule.html">removeMidiModule</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeQCAssignment.html">removeQCAssignment</a></li><li class="chapter-item "><a href="HALion-Script/pages/removeZone.html">removeZone</a></li><li class="chapter-item "><a href="HALion-Script/pages/runAsync.html">runAsync</a></li><li class="chapter-item "><a href="HALion-Script/pages/runSync.html">runSync</a></li><li class="chapter-item "><a href="HALion-Script/pages/samples2ms.html">samples2ms</a></li><li class="chapter-item "><a href="HALion-Script/pages/savePreset.html">savePreset</a></li><li class="chapter-item "><a href="HALion-Script/pages/setBypassNoteOff.html">setBypassNoteOff</a></li><li class="chapter-item "><a href="HALion-Script/pages/setName.html">setName</a></li><li class="chapter-item "><a href="HALion-Script/pages/setOutputBus.html">setOutputBus</a></li><li class="chapter-item "><a href="HALion-Script/pages/setParameter.html">setParameter</a></li><li class="chapter-item "><a href="HALion-Script/pages/setParameterNormalized.html">setParameterNormalized</a></li><li class="chapter-item "><a href="HALion-Script/pages/setProgram.html">setProgram</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentBypass.html">setQCAssignmentBypass</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentCurve.html">setQCAssignmentCurve</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMax.html">setQCAssignmentMax</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMin.html">setQCAssignmentMin</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentMode.html">setQCAssignmentMode</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentParamId.html">setQCAssignmentParamId</a></li><li class="chapter-item "><a href="HALion-Script/pages/setQCAssignmentScope.html">setQCAssignmentScope</a></li><li class="chapter-item "><a href="HALion-Script/pages/setScriptExecTimeOut.html">setScriptExecTimeOut</a></li><li class="chapter-item "><a href="HALion-Script/pages/setSource1.html">setSource1</a></li><li class="chapter-item "><a href="HALion-Script/pages/setSource2.html">setSource2</a></li><li class="chapter-item "><a href="HALion-Script/pages/setZoneFMXAlgo.html">setZoneFMXAlgo</a></li><li class="chapter-item "><a href="HALion-Script/pages/sortEvents.html">sortEvents</a></li><li class="chapter-item "><a href="HALion-Script/pages/spawn.html">spawn</a></li><li class="chapter-item "><a href="HALion-Script/pages/startUndoBlock.html">startUndoBlock</a></li><li class="chapter-item "><a href="HALion-Script/pages/startWriteOutputToFile.html">startWriteOutputToFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/stopWriteOutputToFile.html">stopWriteOutputToFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/Undo-Context-Types.html">Undo Context Types</a></li><li class="chapter-item "><a href="HALion-Script/pages/VoiceGroupsData-Table.html">VoiceGroupsData Table</a></li><li class="chapter-item "><a href="HALion-Script/pages/Voice-Group-Steal-Modes.html">Voice Group Steal Modes</a></li><li class="chapter-item "><a href="HALion-Script/pages/wait.html">wait</a></li><li class="chapter-item "><a href="HALion-Script/pages/waitBeat.html">waitBeat</a></li><li class="chapter-item "><a href="HALion-Script/pages/waitForRelease.html">waitForRelease</a></li><li class="chapter-item "><a href="HALion-Script/pages/writeMidiFile.html">writeMidiFile</a></li><li class="chapter-item "><a href="HALion-Script/pages/Zone-Constructor.html">Zone Constructor</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Macro Page</li><li class="chapter-item "><a href="HALion-Macro-Page/pages/HALion-Macro-Page.html">HALion Macro Page</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Example-Macro-Pages.html">Example Macro Pages</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Exploring-Templates.html">Exploring Templates</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Resources.html">Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/Bitmap.html">Bitmap</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Color.html">Color</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Decor-Resource.html">Decor (Resource)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Font.html">Font</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Section.html">Section</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/SVG.html">SVG</a></li></ol></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Controls.html">Controls</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/Animation.html">Animation</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Decor-Control.html">Decor (Control)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Disable.html">Disable</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Drop.html">Drop</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Group.html">Group</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Image.html">Image</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Internal.html">Internal</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Knob.html">Knob</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Label.html">Label</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Live-Data-View.html">Live Data View</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Menu.html">Menu</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Meter.html">Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Range-Slider.html">Range Slider</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Slider.html">Slider</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Stack.html">Stack</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Step-Modulator.html">Step Modulator</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Switch.html">Switch</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Template.html">Template</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Template-List.html">Template List</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Text.html">Text</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Waveform.html">Waveform</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable.html">Wavetable</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-3D.html">Wavetable 3D</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/XY.html">XY</a></li></ol></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Templates.html">Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Macro-Page/pages/About-Box.html">About Box</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Animation-Script.html">Animation Script</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Curve-Editor.html">Curve Editor</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Envelope.html">Envelope</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Envelope-Shaper.html">Envelope Shaper</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FlexPhraser.html">FlexPhraser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FlexPhraserStepSeq.html">FlexPhraserStepSeq</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/FX-Meter.html">FX Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/MIDI-Player.html">MIDI Player</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Mixer-Channel.html">Mixer Channel</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Path-Browser.html">Path Browser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Preset-Browser.html">Preset Browser</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Preset-Browser-Custom.html">Preset Browser Custom</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Sample-Display.html">Sample Display</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Step-Modulator-Template.html">Step Modulator(Template)</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Studio-EQ-Meter.html">Studio EQ Meter</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-Noise-Selector.html">Wavetable Noise Selector</a></li><li class="chapter-item "><a href="HALion-Macro-Page/pages/Wavetable-Selector.html">Wavetable Selector</a></li></ol></li><li class="chapter-item "><li class="part-title">HALion Tutorials &amp; Guidelines</li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Getting-Started.html">Getting Started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HALion-Libraries.html">HALion Libraries</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-Instruments.html">Creating Instruments</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Exploring-the-Tutorials-and-How-tos.html">Exploring the Turorials and How-tos</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Tutorials.html">Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Modulation-Matrix.html">Creating a Modulation Matrix</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html">Creating a Template List</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-an-FX-Chain.html">Creating an FX Chain</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.html">Creating an FX Rack</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Attribute-Rules.html">Using Attribute Rules</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.html">Using Relative Paths</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.html">Using Velocity Crossfades</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.html">Working with Exported Properties</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/How-tos.html">How-tos</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-and-Modifying-SVGs.html">Animating and Modifying SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-SVGs-with-Additional-Parameters.html">Animating SVGs with Additional Parameters</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Animating-Switches-Using-SVGs.html">Animating Switches Using SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus.html">Custom Multi-Level Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Multi-Level-Menus-II.html">Custom Multi-Level Menus II</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Custom-Popup-Menus.html">Custom Popup Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Drag-and-Drop-Sample-Import.html">Drag-and-Drop Sample Import</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Dynamic-Template-References.html">Dynamic Template References</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Key-Range-Limitation.html">Key Range Limitation</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Map-Samples-to-Root-Key.html">Map Samples to Root Key</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/MIDI-Note-Parameters.html">MIDI Note Parameters</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modifying-SVGs-with-Multiple-Objects.html">Modifying SVGs with Multiple Objects</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-FM-Zones.html">Modulation Matrix for FM Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Grain-Zones.html">Modulation Matrix for Grain Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Sample-Zones.html">Modulation Matrix for Sample Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Spectral-Zones.html">Modulation Matrix for Spectral Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Synth-Zones.html">Modulation Matrix for Synth Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Modulation-Matrix-for-Wavetable-Zones.html">Modulation Matrix for Wavetable Zones</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Multi-Level-System-Menus.html">Multi-Level System Menus</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Relative-Paths.html">Relative Paths</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Snapshot-Effects.html">Snapshot Effects</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Switching-Control-Templates.html">Switching Control Templates</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Using-Mouse-States-in-SVGs.html">Using Mouse States in SVGs</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Working-with-Exported-Variables.html">Working with Exported Variables</a></li></ol></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Guidelines.html">Guidelines</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/HS-Preset-Guideline.html">HS Preset Guideline</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/Quick-Controls-Guideline.html">Quick Controls Guideline</a></li><li class="chapter-item "><a href="HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.1.30</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Tutorials-Guidelines.html">HALion Tutorials &amp; Guidelines</a> / <a href="./Tutorials.html">Tutorials</a> /</p>
+<h1 id="creating-a-modulation-matrix"><a class="header" href="#creating-a-modulation-matrix">Creating a Modulation Matrix</a></h1>
+<hr />
+<p><strong>On this page:</strong></p>
+<ul>
+<li><a href="#example-vst-preset">Example VST Preset</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#workflow-overview">Workflow Overview</a></li>
+<li><a href="#adding-more-destinations">Adding More Destinations</a>
+<ul>
+<li><a href="#adding-the-resonance-control-and-drop-target">Adding the Resonance Control and Drop Target</a></li>
+<li><a href="#adding-the-pan-control-and-drop-target">Adding the Pan Control and Drop Target</a></li>
+<li><a href="#adding-the-drop-targets-to-the-ui-script">Adding the Drop Targets to the UI Script</a></li>
+<li><a href="#adding-resonance-and-pan-to-the-midi-script">Adding Resonance and Pan to the MIDI Script</a></li>
+<li><a href="#adding-resonance-and-pan-to-the-destination-menu">Adding Resonance and Pan to the Destination Menu</a></li>
+</ul>
+</li>
+<li><a href="#adding-an-additional-source">Adding an Additional Source</a>
+<ul>
+<li><a href="#adjusting-the-page-tabs">Adjusting the Page Tabs</a></li>
+<li><a href="#adding-the-user-env-page-tab-and-drag-group">Adding the User Env Page Tab and Drag Group</a></li>
+<li><a href="#adding-the-user-envelope-controls">Adding the User Envelope Controls</a></li>
+<li><a href="#adding-the-user-envelope-to-the-ui-script">Adding the User Envelope to the UI Script</a></li>
+<li><a href="#adding-the-user-envelope-to-the-midi-script">Adding the User Envelope to the MIDI Script</a></li>
+<li><a href="#adding-the-user-envelope-to-the-source-menu">Adding the User Envelope to the Source Menu</a></li>
+</ul>
+</li>
+<li><a href="#increasing-the-number-of-rows-in-the-modulation-matrix">Increasing the Number of Rows in the Modulation Matrix</a>
+<ul>
+<li><a href="#display-depth-in-semitones-or-percent">Display Depth in Semitones or Percent</a></li>
+</ul>
+</li>
+<li><a href="#adding-user-envelope-destinations">Adding User Envelope Destinations</a>
+<ul>
+<li><a href="#adding-the-user-envelope-to-the-midi-script-1">Adding the User Envelope to the MIDI Script</a></li>
+<li><a href="#adding-the-user-envelope-to-the-destination-menu">Adding the User Envelope to the Destination Menu</a></li>
+</ul>
+</li>
+<li><a href="#final-example-vst-preset">Final Example VST Preset</a></li>
+<li><a href="#how-the-elements-interact">How the Elements Interact</a>
+<ul>
+<li><a href="#drag-and-drop-handling">Drag and Drop Handling</a></li>
+<li><a href="#reset-modulation-row">Reset Modulation Row</a></li>
+<li><a href="#defining-modulation-sources-and-destinations-in-the-midi-script">Defining Modulation Sources and Destinations in the MIDI Script</a></li>
+</ul>
+</li>
+<li><a href="#modulation-matrix-examples-for-different-zone-types">Modulation Matrix Examples for Different Zone Types</a></li>
+<li><a href="#transferring-the-modulation-matrix-to-your-instrument">Transferring the Modulation Matrix to Your Instrument</a></li>
+<li><a href="#modulation-matrix-with-custom-look">Modulation Matrix with Custom Look</a></li>
+</ul>
+<hr />
+<p>HALion offers a wealth of modulation sources and destinations. When creating an instrument, it is recommended to limit the selection of modulation sources and destinations to those that are required by the instrument. This tutorial describes how to create and customize a modulation matrix using a <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. The modulation matrix in this tutorial has a configurable number of rows and uses a subset of the available modulation sources and destinations. The number of rows and the selection of modulation sources and destinations are defined in UI and MIDI scripts, respectively. The menus for modulation sources and destinations use definable <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menus</a>. Only the defined modulation sources and destinations appear on the menus.</p>
+<p><img src="../images/Creating-a-Mod-Matrix.png" alt="Creating a Modulation Matrix" /></p>
+<p>The macro page provides controls for the destinations Pitch, Cutoff, and Level. Page tabs provide access to the controls of the sources LFO 1, LFO 2, and Pitch Env and to the modulation matrix. You can assign sources and destinations using the menus in the modulation matrix or by dragging the page tab of a source to a destination.</p>
+<p>When using drag and drop, the next available row in the modulation matrix will be used for the modulation assignment. If no free rows are available, sources cannot be assigned via drag and drop. If this is the case, an icon is shown in the header of the source tab.</p>
+<p><img src="../images/Creating-a-Mod-Matrix-NoDrag.png" alt="Creating a Modulation Matrix No Drag" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="example-vst-preset"><a class="header" href="#example-vst-preset">Example VST Preset</a></h2>
+<ul>
+<li><a href="../vstpresets/Creating%20a%20Modulation%20Matrix%2001.vstpreset">Creating a Modulation Matrix 01.vstpreset</a></li>
+</ul>
+<p>The modulation matrix in this example uses both UI and MIDI script functionality. The corresponding scripts are provided, but not explained in detail line by line. Instead, the connections and interactions between the UI elements and the UI and MIDI scripts are explained so that you can adjust the number of rows and customize the look of the modulation matrix without the risk of introducing errors. See <a href="#how-the-elements-interact">How the Elements Interact</a>.</p>
+<p>The following section describes how to access <a href="../../HALion-Macro-Page/pages/Template.html">Templates</a> and edit UI and MIDI scripts.</p>
+<ul>
+<li>Load <a href="../vstpresets/Creating%20a%20Modulation%20Matrix%2001.vstpreset">Creating a Modulation Matrix 01.vstpreset</a>.</li>
+</ul>
+<p><strong>To explore the templates in this example:</strong></p>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong>, go to the <strong>Templates Tree</strong> and select the template that you want to explore.</li>
+<li>Click <strong>Edit Element</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to examine the template.</li>
+</ol>
+<p><strong>To edit the UI script:</strong></p>
+<ol>
+<li>Open the <strong>Macro Page Designer</strong> and select the topmost element in the <strong>GUI Tree</strong>.</li>
+<li>Go to the Properties section and click <strong>Edit Script</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the internal script editor.</li>
+</ol>
+<p><strong>To edit the MIDI script:</strong></p>
+<ol>
+<li>In the <strong>Program Tree</strong>, select the Mod Matrix MIDI Module.</li>
+<li>Go to the Sound editor and click <strong>Edit Script</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the internal script editor.</li>
+</ol>
+<p>The instructions that follow use the internal script editor.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<ul>
+<li>You have an instrument with a macro page.</li>
+<li>You have loaded both the preset <a href="../vstpresets/Creating%20a%20Modulation%20Matrix%2001.vstpreset">Creating a Modulation Matrix 01.vstpreset</a> and your instrument in HALion.</li>
+</ul>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="workflow-overview"><a class="header" href="#workflow-overview">Workflow Overview</a></h2>
+<ul>
+<li>Add Resonance and Pan as additional destinations and the user envelope as an additional source.</li>
+<li>Implement the drag and drop functionality to assign the additional destinations and source.</li>
+<li>Add the additional destinations and source to the modulation matrix menus and the associated UI and MIDI scripts.</li>
+<li>Increase the number of rows in the modulation matrix.</li>
+<li>Add the parameters of the user envelope as destinations to the modulation matrix menus and the associated MIDI script.</li>
+<li>Copy the templates and resources from the <a href="#example-vst-preset">Example VST Preset</a> to your macro page.</li>
+<li>Copy the code of the UI and MIDI scripts from the <a href="#example-vst-preset">Example VST Preset</a> into the corresponding scripts of your instrument.</li>
+<li>Change the look of the modulation matrix to match the look of your instrument.</li>
+</ul>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="adding-more-destinations"><a class="header" href="#adding-more-destinations">Adding More Destinations</a></h2>
+<p>At the top of the macro page are the Pitch, Cutoff, and Level controls, which also serve as destinations (drop targets) for modulation sources. Let's add Resonance and Pan as additional destinations (drop targets).</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-resonance-control-and-drop-target"><a class="header" href="#adding-the-resonance-control-and-drop-target">Adding the Resonance Control and Drop Target</a></h3>
+<ol>
+<li>In the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and navigate to the Upper branch.</li>
+<li>Move the Cutoff group to Position X = 75.</li>
+</ol>
+<h4 id="properties"><a class="header" href="#properties">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">75</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Cutoff-Group.png" alt="Creating a Modulation Matrix Cutoff Group" /></p>
+<ol start="3">
+<li>Duplicate the Cutoff group, then rename the duplicate to "Resonance" and set its Position X to 150.</li>
+</ol>
+<h4 id="properties-1"><a class="header" href="#properties-1">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Resonance</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">150</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">0</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Resonance-Group.png" alt="Creating a Modulation Matrix Resonance Group" /></p>
+<ol start="4">
+<li>In the new Resonance group, rename the knob template to "Resonance_1" and set its template parameters as follows:</li>
+</ol>
+<h4 id="properties-2"><a class="header" href="#properties-2">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Resonance_1</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters"><a class="header" href="#template-parameters">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@0:Layer/@0:Zone/@id:140003</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">RESONANCE</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left"></td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Resonance-Knob.png" alt="Creating a Modulation Matrix Resonance Knob" /></p>
+<p>This connects the knob to the Resonance parameter of the zone. The Unit parameter is not used.</p>
+<ol start="5">
+<li>Rename the <a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a> control to "DropResonance" and set its Value to "@DropResonance".</li>
+</ol>
+<h4 id="properties-3"><a class="header" href="#properties-3">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">DropResonance</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@DropResonance</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Resonance-Drop.png" alt="Creating a Modulation Matrix Resonance Drop" /></p>
+<p>The UI script uses the @DropResonance UI variable to resolve the source that is being dropped.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-pan-control-and-drop-target"><a class="header" href="#adding-the-pan-control-and-drop-target">Adding the Pan Control and Drop Target</a></h3>
+<p>The following steps are almost identical to the previous ones, except that a different knob template is used in step 4.</p>
+<ol>
+<li>In the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and navigate to the Upper branch.</li>
+<li>Move the Level group to Position X = 225.</li>
+</ol>
+<h4 id="properties-4"><a class="header" href="#properties-4">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">225</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Level-Group.png" alt="Creating a Modulation Matrix Level Group" /></p>
+<ol start="3">
+<li>Duplicate the Level group, then rename the duplicate to "Pan" and set its Position X to 300.</li>
+</ol>
+<h4 id="properties-5"><a class="header" href="#properties-5">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Pan</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">300</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Pan-Group.png" alt="Creating a Modulation Matrix Pan Group" /></p>
+<ol start="4">
+<li>In the new Pan group, rename the knob template to "Pan_1", change its template reference to "KnobSVG7_Bi" and set its template parameters as follows:</li>
+</ol>
+<h4 id="properties-6"><a class="header" href="#properties-6">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Pan_1</td></tr>
+<tr><td style="text-align: left">Template</td><td style="text-align: left">KnobSVG7_Bi</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-1"><a class="header" href="#template-parameters-1">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@0:Layer/@0:Zone/@id:320014</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">PAN</td></tr>
+<tr><td style="text-align: left">Unit</td><td style="text-align: left"></td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Pan-Knob.png" alt="Creating a Modulation Matrix Pan Knob" /></p>
+<p>This connects the knob to the Pan parameter of the zone. The Unit parameter is not used.</p>
+<ol start="5">
+<li>Rename the <a href="../../HALion-Macro-Page/pages/Drop.html">Drop</a> control to "DropPan" and set its Value to "@DropPan".</li>
+</ol>
+<h4 id="properties-7"><a class="header" href="#properties-7">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">DropPan</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@DropPan</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Pan-Drop.png" alt="Creating a Modulation Matrix Pan Drop" /></p>
+<p>The UI script uses the @DropPan UI variable to resolve the source that is being dropped.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-drop-targets-to-the-ui-script"><a class="header" href="#adding-the-drop-targets-to-the-ui-script">Adding the Drop Targets to the UI Script</a></h3>
+<p>Now, you need to define the DropResonance and DropPan parameters in the UI script.</p>
+<ul>
+<li>Open the UI script in the internal script editor and replace the following lines</li>
+</ul>
+<pre><code class="language-lua">defineParameter("DropPitch",     nil, "", function() addModRow(DropPitch,     2) end)
+defineParameter("DropCutoff",    nil, "", function() addModRow(DropCutoff,    3) end)
+defineParameter("DropLevel",     nil, "", function() addModRow(DropLevel,     5) end)
+</code></pre>
+<p>with these lines:</p>
+<pre><code class="language-lua">defineParameter("DropPitch",      nil, "", function() addModRow(DropPitch,     2) end)
+defineParameter("DropCutoff",     nil, "", function() addModRow(DropCutoff,    3) end)
+defineParameter("DropResonance",  nil, "", function() addModRow(DropResonance, 4) end)
+defineParameter("DropLevel",      nil, "", function() addModRow(DropLevel,     6) end)
+defineParameter("DropPan",        nil, "", function() addModRow(DropPan,       8) end)
+</code></pre>
+<p>Each destination/drop target has its own parameter. When a source is dropped on a destination/drop target, the parameter's change callback calls <code>addModRow</code> with the string provided by the Drag Info property as the first argument. For more information about the Drag Info property, see <a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a>. The second argument is the index of the destination as defined in the MIDI script. See <a href="#adding-resonance-and-pan-to-the-midi-script">Adding Resonance and Pan to the MIDI Script</a>. The two arguments are used to create the assignment in the next available row of the modulation matrix.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-resonance-and-pan-to-the-midi-script"><a class="header" href="#adding-resonance-and-pan-to-the-midi-script">Adding Resonance and Pan to the MIDI Script</a></h3>
+<p>You must add Resonance and Pan to the <code>destinations</code> table in the MIDI script. Otherwise, the assignment will not be correct when you drop a source on the newly added destinations.</p>
+<ol>
+<li>Go to the <strong>Program Tree</strong> and select the Mod Matrix MIDI Module.</li>
+<li>Open the MIDI script in the internal script editor and add the lines that are marked with a comment.</li>
+</ol>
+<pre><code class="language-lua">destinations = {
+	{ name = "-"                         , dest = ModulationDestination.unassigned },
+	{ name = "Pitch"                     , dest = ModulationDestination.pitch },
+	{ name = "Cutoff"                    , dest = ModulationDestination.cutoff },
+	{ name = "Resonance"                 , dest = ModulationDestination.resonance }, -- Add this line.
+	{ name = "Level"                     , dest = ModulationDestination.level },
+	{ name = "Volume 1"                  , dest = ModulationDestination.volume1 },
+	{ name = "Volume 2"                  , dest = ModulationDestination.volume1 },
+	{ name = "Pan"                       , dest = ModulationDestination.pan }, -- Add this line.
+	{ name = "LFO 1 Frequency"           , dest = ModulationDestination.lfo1Freq },
+	{ name = "LFO 1 Shape"               , dest = ModulationDestination.lfo1Shape },
+	{ name = "LFO 2 Frequency"           , dest = ModulationDestination.lfo2Freq },
+	{ name = "LFO 2 Shape"               , dest = ModulationDestination.lfo2Shape },
+	{ name = "Pitch Env Init Level"      , dest = ModulationDestination.pitchEnvStartLev },
+	{ name = "Pitch Env Attack"          , dest = ModulationDestination.pitchEnvAttack },
+	{ name = "Pitch Env Att Level"       , dest = ModulationDestination.pitchEnvAttLev },
+	{ name = "Pitch Env Decay"           , dest = ModulationDestination.pitchEnvDecay },
+	{ name = "Pitch Env Sustain"         , dest = ModulationDestination.pitchEnvSustain },
+	{ name = "Pitch Env Release"         , dest = ModulationDestination.pitchEnvRelease },
+	{ name = "Pitch Env Rel Level"       , dest = ModulationDestination.pitchEnvRelLev },
+}
+</code></pre>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-resonance-and-pan-to-the-destination-menu"><a class="header" href="#adding-resonance-and-pan-to-the-destination-menu">Adding Resonance and Pan to the Destination Menu</a></h3>
+<p>To make Resonance and Pan selectable in the modulation matrix, you must add them to the MenuDestRoot template. The MenuDestRoot template is a <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menu</a> with a MenuEntry template for each destination. The MenuDestRoot template pops up when you click the DestinationMenu template. The DestinationMenu template is part of the MatrixRow template which is part of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> that creates the rows and controls for the modulation matrix.</p>
+<p>A destination is selected via the UI variable @MenuValue. MenuValue is a script parameter defined in the UI script of the MenuDestRoot template. Basically, MenuValue is a variable for the selected destination. It is exported and set by the Destination template parameter of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> that creates the modulation matrix. MenuValue is also connected to the exclusive switch and the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control within the MenuEntry template. The exclusive switch controls whether an entry is displayed as selected or not, and the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control displays the name of the selected destination.</p>
+<p>The OnValue of the MenuEntry template corresponds to the index in the <code>destinations</code> table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Therefore, OnValue is always one number below the index of the corresponding destination in the <code>destinations</code> table.</p>
+<p>Together, MenuValue and OnValue control which destination is selected and displayed.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h4 id="editing-the-menudestroot-template"><a class="header" href="#editing-the-menudestroot-template">Editing the MenuDestRoot Template</a></h4>
+<ol>
+<li>Go to the <strong>Templates Tree</strong>, navigate to <strong>library &gt; Tutorial Controls &gt; Popup &gt; MenuDestRoot</strong> and edit the template.</li>
+<li>Select the Level template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-8"><a class="header" href="#properties-8">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">76</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-2"><a class="header" href="#template-parameters-2">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">4</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Level</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-Level.png" alt="Creating a Modulation Matrix MenuDestRoot Level" /></p>
+<ol start="3">
+<li>Select the Cutoff template and duplicate it, then rename the duplicate to "Resonance" and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-9"><a class="header" href="#properties-9">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Resonance</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">57</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-3"><a class="header" href="#template-parameters-3">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">3</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Resonance</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-Resonance.png" alt="Creating a Modulation Matrix MenuDestRoot Resonance" /></p>
+<ol start="4">
+<li>Duplicate the Level template, then rename the duplicate to "Pan" and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-10"><a class="header" href="#properties-10">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Pan</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">95</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-4"><a class="header" href="#template-parameters-4">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">7</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Pan</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-Pan.png" alt="Creating a Modulation Matrix MenuDestRoot Pan" /></p>
+<ol start="5">
+<li>Select the Volume 1 template and set its OnValue to 5.</li>
+</ol>
+<h4 id="template-parameters-5"><a class="header" href="#template-parameters-5">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">5</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Volume 1</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-Volume1.png" alt="Creating a Modulation Matrix MenuDestRoot Volume1" /></p>
+<ol start="6">
+<li>Select the Volume 2 template and set its OnValue to 6.</li>
+</ol>
+<h4 id="template-parameters-6"><a class="header" href="#template-parameters-6">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">6</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Volume 2</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-Volume2.png" alt="Creating a Modulation Matrix MenuDestRoot Volume2" /></p>
+<p>At this point in the tutorial, the new destinations should work with drag and drop and be selectable from the modulation matrix.</p>
+<blockquote>
+<p>❕ If you want to learn more about multi-level pop-up menus, see <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menus II</a>.</p>
+</blockquote>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="adding-an-additional-source"><a class="header" href="#adding-an-additional-source">Adding an Additional Source</a></h2>
+<p>The page tabs labeled LFO 1, LFO 2 and PITCH ENV give you access to the controls for these modulation sources. They also work as <a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a> controls. You can drag the page tabs to assign the modulation sources to modulation destinations. Let's add the user envelope as an additional source to see how this works.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adjusting-the-page-tabs"><a class="header" href="#adjusting-the-page-tabs">Adjusting the Page Tabs</a></h3>
+<p>You need to adjust the position and size of the current page tabs before adding another page tab.</p>
+<ol>
+<li>In the <strong>Macro Page Designer</strong>, go to the <strong>GUI Tree</strong> and navigate to the Page Tabs branch.</li>
+<li>Select the LFO 1 group and set the following properties:</li>
+</ol>
+<h4 id="properties-11"><a class="header" href="#properties-11">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">115</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-LFO1.png" alt="Creating a Modulation Matrix Page Tabs LFO1" /></p>
+<ol start="3">
+<li>Select the LFO 2 group and set the following properties:</li>
+</ol>
+<h4 id="properties-12"><a class="header" href="#properties-12">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">118</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">115</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-LFO2.png" alt="Creating a Modulation Matrix Page Tabs LFO2" /></p>
+<ol start="4">
+<li>Select the ENV 3 group and set the following properties:</li>
+</ol>
+<h4 id="properties-13"><a class="header" href="#properties-13">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">236</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">115</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-ENV3.png" alt="Creating a Modulation Matrix Page Tabs ENV3" /></p>
+<ol start="5">
+<li>Select the MATRIX group and set the following properties:</li>
+</ol>
+<h4 id="properties-14"><a class="header" href="#properties-14">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">472</td></tr>
+<tr><td style="text-align: left">Width</td><td style="text-align: left">115</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-MATRIX.png" alt="Creating a Modulation Matrix Page Tabs MATRIX" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-env-page-tab-and-drag-group"><a class="header" href="#adding-the-user-env-page-tab-and-drag-group">Adding the User Env Page Tab and Drag Group</a></h3>
+<ol>
+<li>Select the ENV 3 group and duplicate it. Set the properties of the duplicate as follows:</li>
+</ol>
+<h4 id="properties-15"><a class="header" href="#properties-15">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">ENV 4</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">354</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-ENV4.png" alt="Creating a Modulation Matrix Page Tabs ENV4" /></p>
+<ol start="2">
+<li>Select <strong>ENV 4 &gt; Stack_4 &gt; Drag_3 &gt; Drag Group_3</strong> and set Drag Info to "ENV4".</li>
+</ol>
+<h4 id="properties-16"><a class="header" href="#properties-16">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Drag Info</td><td style="text-align: left">ENV4</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-ENV4-DragInfo.png" alt="Creating a Modulation Matrix Page Tabs ENV4 Drag Info" /></p>
+<ol start="3">
+<li>Select <strong>ENV 4 &gt; Label PITCH ENV_1</strong> and set the properties as follows:</li>
+</ol>
+<h4 id="properties-17"><a class="header" href="#properties-17">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Label USER ENV</td></tr>
+<tr><td style="text-align: left">Text</td><td style="text-align: left">USER ENV</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-ENV4-Label.png" alt="Creating a Modulation Matrix Page Tabs ENV4 Label" /></p>
+<ol start="4">
+<li>Select <strong>ENV 4 &gt; Switch PITCH ENV_1</strong> and set the properties as follows:</li>
+</ol>
+<h4 id="properties-18"><a class="header" href="#properties-18">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">Switch USER ENV</td></tr>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">3</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-ENV4-Switch.png" alt="Creating a Modulation Matrix Page Tabs ENV4 Switch" /></p>
+<ol start="5">
+<li>Select <strong>ENV 4 &gt; MATRIX &gt; Switch MATRIX</strong> and set the properties as follows:</li>
+</ol>
+<h4 id="properties-19"><a class="header" href="#properties-19">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">4</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-MATRIX-Switch.png" alt="Creating a Modulation Matrix Page Tabs MATRIX Switch" /></p>
+<ol start="6">
+<li>Select <strong>Variables &gt; Pages</strong> and set the Maximum to 4.</li>
+</ol>
+<h4 id="properties-20"><a class="header" href="#properties-20">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Maximum</td><td style="text-align: left">4</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-PageTabs-Variable.png" alt="Creating a Modulation Matrix Page Tabs Variable" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-controls"><a class="header" href="#adding-the-user-envelope-controls">Adding the User Envelope Controls</a></h3>
+<ol>
+<li>Navigate to <strong>Stack &gt; Goup PITCH ENV</strong>. Duplicate Group PITCH ENV and rename it to "Group USER ENV".</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-Stack-UserEnv-Group.png" alt="Creating a Modulation Matrix Stack USER ENV Group" /></p>
+<ol start="2">
+<li>In the Group USER ENV, connect the Value of each control template to the following zone parameters:</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template</th><th style="text-align: left">Value</th><th style="text-align: left">Zone Parameter</th></tr></thead><tbody>
+<tr><td style="text-align: left">Init_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:ea</td><td style="text-align: left">UserL0Offset</td></tr>
+<tr><td style="text-align: left">Attack_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:e6</td><td style="text-align: left">UserAttOffset</td></tr>
+<tr><td style="text-align: left">Att Level_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:eb</td><td style="text-align: left">UserL1Offset</td></tr>
+<tr><td style="text-align: left">Decay_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:e7</td><td style="text-align: left">UserDecOffset</td></tr>
+<tr><td style="text-align: left">Sustain_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:e8</td><td style="text-align: left">UserSusOffset</td></tr>
+<tr><td style="text-align: left">Release_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:e9</td><td style="text-align: left">UserRelOffset</td></tr>
+<tr><td style="text-align: left">Rel Level_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:ec</td><td style="text-align: left">UserLROffset</td></tr>
+<tr><td style="text-align: left">Velocity_1</td><td style="text-align: left">@0:Layer/@0:Zone/@id:8001e</td><td style="text-align: left">User Env.VelocityToLevel</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-Stack-UserEnv-Controls.png" alt="Creating a Modulation Matrix Stack USER ENV Controls" /></p>
+<p>The controls on the USER ENV page are now connected to the user envelope.</p>
+<blockquote>
+<p>❕ In the <a href="#example-vst-preset">Example VST Preset</a>, the times and levels of the pitch and user envelopes are already set up to work correctly when using the envelope offset parameters of the zone.</p>
+</blockquote>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-to-the-ui-script"><a class="header" href="#adding-the-user-envelope-to-the-ui-script">Adding the User Envelope to the UI Script</a></h3>
+<p>The <code>translateModSource</code> function in the UI script determines which source is being dropped.</p>
+<ul>
+<li>Open the UI script in the internal script editor and add the condition marked with a comment.</li>
+</ul>
+<pre><code class="language-lua">function translateModSource(str)
+	-- The return values match the modulation sources in the MIDI script.
+	if str == "LFO1" then return 2 end
+	if str == "LFO2" then return 3 end
+	if str == "ENV3" then return 4 end
+	if str == "ENV4" then return 5 end -- Add this condition.
+	return 1
+end
+</code></pre>
+<p>The string <code>"ENV4"</code> must match the Drag Info of the <a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a> control. See <a href="#add-the-user-env-page-tab-and-drag-group">Adding the User Env Page Tab and Drag Group</a>. The return value must match the index of the User Env source in the <code>sources</code> table in the MIDI script. See <a href="#add-the-user-env-to-the-midi-script">Adding the User Env to the MIDI Script</a>. The Drag Info and the associated return value define the source that is being dropped and then assigned in the modulation matrix.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-to-the-midi-script"><a class="header" href="#adding-the-user-envelope-to-the-midi-script">Adding the User Envelope to the MIDI Script</a></h3>
+<p>You must add the User Env to the <code>sources</code> table in the MIDI script. Otherwise, you will not be able to assign it.</p>
+<ol>
+<li>Go to the <strong>Program Tree</strong> and select the Mod Matrix MIDI Module.</li>
+<li>Open the MIDI script in the internal script editor and add the line marked with a comment.</li>
+</ol>
+<pre><code class="language-lua">sources = {
+	{ name = "-"                , src = ModulationSource.unassigned    },
+	{ name = "LFO 1"            , src = ModulationSource.lfo1          },
+	{ name = "LFO 2"            , src = ModulationSource.lfo2          },
+	{ name = "Pitch Env"        , src = ModulationSource.pitchEnv      },
+	{ name = "User Env"         , src = ModulationSource.userEnv       }, -- Add this line.
+	{ name = "Key Follow"       , src = ModulationSource.keyFollow     },
+	{ name = "Velocity"         , src = ModulationSource.noteOnVelocity},
+	{ name = "Pitch Bend"       , src = ModulationSource.pitchBend     },
+	{ name = "Mod Wheel"        , src = ModulationSource.modWheel      },
+	{ name = "Aftertouch"       , src = ModulationSource.aftertouch    },
+}
+</code></pre>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-to-the-source-menu"><a class="header" href="#adding-the-user-envelope-to-the-source-menu">Adding the User Envelope to the Source Menu</a></h3>
+<p>To make the User Env selectable in the modulation matrix, you must add it to the MenuSourceRoot template. The MenuSourceRoot template is a <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menu</a> with a MenuEntry template for each source. The MenuSourceRoot template pops up when you click the SourceMenu template. The SourceMenu template is part of the MatrixRow template which is part of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> that creates the rows and controls for the modulation matrix.</p>
+<p>A source gets selected through the UI variable @MenuValue. MenuValue is a script parameter defined in the UI script of the MenuSourceRoot template. Basically, MenuValue is a variable for the selected source. It is exported and set by the Source1 or the Source2 template parameter of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> that creates the modulation matrix. MenuValue is also connected to the exclusive switch and the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control within the MenuEntry template. The exclusive switch controls whether an entry is displayed as selected or not, and the <a href="../../HALion-Macro-Page/pages/Label.html">Label</a> control displays the name of the selected source.</p>
+<p>The OnValue of the MenuEntry template corresponds to the index in the <code>sources</code> table as previously defined in the MIDI script. However, the index of OnValue starts at zero. Therefore, OnValue is always one number below the index of the corresponding source in the <code>sources</code> table.</p>
+<p>Together, MenuValue and OnValue control which source is selected and displayed.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h4 id="editing-the-menusourceroot-template"><a class="header" href="#editing-the-menusourceroot-template">Editing the MenuSourceRoot Template</a></h4>
+<ol>
+<li>Go to the <strong>Templates Tree</strong>, navigate to <strong>library &gt; Tutorial Controls &gt; Popup &gt; MenuSourceRoot</strong> and edit the template.</li>
+<li>Select the Aftertouch template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-21"><a class="header" href="#properties-21">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">171</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-7"><a class="header" href="#template-parameters-7">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">9</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Aftertouch</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-Aftertouch.png" alt="Creating a Modulation Matrix MenuSourceRoot Aftertouch" /></p>
+<ol start="3">
+<li>Select the Mod Wheel template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-22"><a class="header" href="#properties-22">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">152</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-8"><a class="header" href="#template-parameters-8">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">8</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Mod Wheel</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-ModWheel.png" alt="Creating a Modulation Matrix MenuSourceRoot Mod Wheel" /></p>
+<ol start="4">
+<li>Select the Pitch Bend template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-23"><a class="header" href="#properties-23">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">133</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-9"><a class="header" href="#template-parameters-9">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">7</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Pitch Bend</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-PitchBend.png" alt="Creating a Modulation Matrix MenuSourceRoot Pitch Bend" /></p>
+<ol start="5">
+<li>Select the Velocity template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-24"><a class="header" href="#properties-24">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">114</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-10"><a class="header" href="#template-parameters-10">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">6</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Velocity</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-Velocity.png" alt="Creating a Modulation Matrix MenuSourceRoot Velocity" /></p>
+<ol start="6">
+<li>Select the Key Follow template and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-25"><a class="header" href="#properties-25">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">95</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-11"><a class="header" href="#template-parameters-11">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">5</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">Key Follow</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-KeyFollow.png" alt="Creating a Modulation Matrix MenuSourceRoot Key Follow" /></p>
+<ol start="7">
+<li>Duplicate the Pitch Env template, then rename the duplicate to "User Env" and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-26"><a class="header" href="#properties-26">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">User Env</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">0</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">76</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-12"><a class="header" href="#template-parameters-12">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">4</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@MenuValue</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">User Env</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuSourceRoot-UserEnv.png" alt="Creating a Modulation Matrix MenuSourceRoot User Env" /></p>
+<p>At this point in the tutorial, the new source should work with drag and drop and be selectable from the modulation matrix.</p>
+<blockquote>
+<p>❕ If you want to learn more about multi-level pop-up menus, see <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menus II</a>.</p>
+</blockquote>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="increasing-the-number-of-rows-in-the-modulation-matrix"><a class="header" href="#increasing-the-number-of-rows-in-the-modulation-matrix">Increasing the Number of Rows in the Modulation Matrix</a></h2>
+<p>Each time you drag a source to a destination, the <code>findEmptyMatrixRow</code> function in the UI script checks if there is an empty row available in the modulation matrix. If there aren't any free rows available, the <code>CanDragMod</code> variable in the UI script will be <code>false</code> and you won't be able to drag and drop sources. You'll see a symbol appear before the sources that lets you know. <code>CanDragMod</code> is connected to the <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> control of each page tab. Depending on <code>CanDragMod</code> the <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> switches between the symbol, dragging is not allowed, and the <a href="../../HALion-Macro-Page/pages/Drag-Group.html">Drag Group</a>, dragging is allowed. The <a href="../../HALion-Macro-Page/pages/Stack.html">Stack</a> also changes the tooltips that give instructions.</p>
+<ul>
+<li>Drag and drop at least four sources to make the symbol appear. You won't be able to drag and drop further sources.</li>
+</ul>
+<p>The current number of modulation rows is four. To avoid running out of modulation rows too early, let's increase the number of modulation rows to eight.</p>
+<ol>
+<li>Open the UI script in the internal script editor and set the <code>numRows</code> variable to 8.</li>
+</ol>
+<pre><code class="language-lua">local numRows = 8
+</code></pre>
+<ol start="2">
+<li>In the <strong>GUI Tree</strong>, navigate to <strong>Stack &gt; Group MATRIX &gt; Template List</strong>. Activate the V-Scroll Style.</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-TemplateList.png" alt="Creating a Modulation Matrix Template List" /></p>
+<p>The modulation matrix now has 8 rows, accessible via a vertical scrollbar.</p>
+<p>The parameters for the modulation matrix are defined in the UI script by calling the <code>defineAllRowNamesParameter</code> function. The defined parameters are connected to the template parameters of the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>. The <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a> creates the number of rows in the matrix equal to the number of values specified for each parameter.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="display-depth-in-semitones-or-percent"><a class="header" href="#display-depth-in-semitones-or-percent">Display Depth in Semitones or Percent</a></h3>
+<p>Depending on whether or not Pitch has been assigned as a destination, the Depth parameter displays values either in semitones or in percent. Which of the two is displayed is controlled by a UI script that is embedded in the DepthSliderHorizontal template. The script defines a DestIndex parameter that is exported as a template parameter and is responsible for deciding whether the values are displayed as semitones or percent, depending on the selected destination. Currently, Pitch is the only destination that needs to display semitones. If there are other destinations that need to display semitones, you will need to add them to the <code>isPitchDest</code> table of the template's UI script. Have a look at the comments in the code below for details.</p>
+<pre><code class="language-lua">pitchRange = 60
+pitchStretch = 3.1336
+
+-- A table with all destinations that display their depth in semitones.
+-- The indices in the isPitchDest table must match the indices of the pitch destinations
+-- as previously defined in the destinations table in the MIDI script.
+
+isPitchDest = {
+	[1] = true, -- Pitch
+}
+
+function sinh(x)
+    return (math.exp(x) - math.exp(-x)) / 2
+end
+
+function asinh(x)
+    return math.log(x + math.sqrt(x * x + 1))
+end
+
+function onDepthChanged()
+	-- Convert from depth to semitones if the destination uses pitch.
+	if isPitchDest[DestIndex] then 
+		Text = pitchRange * sinh(pitchStretch * 0.01 * Depth) / sinh(pitchStretch)
+	else
+		Text = Depth
+	end
+end
+
+function onTextChanged()
+	-- Convert from semitones to depth if the destination uses pitch.
+	if isPitchDest[DestIndex] then
+		Depth = 100 * asinh(Text * sinh(pitchStretch) / pitchRange) / pitchStretch
+	else
+		Depth = Text
+	end
+end
+
+defineParameter("Depth", "", 0, -100, 100, 0.1, onDepthChanged)
+defineParameter("Text", "", 0, -100, 100, 0.1, onTextChanged)
+defineParameter("DestIndex", "", 0, 0, 1000, 1, onDepthChanged)
+</code></pre>
+<p><strong>To edit the UI script of the DepthSliderHorizontal template:</strong></p>
+<ol>
+<li>Go to the <strong>Templates Tree</strong>, navigate to <strong>Tutorial Controls &gt; Matrix &gt; DepthSliderHorizontal</strong> and edit the template.</li>
+<li>Click <strong>Edit Script</strong> <img src="../images/EditElement.PNG" alt="Edit Element" /> to open the internal script editor.</li>
+<li>Add further destinations to the <code>isPitchDest</code> table. The indices in the <code>isPitchDest</code>table must match the indices of the pitch destinations as previously defined in the <code>destinations</code> table in the MIDI script.</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-DepthSliderHorizontal.png" alt="Creating a Modulation Matrix DepthSliderHorizontal" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="adding-user-envelope-destinations"><a class="header" href="#adding-user-envelope-destinations">Adding User Envelope Destinations</a></h2>
+<p>The parameters of the pitch envelope already exist as modulation destinations. Let's add the parameters of the user envelope as modulation destinations.</p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-to-the-midi-script-1"><a class="header" href="#adding-the-user-envelope-to-the-midi-script-1">Adding the User Envelope to the MIDI Script</a></h3>
+<p>You need to add the parameters of the User Envelope to the <code>destinations</code> table in the MIDI script.</p>
+<ol>
+<li>Go to the <strong>Program Tree</strong> and select the Mod Matrix MIDI Module.</li>
+<li>Open the MIDI script in the internal script editor and append the following lines to the <code>destinations</code> table.</li>
+</ol>
+<pre><code class="language-lua">{ name = "User Env Init Level"      , dest = ModulationDestination.userEnvStartLev },
+{ name = "User Env Attack"          , dest = ModulationDestination.userEnvAttack },
+{ name = "User Env Att Level"       , dest = ModulationDestination.userEnvAttLev },
+{ name = "User Env Decay"           , dest = ModulationDestination.userEnvDecay },
+{ name = "User Env Sustain"         , dest = ModulationDestination.userEnvSustain },
+{ name = "User Env Release"         , dest = ModulationDestination.userEnvRelease },
+{ name = "User Env Rel Level"       , dest = ModulationDestination.userEnvRelLev },
+</code></pre>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="adding-the-user-envelope-to-the-destination-menu"><a class="header" href="#adding-the-user-envelope-to-the-destination-menu">Adding the User Envelope to the Destination Menu</a></h3>
+<p>You need to add the User Envelope parameters to the MenuDestRoot template to make them selectable as destinations in the modulation matrix. As with the Pitch Envelope, we want the User Envelope destinations to be in a submenu. The MenuDestRoot template uses the SubMenuEntry template and a Popup List Variable to accomplish this.</p>
+<ol>
+<li>Go to the <strong>Templates Tree</strong>, navigate to <strong>library &gt; Tutorial Controls &gt; Popup &gt; MenuDestRoot</strong> and edit the template.</li>
+<li>Select the Pitch Env template and duplicate it, then rename the duplicate to "User Env" and set its properties and template parameters as follows:</li>
+</ol>
+<h4 id="properties-27"><a class="header" href="#properties-27">Properties</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Property</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">Name</td><td style="text-align: left">User Env</td></tr>
+<tr><td style="text-align: left">Position X</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left">Position Y</td><td style="text-align: left">95</td></tr>
+</tbody></table>
+</div>
+<h4 id="template-parameters-13"><a class="header" href="#template-parameters-13">Template Parameters</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template Parameter</th><th style="text-align: left">Value</th></tr></thead><tbody>
+<tr><td style="text-align: left">OnValue</td><td style="text-align: left">3</td></tr>
+<tr><td style="text-align: left">Value</td><td style="text-align: left">@PopupVar</td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left">User Env</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-UserEnv.png" alt="Creating a Modulation Matrix MenuDestRoot User Env" /></p>
+<ol start="3">
+<li>Navigate to <strong>Variables &gt; PopupVar</strong> and add "MenuDestUserEnv" to the Popup List Variable.</li>
+</ol>
+<p>The entries in the Popup List Variable correspond to the names of the templates to be opened when navigating through the menu.</p>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestRoot-PopupVar.png" alt="Creating a Modulation Matrix MenuDestRoot PopupVar" /></p>
+<ol start="4">
+<li>Go back to the <strong>Templates Tree</strong> and navigate to <strong>library &gt; Tutorial Controls &gt; Popup</strong>. Duplicate the MenuDestPitchEnv template and rename the duplicate to "MenuDestUserEnv".</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestUserEnv.png" alt="Creating a Modulation Matrix MenuDestUserEnv" /></p>
+<ol start="5">
+<li>Edit MenuDestUserEnv and set the OnValue of the contained control templates as follows:</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Template</th><th style="text-align: left">OnValue</th></tr></thead><tbody>
+<tr><td style="text-align: left">Init Level</td><td style="text-align: left">19</td></tr>
+<tr><td style="text-align: left">Attack</td><td style="text-align: left">20</td></tr>
+<tr><td style="text-align: left">Att Level</td><td style="text-align: left">21</td></tr>
+<tr><td style="text-align: left">Decay</td><td style="text-align: left">22</td></tr>
+<tr><td style="text-align: left">Sustain</td><td style="text-align: left">23</td></tr>
+<tr><td style="text-align: left">Release</td><td style="text-align: left">24</td></tr>
+<tr><td style="text-align: left">Release Level</td><td style="text-align: left">25</td></tr>
+</tbody></table>
+</div>
+<p><img src="../images/Creating-a-Mod-Matrix-MenuDestUserEnv-Controls.png" alt="Creating a Modulation Matrix MenuDestUserEnv Controls" /></p>
+<p>The Value and Label template parameters for each control template are already set correctly.</p>
+<p>At this point in the tutorial, the User Envelope destinations should be selectable from the modulation matrix.</p>
+<blockquote>
+<p>❕ If you want to learn more about multi-level pop-up menus, see <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menus II</a>.</p>
+</blockquote>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="final-example-vst-preset"><a class="header" href="#final-example-vst-preset">Final Example VST Preset</a></h2>
+<p><img src="../images/Creating-a-Mod-Matrix-Final.png" alt="Creating a Modulation Matrix Final" /></p>
+<p>Here, you can find the Example VST Preset with all the editing steps applied.</p>
+<ul>
+<li><a href="../vstpresets/Creating%20a%20Modulation%20Matrix%2002.vstpreset">Creating a Modulation Matrix 02.vstpreset</a></li>
+</ul>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="how-the-elements-interact"><a class="header" href="#how-the-elements-interact">How the Elements Interact</a></h2>
+<p>With the previous tutorial, we wanted to give you an idea of how to customize a modulation matrix to suit your particular instrument. In the following section, you can find a brief description of the connections and the exchange of messages between the various templates and the UI and MIDI scripts.</p>
+<p>The UI script plays a central role in the modulation matrix and controls most of the actions. The comments in the UI script explain which UI elements are connected to script parameters and why they are needed. Reading the comments and looking at the associated UI elements will help you to understand how the modulation matrix works. The following screenshot shows the <a href="../../HALion-Macro-Page/pages/Template-List.html">Template List</a>, which creates the rows and controls for the modulation matrix, with its template parameters linked to the parameters of the UI script. These script parameters are defined in the <code>defineAllRowNamesParameter</code> function. They control which zone parameters are connected to the modulation matrix and can be adjusted from there.</p>
+<p><img src="../images/Creating-a-Mod-Matrix-TemplateList.png" alt="Creating a Modulation Matrix Template List" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="drag-and-drop-handling"><a class="header" href="#drag-and-drop-handling">Drag and Drop Handling</a></h3>
+<p>When dropping a page tab of a source to a destination, the corresponding drop parameter is changed and the change callback calls the <code>addModRow</code> function.</p>
+<pre><code class="language-lua">-- The destination index must match the modulation destinations in the MIDI script.
+defineParameter("DropPitch",     nil, "", function() addModRow(DropPitch,     2) end)
+defineParameter("DropCutoff",    nil, "", function() addModRow(DropCutoff,    3) end)
+defineParameter("DropResonance", nil, "", function() addModRow(DropResonance, 4) end)
+defineParameter("DropLevel",     nil, "", function() addModRow(DropLevel,     6) end)
+defineParameter("DropPan",       nil, "", function() addModRow(DropPan,       8) end)
+</code></pre>
+<p>The <code>addModRow</code> function has the Drag Info of the source and the index of the destination as arguments. The two arguments are used to create the assignment in the next available row of the modulation matrix.</p>
+<pre><code class="language-lua">function addModRow(srcstr, dest)
+	local row = findEmptyMatrixRow()
+	local src = translateModSource(srcstr)
+	if row then
+		local rowname = "ModRow"..row
+		startUndoBlock("Add Modulation Source")
+		midiModule:setParameter(rowname.."_Src1", src)
+		midiModule:setParameter(rowname.."_Dest", dest)
+		endUndoBlock()
+	end
+end
+</code></pre>
+<p>The <code>findEmptyMatrixRow</code> function called in the <code>addModRow</code> function checks if there is an empty row available in the modulation matrix and returns its index. It returns <code>nil</code> if no empty row is available.</p>
+<pre><code class="language-lua">function findEmptyMatrixRow()
+	for r = 1,numRows do
+		local rname = "ModRow"..r
+		if midiModule:getParameter(rname .. "_Src1") == 1 and midiModule:getParameter(rname .. "_Src2") == 1 then
+			return r
+		end
+	end
+	return nil
+end
+</code></pre>
+<p>The <code>translateModSource</code> function called in the <code>addModRow</code> function uses the Drag Info to return the index of the modulation source that is being dropped.</p>
+<pre><code class="language-lua">function translateModSource(str)
+	-- The return values must match the index of the modulation sources in the MIDI script.
+	if str == "LFO1" then return 2 end
+	if str == "LFO2" then return 3 end
+	if str == "ENV3" then return 4 end
+	if str == "ENV4" then return 5 end
+	return 1
+end
+</code></pre>
+<p>The instructions inside the if statement of the <code>addModRow</code> function set the source and destination parameters of the MIDI script, which in turn assigns the modulation.</p>
+<p>When assigning sources and destinations using the menus in the modulation matrix or via drag and drop, the MIDI script sets the <code>AnySourceChanged</code> parameter of the UI script, which calls the <code>onAnySourcechanged</code> function, which in turn checks if there are still rows available in the modulation matrix. If no free rows are available, the <code>CanDragMod</code> variable will be <code>false</code> and you will not be able to drag and drop sources.</p>
+<pre><code class="language-lua">function onAnySourceChanged()
+	CanDragMod = findEmptyMatrixRow() ~= nil
+end
+
+defineParameter{name = "AnySourceChanged", default=0, min=0, max=100, increment=1, onChanged=onAnySourceChanged}
+defineParameter{name = "CanDragMod", default=true}
+CanDragMod = findEmptyMatrixRow() ~= nil
+</code></pre>
+<blockquote>
+<p>❕ Checking for empty modulation rows will only work if the <code>AnySourceChanged</code> parameters are connected.</p>
+</blockquote>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h3 id="reset-modulation-row"><a class="header" href="#reset-modulation-row">Reset Modulation Row</a></h3>
+<p>The UI script contains also a function for resetting a modulation row. It is called when the trash bin icon of a row is clicked.</p>
+<p><img src="../images/Creating-a-Mod-Matrix-TrashBin.png" alt="Creating a Modulation Matrix Trash Bin" /></p>
+<pre><code class="language-lua">function onDeleteRow(r)
+	if _G["ModDelete" .. r] == 0 then
+		return
+	end
+	local row = zone:getModulationMatrixRow(r)
+	if not row then
+		return
+	end
+	startUndoBlock("Delete Modulation Row " .. r)
+	local rowname = "ModRow"..r
+	midiModule:setParameter(rowname.."_Src1", 1)
+	midiModule:setParameter(rowname.."_Src2", 1)
+	midiModule:setParameter(rowname.."_Dest", 1)
+	row:setParameter("Destination.Depth", 0)
+	row:setParameter("Destination.Bypass", false)
+	endUndoBlock()
+end
+</code></pre>
+<h3 id="defining-modulation-sources-and-destinations-in-the-midi-script"><a class="header" href="#defining-modulation-sources-and-destinations-in-the-midi-script">Defining Modulation Sources and Destinations in the MIDI Script</a></h3>
+<p>The modulation sources and destinations that you need for your instrument must be defined in the <code>sources</code> and <code>destinations</code> tables of the MIDI script. The tutorial above described that the settings for the <a href="./Custom-Multi-Level-Menus-II.html">Custom Multi Level Menus</a> must match the definitions of the sources and destinations in the MIDI script.</p>
+<p>When loading the MIDI script, the <code>defineAllModParameters</code> function is called.</p>
+<pre><code class="language-lua">function defineAllModParameters()
+	for r = 1,ModRows do
+		local rname = "ModRow"..r
+		defineParameter{name=rname.."_Src1", default=1, strings=sourceNames, automatable=false, onChanged=function() sourceChanged(r, 1) end}
+		defineParameter{name=rname.."_Src2", default=1, strings=sourceNames, automatable=false, onChanged=function() sourceChanged(r, 2) end}
+		defineParameter{name=rname.."_Dest", default=1, strings=destNames,   automatable=false, onChanged=function() destChanged(r) end}
+	end
+end
+</code></pre>
+<p>The function defines the parameters that select the two modulation sources and the destination for each row. The parameters provide the sources and destinations as defined in the associated tables.</p>
+<p>When a source is selected, the <code>sourceChanged</code> function is called, which sets either source 1 or source 2 in the specified row. The row and source are specified by the function's arguments.</p>
+<pre><code class="language-lua">function sourceChanged(row, unit)
+	local srcname = "ModRow"..row.."_Src"..unit
+	local src = _G[srcname]
+	local mrow = zone:getModulationMatrixRow(row)
+	if mrow and unit == 1 then
+		mrow:setSource1(sources[src].src, sources[src].info, sources[src].info2)
+		mrow:setParameter("Source1.Polarity", def_unipolar[sources[src].src] and 0 or 1)
+	elseif mrow and unit == 2 then
+		mrow:setSource2(sources[src].src, sources[src].info, sources[src].info2)
+		mrow:setParameter("Source2.Polarity", def_unipolar[sources[src].src] and 0 or 1)
+	end
+	AnySourceChanged = (AnySourceChanged + 1) % 100
+end
+</code></pre>
+<p>Depending on the selected source, the <code>sourceChanged</code> function sets the polarity to either unipolar or bipolar. The <code>def_unipolar</code> table defines the sources that are usually unipolar. All other sources will be set to bipolar when they are selected.</p>
+<pre><code class="language-lua">def_unipolar = {
+	[ModulationSource.unassigned] = true,
+	[ModulationSource.ampEnv] = true,
+	[ModulationSource.filterEnv] = true,
+	[ModulationSource.noteOnVelocity] = true,
+	[ModulationSource.modWheel] = true,
+	[ModulationSource.aftertouch] = true,
+	[ModulationSource.midiControl] = true,
+	[ModulationSource.noteExpression] = true,
+}
+</code></pre>
+<p>Finally, the <code>sourceChanged</code> function increases the <code>AnySourceChanged</code> parameter by one. This parameter must be connected to the identically named parameter of the MIDI script which calls the <code>onAnySourcechanged</code> function, which in turn checks if there are still rows available in the modulation matrix. See <a href="#drag-and-drop-handling">Drag and Drop Handling</a> for details.</p>
+<p>When a destination is selected, the <code>destChanged</code> function is called, which assigns the destination to the specified row.</p>
+<pre><code class="language-lua">function destChanged(row)
+	local destname = "ModRow"..row.."_Dest"
+	local mrow = zone:getModulationMatrixRow(row)
+	if mrow then
+		mrow:setParameter("Destination.Destination", destinations[_G[destname]].dest)
+	end
+end
+</code></pre>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="modulation-matrix-examples-for-different-zone-types"><a class="header" href="#modulation-matrix-examples-for-different-zone-types">Modulation Matrix Examples for Different Zone Types</a></h2>
+<p>In the How-tos section, you can find modulation matrix examples for each zone type that you can use as a basis when creating a modulation matrix for an instrument. See <a href="./Modulation-Matrix-for-FM-Zones.html">Modulation Matrix for FM Zones</a>, <a href="./Modulation-Matrix-for-Grain-Zones.html">Modulation Matrix for Grain Zones</a>, <a href="./Modulation-Matrix-for-Sample-Zones.html">Modulation Matrix for Sample Zones</a>, <a href="./Modulation-Matrix-for-Spectral-Zones.html">Modulation Matrix for Spectral Zones</a>, <a href="./Modulation-Matrix-for-Synth-Zones.html">Modulation Matrix for Synth Zones</a>, and <a href="./Modulation-Matrix-for-Wavetable-Zones.html">Modulation Matrix for Wavetable Zones</a>.</p>
+<h2 id="transferring-the-modulation-matrix-to-your-instrument"><a class="header" href="#transferring-the-modulation-matrix-to-your-instrument">Transferring the Modulation Matrix to Your Instrument</a></h2>
+<p>To integrate the moduation matrix into your macro page, you need to do the following:</p>
+<ol>
+<li>Copy all templates. The templates in the <a href="#example-vst-preset">Example VST Preset</a> use <a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a> from the <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#basic-controls">Basic Controls</a> and <a href="../../HALion-Macro-Page/pages/Exploring-Templates.html#additional-and-vector-controls">Vector Controls</a> library. In a later step, you can change these resources to match the look of your instrument.</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-Templates.png" alt="Templates" /></p>
+<ol start="2">
+<li>Copy the templates from the <strong>GUI Tree</strong> of the example VST preset to your macro page.</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-GUI-Tree.png" alt="GUI Tree" /></p>
+<ol start="3">
+<li>Copy the code from the UI and MIDI scripts to the respective scripts of your instrument.</li>
+<li>Connect the <code>AnySourceChanged</code> parameter of the MIDI script with the <code>AnySourceChanged</code> parameter of the UI script.</li>
+</ol>
+<p><img src="../images/Creating-a-Mod-Matrix-AnySourceChanged.png" alt="AnySourceChanged Parameter" /></p>
+<blockquote>
+<p>❕ Checking for empty modulation rows will only work if the <code>AnySourceChanged</code> parameters are connected.</p>
+</blockquote>
+<ol start="5">
+<li>Finally, update the UI, for example, by selecting a different program and then selecting your instrument again. This will rebuild the macro page and apply your changes.</li>
+</ol>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+<h2 id="modulation-matrix-with-custom-look"><a class="header" href="#modulation-matrix-with-custom-look">Modulation Matrix with Custom Look</a></h2>
+<p>You can customize the look and feel of your instrument entirely by using your own <a href="../../HALion-Macro-Page/pages/Resources.html">Resources</a>. As an example, the modulation matrix of FM Lab is shown in the following screenshot.</p>
+<p><img src="../images/Creating-a-Mod-Matrix-FM-Lab.png" alt="FM Lab Modulation Matrix" /></p>
+<p><a href="#creating-a-modulation-matrix">Jump to Top </a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available			 -->                
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Tutorials-Guidelines/pages/Tutorials.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../HALion-Tutorials-Guidelines/pages/Creating-a-Template-List.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
