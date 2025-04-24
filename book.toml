@@ -1,9 +1,10 @@
 [book]
-authors = ["mklag"]
+authors = ["mklag", "spfeifer"]
 language = "en"
 multilingual = false
 src = "src"
 title = "HALion 7.1.30"
+text-direction = "ltr"
 
 [build]
 build-dir = "book"
@@ -22,6 +23,10 @@ max-level = 3
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
+
+[output.html.print]
+enable = true    # include support for printable output
+page-break = true # insert page-break after each chapter
 
 [output.linkcheck]
 optional = true
