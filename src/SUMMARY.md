@@ -243,6 +243,7 @@
     - [wait](./HALion-Script/pages/wait.md)
     - [waitBeat](./HALion-Script/pages/waitBeat.md)
     - [waitForRelease](./HALion-Script/pages/waitForRelease.md)
+    - [Wavetable Table](./HALion-Script/pages/Wavetable-Table.md)
     - [writeMidiFile](./HALion-Script/pages/writeMidiFile.md)
     - [Zone Constructor](./HALion-Script/pages/Zone-Constructor.md)
 

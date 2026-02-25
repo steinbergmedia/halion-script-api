@@ -4,57 +4,59 @@
 
 ## Description
 
-Wavetables are managed through a special predefined table: the Wavetable table. The function [getWavetable](./getWavetable.md) returns a table with tables for each wave and fields that define the playback of the wavetable. The waves are referenced by their index. You can add and remove waves with ``table.insert`` and ``table.remove`` from the table library of Lua, for example. The tables for the wavetable and each wave allow you to change values, but the structure of these tables must remain as defined below.
+Wavetables are managed through a special predefined table called the Wavetable table. The [getWavetable](./getWavetable.md) function returns a table containing a sub-table for each wave. Waves are referenced by their index and can be added and removed using ``table.insert`` and ``table.remove`` from Lua's table library. While values within the Wavetable table and its wave sub-tables can be modified freely, their structure must remain exactly as defined below.
+
+The fields in the Wavetable table and its wave sub-tables serve different purposes: some control how the wavetable is played back by the synthesis engine, others configure how wave data is extracted from a sample when calling analyzeWavetable, and others hold metadata or the wave data itself. The Purpose column below shows which category each field belongs to.
 
 **Available in:** Controller.
 
 ## Wavetable Fields
 
-|Field|Description|Value Type|
-|:-|:-|:-|
-|**.normalizeMode**|If you extract waves from loud and from quiet parts of the sample, the level of these extracted waves differ. Use this to keep the original level, 0 (Off), or normalize the waves during playback, 1 (Wave) or 2 (Sequence), which compensates the level differences. The default is 1 (Off).|number|
-|**.phaseMode**|Depending on the phase of the waves, different amounts of phase cancellation occurs during playback. Use this to keep, 0 (Keep Original Phases), or alter the phases of the waves during playback, 1 (Align Phases) or 2 (Reset Phases to Zero).  The default is 1 (Align Phases).|number|
-|**.interpolatePhase**|If this is ``true``, the wavetable envelope creates crossfades for both the levels and the phases of the waves. This can minimize the effects of phase cancellation even more. The default is ``false`` .|boolean|
-|**.loopStart**|Use this to specify the first wave that is part of the loop playback.|number|
-|**.loopEnd**|Use this to specify the last wave that is part of the loop playback.|number|
-|**.modelType**|Use this to select Wavetable, Tonal, Noise or Phase Vocoder as playback engine.|number|
+|Field|Description|Value Type|Purpose|
+|:-|:-|:-|:-|
+|**.loopStart**|Specifies the index of the first wave included in loop playback. The value may be a float, allowing the loop to start between two waves.|number|Playback|
+|**.loopEnd**|Specifies the index of the last wave included in loop playback. The value may be a float, allowing the loop to end between two waves.|number|Playback|
+|**.name**|The name of the wavetable.|string|Metadata|
+|**.normalizeMode**|Controls how extracted waves are level-normalized during playback. Waves extracted from different regions of a sample often vary in level, normalization compensates for these differences. Set to 0 (Off) to preserve the original levels, 1 (Wave) to normalize each wave individually, or 2 (Sequence) to normalize the entire sequence. The default is 0 (Off).|number|Playback|
+|**.persistentWaves**|When ``true`` (the default), all wavetable data is stored with the preset, which results in redundant data if the same wavetable is used more than once. When ``false``, the wavetable data is not stored with the preset but can be loaded from a reference preset instead, for example.|boolean|storage|
+|**.pitchEnvelope**|When ``true``, the wavetable uses the analyzed pitch from the original sample, playing each wave with the per‑channel fundamental frequency. When ``false`` (the default), all waves play back at the pitch of the triggered note.|boolean|Playback|
+|**.phaseMode**|Controls how the phases of extracted waves are treated during playback. Phase relationships between waves can cause cancellation artifacts. Set to 0 (Keep Original Phases) to preserve the original phase of each wave, 1 (Align Phases) to align phases across waves, or 2 (Reset Phases to Zero) to zero out all phases. The default is 1 (Align Phases).|number|Playback|
+|**.interpolatePhase**|When ``true``, the wavetable envelope crossfades both the levels and phases between waves. This can further reduce phase cancellation artifacts during playback. The default is ``false``.|boolean|Playback|
 
 ## Wave Fields
 
-|Field|Description|Value Type|
-|:-|:-|:-|
-|**.averageMode**|Activates Average Spectrum Until Next Wave.|number|
-|**.channelMode**|Use this to select which channel(s) get analyzed.|number|
-|**.peakSensitivity**|The spectral peak sensitivity.|number|
-|**.samplePos**|The marker position in samples where the wave was extracted from the sample.|number|
-|**.cropping**|Crop off-center components using time-reassignment.|number|
-|**.filename**|The file name of the sample the wave has been extracted from.|string|
-|**.winCrossfade**|The crossfade duration for the rectangular window. The duration is in percent of the analysis window size.|number|
-|**.noiseSmoothing**|The order of the spectral envelope for the noise model.|number|
-|**.winMode**|Use this to specify if the size of the analysis window is fixed or adopts to the analyzed pitch.|number|
-|**.winType**|Use this to select the type of window (Rectangular, Cosine, Bartlett, Hanning, Hamming, Blackman, Blackman-Harris).|number|
-|**.curve**|The curvature of the envelope segment from -1 to 1. The default is 0.|number|
-|**.linkEnvelope**|If this is activated, the chronological order of the envelope segment corresponds to the chronological order of the markers in the sample.|boolean|
-|**.time**|The time of the envelope segement in seconds. The default is 1.|number|
-|**.enableNoiseSmoothing**|Enables the spectral envelope for the noise model.|boolean|
-|**.spectrum**|This references an array that corresponds to the six channels left, right, center, LFE, left surround and right surround. Each channel references another array for the spectrum of the specified channel. See [Tables per Channel](#tables-per-channel) for further details.|table|
-|**.fundamental**|This references an array that corresponds to the six channels left, right, center, LFE, left surround and right surround. Each channel references another array for the fundamental frequency of the specified channel. See [Tables per Channel](#tables-per-channel) for further details.|table|
-|**.winSize**|This references an array that corresponds to the six channels left, right, center, LFE, left surround and right surround. Each channel references another array for the window size of the specified channel. See [Tables per Channel](#tables-per-channel) for further details.|table|
-|**.wave**|This references an array that corresponds to the six channels left, right, center, LFE, left surround and right surround. Each channel references another array for the waveform of the specified channel. See [Tables per Channel](#tables-per-channel) for further details.|table|
+|Field|Description|Value Type|Purpose|
+|:-|:-|:-|:-|
+|**.channelSelection**|Selects which channel(s) are analyzed when calling analyzeWavetable. Options are multi (0), channel sum (1), or one of the six discrete channels: left (2), right (3), center (4), LFE (5), left surround (6), and right surround (7). The selected channel must exist in the source sample.|number|Analysis|
+|**.channelConfig**|The channel configuration of the wavetable, used during playback. HALion's wavetable synthesis supports multi-channel formats up to 5.1, meaning each wave can contain spectra for up to six channels. Reducing the configuration leaves unused channels; expanding it adds empty ones. For example, setting a stereo wave to mono retains only the left channel. Changing this parameter also affects how channels are assigned to the six internal bus channels — Quadro, for example, uses channels 1, 2, 5, and 6.|number|Playback|
+|**.filename**|The file name of the sample from which this wave was extracted.|string|Metadata|
+|**.freqLimit**|Allows you to limit the playback to the frequency range that the wave actually uses. Any frequencies above this limit are skipped during synthesis, which can lower CPU load. Raise this value to preserve more high-frequency content; lower it to save processing power. The default is 20000 Hz.|number|Playback|
+|**.samplePos**|The position in samples within the source file at which this wave was extracted. This position is also used when calling analyzeWavetable.|number|Analysis|
+|**.winCrossfade**|The crossfade duration for the rectangular window, expressed as a percentage of the analysis window size. Used when calling analyzeWavetable.|number|Analysis|
+|**.winSizeMode**|Use this to specify if the size of the analysis window is fixed or adopts to the analyzed pitch. Used when calling analyzeWavetable.|number|Analysis|
+|**.winType**|Use this to select the type of window (Rectangular, Cosine, Bartlett, Hanning, Hamming, Blackman, Blackman-Harris). Used when calling analyzeWavetable.|number|Analysis|
+|**.curve**|The curvature of the envelope segment from -1 to 1. The default is 0. Used during playback.|number|Playback|
+|**.linkEnvelope**|If this is activated, the chronological order of the envelope segment corresponds to the chronological order of the markers in the sample.|boolean|Playback|
+|**.spectralFormantRes**|Defines how closely the spectral envelope follows the distribution of the magnitudes across the spectrum. The spectral envelope shapes the formant filter: higher values produce a smoother filter curve with less pronounced formants, while lower values cause the filter curve to track spectral levels more tightly, yielding a more detailed formant response. The default is 500 Hz, which is suitable for most audio content. Used during playback.|number|Playback|
+|**.time**|The duration of the envelope segement in seconds. The default is 1. Used during playback.|number|Playback|
+|**.spectrum**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds an array with the spectrum of that channel. See [Tables per Channel](#tables-per-channel) for details. This field is written when calling analyzeWavetable.|table|Wave Data|
+|**.fundamental**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the fundamental frequency for that channel. See [Tables per Channel](#tables-per-channel) for details. This field is written when calling analyzeWavetable.|table|Wave Data|
+|**.winSize**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the window size for that channel. See [Tables per Channel](#tables-per-channel) for details. This field is written when calling analyzeWavetable.|table|Wave Data|
+|**.wave**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the waveform data for that channel. See [Tables per Channel](#tables-per-channel) for details. This field is written when calling analyzeWavetable.|table|Wave Data|
 
 ## Tables per Channel
 
-|Field|Description|Value Type|
-|:-|:-|:-|
-|**.spectrum[n]**|An array for the spectrum of the n-th channel. The size of the array depends on the number of bins in the spectrum. Each index of the array references a table for the frequency, phase and magnitude of the respective bin. See [Table per Bin](#table-per-bin) for details.|table|
-|**.fundamental[n]**|The fundamental frequency of the n-th channel. The default is 20 Hz.|number|
-|**.winSize[n]**|The window size in samples of the n-th channel. The default is 512.|number|
-|**.wave[n]**|An array for the waveform of the n-th channel. The array has a fixed size of 8192 where each index corresponds to a sample of the waveform. You can set the amplitude for each sample in the range from -1 to 1. Use this to modify the waveform directly.|table|
+|Field|Description|Value Type|Purpose|
+|:-|:-|:-|:-|
+|**.spectrum[n]**|An array containing the spectrum for the n-th channel. Each entry of the array represents a bin and references a table with the fields frequency, phase, and magnitude. See [Table per Bin](#table-per-bin) for details. The array size depends on the number of bins.|table|Wave Data|
+|**.fundamental[n]**|The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
+|**.winSize[n]**|The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
+|**.wave[n]**|An array containing the waveform of the n-th channel. The array has a fixed size of 8192, where each index corresponds to one sample of the waveform. Sample amplitudes can be set in the range from -1 to 1, allowing direct modification of the waveform.|table|Wave Data|
 
 ## Table per Bin
 
-|Field|Description|Value Type|
-|:-|:-|:-|
-|**.freq**|The frequency as a multiple of the fundamental.|number|
-|**.phase**|The phase in radians from -π to π.|number|
-|**.magn**|The magnitude from 0 to 1.|number|
+|Field|Description|Value Type|Purpose|
+|:-|:-|:-|:-|
+|**.freq**|The frequency of this bin expressed as a multiple of the fundamental frequency.|number|Wave Data|
+|**.phase**|The phase of this bin in radians, ranging from -π to π.|number|Wave Data|
+|**.magn**|The magnitude of this bin, ranging from 0 to 1.|number|Wave Data|
