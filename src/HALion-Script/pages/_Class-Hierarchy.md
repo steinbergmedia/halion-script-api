@@ -10,5 +10,5 @@
     * [Slot](./Slot.md)
     * [Zone](./Zone.md)
 * [Event](./Event.md)
-* [LoadProgress](./LoadProgress.md)
 * [ParameterDefinition](./ParameterDefinition.md)
+* [Progress](./Progress.md)

@@ -2,9 +2,11 @@
 
 # Wavetable Table
 
+{{#include ../../_Version.md:halion750}}
+
 ## Description
 
-Wavetables are managed through a special predefined table called the Wavetable table. The [getWavetable](./getWavetable.md) function returns a table containing a sub-table for each wave, up to a maximum of [wavetable.maxWaves waves](./Wavetable-Constants.md) = 1024. Waves are referenced by their index and can be added and removed using ``table.insert`` and ``table.remove`` from Lua's table library. While values within the Wavetable table and its wave sub-tables can be modified freely, their structure must remain exactly as defined below.
+Wavetables are managed through a special predefined table called the Wavetable table. The [getWavetable](./getWavetable.md) function returns a table containing a sub-table for each wave, up to a maximum of [wavetable.maxWaves](./Wavetable-Constants.md) = 1024 waves. Waves are referenced by their index and can be added and removed using ``table.insert`` and ``table.remove`` from Lua's table library. While values within the Wavetable table and its wave sub-tables can be modified freely, their structure must remain exactly as defined below.
 
 The fields in the Wavetable table and its wave sub-tables serve different purposes: some control how the wavetable is played back by the synthesis engine, others configure how wave data is extracted from a sample when calling [analyzeWavetable](./analyzeWavetable.md), and others hold metadata or the wave data itself. The Purpose column below shows which category each field belongs to.
 

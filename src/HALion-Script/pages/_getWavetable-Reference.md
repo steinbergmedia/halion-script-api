@@ -2,6 +2,8 @@
 
 // ANCHOR: function
 >**getWavetable(index)**
+
+{{#include ../../_Version.md:halion750}}
 // ANCHOR_END: function
 
 #### Description

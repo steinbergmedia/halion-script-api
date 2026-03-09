@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their [Layer](./Layer.md) objects. You can use [getLayer](./getLayer.md) or [findLayers](./findLayers.md) to determine the layer to be inserted. For example, ``this.parent`` determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use [appendLayer](./appendLayer.md) or [appendLayerAsync](./appendLayerAsync.md) instead. The function returns a [LoadProgress](./LoadProgress.md) object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the [LoadProgress](./LoadProgress.md) object as default argument.
+Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their [Layer](./Layer.md) objects. You can use [getLayer](./getLayer.md) or [findLayers](./findLayers.md) to determine the layer to be inserted. For example, ``this.parent`` determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use [appendLayer](./appendLayer.md) or [appendLayerAsync](./appendLayerAsync.md) instead. The function returns a [Progress](./Progress.md) object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the [Progress](./Progress.md) object as default argument.
 
 {{#include ./_appendInsertElement-Note.md}}
 
@@ -21,13 +21,13 @@ Function to insert a layer at a specified position in a destination layer using 
 |:-|:-|:-|
 |**layer**|The [Layer](./Layer.md) object of the layer that you want to insert.|[Layer](./Layer.md)|
 |**position**|The position where the layer is to be inserted.|number|
-|**callback**|Callback function that is called when the layer is inserted. The callback function gets the [LoadProgress](./LoadProgress.md) object as argument.|function, optional|
+|**callback**|Callback function that is called when the layer is inserted. The callback function gets the [Progress](./Progress.md) object as argument.|function, optional|
 // ANCHOR_END: arguments
 
 #### Return Values
 
 // ANCHOR: return-values
-Returns a [LoadProgress](./LoadProgress.md) object.
+Returns a [Progress](./Progress.md) object.
 // ANCHOR_END: return-values
 
 #### Example

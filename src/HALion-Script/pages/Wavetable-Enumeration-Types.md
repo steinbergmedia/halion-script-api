@@ -2,6 +2,8 @@
 
 # Wavetable Enumeration Types
 
+{{#include ../../_Version.md:halion750}}
+
 ## Description
 
 Enumerator types to identify wavetable settings with regard to their creation and playback.

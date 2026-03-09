@@ -16,12 +16,16 @@ Here you can browse the functions of the HALion Script language by their subject
 [AudioFile.open](./AudioFileopen.md),
 [cancelDecompose](./cancelDecompose.md),
 [cancelPitchAnalysis](./cancelPitchAnalysis.md),
+[cancelWavetableCreation](#cancelwavetablecreation),
+[createWavetable](#createwavetable),
 [decompose](./decompose.md),
 [getDecomposeProgress](./getDecomposeProgress.md),
 [getOnsets](./getOnsets.md),
 [getPeak](./getPeak.md),
 [getPitch](./getPitch.md),
 [getPitchAnalysisProgress](./getPitchAnalysisProgress.md),
+[getWavetableCreationProgress](#getwavetablecreationprogress),
+
 
 ## Automation Functions
 
@@ -252,6 +256,16 @@ Here you can browse the functions of the HALion Script language by their subject
 [changeVolume](./changeVolume.md),
 [changeVolumedB](./changeVolumedB.md),
 [fade](./fade.md),
+
+## Wavetable Functions
+
+[analyzeWavetable](./analyzeWavetable.md),
+[analyzeWavetableAsync](./analyzeWavetableAsync.md),
+[cancelWavetableCreation](./cancelWavetableCreation.md),
+[createWavetable](./createWavetable.md),
+[getWavetable](./getWavetable.md),
+[getWavetableCreationProgress](./getWavetableCreationProgress.md),
+[setWavetable](./setWavetable.md),
 
 ## Zone Functions
 

@@ -2,6 +2,8 @@
 
 # Wavetable Constants
 
+{{#include ../../_Version.md:halion750}}
+
 ## Description
 
 Constants defining the upper limits of the wavetable engine. They cover the maximum number of waves per wavetable, the maximum wave size in samples, the maximum spectrum size in bins, and the maximum number of channels per wave. These values can be used in scripts to validate or constrain wavetable parameters.

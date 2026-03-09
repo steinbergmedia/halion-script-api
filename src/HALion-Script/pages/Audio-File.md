@@ -8,7 +8,7 @@ The AudioFile class describes the properties of audio files.
 
 **On this page:**
 
-[AudioFile Class](#audiofile-class), [analyzePitch](#analyzepitch), [cancelDecompose](#canceldecompose), [cancelPitchAnalysis](#cancelpitchanalysis), [decompose](#decompose), [getDecomposeProgress](#getdecomposeprogress), [getOnsets](#getonsets), [getPeak](#getpeak), [getPitch](#getpitch), [getPitchAnalysisProgress](#getpitchanalysisprogress)
+[AudioFile Class](#audiofile-class), [analyzePitch](#analyzepitch), [cancelDecompose](#canceldecompose), [cancelPitchAnalysis](#cancelpitchanalysis), [cancelWavetableCreation](#cancelwavetablecreation), [createWavetable](#createwavetable), [decompose](#decompose), [getDecomposeProgress](#getdecomposeprogress), [getOnsets](#getonsets), [getPeak](#getpeak), [getPitch](#getpitch), [getPitchAnalysisProgress](#getpitchanalysisprogress), [getWavetableCreationProgress](#getwavetablecreationprogress)
 
 ---
 
@@ -95,6 +95,18 @@ end
 
 [Jump to Top ](#audio-file)
 
+### cancelWavetableCreation
+
+{{#include ./_cancelWavetableCreation-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
+### createWavetable
+
+{{#include ./_createWavetable-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
 ### decompose
 
 {{#include ./_decompose-Reference.md:all}}
@@ -128,5 +140,11 @@ end
 ### getPitchAnalysisProgress
 
 {{#include ./_getPitchAnalysisProgress-Reference.md:all}}
+
+[Jump to Top ](#audio-file)
+
+### getWavetableCreationProgress
+
+{{#include ./_getWavetableCreationProgress-Reference.md:all}}
 
 [Jump to Top ](#audio-file)

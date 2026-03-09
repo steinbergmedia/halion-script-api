@@ -10,6 +10,26 @@ This page lists the modified and added pages for each version.
 
 ---
 
+## HALion 7.5.0
+
+#### Added Pages
+
+* [analyzeWavetable](./analyzeWavetable.md)
+* [analyzeWavetableAsync](./analyzeWavetableAsync.md)
+* [cancelWavetableCreation](./cancelWavetableCreation.md)
+* [createWavetable](./createWavetable.md)
+* [getWavetable](./getWavetable.md)
+* [getWavetableCreationProgress](./getWavetableCreationProgress.md)
+* [setWavetable](./setWavetable.md)
+* [Wavetable Constants](./Wavetable-Constants.md)
+* [Wavetable Enumeration Types](./Wavetable-Enumeration-Types.md)
+* [Wavetable Table](./Wavetable-Table.md)
+
+#### Modified Pages
+
+* [Audio File](./Audio-File.md)
+* [Progress](./Progress.md) - Renamed from LoadProgress to Progress.
+
 ## HALion 7.1.0
 
 #### Added Pages
