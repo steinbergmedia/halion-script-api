@@ -8,7 +8,7 @@
 
 ## Description
 
-Function to analyze the waves of a [Wavetable Table](./Wavetable-Table.md) and update their spectral data asynchronously. Unlike [analyzeWavetable](./analyzeWavetable.md), this function runs in a parallel thread, allowing progress to be monitored via the returned progress object.
+Function to analyze the waves of a [Wavetable Table](./Wavetable-Table.md) and update their spectral data asynchronously. Unlike [analyzeWavetable](./analyzeWavetable.md), this function runs in a parallel thread, allowing progress to be monitored via the returned [Progress](./Progress.md) object.
 
 **Available in:** Controller.
 
@@ -17,17 +17,17 @@ Function to analyze the waves of a [Wavetable Table](./Wavetable-Table.md) and u
 |Argument|Description|Value Type|
 |:-|:-|:-|
 {{#include ./_analyzeWavetable-Arguments.md}}
-|**callback**|A function called once analysis completes, is canceled, or fails. Receives the progress object as its argument, allowing the result or error state to be inspected. See Return Values for the fields available on this object.|function, optional|
+|**callback**|A function called once analysis completes, is canceled, or fails. Receives the [Progress](./Progress.md) object as its argument, allowing the result or error state to be inspected. See Return Values for the fields available on this object.|function, optional|
 
 ## Return Values
 
-Returns a progress object with the following fields:
+Returns a [Progress](./Progress.md) object with the following fields:
 
 |Field|Description|Value Type|
 |:-|:-|:-|
 |**.progress**|The analysis progress in the range from 0 to 1.|number|
 |**.root**|The analyzed [Wavetable Table](./Wavetable-Table.md) on completion, otherwise ``nil``.|table|
-|**.cancel**|Set this to ``true`` to abort the analysis. The callback will still be called, with ``.cancel`` set to ``true`` on the progress object.|boolean|
+|**.cancel**|Set this to ``true`` to abort the analysis. The callback will still be called, with ``.cancel`` set to ``true`` on the [Progress](./Progress.md) object.|boolean|
 |**.error**|Error message if the analysis failed, otherwise ``nil``.|string|
 |**.info**|User-definable field, for example, to manage several parallel threads.|string or table|
 
