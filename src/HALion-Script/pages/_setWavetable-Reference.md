@@ -1,7 +1,7 @@
 /* ANCHOR: all */
 
 // ANCHOR: function
->**getWavetable(index, wavetable)**
+>**setWavetable(index, wavetable)**
 
 {{#include ../../_Version.md:halion750}}
 // ANCHOR_END: function
@@ -20,7 +20,7 @@ Function to set the wavetable data of a wavetable oscillator in the specified zo
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**index**|The index of the oscillator.|number|
-|**wavetable**|The table that contains the wavetable data. The structure of the table is defined in the Wavetable Table.|table|
+|**wavetable**|The table that contains the wavetable data. The structure of the table is defined in the [Wavetable Table](./Wavetable-Table.md).|table|
 // ANCHOR_END: arguments
 
 #### Example

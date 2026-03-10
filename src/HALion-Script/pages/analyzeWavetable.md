@@ -31,8 +31,6 @@ defineParameter { name = "Process", default = false, onChanged = function() if P
 defineParameter { name = "WavetableStart", default = 0, min = 0, max = 1024, increment = 1 }
 defineParameter { name = "WavetableLength", default = 0, min = 0, max = 1024, increment = 1 }
 
-
- 
 function onProcess()
     zones = this.parent:findZones(true)
     for i, zone in ipairs(zones) do

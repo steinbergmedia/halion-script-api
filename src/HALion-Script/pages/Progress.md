@@ -8,7 +8,7 @@ The properties of the Progress class can be used to monitor the progress of asyn
 
 **On this page:**
 
-[Progress Class](#loadprogress-class)
+[Progress Class](#progress-class)
 
 ---
 
@@ -29,7 +29,7 @@ Functions such as [loadPresetAsync](./loadPresetAsync.md), [appendLayerAsync](./
 |**.progress**|The progress in the range from 0 to 1.|number|
 |**.root**|The result of the completed operation. For loading functions, this is the [Element](./Element.md) object of the first element (root) of the loaded VST preset, which can be of the type [Layer](./Layer.md), [Program](./Program.md),or [Instance](./Instance.md). For processing functions like [analyzeWavetableAsync](./analyzeWavetableAsync.md), this is the processed object, e.g. the analyzed [Wavetable Table](./Wavetable-Table.md).|[Layer](./Layer.md), [Program](./Program.md), [Instance](./Instance.md), or [Wavetable Table](./Wavetable-Table.md)|
 |**.cancel**|Set this to ``true`` to cancel the operation.|boolean|
-|**.error**|Message if an error occured.|string|
+|**.error**|Message if an error occurred.|string|
 |**.info**|User definable field, for example, to manage several threads.|string or table|
 
 #### Example for Loading Functions
