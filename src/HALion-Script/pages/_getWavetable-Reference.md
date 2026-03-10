@@ -25,7 +25,7 @@ Function to obtain the wavetable data of a wavetable oscillator in the specified
 #### Return Values
 
 // ANCHOR: return-values
-Returns a table with tables for each wave and fields that define the playback of the wavetable. See [Wavetable Table](./Wavetable-Table.md) for details. The function returns ``nil`` if the determined oscillator has no wavetable.
+Returns a table with tables for each wave and fields that define the playback of the wavetable. See [Wavetable Table](./Wavetable-Table.md) for details. The function returns ``nil`` if the zone is not a wavetable zone. If the zone is a wavetable zone but the oscillator has no waves loaded, the function returns an empty table (``#wt == 0``).
 // ANCHOR_END: return-values
 
 
