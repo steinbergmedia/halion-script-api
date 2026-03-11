@@ -26,7 +26,7 @@ Function to set the wavetable data of a wavetable oscillator in the specified zo
 #### Remarks
 
 // ANCHOR: remarks
-**linkEnvelope:** Waves in the wavetable are organized into *wave sequences* — groups of consecutive waves sharing the same [filename](./Wavetable-Table.md). For each sequence, ``setWavetable`` reads the ``linkEnvelope`` field of the first wave and propagates that value to all waves of the sequence in the oscillator's wavetable. Additionally, ``setWavetable`` verifies that the ``time`` of each wave is consistent with its ``samplePos``. If any wave in a sequence fails this check, ``linkEnvelope`` is set to ``false`` for all waves of that sequence in the oscillator's wavetable, overriding the ``linkEnvelope`` field of the first wave.
+**linkEnvelope:** Waves in the wavetable are organized into *wave sequences* — groups of consecutive waves sharing the same [filename](./Wavetable-Table.md#wave-fields). For each sequence, ``setWavetable`` reads the ``linkEnvelope`` field of the first wave and propagates that value to all waves of the sequence in the oscillator's wavetable. Additionally, ``setWavetable`` verifies that the ``time`` of each wave is consistent with its [samplePos](./Wavetable-Table.md#wave-fields). If any wave in a sequence fails this check, ``linkEnvelope`` is set to ``false`` for all waves of that sequence in the oscillator's wavetable, overriding the ``linkEnvelope`` field of the first wave.
 // ANCHOR_END: remarks
 
 #### Example
