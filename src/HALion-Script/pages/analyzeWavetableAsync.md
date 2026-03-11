@@ -10,6 +10,8 @@
 
 Function to analyze the waves of a [Wavetable Table](./Wavetable-Table.md) and update their spectral data asynchronously. Unlike [analyzeWavetable](./analyzeWavetable.md), this function runs in a parallel thread, allowing progress to be monitored via the returned [Progress](./Progress.md) object.
 
+Waves in the wavetable are organized into *wave sequences* — groups of consecutive waves sharing the same [filename](./Wavetable-Table.md). For each wave sequence that contains analyzed waves, ``analyzeWavetableAsync`` reads the ``linkEnvelope`` field of the first wave of the sequence. If the field is ``true``, the ``time`` of each wave in that sequence is synchronized with its ``samplePos``, and ``linkEnvelope`` is set to ``true`` for all waves of that sequence.
+
 **Available in:** Controller.
 
 ## Arguments

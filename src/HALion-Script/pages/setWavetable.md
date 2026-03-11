@@ -12,6 +12,10 @@
 
 {{#include ./_setWavetable-Reference.md:arguments}}
 
+## Remarks
+
+{{#include ./_setWavetable-Reference.md:remarks}}
+
 ## Example
 
 {{#include ./_setWavetable-Reference.md:example}}
