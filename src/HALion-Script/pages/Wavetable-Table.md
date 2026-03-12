@@ -65,4 +65,136 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.phase**|The phase of this bin in radians, ranging from -π to π.|number|Wave Data|
 |**.magn**|The magnitude of this bin, ranging from 0 to 1.|number|Wave Data|
 
+## Example
+
+```lua
+-- inspect_wavetable.lua
+-- Prints a readable summary of the Wavetable Table loaded on an oscillator.
+-- Useful for verifying that createWavetable produced the expected result.
+--
+-- Oscillator   : 1 or 2 — which oscillator to inspect.
+-- MaxWaves     : 0 = print all waves; N = print only the first N waves.
+-- ShowChannels : when true, prints per-channel fundamentals and window sizes.
+-- Press Inspect to run.
+
+oscillatorOptions = { "1", "2" }
+
+defineParameter { name = "Inspect",      default = false, onChanged = function() if Inspect then onInspect() end end }
+defineParameter { name = "Oscillator",   default = 1, min = 1, max = 2, increment = 1 }
+defineParameter { name = "MaxWaves",     default = 0, min = 0, max = 1024, increment = 1 }
+defineParameter { name = "ShowChannels", default = true }
+
+-- Enum name lookup tables.
+local normalizeModeNames    = { [1]="Off", [2]="Wave", [3]="Sequence" }
+local phaseModeNames        = { [1]="Keep Original", [2]="Align", [3]="Reset to Zero" }
+local winTypeNames          = { [1]="Rectangular", [2]="Cosine", [3]="Bartlett",
+                                [4]="Hanning", [5]="Hamming", [6]="Blackman", [7]="BlackmanHarris" }
+local winSizeModeNames      = { [1]="Auto", [2]="FixedIndividual", [3]="FixedCommon" }
+local channelSelectionNames = { [1]="Multi", [2]="Sum", [3]="Left", [4]="Right",
+                                [5]="Center", [6]="LFE", [7]="RearLeft", [8]="RearRight" }
+local channelConfigNames    = { [1]="Mono", [2]="Stereo", [3]="LCR", [4]="LCRLfe",
+                                [5]="Quadro", [6]="QuadroLfe", [7]="5.0", [8]="5.1" }
+
+local function enumName(t, v)
+    return t[v] and string.format("%s (%d)", t[v], v) or tostring(v)
+end
+
+local function boolStr(v)
+    return v and "true" or "false"
+end
+
+function onInspect()
+    local zones = this.parent:findZones(true)
+    if #zones == 0 then
+        print("No zones found in parent layer.")
+        Inspect = false
+        return
+    end
+
+    for zi, zone in ipairs(zones) do
+        local wt = zone:getWavetable(Oscillator)
+        if not wt then
+            print(string.format("Zone %d: no wavetable on oscillator %d.", zi, Oscillator))
+        else
+            local totalWaves  = #wt
+            local printWaves  = (MaxWaves == 0) and totalWaves or math.min(MaxWaves, totalWaves)
+
+            -- ── Wavetable-level fields ───────────────────────────────────────
+            print(string.rep("─", 60))
+            print(string.format('Zone %d, Osc %d: "%s"', zi, Oscillator, tostring(wt.name)))
+            print(string.rep("─", 60))
+            print(string.format("  Waves         : %d", totalWaves))
+            print(string.format("  Loop          : %.3g → %.3g", wt.loopStart, wt.loopEnd))
+            print(string.format("  NormalizeMode : %s", enumName(normalizeModeNames,  wt.normalizeMode)))
+            print(string.format("  PhaseMode     : %s", enumName(phaseModeNames,      wt.phaseMode)))
+            print(string.format("  InterpPhase   : %s", boolStr(wt.interpolatePhase)))
+            print(string.format("  PitchEnvelope : %s", boolStr(wt.pitchEnvelope)))
+            print(string.format("  PersistentWaves: %s", boolStr(wt.persistentWaves)))
+
+            -- ── Per-wave fields ──────────────────────────────────────────────
+            if printWaves > 0 then
+                print("")
+                if printWaves < totalWaves then
+                    print(string.format("  Showing first %d of %d waves:", printWaves, totalWaves))
+                else
+                    print(string.format("  Waves (%d):", totalWaves))
+                end
+
+                local afileCache = {}   -- cache AudioFile objects by filename
+                for wi = 1, printWaves do
+                    local w = wt[wi]
+                    local fname = tostring(w.filename)
+                    if not afileCache[fname] then
+                        afileCache[fname] = AudioFile.open(w.filename) or false
+                    end
+                    local af          = afileCache[fname]
+                    local srcChannels = af and af.channels or "?"
+                    print(string.format("  [%d] file='%s'  channels=%s  samplePos=%d smp",
+                        wi, fname, tostring(srcChannels), w.samplePos))
+                    print(string.format("       ChannelSel=%-18s  ChannelCfg=%s",
+                        enumName(channelSelectionNames, w.channelSelection),
+                        enumName(channelConfigNames,    w.channelConfig)))
+                    print(string.format("       WinType=%-20s  WinSizeMode=%s",
+                        enumName(winTypeNames,      w.winType),
+                        enumName(winSizeModeNames,  w.winSizeMode)))
+                    print(string.format("       WinCrossfade=%.1f %%  SpectralEnvRes=%.0f Hz  FreqLimit=%.0f Hz",
+                        w.winCrossfade, w.spectralEnvRes, w.freqLimit))
+                    print(string.format("       Time=%.3g s  Curve=%.3g  LinkEnvelope=%s",
+                        w.time, w.curve, boolStr(w.linkEnvelope)))
+
+                    -- Per-channel data (fundamental, winSize, bin count).
+                    if ShowChannels and w.fundamental then
+                        local chLine = "       Channels:"
+                        for ch = 1, 6 do
+                            local fund    = w.fundamental and w.fundamental[ch]
+                            local wsz     = w.winSize    and w.winSize[ch]
+                            local bins    = w.spectrum   and w.spectrum[ch]   and #w.spectrum[ch]
+                            local hasWave = w.wave       and w.wave[ch]       and (#w.wave[ch] > 0)
+                            if fund or wsz or bins then
+                                print(string.format(
+                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins  wave=%s",
+                                    ch,
+                                    fund    or 0,
+                                    wsz     and tostring(wsz) or "–",
+                                    bins    and tostring(bins) or "–",
+                                    hasWave and "yes" or "–"))
+                            end
+                        end
+                    end
+                end
+
+                if printWaves < totalWaves then
+                    print(string.format("  ... (%d more waves not shown)", totalWaves - printWaves))
+                end
+            end
+
+            print("")
+        end
+    end
+
+    print("Inspect complete.")
+    Inspect = false
+end
+```
+
 **See also:** [analyzeWavetable](./analyzeWavetable.md), [analyzeWavetableAsync](./analyzeWavetableAsync.md), [cancelWavetableCreation](./cancelWavetableCreation.md), [createWavetable](./createWavetable.md), [getWavetable](./getWavetable.md), [getWavetableCreationProgress](./getWavetableCreationProgress.md), [setWavetable](./setWavetable.md), [Wavetable Constants](./Wavetable-Constants.md), [Wavetable Enumeration Types](./Wavetable-Enumeration-Types.md)
