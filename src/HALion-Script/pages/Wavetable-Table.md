@@ -68,7 +68,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 ## Example
 
 ```lua
--- inspect_wavetable.lua
+-- Inspect wavetable.
 -- Prints a readable summary of the Wavetable Table loaded on an oscillator.
 -- Useful for verifying that createWavetable produced the expected result.
 --
