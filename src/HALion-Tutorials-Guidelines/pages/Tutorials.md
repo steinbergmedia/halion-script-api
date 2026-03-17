@@ -11,6 +11,7 @@
 * [Creating an FX Chain](./Creating-an-FX-Chain.md)
 * [Creating an FX Rack](./Creating-an-FX-Rack.md)
 * [Using Attribute Rules](./Using-Attribute-Rules.md)
+* [Using Note Expression](./Using-Note-Expression.md)
 * [Using Relative Paths](./Using-Relative-Paths.md)
 * [Using Velocity Crossfades](./Using-Velocity-Crossfades.md)
 * [Working with Exported Properties](./Working-with-Exported-Properties.md)

@@ -327,6 +327,7 @@
     - [Creating an FX Chain](./HALion-Tutorials-Guidelines/pages/Creating-an-FX-Chain.md)
     - [Creating an FX Rack](./HALion-Tutorials-Guidelines/pages/Creating-an-FX-Rack.md)
     - [Using Attribute Rules](./HALion-Tutorials-Guidelines/pages/Using-Attribute-Rules.md)
+    - [Using Note Expression](./HALion-Tutorials-Guidelines/pages/Using-Note-Expression.md)
     - [Using Relative Paths](./HALion-Tutorials-Guidelines/pages/Using-Relative-Paths.md)
     - [Using Velocity Crossfades](./HALion-Tutorials-Guidelines/pages/Using-Velocity-Crossfades.md)
     - [Working with Exported Properties](./HALion-Tutorials-Guidelines/pages/Working-with-Exported-Properties.md)
