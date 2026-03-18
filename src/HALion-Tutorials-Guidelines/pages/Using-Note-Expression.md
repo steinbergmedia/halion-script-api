@@ -74,7 +74,7 @@ The scenario is a concert pitch parameter: the script offsets every note so that
 ### How the Script Works
 
 ```lua
-notesByPitch = {}  -- [note pitch] = voice ID
+notesByPitch = {}  -- [note pitch] = list of voice IDs
 defineSlotLocal("notesByPitch")
 voiceTuning  = {}  -- [voice ID]   = NE tuning value (0–1), or -1 if not set
 defineSlotLocal("voiceTuning")
@@ -94,16 +94,21 @@ end
 function onNote(event)
     local id = postEvent(event)
     local neTuning = getNoteExpression(id, NoteExpressionType.tuning)
-    notesByPitch[event.note] = id
+    if not notesByPitch[event.note] then
+        notesByPitch[event.note] = {}
+    end
+    table.insert(notesByPitch[event.note], id)
     voiceTuning[id] = neTuning
     applyTuning(id, neTuning)
 end
 
 function onRelease(event)
     postEvent(event)
-    local id = notesByPitch[event.note]
-    if id then
-        voiceTuning[id] = nil
+    local ids = notesByPitch[event.note]
+    if ids then
+        for _, id in ipairs(ids) do
+            voiceTuning[id] = nil
+        end
         notesByPitch[event.note] = nil
     end
 end
@@ -156,12 +161,12 @@ The NE tuning value is in the range 0–1 with 0.5 as the center. Subtracting 0.
 
 Two tables are maintained for the lifetime of each note:
 
-* ``notesByPitch`` maps each note pitch to its voice ID. This is needed in ``onRelease`` to find the voice ID from the note number, because release events carry a note number but not a voice ID.
+* ``notesByPitch`` maps each note pitch to a list of voice IDs. This is needed in ``onRelease`` to find all voice IDs from the note number, because release events carry a note number but not a voice ID. Multiple entries per pitch handle the case where the same note is retriggered while still held — for example, when the sustain pedal is pressed and the same key is played twice.
 * ``voiceTuning`` maps each voice ID to its current NE tuning value. This is needed in ``onNoteExpression`` to update the value for a specific voice, and in ``onConcertPitchChanged`` to iterate over all currently playing voices.
 
 #### onRelease
 
-The release event is forwarded with ``postEvent``. The voice is then removed from both tables to keep them clean.
+The release event is forwarded with ``postEvent``. All voice IDs for the released pitch are then removed from ``voiceTuning`` and the entry in ``notesByPitch`` is cleared. Flushing all voices for the pitch at once is correct because a MIDI note-off is pitch-based: it releases all sounding instances of that pitch, not just one.
 
 #### onNoteExpression
 
@@ -172,8 +177,6 @@ When a tuning NE event arrives, the script updates the stored NE value and calls
 When the ``ConcertPitch`` parameter changes while notes are held, all playing notes need to be retuned immediately. ``onConcertPitchChanged`` calls ``updateAllVoicesTuning`` via ``runSync``, which iterates over ``voiceTuning`` and calls ``applyTuning`` for each voice, using the NE tuning values accumulated during playback so that the controller position is preserved in the result.
 
 ``runSync`` is required here because parameter callbacks run on the UI thread and ``changeTune`` must be called from the audio thread.
-
->&#10069; This example assumes that each note pitch is playing once at a time. In production code, use a list of voice IDs per note pitch to correctly handle retriggered notes.
 
 ## Example 2: Custom Dynamics from Velocity and Mod Wheel
 
@@ -237,7 +240,6 @@ function onRelease(event)
         if data.note == event.note then
             releaseVoice(data.voiceID)
             noteIDs[origID] = nil
-            break
         end
     end
 end
@@ -300,7 +302,7 @@ The event data — voice ID, velocity, and note pitch — is stored in ``noteIDs
 
 #### onRelease
 
-Because the note was created with ``playNote`` rather than ``postEvent``, there is no automatic note-off. ``releaseVoice(id)`` explicitly stops the internally-played voice. The entry in ``noteIDs`` is found by searching for the matching note pitch, because release events carry only a note number and not the original event ID.
+Because the note was created with ``playNote`` rather than ``postEvent``, there is no automatic note-off. ``releaseVoice(id)`` explicitly stops each internally-played voice. All entries in ``noteIDs`` with a matching note pitch are released and removed, because a MIDI note-off is pitch-based and releases all sounding instances of that pitch at once.
 
 #### onController
 
@@ -317,5 +319,3 @@ The ``custom1`` exclusion here and the ``block = true`` flag set earlier serve d
 #### onVelMWBalanceChanged
 
 When the ``VelMWBalance`` parameter changes while notes are held, the dynamics value for all playing notes is recalculated and applied immediately. ``onVelMWBalanceChanged`` calls ``updateAllVoices`` via ``runSync``, which iterates over ``noteIDs`` and applies the recalculated value to each voice. As in Example 1, ``runSync`` is required because the parameter callback runs on the UI thread.
-
->&#10069; This example assumes that each note pitch is playing once at a time. In production code, use a list of voice IDs per note pitch to correctly handle retriggered notes.
