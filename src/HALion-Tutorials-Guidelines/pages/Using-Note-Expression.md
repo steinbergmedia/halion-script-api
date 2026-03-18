@@ -69,7 +69,7 @@ This note ID is the connecting element between [onNote](../../HALion-Script/page
 
 One common use case for note expression (NE) is per-note tuning. Cubase can send tuning NE events to HALion that pitch individual notes up or down while they play — either drawn directly in the Key Editor or converted from an MPE controller. The following example shows how to intercept these events and combine them with an offset.
 
-The scenario is a concert pitch parameter: the script offsets every note so that A3 is tuned to a user-defined frequency instead of the standard 440 Hz. The script must combine this offset with any incoming tuning NE events.
+In [Using Note Expression 01.vstpreset](../vstpresets/Using%20Note%20Expression%2001.vstpreset), the scenario is a concert pitch parameter: the script offsets every note so that A3 is tuned to a user-defined frequency instead of the standard 440 Hz. The script must combine this offset with any incoming tuning NE events.
 
 ### How the Script Works
 
