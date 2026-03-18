@@ -31,7 +31,7 @@ Note expression events are received by the ``onNoteExpression`` callback:
 
 ```lua
 function onNoteExpression(event)
-    print(event.noteExpressionType, event.value, event.id)
+    print(event.noteExpressionType, event.value, event.id, event.ppqPosition)
 end
 ```
 
@@ -42,10 +42,13 @@ The event fields are:
 |``event.noteExpressionType``|The type of the note expression event.|
 |``event.value``|The current value (0–1).|
 |``event.id``|The note ID of the note the event belongs to.|
+|``event.ppqPosition``|The position of the event in ppq relative to the project start. The host must be in playback, otherwise, this value will be 0.0.|
 
 ## Note IDs
 
-When a note-on event is forwarded with ``postEvent``, the function returns a **note ID** that uniquely identifies the voice in the HALion engine:
+A **note ID** uniquely identifies a voice in the HALion engine. There are two ways to obtain one, depending on how the voice is created.
+
+[postEvent](../../HALion-Script/pages/postEvent.md) forwards an incoming note event to HALion and returns the ID of the resulting voice:
 
 ```lua
 function onNote(event)
@@ -54,7 +57,28 @@ function onNote(event)
 end
 ```
 
-This note ID is the connecting element between [onNote](../../HALion-Script/pages/onNote.md) and [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md): the ``event.id`` field in [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md) matches the ID returned by [postEvent](../../HALion-Script/pages/postEvent.md) for the same note. Knowing the note ID lets you target a specific voice with functions like [changeTune](../../HALion-Script/pages/changeTune.md), [changeVolume](../../HALion-Script/pages/changeVolume.md), [changePan](../../HALion-Script/pages/changePan.md), and [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md). This is the basis for the examples in this tutorial.
+[playNote](../../HALion-Script/pages/playNote.md) creates an entirely new internal voice — independent of the incoming event — and returns its ID:
+
+```lua
+function onNote(event)
+    local id = playNote(event.note, event.velocity, -1)
+    -- id identifies the internally-played voice
+end
+```
+
+In both cases, knowing the note ID lets you target that specific voice with functions like [changeTune](../../HALion-Script/pages/changeTune.md), [changeVolume](../../HALion-Script/pages/changeVolume.md), [changePan](../../HALion-Script/pages/changePan.md), and [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md).
+
+[playNote](../../HALion-Script/pages/playNote.md) also accepts optional ``volume``, ``pan``, and ``tune`` arguments that set the initial note expression values for those types at the moment the voice is created. This is useful when you need the voice to start at a specific state rather than at the default values.
+
+### Note IDs and Note Expression
+
+The two creation methods differ in how note expression (NE) events reach the voice.
+
+With [postEvent](../../HALion-Script/pages/postEvent.md), the returned ID matches ``event.id`` in [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md). HALion automatically links incoming NE events to the forwarded voice, so the connection between [onNote](../../HALion-Script/pages/onNote.md) and [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md) requires no extra work from the script.
+
+With [playNote](../../HALion-Script/pages/playNote.md), HALion creates a brand-new voice ID that has no connection to the original MIDI event. NE events from Cubase arrive in [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md) carrying the original ``event.id``, not the ID returned by [playNote](../../HALion-Script/pages/playNote.md). HALion therefore cannot route those events to the internal voice automatically. The script must do this explicitly, looking up the internal voice ID and forwarding the event using [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md).
+
+[Example 1](#example-1-concert-pitch) uses [postEvent](../../HALion-Script/pages/postEvent.md) and relies on the automatic NE linkage. [Example 2](#example-2-custom-dynamics-from-velocity-and-mod-wheel) uses [playNote](../../HALion-Script/pages/playNote.md) and performs explicit NE forwarding.
 
 ## Example Programs
 
@@ -78,13 +102,14 @@ notesByPitch = {}  -- [note pitch] = list of voice IDs
 defineSlotLocal("notesByPitch")
 voiceTuning  = {}  -- [voice ID]   = NE tuning value (0–1), or -1 if not set
 defineSlotLocal("voiceTuning")
+pitchOffset  = 0   -- cached semitone offset for current ConcertPitch
 
 function concertPitchOffset()
     return math.log(ConcertPitch / 440) / math.log(2) * 12
 end
 
 function applyTuning(id, neTuning)
-    local tune = concertPitchOffset()
+    local tune = pitchOffset
     if neTuning >= 0 then
         tune = tune + (neTuning - 0.5) * 240
     end
@@ -127,6 +152,7 @@ function updateAllVoicesTuning()
 end
 
 function onConcertPitchChanged()
+    pitchOffset = concertPitchOffset()
     runSync(updateAllVoicesTuning, 1)
 end
 
@@ -137,15 +163,17 @@ defineParameter("ConcertPitch", "Concert Pitch", 440, 415, 466, 0.1, onConcertPi
 
 Both ``notesByPitch`` and ``voiceTuning`` store per-note information that depends on the MIDI events received by a slot. If the same program is loaded in more than one slot, each slot must have its own independent copy of these variables. The [defineSlotLocal](../../HALion-Script/pages/defineSlotLocal.md) function achieves this by making a global variable operate independently per slot. See [Using Slot Local Variables](../../HALion-Script/pages/Using-Slot-Local-Variables.md) for more details.
 
-#### concertPitchOffset
+#### concertPitchOffset and pitchOffset
 
 The ``ConcertPitch`` parameter sets the frequency of A in Hz. The ``concertPitchOffset`` function converts this to a semitone offset by calculating how far the chosen frequency is from 440 Hz on a logarithmic scale. At 440 Hz the result is 0.
 
+The result is cached in the global variable ``pitchOffset``, which is updated whenever ``ConcertPitch`` changes. Global variables in HALion Script are synchronized with the audio thread, so ``pitchOffset`` can be read safely from audio thread callbacks such as ``applyTuning``. The initial value of 0 matches ``concertPitchOffset()`` at the default frequency of 440 Hz.
+
 #### applyTuning
 
-``changeTune(noteID, tune, relative, fade)`` sets the tuning for a specific voice. The ``noteID`` argument targets the voice, ``tune`` is the total offset from the note's base pitch in semitones, ``relative = false`` means the value is absolute, and ``fade = false`` means the change is applied immediately.
+``changeTune(noteID, tune, relative, immediateOrDuration)`` sets the tuning for a specific voice. The ``noteID`` argument targets the voice, ``tune`` is the total offset from the note's base pitch in semitones, ``relative = false`` means the value is absolute, and ``immediateOrDuration = true`` means the change is applied immediately without controller smoothing.
 
-When a tuning NE value has been set, the NE contribution is added to the concert pitch offset:
+``applyTuning`` starts from the cached ``pitchOffset`` and, when a tuning NE value has been set, adds the NE contribution on top:
 
 ```lua
 tune = tune + (neTuning - 0.5) * 240
@@ -161,8 +189,8 @@ The NE tuning value is in the range 0–1 with 0.5 as the center. Subtracting 0.
 
 Two tables are maintained for the lifetime of each note:
 
-* ``notesByPitch`` maps each note pitch to a list of voice IDs. This is needed in ``onRelease`` to find all voice IDs from the note number, because release events carry a note number but not a voice ID. Multiple entries per pitch handle the case where the same note is retriggered while still held — for example, when the sustain pedal is pressed and the same key is played twice.
-* ``voiceTuning`` maps each voice ID to its current NE tuning value. This is needed in ``onNoteExpression`` to update the value for a specific voice, and in ``onConcertPitchChanged`` to iterate over all currently playing voices.
+* ``notesByPitch`` maps each note pitch to a list of voice IDs. This is needed in ``onRelease`` because note-on and note-off events have different IDs, so the voice ID from the note-on cannot be retrieved directly from the release event. Instead, the script looks up all voice IDs for the released pitch. Multiple entries per pitch handle the case where the same note is retriggered while still held — for example, when the sustain pedal is pressed and the same key is played twice.
+* ``voiceTuning`` tracks the current NE tuning value for each active voice. It is populated in ``onNote`` with the value from ``getNoteExpression`` at note-on, and updated in ``onNoteExpression`` as new tuning events arrive. ``onConcertPitchChanged`` uses it to iterate over all currently playing voices and retune them when the parameter changes.
 
 #### onRelease
 
@@ -170,13 +198,13 @@ The release event is forwarded with ``postEvent``. All voice IDs for the release
 
 #### onNoteExpression
 
-When a tuning NE event arrives, the script updates the stored NE value and calls ``applyTuning`` so that the concert pitch offset and the NE pitch are recalculated and combined on every event.
+When a NE tuning event occurs, the script updates the stored NE value and calls ``applyTuning``, which recalculates and combines the concert pitch offset and NE tuning values on every event.
 
 #### onConcertPitchChanged
 
-When the ``ConcertPitch`` parameter changes while notes are held, all playing notes need to be retuned immediately. ``onConcertPitchChanged`` calls ``updateAllVoicesTuning`` via ``runSync``, which iterates over ``voiceTuning`` and calls ``applyTuning`` for each voice, using the NE tuning values accumulated during playback so that the controller position is preserved in the result.
+When the ``ConcertPitch`` parameter changes, ``onConcertPitchChanged`` first updates ``pitchOffset`` by calling ``concertPitchOffset()``. It then schedules ``updateAllVoicesTuning`` via ``runSync``, which iterates over ``voiceTuning`` and calls ``applyTuning`` for each voice.
 
-``runSync`` is required here because parameter callbacks run on the UI thread and ``changeTune`` must be called from the audio thread.
+``runSync`` is required here because parameter callbacks run on the UI thread and ``changeTune`` must be called from the audio thread. Updating ``pitchOffset`` on the UI thread before the ``runSync`` call is safe because global variables in HALion Script are synchronized with the audio thread.
 
 ## Example 2: Custom Dynamics from Velocity and Mod Wheel
 
@@ -195,7 +223,7 @@ neProps[NoteExpressionType.custom1] = { block = true }
 
 ### Forwarding Note Expression
 
-When a note is played with [playNote](../../HALion-Script/pages/playNote.md), a new voice with its own ID is created and the original note event is not forwarded to HALion. Note expression events from Cubase are associated with the original event ID and will never reach the internally-played voice automatically. To make note expression work for these voices, the script must forward it explicitly using [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md).
+When a note is played with [playNote](../../HALion-Script/pages/playNote.md), a new voice with its own ID is created and the original note event is not forwarded to HALion. Note expression events from Cubase are associated with the original event ID and will never reach the internally-played voice automatically. To make note expression (NE) work for these voices, the script must forward it explicitly using [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md).
 
 Two situations require forwarding:
 
@@ -312,10 +340,10 @@ When the mod wheel moves (CC#1), ``calcDynamics`` is called for each playing not
 
 #### onNoteExpression
 
-NE events from Cubase arrive with the original event ID (``event.id``). The script looks up the corresponding internal voice in ``noteIDs`` and forwards the event using ``changeNoteExpression``. The ``custom1`` type is excluded from forwarding because the script manages it internally — forwarding it would override the dynamics calculation.
+Note expression (NE) events from Cubase arrive with the original event ID (``event.id``). The script looks up the corresponding internal voice in ``noteIDs`` and forwards the event using ``changeNoteExpression``. The ``custom1`` type is excluded from forwarding because the script manages it internally — forwarding it would override the dynamics calculation.
 
 The ``custom1`` exclusion here and the ``block = true`` flag set earlier serve different purposes. The ``block`` flag operates at the engine level: it prevents HALion from automatically applying incoming ``custom1`` NE events to any voice. The ``~= NoteExpressionType.custom1`` check operates at the script level: it prevents the script's own forwarding logic from passing those events to the internal voice. Both guards are needed.
 
 #### onVelMWBalanceChanged
 
-When the ``VelMWBalance`` parameter changes while notes are held, the dynamics value for all playing notes is recalculated and applied immediately. ``onVelMWBalanceChanged`` calls ``updateAllVoices`` via ``runSync``, which iterates over ``noteIDs`` and applies the recalculated value to each voice. As in Example 1, ``runSync`` is required because the parameter callback runs on the UI thread.
+When the ``VelMWBalance`` parameter changes while notes are held, the dynamics value for all playing notes is recalculated and applied immediately. ``onVelMWBalanceChanged`` calls ``updateAllVoices`` via ``runSync``, which iterates over ``noteIDs`` and applies the recalculated value to each voice. As in [Example 1](#example-1-concert-pitch), ``runSync`` is required because the parameter callback runs on the UI thread.
