@@ -75,7 +75,9 @@ The scenario is a concert pitch parameter: the script offsets every note so that
 
 ```lua
 notesByPitch = {}  -- [note pitch] = voice ID
+defineSlotLocal("notesByPitch")
 voiceTuning  = {}  -- [voice ID]   = NE tuning value (0–1), or -1 if not set
+defineSlotLocal("voiceTuning")
 
 function concertPitchOffset()
     return math.log(ConcertPitch / 440) / math.log(2) * 12
@@ -126,6 +128,10 @@ end
 defineParameter("ConcertPitch", "Concert Pitch", 440, 415, 466, 0.1, onConcertPitchChanged)
 ```
 
+#### Slot Local Variables
+
+Both ``notesByPitch`` and ``voiceTuning`` store per-note information that depends on the MIDI events received by a slot. If the same program is loaded in more than one slot, each slot must have its own independent copy of these variables. The [defineSlotLocal](../../HALion-Script/pages/defineSlotLocal.md) function achieves this by making a global variable operate independently per slot. See [Using Slot Local Variables](../../HALion-Script/pages/Using-Slot-Local-Variables.md) for more details.
+
 #### concertPitchOffset
 
 The ``ConcertPitch`` parameter sets the frequency of A in Hz. The ``concertPitchOffset`` function converts this to a semitone offset by calculating how far the chosen frequency is from 440 Hz on a logarithmic scale. At 440 Hz the result is 0.
@@ -171,9 +177,9 @@ When the ``ConcertPitch`` parameter changes while notes are held, all playing no
 
 ## Example 2: Custom Dynamics from Velocity and Mod Wheel
 
-A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the volume of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0, dynamics are determined entirely by velocity. At 100, they are determined entirely by the mod wheel. In between, both contribute proportionally.
+A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the dynamics of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0, dynamics are determined entirely by velocity. At 100, they are determined entirely by the mod wheel. In between, both contribute proportionally.
 
->&#10069; The ``custom1`` note expression type has no built-in effect. You must route it to a target parameter in the modulation matrix of your zones — for example to **Amplifier Level** — for it to control the volume.
+The ``custom1`` note expression type has no built-in effect. In [Using Note Expression 02.vstpreset](../vstpresets/Using%20Note%20Expression%2002.vstpreset), ``custom1`` is routed to the **Individual Velocity Mode** of the **Trigger** section of the **Legato Strings** layer, so that both MIDI velocity and mod wheel contribute to the velocity crossfades of the example program (see [Using Velocity Crossfades](./Using-Velocity-Crossfades.md)). Alternatively, you could route it to a destination in the modulation matrix of your zones — for example to **Volume 1** or **Volume 2** — for it to control the volume.
 
 ### Blocking Note Expression
 
@@ -197,7 +203,9 @@ Two situations require forwarding:
 
 ```lua
 modWheel = 0
+defineSlotLocal("modWheel")
 noteIDs  = {}  -- [event ID] = { voiceID, velocity, note }
+defineSlotLocal("noteIDs")
 
 neProps = getNoteExpressionProperties()
 neProps[NoteExpressionType.custom1] = { block = true }
@@ -264,6 +272,10 @@ end
 defineParameter("VelMWBalance", "Vel/MW Balance", 50, 0, 100, 1, onVelMWBalanceChanged)
 ```
 
+#### Slot Local Variables
+
+``modWheel`` holds the current mod wheel value, while ``noteIDs`` holds the per-note event state. Both depend on the MIDI events received by a slot. If the same program is loaded in more than one slot, each slot must have its own independent copy of these variables — otherwise a note played in one slot would overwrite the state of another. [defineSlotLocal](../../HALion-Script/pages/defineSlotLocal.md) achieves this by making a global variable operate independently per slot. See [Using Slot Local Variables](../../HALion-Script/pages/Using-Slot-Local-Variables.md) for more details.
+
 #### VelMWBalance and calcDynamics
 
 ``VelMWBalance`` controls the contribution of each source. ``calcDynamics`` converts velocity and mod wheel to a value in the range 0–1 using a weighted sum:
@@ -294,9 +306,13 @@ Because the note was created with ``playNote`` rather than ``postEvent``, there 
 
 When the mod wheel moves (CC#1), ``calcDynamics`` is called for each playing note and the result is applied via ``changeNoteExpression``. Because each note's velocity is stored individually in ``noteIDs``, notes played at different velocities respond correctly to the same mod wheel movement. The controller event is then passed through with ``postEvent`` so that other components can respond to it.
 
+>&#10069; ``modWheel`` is initialized to 0 and updated as CC#1 events arrive. If the mod wheel is not at the bottom position when the preset loads, the initial dynamics will be calculated using 0 until the first CC#1 event is received.
+
 #### onNoteExpression
 
 NE events from Cubase arrive with the original event ID (``event.id``). The script looks up the corresponding internal voice in ``noteIDs`` and forwards the event using ``changeNoteExpression``. The ``custom1`` type is excluded from forwarding because the script manages it internally — forwarding it would override the dynamics calculation.
+
+The ``custom1`` exclusion here and the ``block = true`` flag set earlier serve different purposes. The ``block`` flag operates at the engine level: it prevents HALion from automatically applying incoming ``custom1`` NE events to any voice. The ``~= NoteExpressionType.custom1`` check operates at the script level: it prevents the script's own forwarding logic from passing those events to the internal voice. Both guards are needed.
 
 #### onVelMWBalanceChanged
 
