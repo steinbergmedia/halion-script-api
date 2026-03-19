@@ -87,7 +87,11 @@ With [playNote](../../HALion-Script/pages/playNote.md), HALion creates a brand-n
 
 ## Prerequisites
 
-* You have a program with a Lua Script module and a zone.
+* You are familiar with the HALion Script event callbacks [onNote](../../HALion-Script/pages/onNote.md), [onRelease](../../HALion-Script/pages/onRelease.md), [onController](../../HALion-Script/pages/onController.md), and [onNoteExpression](../../HALion-Script/pages/onNoteExpression.md).
+* You understand how voices are created and identified using [postEvent](../../HALion-Script/pages/postEvent.md) and [playNote](../../HALion-Script/pages/playNote.md).
+* You know how to define parameters and parameter callbacks with [defineParameter](../../HALion-Script/pages/defineParameter.md).
+* You are familiar with [defineSlotLocal](../../HALion-Script/pages/defineSlotLocal.md) and slot-local variables. See [Using Slot Local Variables](../../HALion-Script/pages/Using-Slot-Local-Variables.md) for details.
+* You understand the [Controller and Processor thread model](../../HALion-Script/pages/Threads-in-HALion.md) in HALion Script and are familiar with [runSync](../../HALion-Script/pages/runSync.md).
 
 ## Example 1: Concert Pitch
 
