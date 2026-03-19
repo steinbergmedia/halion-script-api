@@ -18,10 +18,10 @@ HALion provides the following note expression types:
 
 |Note Expression Type|Description|
 |:-|:-|
-|``NoteExpressionType.tuning``|Per-note pitch offset (±120 semitones).|
-|``NoteExpressionType.volume``|Per-note volume.|
-|``NoteExpressionType.pan``|Per-note panning.|
-|``NoteExpressionType.custom1``–``custom8``|User-defined, routed via the modulation matrix.|
+|**NoteExpressionType.tuning**|Per-note pitch offset (±120 semitones).|
+|**NoteExpressionType.volume**|Per-note volume.|
+|**NoteExpressionType.pan**|Per-note panning.|
+|**NoteExpressionType.custom1 – custom8**|User-defined, routed via the modulation matrix.|
 
 All note expression values range from 0 to 1. For bipolar types (pan and tuning), 0.5 is the center, meaning no change. For example, a tuning value of 0.5 means no pitch offset, 0 means the maximum pitch down (−120 semitones), and 1 means the maximum pitch up (+120 semitones).
 
@@ -39,10 +39,10 @@ The event fields are:
 
 |Field|Description|
 |:-|:-|
-|``event.noteExpressionType``|The type of the note expression event.|
-|``event.value``|The current value (0–1).|
-|``event.id``|The note ID of the note the event belongs to.|
-|``event.ppqPosition``|The position of the event in ppq relative to the project start. The host must be in playback, otherwise, this value will be 0.0.|
+|**.noteExpressionType**|The type of the note expression event.|
+|**.value**|The current value (0–1).|
+|**.id**|The note ID of the note the event belongs to.|
+|**.ppqPosition**|The position of the event in ppq relative to the project start. The host must be in playback, otherwise, this value will be 0.0.|
 
 ## Note IDs
 
