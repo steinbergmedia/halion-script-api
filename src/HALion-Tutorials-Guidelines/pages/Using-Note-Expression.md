@@ -290,7 +290,7 @@ end
 
 ## Example 2: Custom Dynamics from Velocity and Mod Wheel
 
-A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the dynamics of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0, dynamics are determined entirely by velocity. At 100, they are determined entirely by the mod wheel. In between, both contribute proportionally.
+A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the dynamics of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0 %, dynamics are determined entirely by velocity. At 100 %, they are determined entirely by the mod wheel. In between, both contribute proportionally.
 
 The ``custom1`` note expression type has no built-in effect. In [Using Note Expression 02.vstpreset](../vstpresets/Using%20Note%20Expression%2002.vstpreset), ``custom1`` is routed to the **Individual Velocity Mode** of the **Trigger** section of the **Legato Strings** layer, so that both MIDI velocity and mod wheel contribute to the velocity crossfades of the example program. See [Using Velocity Crossfades](./Using-Velocity-Crossfades.md) for more details.
 
@@ -300,7 +300,7 @@ Alternatively, you could route ``custom1`` to a destination in the modulation ma
 
 ### Blocking Note Expression
 
-When a script sets a note expression value internally, external note expression events of the same type must not interfere. [getNoteExpressionProperties](../../HALion-Script/pages/getNoteExpressionProperties.md) returns a table of properties for all note expression types. Setting ``block = true`` for a type prevents HALion from automatically applying incoming events of that type to the voice. The script then has exclusive control over the value:
+When a script sets a note expression value internally, external note expression events of the same type must not interfere. [getNoteExpressionProperties](../../HALion-Script/pages/getNoteExpressionProperties.md) returns a table of properties for all note expression types. Setting ``block = true`` for a type prevents HALion from automatically applying incoming events of that type to the voice. The script then has exclusive control over the value, and the note expression no longer appears in Cubase's Inspector.
 
 ```lua
 local neProps = getNoteExpressionProperties()
