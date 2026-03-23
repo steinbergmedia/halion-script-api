@@ -75,6 +75,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 -- Oscillator   : 1 or 2 — which oscillator to inspect.
 -- MaxWaves     : 0 = print all waves; N = print only the first N waves.
 -- ShowChannels : when true, prints per-channel fundamentals and window sizes.
+-- MaxBins      : 0 = skip bin data; N = print the first N bins per channel.
 -- Press Inspect to run.
 
 oscillatorOptions = { "1", "2" }
@@ -83,6 +84,7 @@ defineParameter { name = "Inspect",      default = false, onChanged = function()
 defineParameter { name = "Oscillator",   default = 1, min = 1, max = 2, increment = 1 }
 defineParameter { name = "MaxWaves",     default = 0, min = 0, max = 1024, increment = 1 }
 defineParameter { name = "ShowChannels", default = true }
+defineParameter { name = "MaxBins",      default = 0, min = 0, max = 4096, increment = 1 }
 
 -- Enum name lookup tables.
 local normalizeModeNames    = { [1]="Off", [2]="Wave", [3]="Sequence" }
@@ -177,6 +179,18 @@ function onInspect()
                                     wsz     and tostring(wsz) or "–",
                                     bins    and tostring(bins) or "–",
                                     hasWave and "yes" or "–"))
+                                if MaxBins > 0 and bins then
+                                    local printBins = math.min(MaxBins, bins)
+                                    local sp = w.spectrum[ch]
+                                    for bi = 1, printBins do
+                                        print(string.format(
+                                            "           bin %4d: freq=%8.4f  phase=%8.4f  magn=%8.4f",
+                                            bi, sp.freq[bi], sp.phase[bi], sp.magn[bi]))
+                                    end
+                                    if printBins < bins then
+                                        print(string.format("           ... (%d more bins not shown)", bins - printBins))
+                                    end
+                                end
                             end
                         end
                     end
