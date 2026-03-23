@@ -52,18 +52,18 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 
 |Field|Description|Value Type|Purpose|
 |:-|:-|:-|:-|
-|**.spectrum\[n\]**|An array containing the spectrum for the n-th channel. Each entry of the array represents a bin and references a table with the fields frequency, phase, and magnitude. See [Table per Bin](#table-per-bin) for details. The array size depends on the number of bins, up to a maximum of [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096 bins.|table|Wave Data|
+|**.spectrum\[n\]**|A table containing the spectrum for the n-th channel, with three fields: **.freq**, **.phase**, and **.magn**, each holding an array of bin values. The number of bins goes up to a maximum of [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096. See [Spectrum Fields](#spectrum-fields) for details.|table|Wave Data|
 |**.fundamental\[n\]**|The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.winSize\[n\]**|The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.wave\[n\]**|An array containing the waveform of the n-th channel. The array has a fixed size of [wavetable.maxWaveSize](./Wavetable-Constants.md) = 8192, where each index corresponds to one sample of the waveform. Sample amplitudes can be set in the range from -1 to 1, allowing direct modification of the waveform.|table|Wave Data|
 
-## Table per Bin
+## Spectrum Fields
 
 |Field|Description|Value Type|Purpose|
 |:-|:-|:-|:-|
-|**.freq**|The frequency of this bin expressed as a multiple of the fundamental frequency.|number|Wave Data|
-|**.phase**|The phase of this bin in radians, ranging from -π to π.|number|Wave Data|
-|**.magn**|The magnitude of this bin, ranging from 0 to 1.|number|Wave Data|
+|**.freq**|An array where each entry holds the frequency of a bin, expressed as a multiple of the fundamental frequency.|table|Wave Data|
+|**.phase**|An array where each entry holds the phase of a bin in radians, ranging from -π to π.|table|Wave Data|
+|**.magn**|An array where each entry holds the magnitude of a bin, ranging from 0 to 1.|table|Wave Data|
 
 ## Example
 
@@ -164,11 +164,10 @@ function onInspect()
 
                     -- Per-channel data (fundamental, winSize, bin count).
                     if ShowChannels and w.fundamental then
-                        local chLine = "       Channels:"
                         for ch = 1, 6 do
                             local fund    = w.fundamental and w.fundamental[ch]
                             local wsz     = w.winSize    and w.winSize[ch]
-                            local bins    = w.spectrum   and w.spectrum[ch]   and #w.spectrum[ch]
+                            local bins    = w.spectrum   and w.spectrum[ch]   and w.spectrum[ch].freq and #w.spectrum[ch].freq
                             local hasWave = w.wave       and w.wave[ch]       and (#w.wave[ch] > 0)
                             if fund or wsz or bins then
                                 print(string.format(
