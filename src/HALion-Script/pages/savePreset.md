@@ -8,36 +8,26 @@
 
 ## Description
 
- Function to save a layer as VST preset to disk.
+Saves the specified [Layer](./Layer.md) element as a VST preset to disk. The preset format is determined by the ``plugin`` argument, which also defines which Steinberg instrument can load the resulting .vstpreset file. If MediaBay attributes are provided through ``attr``, they are written into the preset.
 
- **Available in:** Controller.
+**Available in:** Controller.
 
- ## Arguments
+## Arguments
 
 |Argument|Description|Value Type|
 |:-|:-|:-|
-|**filename**|The absolute path and name of the VST preset.|string|
-|**layer**|Specifies the [Layer](./Layer.md) element which is to be saved.|[Layer](./Layer.md)|
-|**plugin**|Determines the plug-in for the VST preset. You can choose ``H7`` (HALion 7) or ``HS`` (HALion Sonic). |string, optional|
-|**attr**|Set this to ``program`` to save a program VST preset. If this is not set, a layer VST preset will be saved. Alternatively, you can provide a table with MediaBay attributes and values.|string, optional|
+|**filename**|The absolute path and name of the file location where the VST preset is saved.|string|
+|**layer**|Specifies the [Layer](./Layer.md) element to be saved as VST preset.|[Layer](./Layer.md)|
+|**plugin**|Specifies the target plug‑in format for the VST preset. Valid values are ``"H7"`` (HALion 7) and ``"HS"`` (HALion Sonic). Only the selected plug‑in can load the saved VST preset.|string, optional|
+|**attr**|If set to ``program`` the VST preset is saved as a *program* preset. Otherwise, the argument may contain a table of MediaBay attributes and values that will be written to the VST preset. If omitted, a *layer* VST preset is saved.|string, optional|
 
 ## MediaBay Attributes
 
-|Attribute|Value|Value Type|
-|:-|:-|:-|
-|MediaAuthor|"Author"|string|
-|MediaComment|"Comment"|string|
-|MediaLibraryManufacturerName|"ManufacturerName"|string|
-|MediaLibraryName|"LibraryName"|string|
-|MediaRating|3|integer|
-|MusicalArticulations|"Articulation1\|Articulation2\|..."|string|
-|MusicalCategory|"Category"|string|
-|MusicalInstrument|"Category\|Subcategory"|string|
-|MusicalMoods|"Mood1\|Mood2\|..."|string|
-|MusicalProperties|"Property1\|Property2\|..."|string|
-|MusicalStyle|"Style"|string|
-|MusicalSubStyle|"Style\|Substyle"|string|
-|VST3UnitTypePath|"program" or "program/layer"|string|
+MediaBay attributes are stored in VST presets and allow for browsing them in MediaBay. You can set the following attributes with this function or with [setMediaBayAttributes](./setMediaBayAttributes.md).
+
+{{#include ./_MediaBay_Attributes.md:savePreset_attributes}}
+
+{{#include ./_MediaBay_Attributes.md:savePreset_arguments}}
 
 >&#10069; See [MediaBay Guideline](../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.md) for more information about the attributes and how to use them.
 
@@ -52,7 +42,7 @@ defineParameter("SavePreset", nil, false, function() if SavePreset then onSavePr
 
 setScriptExecTimeOut(20000)
 
-attr = {MediaRating = 3, MusicalProperties = "Soft|Bright|Rich", VST3UnitTypePath = "program",}
+attr = {MediaRating = "3", MusicalProperties = "Soft|Bright|Rich", VST3UnitTypePath = "program",}
 
 function onSavePresetChanged()
 	FileName = fileLocation..FileName
@@ -62,3 +52,5 @@ function onSavePresetChanged()
 	SavePreset = false
 end
 ```
+
+**See also:** [getMediaBayAttributes](./getMediaBayAttributes.md), [setMediaBayAttributes](./setMediaBayAttributes.md)
