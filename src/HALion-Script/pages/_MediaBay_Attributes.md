@@ -10,10 +10,10 @@ The following attributes are stored in VST presets and allow for browsing them i
 |MediaKeywords|"Keywords"|string|
 |MediaLibraryManufacturerName|"ManufacturerName"|string|
 |MediaLibraryName|"LibraryName"|string|
-|MediaRating|"1 to 5 stars."|string|
+|MediaRating|"Number", 1 to 5 stars.|string|
 |MusicalArticulations|"Articulation1\|Articulation2\|..."|string|
 |MusicalCategory|"Category"|string|
-|MusicalGmSound|"Number."|string|
+|MusicalGmSound|"Number", the GM program number. |string|
 |MusicalInstrument|"Category\|Subcategory"|string|
 |MusicalMoods|"Mood1\|Mood2\|..."|string|
 |MusicalProperties|"Property1\|Property2\|..."|string|
@@ -21,7 +21,7 @@ The following attributes are stored in VST presets and allow for browsing them i
 |MusicalSignature|"4/4"|string|
 |MusicalStyle|"Style"|string|
 |MusicalSubStyle|"Style\|Substyle"|string|
-|MusicalTempo|"Tempo in BPM."|string|
+|MusicalTempo|"Number", the tempo in BPM.|string|
 // ANCHOR_END: savePreset_attributes
 
 The following attributes can only be written with [setMediaBayAttributes](./setMediaBayAttributes.md). They are needed for audio files that come with Cubase, such as loop sets. VST presets must not use them.
