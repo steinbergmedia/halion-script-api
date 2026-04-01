@@ -40,7 +40,7 @@ The following attributes are written exclusively with the arguments of [savePres
 
 |Attribute|Value|Value Type|
 |:-|:-|:-|
-|PlugInName|"Plug-in name", set with the ``plugin`` argument of [savePreset](./savePreset.md).|string|
+|PlugInName|"Name", set with the ``plugin`` argument of [savePreset](./savePreset.md).|string|
 |VST3UnitTypePath|"program" or "program/layer", set with the ``attr`` argument of [savePreset](./savePreset.md).|string|
 // ANCHOR_END: savePreset_arguments
 /* ANCHOR_END: all */
