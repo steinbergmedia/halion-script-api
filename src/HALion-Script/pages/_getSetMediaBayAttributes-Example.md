@@ -18,8 +18,9 @@ end
 
 function onWriteAttributesChanged()
     local newAttrs = {
-        MediaRating       = "4",
-        MusicalStyle      = "Electronic",
+        MediaRating       = "3",
+        MusicalStyle      = "Electronica/Dance",
+        MusicalSubStyle   = "Electronica/Dance|Synthwave",
         MusicalProperties = "Dark|Soft",
     }
     setMediaBayAttributes(fileLocation..FileName, newAttrs)
