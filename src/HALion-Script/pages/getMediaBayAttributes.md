@@ -4,6 +4,8 @@
 
 **getMediaBayAttributes(filename)**
 
+{{#include ../../_Version.md:halion750}}
+
 ## Description
 
 Reads the MediaBay attributes from a specified VST preset or audio file.

@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to remove a quick control assignment from the specified layer and quick control. For example, ``this.parent`` defines the parent layer of the script module as the layer that contains the quick control. The ``qc`` argument is the index of the quick control with the assignment to be removed. The ``assignment`` argument is the index of the quick control assignment to be removed. The indices of the quick controls and the assignments both start counting from 1.
+Function to remove a quick control assignment from the specified layer and quick control. The quick control assignment is determined by the [Layer](./Layer.md) object, the index of the quick control and the index of the assignment itself. The ``qc`` argument is the index of the quick control with the assignment to be removed. The ``assignment`` argument is the index of the quick control assignment to be removed. The indices of the quick controls and the assignments both start counting from 1.
 
 **Available in:** Controller.
 // ANCHOR_END: description

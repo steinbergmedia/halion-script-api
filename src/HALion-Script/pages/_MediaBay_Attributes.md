@@ -36,7 +36,7 @@ The following attributes can only be written with [setMediaBayAttributes](./setM
 // ANCHOR_END: setMediaBayAttributes
 
 // ANCHOR: savePreset_arguments
-The following attributes are written exclusively with the arguments of [savePreset](./savePreset.md). [setMediaBayAttributes](./setMediaBayAttributes.md) cannot be used to set them.
+The following attributes are written exclusively with the arguments of [savePreset](./savePreset.md). [setMediaBayAttributes](./setMediaBayAttributes.md) cannot modify them.
 
 |Attribute|Value|Value Type|
 |:-|:-|:-|

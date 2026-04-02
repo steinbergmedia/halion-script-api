@@ -18,8 +18,12 @@ This page lists the modified and added pages for each version.
 * [analyzeWavetableAsync](./analyzeWavetableAsync.md)
 * [cancelWavetableCreation](./cancelWavetableCreation.md)
 * [createWavetable](./createWavetable.md)
+* [getMediaBayAttributes](./getMediaBayAttributes.md)
+* [getQCAssignmentModuleType](./getQCAssignmentModuleType.md)
 * [getWavetable](./getWavetable.md)
 * [getWavetableCreationProgress](./getWavetableCreationProgress.md)
+* [setMediaBayAttributes](./setMediaBayAttributes.md)
+* [setQCAssignmentModuleType](./setQCAssignmentModuleType.md)
 * [setWavetable](./setWavetable.md)
 * [Wavetable Constants](./Wavetable-Constants.md)
 * [Wavetable Enumeration Types](./Wavetable-Enumeration-Types.md)
@@ -27,6 +31,7 @@ This page lists the modified and added pages for each version.
 
 #### Modified Pages
 
+* [addQCAssignment](./addQCAssignment.md)
 * [Audio File](./Audio-File.md)
 * [Progress](./Progress.md) - Renamed from LoadProgress to Progress.
 

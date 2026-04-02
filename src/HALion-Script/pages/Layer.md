@@ -222,6 +222,12 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 
 [Jump to Top ](#layer)
 
+### getQCAssignmentModuleType
+
+{{#include ./_getQCAssignmentModuleType-Reference.md:all}}
+
+[Jump to Top ](#layer)
+
 ### getQCAssignmentBypass
 
 {{#include ./_getQCAssignmentBypass-Reference.md:all}}
@@ -261,6 +267,12 @@ The Layer class inherits all properties and methods of the [Element](./Element.m
 ### setQCAssignmentMode
 
 {{#include ./_setQCAssignmentMode-Reference.md:all}}
+
+[Jump to Top ](#layer)
+
+### setQCAssignmentModuleType
+
+{{#include ./_setQCAssignmentModuleType-Reference.md:all}}
 
 [Jump to Top ](#layer)
 

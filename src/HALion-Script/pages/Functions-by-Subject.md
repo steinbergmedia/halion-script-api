@@ -164,6 +164,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [getQCAssignmentMax](./getQCAssignmentMax.md),
 [getQCAssignmentMin](./getQCAssignmentMin.md),
 [getQCAssignmentMode](./getQCAssignmentMode.md),
+[getQCAssignmentModuleType](./getQCAssignmentModuleType.md),
 [getQCAssignmentParamId](./getQCAssignmentParamId.md),
 [getQCAssignmentScope](./getQCAssignmentScope.md),
 [getZone](./getZone.md),
@@ -182,6 +183,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [setQCAssignmentMax](./setQCAssignmentMax.md),
 [setQCAssignmentMin](./setQCAssignmentMin.md),
 [setQCAssignmentMode](./setQCAssignmentMode.md),
+[setQCAssignmentModuleType](./setQCAssignmentModuleType.md),
 [setQCAssignmentParamId](./setQCAssignmentParamId.md),
 [setQCAssignmentScope](./setQCAssignmentScope.md),
 
@@ -212,6 +214,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [getQCAssignmentMax](./getQCAssignmentMax.md),
 [getQCAssignmentMin](./getQCAssignmentMin.md),
 [getQCAssignmentMode](./getQCAssignmentMode.md),
+[getQCAssignmentModuleType](./getQCAssignmentModuleType.md),
 [getQCAssignmentParamId](./getQCAssignmentParamId.md),
 [getQCAssignmentScope](./getQCAssignmentScope.md),
 [removeQCAssignment](./removeQCAssignment.md),
@@ -220,6 +223,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [setQCAssignmentMax](./setQCAssignmentMax.md),
 [setQCAssignmentMin](./setQCAssignmentMin.md),
 [setQCAssignmentMode](./setQCAssignmentMode.md),
+[setQCAssignmentModuleType](./setQCAssignmentModuleType.md),
 [setQCAssignmentParamId](./setQCAssignmentParamId.md),
 [setQCAssignmentScope](./setQCAssignmentScope.md),
 

@@ -4,6 +4,8 @@
 
 **setMediaBayAttributes(filename, attrs)**
 
+{{#include ../../_Version.md:halion750}}
+
 ## Description
 
 Writes MediaBay attributes to a specified VST preset or audio file. Only the MediaBay attributes listed below can be set. An attribute can be deleted by assigning an empty string (``""``) as its value. Setting only a subset of attributes leaves all other existing attributes in the file unchanged. Attempting to set an unsupported attribute raises an error.
