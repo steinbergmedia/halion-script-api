@@ -29,8 +29,9 @@ The following attributes can only be written with [setMediaBayAttributes](./setM
 // ANCHOR: setMediaBayAttributes_attributes
 |Attribute|Value|Value Type|
 |:-|:-|:-|
+|MediaFamily|"Family"|string|
 |MediaGenre|"Genre"|string|
-|MusicalBeats|"Number of beats."|number|
+|MusicalBeats|"Number", beat count derived from the tempo and sample length.|number|
 |MusicalCharacter|"Character1\|Character2\|..."|string|
 // ANCHOR_END: setMediaBayAttributes_attributes
 // ANCHOR_END: setMediaBayAttributes
