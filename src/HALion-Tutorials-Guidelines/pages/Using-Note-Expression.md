@@ -10,7 +10,7 @@
 
 ---
 
-Note expression allows you to control per-note parameters that change while a note is held. Unlike MIDI controllers, which affect all notes on a MIDI channel simultaneously, note expression is tied to individual notes. This makes it possible to play polyphonically while controlling parameters such as pitch, volume, or panning for each note independently. Cubase supports note expression natively: it converts MPE input from compatible controllers to per-note note expression, and also lets you draw note expression directly in the Key Editor. This tutorial walks through two practical examples of using note expression in HALion.
+Note expression allows you to control per-note parameters that change while a note is held. Unlike MIDI controllers, which affect all notes on a MIDI channel simultaneously, note expression is tied to individual notes. This makes it possible to play polyphonically while controlling parameters such as pitch, volume, or panning for each note independently. Cubase supports note expression natively: it converts MPE input from compatible controllers to per-note note expression, and also lets you draw in note expression events directly in the Key Editor. This tutorial walks you through two practical examples of using note expression in HALion.
 
 ## Note Expression Types
 
@@ -46,7 +46,7 @@ The event fields are:
 
 ## Note IDs
 
-A **note ID** uniquely identifies a voice in the HALion engine. There are two ways to obtain one, depending on how the voice is created.
+A **note ID** uniquely identifies a voice in the HALion engine. There are two ways to obtain an ID, depending on how the voice is created.
 
 [postEvent](../../HALion-Script/pages/postEvent.md) forwards an incoming note event to HALion and returns the ID of the resulting voice:
 
@@ -286,11 +286,11 @@ function updateAllVoicesTuning()
 end
 ```
 
-[runSync](../../HALion-Script/pages/runSync.md) is required here because parameter callbacks run on the [Controller](../../HALion-Script/pages/Threads-in-HALion.md) thread and [changeTune](../../HALion-Script/pages/changeTune.md), which ``updateAllVoicesTuning`` reaches via ``applyTuning``, must be called from the [Processor](../../HALion-Script/pages/Threads-in-HALion.md) thread. Updating ``pitchOffset`` on the [Controller](../../HALion-Script/pages/Threads-in-HALion.md) thread before the [runSync](../../HALion-Script/pages/runSync.md) call is safe because global variables in HALion Script are synchronized with the [Processor](../../HALion-Script/pages/Threads-in-HALion.md) thread.
+[runSync](../../HALion-Script/pages/runSync.md) is required here because parameter callbacks run on the [Controller](../../HALion-Script/pages/Threads-in-HALion.md) thread, and [changeTune](../../HALion-Script/pages/changeTune.md), which ``updateAllVoicesTuning`` reaches via ``applyTuning``, must be called from the [Processor](../../HALion-Script/pages/Threads-in-HALion.md) thread. Updating ``pitchOffset`` on the [Controller](../../HALion-Script/pages/Threads-in-HALion.md) thread before the [runSync](../../HALion-Script/pages/runSync.md) call is safe because global variables in HALion Script are synchronized with the [Processor](../../HALion-Script/pages/Threads-in-HALion.md) thread.
 
 ## Example 2: Custom Dynamics from Velocity and Mod Wheel
 
-A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the dynamics of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0 %, dynamics are determined entirely by velocity. At 100 %, they are determined entirely by the mod wheel. In between, both contribute proportionally.
+A MIDI velocity value is fixed at the moment a note is played and cannot change while the note is held. If you want dynamics to evolve during a note — for example, to make the sound swell with the mod wheel — you need a different approach. This example uses ``custom1`` note expression to drive the dynamics of a note. The value of ``custom1`` is calculated from a blend of the note-on velocity and the mod wheel, controlled by a ``VelMWBalance`` parameter. At 0%, dynamics are determined entirely by velocity. At 100%, they are determined entirely by the mod wheel. In between, both contribute proportionally.
 
 The ``custom1`` note expression type has no built-in effect. In [Using Note Expression 02.vstpreset](../vstpresets/Using%20Note%20Expression%2002.vstpreset), ``custom1`` is routed to the **Individual Velocity Mode** of the **Trigger** section of the **Legato Strings** layer, so that both MIDI velocity and mod wheel contribute to the velocity crossfades of the example program. See [Using Velocity Crossfades](./Using-Velocity-Crossfades.md) for more details.
 
@@ -415,7 +415,7 @@ The return value is applied as the ``custom1`` NE value via [changeNoteExpressio
 
 #### forwardNE
 
-``forwardNE`` reads the current value of a given NE type from the original event and copies it to the internal voice:
+``forwardNE`` reads the current value of a NE type from the original event and copies it to the internal voice:
 
 ```lua
 function forwardNE(fromID, toID, neType)
@@ -426,7 +426,7 @@ function forwardNE(fromID, toID, neType)
 end
 ```
 
-[getNoteExpression](../../HALion-Script/pages/getNoteExpression.md) returns −1 if no value has been set for the given type. The ``if value >= 0`` guard ensures that [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md) is only called when a value is actually present. The arguments ``false, true`` mean absolute value and immediate application.
+[getNoteExpression](../../HALion-Script/pages/getNoteExpression.md) returns −1 if no value has been set for the type. The ``if value >= 0`` guard ensures that [changeNoteExpression](../../HALion-Script/pages/changeNoteExpression.md) is only called when a value is actually present. The arguments ``false, true`` mean absolute value and immediate application.
 
 ``forwardNE`` is called in [onNote](../../HALion-Script/pages/onNote.md) for volume, pan, and tuning NE, so that the internal voice starts in the same state as the original event.
 
