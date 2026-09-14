@@ -67,6 +67,11 @@ reference page *can* have; drop the ones the function has no content for. `#### 
 `#### Fields` and `#### Return Values` are only present when the function actually takes arguments,
 exposes fields, or returns something — an empty section is never left in place as a placeholder.
 
+The section set is **fixed**: Description, Arguments, Fields, Return Values, Example. Do not invent new
+section types — notes on how a function behaves belong in Description as a second paragraph, before the
+`**Available in:**` line, not under a heading of their own. (`defineParameter` carries an *Additional
+Named Arguments* section; that is a deliberate one-off, not a precedent to follow.)
+
 ## Adding a new function — registration checklist
 
 Content lives in one file but is linked from several. All of these need touching:
