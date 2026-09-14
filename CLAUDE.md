@@ -90,6 +90,13 @@ Cross-references are relative links within the folder: `[Layer](./Layer.md)`.
 - Signatures are blockquoted bold: `>**functionName(arg1, arg2)**`
 - Inline code is written with **double** backticks — ` ``argName`` `. Single backticks render the same;
   double is simply the established style here, so match it rather than mixing the two.
+- Referring to a field or function depends on where it is documented. On the **same page**, write it as
+  inline code — ` ``.linkEnvelope`` `. On **another page**, write it as a link —
+  `[.linkEnvelope](./Wavetable-Table.md#wave-fields)`. Never link to a section of the page you are already
+  on; that is what the code form is for.
+- Field names keep their leading dot in both forms (` ``.samplePos`` `, `[.samplePos](…)`), matching the
+  first column of the field tables. Function names, argument names and Lua stdlib names take no dot —
+  ` ``setWavetable`` `, ` ``channelSelection`` `, ` ``table.insert`` `.
 - Notes are blockquoted and prefixed with `&#10069;` — e.g. `>&#10069; The index starts counting from 1.`
 - `&#9989;` marks "supported" cells in capability tables.
 - Argument/field tables are three columns: `|Argument|Description|Value Type|`, all left-aligned (`|:-|:-|:-|`).
