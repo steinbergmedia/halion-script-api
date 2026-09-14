@@ -62,7 +62,10 @@ The two consumers:
 - the class page (`Layer.md`, `Zone.md`, …) — includes the whole partial under an `### <name>` heading:
   `{{#include ./_<name>-Reference.md:all}}`, followed by `[Jump to Top ](#layer)`
 
-`_Template-Reference.md` is the blank skeleton for a new reference partial.
+`_Template-Reference.md` is the blank skeleton for a new reference partial. It lists every section a
+reference page *can* have; drop the ones the function has no content for. `#### Arguments`,
+`#### Fields` and `#### Return Values` are only present when the function actually takes arguments,
+exposes fields, or returns something — an empty section is never left in place as a placeholder.
 
 ## Adding a new function — registration checklist
 
@@ -85,7 +88,8 @@ Cross-references are relative links within the folder: `[Layer](./Layer.md)`.
 - First line is a breadcrumb, e.g.
   `/ [HALion Developer Resource](../../HALion-Developer-Resource.md) / [HALion Script](./HALion-Script.md) / [Reference](./Reference.md) /`
 - Signatures are blockquoted bold: `>**functionName(arg1, arg2)**`
-- Inline code uses **double** backticks — ` ``argName`` `, not single.
+- Inline code is written with **double** backticks — ` ``argName`` `. Single backticks render the same;
+  double is simply the established style here, so match it rather than mixing the two.
 - Notes are blockquoted and prefixed with `&#10069;` — e.g. `>&#10069; The index starts counting from 1.`
 - `&#9989;` marks "supported" cells in capability tables.
 - Argument/field tables are three columns: `|Argument|Description|Value Type|`, all left-aligned (`|:-|:-|:-|`).
