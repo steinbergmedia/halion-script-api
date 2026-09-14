@@ -9,7 +9,7 @@
 #### Description
 
 // ANCHOR: description
-Function to create a [Wavetable table](./Wavetable-Table.md) from an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The ``createWavetable`` function can be configured with named arguments. The named arguments are optional and if called without, ``createWavetable`` will be executed with its default settings. The ``linkEnvelope`` field is initialized to ``true`` for all generated waves.
+Function to create a [Wavetable table](./Wavetable-Table.md) from an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The ``createWavetable`` function can be configured with named arguments. The named arguments are optional and if called without, ``createWavetable`` will be executed with its default settings. The [.linkEnvelope](./Wavetable-Table.md#wave-fields) field is initialized to ``true`` for all generated waves.
 
 **Available in:** Controller.
 // ANCHOR_END: description

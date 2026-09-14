@@ -10,7 +10,7 @@
 
 Function to analyze the waves of a [Wavetable Table](./Wavetable-Table.md) and update their spectral data synchronously. Unlike [analyzeWavetableAsync](./analyzeWavetableAsync.md), this function runs in the same thread, blocking execution until the analysis is complete.
 
-Waves in the wavetable are organized into *wave sequences* — groups of consecutive waves sharing the same [filename](./Wavetable-Table.md#wave-fields). For each wave sequence, ``analyzeWavetable`` reads the ``linkEnvelope`` field of the first wave of the sequence. If the field is ``true``, the ``time`` of each wave in that sequence is synchronized with its ``samplePos``, and ``linkEnvelope`` is set to ``true`` for all waves of that sequence.
+Waves in the wavetable are organized into *wave sequences* — groups of consecutive waves sharing the same [.filename](./Wavetable-Table.md#wave-fields). For each wave sequence, ``analyzeWavetable`` reads the [.linkEnvelope](./Wavetable-Table.md#wave-fields) field of the first wave of the sequence. If the field is ``true``, the [.time](./Wavetable-Table.md#wave-fields) of each wave in that sequence is synchronized with its [.samplePos](./Wavetable-Table.md#wave-fields), and [.linkEnvelope](./Wavetable-Table.md#wave-fields) is set to ``true`` for all waves of that sequence.
 
 **Available in:** Controller.
 
