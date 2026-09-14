@@ -46,7 +46,6 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.spectrum**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds an array with the spectrum of that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 |**.fundamental**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the fundamental frequency for that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 |**.winSize**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the window size for that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
-|**.wave**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the waveform data for that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 
 ## Tables per Channel
 
@@ -55,7 +54,6 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.spectrum\[n\]**|A table containing the spectrum for the n-th channel, with three fields: **.freq**, **.phase**, and **.magn**, each holding an array of bin values. The number of bins goes up to a maximum of [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096. See [Spectrum Fields](#spectrum-fields) for details.|table|Wave Data|
 |**.fundamental\[n\]**|The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.winSize\[n\]**|The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
-|**.wave\[n\]**|An array containing the waveform of the n-th channel. The array has a fixed size of [wavetable.maxWaveSize](./Wavetable-Constants.md) = 8192, where each index corresponds to one sample of the waveform. Sample amplitudes can be set in the range from -1 to 1, allowing direct modification of the waveform.|table|Wave Data|
 
 ## Spectrum Fields
 
@@ -69,7 +67,8 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 
 ```lua
 -- Inspect wavetable.
--- Prints a readable summary of the Wavetable Table loaded on an oscillator.
+-- Prints the wavetable engine limits, followed by a readable summary of the
+-- Wavetable Table loaded on an oscillator.
 -- Useful for verifying that createWavetable produced the expected result.
 --
 -- Oscillator   : 1 or 2 — which oscillator to inspect.
@@ -106,6 +105,16 @@ local function boolStr(v)
 end
 
 function onInspect()
+    -- ── Wavetable engine limits ──────────────────────────────────────────
+    print(string.rep("─", 60))
+    print("Wavetable Constants")
+    print(string.rep("─", 60))
+    print(string.format("  maxWaves        : %d", wavetable.maxWaves))
+    print(string.format("  maxWaveSize     : %d", wavetable.maxWaveSize))
+    print(string.format("  maxSpectrumSize : %d", wavetable.maxSpectrumSize))
+    print(string.format("  maxChannels     : %d", wavetable.maxChannels))
+    print("")
+
     local zones = this.parent:findZones(true)
     if #zones == 0 then
         print("No zones found in parent layer.")
@@ -167,18 +176,16 @@ function onInspect()
                     -- Per-channel data (fundamental, winSize, bin count).
                     if ShowChannels and w.fundamental then
                         for ch = 1, 6 do
-                            local fund    = w.fundamental and w.fundamental[ch]
-                            local wsz     = w.winSize    and w.winSize[ch]
-                            local bins    = w.spectrum   and w.spectrum[ch]   and w.spectrum[ch].freq and #w.spectrum[ch].freq
-                            local hasWave = w.wave       and w.wave[ch]       and (#w.wave[ch] > 0)
+                            local fund = w.fundamental and w.fundamental[ch]
+                            local wsz  = w.winSize    and w.winSize[ch]
+                            local bins = w.spectrum   and w.spectrum[ch]   and w.spectrum[ch].freq and #w.spectrum[ch].freq
                             if fund or wsz or bins then
                                 print(string.format(
-                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins  wave=%s",
+                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins",
                                     ch,
-                                    fund    or 0,
-                                    wsz     and tostring(wsz) or "–",
-                                    bins    and tostring(bins) or "–",
-                                    hasWave and "yes" or "–"))
+                                    fund or 0,
+                                    wsz  and tostring(wsz) or "–",
+                                    bins and tostring(bins) or "–"))
                                 if MaxBins > 0 and bins then
                                     local printBins = math.min(MaxBins, bins)
                                     local sp = w.spectrum[ch]
