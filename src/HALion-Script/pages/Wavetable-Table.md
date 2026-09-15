@@ -52,7 +52,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 
 |Field|Description|Value Type|Purpose|
 |:-|:-|:-|:-|
-|**.spectrum\[n\]**|A table containing the spectrum for the n-th channel, with three fields: ``.freq``, ``.phase``, and ``.magn``, each holding an array of bin values. The bins start at index 0, which holds the DC component of the spectrum. The number of bins can vary for each wave and must be read from the array itself. In theory, it can go up to [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096. See [Spectrum Fields](#spectrum-fields) for details.|table|Wave Data|
+|**.spectrum\[n\]**|A table containing the spectrum for the n-th channel, with three fields: ``.freq``, ``.phase``, and ``.magn``, each holding an array of bin values. The bins start at index 0, which holds the DC component of the spectrum. The number of bins can vary for each wave and must be read from the array itself. In theory, it can go up to [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096. See [Spectrum Fields](#spectrum-fields) for a description of these three fields.|table|Wave Data|
 |**.fundamental\[n\]**|The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.winSize\[n\]**|The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.spectralEnv\[n\]**|An array containing the spectral envelope of the n-th channel. Like the bins of ``.spectrum[n]``, the values start at index 0. Each value holds the magnitude of the spectral envelope for the corresponding bin. The spectral envelope is a smoothed representation of the magnitudes of the spectrum; ``.spectralEnvRes`` controls how closely it follows them. The number of values can vary for each wave and must be read from the array itself.|table|Wave Data|
@@ -65,7 +65,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.phase**|An array where each entry holds the phase of a bin in radians, ranging from -π to π.|table|Wave Data|
 |**.magn**|An array where each entry holds the magnitude of a bin, ranging from 0 to 1.|table|Wave Data|
 
->&#10069; The bins start at index 0, which holds the DC component of the spectrum. Iterating from index 1 skips it.
+>&#10069; The bins start at index 0, which holds the DC component of the spectrum.
 
 ## Example
 
