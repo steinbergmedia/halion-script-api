@@ -6,14 +6,13 @@
 
 ## Description
 
-Constants defining the upper limits of the wavetable engine. They cover the maximum number of waves per wavetable, the maximum wave size in samples, the maximum spectrum size in bins, and the maximum number of channels per wave. These values can be used in scripts to validate or constrain wavetable parameters.
+Constants defining the upper limits of the wavetable engine. They cover the maximum number of waves per wavetable, the maximum spectrum size in bins, and the maximum number of channels per wave. These values can be used in scripts to validate or constrain wavetable parameters.
 
 **Available in:** Controller.
 
 |Enumerator|Value|
 |:-|:-|
 |wavetable.maxWaves|1024|
-|wavetable.maxWaveSize|8192|
 |wavetable.maxSpectrumSize|4096|
 |wavetable.maxChannels|6|
 
