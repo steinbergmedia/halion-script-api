@@ -46,7 +46,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.spectrum**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds an array with the spectrum of that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 |**.fundamental**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the fundamental frequency for that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 |**.winSize**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the window size for that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
-|**.specEnv**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the spectral envelope of that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
+|**.spectralEnv**|An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the spectral envelope of that channel. See [Tables per Channel](#tables-per-channel) for details.|table|Wave Data|
 
 ## Tables per Channel
 
@@ -55,7 +55,7 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 |**.spectrum\[n\]**|A table containing the spectrum for the n-th channel, with three fields: ``.freq``, ``.phase``, and ``.magn``, each holding an array of bin values. The number of bins goes up to a maximum of [wavetable.maxSpectrumSize](./Wavetable-Constants.md) = 4096. See [Spectrum Fields](#spectrum-fields) for details.|table|Wave Data|
 |**.fundamental\[n\]**|The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
 |**.winSize\[n\]**|The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.|number|Wave Data|
-|**.specEnv\[n\]**|An array containing the spectral envelope for the n-th channel. Each entry holds the magnitude of the spectral envelope at the corresponding bin of ``.spectrum[n]``, ranging from 0 to 1. The spectral envelope is a smoothed representation of the bin magnitudes; ``.spectralEnvRes`` controls how closely it follows them.|table|Wave Data|
+|**.spectralEnv\[n\]**|An array containing the spectral envelope of the n-th channel, starting at index 0. Each entry holds the magnitude of the spectral envelope at one point of the spectrum. The spectral envelope is a smoothed representation of the magnitudes in ``.spectrum[n]``; ``.spectralEnvRes`` controls how closely it follows them. The number of entries is independent of the number of bins and varies from wave to wave, so read it from the array itself.|table|Wave Data|
 
 ## Spectrum Fields
 
@@ -75,8 +75,10 @@ Use [createWavetable](./createWavetable.md) to build the table and [analyzeWavet
 --
 -- Oscillator   : 1 or 2 — which oscillator to inspect.
 -- MaxWaves     : 0 = print all waves; N = print only the first N waves.
--- ShowChannels : when true, prints per-channel fundamentals, window sizes and bin counts.
--- MaxBins      : 0 = skip bin data; N = print the first N bins per channel.
+-- ShowChannels : when true, prints the per-channel fundamentals, window sizes,
+--                bin counts and spectral envelope entry counts.
+-- MaxBins      : 0 = skip bin data; N = print the first N bins and the first N
+--                spectral envelope entries per channel.
 -- Press Inspect to run.
 
 oscillatorOptions = { "1", "2" }
@@ -174,31 +176,47 @@ function onInspect()
                     print(string.format("       Time=%.3g s  Curve=%.3g  LinkEnvelope=%s",
                         w.time, w.curve, boolStr(w.linkEnvelope)))
 
-                    -- Per-channel data (fundamental, winSize, bin counts, spectral envelope).
+                    -- Per-channel data (fundamental, winSize, spectrum, spectral envelope).
                     if ShowChannels and w.fundamental then
                         for ch = 1, 6 do
-                            local fund = w.fundamental and w.fundamental[ch]
-                            local wsz  = w.winSize    and w.winSize[ch]
-                            local bins = w.spectrum   and w.spectrum[ch]   and w.spectrum[ch].freq and #w.spectrum[ch].freq
-                            local senv = w.specEnv    and w.specEnv[ch]
+                            local fund = w.fundamental  and w.fundamental[ch]
+                            local wsz  = w.winSize      and w.winSize[ch]
+                            local bins = w.spectrum     and w.spectrum[ch] and w.spectrum[ch].freq and #w.spectrum[ch].freq
+                            local senv = w.spectralEnv  and w.spectralEnv[ch]
+                            local nenv = senv and #senv or 0
+                            -- The spectral envelope starts at index 0, so it holds one
+                            -- entry more than the length operator reports.
+                            local envs = (nenv > 0) and (nenv + 1) or nil
                             if fund or wsz or bins then
                                 print(string.format(
-                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins  specEnv=%s bins",
+                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins  spectralEnv=%s entries",
                                     ch,
                                     fund or 0,
-                                    wsz  and tostring(wsz) or "–",
+                                    wsz  and tostring(wsz)  or "–",
                                     bins and tostring(bins) or "–",
-                                    senv and tostring(#senv) or "–"))
+                                    envs and tostring(envs) or "–"))
                                 if MaxBins > 0 and bins then
                                     local printBins = math.min(MaxBins, bins)
                                     local sp = w.spectrum[ch]
                                     for bi = 1, printBins do
                                         print(string.format(
-                                            "           bin %4d: freq=%8.4f  phase=%8.4f  magn=%8.4f  specEnv=%8.4f",
-                                            bi, sp.freq[bi], sp.phase[bi], sp.magn[bi], senv and senv[bi] or 0))
+                                            "           bin %4d: freq=%8.4f  phase=%8.4f  magn=%8.4f",
+                                            bi, sp.freq[bi], sp.phase[bi], sp.magn[bi]))
                                     end
                                     if printBins < bins then
                                         print(string.format("           ... (%d more bins not shown)", bins - printBins))
+                                    end
+                                end
+                                -- Listed separately, because the number of envelope entries
+                                -- is unrelated to the number of bins.
+                                if MaxBins > 0 and envs then
+                                    local printEnv = math.min(MaxBins, envs)
+                                    for ei = 0, printEnv - 1 do
+                                        print(string.format(
+                                            "           spectralEnv %4d: %8.4f", ei, senv[ei]))
+                                    end
+                                    if printEnv < envs then
+                                        print(string.format("           ... (%d more envelope entries not shown)", envs - printEnv))
                                     end
                                 end
                             end
