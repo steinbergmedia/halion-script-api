@@ -83,7 +83,11 @@ Content lives in one file but is linked from several. All of these need touching
 5. `Functions-by-Subject.md` — one or more subject groups (functions often appear more than once).
 6. The class page it belongs to (`Layer.md`, `Zone.md`, `Program.md`, …) — `:all` include.
 7. `Updates.md` — under the current version's **Added Pages**; put changes to existing functions
-   under **Modified Pages** instead.
+   under **Modified Pages** instead. Every **Modified Pages** entry carries a hint saying what
+   changed — `* [Audio File](./Audio-File.md) - <one sentence>.` — and the hint names the substance
+   ("The ``element`` argument now also accepts a module type string"), not the fact that something
+   changed ("Description of the ``element`` argument changed"). Check the page's git history to find
+   out what actually changed. **Added Pages** entries take no hint; the page is new.
 8. `_Version.md` include for the version badge, if the function is new in a specific version.
 
 Cross-references are relative links within the folder: `[Layer](./Layer.md)`.
@@ -108,6 +112,19 @@ Cross-references are relative links within the folder: `[Layer](./Layer.md)`.
 - Each reference page ends with a `**See also:**` line of related links.
 - `[[_TOC_]]` inserts a table of contents (mdbook-toc, max level 3) on long pages.
 - `**Available in:** Controller, Processor.` states the script contexts a function works in.
+
+## Code examples
+
+- **Tabs for indentation, spaces for alignment.** Alignment means column padding inside a line —
+  the values of a larger table or array, a trailing comment column. Indentation is always tabs.
+- The generated HTML keeps tabs verbatim. `theme/book.js` configures highlight.js with
+  `tabReplace: '    '`, so each tab in a code block is *displayed* as four spaces. That is a flat
+  per-tab substitution, not a column tab stop: a tab used to align a column shifts the text by a
+  fixed four characters instead of snapping to one — which is why alignment uses spaces.
+- Never judge how an example renders by reading the markdown; build and check the page.
+- Most older examples still indent with spaces. Apply the rule to new examples and to ones you are
+  already editing — do not reformat untouched files, as whitespace-only commits bury `git blame`.
+- No trailing whitespace at the end of a line.
 
 ## Working in this repo
 
