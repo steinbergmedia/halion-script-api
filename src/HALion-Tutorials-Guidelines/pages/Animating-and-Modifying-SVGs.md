@@ -91,7 +91,7 @@ By harnessing the capabilities of Lua expressions, you can animate controls that
 **Description:** An animation control changes its color to the value set by the string output of the connected script parameter. ``$(SColor)``is an additional SVG Parameter, see [Animating SVGs with Additional Parameters](./Animating-SVGs-with-Additional-Parameters.md) for details. The following script switches between two colors.
 
 ```lua
-function onSwitchChanged() 
+function onSwitchChanged()
     if Switch then
         this:setParameter("FillColor", "rgb(255,0,0)")
     else

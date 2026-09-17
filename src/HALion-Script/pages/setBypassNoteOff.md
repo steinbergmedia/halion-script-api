@@ -43,7 +43,7 @@ function onRelease(ev)
         setBypassNoteOff(note) -- Hanging Notes may occur if this is missing.
     end
 end
-defineParameter("note", nil, -1, -1, 127, onPlayNote) 
+defineParameter("note", nil, -1, -1, 127, onPlayNote)
 ```
 
 **See also:** [playNote](./playNote.md), [onRelease](./onRelease.md)

@@ -36,7 +36,7 @@ If you call a function in the wrong thread, the script module will output an err
   Therefore, openURL cannot be called in onNote. The script produces a script error when playing a note.
 --]]
  
-function onNote(event)     
+function onNote(event)
   openURL("http://www.steinberg.net/en/home.html")
 end
 ```

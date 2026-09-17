@@ -82,36 +82,36 @@ The script has three outputs which are connected to the corresponding SVG proper
 ![Animation Script Example Template](../images/Animation-Script-Example-Template.png)
 
 ```lua
-defineParameter{name = "on", default = false, onChanged = function() animate() end}   
-defineParameter{name = "out1", default = 0, min = 0, max = 1}   
-defineParameter{name = "out2", default = 0, min = 0, max = 1}   
-defineParameter{name = "out3", default = 0, min = 0, max = 1}   
-defineParameter{name = "frames", default = 65, min = 1, max = 1000, type = "integer"}   
-defineParameter{name = "frameDuration", default = 50, min = 20, max = 10000, type = "integer"}   
+defineParameter{name = "on", default = false, onChanged = function() animate() end}
+defineParameter{name = "out1", default = 0, min = 0, max = 1}
+defineParameter{name = "out2", default = 0, min = 0, max = 1}
+defineParameter{name = "out3", default = 0, min = 0, max = 1}
+defineParameter{name = "frames", default = 65, min = 1, max = 1000, type = "integer"}
+defineParameter{name = "frameDuration", default = 50, min = 20, max = 10000, type = "integer"}
   
 -- The calcPhasor function returns a closure that maintains the counter value
--- and increments it by the specified increment.  
-function calcPhasor(increment)  
-    local counter = 0  
+-- and increments it by the specified increment.
+function calcPhasor(increment)
+    local counter = 0
   
-    return function()  
-        counter = (counter + increment) % 1  
-        return counter  
-    end  
-end  
+    return function()
+        counter = (counter + increment) % 1
+        return counter
+    end
+end
 
 function animate()
     -- Create phasors with different speed.
-    local phasor1 = calcPhasor(1/frames)        -- Full speed.  
-    local phasor2 = calcPhasor(1/(frames*2))    -- Half speed. 
-    local phasor3 = calcPhasor(2*1/frames)      -- Double speed. 
-    -- Call the phasor functions repeatedly. 
-    while on do  
-        out1 = phasor1()  
-        out2 = phasor2()  
-        out3 = phasor3()  
-        wait(frameDuration)  
-    end  
-    out1, out2, out3 = 0, 0, 0  
-end  
+    local phasor1 = calcPhasor(1/frames)        -- Full speed.
+    local phasor2 = calcPhasor(1/(frames*2))    -- Half speed.
+    local phasor3 = calcPhasor(2*1/frames)      -- Double speed.
+    -- Call the phasor functions repeatedly.
+    while on do
+        out1 = phasor1()
+        out2 = phasor2()
+        out3 = phasor3()
+        wait(frameDuration)
+    end
+    out1, out2, out3 = 0, 0, 0
+end
 ```

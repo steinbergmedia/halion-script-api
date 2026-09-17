@@ -736,7 +736,7 @@ end
 
 function onDepthChanged()
 	-- Convert from depth to semitones if the destination uses pitch.
-	if isPitchDest[DestIndex] then 
+	if isPitchDest[DestIndex] then
 		Text = pitchRange * sinh(pitchStretch * 0.01 * Depth) / sinh(pitchStretch)
 	else
 		Text = Depth

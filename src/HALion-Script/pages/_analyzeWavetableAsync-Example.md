@@ -24,7 +24,7 @@ function onStart()
             end
         end
         local wt = zone:getWavetable (1)
-        if wt then	
+        if wt then
             if WavetableStart > 0 then
                 if WavetableLength > 1 then
                     local waves = {}

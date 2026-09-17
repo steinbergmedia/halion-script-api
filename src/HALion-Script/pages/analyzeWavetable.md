@@ -36,8 +36,8 @@ defineParameter { name = "WavetableLength", default = 0, min = 0, max = 1024, in
 function onProcess()
     zones = this.parent:findZones(true)
     for i, zone in ipairs(zones) do
-		local wt = zone:getWavetable (1)		
-		if wt then	
+		local wt = zone:getWavetable (1)
+		if wt then
 			if WavetableStart > 0 then
 				if WavetableLength > 1 then
 					local waves = {}
@@ -56,7 +56,7 @@ function onProcess()
 			else
 				print("Analyze Wavetable "..wt.name)
 				wt = analyzeWavetable(wt)
-			end	
+			end
 			zone:setWavetable (1, wt)
 		end
     end

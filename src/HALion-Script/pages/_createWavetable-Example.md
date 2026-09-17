@@ -46,12 +46,12 @@ function onStart()
 		if afile then
 			local startSamples = SampleStart * afile.rate/1000
 			local lengthSamples = SampleLength * afile.rate/1000
-			local winSize = {	WinSizeCh1,
-								WinSizeCh2,
-								WinSizeCh3,
-								WinSizeCh4,
-								WinSizeCh5,
-								WinSizeCh6 }
+			local winSize = {   WinSizeCh1,
+			                    WinSizeCh2,
+			                    WinSizeCh3,
+			                    WinSizeCh4,
+			                    WinSizeCh5,
+			                    WinSizeCh6 }
 			print("Create Wavetable "..samplePath)
 			afile:createWavetable{
 				callback = onFinished,

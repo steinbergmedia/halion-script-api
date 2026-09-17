@@ -185,9 +185,9 @@ Reading the output messages of the script should help to understand how the call
 -- Create row names through a parameter.
 rowNames = {}
  
-for i = 1, 5 do 
- rowNames[i] = "Row "..tostring(i) 
-end 
+for i = 1, 5 do
+ rowNames[i] = "Row "..tostring(i)
+end
  
 defineParameter{name="RowNames", strings=rowNames,}
 

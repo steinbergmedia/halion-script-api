@@ -35,7 +35,7 @@ links = {
 				"http://www.steinberg.net/de/support.html",
 			  }
 			  
-function onWebLinkChanged()  
+function onWebLinkChanged()
   openURL (links[WebLink])
 end
 
@@ -45,7 +45,7 @@ defineParameter{name="WebLink", default=1, strings=links, onChanged=onWebLinkCha
 
 -- define single home web link
 
-function onWebHomeChanged()  
+function onWebHomeChanged()
   openURL ("http://www.steinberg.net/de/home.html")
 end
 

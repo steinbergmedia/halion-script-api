@@ -21,6 +21,6 @@ Returns the sample rate of the host software in Hertz (i.e., samples per seconds
 
 function onInit()
     fs = getSamplingRate()
-    print(fs, "Hz")   
+    print(fs, "Hz")
 end
 ```
