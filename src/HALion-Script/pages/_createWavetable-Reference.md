@@ -11,6 +11,8 @@
 // ANCHOR: description
 Function to create a [Wavetable table](./Wavetable-Table.md) from an audio file. You specify the audio file with the [AudioFile](./Audio-File.md) object that is returned by the [AudioFile.open](./AudioFileopen.md) function. The ``createWavetable`` function can be configured with named arguments. The named arguments are optional and if called without, ``createWavetable`` will be executed with its default settings. The [.linkEnvelope](./Wavetable-Table.md#wave-fields) field is initialized to ``true`` for all generated waves.
 
+>&#10069; Creating a wavetable can take a long time. Therefore, it is recommended to use the ``callback`` argument, which runs ``createWavetable`` in a parallel thread and performs the required pitch analysis automatically.
+
 **Available in:** Controller.
 // ANCHOR_END: description
 
