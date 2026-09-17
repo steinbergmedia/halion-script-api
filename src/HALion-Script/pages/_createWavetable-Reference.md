@@ -3,7 +3,7 @@
 // ANCHOR: function
 >**createWavetable{arguments}**
 
-{{#include ../../_Version.md:halion750}}
+{{#include ../../_Version.md:halion7510}}
 // ANCHOR_END: function
 
 #### Description

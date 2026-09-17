@@ -10,7 +10,7 @@ This page lists the modified and added pages for each version.
 
 ---
 
-## HALion 7.5.0
+## HALion 7.5.10
 
 #### Added Pages
 
@@ -18,12 +18,8 @@ This page lists the modified and added pages for each version.
 * [analyzeWavetableAsync](./analyzeWavetableAsync.md)
 * [cancelWavetableCreation](./cancelWavetableCreation.md)
 * [createWavetable](./createWavetable.md)
-* [getMediaBayAttributes](./getMediaBayAttributes.md)
-* [getQCAssignmentModuleType](./getQCAssignmentModuleType.md)
 * [getWavetable](./getWavetable.md)
 * [getWavetableCreationProgress](./getWavetableCreationProgress.md)
-* [setMediaBayAttributes](./setMediaBayAttributes.md)
-* [setQCAssignmentModuleType](./setQCAssignmentModuleType.md)
 * [setWavetable](./setWavetable.md)
 * [Wavetable Constants](./Wavetable-Constants.md)
 * [Wavetable Enumeration Types](./Wavetable-Enumeration-Types.md)
@@ -31,8 +27,20 @@ This page lists the modified and added pages for each version.
 
 #### Modified Pages
 
-* [addQCAssignment](./addQCAssignment.md)
-* [Audio File](./Audio-File.md)
+* [Audio File](./Audio-File.md) - Added the member functions [createWavetable](./createWavetable.md), [getWavetableCreationProgress](./getWavetableCreationProgress.md) and [cancelWavetableCreation](./cancelWavetableCreation.md).
+
+## HALion 7.5.0
+
+#### Added Pages
+
+* [getMediaBayAttributes](./getMediaBayAttributes.md)
+* [getQCAssignmentModuleType](./getQCAssignmentModuleType.md)
+* [setMediaBayAttributes](./setMediaBayAttributes.md)
+* [setQCAssignmentModuleType](./setQCAssignmentModuleType.md)
+
+#### Modified Pages
+
+* [addQCAssignment](./addQCAssignment.md) - The ``element`` argument now also accepts a module type string.
 * [Progress](./Progress.md) - Renamed from LoadProgress to Progress.
 
 ## HALion 7.1.0

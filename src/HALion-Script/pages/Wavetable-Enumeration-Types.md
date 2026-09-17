@@ -2,7 +2,7 @@
 
 # Wavetable Enumeration Types
 
-{{#include ../../_Version.md:halion750}}
+{{#include ../../_Version.md:halion7510}}
 
 ## Description
 
