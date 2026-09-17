@@ -81,7 +81,11 @@ Content lives in one file but is linked from several. All of these need touching
 3. `src/SUMMARY.md` — nav entry, under the owning class.
 4. `Reference.md` — alphabetical list, in the right `## A-E` / `## F-M` / … section.
 5. `Functions-by-Subject.md` — one or more subject groups (functions often appear more than once).
-6. The class page it belongs to (`Layer.md`, `Zone.md`, `Program.md`, …) — `:all` include.
+6. The class page it belongs to (`Layer.md`, `Zone.md`, `Program.md`, …) — two places: the `:all`
+   include under an `### <name>` heading followed by `[Jump to Top ](#<class>)`, **and** the
+   `**On this page:**` line near the top, which is a hand-maintained comma-separated list of
+   anchor links in the same order as the sections. The build does not fail on a missing or
+   mistyped entry there — check the rendered page.
 7. `Updates.md` — under the current version's **Added Pages**; put changes to existing functions
    under **Modified Pages** instead. Every **Modified Pages** entry carries a hint saying what
    changed — `* [Audio File](./Audio-File.md) - <one sentence>.` — and the hint names the substance
@@ -110,7 +114,10 @@ Cross-references are relative links within the folder: `[Layer](./Layer.md)`.
 - `&#9989;` marks "supported" cells in capability tables.
 - Argument/field tables are three columns: `|Argument|Description|Value Type|`, all left-aligned (`|:-|:-|:-|`).
 - Each reference page ends with a `**See also:**` line of related links.
-- `[[_TOC_]]` inserts a table of contents (mdbook-toc, max level 3) on long pages.
+- `[[_TOC_]]` inserts a table of contents (mdbook-toc, max level 3) on long pages. Class pages do
+  **not** use it — they carry a hand-written `**On this page:**` line instead. A generated TOC is a
+  long vertical list that becomes unreadable once a page has many entries; the inline comma-separated
+  form stays compact. Keep it that way.
 - `**Available in:** Controller, Processor.` states the script contexts a function works in.
 
 ## Code examples
