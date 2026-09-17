@@ -28,6 +28,7 @@ This page lists the modified and added pages for each version.
 #### Modified Pages
 
 * [Audio File](./Audio-File.md) - Added the member functions [createWavetable](./createWavetable.md), [getWavetableCreationProgress](./getWavetableCreationProgress.md) and [cancelWavetableCreation](./cancelWavetableCreation.md).
+* [Zone](./Zone.md) - Added the member functions [getWavetable](./getWavetable.md) and [setWavetable](./setWavetable.md).
 
 ## HALion 7.5.0
 
