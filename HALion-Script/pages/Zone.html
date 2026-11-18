@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Zone - HALion 7.1.30</title>
+        <title>Zone - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -159,7 +159,7 @@
 <p>The Zone class inherits all properties and methods of the <a href="./Element.html">Element</a> class.</p>
 <hr />
 <p><strong>On this page:</strong></p>
-<p><a href="#zone-class">Zone Class</a>, <a href="#zone-constructor">Zone Constructor</a>, <a href="#getmodulationmatrixrow">getModulationMatrixRow</a>, <a href="#getoutputbus">getOutputBus</a>, <a href="#setoutputbus">setOutputBus</a></p>
+<p><a href="#zone-class">Zone Class</a>, <a href="#zone-constructor">Zone Constructor</a>, <a href="#getmodulationmatrixrow">getModulationMatrixRow</a>, <a href="#getoutputbus">getOutputBus</a>, <a href="#getwavetable">getWavetable</a>, <a href="#setoutputbus">setOutputBus</a>, <a href="#setwavetable">setWavetable</a></p>
 <hr />
 <p><strong>List of inherited members:</strong></p>
 <h4 id="element"><a class="header" href="#element">Element</a></h4>
@@ -268,22 +268,47 @@ zone = this.parent:getZone()
 assert(zone:getOutputBus(), "No output bus assigned. The default routing is used!")
 </code></pre>
 <p><a href="#zone">Jump to Top </a></p>
+<h3 id="getwavetable"><a class="header" href="#getwavetable">getWavetable</a></h3>
+<blockquote>
+<p><strong>getWavetable(index)</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h4 id="description-4"><a class="header" href="#description-4">Description</a></h4>
+<p>Function to obtain the wavetable data of a wavetable oscillator in the specified zone. The wavetable data is stored in a predefined <a href="./Wavetable-Table.html">Wavetable Table</a>. You specify the zone with <a href="./getZone.html">getZone</a> or <a href="./findZones.html">findZones</a>. The index refers to oscillator 1 and oscillator 2 of the wavetable zone.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="arguments-1"><a class="header" href="#arguments-1">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the oscillator.</td><td style="text-align: left">number</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values-3"><a class="header" href="#return-values-3">Return Values</a></h4>
+<p>Returns a table with tables for each wave and fields that define the playback of the wavetable. See <a href="./Wavetable-Table.html">Wavetable Table</a> for details. The function returns <code>nil</code> if the zone is not a wavetable zone. If the zone is a wavetable zone but the oscillator has no waves loaded, the function returns an empty table (<code>#wt == 0</code>).</p>
+<h4 id="example-4"><a class="header" href="#example-4">Example</a></h4>
+<pre><code class="language-lua">-- Copy all wavetable data from oscillator 1 to oscillator 2.
+
+zone = this.parent:getZone()
+wt1 = zone:getWavetable(1)
+if wt1 then
+    zone:setWavetable(2, wt1)
+end
+</code></pre>
+<p><a href="#zone">Jump to Top </a></p>
 <h3 id="setoutputbus"><a class="header" href="#setoutputbus">setOutputBus</a></h3>
 <blockquote>
 <p><strong>setOutputBus(bus)</strong></p>
 </blockquote>
-<h4 id="description-4"><a class="header" href="#description-4">Description</a></h4>
+<h4 id="description-5"><a class="header" href="#description-5">Description</a></h4>
 <p>Function to assign the output of a zone or bus to the specified output bus. The sending zone or bus is determined by its <a href="./Element.html">Element</a> object. The receiving output bus is specified by its <a href="./Bus.html">Bus</a> object. Setting the output bus to <code>nil</code> enables the default signal routing for the zone or bus.</p>
 <blockquote>
 <p>❕ Output busses that are higher up in the hierarchy of the <strong>Program Tree</strong> can be assigned freely. If the sending bus and the receiving output bus have the same parent layer, the output bus must come later in the signal flow.</p>
 </blockquote>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-1"><a class="header" href="#arguments-1">Arguments</a></h4>
+<h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>bus</strong></td><td style="text-align: left">The <a href="./Bus.html">Bus</a> object of the bus that you want to assign, or <code>nil</code>.</td><td style="text-align: left"><a href="./Bus.html">Bus</a> or <code>nil</code></td></tr>
 </tbody></table>
 </div>
-<h4 id="example-4"><a class="header" href="#example-4">Example</a></h4>
+<h4 id="example-5"><a class="header" href="#example-5">Example</a></h4>
 <pre><code class="language-lua">-- Assign the output of the zone to the Master output bus of the plug-in.
 
 zone = this.parent:getZone()
@@ -292,6 +317,31 @@ masterbus = this.program.instance:getBus(1)
 zone:setOutputBus(masterbus)
  
 print("Output of "..zone.name.." is assigned to "..masterbus.name..".")
+</code></pre>
+<p><a href="#zone">Jump to Top </a></p>
+<h3 id="setwavetable"><a class="header" href="#setwavetable">setWavetable</a></h3>
+<blockquote>
+<p><strong>setWavetable(index, wavetable)</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h4 id="description-6"><a class="header" href="#description-6">Description</a></h4>
+<p>Function to set the wavetable data of a wavetable oscillator in the specified zone. The wavetable data is stored in a predefined <a href="./Wavetable-Table.html">Wavetable Table</a>. You specify the zone with <a href="./getZone.html">getZone</a> or <a href="./findZones.html">findZones</a>. The index refers to oscillator 1 and oscillator 2 of the wavetable zone.</p>
+<p>Waves in the wavetable are organized into <em>wave sequences</em> — groups of consecutive waves sharing the same <a href="./Wavetable-Table.html#wave-fields">.filename</a>. For each sequence, <code>setWavetable</code> reads the <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> field of the first wave and propagates that value to all waves of the sequence in the oscillator's wavetable. Additionally, <code>setWavetable</code> verifies that the <a href="./Wavetable-Table.html#wave-fields">.time</a> of each wave is consistent with its <a href="./Wavetable-Table.html#wave-fields">.samplePos</a>. If any wave in a sequence fails this check, <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> is set to <code>false</code> for all waves of that sequence in the oscillator's wavetable, overriding the <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> field of the first wave.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="arguments-3"><a class="header" href="#arguments-3">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>index</strong></td><td style="text-align: left">The index of the oscillator.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>wavetable</strong></td><td style="text-align: left">The table that contains the wavetable data. The structure of the table is defined in the <a href="./Wavetable-Table.html">Wavetable Table</a>.</td><td style="text-align: left">table</td></tr>
+</tbody></table>
+</div>
+<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
+<pre><code class="language-lua">-- Copy all wavetable data from oscillator 1 to oscillator 2.
+
+zone = this.parent:getZone()
+wt1 = zone:getWavetable(1)
+if wt1 then
+    zone:setWavetable(2, wt1)
+end
 </code></pre>
 <p><a href="#zone">Jump to Top </a></p>
 

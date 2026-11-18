@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="steinberg-light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>analyzeWavetableAsync - HALion 7.5.10</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.5.10</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
+<h1 id="analyzewavetableasync"><a class="header" href="#analyzewavetableasync">analyzeWavetableAsync</a></h1>
+<blockquote>
+<p><strong>analyzeWavetableAsync(wavetable, waves, callback)</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>Function to analyze the waves of a <a href="./Wavetable-Table.html">Wavetable Table</a> and update their spectral data asynchronously. Unlike <a href="./analyzeWavetable.html">analyzeWavetable</a>, this function runs in a parallel thread, allowing progress to be monitored via the returned <a href="./Progress.html">Progress</a> object.</p>
+<p>Waves in the wavetable are organized into <em>wave sequences</em> — groups of consecutive waves sharing the same <a href="./Wavetable-Table.html#wave-fields">.filename</a>. For each wave sequence, <code>analyzeWavetableAsync</code> reads the <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> field of the first wave of the sequence. If the field is <code>true</code>, the <a href="./Wavetable-Table.html#wave-fields">.time</a> of each wave in that sequence is synchronized with its <a href="./Wavetable-Table.html#wave-fields">.samplePos</a>, and <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> is set to <code>true</code> for all waves of that sequence.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>wavetable</strong></td><td style="text-align: left">The <a href="./Wavetable-Table.html">Wavetable Table</a> whose spectral data will be updated. All waves are analyzed unless narrowed down by the waves argument.</td><td style="text-align: left">table</td></tr>
+<tr><td style="text-align: left"><strong>waves</strong></td><td style="text-align: left">Specifies which waves to analyze. Accepts a single wave index (number) or a table of wave indices. Indices must be within the range of the wavetable. If <code>nil</code>, all waves are analyzed.</td><td style="text-align: left">number, table, or <code>nil</code></td></tr>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">A function called once analysis completes, is canceled, or fails. Receives the <a href="./Progress.html">Progress</a> object as its argument, allowing the result or error state to be inspected. See Return Values for the fields available on this object.</td><td style="text-align: left">function, optional</td></tr>
+</tbody></table>
+</div>
+<h2 id="return-values"><a class="header" href="#return-values">Return Values</a></h2>
+<p>Returns a <a href="./Progress.html">Progress</a> object with the following fields:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>.progress</strong></td><td style="text-align: left">The analysis progress in the range from 0 to 1.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>.root</strong></td><td style="text-align: left">The analyzed <a href="./Wavetable-Table.html">Wavetable Table</a> on completion, otherwise <code>nil</code>.</td><td style="text-align: left">table</td></tr>
+<tr><td style="text-align: left"><strong>.cancel</strong></td><td style="text-align: left">Set this to <code>true</code> to abort the analysis. The callback will still be called, with <code>.cancel</code> set to <code>true</code> on the <a href="./Progress.html">Progress</a> object.</td><td style="text-align: left">boolean</td></tr>
+<tr><td style="text-align: left"><strong>.error</strong></td><td style="text-align: left">Error message if the analysis failed, otherwise <code>nil</code>.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>.info</strong></td><td style="text-align: left">User-definable field, for example, to manage several parallel threads.</td><td style="text-align: left">string or table</td></tr>
+</tbody></table>
+</div>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">defineParameter { name = "StartProcess", default = false, onChanged = function() if StartProcess then onStart() end end }
+defineParameter { name = "CancelProcess", default = false}
+defineParameter { name = "WavetableStart", default = 0, min = 0, max = 1024, increment = 1 }
+defineParameter { name = "WavetableLength", default = 0, min = 0, max = 1024, increment = 1 }
+
+
+
+function onStart()
+    zones = this.parent:findZones(true)
+    for i, zone in ipairs(zones) do
+        local function onFinished(progressInf)
+            if progressInf then
+                if progressInf.error then
+                    print(progressInf.error)
+                elseif not progressInf.cancel then
+                    print("Progress: 100%")
+                    local wt = progressInf.root
+                    if wt then
+                        print("Wavetable "..wt.name.." analyzed.")
+                        zone:setWavetable(1, wt)
+                    end
+                end
+            end
+        end
+        local wt = zone:getWavetable (1)
+        if wt then
+            if WavetableStart &gt; 0 then
+                if WavetableLength &gt; 1 then
+                    local waves = {}
+                    local startIdx = math.min (WavetableStart, #wt)
+                    local endIdx = math.min (WavetableStart + WavetableLength - 1, #wt)
+                    for idx = startIdx, endIdx do table.insert(waves, idx) end
+                    print(string.format("Analyze Waves %d to %d of Wavetable ", startIdx, endIdx)..wt.name)
+                    progressInf = analyzeWavetableAsync(wt, waves, onFinished)
+                elseif WavetableLength == 1 then
+                    local wave = math.min (WavetableStart, #wt)
+                    print(string.format("Analyze Wave %d of Wavetable ", wave)..wt.name)
+                    progressInf = analyzeWavetableAsync(wt, wave, onFinished)
+                else
+                    print("Nothing to analyze of Wavetable "..wt.name)
+                end
+            else
+                print("Analyze Wavetable "..wt.name)
+                progressInf = analyzeWavetableAsync (wt, nil, onFinished)
+            end
+            while progressInf.progress &lt; 1 do
+                if CancelProcess then
+                    progressInf.cancel = true
+                    break
+                elseif progressInf.error then
+                    break
+                else
+                    local progressPercent = 100 * progressInf.progress
+                    print(string.format("Progress: %2d%%", progressPercent))
+                    wait(2000)
+                end
+            end
+            if CancelProcess then
+                CancelProcess = false
+                print("Wavetable analysis canceled!")
+                break
+            end
+        end
+    end
+    print("Wavetable analysis finished.")
+    StartProcess = false
+end
+</code></pre>
+<p><strong>See also:</strong> <a href="./analyzeWavetable.html">analyzeWavetable</a>, <a href="./cancelWavetableCreation.html">cancelWavetableCreation</a>, <a href="./createWavetable.html">createWavetable</a>, <a href="./getWavetable.html">getWavetable</a>, <a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a>, <a href="./setWavetable.html">setWavetable</a>, <a href="./Wavetable-Constants.html">Wavetable Constants</a>, <a href="./Wavetable-Enumeration-Types.html">Wavetable Enumeration Types</a>, <a href="./Wavetable-Table.html">Wavetable Table</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Script/pages/analyzeWavetable.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../HALion-Script/pages/appendBus.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Script/pages/analyzeWavetable.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../HALion-Script/pages/appendBus.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+            
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available -->
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

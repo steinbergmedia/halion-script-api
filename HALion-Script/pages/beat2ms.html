@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>beat2ms - HALion 7.1.30</title>
+        <title>beat2ms - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -174,7 +174,7 @@
 
 function onNote(event)
     posInBar = getBeatTimeInBar()
-    if (posInBar ~= -1) then       
+    if (posInBar ~= -1) then
         posInBarMs = beat2ms(posInBar)
         print(string.format("%.3f ms", posInBarMs))
     else

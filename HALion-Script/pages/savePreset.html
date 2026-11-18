@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>savePreset - HALion 7.1.30</title>
+        <title>savePreset - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -161,31 +161,42 @@
 </blockquote>
 <p><span class="version-text">(Since HALion 7.0)</span></p>
 <h2 id="description"><a class="header" href="#description">Description</a></h2>
-<p>Function to save a layer as VST preset to disk.</p>
+<p>Saves the specified <a href="./Layer.html">Layer</a> element as a VST preset to disk. The preset format is determined by the <code>plugin</code> argument, which also defines which Steinberg instrument can load the resulting .vstpreset file. If MediaBay attributes are provided through <code>attr</code>, they are written into the preset.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
-<tr><td style="text-align: left"><strong>filename</strong></td><td style="text-align: left">The absolute path and name of the VST preset.</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">Specifies the <a href="./Layer.html">Layer</a> element which is to be saved.</td><td style="text-align: left"><a href="./Layer.html">Layer</a></td></tr>
-<tr><td style="text-align: left"><strong>plugin</strong></td><td style="text-align: left">Determines the plug-in for the VST preset. You can choose <code>H7</code> (HALion 7) or <code>HS</code> (HALion Sonic).</td><td style="text-align: left">string, optional</td></tr>
-<tr><td style="text-align: left"><strong>attr</strong></td><td style="text-align: left">Set this to <code>program</code> to save a program VST preset. If this is not set, a layer VST preset will be saved. Alternatively, you can provide a table with MediaBay attributes and values.</td><td style="text-align: left">string, optional</td></tr>
+<tr><td style="text-align: left"><strong>filename</strong></td><td style="text-align: left">The absolute path and name of the file location where the VST preset is saved.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">Specifies the <a href="./Layer.html">Layer</a> element to be saved as VST preset.</td><td style="text-align: left"><a href="./Layer.html">Layer</a></td></tr>
+<tr><td style="text-align: left"><strong>plugin</strong></td><td style="text-align: left">Specifies the target plug‑in format for the VST preset. Valid values are <code>"H7"</code> (HALion 7) and <code>"HS"</code> (HALion Sonic). Only the selected plug‑in can load the saved VST preset.</td><td style="text-align: left">string, optional</td></tr>
+<tr><td style="text-align: left"><strong>attr</strong></td><td style="text-align: left">If set to <code>program</code> the VST preset is saved as a <em>program</em> preset. Otherwise, the argument may contain a table of MediaBay attributes and values that will be written to the VST preset. If omitted, a <em>layer</em> VST preset is saved.</td><td style="text-align: left">string, optional</td></tr>
 </tbody></table>
 </div>
 <h2 id="mediabay-attributes"><a class="header" href="#mediabay-attributes">MediaBay Attributes</a></h2>
+<p>MediaBay attributes are stored in VST presets and allow for browsing them in MediaBay. You can set the following attributes with this function or with <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a>.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Attribute</th><th style="text-align: left">Value</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left">MediaAuthor</td><td style="text-align: left">"Author"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MediaComment</td><td style="text-align: left">"Comment"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaKeywords</td><td style="text-align: left">"Keywords"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MediaLibraryManufacturerName</td><td style="text-align: left">"ManufacturerName"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MediaLibraryName</td><td style="text-align: left">"LibraryName"</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left">MediaRating</td><td style="text-align: left">3</td><td style="text-align: left">integer</td></tr>
+<tr><td style="text-align: left">MediaRating</td><td style="text-align: left">"Number", 1 to 5 stars.</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalArticulations</td><td style="text-align: left">"Articulation1|Articulation2|..."</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalCategory</td><td style="text-align: left">"Category"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalGmSound</td><td style="text-align: left">"Number", the GM program number.</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalInstrument</td><td style="text-align: left">"Category|Subcategory"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalMoods</td><td style="text-align: left">"Mood1|Mood2|..."</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalProperties</td><td style="text-align: left">"Property1|Property2|..."</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalRootKey</td><td style="text-align: left">"RootKey"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalSignature</td><td style="text-align: left">"4/4"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalStyle</td><td style="text-align: left">"Style"</td><td style="text-align: left">string</td></tr>
 <tr><td style="text-align: left">MusicalSubStyle</td><td style="text-align: left">"Style|Substyle"</td><td style="text-align: left">string</td></tr>
-<tr><td style="text-align: left">VST3UnitTypePath</td><td style="text-align: left">"program" or "program/layer"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalTempo</td><td style="text-align: left">"Number", the tempo in BPM.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<p>The following attributes are written exclusively with the arguments of <a href="./savePreset.html">savePreset</a>. <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a> cannot modify them.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Attribute</th><th style="text-align: left">Value</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left">PlugInName</td><td style="text-align: left">"Name", set with the <code>plugin</code> argument of <a href="./savePreset.html">savePreset</a>.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">VST3UnitTypePath</td><td style="text-align: left">"program" or "program/layer", set with the <code>attr</code> argument of <a href="./savePreset.html">savePreset</a>.</td><td style="text-align: left">string</td></tr>
 </tbody></table>
 </div>
 <blockquote>
@@ -200,7 +211,7 @@ defineParameter("SavePreset", nil, false, function() if SavePreset then onSavePr
 
 setScriptExecTimeOut(20000)
 
-attr = {MediaRating = 3, MusicalProperties = "Soft|Bright|Rich", VST3UnitTypePath = "program",}
+attr = {MediaRating = "3", MusicalProperties = "Soft|Bright|Rich", VST3UnitTypePath = "program",}
 
 function onSavePresetChanged()
 	FileName = fileLocation..FileName
@@ -210,6 +221,7 @@ function onSavePresetChanged()
 	SavePreset = false
 end
 </code></pre>
+<p><strong>See also:</strong> <a href="./getMediaBayAttributes.html">getMediaBayAttributes</a>, <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a></p>
 
                     </main>
 

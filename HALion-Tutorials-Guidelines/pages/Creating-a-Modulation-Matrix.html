@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Creating a Modulation Matrix - HALion 7.1.30</title>
+        <title>Creating a Modulation Matrix - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -820,7 +820,7 @@ end
 
 function onDepthChanged()
 	-- Convert from depth to semitones if the destination uses pitch.
-	if isPitchDest[DestIndex] then 
+	if isPitchDest[DestIndex] then
 		Text = pitchRange * sinh(pitchStretch * 0.01 * Depth) / sinh(pitchStretch)
 	else
 		Text = Depth

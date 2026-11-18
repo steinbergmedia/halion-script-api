@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Reference - HALion 7.1.30</title>
+        <title>Reference - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -163,6 +163,8 @@
 <a href="./afterTouch.html">afterTouch</a>,
 <a href="./AlternateData-Table.html">AlternateData Table</a>,
 <a href="./analyzePitch.html">analyzePitch</a>,
+<a href="./analyzeWavetable.html">analyzeWavetable</a>,
+<a href="./analyzeWavetableAsync.html">analyzeWavetableAsync</a>,
 <a href="./appendBus.html">appendBus</a>,
 <a href="./appendEffect.html">appendEffect</a>,
 <a href="./appendLayer.html">appendLayer</a>,
@@ -177,6 +179,7 @@
 <a href="./calcModulation.html">calcModulation</a>,
 <a href="./cancelDecompose.html">cancelDecompose</a>,
 <a href="./cancelPitchAnalysis.html">cancelPitchAnalysis</a>,
+<a href="./cancelWavetableCreation.html">cancelWavetableCreation</a>,
 <a href="./changeNoteExpression.html">changeNoteExpression</a>,
 <a href="./changePan.html">changePan</a>,
 <a href="./changeTune.html">changeTune</a>,
@@ -185,7 +188,8 @@
 <a href="./clone.html">clone</a>,
 <a href="./controlChange.html">controlChange</a>,
 <a href="./Controller-Numbers.html">Controller Numbers</a>,
-<a href="./decompose.html">decompose</a>
+<a href="./createWavetable.html">createWavetable</a>,
+<a href="./decompose.html">decompose</a>,
 <a href="./Decompose-Output-Modes.html">Decompose Output Modes</a>,
 <a href="./defineModulation.html">defineModulation</a>,
 <a href="./defineParameter.html">defineParameter</a>,
@@ -226,6 +230,7 @@
 <a href="./getKeyProperties.html">getKeyProperties</a>,
 <a href="./getKeySwitches.html">getKeySwitches</a>,
 <a href="./getLayer.html">getLayer</a>,
+<a href="./getMediaBayAttributes.html">getMediaBayAttributes</a>,
 <a href="./getMidiModule.html">getMidiModule</a>,
 <a href="./getModulationMatrixRow.html">getModulationMatrixRow</a>,
 <a href="./getMsTime.html">getMsTime</a>,
@@ -250,6 +255,7 @@
 <a href="./getQCAssignmentMax.html">getQCAssignmentMax</a>,
 <a href="./getQCAssignmentMin.html">getQCAssignmentMin</a>,
 <a href="./getQCAssignmentMode.html">getQCAssignmentMode</a>,
+<a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>,
 <a href="./getQCAssignmentParamId.html">getQCAssignmentParamId</a>,
 <a href="./getQCAssignmentScope.html">getQCAssignmentScope</a>,
 <a href="./getSamplingRate.html">getSamplingRate</a>,
@@ -269,6 +275,8 @@
 <a href="./getUserPresetPath.html">getUserPresetPath</a>,
 <a href="./getUserSubPresetPath.html">getUserSubPresetPath</a>,
 <a href="./getVoices.html">getVoices</a>,
+<a href="./getWavetable.html">getWavetable</a>,
+<a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a>,
 <a href="./getZone.html">getZone</a>,
 <a href="./hasParameter.html">hasParameter</a>,
 <a href="./insertBus.html">insertBus</a>,
@@ -338,6 +346,7 @@
 <a href="./samples2ms.html">samples2ms</a>,
 <a href="./savePreset.html">savePreset</a>,
 <a href="./setBypassNoteOff.html">setBypassNoteOff</a>,
+<a href="./setMediaBayAttributes.html">setMediaBayAttributes</a>,
 <a href="./setName.html">setName</a>,
 <a href="./setOutputBus.html">setOutputBus</a>,
 <a href="./setParameter.html">setParameter</a>,
@@ -348,11 +357,13 @@
 <a href="./setQCAssignmentMax.html">setQCAssignmentMax</a>,
 <a href="./setQCAssignmentMin.html">setQCAssignmentMin</a>,
 <a href="./setQCAssignmentMode.html">setQCAssignmentMode</a>,
+<a href="./setQCAssignmentModuleType.html">setQCAssignmentModuleType</a>,
 <a href="./setQCAssignmentParamId.html">setQCAssignmentParamId</a>,
 <a href="./setQCAssignmentScope.html">setQCAssignmentScope</a>,
 <a href="./setScriptExecTimeOut.html">setScriptExecTimeOut</a>,
 <a href="./setSource1.html">setSource1</a>,
 <a href="./setSource2.html">setSource2</a>,
+<a href="./setWavetable.html">setWavetable</a>,
 <a href="./setZoneFMXAlgo.html">setZoneFMXAlgo</a>,
 <a href="./sortEvents.html">sortEvents</a>,
 <a href="./spawn.html">spawn</a>,
@@ -366,6 +377,9 @@
 <a href="./wait.html">wait</a>,
 <a href="./waitBeat.html">waitBeat</a>,
 <a href="./waitForRelease.html">waitForRelease</a>,
+<a href="./Wavetable-Constants.html">Wavetable Constants</a>,
+<a href="./Wavetable-Enumeration-Types.html">Wavetable Enumeration Types</a>,
+<a href="./Wavetable-Table.html">Wavetable Table</a>,
 <a href="./writeMidiFile.html">writeMidiFile</a>,
 <a href="./Zone-Constructor.html">Zone Constructor</a>,</p>
 
@@ -373,7 +387,7 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../HALion-Script/pages/ParameterDefinition.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../HALion-Script/pages/Progress.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -388,7 +402,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../HALion-Script/pages/ParameterDefinition.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../HALion-Script/pages/Progress.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

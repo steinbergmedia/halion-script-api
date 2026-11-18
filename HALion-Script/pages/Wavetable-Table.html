@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="en" class="steinberg-light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Wavetable Table - HALion 7.5.10</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.5.10</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
+<h1 id="wavetable-table"><a class="header" href="#wavetable-table">Wavetable Table</a></h1>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>Wavetables are managed through a special predefined table called the Wavetable table. The <a href="./getWavetable.html">getWavetable</a> function returns a table containing a sub-table for each wave, up to a maximum of <a href="./Wavetable-Constants.html">wavetable.maxWaves</a> = 1024 waves. Waves are referenced by their index and can be added and removed using <code>table.insert</code> and <code>table.remove</code> from Lua's table library. While values within the Wavetable table and its wave sub-tables can be modified freely, their structure must remain exactly as defined below.</p>
+<p>The fields in the Wavetable table and its wave sub-tables serve different purposes: some control how the wavetable is played back by the synthesis engine, others configure how wave data is extracted from a sample when calling <a href="./analyzeWavetable.html">analyzeWavetable</a>, and others hold metadata or the wave data itself. The Purpose column below shows which category each field belongs to.</p>
+<p>Use <a href="./createWavetable.html">createWavetable</a> to build the table and <a href="./analyzeWavetable.html">analyzeWavetable</a> to fill its wave data fields. Any changes to the table only take effect in the wavetable engine after calling <a href="./setWavetable.html">setWavetable</a>.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h2 id="wavetable-fields"><a class="header" href="#wavetable-fields">Wavetable Fields</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th><th style="text-align: left">Purpose</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>.loopStart</strong></td><td style="text-align: left">Specifies the index of the first wave included in loop playback. The value may be a float, allowing the loop to start between two waves.</td><td style="text-align: left">number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.loopEnd</strong></td><td style="text-align: left">Specifies the index of the last wave included in loop playback. The value may be a float, allowing the loop to end between two waves.</td><td style="text-align: left">number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.name</strong></td><td style="text-align: left">The name of the wavetable.</td><td style="text-align: left">string</td><td style="text-align: left">Metadata</td></tr>
+<tr><td style="text-align: left"><strong>.normalizeMode</strong></td><td style="text-align: left">Controls how extracted waves are level-normalized during playback. Waves extracted from different regions of a sample often vary in level; normalization compensates for these differences. Options: <strong>Off</strong> (1) — preserves the original levels; <strong>Wave</strong> (2) — normalizes each wave individually; <strong>Sequence</strong> (3) — normalizes the entire sequence. The default is <strong>Off</strong> (1). See <a href="./Wavetable-Enumeration-Types.html#normalize-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.persistentWaves</strong></td><td style="text-align: left">When <code>true</code> (the default), all wavetable data is stored with the preset, which results in redundant data if the same wavetable is used more than once. When <code>false</code>, the wavetable data is not stored with the preset but can be loaded from a reference preset instead, for example.</td><td style="text-align: left">boolean</td><td style="text-align: left">Storage</td></tr>
+<tr><td style="text-align: left"><strong>.pitchEnvelope</strong></td><td style="text-align: left">When <code>true</code>, the wavetable uses the analyzed pitch from the original sample, playing each wave with the per‑channel fundamental frequency. When <code>false</code> (the default), all waves play back at the pitch of the triggered note.</td><td style="text-align: left">boolean</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.phaseMode</strong></td><td style="text-align: left">Controls how the phases of extracted waves are treated during playback. Phase relationships between waves can cause cancellation artifacts. Options: <strong>Keep Original Phases</strong> (1) — preserves the original phase of each wave; <strong>Align Phases</strong> (2) — aligns phases across waves; <strong>Reset Phases to Zero</strong> (3) — zeros out all phases. The default is <strong>Align Phases</strong> (2). See <a href="./Wavetable-Enumeration-Types.html#phase-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.interpolatePhase</strong></td><td style="text-align: left">When <code>true</code>, the wavetable envelope crossfades both the levels and phases between waves. This can further reduce phase cancellation artifacts during playback. The default is <code>false</code>.</td><td style="text-align: left">boolean</td><td style="text-align: left">Playback</td></tr>
+</tbody></table>
+</div>
+<h2 id="wave-fields"><a class="header" href="#wave-fields">Wave Fields</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th><th style="text-align: left">Purpose</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>.channelSelection</strong></td><td style="text-align: left">Selects which channel(s) are analyzed when calling <a href="./analyzeWavetable.html">analyzeWavetable</a>. Options: <strong>Multi</strong> (1) — analyzes all available channels; <strong>Sum</strong> (2) — mixes all channels before analysis; or one of the six discrete channels: <strong>Left</strong> (3), <strong>Right</strong> (4), <strong>Center</strong> (5), <strong>LFE</strong> (6), <strong>Left Surround</strong> (7), <strong>Right Surround</strong> (8). The selected channel must exist in the source sample. See <a href="./Wavetable-Enumeration-Types.html#channel-selection">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.channelConfig</strong></td><td style="text-align: left">The channel configuration of the wavetable, used during playback. HALion's wavetable synthesis supports multi-channel formats up to 5.1, meaning each wave can contain spectra for up to six channels (<a href="./Wavetable-Constants.html">wavetable.maxChannels</a> = 6). When calling <a href="./createWavetable.html">createWavetable</a>, this is derived automatically from the <code>channelSelection</code> argument: <strong>Multi</strong> maps the number of channels in the audio file to the matching configuration (e.g., two channels → Stereo, three channels → 3.0, four channels → 4.0); <strong>Sum</strong> or any discrete channel selection results in <strong>Mono</strong>. The configuration can be changed freely after <a href="./createWavetable.html">createWavetable</a> has been called — reducing it leaves unused channels, expanding it adds empty ones. For example, setting a stereo wave to <strong>Mono</strong> retains only the left channel. Changing this parameter also affects how channels are assigned to the six internal bus channels — <strong>Quadro</strong>, for example, uses channels 1, 2, 5, and 6.  Note that calling <a href="./analyzeWavetable.html">analyzeWavetable</a> resets the channel configuration if it does not match the number of channels in the source file. For example, a two-channel file set to <strong>Quadro</strong> will be reset to <strong>Stereo</strong>, whereas a four-channel file set to <strong>LCR + Lfe</strong> will remain unchanged since the channel count already matches. See <a href="./Wavetable-Enumeration-Types.html#channel-configuration">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.filename</strong></td><td style="text-align: left">The file name of the sample from which this wave was extracted.</td><td style="text-align: left">string</td><td style="text-align: left">Metadata</td></tr>
+<tr><td style="text-align: left"><strong>.freqLimit</strong></td><td style="text-align: left">Allows you to limit the playback to the frequency range that the wave actually uses. Any frequencies above this limit are skipped during synthesis, which can lower CPU load. Raise this value to preserve more high-frequency content; lower it to save processing power. The default is 20000 Hz.</td><td style="text-align: left">number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.samplePos</strong></td><td style="text-align: left">The position in samples within the source file at which this wave was extracted. This position is also used when calling <a href="./analyzeWavetable.html">analyzeWavetable</a>.</td><td style="text-align: left">number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.winCrossfade</strong></td><td style="text-align: left">The crossfade duration applied to the edges of the Rectangular window, expressed as a percentage of the analysis window size. Softens the hard boundaries of the Rectangular window to reduce its side lobes. The default is 10.</td><td style="text-align: left">number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.winSizeMode</strong></td><td style="text-align: left">Specifies how the window size is determined during spectral analysis. <strong>Auto</strong> (1) derives the window size from the detected fundamental frequency of each channel. <strong>Fixed Individual</strong> (2) uses the per-channel sizes specified in <code>.winSize[n]</code>. <strong>Fixed Common</strong> (3) uses the same <code>.winSize[1]</code> value for all channels. The default is <strong>Auto</strong> (1). See <a href="./Wavetable-Enumeration-Types.html#window-size-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.winType</strong></td><td style="text-align: left">The window function applied during spectral analysis. Different window types affect side lobe suppression, which changes how the analyzed spectrum sounds. Options: <strong>Rectangular</strong> (1), <strong>Cosine</strong> (2), <strong>Bartlett</strong> (3), <strong>Hanning</strong> (4), <strong>Hamming</strong> (5), <strong>Blackman</strong> (6), <strong>Blackman-Harris</strong> (7). <strong>Blackman</strong> (6, default) is a good general-purpose choice. <strong>Blackman-Harris</strong> (7) offers the strongest side lobe suppression. <strong>Rectangular</strong> (1) has high side lobes, causing energy from strong partials to bleed into neighboring bins. See <a href="./Wavetable-Enumeration-Types.html#window-type">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.curve</strong></td><td style="text-align: left">The curvature of the envelope segment from -1 to 1. The default is 0.</td><td style="text-align: left">number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.linkEnvelope</strong></td><td style="text-align: left">When <code>true</code>, the envelope time of this wave is synchronized with its position in the source sample, ensuring the envelope progresses in chronological order with the sample markers. <a href="./createWavetable.html">createWavetable</a> initializes this field to <code>true</code> for all generated waves. Waves in the wavetable are organized into <em>wave sequences</em> — groups of consecutive waves sharing the same <code>.filename</code>. For each sequence, <a href="./setWavetable.html">setWavetable</a> reads the <code>.linkEnvelope</code> field of the first wave and propagates that value to all waves of the sequence in the oscillator's wavetable. Additionally, <a href="./setWavetable.html">setWavetable</a> verifies that the <code>.time</code> of each wave is consistent with its <code>.samplePos</code>. If any wave in a sequence fails this check, <code>.linkEnvelope</code> is set to <code>false</code> for all waves of that sequence in the oscillator's wavetable, overriding the <code>.linkEnvelope</code> field of the first wave. <a href="./analyzeWavetable.html">analyzeWavetable</a> and <a href="./analyzeWavetableAsync.html">analyzeWavetableAsync</a> read the field of the first wave in the same way; see those pages for how they apply it. The default is <code>true</code>.</td><td style="text-align: left">boolean</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.spectralEnvRes</strong></td><td style="text-align: left">Defines how closely the spectral envelope follows the distribution of the magnitudes across the spectrum. The spectral envelope shapes the formant filter: higher values produce a smoother filter curve with less pronounced formants, while lower values cause the filter curve to track spectral levels more tightly, yielding a more detailed formant response. The default is 500 Hz, which is suitable for most audio content.</td><td style="text-align: left">number</td><td style="text-align: left">Analysis</td></tr>
+<tr><td style="text-align: left"><strong>.time</strong></td><td style="text-align: left">The duration of the envelope segment in seconds. The default is 1.</td><td style="text-align: left">number</td><td style="text-align: left">Playback</td></tr>
+<tr><td style="text-align: left"><strong>.spectrum</strong></td><td style="text-align: left">An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds an array with the spectrum of that channel. See <a href="#tables-per-channel">Tables per Channel</a> for details.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.fundamental</strong></td><td style="text-align: left">An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the fundamental frequency for that channel. See <a href="#tables-per-channel">Tables per Channel</a> for details.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.winSize</strong></td><td style="text-align: left">An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the window size for that channel. See <a href="#tables-per-channel">Tables per Channel</a> for details.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.spectralEnv</strong></td><td style="text-align: left">An array of six channels — left, right, center, LFE, left surround, and right surround — where each channel entry holds the spectral envelope of that channel. See <a href="#tables-per-channel">Tables per Channel</a> for details.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+</tbody></table>
+</div>
+<h2 id="tables-per-channel"><a class="header" href="#tables-per-channel">Tables per Channel</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th><th style="text-align: left">Purpose</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>.spectrum[n]</strong></td><td style="text-align: left">A table containing the spectrum for the n-th channel, with three fields: <code>.freq</code>, <code>.phase</code>, and <code>.magn</code>, each holding an array of bin values. The bins start at index 0, which holds the DC component of the spectrum. The number of bins can vary for each wave and must be read from the array itself. The maximum possible number of bins is <a href="./Wavetable-Constants.html">wavetable.maxSpectrumSize</a> = 4096. See <a href="#spectrum-fields">Spectrum Fields</a> for a description of these three fields.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.fundamental[n]</strong></td><td style="text-align: left">The fundamental frequency of the n-th channel in Hz. Defaults to 20 Hz if the pitch analysis did not determine a value during wavetable creation.</td><td style="text-align: left">number</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.winSize[n]</strong></td><td style="text-align: left">The analysis window size in samples for the n-th channel. Defaults to 512 if the pitch analysis did not determine a value during wavetable creation.</td><td style="text-align: left">number</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.spectralEnv[n]</strong></td><td style="text-align: left">An array containing the spectral envelope of the n-th channel. Like the bins of <code>.spectrum[n]</code>, the values start at index 0. Each value holds the magnitude of the spectral envelope for the corresponding bin, ranging from 0 to 1. The spectral envelope is a smoothed representation of the magnitudes of the spectrum; <code>.spectralEnvRes</code> controls how closely it follows them. The number of values can vary for each wave and must be read from the array itself.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+</tbody></table>
+</div>
+<h2 id="spectrum-fields"><a class="header" href="#spectrum-fields">Spectrum Fields</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th><th style="text-align: left">Purpose</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>.freq</strong></td><td style="text-align: left">An array where each entry holds the frequency of a bin, expressed as a multiple of the fundamental frequency.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.phase</strong></td><td style="text-align: left">An array where each entry holds the phase of a bin in radians, ranging from -π to π.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+<tr><td style="text-align: left"><strong>.magn</strong></td><td style="text-align: left">An array where each entry holds the magnitude of a bin, ranging from 0 to 1.</td><td style="text-align: left">table</td><td style="text-align: left">Wave Data</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>❕ The bins start at index 0, which holds the DC component of the spectrum.</p>
+</blockquote>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">-- Inspect wavetable.
+-- Prints the wavetable engine limits, followed by a readable summary of the
+-- Wavetable Table loaded on an oscillator.
+-- Useful for verifying that createWavetable produced the expected result.
+--
+-- Oscillator   : 1 or 2 — which oscillator to inspect.
+-- MaxWaves     : 0 = print all waves; N = print only the first N waves.
+-- ShowChannels : when true, prints the per-channel fundamentals, window sizes,
+--                bin counts and spectral envelope entry counts.
+-- MaxBins      : 0 = skip bin data; N = print the first N bins and the first N
+--                spectral envelope entries per channel, both starting at index 0.
+-- Press Inspect to run.
+
+oscillatorOptions = { "1", "2" }
+
+defineParameter { name = "Inspect",      default = false, onChanged = function() if Inspect then onInspect() end end }
+defineParameter { name = "Oscillator",   default = 1, min = 1, max = 2, increment = 1 }
+defineParameter { name = "MaxWaves",     default = 0, min = 0, max = 1024, increment = 1 }
+defineParameter { name = "ShowChannels", default = true }
+defineParameter { name = "MaxBins",      default = 0, min = 0, max = 4096, increment = 1 }
+
+-- Enum name lookup tables.
+local normalizeModeNames    = { [1]="Off", [2]="Wave", [3]="Sequence" }
+local phaseModeNames        = { [1]="Keep Original", [2]="Align", [3]="Reset to Zero" }
+local winTypeNames          = { [1]="Rectangular", [2]="Cosine", [3]="Bartlett",
+                                [4]="Hanning", [5]="Hamming", [6]="Blackman", [7]="BlackmanHarris" }
+local winSizeModeNames      = { [1]="Auto", [2]="FixedIndividual", [3]="FixedCommon" }
+local channelSelectionNames = { [1]="Multi", [2]="Sum", [3]="Left", [4]="Right",
+                                [5]="Center", [6]="LFE", [7]="RearLeft", [8]="RearRight" }
+local channelConfigNames    = { [1]="Mono", [2]="Stereo", [3]="LCR", [4]="LCRLfe",
+                                [5]="Quadro", [6]="QuadroLfe", [7]="5.0", [8]="5.1" }
+
+local function enumName(t, v)
+    return t[v] and string.format("%s (%d)", t[v], v) or tostring(v)
+end
+
+local function boolStr(v)
+    return v and "true" or "false"
+end
+
+function onInspect()
+    -- ── Wavetable engine limits ──────────────────────────────────────────
+    print(string.rep("─", 60))
+    print("Wavetable Constants")
+    print(string.rep("─", 60))
+    print(string.format("  maxWaves        : %d", wavetable.maxWaves))
+    print(string.format("  maxSpectrumSize : %d", wavetable.maxSpectrumSize))
+    print(string.format("  maxChannels     : %d", wavetable.maxChannels))
+    print("")
+
+    local zones = this.parent:findZones(true)
+    if #zones == 0 then
+        print("No zones found in parent layer.")
+        Inspect = false
+        return
+    end
+
+    for zi, zone in ipairs(zones) do
+        local wt = zone:getWavetable(Oscillator)
+        if not wt then
+            print(string.format("Zone %d: no wavetable on oscillator %d.", zi, Oscillator))
+        else
+            local totalWaves  = #wt
+            local printWaves  = (MaxWaves == 0) and totalWaves or math.min(MaxWaves, totalWaves)
+
+            -- ── Wavetable-level fields ───────────────────────────────────────
+            print(string.rep("─", 60))
+            print(string.format('Zone %d, Osc %d: "%s"', zi, Oscillator, tostring(wt.name)))
+            print(string.rep("─", 60))
+            print(string.format("  Waves         : %d", totalWaves))
+            print(string.format("  Loop          : %.3g → %.3g", wt.loopStart, wt.loopEnd))
+            print(string.format("  NormalizeMode : %s", enumName(normalizeModeNames,  wt.normalizeMode)))
+            print(string.format("  PhaseMode     : %s", enumName(phaseModeNames,      wt.phaseMode)))
+            print(string.format("  InterpPhase   : %s", boolStr(wt.interpolatePhase)))
+            print(string.format("  PitchEnvelope : %s", boolStr(wt.pitchEnvelope)))
+            print(string.format("  PersistentWaves: %s", boolStr(wt.persistentWaves)))
+
+            -- ── Per-wave fields ──────────────────────────────────────────────
+            if printWaves &gt; 0 then
+                print("")
+                if printWaves &lt; totalWaves then
+                    print(string.format("  Showing first %d of %d waves:", printWaves, totalWaves))
+                else
+                    print(string.format("  Waves (%d):", totalWaves))
+                end
+
+                local afileCache = {}   -- cache AudioFile objects by filename
+                for wi = 1, printWaves do
+                    local w = wt[wi]
+                    local fname = tostring(w.filename)
+                    if not afileCache[fname] then
+                        afileCache[fname] = AudioFile.open(w.filename) or false
+                    end
+                    local af          = afileCache[fname]
+                    local srcChannels = af and af.channels or "?"
+                    print(string.format("  [%d] file='%s'  channels=%s  samplePos=%d smp",
+                        wi, fname, tostring(srcChannels), w.samplePos))
+                    print(string.format("       ChannelSel=%-18s  ChannelCfg=%s",
+                        enumName(channelSelectionNames, w.channelSelection),
+                        enumName(channelConfigNames,    w.channelConfig)))
+                    print(string.format("       WinType=%-20s  WinSizeMode=%s",
+                        enumName(winTypeNames,      w.winType),
+                        enumName(winSizeModeNames,  w.winSizeMode)))
+                    print(string.format("       WinCrossfade=%.1f %%  SpectralEnvRes=%.0f Hz  FreqLimit=%.0f Hz",
+                        w.winCrossfade, w.spectralEnvRes, w.freqLimit))
+                    print(string.format("       Time=%.3g s  Curve=%.3g  LinkEnvelope=%s",
+                        w.time, w.curve, boolStr(w.linkEnvelope)))
+
+                    -- Per-channel data (fundamental, winSize, spectrum, spectral envelope).
+                    if ShowChannels and w.fundamental then
+                        for ch = 1, 6 do
+                            local fund = w.fundamental  and w.fundamental[ch]
+                            local wsz  = w.winSize      and w.winSize[ch]
+                            local sp   = w.spectrum     and w.spectrum[ch]
+                            local senv = w.spectralEnv  and w.spectralEnv[ch]
+                            -- Bins and envelope entries both start at index 0, so each
+                            -- array holds one entry more than the length operator reports.
+                            local nbin = (sp and sp.freq) and #sp.freq or 0
+                            local nenv = senv and #senv or 0
+                            local bins = (nbin &gt; 0) and (nbin + 1) or nil
+                            local envs = (nenv &gt; 0) and (nenv + 1) or nil
+                            if fund or wsz or bins then
+                                print(string.format(
+                                    "         ch%d: fundamental=%.1f Hz  winSize=%s  spectrum=%s bins  spectralEnv=%s entries",
+                                    ch,
+                                    fund or 0,
+                                    wsz  and tostring(wsz)  or "–",
+                                    bins and tostring(bins) or "–",
+                                    envs and tostring(envs) or "–"))
+                                if MaxBins &gt; 0 and bins then
+                                    local printBins = math.min(MaxBins, bins)
+                                    for bi = 0, printBins - 1 do
+                                        print(string.format(
+                                            "           bin %4d: freq=%8.4f  phase=%8.4f  magn=%8.4f",
+                                            bi, sp.freq[bi], sp.phase[bi], sp.magn[bi]))
+                                    end
+                                    if printBins &lt; bins then
+                                        print(string.format("           ... (%d more bins not shown)", bins - printBins))
+                                    end
+                                end
+                                -- Listed separately, because the envelope stops earlier than
+                                -- the spectrum.
+                                if MaxBins &gt; 0 and envs then
+                                    local printEnv = math.min(MaxBins, envs)
+                                    for ei = 0, printEnv - 1 do
+                                        print(string.format(
+                                            "           spectralEnv %4d: %8.4f", ei, senv[ei]))
+                                    end
+                                    if printEnv &lt; envs then
+                                        print(string.format("           ... (%d more envelope entries not shown)", envs - printEnv))
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+
+                if printWaves &lt; totalWaves then
+                    print(string.format("  ... (%d more waves not shown)", totalWaves - printWaves))
+                end
+            end
+
+            print("")
+        end
+    end
+
+    print("Inspect complete.")
+    Inspect = false
+end
+</code></pre>
+<p><strong>See also:</strong> <a href="./analyzeWavetable.html">analyzeWavetable</a>, <a href="./analyzeWavetableAsync.html">analyzeWavetableAsync</a>, <a href="./cancelWavetableCreation.html">cancelWavetableCreation</a>, <a href="./createWavetable.html">createWavetable</a>, <a href="./getWavetable.html">getWavetable</a>, <a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a>, <a href="./setWavetable.html">setWavetable</a>, <a href="./Wavetable-Constants.html">Wavetable Constants</a>, <a href="./Wavetable-Enumeration-Types.html">Wavetable Enumeration Types</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Script/pages/Wavetable-Enumeration-Types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../HALion-Script/pages/writeMidiFile.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Script/pages/Wavetable-Enumeration-Types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../HALion-Script/pages/writeMidiFile.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+            
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available -->
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

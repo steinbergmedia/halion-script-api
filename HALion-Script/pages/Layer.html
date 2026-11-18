@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Layer - HALion 7.1.30</title>
+        <title>Layer - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -161,7 +161,7 @@
 <p><strong>On this page:</strong></p>
 <p><a href="./Layer.html#appendbus">appendBus</a>, <a href="./Layer.html#appendlayer">appendLayer</a>, <a href="./Layer.html#appendlayerasync">appendLayerAsync</a>, <a href="./Layer.html#appendmidimodule">appendMidiModule</a>, <a href="./Layer.html#appendzone">appendZone</a>, <a href="./Layer.html#findbusses">findBusses</a>, <a href="./Layer.html#findeffects">findEffects</a>, <a href="./Layer.html#findlayers">findLayers</a>, <a href="./Layer.html#findmidimodules">findMidiModules</a>, <a href="./Layer.html#findzones">findZones</a>, <a href="./Layer.html#getbus">getBus</a>,
 <a href="./Layer.html#getlayer">getLayer</a>, <a href="./Layer.html#getmidimodule">getMidiModule</a>, <a href="./Layer.html#getzone">getZone</a>, <a href="./Layer.html#insertbus">insertBus</a>,
-<a href="./Layer.html#insertlayer">insertLayer</a>, <a href="./Layer.html#insertlayerasync">insertLayerAsync</a>, <a href="./Layer.html#insertmidimodule">insertMidiModule</a>, <a href="./Layer.html#insertzone">insertZone</a>, <a href="./Layer.html#removebus">removeBus</a>, <a href="./Layer.html#removelayer">removeLayer</a>, <a href="./Layer.html#removemidimodule">removeMidiModule</a>, <a href="./Layer.html#removezone">removeZone</a>, <a href="./Layer.html#addqcassignment">addQCAssignment</a>, <a href="./Layer.html#removeqcassignment">removeQCAssignment</a>, <a href="./Layer.html#getnumqcassignments">getNumQCAssignments</a>, <a href="./Layer.html#getqcassignmentparamid">getQCAssignmentParamId</a>, <a href="./Layer.html#getqcassignmentscope">getQCAssignmentScope</a>, <a href="./Layer.html#getqcassignmentmin">getQCAssignmentMin</a>, <a href="./Layer.html#getqcassignmentmax">getQCAssignmentMax</a>, <a href="./Layer.html#getqcassignmentcurve">getQCAssignmentCurve</a>, <a href="./Layer.html#getqcassignmentmode">getQCAssignmentMode</a>, <a href="./Layer.html#getqcassignmentbypass">getQCAssignmentBypass</a>, <a href="./Layer.html#setqcassignmentparamid">setQCAssignmentParamId</a>, <a href="./Layer.html#setqcassignmentscope">setQCAssignmentScope</a>, <a href="./Layer.html#setqcassignmentmin">setQCAssignmentMin</a>, <a href="./Layer.html#setqcassignmentmax">setQCAssignmentMax</a>, <a href="./Layer.html#setqcassignmentcurve">setQCAssignmentCurve</a>, <a href="./Layer.html#setqcassignmentmode">setQCAssignmentMode</a>, <a href="./Layer.html#setqcassignmentbypass">setQCAssignmentBypass</a></p>
+<a href="./Layer.html#insertlayer">insertLayer</a>, <a href="./Layer.html#insertlayerasync">insertLayerAsync</a>, <a href="./Layer.html#insertmidimodule">insertMidiModule</a>, <a href="./Layer.html#insertzone">insertZone</a>, <a href="./Layer.html#removebus">removeBus</a>, <a href="./Layer.html#removelayer">removeLayer</a>, <a href="./Layer.html#removemidimodule">removeMidiModule</a>, <a href="./Layer.html#removezone">removeZone</a>, <a href="./Layer.html#addqcassignment">addQCAssignment</a>, <a href="./Layer.html#removeqcassignment">removeQCAssignment</a>, <a href="./Layer.html#getnumqcassignments">getNumQCAssignments</a>, <a href="./Layer.html#getqcassignmentparamid">getQCAssignmentParamId</a>, <a href="./Layer.html#getqcassignmentscope">getQCAssignmentScope</a>, <a href="./Layer.html#getqcassignmentmin">getQCAssignmentMin</a>, <a href="./Layer.html#getqcassignmentmax">getQCAssignmentMax</a>, <a href="./Layer.html#getqcassignmentcurve">getQCAssignmentCurve</a>, <a href="./Layer.html#getqcassignmentmode">getQCAssignmentMode</a>, <a href="./Layer.html#getqcassignmentmoduletype">getQCAssignmentModuleType</a>, <a href="./Layer.html#getqcassignmentbypass">getQCAssignmentBypass</a>, <a href="./Layer.html#setqcassignmentparamid">setQCAssignmentParamId</a>, <a href="./Layer.html#setqcassignmentscope">setQCAssignmentScope</a>, <a href="./Layer.html#setqcassignmentmin">setQCAssignmentMin</a>, <a href="./Layer.html#setqcassignmentmax">setQCAssignmentMax</a>, <a href="./Layer.html#setqcassignmentcurve">setQCAssignmentCurve</a>, <a href="./Layer.html#setqcassignmentmode">setQCAssignmentMode</a>, <a href="./Layer.html#setqcassignmentmoduletype">setQCAssignmentModuleType</a>, <a href="./Layer.html#setqcassignmentbypass">setQCAssignmentBypass</a></p>
 <hr />
 <p><strong>List of inherited members:</strong></p>
 <h4 id="element"><a class="header" href="#element">Element</a></h4>
@@ -286,7 +286,7 @@ end
 <p><strong>appendLayerAsync(layer, callback)</strong></p>
 </blockquote>
 <h4 id="description-3"><a class="header" href="#description-3">Description</a></h4>
-<p>Function to add a layer in the specified destination layer using a separate, parallel thread. Appending a layer in a separate thread can be necessary if the layer is too big to be added in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The new layer will be added behind the existing layers. To insert a layer at a specific position in the destination layer, use <a href="./insertLayer.html">insertLayer</a> or <a href="./insertLayerAsync.html">insertLayerAsync</a> instead. The function returns a <a href="./LoadProgress.html">LoadProgress</a> object that can be used to monitor the load progress. After the layer is added, the callback function is called. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as default argument.</p>
+<p>Function to add a layer in the specified destination layer using a separate, parallel thread. Appending a layer in a separate thread can be necessary if the layer is too big to be added in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The new layer will be added behind the existing layers. To insert a layer at a specific position in the destination layer, use <a href="./insertLayer.html">insertLayer</a> or <a href="./insertLayerAsync.html">insertLayerAsync</a> instead. The function returns a <a href="./Progress.html">Progress</a> object that can be used to monitor the load progress. After the layer is added, the callback function is called. The callback function gets the <a href="./Progress.html">Progress</a> object as default argument.</p>
 <blockquote>
 <p>❕ An <a href="./Element.html">Element</a> object can only have one parent. It cannot be child of multiple parents. Therefore, an <a href="./Element.html">Element</a> object that you retrieved from the running plug-in instance must be removed before it can be inserted again. The <a href="./Element.html">Element</a> objects that you retrieve through <a href="./loadPreset.html">loadPreset</a> or <a href="./loadPresetAsync.html">loadPresetAsync</a> can be inserted freely, because these functions create a copy of the <a href="./Element.html">Element</a> objects when reading them.</p>
 </blockquote>
@@ -294,11 +294,11 @@ end
 <h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">The Layer object of the layer that you want to append.</td><td style="text-align: left"><a href="./Layer.html">Layer</a></td></tr>
-<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is added. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is added. The callback function gets the <a href="./Progress.html">Progress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values-1"><a class="header" href="#return-values-1">Return Values</a></h4>
-<p>Returns a <a href="./LoadProgress.html">LoadProgress</a> object.</p>
+<p>Returns a <a href="./Progress.html">Progress</a> object.</p>
 <h4 id="example-3"><a class="header" href="#example-3">Example</a></h4>
 <pre><code class="language-lua">-- Start with an empty program, remove any existing layers.
 
@@ -779,7 +779,7 @@ end
 <p><strong>insertLayerAsync(layer, position, callback)</strong></p>
 </blockquote>
 <h4 id="description-17"><a class="header" href="#description-17">Description</a></h4>
-<p>Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use <a href="./appendLayer.html">appendLayer</a> or <a href="./appendLayerAsync.html">appendLayerAsync</a> instead. The function returns a <a href="./LoadProgress.html">LoadProgress</a> object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as default argument.</p>
+<p>Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use <a href="./appendLayer.html">appendLayer</a> or <a href="./appendLayerAsync.html">appendLayerAsync</a> instead. The function returns a <a href="./Progress.html">Progress</a> object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the <a href="./Progress.html">Progress</a> object as default argument.</p>
 <blockquote>
 <p>❕ An <a href="./Element.html">Element</a> object can only have one parent. It cannot be child of multiple parents. Therefore, an <a href="./Element.html">Element</a> object that you retrieved from the running plug-in instance must be removed before it can be inserted again. The <a href="./Element.html">Element</a> objects that you retrieve through <a href="./loadPreset.html">loadPreset</a> or <a href="./loadPresetAsync.html">loadPresetAsync</a> can be inserted freely, because these functions create a copy of the <a href="./Element.html">Element</a> objects when reading them.</p>
 </blockquote>
@@ -788,11 +788,11 @@ end
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">The <a href="./Layer.html">Layer</a> object of the layer that you want to insert.</td><td style="text-align: left"><a href="./Layer.html">Layer</a></td></tr>
 <tr><td style="text-align: left"><strong>position</strong></td><td style="text-align: left">The position where the layer is to be inserted.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is inserted. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is inserted. The callback function gets the <a href="./Progress.html">Progress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
 </tbody></table>
 </div>
 <h4 id="return-values-11"><a class="header" href="#return-values-11">Return Values</a></h4>
-<p>Returns a <a href="./LoadProgress.html">LoadProgress</a> object.</p>
+<p>Returns a <a href="./Progress.html">Progress</a> object.</p>
 <h4 id="example-17"><a class="header" href="#example-17">Example</a></h4>
 <pre><code class="language-lua">-- Start with an empty program, remove all existing layers.
 layers = this.parent:findLayers()
@@ -1026,7 +1026,7 @@ end
 <p><strong>addQCAssignment(qc, element, nameOrID, scope)</strong></p>
 </blockquote>
 <h4 id="description-24"><a class="header" href="#description-24">Description</a></h4>
-<p>Function to add a quick control assignment to the specified layer and quick control. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control that you want to edit. The quick control assignment will be added to the quick control with the index stated by the <code>qc</code> argument. The arguments <code>element</code> and <code>nameOrID</code> specify the parameter to be connected. The scope determines the part of the program that will be affected by the quick control assignment. You specify the scope by setting the <code>scope</code> argument to the <a href="./Element.html">Element</a> object that corresponds to the desired part of the program.</p>
+<p>Function to add a quick control assignment to the specified layer and quick control. The layer is determined by the <a href="./Layer.html">Layer</a> object, and the quick control by the index stated by the <code>qc</code> argument. The <code>element</code> argument specifies the module to be connected and accepts either an <a href="./Element.html">Element</a> object or a module type string as returned by <a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>. The <code>nameOrID</code> argument identifies the parameter to be connected. The scope determines the part of the program that will be affected by the quick control assignment. You specify the scope by setting the <code>scope</code> argument to the <a href="./Element.html">Element</a> object that corresponds to the desired part of the program.</p>
 <blockquote>
 <p>❕ The index of the quick controls starts counting from 1. QC 1 to QC 8 have index 1 to 8. Sphere H, Sphere V and Mod Wheel have index 9, 10 and 11.</p>
 </blockquote>
@@ -1034,7 +1034,7 @@ end
 <h4 id="arguments-23"><a class="header" href="#arguments-23">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control to which the assignment will be added.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>element</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object of the parameter to be connected.</td><td style="text-align: left"><a href="./Element.html">Element</a></td></tr>
+<tr><td style="text-align: left"><strong>element</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object or module type string of the module to be connected. The module type string can be obtained with <a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>. Passing a module type string requires HALion 7.5 or higher.</td><td style="text-align: left"><a href="./Element.html">Element</a> or string</td></tr>
 <tr><td style="text-align: left"><strong>nameOrID</strong></td><td style="text-align: left">The name or ID of the parameter.</td><td style="text-align: left">string or number</td></tr>
 <tr><td style="text-align: left"><strong>scope</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object that will be affected by the quick control assignment.</td><td style="text-align: left"><a href="./Element.html">Element</a></td></tr>
 </tbody></table>
@@ -1054,7 +1054,7 @@ layer:addQCAssignment(1, zones[1], "Pitch.Octave", layer)
 <p><strong>removeQCAssignment(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-25"><a class="header" href="#description-25">Description</a></h4>
-<p>Function to remove a quick control assignment from the specified layer and quick control. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control with the assignment to be removed. The <code>assignment</code> argument is the index of the quick control assignment to be removed. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to remove a quick control assignment from the specified layer and quick control. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control with the assignment to be removed. The <code>assignment</code> argument is the index of the quick control assignment to be removed. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-24"><a class="header" href="#arguments-24">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1085,7 +1085,7 @@ clearQC(this.parent, 1)
 <p><strong>getNumQCAssignments(qc)</strong></p>
 </blockquote>
 <h4 id="description-26"><a class="header" href="#description-26">Description</a></h4>
-<p>Function to retrieve the number of assignments of a quick control on the specified layer. For example, <code>this.parent</code> defines the parent layer of the script module as the layer with the desired quick control. The <code>qc</code> argument is the index of the quick control with the requested assignments.</p>
+<p>Function to retrieve the number of assignments of a quick control on the specified layer. The layer is determined by the <a href="./Layer.html">Layer</a> object, and the quick control by the index stated by the <code>qc</code> argument.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-25"><a class="header" href="#arguments-25">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1108,7 +1108,7 @@ print("Number of assignments on '"..layer.name.."', QC "..qc..": "..layer:getNum
 <p><strong>getQCAssignmentParamId(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-27"><a class="header" href="#description-27">Description</a></h4>
-<p>Function to retrieve the parameter ID of the parameter that is connected to the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, this.parent defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested parameter. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the parameter ID of the parameter that is connected to the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested parameter. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-26"><a class="header" href="#arguments-26">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1135,7 +1135,7 @@ print("Parameter ID of '"..layer.name.."', QC "..qc..", assignment "..assignment
 <p><strong>getQCAssignmentScope(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-28"><a class="header" href="#description-28">Description</a></h4>
-<p>Function to retrieve the <a href="./Element.html">Element</a> object that is set as scope for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object of the layer, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested scope. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the <a href="./Element.html">Element</a> object that is set as scope for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object of the layer, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested scope. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-27"><a class="header" href="#arguments-27">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1162,7 +1162,7 @@ print("Scope of '"..layer.name.."', QC "..qc..", assignment "..assignment..": ".
 <p><strong>getQCAssignmentMin(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-29"><a class="header" href="#description-29">Description</a></h4>
-<p>Function to retrieve the minimum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested minimum value. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the minimum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested minimum value. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-28"><a class="header" href="#arguments-28">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1197,7 +1197,7 @@ print("Minimum value of '"..layer.name.."', QC "..qc..", assignment "..assignmen
 <p><strong>getQCAssignmentMax(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-30"><a class="header" href="#description-30">Description</a></h4>
-<p>Function to retrieve the maximum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested maximum value. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the maximum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested maximum value. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-29"><a class="header" href="#arguments-29">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1234,7 +1234,7 @@ print("Maximum value of '"..layer.name.."', QC "..qc..", assignment "..assignmen
 <p><strong>getQCAssignmentCurve(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-31"><a class="header" href="#description-31">Description</a></h4>
-<p>Function to retrieve the curve value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested curve value. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the curve value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested curve value. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-30"><a class="header" href="#arguments-30">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1261,7 +1261,7 @@ print("Curve value of '"..layer.name.."', QC "..qc..", assignment "..assignment.
 <p><strong>getQCAssignmentMode(qc, assignment)</strong></p>
 </blockquote>
 <h4 id="description-32"><a class="header" href="#description-32">Description</a></h4>
-<p>Function to retrieve the mode that is set for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested mode. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the mode that is set for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested mode. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller, Processor.</p>
 <h4 id="arguments-31"><a class="header" href="#arguments-31">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1292,12 +1292,13 @@ end
 print("Mode of '"..layer.name.."', QC "..qc..", assignment "..assignment..": "..qcModeName..".")
 </code></pre>
 <p><a href="#layer">Jump to Top </a></p>
-<h3 id="getqcassignmentbypass"><a class="header" href="#getqcassignmentbypass">getQCAssignmentBypass</a></h3>
+<h3 id="getqcassignmentmoduletype"><a class="header" href="#getqcassignmentmoduletype">getQCAssignmentModuleType</a></h3>
 <blockquote>
-<p><strong>getQCAssignmentBypass(qc, assignment)</strong></p>
+<p><strong>getQCAssignmentModuleType(qc, assignment)</strong></p>
 </blockquote>
+<p><span class="version-text">(Since HALion 7.5.0)</span></p>
 <h4 id="description-33"><a class="header" href="#description-33">Description</a></h4>
-<p>Function to retrieve the bypass state of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested bypass state. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p>Function to retrieve the module type of the module that is connected to the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested module type. The indices of the quick controls and the assignments both start counting from 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
 <h4 id="arguments-32"><a class="header" href="#arguments-32">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
@@ -1306,8 +1307,68 @@ print("Mode of '"..layer.name.."', QC "..qc..", assignment "..assignment..": "..
 </tbody></table>
 </div>
 <h4 id="return-values-19"><a class="header" href="#return-values-19">Return Values</a></h4>
-<p>Returns the bypass state of the specified quick control assignment as boolean value.</p>
+<p>Returns the module type of the module connected to the specified quick control assignment as a string.</p>
 <h4 id="example-33"><a class="header" href="#example-33">Example</a></h4>
+<pre><code class="language-lua">-- Copy all quick control assignments with layer scope from one layer to another.
+
+function copyQCsWithLayerScope(fromLayer, toLayer)
+
+    for q = 1,8 do
+        local n = fromLayer:getNumQCAssignments(q)
+        for i = 1,n do
+            local scope = fromLayer:getQCAssignmentScope(q, i)
+            local param = fromLayer:getQCAssignmentParamId(q, i)
+            local mtype = fromLayer:getQCAssignmentModuleType(q, i)
+            local min   = fromLayer:getQCAssignmentMin(q, i)
+            local max   = fromLayer:getQCAssignmentMax(q, i)
+            local mode  = fromLayer:getQCAssignmentMode(q, i)
+            local curve = fromLayer:getQCAssignmentCurve(q, i)
+            local byp   = fromLayer:getQCAssignmentBypass(q, i)
+
+            if scope == fromLayer then
+                toLayer:addQCAssignment(q, mtype, param, toLayer)
+                local j = toLayer:getNumQCAssignments(q)
+                toLayer:setQCAssignmentParamId(q, j, param)
+                toLayer:setQCAssignmentModuleType(q, j, mtype)
+                toLayer:setQCAssignmentMin(q, j, min)
+                toLayer:setQCAssignmentMax(q, j, max)
+                toLayer:setQCAssignmentMode(q, j, mode)
+                toLayer:setQCAssignmentCurve(q, j, curve)
+                toLayer:setQCAssignmentBypass(q, j, byp)
+            end
+        end
+        if toLayer:getNumQCAssignments(q) &gt; 0 then
+            local name = fromLayer:getParameter("QuickControl.Name" .. q)
+            toLayer:setParameter("QuickControl.Name" .. q, name)
+            local val = fromLayer:getParameter("QuickControl.QC" .. q)
+            toLayer:setParameter("QuickControl.QC" .. q, val)
+        end
+    end
+
+end
+
+fromLayer = this.parent:getLayer(1)
+toLayer = this.parent:getLayer(2)
+
+copyQCsWithLayerScope(fromLayer, toLayer)
+</code></pre>
+<p><a href="#layer">Jump to Top </a></p>
+<h3 id="getqcassignmentbypass"><a class="header" href="#getqcassignmentbypass">getQCAssignmentBypass</a></h3>
+<blockquote>
+<p><strong>getQCAssignmentBypass(qc, assignment)</strong></p>
+</blockquote>
+<h4 id="description-34"><a class="header" href="#description-34">Description</a></h4>
+<p>Function to retrieve the bypass state of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment with the requested bypass state. The indices of the quick controls and the assignments both start counting from 1.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="arguments-33"><a class="header" href="#arguments-33">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values-20"><a class="header" href="#return-values-20">Return Values</a></h4>
+<p>Returns the bypass state of the specified quick control assignment as boolean value.</p>
+<h4 id="example-34"><a class="header" href="#example-34">Example</a></h4>
 <pre><code class="language-lua">-- Print the bypass state of the qc assignment.
 
 layer = this.parent
@@ -1323,17 +1384,17 @@ print("Bypass of '"..layer.name.."', QC "..qc..", assignment "..assignment..": "
 <blockquote>
 <p><strong>setQCAssignmentParamId(qc, assignment, paramID)</strong></p>
 </blockquote>
-<h4 id="description-34"><a class="header" href="#description-34">Description</a></h4>
-<p>Function to set the parameter ID for connecting the corresponding parameter to the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>paramID</code> argument selects the parameter to be connected with the quick control assignment.</p>
+<h4 id="description-35"><a class="header" href="#description-35">Description</a></h4>
+<p>Function to set the parameter ID for connecting the corresponding parameter to the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>paramID</code> argument selects the parameter to be connected with the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-33"><a class="header" href="#arguments-33">Arguments</a></h4>
+<h4 id="arguments-34"><a class="header" href="#arguments-34">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>paramID</strong></td><td style="text-align: left">The ID of the parameter to be connected.</td><td style="text-align: left">number</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-34"><a class="header" href="#example-34">Example</a></h4>
+<h4 id="example-35"><a class="header" href="#example-35">Example</a></h4>
 <pre><code class="language-lua">-- Connect the coarse parameter of the zone to the specified quick control assignment.
 
 layer = this.parent
@@ -1350,17 +1411,17 @@ layer:setQCAssignmentParamId(qc, assignment, coarseParamID)
 <blockquote>
 <p><strong>setQCAssignmentScope(qc, assignment, scope)</strong></p>
 </blockquote>
-<h4 id="description-35"><a class="header" href="#description-35">Description</a></h4>
-<p>Function to set the scope for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The scope is defined by the <a href="./Element.html">Element</a> object that you assign to the <code>scope</code> argument.</p>
+<h4 id="description-36"><a class="header" href="#description-36">Description</a></h4>
+<p>Function to set the scope for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The scope is defined by the <a href="./Element.html">Element</a> object that you assign to the <code>scope</code> argument.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-34"><a class="header" href="#arguments-34">Arguments</a></h4>
+<h4 id="arguments-35"><a class="header" href="#arguments-35">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>assignments</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>scope</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object to be used as scope.</td><td style="text-align: left"><a href="./Element.html">Element</a></td></tr>
 </tbody></table>
 </div>
-<h4 id="example-35"><a class="header" href="#example-35">Example</a></h4>
+<h4 id="example-36"><a class="header" href="#example-36">Example</a></h4>
 <pre><code class="language-lua">-- Set the scope to the first zone that was found.
 
 layer = this.parent
@@ -1376,10 +1437,10 @@ layer:setQCAssignmentScope(qc, assignment, zone)
 <blockquote>
 <p><strong>setQCAssignmentMin(qc, assignment, min)</strong></p>
 </blockquote>
-<h4 id="description-36"><a class="header" href="#description-36">Description</a></h4>
-<p>Function to set the minimum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>min</code> argument sets the minimum value of the quick control assignment.</p>
+<h4 id="description-37"><a class="header" href="#description-37">Description</a></h4>
+<p>Function to set the minimum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>min</code> argument sets the minimum value of the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-35"><a class="header" href="#arguments-35">Arguments</a></h4>
+<h4 id="arguments-36"><a class="header" href="#arguments-36">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
@@ -1389,7 +1450,7 @@ layer:setQCAssignmentScope(qc, assignment, zone)
 <blockquote>
 <p>❕ The value range is always 0 to 100 %, even if the mode of the quick control assignment is set to Relative or Switch Relative.</p>
 </blockquote>
-<h4 id="example-36"><a class="header" href="#example-36">Example</a></h4>
+<h4 id="example-37"><a class="header" href="#example-37">Example</a></h4>
 <pre><code class="language-lua">-- Set the minimum value of the quick control assignment depending on the mode.
 
 layer = this.parent
@@ -1409,12 +1470,12 @@ layer:setQCAssignmentMin(qc, assignment, qcMin)
 <p><a href="#layer">Jump to Top </a></p>
 <h3 id="setqcassignmentmax"><a class="header" href="#setqcassignmentmax">setQCAssignmentMax</a></h3>
 <blockquote>
-<p><strong>setQCAssignmentMax(qc, assignment max)</strong></p>
+<p><strong>setQCAssignmentMax(qc, assignment, max)</strong></p>
 </blockquote>
-<h4 id="description-37"><a class="header" href="#description-37">Description</a></h4>
-<p>Function to set the maximum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>max</code> argument sets the maximum value of the quick control assignment.</p>
+<h4 id="description-38"><a class="header" href="#description-38">Description</a></h4>
+<p>Function to set the maximum value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>max</code> argument sets the maximum value of the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-36"><a class="header" href="#arguments-36">Arguments</a></h4>
+<h4 id="arguments-37"><a class="header" href="#arguments-37">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
@@ -1424,7 +1485,7 @@ layer:setQCAssignmentMin(qc, assignment, qcMin)
 <blockquote>
 <p>❕ The value range is always 0 to 100 %, even if the mode of the quick control assignment is set to Relative or Switch Relative.</p>
 </blockquote>
-<h4 id="example-37"><a class="header" href="#example-37">Example</a></h4>
+<h4 id="example-38"><a class="header" href="#example-38">Example</a></h4>
 <pre><code class="language-lua">-- Set the maximum value of the quick control assignment depending on the mode.
 
 layer = this.parent
@@ -1446,17 +1507,17 @@ layer:setQCAssignmentMax(qc, assignment, qcMax)
 <blockquote>
 <p><strong>setQCAssignmentCurve(qc, assignment, curve)</strong></p>
 </blockquote>
-<h4 id="description-38"><a class="header" href="#description-38">Description</a></h4>
-<p>Function to set the curve value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>curve</code> argument sets the curve value of the quick control assignment.</p>
+<h4 id="description-39"><a class="header" href="#description-39">Description</a></h4>
+<p>Function to set the curve value of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>curve</code> argument sets the curve value of the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-37"><a class="header" href="#arguments-37">Arguments</a></h4>
+<h4 id="arguments-38"><a class="header" href="#arguments-38">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>asignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>curve</strong></td><td style="text-align: left">The curve value in the range -100 % to +100 %.</td><td style="text-align: left">number</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-38"><a class="header" href="#example-38">Example</a></h4>
+<h4 id="example-39"><a class="header" href="#example-39">Example</a></h4>
 <pre><code class="language-lua">-- Set the curve of the quick control assignment to -100 %.
 
 layer = this.parent
@@ -1470,17 +1531,17 @@ layer:setQCAssignmentCurve(qc, assignment, -100)
 <blockquote>
 <p><strong>setQCAssignmentMode(qc, assignment, mode)</strong></p>
 </blockquote>
-<h4 id="description-39"><a class="header" href="#description-39">Description</a></h4>
-<p>Function to set the mode of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>mode</code> argument sets the mode of the quick control assignment.</p>
+<h4 id="description-40"><a class="header" href="#description-40">Description</a></h4>
+<p>Function to set the mode of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>mode</code> argument sets the mode of the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-38"><a class="header" href="#arguments-38">Arguments</a></h4>
+<h4 id="arguments-39"><a class="header" href="#arguments-39">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>asignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>mode</strong></td><td style="text-align: left">The mode to be set. It can be determined via names or indices. See <a href="./Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a> for details.</td><td style="text-align: left">enum or number</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-39"><a class="header" href="#example-39">Example</a></h4>
+<h4 id="example-40"><a class="header" href="#example-40">Example</a></h4>
 <pre><code class="language-lua">-- Set the mode of the quick control assignment to absolute and adjust min and max to full range.
 
 layer = this.parent
@@ -1492,21 +1553,81 @@ layer:setQCAssignmentMin(qc, assignment, 0)
 layer:setQCAssignmentMax(qc, assignment, 100)
 </code></pre>
 <p><a href="#layer">Jump to Top </a></p>
+<h3 id="setqcassignmentmoduletype"><a class="header" href="#setqcassignmentmoduletype">setQCAssignmentModuleType</a></h3>
+<blockquote>
+<p><strong>setQCAssignmentModuleType(qc, assignment, moduleType)</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.0)</span></p>
+<h4 id="description-41"><a class="header" href="#description-41">Description</a></h4>
+<p>Function to set the module type for the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>moduleType</code> argument specifies the module type as a string, which allows assigning a module type even when no element of that type exists at the time of the assignment.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="arguments-40"><a class="header" href="#arguments-40">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left"><strong>moduleType</strong></td><td style="text-align: left">The module type to be set for the quick control assignment.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<h4 id="example-41"><a class="header" href="#example-41">Example</a></h4>
+<pre><code class="language-lua">-- Copy all quick control assignments with layer scope from one layer to another.
+
+function copyQCsWithLayerScope(fromLayer, toLayer)
+
+    for q = 1,8 do
+        local n = fromLayer:getNumQCAssignments(q)
+        for i = 1,n do
+            local scope = fromLayer:getQCAssignmentScope(q, i)
+            local param = fromLayer:getQCAssignmentParamId(q, i)
+            local mtype = fromLayer:getQCAssignmentModuleType(q, i)
+            local min   = fromLayer:getQCAssignmentMin(q, i)
+            local max   = fromLayer:getQCAssignmentMax(q, i)
+            local mode  = fromLayer:getQCAssignmentMode(q, i)
+            local curve = fromLayer:getQCAssignmentCurve(q, i)
+            local byp   = fromLayer:getQCAssignmentBypass(q, i)
+
+            if scope == fromLayer then
+                toLayer:addQCAssignment(q, mtype, param, toLayer)
+                local j = toLayer:getNumQCAssignments(q)
+                toLayer:setQCAssignmentParamId(q, j, param)
+                toLayer:setQCAssignmentModuleType(q, j, mtype)
+                toLayer:setQCAssignmentMin(q, j, min)
+                toLayer:setQCAssignmentMax(q, j, max)
+                toLayer:setQCAssignmentMode(q, j, mode)
+                toLayer:setQCAssignmentCurve(q, j, curve)
+                toLayer:setQCAssignmentBypass(q, j, byp)
+            end
+        end
+        if toLayer:getNumQCAssignments(q) &gt; 0 then
+            local name = fromLayer:getParameter("QuickControl.Name" .. q)
+            toLayer:setParameter("QuickControl.Name" .. q, name)
+            local val = fromLayer:getParameter("QuickControl.QC" .. q)
+            toLayer:setParameter("QuickControl.QC" .. q, val)
+        end
+    end
+
+end
+
+fromLayer = this.parent:getLayer(1)
+toLayer = this.parent:getLayer(2)
+
+copyQCsWithLayerScope(fromLayer, toLayer)
+</code></pre>
+<p><a href="#layer">Jump to Top </a></p>
 <h3 id="setqcassignmentbypass"><a class="header" href="#setqcassignmentbypass">setQCAssignmentBypass</a></h3>
 <blockquote>
 <p><strong>setQCAssignmentBypass(qc, assignment, bypass)</strong></p>
 </blockquote>
-<h4 id="description-40"><a class="header" href="#description-40">Description</a></h4>
-<p>Function to set the bypass state of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>bypass</code> argument sets the bypass state of the quick control assignment.</p>
+<h4 id="description-42"><a class="header" href="#description-42">Description</a></h4>
+<p>Function to set the bypass state of the specified quick control assignment. The quick control assignment is determined by the <a href="./Layer.html">Layer</a> object, the index of the quick control and the index of the assignment itself. The <code>qc</code> argument is the index of the quick control and the <code>assignment</code> argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The <code>bypass</code> argument sets the bypass state of the quick control assignment.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-39"><a class="header" href="#arguments-39">Arguments</a></h4>
+<h4 id="arguments-41"><a class="header" href="#arguments-41">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>assignment</strong></td><td style="text-align: left">The index of the quick control assignment.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>bypass</strong></td><td style="text-align: left">The bypass state to be set.</td><td style="text-align: left">boolean</td></tr>
 </tbody></table>
 </div>
-<h4 id="example-40"><a class="header" href="#example-40">Example</a></h4>
+<h4 id="example-42"><a class="header" href="#example-42">Example</a></h4>
 <pre><code class="language-lua">-- Bypass the specified quick control assignment.
 
 layer = this.parent

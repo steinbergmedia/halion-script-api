@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>addQCAssignment - HALion 7.1.30</title>
+        <title>addQCAssignment - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -156,8 +156,11 @@
                     <main>
                         <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
 <h1 id="addqcassignment"><a class="header" href="#addqcassignment">addQCAssignment</a></h1>
+<blockquote>
+<p><strong>addQCAssignment(qc, element, nameOrID, scope)</strong></p>
+</blockquote>
 <h2 id="description"><a class="header" href="#description">Description</a></h2>
-<p>Function to add a quick control assignment to the specified layer and quick control. For example, <code>this.parent</code> defines the parent layer of the script module as the layer that contains the quick control that you want to edit. The quick control assignment will be added to the quick control with the index stated by the <code>qc</code> argument. The arguments <code>element</code> and <code>nameOrID</code> specify the parameter to be connected. The scope determines the part of the program that will be affected by the quick control assignment. You specify the scope by setting the <code>scope</code> argument to the <a href="./Element.html">Element</a> object that corresponds to the desired part of the program.</p>
+<p>Function to add a quick control assignment to the specified layer and quick control. The layer is determined by the <a href="./Layer.html">Layer</a> object, and the quick control by the index stated by the <code>qc</code> argument. The <code>element</code> argument specifies the module to be connected and accepts either an <a href="./Element.html">Element</a> object or a module type string as returned by <a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>. The <code>nameOrID</code> argument identifies the parameter to be connected. The scope determines the part of the program that will be affected by the quick control assignment. You specify the scope by setting the <code>scope</code> argument to the <a href="./Element.html">Element</a> object that corresponds to the desired part of the program.</p>
 <blockquote>
 <p>❕ The index of the quick controls starts counting from 1. QC 1 to QC 8 have index 1 to 8. Sphere H, Sphere V and Mod Wheel have index 9, 10 and 11.</p>
 </blockquote>
@@ -165,7 +168,7 @@
 <h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>qc</strong></td><td style="text-align: left">The index of the quick control to which the assignment will be added.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>element</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object of the parameter to be connected.</td><td style="text-align: left"><a href="./Element.html">Element</a></td></tr>
+<tr><td style="text-align: left"><strong>element</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object or module type string of the module to be connected. The module type string can be obtained with <a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>. Passing a module type string requires HALion 7.5 or higher.</td><td style="text-align: left"><a href="./Element.html">Element</a> or string</td></tr>
 <tr><td style="text-align: left"><strong>nameOrID</strong></td><td style="text-align: left">The name or ID of the parameter.</td><td style="text-align: left">string or number</td></tr>
 <tr><td style="text-align: left"><strong>scope</strong></td><td style="text-align: left">The <a href="./Element.html">Element</a> object that will be affected by the quick control assignment.</td><td style="text-align: left"><a href="./Element.html">Element</a></td></tr>
 </tbody></table>
@@ -179,7 +182,7 @@ zones = layer:findZones(true)
  
 layer:addQCAssignment(1, zones[1], "Pitch.Octave", layer)
 </code></pre>
-<p><strong>See also:</strong>  <a href="./removeQCAssignment.html">removeQCAssignment</a>, <a href="./getNumQCAssignments.html">getNumQCAssignments</a>, <a href="./getQCAssignmentParamId.html">getQCAssignmentParamId</a>, <a href="./getQCAssignmentScope.html">getQCAssignmentScope</a>, <a href="./getQCAssignmentMin.html">getQCAssignmentMin</a>, <a href="./getQCAssignmentMax.html">getQCAssignmentMax</a>, <a href="./getQCAssignmentCurve.html">getQCAssignmentCurve</a>, <a href="./getQCAssignmentMode.html">getQCAssignmentMode</a>, <a href="./getQCAssignmentBypass.html">getQCAssignmentBypass</a>, <a href="./setQCAssignmentParamId.html">setQCAssignmentParamId</a>, <a href="./setQCAssignmentScope.html">setQCAssignmentScope</a>, <a href="./setQCAssignmentMin.html">setQCAssignmentMin</a>, <a href="./setQCAssignmentMax.html">setQCAssignmentMax</a>, <a href="./setQCAssignmentCurve.html">setQCAssignmentCurve</a>, <a href="./setQCAssignmentMode.html">setQCAssignmentMode</a>, <a href="./setQCAssignmentBypass.html">setQCAssignmentBypass</a>, <a href="./Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></p>
+<p><strong>See also:</strong> <a href="./removeQCAssignment.html">removeQCAssignment</a>, <a href="./getNumQCAssignments.html">getNumQCAssignments</a>, <a href="./getQCAssignmentParamId.html">getQCAssignmentParamId</a>, <a href="./getQCAssignmentScope.html">getQCAssignmentScope</a>, <a href="./getQCAssignmentMin.html">getQCAssignmentMin</a>, <a href="./getQCAssignmentMax.html">getQCAssignmentMax</a>, <a href="./getQCAssignmentCurve.html">getQCAssignmentCurve</a>, <a href="./getQCAssignmentMode.html">getQCAssignmentMode</a>, <a href="./getQCAssignmentModuleType.html">getQCAssignmentModuleType</a>, <a href="./getQCAssignmentBypass.html">getQCAssignmentBypass</a>, <a href="./setQCAssignmentParamId.html">setQCAssignmentParamId</a>, <a href="./setQCAssignmentScope.html">setQCAssignmentScope</a>, <a href="./setQCAssignmentMin.html">setQCAssignmentMin</a>, <a href="./setQCAssignmentMax.html">setQCAssignmentMax</a>, <a href="./setQCAssignmentCurve.html">setQCAssignmentCurve</a>, <a href="./setQCAssignmentMode.html">setQCAssignmentMode</a>, <a href="./setQCAssignmentModuleType.html">setQCAssignmentModuleType</a>, <a href="./setQCAssignmentBypass.html">setQCAssignmentBypass</a>, <a href="./Quick-Control-Assignment-Modes.html">Quick Control Assignment Modes</a></p>
 
                     </main>
 

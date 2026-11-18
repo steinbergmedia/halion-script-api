@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>FlexPhraserStepSeq - HALion 7.1.30</title>
+        <title>FlexPhraserStepSeq - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -232,7 +232,7 @@
 <h3 id="ui-script"><a class="header" href="#ui-script">UI Script</a></h3>
 <pre><code class="language-lua">-- FlexPhraserStepSeq.lua  (Manages the disable state of the steps)
 
-function onStepCountChanged()  
+function onStepCountChanged()
   step = math.floor (StepCount+0.5)
 
   for i = 1, step, 1 do
@@ -249,7 +249,7 @@ defineParameter("StepCount", nil, 1, 1, 32, onStepCountChanged)
 disableStepParams = {}
 for i=1,32,1 do
 	disableStepParams[i]="@disableStep"..tostring(i);
-	defineParameter("disableStep"..tostring(i), nil, 0,0,1)	
+	defineParameter("disableStep"..tostring(i), nil, 0,0,1)
 end
 
 defineParameter("disableStepParams", nil, 1, disableStepParams)

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="en" class="steinberg-light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>getMediaBayAttributes - HALion 7.5.10</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.5.10</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
+<h1 id="getmediabayattributes"><a class="header" href="#getmediabayattributes">getMediaBayAttributes</a></h1>
+<p><strong>getMediaBayAttributes(filename)</strong></p>
+<p><span class="version-text">(Since HALion 7.5.0)</span></p>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>Reads the MediaBay attributes from a specified VST preset or audio file.</p>
+<h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>filename</strong></td><td style="text-align: left">The absolute path and name of the VST preset or audio file.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<h2 id="return-values"><a class="header" href="#return-values">Return Values</a></h2>
+<p>Returns a table containing the MediaBay attributes of the specified file. Each entry in the table is a key-value pair, where the key is the attribute name and the value is the metadata stored in MediaBay.</p>
+<p>Raises an error if the file cannot be found or is invalid.</p>
+<h2 id="mediabay-attributes"><a class="header" href="#mediabay-attributes">MediaBay Attributes</a></h2>
+<p><a href="./getMediaBayAttributes.html">getMediaBayAttributes</a> can read any of the following attributes.</p>
+<p>The following attributes are stored in VST presets and allow for browsing them in MediaBay. They can be written with <a href="./savePreset.html">savePreset</a> and <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a>.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Attribute</th><th style="text-align: left">Value</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left">MediaAuthor</td><td style="text-align: left">"Author"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaComment</td><td style="text-align: left">"Comment"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaKeywords</td><td style="text-align: left">"Keywords"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaLibraryManufacturerName</td><td style="text-align: left">"ManufacturerName"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaLibraryName</td><td style="text-align: left">"LibraryName"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaRating</td><td style="text-align: left">"Number", 1 to 5 stars.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalArticulations</td><td style="text-align: left">"Articulation1|Articulation2|..."</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalCategory</td><td style="text-align: left">"Category"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalGmSound</td><td style="text-align: left">"Number", the GM program number.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalInstrument</td><td style="text-align: left">"Category|Subcategory"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalMoods</td><td style="text-align: left">"Mood1|Mood2|..."</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalProperties</td><td style="text-align: left">"Property1|Property2|..."</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalRootKey</td><td style="text-align: left">"RootKey"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalSignature</td><td style="text-align: left">"4/4"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalStyle</td><td style="text-align: left">"Style"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalSubStyle</td><td style="text-align: left">"Style|Substyle"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalTempo</td><td style="text-align: left">"Number", the tempo in BPM.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<p>The following attributes can only be written with <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a>. They are needed for audio files that come with Cubase, such as loop sets. VST presets must not use them.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Attribute</th><th style="text-align: left">Value</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left">MediaFamily</td><td style="text-align: left">"Family"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MediaGenre</td><td style="text-align: left">"Genre"</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">MusicalBeats</td><td style="text-align: left">"Number", beat count derived from the tempo and sample length.</td><td style="text-align: left">number</td></tr>
+<tr><td style="text-align: left">MusicalCharacter</td><td style="text-align: left">"Character1|Character2|..."</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<p>The following attributes are written exclusively with the arguments of <a href="./savePreset.html">savePreset</a>. <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a> cannot modify them.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Attribute</th><th style="text-align: left">Value</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left">PlugInName</td><td style="text-align: left">"Name", set with the <code>plugin</code> argument of <a href="./savePreset.html">savePreset</a>.</td><td style="text-align: left">string</td></tr>
+<tr><td style="text-align: left">VST3UnitTypePath</td><td style="text-align: left">"program" or "program/layer", set with the <code>attr</code> argument of <a href="./savePreset.html">savePreset</a>.</td><td style="text-align: left">string</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>❕ See <a href="../../HALion-Tutorials-Guidelines/pages/MediaBay-Guideline.html">MediaBay Guideline</a> for more information about the attributes and how to use them.</p>
+</blockquote>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">posStart, posEnd = string.find(getUserSubPresetPath(), "Steinberg/")
+fileLocation = string.sub(getUserSubPresetPath(), 1, posEnd)
+
+defineParameter("FileName", nil, "test.vstpreset")
+defineParameter("ReadAttributes", nil, false,
+    function() if ReadAttributes then onReadAttributesChanged() end end)
+defineParameter("WriteAttributes", nil, false,
+    function() if WriteAttributes then onWriteAttributesChanged() end end)
+
+function onReadAttributesChanged()
+    local attrs = getMediaBayAttributes(fileLocation..FileName)
+    for k, v in pairs(attrs) do
+        print(k, "=", v)
+    end
+    ReadAttributes = false
+end
+
+function onWriteAttributesChanged()
+    local newAttrs = {
+        MediaRating       = "3",
+        MusicalStyle      = "Electronica/Dance",
+        MusicalSubStyle   = "Electronica/Dance|Synthwave",
+        MusicalProperties = "Dark|Soft",
+    }
+    setMediaBayAttributes(fileLocation..FileName, newAttrs)
+    WriteAttributes = false
+end
+</code></pre>
+<p><strong>See also:</strong> <a href="./setMediaBayAttributes.html">setMediaBayAttributes</a>, <a href="./savePreset.html">savePreset</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Script/pages/getMidiModule.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../HALion-Script/pages/getModulationMatrixRow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Script/pages/getMidiModule.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../HALion-Script/pages/getModulationMatrixRow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+            
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available -->
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

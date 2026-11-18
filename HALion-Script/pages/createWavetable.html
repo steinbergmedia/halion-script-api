@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="en" class="steinberg-light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>createWavetable - HALion 7.5.10</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-16x16.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-32x32.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-192x192.png" type="image/png">
+        <link rel="shortcut icon" href="../../resources/favicon/favicon-256x256.png" type="image/png">
+
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "steinberg-dark" : "steinberg-light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('steinberg-light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HALion 7.5.10</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>/ <a href="../../HALion-Developer-Resource.html">HALion Developer Resource</a> / <a href="./HALion-Script.html">HALion Script</a> / <a href="./Reference.html">Reference</a> /</p>
+<h1 id="createwavetable"><a class="header" href="#createwavetable">createWavetable</a></h1>
+<blockquote>
+<p><strong>createWavetable{arguments}</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>Function to create a <a href="./Wavetable-Table.html">Wavetable table</a> from an audio file. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The <code>createWavetable</code> function can be configured with named arguments. The named arguments are optional and if called without, <code>createWavetable</code> will be executed with its default settings. The <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> field is initialized to <code>true</code> for all generated waves.</p>
+<blockquote>
+<p>❕ Creating a wavetable can take a long time. Therefore, it is recommended to use the <code>callback</code> argument, which runs <code>createWavetable</code> in a parallel thread and performs the required pitch analysis automatically.</p>
+</blockquote>
+<p><strong>Available in:</strong> Controller.</p>
+<h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">An optional callback function called with the <a href="./Audio-File.html">AudioFile</a> object and the resulting wavetable table as arguments once analysis is complete. If omitted, <code>createWavetable</code> runs synchronously in the current thread and returns the wavetable directly. In this case, the pitch analysis required for the wavetable analysis is not performed — you must call <a href="./analyzePitch.html">analyzePitch</a> for the audio file in advance. If provided, <code>createWavetable</code> runs asynchronously in a parallel thread and performs the required pitch analysis itself; use <a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a> to monitor progress and <a href="./cancelWavetableCreation.html">cancelWavetableCreation</a> to abort.</td><td style="text-align: left">function, optional</td></tr>
+<tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples within the audio file from which wave extraction begins. Together with <code>length</code>, this defines the region of the sample used for placing wave extraction markers. The default is 0 (the beginning of the audio file).</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>length</strong></td><td style="text-align: left">The length in samples of the region used for wave extraction, measured from <code>start</code>. Set to 0 or a negative value to extend the region to the end of the audio file. The default is 0 (use all samples from <code>start</code> to the end).</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>analyzeWavetable</strong></td><td style="text-align: left">When <code>true</code> (the default), waves are automatically analyzed and their spectral data populated after extraction. When <code>false</code>, wave markers are created but analysis is skipped — useful if you intend to call <a href="./analyzeWavetable.html">analyzeWavetable</a> manually later or want to inspect the structure before committing to analysis.</td><td style="text-align: left">bool, optional</td></tr>
+<tr><td style="text-align: left"><strong>creationMode</strong></td><td style="text-align: left">Determines how wave extraction markers are distributed within the specified range in the audio file. Options: <strong>Equal Distance</strong> (1) — markers spaced evenly; <strong>Exponential</strong> (2) — markers spaced with exponential distribution, denser at the start; <strong>Spectral</strong> (3) — markers placed at points of significant spectral change; <strong>Spectral Voiced</strong> (4) — like Spectral but focuses on voiced (pitched) content; <strong>Overlap-Add</strong> (5) — uses overlapping analysis windows, controlled by <code>overlap</code>. The default is Equal Distance (1). See <a href="./Wavetable-Enumeration-Types.html#creation-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>numWaves</strong></td><td style="text-align: left">The number of wave extraction markers to place within the specified range in the audio file. Only for <strong>Equal Distance</strong> and <strong>Exponential</strong> creation modes. The default is 1.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>threshold</strong></td><td style="text-align: left">The minimum signal level (in dB) required for a wave extraction marker to be placed. Only used by the <strong>Spectral</strong> and <strong>Spectral Voiced</strong> creation modes. Regions with levels below this threshold are ignored. Raise this value to focus on louder, more prominent content; lower it to capture quieter regions. The default is -40 dB.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>sensitivity</strong></td><td style="text-align: left">Controls how sensitive the analysis is to spectral changes when placing wave extraction markers. Only used by the <strong>Spectral</strong> and <strong>Spectral Voiced</strong> creation modes. Higher values cause markers to be placed at more subtle spectral transitions, resulting in more waves; lower values require more pronounced changes before a marker is added. The value is in percent and the default is 25.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>overlap</strong></td><td style="text-align: left">Sets the overlap between analysis windows when using the <strong>Overlap-Add</strong> creation mode, has no effect in other creation modes. Higher overlap values capture more detail and produce more wave markers; lower values capture less detail and yield fewer markers. Options: <strong>None</strong> (1), <strong>2x</strong> (2), <strong>4x</strong> (3), <strong>8x</strong> (4), <strong>16x</strong> (5). The default is <strong>4x</strong> (3). See <a href="./Wavetable-Enumeration-Types.html#creation-overlap">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>includeWindow</strong></td><td style="text-align: left">Controls whether analysis windows are constrained to fit fully within the sample boundaries. When <code>false</code> (the default), the center of the analysis window is placed exactly at the start and end of the range, meaning half the window may extend outside the sample. When <code>true</code>, markers are positioned so the entire analysis window stays within the sample — use this when importing wavetable samples where each equal-length segment represents a distinct waveform.</td><td style="text-align: left">bool, optional</td></tr>
+<tr><td style="text-align: left"><strong>channelSelection</strong></td><td style="text-align: left">Selects which channel(s) of the audio file are used for wave creation. <strong>Multi</strong> (1) analyzes all available channels; <strong>Sum</strong> (2) mixes all channels together before analysis; the remaining options select a single discrete channel. The default is <strong>Multi</strong> (1). The selected channel must exist in the source file. See <a href="./Wavetable-Enumeration-Types.html#channel-selection">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winType</strong></td><td style="text-align: left">The window function applied during spectral analysis. Different window types affect side lobe suppression, which changes how the analyzed spectrum sounds. Options: <strong>Rectangular</strong> (1), <strong>Cosine</strong> (2), <strong>Bartlett</strong> (3), <strong>Hanning</strong> (4), <strong>Hamming</strong> (5), <strong>Blackman</strong> (6), <strong>Blackman-Harris</strong> (7). <strong>Blackman</strong> (6, default) is a good general-purpose choice. <strong>Rectangular</strong> (1) has high side lobes, causing energy from strong partials to bleed into neighboring bins. <strong>Blackman-Harris</strong> (7) offers the strongest side lobe suppression. Experiment to find what works best for your material. See <a href="./Wavetable-Enumeration-Types.html#window-type">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winSizeMode</strong></td><td style="text-align: left">Specifies how the window size is determined during spectral analysis. <strong>Auto</strong> (1, the default) derives the window size from the detected fundamental frequency of each channel. <strong>Fixed Individual</strong> (2) uses the per-channel sizes specified in <code>winSize[n]</code>. <strong>Fixed Common</strong> (3) uses the same <code>winSize[1]</code> value for all channels. See <a href="./Wavetable-Enumeration-Types.html#window-size-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winSize[n]</strong></td><td style="text-align: left">The analysis window size in samples for the n-th channel (e.g., <code>winSize[1]</code> for the left channel, <code>winSize[2]</code> for the right, up to six channels). Only used when <code>winSizeMode</code> is set to <strong>Fixed Individual</strong> or <strong>Fixed Common</strong>. The maximum is 8192 samples; the default is 512.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winCrossfade</strong></td><td style="text-align: left">The crossfade duration applied to the edges of the Rectangular window, expressed as a percentage of the analysis window size. Softens the hard boundaries of the Rectangular window to reduce its side lobes. The default is 10.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>spectralEnvRes</strong></td><td style="text-align: left">Defines how closely the spectral envelope follows the distribution of the magnitudes across the spectrum. The spectral envelope shapes the formant filter: higher values produce a smoother filter curve with less pronounced formants, while lower values cause the filter curve to track spectral levels more tightly, yielding a more detailed formant response. The default is 500 Hz, which is suitable for most audio content.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>freqLimit</strong></td><td style="text-align: left">Allows you to limit the playback to the frequency range that the wave actually uses. Any frequencies above this limit are skipped during synthesis, which can lower CPU load. Raise this value to preserve more high-frequency content; lower it to save processing power. The default is 20000 Hz.</td><td style="text-align: left">number, optional</td></tr>
+</tbody></table>
+</div>
+<h2 id="return-values"><a class="header" href="#return-values">Return Values</a></h2>
+<p>Returns a <a href="./Wavetable-Table.html">Wavetable table</a>.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-lua">creationModes = { "EqualDist", "Exponential", "Spectral", "SpectralVoiced", "OverlapAdd", }
+overlapModes = { "None", "2x", "4x", "8x", "16x", }
+channelSelectionModes = { "Multi", "Sum", "Left", "Right", "Center", "LFE", "RearLeft", "RearRight", }
+winTypes = { "Rectangular", "Cosine", "Bartlett", "Hanning", "Hamming", "Blackman", "BlackmanHarris", }
+winSizeModes = { "Auto", "FixedIndividual", "FixedCommon", }
+
+defineParameter { name = "StartProcess", default = false, onChanged = function() if StartProcess then onStart() end end }
+defineParameter { name = "CancelProcess", default = false}
+defineParameter { name = "AnalyzeWavetable", default = true }
+defineParameter { name = "CreationMode", default = wavetable.CreationMode.equalDist, strings = creationModes }
+defineParameter { name = "NumWaves", default = 1, min = 0, max = 0x80000000 - 1, increment = 1 }
+defineParameter { name = "Threshold", default = -40, min = -96, max = 0, increment = 0.1 }
+defineParameter { name = "Sensitivity", default = 25, min = 1, max = 100, increment = 0.1 }
+defineParameter { name = "Overlap", default = wavetable.CreationOverlap.mode4x, strings = overlapModes }
+defineParameter { name = "IncludeWindow", default = false }
+defineParameter { name = "SampleStart", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "SampleLength", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "ChannelSelection", default = wavetable.ChannelSelection.multi, strings = channelSelectionModes }
+defineParameter { name = "WinType", default = wavetable.WinType.blackman, strings = winTypes }
+defineParameter { name = "WinSizeMode", default = wavetable.WinSizeMode.auto, strings = winSizeModes }
+defineParameter { name = "WinSizeCh1", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh2", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh3", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh4", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh5", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh6", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinCrossfade", default = 10, min = 0, max = 100, increment = 0.1 }
+defineParameter { name = "SpectralEnvRes", default = 500, min = 250, max = 1000, increment = 0.1 }
+defineParameter { name = "FreqLimit", default = 20000, min = 10, max = 22000, increment = 1 }
+ 
+function onStart()
+    zones = this.parent:findZones(true)
+    for i, zone in ipairs(zones) do
+		local function onFinished(afile, wt)
+			print("Progress: 100%")
+			if wt then
+				print("Wavetable of "..afile.fileName.." created.")
+				print("Number of Waves: "..#wt)
+				zone:setParameter("ZoneType", 4)
+				zone:setWavetable(1, wt)
+			end
+		end
+		local samplePath = zone:getParameter("SampleOsc.Filename")
+		local afile = AudioFile.open(samplePath)
+		if afile then
+			local startSamples = SampleStart * afile.rate/1000
+			local lengthSamples = SampleLength * afile.rate/1000
+			local winSize = {   WinSizeCh1,
+			                    WinSizeCh2,
+			                    WinSizeCh3,
+			                    WinSizeCh4,
+			                    WinSizeCh5,
+			                    WinSizeCh6 }
+			print("Create Wavetable "..samplePath)
+			afile:createWavetable{
+				callback = onFinished,
+				start = startSamples,
+				length = lengthSamples,
+				analyzeWavetable = AnalyzeWavetable,
+				creationMode = CreationMode,
+				numWaves = NumWaves,
+				threshold = Threshold,
+				sensitivity = Sensitivity,
+				overlap = Overlap,
+				includeWindow = IncludeWindow,
+				channelSelection = ChannelSelection,
+				winType = WinType,
+				winSizeMode = WinSizeMode,
+				winSize = winSize,
+				winCrossfade = WinCrossfade,
+				spectralEnvRes = SpectralEnvRes,
+				freqLimit = FreqLimit,
+			}
+			while afile:getWavetableCreationProgress() &lt; 1 do
+				if CancelProcess then
+					afile:cancelWavetableCreation()
+					break
+				end
+				local progress, errorMessage = afile:getWavetableCreationProgress()
+				if errorMessage then
+					print(errorMessage)
+					break
+				else
+					local progressPercent = 100 * progress
+					print(string.format("Progress: %2d%%", progressPercent))
+					wait(2000)
+				end
+			end
+			if CancelProcess then
+				CancelProcess = false
+				print("Wavetable creation canceled!")
+				break
+			end
+		end
+	end
+	print("Wavetable creation finished.")
+	StartProcess = false
+end
+</code></pre>
+<p><strong>See also:</strong> <a href="./analyzeWavetable.html">analyzeWavetable</a>, <a href="./analyzeWavetableAsync.html">analyzeWavetableAsync</a>, <a href="./cancelWavetableCreation.html">cancelWavetableCreation</a>, <a href="./getWavetable.html">getWavetable</a>, <a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a>, <a href="./setWavetable.html">setWavetable</a>, <a href="./Wavetable-Constants.html">Wavetable Constants</a>, <a href="./Wavetable-Enumeration-Types.html">Wavetable Enumeration Types</a>, <a href="./Wavetable-Table.html">Wavetable Table</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../HALion-Script/pages/Controller-Numbers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../HALion-Script/pages/decompose.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../HALion-Script/pages/Controller-Numbers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../HALion-Script/pages/decompose.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+            
+            <div id="footer" class="footer">
+                <!-- Here comes the footer when available -->
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+            </div>
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

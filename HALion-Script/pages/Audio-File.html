@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Audio File - HALion 7.1.30</title>
+        <title>Audio File - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -159,7 +159,7 @@
 <p>The AudioFile class describes the properties of audio files.</p>
 <hr />
 <p><strong>On this page:</strong></p>
-<p><a href="#audiofile-class">AudioFile Class</a>, <a href="#analyzepitch">analyzePitch</a>, <a href="#canceldecompose">cancelDecompose</a>, <a href="#cancelpitchanalysis">cancelPitchAnalysis</a>, <a href="#decompose">decompose</a>, <a href="#getdecomposeprogress">getDecomposeProgress</a>, <a href="#getonsets">getOnsets</a>, <a href="#getpeak">getPeak</a>, <a href="#getpitch">getPitch</a>, <a href="#getpitchanalysisprogress">getPitchAnalysisProgress</a></p>
+<p><a href="#audiofile-class">AudioFile Class</a>, <a href="#analyzepitch">analyzePitch</a>, <a href="#canceldecompose">cancelDecompose</a>, <a href="#cancelpitchanalysis">cancelPitchAnalysis</a>, <a href="#cancelwavetablecreation">cancelWavetableCreation</a>, <a href="#createwavetable">createWavetable</a>, <a href="#decompose">decompose</a>, <a href="#getdecomposeprogress">getDecomposeProgress</a>, <a href="#getonsets">getOnsets</a>, <a href="#getpeak">getPeak</a>, <a href="#getpitch">getPitch</a>, <a href="#getpitchanalysisprogress">getPitchAnalysisProgress</a>, <a href="#getwavetablecreationprogress">getWavetableCreationProgress</a></p>
 <hr />
 <h2 id="classes"><a class="header" href="#classes">Classes</a></h2>
 <h3 id="audiofile-class"><a class="header" href="#audiofile-class">AudioFile Class</a></h3>
@@ -423,15 +423,259 @@ function onStart()
 end
 </code></pre>
 <p><a href="#audio-file">Jump to Top </a></p>
+<h3 id="cancelwavetablecreation"><a class="header" href="#cancelwavetablecreation">cancelWavetableCreation</a></h3>
+<blockquote>
+<p><strong>cancelWavetableCreation()</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h4 id="description-4"><a class="header" href="#description-4">Description</a></h4>
+<p>Function to cancel an ongoing <a href="./createWavetable.html">createWavetable</a> operation. The <a href="./Audio-File.html">AudioFile</a> object of <code>cancelWavetableCreation</code> must match the <a href="./Audio-File.html">AudioFile</a> object of the corresponding <a href="./createWavetable.html">createWavetable</a> call, as returned by <a href="./AudioFileopen.html">AudioFile.open</a>.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="example-4"><a class="header" href="#example-4">Example</a></h4>
+<pre><code class="language-lua">creationModes = { "EqualDist", "Exponential", "Spectral", "SpectralVoiced", "OverlapAdd", }
+overlapModes = { "None", "2x", "4x", "8x", "16x", }
+channelSelectionModes = { "Multi", "Sum", "Left", "Right", "Center", "LFE", "RearLeft", "RearRight", }
+winTypes = { "Rectangular", "Cosine", "Bartlett", "Hanning", "Hamming", "Blackman", "BlackmanHarris", }
+winSizeModes = { "Auto", "FixedIndividual", "FixedCommon", }
+
+defineParameter { name = "StartProcess", default = false, onChanged = function() if StartProcess then onStart() end end }
+defineParameter { name = "CancelProcess", default = false}
+defineParameter { name = "AnalyzeWavetable", default = true }
+defineParameter { name = "CreationMode", default = wavetable.CreationMode.equalDist, strings = creationModes }
+defineParameter { name = "NumWaves", default = 1, min = 0, max = 0x80000000 - 1, increment = 1 }
+defineParameter { name = "Threshold", default = -40, min = -96, max = 0, increment = 0.1 }
+defineParameter { name = "Sensitivity", default = 25, min = 1, max = 100, increment = 0.1 }
+defineParameter { name = "Overlap", default = wavetable.CreationOverlap.mode4x, strings = overlapModes }
+defineParameter { name = "IncludeWindow", default = false }
+defineParameter { name = "SampleStart", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "SampleLength", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "ChannelSelection", default = wavetable.ChannelSelection.multi, strings = channelSelectionModes }
+defineParameter { name = "WinType", default = wavetable.WinType.blackman, strings = winTypes }
+defineParameter { name = "WinSizeMode", default = wavetable.WinSizeMode.auto, strings = winSizeModes }
+defineParameter { name = "WinSizeCh1", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh2", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh3", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh4", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh5", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh6", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinCrossfade", default = 10, min = 0, max = 100, increment = 0.1 }
+defineParameter { name = "SpectralEnvRes", default = 500, min = 250, max = 1000, increment = 0.1 }
+defineParameter { name = "FreqLimit", default = 20000, min = 10, max = 22000, increment = 1 }
+ 
+function onStart()
+    zones = this.parent:findZones(true)
+    for i, zone in ipairs(zones) do
+		local function onFinished(afile, wt)
+			print("Progress: 100%")
+			if wt then
+				print("Wavetable of "..afile.fileName.." created.")
+				print("Number of Waves: "..#wt)
+				zone:setParameter("ZoneType", 4)
+				zone:setWavetable(1, wt)
+			end
+		end
+		local samplePath = zone:getParameter("SampleOsc.Filename")
+		local afile = AudioFile.open(samplePath)
+		if afile then
+			local startSamples = SampleStart * afile.rate/1000
+			local lengthSamples = SampleLength * afile.rate/1000
+			local winSize = {   WinSizeCh1,
+			                    WinSizeCh2,
+			                    WinSizeCh3,
+			                    WinSizeCh4,
+			                    WinSizeCh5,
+			                    WinSizeCh6 }
+			print("Create Wavetable "..samplePath)
+			afile:createWavetable{
+				callback = onFinished,
+				start = startSamples,
+				length = lengthSamples,
+				analyzeWavetable = AnalyzeWavetable,
+				creationMode = CreationMode,
+				numWaves = NumWaves,
+				threshold = Threshold,
+				sensitivity = Sensitivity,
+				overlap = Overlap,
+				includeWindow = IncludeWindow,
+				channelSelection = ChannelSelection,
+				winType = WinType,
+				winSizeMode = WinSizeMode,
+				winSize = winSize,
+				winCrossfade = WinCrossfade,
+				spectralEnvRes = SpectralEnvRes,
+				freqLimit = FreqLimit,
+			}
+			while afile:getWavetableCreationProgress() &lt; 1 do
+				if CancelProcess then
+					afile:cancelWavetableCreation()
+					break
+				end
+				local progress, errorMessage = afile:getWavetableCreationProgress()
+				if errorMessage then
+					print(errorMessage)
+					break
+				else
+					local progressPercent = 100 * progress
+					print(string.format("Progress: %2d%%", progressPercent))
+					wait(2000)
+				end
+			end
+			if CancelProcess then
+				CancelProcess = false
+				print("Wavetable creation canceled!")
+				break
+			end
+		end
+	end
+	print("Wavetable creation finished.")
+	StartProcess = false
+end
+</code></pre>
+<p><a href="#audio-file">Jump to Top </a></p>
+<h3 id="createwavetable"><a class="header" href="#createwavetable">createWavetable</a></h3>
+<blockquote>
+<p><strong>createWavetable{arguments}</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h4 id="description-5"><a class="header" href="#description-5">Description</a></h4>
+<p>Function to create a <a href="./Wavetable-Table.html">Wavetable table</a> from an audio file. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The <code>createWavetable</code> function can be configured with named arguments. The named arguments are optional and if called without, <code>createWavetable</code> will be executed with its default settings. The <a href="./Wavetable-Table.html#wave-fields">.linkEnvelope</a> field is initialized to <code>true</code> for all generated waves.</p>
+<blockquote>
+<p>❕ Creating a wavetable can take a long time. Therefore, it is recommended to use the <code>callback</code> argument, which runs <code>createWavetable</code> in a parallel thread and performs the required pitch analysis automatically.</p>
+</blockquote>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">An optional callback function called with the <a href="./Audio-File.html">AudioFile</a> object and the resulting wavetable table as arguments once analysis is complete. If omitted, <code>createWavetable</code> runs synchronously in the current thread and returns the wavetable directly. In this case, the pitch analysis required for the wavetable analysis is not performed — you must call <a href="./analyzePitch.html">analyzePitch</a> for the audio file in advance. If provided, <code>createWavetable</code> runs asynchronously in a parallel thread and performs the required pitch analysis itself; use <a href="./getWavetableCreationProgress.html">getWavetableCreationProgress</a> to monitor progress and <a href="./cancelWavetableCreation.html">cancelWavetableCreation</a> to abort.</td><td style="text-align: left">function, optional</td></tr>
+<tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples within the audio file from which wave extraction begins. Together with <code>length</code>, this defines the region of the sample used for placing wave extraction markers. The default is 0 (the beginning of the audio file).</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>length</strong></td><td style="text-align: left">The length in samples of the region used for wave extraction, measured from <code>start</code>. Set to 0 or a negative value to extend the region to the end of the audio file. The default is 0 (use all samples from <code>start</code> to the end).</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>analyzeWavetable</strong></td><td style="text-align: left">When <code>true</code> (the default), waves are automatically analyzed and their spectral data populated after extraction. When <code>false</code>, wave markers are created but analysis is skipped — useful if you intend to call <a href="./analyzeWavetable.html">analyzeWavetable</a> manually later or want to inspect the structure before committing to analysis.</td><td style="text-align: left">bool, optional</td></tr>
+<tr><td style="text-align: left"><strong>creationMode</strong></td><td style="text-align: left">Determines how wave extraction markers are distributed within the specified range in the audio file. Options: <strong>Equal Distance</strong> (1) — markers spaced evenly; <strong>Exponential</strong> (2) — markers spaced with exponential distribution, denser at the start; <strong>Spectral</strong> (3) — markers placed at points of significant spectral change; <strong>Spectral Voiced</strong> (4) — like Spectral but focuses on voiced (pitched) content; <strong>Overlap-Add</strong> (5) — uses overlapping analysis windows, controlled by <code>overlap</code>. The default is Equal Distance (1). See <a href="./Wavetable-Enumeration-Types.html#creation-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>numWaves</strong></td><td style="text-align: left">The number of wave extraction markers to place within the specified range in the audio file. Only for <strong>Equal Distance</strong> and <strong>Exponential</strong> creation modes. The default is 1.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>threshold</strong></td><td style="text-align: left">The minimum signal level (in dB) required for a wave extraction marker to be placed. Only used by the <strong>Spectral</strong> and <strong>Spectral Voiced</strong> creation modes. Regions with levels below this threshold are ignored. Raise this value to focus on louder, more prominent content; lower it to capture quieter regions. The default is -40 dB.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>sensitivity</strong></td><td style="text-align: left">Controls how sensitive the analysis is to spectral changes when placing wave extraction markers. Only used by the <strong>Spectral</strong> and <strong>Spectral Voiced</strong> creation modes. Higher values cause markers to be placed at more subtle spectral transitions, resulting in more waves; lower values require more pronounced changes before a marker is added. The value is in percent and the default is 25.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>overlap</strong></td><td style="text-align: left">Sets the overlap between analysis windows when using the <strong>Overlap-Add</strong> creation mode, has no effect in other creation modes. Higher overlap values capture more detail and produce more wave markers; lower values capture less detail and yield fewer markers. Options: <strong>None</strong> (1), <strong>2x</strong> (2), <strong>4x</strong> (3), <strong>8x</strong> (4), <strong>16x</strong> (5). The default is <strong>4x</strong> (3). See <a href="./Wavetable-Enumeration-Types.html#creation-overlap">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>includeWindow</strong></td><td style="text-align: left">Controls whether analysis windows are constrained to fit fully within the sample boundaries. When <code>false</code> (the default), the center of the analysis window is placed exactly at the start and end of the range, meaning half the window may extend outside the sample. When <code>true</code>, markers are positioned so the entire analysis window stays within the sample — use this when importing wavetable samples where each equal-length segment represents a distinct waveform.</td><td style="text-align: left">bool, optional</td></tr>
+<tr><td style="text-align: left"><strong>channelSelection</strong></td><td style="text-align: left">Selects which channel(s) of the audio file are used for wave creation. <strong>Multi</strong> (1) analyzes all available channels; <strong>Sum</strong> (2) mixes all channels together before analysis; the remaining options select a single discrete channel. The default is <strong>Multi</strong> (1). The selected channel must exist in the source file. See <a href="./Wavetable-Enumeration-Types.html#channel-selection">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winType</strong></td><td style="text-align: left">The window function applied during spectral analysis. Different window types affect side lobe suppression, which changes how the analyzed spectrum sounds. Options: <strong>Rectangular</strong> (1), <strong>Cosine</strong> (2), <strong>Bartlett</strong> (3), <strong>Hanning</strong> (4), <strong>Hamming</strong> (5), <strong>Blackman</strong> (6), <strong>Blackman-Harris</strong> (7). <strong>Blackman</strong> (6, default) is a good general-purpose choice. <strong>Rectangular</strong> (1) has high side lobes, causing energy from strong partials to bleed into neighboring bins. <strong>Blackman-Harris</strong> (7) offers the strongest side lobe suppression. Experiment to find what works best for your material. See <a href="./Wavetable-Enumeration-Types.html#window-type">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winSizeMode</strong></td><td style="text-align: left">Specifies how the window size is determined during spectral analysis. <strong>Auto</strong> (1, the default) derives the window size from the detected fundamental frequency of each channel. <strong>Fixed Individual</strong> (2) uses the per-channel sizes specified in <code>winSize[n]</code>. <strong>Fixed Common</strong> (3) uses the same <code>winSize[1]</code> value for all channels. See <a href="./Wavetable-Enumeration-Types.html#window-size-mode">Wavetable Enumeration Types</a>.</td><td style="text-align: left">enum or number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winSize[n]</strong></td><td style="text-align: left">The analysis window size in samples for the n-th channel (e.g., <code>winSize[1]</code> for the left channel, <code>winSize[2]</code> for the right, up to six channels). Only used when <code>winSizeMode</code> is set to <strong>Fixed Individual</strong> or <strong>Fixed Common</strong>. The maximum is 8192 samples; the default is 512.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>winCrossfade</strong></td><td style="text-align: left">The crossfade duration applied to the edges of the Rectangular window, expressed as a percentage of the analysis window size. Softens the hard boundaries of the Rectangular window to reduce its side lobes. The default is 10.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>spectralEnvRes</strong></td><td style="text-align: left">Defines how closely the spectral envelope follows the distribution of the magnitudes across the spectrum. The spectral envelope shapes the formant filter: higher values produce a smoother filter curve with less pronounced formants, while lower values cause the filter curve to track spectral levels more tightly, yielding a more detailed formant response. The default is 500 Hz, which is suitable for most audio content.</td><td style="text-align: left">number, optional</td></tr>
+<tr><td style="text-align: left"><strong>freqLimit</strong></td><td style="text-align: left">Allows you to limit the playback to the frequency range that the wave actually uses. Any frequencies above this limit are skipped during synthesis, which can lower CPU load. Raise this value to preserve more high-frequency content; lower it to save processing power. The default is 20000 Hz.</td><td style="text-align: left">number, optional</td></tr>
+</tbody></table>
+</div>
+<h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
+<p>Returns a <a href="./Wavetable-Table.html">Wavetable table</a>.</p>
+<h4 id="example-5"><a class="header" href="#example-5">Example</a></h4>
+<pre><code class="language-lua">creationModes = { "EqualDist", "Exponential", "Spectral", "SpectralVoiced", "OverlapAdd", }
+overlapModes = { "None", "2x", "4x", "8x", "16x", }
+channelSelectionModes = { "Multi", "Sum", "Left", "Right", "Center", "LFE", "RearLeft", "RearRight", }
+winTypes = { "Rectangular", "Cosine", "Bartlett", "Hanning", "Hamming", "Blackman", "BlackmanHarris", }
+winSizeModes = { "Auto", "FixedIndividual", "FixedCommon", }
+
+defineParameter { name = "StartProcess", default = false, onChanged = function() if StartProcess then onStart() end end }
+defineParameter { name = "CancelProcess", default = false}
+defineParameter { name = "AnalyzeWavetable", default = true }
+defineParameter { name = "CreationMode", default = wavetable.CreationMode.equalDist, strings = creationModes }
+defineParameter { name = "NumWaves", default = 1, min = 0, max = 0x80000000 - 1, increment = 1 }
+defineParameter { name = "Threshold", default = -40, min = -96, max = 0, increment = 0.1 }
+defineParameter { name = "Sensitivity", default = 25, min = 1, max = 100, increment = 0.1 }
+defineParameter { name = "Overlap", default = wavetable.CreationOverlap.mode4x, strings = overlapModes }
+defineParameter { name = "IncludeWindow", default = false }
+defineParameter { name = "SampleStart", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "SampleLength", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "ChannelSelection", default = wavetable.ChannelSelection.multi, strings = channelSelectionModes }
+defineParameter { name = "WinType", default = wavetable.WinType.blackman, strings = winTypes }
+defineParameter { name = "WinSizeMode", default = wavetable.WinSizeMode.auto, strings = winSizeModes }
+defineParameter { name = "WinSizeCh1", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh2", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh3", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh4", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh5", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh6", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinCrossfade", default = 10, min = 0, max = 100, increment = 0.1 }
+defineParameter { name = "SpectralEnvRes", default = 500, min = 250, max = 1000, increment = 0.1 }
+defineParameter { name = "FreqLimit", default = 20000, min = 10, max = 22000, increment = 1 }
+ 
+function onStart()
+    zones = this.parent:findZones(true)
+    for i, zone in ipairs(zones) do
+		local function onFinished(afile, wt)
+			print("Progress: 100%")
+			if wt then
+				print("Wavetable of "..afile.fileName.." created.")
+				print("Number of Waves: "..#wt)
+				zone:setParameter("ZoneType", 4)
+				zone:setWavetable(1, wt)
+			end
+		end
+		local samplePath = zone:getParameter("SampleOsc.Filename")
+		local afile = AudioFile.open(samplePath)
+		if afile then
+			local startSamples = SampleStart * afile.rate/1000
+			local lengthSamples = SampleLength * afile.rate/1000
+			local winSize = {   WinSizeCh1,
+			                    WinSizeCh2,
+			                    WinSizeCh3,
+			                    WinSizeCh4,
+			                    WinSizeCh5,
+			                    WinSizeCh6 }
+			print("Create Wavetable "..samplePath)
+			afile:createWavetable{
+				callback = onFinished,
+				start = startSamples,
+				length = lengthSamples,
+				analyzeWavetable = AnalyzeWavetable,
+				creationMode = CreationMode,
+				numWaves = NumWaves,
+				threshold = Threshold,
+				sensitivity = Sensitivity,
+				overlap = Overlap,
+				includeWindow = IncludeWindow,
+				channelSelection = ChannelSelection,
+				winType = WinType,
+				winSizeMode = WinSizeMode,
+				winSize = winSize,
+				winCrossfade = WinCrossfade,
+				spectralEnvRes = SpectralEnvRes,
+				freqLimit = FreqLimit,
+			}
+			while afile:getWavetableCreationProgress() &lt; 1 do
+				if CancelProcess then
+					afile:cancelWavetableCreation()
+					break
+				end
+				local progress, errorMessage = afile:getWavetableCreationProgress()
+				if errorMessage then
+					print(errorMessage)
+					break
+				else
+					local progressPercent = 100 * progress
+					print(string.format("Progress: %2d%%", progressPercent))
+					wait(2000)
+				end
+			end
+			if CancelProcess then
+				CancelProcess = false
+				print("Wavetable creation canceled!")
+				break
+			end
+		end
+	end
+	print("Wavetable creation finished.")
+	StartProcess = false
+end
+</code></pre>
+<p><a href="#audio-file">Jump to Top </a></p>
 <h3 id="decompose"><a class="header" href="#decompose">decompose</a></h3>
 <blockquote>
 <p><strong>decompose{arguments}</strong></p>
 </blockquote>
 <p><span class="version-text">(Since HALion 7.0)</span></p>
-<h4 id="description-4"><a class="header" href="#description-4">Description</a></h4>
+<h4 id="description-6"><a class="header" href="#description-6">Description</a></h4>
 <p>Function to decompose an audio file into its tonal and noise components. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The decompose function can be configured with named arguments. The named arguments are optional and if called without, decompose will be executed with its default settings.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-2"><a class="header" href="#arguments-2">Arguments</a></h4>
+<h4 id="arguments-3"><a class="header" href="#arguments-3">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">This callback function is called with the <a href="./Audio-File.html">AudioFile</a> object and the file path of the ouput sample(s) as arguments after the original sample has been decomposed. If called without a callback function, decompose will be executed in the same thread. If called with a callback function as argument, decompose will be executed in a separate, parallel thread.</td><td style="text-align: left">function, optional</td></tr>
 <tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples. The created samples are trimmed to this position. The default is 0 samples.</td><td style="text-align: left">number, optional</td></tr>
@@ -448,7 +692,7 @@ end
 <blockquote>
 <p>❕ Samples that were loaded from a VST Sound container can only be decomposed if the <code>ouputPath</code> argument is set to a valid file location. You can use <a href="./getDecomposeOutputPath.html">getDecomposeOutputPath</a> to obtain the file location from the decompose settings of the plug-in.</p>
 </blockquote>
-<h4 id="example-4"><a class="header" href="#example-4">Example</a></h4>
+<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
 <pre><code class="language-lua">outputModes = { "Tonal", "Noise", "All", "Mix", }
  
 defineParameter { name = "Decompose", default = false, onChanged = function() if Decompose then onDecompose() end end }
@@ -534,12 +778,12 @@ end
 <p><strong>getDecomposeProgress()</strong></p>
 </blockquote>
 <p><span class="version-text">(Since HALion 7.0)</span></p>
-<h4 id="description-5"><a class="header" href="#description-5">Description</a></h4>
+<h4 id="description-7"><a class="header" href="#description-7">Description</a></h4>
 <p>Function to monitor the progress of the <a href="./decompose.html">decompose</a> function for an audio file. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. To get the progress of a specific audio file that is being decomposed, the <a href="./Audio-File.html">AudioFile</a> object of the getDecomposeProgress function must match the <a href="./Audio-File.html">AudioFile</a> object of the corresponding <a href="./decompose.html">decompose</a> function. The function returns two values: the progress as a value between 0 and 1 and an error message if the decompose did not succeed.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="return-values"><a class="header" href="#return-values">Return Values</a></h4>
+<h4 id="return-values-1"><a class="header" href="#return-values-1">Return Values</a></h4>
 <p>Returns the progress as a float value between 0 and 1, and an error message if the decompose did not succeed. The error message returns <code>nil</code> if the decompose was successful.</p>
-<h4 id="example-5"><a class="header" href="#example-5">Example</a></h4>
+<h4 id="example-7"><a class="header" href="#example-7">Example</a></h4>
 <pre><code class="language-lua">outputModes = { "Tonal", "Noise", "All", "Mix", }
  
 defineParameter { name = "Decompose", default = false, onChanged = function() if Decompose then onDecompose() end end }
@@ -625,10 +869,10 @@ end
 <p><strong>getOnsets(start, length, peakThreshold, sensThreshold, minLength)</strong></p>
 </blockquote>
 <p><span class="version-text">(Since HALion 6.4.0)</span></p>
-<h4 id="description-6"><a class="header" href="#description-6">Description</a></h4>
+<h4 id="description-8"><a class="header" href="#description-8">Description</a></h4>
 <p>Function to analyze the onsets in an audio file. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The onset analysis is performed on the sum of all channels in the audio file. The arguments <code>start</code>  and <code>length</code>  define the time range in the audio file to be analyzed. The <code>peakThreshold</code>  and <code>sensThreshold</code>  arguments determine the minimum level and the weight of an onset, the <code>minLength</code>  argument determines the minimum duration between consecutive onsets.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-3"><a class="header" href="#arguments-3">Arguments</a></h4>
+<h4 id="arguments-4"><a class="header" href="#arguments-4">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>length</strong></td><td style="text-align: left">The duration in samples. Set this to equal to or less than 0 to use all samples from the specified <code>start</code> to the end of the sample.</td><td style="text-align: left">number</td></tr>
@@ -637,9 +881,9 @@ end
 <tr><td style="text-align: left"><strong>minLength</strong></td><td style="text-align: left">The minimum duration between consecutive onsets in milliseconds. The value range is from 0 to 10000.</td><td style="text-align: left">number</td></tr>
 </tbody></table>
 </div>
-<h4 id="return-values-1"><a class="header" href="#return-values-1">Return Values</a></h4>
+<h4 id="return-values-2"><a class="header" href="#return-values-2">Return Values</a></h4>
 <p>Returns an array with the positions of the detected onsets.</p>
-<h4 id="example-6"><a class="header" href="#example-6">Example</a></h4>
+<h4 id="example-8"><a class="header" href="#example-8">Example</a></h4>
 <pre><code class="language-lua">fname = "vstsound://271CB2CFA75E4295B1C273FA651FE11D/.Samples/g:/projects/yamahacontentserver/Download/Release/ycj/ME_Waveform/Loop145/samples/Loop145_072(2).wav"
  
 af = AudioFile.open(fname)
@@ -655,19 +899,19 @@ end
 <blockquote>
 <p><strong>getPeak(start, length, rms)</strong></p>
 </blockquote>
-<h4 id="description-7"><a class="header" href="#description-7">Description</a></h4>
+<h4 id="description-9"><a class="header" href="#description-9">Description</a></h4>
 <p>Function to analyze the levels in an audio file. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The arguments start and length define the range in the audio file to be analyzed. The rms argument determines whether the peak level or the RMS level of the specified range is returned.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-4"><a class="header" href="#arguments-4">Arguments</a></h4>
+<h4 id="arguments-5"><a class="header" href="#arguments-5">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>length</strong></td><td style="text-align: left">The duration in samples. Set this to equal to or less than 0 to use all samples from the specified start to the end of the file.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>rms</strong></td><td style="text-align: left">If this is set to 0, the peak level of the specified range will be returned. If this is set to a value above 0, the RMS level over the specified range will be calculated.</td><td style="text-align: left">number</td></tr>
 </tbody></table>
 </div>
-<h4 id="return-values-2"><a class="header" href="#return-values-2">Return Values</a></h4>
+<h4 id="return-values-3"><a class="header" href="#return-values-3">Return Values</a></h4>
 <p>Returns the level of the specifed range as a linear value. The example shows how to convert the value from linear to dB.</p>
-<h4 id="example-7"><a class="header" href="#example-7">Example</a></h4>
+<h4 id="example-9"><a class="header" href="#example-9">Example</a></h4>
 <pre><code class="language-lua">function lin2db(lin)
   return 20 * math.log(lin) / math.log(10)
 end
@@ -691,24 +935,24 @@ print("Sustain RMS:", susrms, "(", lin2db(susrms), "dB )")
 <p><strong>getPitch(start, length, channel)</strong></p>
 </blockquote>
 <p><span class="version-text">(Since HALion 6.3)</span></p>
-<h4 id="description-8"><a class="header" href="#description-8">Description</a></h4>
+<h4 id="description-10"><a class="header" href="#description-10">Description</a></h4>
 <p>Function to obtain the pitch of an audio file that has been analyzed with <a href="./analyzePitch.html">analyzePitch</a>. The audio file you want to obtain the pitch from is specified with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The arguments <code>start</code> and <code>length</code> define the range in the audio file that is used for obtaining the pitch. The <code>channel</code> argument specifies the channel of the audio file that was analyzed. The <a href="./Audio-File.html">AudioFile</a> object and the <code>channel</code> argument must match the call to <a href="./analyzePitch.html">analyzePitch</a>. The function returns two values: The pitch as MIDI note number with decimals for cents and a boolean for voiced/unvoiced detection. If <code>length</code> is greater than 20 ms, the average of the pitches in the specified range is returned. If the audio file has not been analyzed in advance, getPitch returns <code>nil</code>.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-5"><a class="header" href="#arguments-5">Arguments</a></h4>
+<h4 id="arguments-6"><a class="header" href="#arguments-6">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>start</strong></td><td style="text-align: left">The start position in samples.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>length</strong></td><td style="text-align: left">The duration in samples. Set this to less than or equal to 0 to use all samples from the specified <code>start</code> to the end of the file.</td><td style="text-align: left">number</td></tr>
 <tr><td style="text-align: left"><strong>channel</strong></td><td style="text-align: left">Use this to specify the audio channel that was analyzed.</td><td style="text-align: left">number, optional</td></tr>
 </tbody></table>
 </div>
-<h4 id="return-values-3"><a class="header" href="#return-values-3">Return Values</a></h4>
+<h4 id="return-values-4"><a class="header" href="#return-values-4">Return Values</a></h4>
 <p>Returns two values:</p>
 <ul>
 <li>A float value representing the pitch as MIDI note number with decimals for cents,</li>
 <li>a boolean for voiced/unvoiced detection. The return value <code>true</code> means that a pitch was detected in the specified range.</li>
 </ul>
 <p>If <code>length</code> is greater than 20 ms, the average of the pitches in the specified range is returned. If the audio file has not been analyzed in advance, getPitch returns <code>nil</code>.</p>
-<h4 id="example-8"><a class="header" href="#example-8">Example</a></h4>
+<h4 id="example-10"><a class="header" href="#example-10">Example</a></h4>
 <pre><code class="language-lua">channelNames = { [0] = "All", "Left", "Right" }
   
 defineParameter( "Channel", nil, 0, channelNames)
@@ -758,17 +1002,17 @@ end
 <p><strong>getPitchAnalysisProgress(channel)</strong></p>
 </blockquote>
 <p><span class="version-text">(Since HALion 6.3)</span></p>
-<h4 id="description-9"><a class="header" href="#description-9">Description</a></h4>
+<h4 id="description-11"><a class="header" href="#description-11">Description</a></h4>
 <p>Function to monitor the progress of <a href="./analyzePitch.html">analyzePitch</a>. You specify the audio file with the <a href="./Audio-File.html">AudioFile</a> object that is returned by the <a href="./AudioFileopen.html">AudioFile.open</a> function. The <code>channel</code> argument specifies the channel of the audio file. The <a href="./Audio-File.html">AudioFile</a> object and the channel argument must match the call to <a href="./analyzePitch.html">analyzePitch</a>. The function returns the progress as a float value between 0 and 1.</p>
 <p><strong>Available in:</strong> Controller.</p>
-<h4 id="arguments-6"><a class="header" href="#arguments-6">Arguments</a></h4>
+<h4 id="arguments-7"><a class="header" href="#arguments-7">Arguments</a></h4>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>channel</strong></td><td style="text-align: left">Use this to specify the channel of the audio file that is being analyzed.</td><td style="text-align: left">number, optional</td></tr>
 </tbody></table>
 </div>
-<h4 id="return-values-4"><a class="header" href="#return-values-4">Return Values</a></h4>
+<h4 id="return-values-5"><a class="header" href="#return-values-5">Return Values</a></h4>
 <p>Returns the progress as a float value between 0 and 1.</p>
-<h4 id="example-9"><a class="header" href="#example-9">Example</a></h4>
+<h4 id="example-11"><a class="header" href="#example-11">Example</a></h4>
 <pre><code class="language-lua">channelNames = { [0] = "All", "Left", "Right" }
   
 defineParameter( "Channel", nil, 0, channelNames)
@@ -810,6 +1054,117 @@ function onStart()
     end
     print("Done!")
     Start = false
+end
+</code></pre>
+<p><a href="#audio-file">Jump to Top </a></p>
+<h3 id="getwavetablecreationprogress"><a class="header" href="#getwavetablecreationprogress">getWavetableCreationProgress</a></h3>
+<blockquote>
+<p><strong>getWavetableCreationProgress()</strong></p>
+</blockquote>
+<p><span class="version-text">(Since HALion 7.5.10)</span></p>
+<h4 id="description-12"><a class="header" href="#description-12">Description</a></h4>
+<p>Function to monitor an ongoing <a href="./createWavetable.html">createWavetable</a> operation. The <a href="./Audio-File.html">AudioFile</a> object of <code>getWavetableCreationProgress</code> must match the <a href="./Audio-File.html">AudioFile</a> object of the corresponding <a href="./createWavetable.html">createWavetable</a> call, as returned by <a href="./AudioFileopen.html">AudioFile.open</a>.</p>
+<p><strong>Available in:</strong> Controller.</p>
+<h4 id="return-values-6"><a class="header" href="#return-values-6">Return Values</a></h4>
+<p>Returns the progress as a float value between 0 and 1, and an error message if the wavetable creation did not succeed, otherwise <code>nil</code>.</p>
+<h4 id="example-12"><a class="header" href="#example-12">Example</a></h4>
+<pre><code class="language-lua">creationModes = { "EqualDist", "Exponential", "Spectral", "SpectralVoiced", "OverlapAdd", }
+overlapModes = { "None", "2x", "4x", "8x", "16x", }
+channelSelectionModes = { "Multi", "Sum", "Left", "Right", "Center", "LFE", "RearLeft", "RearRight", }
+winTypes = { "Rectangular", "Cosine", "Bartlett", "Hanning", "Hamming", "Blackman", "BlackmanHarris", }
+winSizeModes = { "Auto", "FixedIndividual", "FixedCommon", }
+
+defineParameter { name = "StartProcess", default = false, onChanged = function() if StartProcess then onStart() end end }
+defineParameter { name = "CancelProcess", default = false}
+defineParameter { name = "AnalyzeWavetable", default = true }
+defineParameter { name = "CreationMode", default = wavetable.CreationMode.equalDist, strings = creationModes }
+defineParameter { name = "NumWaves", default = 1, min = 0, max = 0x80000000 - 1, increment = 1 }
+defineParameter { name = "Threshold", default = -40, min = -96, max = 0, increment = 0.1 }
+defineParameter { name = "Sensitivity", default = 25, min = 1, max = 100, increment = 0.1 }
+defineParameter { name = "Overlap", default = wavetable.CreationOverlap.mode4x, strings = overlapModes }
+defineParameter { name = "IncludeWindow", default = false }
+defineParameter { name = "SampleStart", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "SampleLength", default = 0, min = 0, max = 1000, increment = 1 }
+defineParameter { name = "ChannelSelection", default = wavetable.ChannelSelection.multi, strings = channelSelectionModes }
+defineParameter { name = "WinType", default = wavetable.WinType.blackman, strings = winTypes }
+defineParameter { name = "WinSizeMode", default = wavetable.WinSizeMode.auto, strings = winSizeModes }
+defineParameter { name = "WinSizeCh1", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh2", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh3", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh4", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh5", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinSizeCh6", default = 512, min = 0, max = 8192, increment = 0.01 }
+defineParameter { name = "WinCrossfade", default = 10, min = 0, max = 100, increment = 0.1 }
+defineParameter { name = "SpectralEnvRes", default = 500, min = 250, max = 1000, increment = 0.1 }
+defineParameter { name = "FreqLimit", default = 20000, min = 10, max = 22000, increment = 1 }
+ 
+function onStart()
+    zones = this.parent:findZones(true)
+    for i, zone in ipairs(zones) do
+		local function onFinished(afile, wt)
+			print("Progress: 100%")
+			if wt then
+				print("Wavetable of "..afile.fileName.." created.")
+				print("Number of Waves: "..#wt)
+				zone:setParameter("ZoneType", 4)
+				zone:setWavetable(1, wt)
+			end
+		end
+		local samplePath = zone:getParameter("SampleOsc.Filename")
+		local afile = AudioFile.open(samplePath)
+		if afile then
+			local startSamples = SampleStart * afile.rate/1000
+			local lengthSamples = SampleLength * afile.rate/1000
+			local winSize = {   WinSizeCh1,
+			                    WinSizeCh2,
+			                    WinSizeCh3,
+			                    WinSizeCh4,
+			                    WinSizeCh5,
+			                    WinSizeCh6 }
+			print("Create Wavetable "..samplePath)
+			afile:createWavetable{
+				callback = onFinished,
+				start = startSamples,
+				length = lengthSamples,
+				analyzeWavetable = AnalyzeWavetable,
+				creationMode = CreationMode,
+				numWaves = NumWaves,
+				threshold = Threshold,
+				sensitivity = Sensitivity,
+				overlap = Overlap,
+				includeWindow = IncludeWindow,
+				channelSelection = ChannelSelection,
+				winType = WinType,
+				winSizeMode = WinSizeMode,
+				winSize = winSize,
+				winCrossfade = WinCrossfade,
+				spectralEnvRes = SpectralEnvRes,
+				freqLimit = FreqLimit,
+			}
+			while afile:getWavetableCreationProgress() &lt; 1 do
+				if CancelProcess then
+					afile:cancelWavetableCreation()
+					break
+				end
+				local progress, errorMessage = afile:getWavetableCreationProgress()
+				if errorMessage then
+					print(errorMessage)
+					break
+				else
+					local progressPercent = 100 * progress
+					print(string.format("Progress: %2d%%", progressPercent))
+					wait(2000)
+				end
+			end
+			if CancelProcess then
+				CancelProcess = false
+				print("Wavetable creation canceled!")
+				break
+			end
+		end
+	end
+	print("Wavetable creation finished.")
+	StartProcess = false
 end
 </code></pre>
 <p><a href="#audio-file">Jump to Top </a></p>

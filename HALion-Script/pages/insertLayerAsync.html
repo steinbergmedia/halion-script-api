@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>insertLayerAsync - HALion 7.1.30</title>
+        <title>insertLayerAsync - HALion 7.5.10</title>
 
 
         <!-- Custom HTML head -->
@@ -122,7 +122,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">HALion 7.1.30</h1>
+                    <h1 class="menu-title">HALion 7.5.10</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -160,7 +160,7 @@
 <p><strong>insertLayerAsync(layer, position, callback)</strong></p>
 </blockquote>
 <h2 id="description"><a class="header" href="#description">Description</a></h2>
-<p>Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use <a href="./appendLayer.html">appendLayer</a> or <a href="./appendLayerAsync.html">appendLayerAsync</a> instead. The function returns a <a href="./LoadProgress.html">LoadProgress</a> object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as default argument.</p>
+<p>Function to insert a layer at a specified position in a destination layer using a separate, parallel thread. Inserting a layer in a separate thread can be necessary if the layer is too big to be inserted in a short time. The layer to be inserted and the destination layer are both determined by their <a href="./Layer.html">Layer</a> objects. You can use <a href="./getLayer.html">getLayer</a> or <a href="./findLayers.html">findLayers</a> to determine the layer to be inserted. For example, <code>this.parent</code> determines the parent layer of the script module as destination layer. The position is the number indexing the existing layers in the destination layer. The new layer will be inserted before the specified position. To add the layer at the end, use <a href="./appendLayer.html">appendLayer</a> or <a href="./appendLayerAsync.html">appendLayerAsync</a> instead. The function returns a <a href="./Progress.html">Progress</a> object that can be used to monitor the load progress. After the layer is inserted, the callback function is called. The callback function gets the <a href="./Progress.html">Progress</a> object as default argument.</p>
 <blockquote>
 <p>❕ An <a href="./Element.html">Element</a> object can only have one parent. It cannot be child of multiple parents. Therefore, an <a href="./Element.html">Element</a> object that you retrieved from the running plug-in instance must be removed before it can be inserted again. The <a href="./Element.html">Element</a> objects that you retrieve through <a href="./loadPreset.html">loadPreset</a> or <a href="./loadPresetAsync.html">loadPresetAsync</a> can be inserted freely, because these functions create a copy of the <a href="./Element.html">Element</a> objects when reading them.</p>
 </blockquote>
@@ -169,11 +169,11 @@
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Argument</th><th style="text-align: left">Description</th><th style="text-align: left">Value Type</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>layer</strong></td><td style="text-align: left">The <a href="./Layer.html">Layer</a> object of the layer that you want to insert.</td><td style="text-align: left"><a href="./Layer.html">Layer</a></td></tr>
 <tr><td style="text-align: left"><strong>position</strong></td><td style="text-align: left">The position where the layer is to be inserted.</td><td style="text-align: left">number</td></tr>
-<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is inserted. The callback function gets the <a href="./LoadProgress.html">LoadProgress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
+<tr><td style="text-align: left"><strong>callback</strong></td><td style="text-align: left">Callback function that is called when the layer is inserted. The callback function gets the <a href="./Progress.html">Progress</a> object as argument.</td><td style="text-align: left">function, optional</td></tr>
 </tbody></table>
 </div>
 <h2 id="return-values"><a class="header" href="#return-values">Return Values</a></h2>
-<p>Returns a <a href="./LoadProgress.html">LoadProgress</a> object.</p>
+<p>Returns a <a href="./Progress.html">Progress</a> object.</p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-lua">-- Start with an empty program, remove all existing layers.
 layers = this.parent:findLayers()
@@ -229,7 +229,7 @@ end
 -- Define a parameter for selecting the preset to be loaded.
 defineParameter("SelectPreset",  "Select Preset",  1, presetNames, function() onSelectPresetChanged(layerPresets[SelectPreset]) end)
 </code></pre>
-<p><strong>See also:</strong> <a href="./insertBus.html">insertBus</a>, <a href="./insertEffect.html">insertEffect</a>, <a href="./insertLayer.html">insertLayer</a>, <a href="./insertMidiModule.html">insertMidiModule</a>, <a href="./insertZone.html">insertZone</a>, <a href="./Layer.html">Layer</a>, <a href="./LoadProgress.html">LoadProgress</a></p>
+<p><strong>See also:</strong> <a href="./insertBus.html">insertBus</a>, <a href="./insertEffect.html">insertEffect</a>, <a href="./insertLayer.html">insertLayer</a>, <a href="./insertMidiModule.html">insertMidiModule</a>, <a href="./insertZone.html">insertZone</a>, <a href="./Layer.html">Layer</a>, <a href="./Progress.html">Progress</a></p>
 
                     </main>
 
