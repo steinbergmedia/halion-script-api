@@ -82,7 +82,7 @@ These variables are needed to allow the communication between the [Step Modulato
 ```lua
 -- FlexPhraserStepSeq.lua  (Manages the disable state of the steps)
 
-function onStepCountChanged()  
+function onStepCountChanged()
   step = math.floor (StepCount+0.5)
 
   for i = 1, step, 1 do
@@ -99,7 +99,7 @@ defineParameter("StepCount", nil, 1, 1, 32, onStepCountChanged)
 disableStepParams = {}
 for i=1,32,1 do
 	disableStepParams[i]="@disableStep"..tostring(i);
-	defineParameter("disableStep"..tostring(i), nil, 0,0,1)	
+	defineParameter("disableStep"..tostring(i), nil, 0,0,1)
 end
 
 defineParameter("disableStepParams", nil, 1, disableStepParams)

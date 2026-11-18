@@ -35,7 +35,7 @@ function setColorOfKey(event, keyColor)
 end
    
 function onNote(event)
-  postEvent(event) 
+  postEvent(event)
   runAsync(setColorOfKey, event, keyOnColor)
   print("onNote")
 end

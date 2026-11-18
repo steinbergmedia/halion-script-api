@@ -78,7 +78,7 @@ function onLoopChanged()
 	if LoopSel == 0 then
 		susMode, susStart, susEnd = SustainLoopModeA, SustainLoopStartA, SustainLoopEndA;
 		relMode, relStart, relEnd = ReleaseLoopModeA, ReleaseLoopStartA, ReleaseLoopEndA;
-	else                                                       
+	else
 		susMode, susStart, susEnd = SustainLoopModeB, SustainLoopStartB, SustainLoopEndB;
 		relMode, relStart, relEnd = ReleaseLoopModeB, ReleaseLoopStartB, ReleaseLoopEndB;
 	end

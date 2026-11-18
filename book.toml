@@ -3,7 +3,7 @@ authors = ["mklag", "spfeifer"]
 language = "en"
 multilingual = false
 src = "src"
-title = "HALion 7.1.30"
+title = "HALion 7.5.10"
 text-direction = "ltr"
 
 [build]

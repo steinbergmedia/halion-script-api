@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to retrieve the number of assignments of a quick control on the specified layer. For example, ``this.parent`` defines the parent layer of the script module as the layer with the desired quick control. The ``qc`` argument is the index of the quick control with the requested assignments.
+Function to retrieve the number of assignments of a quick control on the specified layer. The layer is determined by the [Layer](./Layer.md) object, and the quick control by the index stated by the ``qc`` argument.
 
 **Available in:** Controller.
 // ANCHOR_END: description

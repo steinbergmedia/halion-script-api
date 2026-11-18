@@ -104,7 +104,7 @@ We will use the Clipper effect as a distortion. Therefore, we define ``fxType = 
     hardclipoffset = 0,
     inputgain = 0.5,
   },
-},	
+},
 
 ```
 

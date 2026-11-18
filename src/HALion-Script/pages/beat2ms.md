@@ -27,7 +27,7 @@ Returns the specified number of beats (quarter notes) as duration in millisecond
 
 function onNote(event)
     posInBar = getBeatTimeInBar()
-    if (posInBar ~= -1) then       
+    if (posInBar ~= -1) then
         posInBarMs = beat2ms(posInBar)
         print(string.format("%.3f ms", posInBarMs))
     else

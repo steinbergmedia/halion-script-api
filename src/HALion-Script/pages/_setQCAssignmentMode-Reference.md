@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to set the mode of the specified quick control assignment. The quick control assignment is determined by the [Layer](./Layer.md) object, the index of the quick control and the index of the assignment itself. For example, ``this.parent`` defines the parent layer of the script module as the layer that contains the quick control. The ``qc`` argument is the index of the quick control and the ``assignment`` argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The ``mode`` argument sets the mode of the quick control assignment.
+Function to set the mode of the specified quick control assignment. The quick control assignment is determined by the [Layer](./Layer.md) object, the index of the quick control and the index of the assignment itself. The ``qc`` argument is the index of the quick control and the ``assignment`` argument is the index of the assignment. The indices of the quick controls and the assignments both start counting from 1. The ``mode`` argument sets the mode of the quick control assignment.
 
 **Available in:** Controller.
 // ANCHOR_END: description
@@ -18,7 +18,7 @@ Function to set the mode of the specified quick control assignment. The quick co
 |Argument|Description|Value Type|
 |:-|:-|:-|
 |**qc**|The index of the quick control.|number|
-|**asignment**|The index of the quick control assignment.|number|
+|**assignment**|The index of the quick control assignment.|number|
 |**mode**|The mode to be set. It can be determined via names or indices. See [Quick Control Assignment Modes](./Quick-Control-Assignment-Modes.md) for details.|enum or number|
 // ANCHOR_END: arguments
 

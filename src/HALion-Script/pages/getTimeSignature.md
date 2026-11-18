@@ -21,7 +21,7 @@ Returns the numerator and denominator of the time signature. If no time signatur
 
 function onInit()
     num, denom = getTimeSignature()
-    print(num.."/"..denom)   
+    print(num.."/"..denom)
 end
 ```
 

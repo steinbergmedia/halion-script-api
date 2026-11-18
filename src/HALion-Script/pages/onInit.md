@@ -20,7 +20,7 @@ This callback function is called after executing any global statements and the [
 function onInit()
     num, denom = getTimeSignature()
     tempo = getTempo()
-    print(num.."/"..denom) 
+    print(num.."/"..denom)
     print(tempo.." BPM")
 end
 ```

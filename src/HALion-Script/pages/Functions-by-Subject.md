@@ -16,12 +16,16 @@ Here you can browse the functions of the HALion Script language by their subject
 [AudioFile.open](./AudioFileopen.md),
 [cancelDecompose](./cancelDecompose.md),
 [cancelPitchAnalysis](./cancelPitchAnalysis.md),
+[cancelWavetableCreation](./cancelWavetableCreation.md),
+[createWavetable](./createWavetable.md),
 [decompose](./decompose.md),
 [getDecomposeProgress](./getDecomposeProgress.md),
 [getOnsets](./getOnsets.md),
 [getPeak](./getPeak.md),
 [getPitch](./getPitch.md),
 [getPitchAnalysisProgress](./getPitchAnalysisProgress.md),
+[getWavetableCreationProgress](./getWavetableCreationProgress.md),
+
 
 ## Automation Functions
 
@@ -160,6 +164,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [getQCAssignmentMax](./getQCAssignmentMax.md),
 [getQCAssignmentMin](./getQCAssignmentMin.md),
 [getQCAssignmentMode](./getQCAssignmentMode.md),
+[getQCAssignmentModuleType](./getQCAssignmentModuleType.md),
 [getQCAssignmentParamId](./getQCAssignmentParamId.md),
 [getQCAssignmentScope](./getQCAssignmentScope.md),
 [getZone](./getZone.md),
@@ -178,6 +183,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [setQCAssignmentMax](./setQCAssignmentMax.md),
 [setQCAssignmentMin](./setQCAssignmentMin.md),
 [setQCAssignmentMode](./setQCAssignmentMode.md),
+[setQCAssignmentModuleType](./setQCAssignmentModuleType.md),
 [setQCAssignmentParamId](./setQCAssignmentParamId.md),
 [setQCAssignmentScope](./setQCAssignmentScope.md),
 
@@ -208,6 +214,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [getQCAssignmentMax](./getQCAssignmentMax.md),
 [getQCAssignmentMin](./getQCAssignmentMin.md),
 [getQCAssignmentMode](./getQCAssignmentMode.md),
+[getQCAssignmentModuleType](./getQCAssignmentModuleType.md),
 [getQCAssignmentParamId](./getQCAssignmentParamId.md),
 [getQCAssignmentScope](./getQCAssignmentScope.md),
 [removeQCAssignment](./removeQCAssignment.md),
@@ -216,6 +223,7 @@ Here you can browse the functions of the HALion Script language by their subject
 [setQCAssignmentMax](./setQCAssignmentMax.md),
 [setQCAssignmentMin](./setQCAssignmentMin.md),
 [setQCAssignmentMode](./setQCAssignmentMode.md),
+[setQCAssignmentModuleType](./setQCAssignmentModuleType.md),
 [setQCAssignmentParamId](./setQCAssignmentParamId.md),
 [setQCAssignmentScope](./setQCAssignmentScope.md),
 
@@ -252,6 +260,16 @@ Here you can browse the functions of the HALion Script language by their subject
 [changeVolume](./changeVolume.md),
 [changeVolumedB](./changeVolumedB.md),
 [fade](./fade.md),
+
+## Wavetable Functions
+
+[analyzeWavetable](./analyzeWavetable.md),
+[analyzeWavetableAsync](./analyzeWavetableAsync.md),
+[cancelWavetableCreation](./cancelWavetableCreation.md),
+[createWavetable](./createWavetable.md),
+[getWavetable](./getWavetable.md),
+[getWavetableCreationProgress](./getWavetableCreationProgress.md),
+[setWavetable](./setWavetable.md),
 
 ## Zone Functions
 

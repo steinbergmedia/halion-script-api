@@ -7,7 +7,7 @@
 #### Description
 
 // ANCHOR: description
-Function to retrieve the [Element](./Element.md) object that is set as scope for the specified quick control assignment. The quick control assignment is determined by the [Layer](./Layer.md) object of the layer, the index of the quick control and the index of the assignment itself. For example, ``this.parent`` defines the parent layer of the script module as the layer that contains the quick control. The ``qc`` argument is the index of the quick control and the ``assignment`` argument is the index of the assignment with the requested scope. The indices of the quick controls and the assignments both start counting from 1.
+Function to retrieve the [Element](./Element.md) object that is set as scope for the specified quick control assignment. The quick control assignment is determined by the [Layer](./Layer.md) object of the layer, the index of the quick control and the index of the assignment itself. The ``qc`` argument is the index of the quick control and the ``assignment`` argument is the index of the assignment with the requested scope. The indices of the quick controls and the assignments both start counting from 1.
 
 **Available in:** Controller.
 // ANCHOR_END: description

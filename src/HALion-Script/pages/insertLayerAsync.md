@@ -20,4 +20,4 @@
 
 {{#include ./_insertLayerAsync-Reference.md:example}}
 
-**See also:** [insertBus](./insertBus.md), [insertEffect](./insertEffect.md), [insertLayer](./insertLayer.md), [insertMidiModule](./insertMidiModule.md), [insertZone](./insertZone.md), [Layer](./Layer.md), [LoadProgress](./LoadProgress.md)
+**See also:** [insertBus](./insertBus.md), [insertEffect](./insertEffect.md), [insertLayer](./insertLayer.md), [insertMidiModule](./insertMidiModule.md), [insertZone](./insertZone.md), [Layer](./Layer.md), [Progress](./Progress.md)

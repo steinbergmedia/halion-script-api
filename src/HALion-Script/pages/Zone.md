@@ -8,7 +8,7 @@ The Zone class inherits all properties and methods of the [Element](./Element.md
 
 **On this page:**
 
-[Zone Class](#zone-class), [Zone Constructor](#zone-constructor), [getModulationMatrixRow](#getmodulationmatrixrow), [getOutputBus](#getoutputbus), [setOutputBus](#setoutputbus)
+[Zone Class](#zone-class), [Zone Constructor](#zone-constructor), [getModulationMatrixRow](#getmodulationmatrixrow), [getOutputBus](#getoutputbus), [getWavetable](#getwavetable), [setOutputBus](#setoutputbus), [setWavetable](#setwavetable)
 
 ---
 
@@ -76,9 +76,20 @@ print(zone.velHigh)
 
 [Jump to Top ](#zone)
 
+### getWavetable
+
+{{#include ./_getWavetable-Reference.md:all}}
+
+[Jump to Top ](#zone)
+
 ### setOutputBus
 
 {{#include ./_setOutputBus-Reference.md:all}}
 
 [Jump to Top ](#zone)
 
+### setWavetable
+
+{{#include ./_setWavetable-Reference.md:all}}
+
+[Jump to Top ](#zone)
